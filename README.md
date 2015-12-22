@@ -16,6 +16,9 @@ annotated sequences (as a Cor.DNA object) from a fragment or plasmid's benchling
 Future Versions: Implement POST features. Unfortunately at the moment, I cannot get POST
 requests to function properly in Benchling's API. This may be a limitation of their API.
 
+This is part of a larger project to annotated and obtain sequence information for EVERY fragment
+and plasmid automatically through aquarium.
+
 # Installation
 	cd directory/that/contains/setup.py
 	pip install .
