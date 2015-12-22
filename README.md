@@ -1,4 +1,4 @@
-# aquarium-api-python
+# benchlingapi
 Python library for interacting with the Benchling web API
 
 # Description
@@ -77,58 +77,33 @@ has been initialized:
 
 
 ### 1. Getting Sequences from a Share Link
-#### find
+	credentials = [bench_api]
+	api = BenchlingAPI(*credentials)
+	seqs = api.getSequenceFromShareLink('https://benchling.com/s/k5Y05YM2/edit')
 
-##### getSequenceFromShareLink:
-`share_link`:  the url of the Benchling share link (click share on a sequence page of a Benchling sequence)
 
-The method returns a dictionary that contains sequence information. E.g.
+The method returns a dictionary that contains sequence information. The following is an example output:
 {u'primers': [], u'description': u'', u'name': u'kanMX2', u'creator': u'ent_OMJVXnRI', u'color': u'#F7977A', u'created_at': u'2015-08-14T20:48:39.159409+00:00', u'tags': [{u'name': u'accession', u'value': u'S78175'}, {u'name': u'marker', u'value': u'KanR'}, {u'name': u'organism', u'value': u'Saccharomyces cerevisiae'}, {u'name': u'ref', u'value': u'pmid:7747518'}], u'modified_at': u'2015-08-14T20:48:39.489252+00:00', u'id': u'seq_6fEUBmhu', u'length': 1437, u'bases': u'GATATCAAGCTTGCCTCGTCCCCGCCGGGTCACCCGGCCAGCGACATGGAGGCCCAGAATACCCTCCTTGACAGTCTTGACGTGCGCAGCTCAGGGGCATGATGTGACTGTCGCCCGTACATTTAGCCCATACATCCCCATGTATAATCATTTGCATCCATACATTTTGATGGCCGCACGGCGCGAAGCAAAAATTACGGCTCCTCGCTGCAGACCTGCGAGCAGGGAAACGCTCCCCTCACAGACGCGTTGAATTGTCCCCACGCCGCGCCCCTGTAGAGAAATATAAAAGGTTAGGATTTGCCACTGAGGTTCTTCTTTCATATACTTCCTTTTAAAATCTTGCTAGGATACAGTTCTCACATCACATCCGAACATAAACAACCATGGGTAAGGAAAAGACTCACGTTTCGAGGCCGCGATTAAATTCCAACATGGATGCTGATTTATATGGGTATAAATGGGCTCGCGATAATGTCGGGCAATCAGGTGCGACAATCTATCGATTGTATGGGAAGCCCGATGCGCCAGAGTTGTTTCTGAAACATGGCAAAGGTAGCGTTGCCAATGATGTTACAGATGAGATGGTCAGACTAAACTGGCTGACGGAATTTATGCCTCTTCCGACCATCAAGCATTTTATCCGTACTCCTGATGATGCATGGTTACTCACCACTGCGATCCCCGGCAAAACAGCATTCCAGGTATTAGAAGAATATCCTGATTCAGGTGAAAATATTGTTGATGCGCTGGCAGTGTTCCTGCGCCGGTTGCATTCGATTCCTGTTTGTAATTGTCCTTTTAACAGCGATCGCGTATTTCGTCTCGCTCAGGCGCAATCACGAATGAATAACGGTTTGGTTGATGCGAGTGATTTTGATGACGAGCGTAATGGCTGGCCTGTTGAACAAGTCTGGAAAGAAATGCATAAGCTTTTGCCATTCTCACCGGATTCAGTCGTCACTCATGGTGATTTCTCACTTGATAACCTTATTTTTGACGAGGGGAAATTAATAGGTTGTATTGATGTTGGACGAGTCGGAATCGCAGACCGATACCAGGATCTTGCCATCCTATGGAACTGCCTCGGTGAGTTTTCTCCTTCATTACAGAAACGGCTTTTTCAAAAATATGGTATTGATAATCCTGATATGAATAAATTGCAGTTTCATTTGATGCTCGATGAGTTTTTCTAATCAGTACTGACAATAAAAAGATTCTTGTTTTCAAGAACTTGTCATTTGTATAGTTTTTTTATATTGTAGTTGTTCTATTTTAATCAAATGTTAGCGTGATTTATATTTTTTTTCGCCTCGACATCATCTGCCCAGATGCGAAGTTAAGTGCGCAGAAAGTAATATCATGCGTCAATCGTATGTGAATGCTGGTCGCTATACTGCTGTCGATTCGATACTAACGCCGCCATCCAGTGTCGAC', u'notes': [{u'text': u'kanMX selector module conferring kanamycin resistance, for gene disruption in yeast, kanMX2 version.', u'created_at': u'2015-08-14T20:48:39.159409+00:00', u'creator': u'ent_OMJVXnRI'}, {u'text': u'', u'created_at': u'2015-08-14T20:48:39.159409+00:00', u'creator': u'ent_OMJVXnRI'}, {u'text': u'<small>[1] New heterologous modules for classical or PCR-based gene disruptions in Saccharomyces cerevisiae. Yeast 1994;10:1793-808. Wach A, Brachat A, P\xf6hlmann R, Philippsen P. (pmid:7747518)</small>', u'created_at': u'2015-08-14T20:48:39.159409+00:00', u'creator': u'ent_OMJVXnRI'}], u'owner': u'ent_OMJVXnRI', u'folder': u'lib_l807ls2n', u'annotations': [{u'end': 386, u'name': u'TEF promoter', u'color': u'#C6C9D1', u'start': 42, u'type': u'promoter', u'strand': 1}, {u'end': 1399, u'name': u'TEF terminator', u'color': u'#C6C9D1', u'start': 1201, u'type': u'terminator', u'strand': 0}, {u'end': 1399, u'name': u'kanMX', u'color': u'#F58A5E', u'start': 42, u'type': u'gene', u'strand': 1}, {u'end': 1196, u'name': u'KanR', u'color': u'#B7E6D7', u'start': 386, u'type': u'CDS', u'strand': 1}], u'circular': False}
 
 ### 2. Getting all sequences
+	credentials = [bench_api]
+	api = BenchlingAPI(*credentials)
+	seqs = api.getAllSequences()
+
+This method returns a list of all benchling sequences (including those shared with you on Benchling).
 
 ### 3. Getting all folders
+	credentials = [bench_api]
+	api = BenchlingAPI(*credentials)
+	seqs = api.getAllFolders()
 
-### 4. Request Coral.DNA from sample_id
+This method returns a list of all folder information (including those shared with you on Benchling).
+### 4. Request Coral.DNA from sample_id (requires Coral and AquariumAPI installed)
+credentials = [bench_api, aq_url, aq_user, aq_api_key]
+portal = BenchlingPortal(*credentials)
 
-### 
+	coral_dna = portal.getSequenceFromAquarium(11231, query='id')
 
-#### find
+OR
 
-##### arguments:
-`model`:  defines the database model you want to query - for example, "sample" or "item".
-
-`where`: An optional argument. If not supplied, returns all the rows for the model. If supplied, should be a dictionary that defines the exact query you want to run (see the API documentation to view the syntax required).
-
-`limit`: Optional argument to limit the number of results - e.g. limit=10.
-
-#### create_sample
-
-##### arguments:
-`sample_type`: The type of sample to be generated - e.g. "Primer".
-
-`name`:  Name of the new entry.
-
-`description`:  Description of the new entry.
-
-`fields`:  A dictionary of fields of the new entry - specific to each type within the model.
-
-#### create_task
-
-##### arguments:
-`task_type`: The type of task to be generated - e.g. "Gibson Assembly".
-
-`name`:  Name of the new task.
-
-`specification`:  A dictionary of specification parameters of the new entry.
-
-
-#### drop
-
-##### arguments:
-`model`:  Database model in which the new entry will be deleted - e.g. "sample".
-
-`names`:  A list of names for the entries you want to delete
-
-`ids`:  A list of IDs for the entries you want to delete
-
+	coral_dna = portal.getSequenceFromAquarium('pMOD4-pGPD-CTerminalDNASensor', query='name')
