@@ -103,6 +103,28 @@ class BenchlingPortal(BenchlingAPI):
         benchlingsequence = self.getSequenceFromShareLink(share_link)
         return self.convertToCoral(benchlingsequence)
 
+    def getAqFragmentSequence(frag_id):
+        frag = self.AqAPI.find('sample', {'id': frag_id})['rows'][0]
+        template_name = frag['fields']['Template']
+        template = self.AqAPI.find('sample', {'name': template_name})['rows'][0]
+        link = template['fields']['Sequence']
+        p1_name = frag['fields']['Forward Primer']
+        p1 = self.AqAPI.find('sample', {'name': p1_name})['rows'][0]
+        p2_name = frag['fields']['Reverse Primer']
+        p2 = portal.AqAPI.find('sample', {'name': p2_name})['rows'][0]
+        template = self.convertToCoral(portal.getSequenceFromShareLink(link))
+        fwd_primer = cor.Primer(cor.DNA(p1['fields']['Anneal Sequence']), p1['fields']['T Anneal'], overhang=cor.DNA(p1['fields']['Overhang Sequence']))
+        rev_primer = cor.Primer(cor.DNA(p2['fields']['Anneal Sequence']), p2['fields']['T Anneal'], overhang=cor.DNA(p2['fields']['Overhang Sequence']))
+        pcr_result = cor.reaction.pcr(template, fwd_primer, rev_primer)
+        return pcr_result, template
+
+    def gibsonAssemblyFromAqFragments(list_of_frag_ids, linear=False):
+        frags = []
+        for frag_id in list_of_frag_ids:
+            frag, template = self.getAqFragmentSequence(frag_id)
+            frags.append(frag)
+        return cor.reaction.gibson(frags, linear=linear)
+
     def _verifyShareLink(self, share_link):
         f = 'https://benchling.com/s/(\w+)/edit'
         result = re.match(f, share_link)
