@@ -74,7 +74,6 @@ class BenchlingPortal(BenchlingAPI):
             share_link = sample['fields']['Sequence']
         except KeyError as e:
             sample_type = self.AqAPI.find('sample_type', {'id': sample['sample_type_id']})['rows'][0]
-            print sample_type
             if sample_type['name'] not in ['Plasmid', 'Fragment']:
                 raise BenchlingAPIException('Could not find Sequence in aquarium sample {}. \
                 Sample is of sample type {} not a Fragment or Plasmid. \
@@ -99,11 +98,10 @@ class BenchlingPortal(BenchlingAPI):
         elif not self._verifyShareLink(share_link):
             message = "Share link incorrectly formatted. Expected format {}. Found {}".format('https://benchling.com/s/\w+/edit', share_link)
             raise BenchlingAPIException(message)
-        print share_link
         benchlingsequence = self.getSequenceFromShareLink(share_link)
         return self.convertToCoral(benchlingsequence)
 
-    def getAqFragmentSequence(frag_id):
+    def getAqFragmentSequence(self, frag_id):
         frag = self.AqAPI.find('sample', {'id': frag_id})['rows'][0]
         template_name = frag['fields']['Template']
         template = self.AqAPI.find('sample', {'name': template_name})['rows'][0]
@@ -111,14 +109,18 @@ class BenchlingPortal(BenchlingAPI):
         p1_name = frag['fields']['Forward Primer']
         p1 = self.AqAPI.find('sample', {'name': p1_name})['rows'][0]
         p2_name = frag['fields']['Reverse Primer']
-        p2 = portal.AqAPI.find('sample', {'name': p2_name})['rows'][0]
-        template = self.convertToCoral(portal.getSequenceFromShareLink(link))
+        p2 = self.AqAPI.find('sample', {'name': p2_name})['rows'][0]
+        template = self.convertToCoral(self.getSequenceFromShareLink(link))
+        p1['fields']['Anneal Sequence'] = p1['fields']['Anneal Sequence'].strip()
+        p1['fields']['Overhang Sequence'] = p1['fields']['Overhang Sequence'].strip()
+        p2['fields']['Anneal Sequence'] = p2['fields']['Anneal Sequence'].strip()
+        p2['fields']['Overhang Sequence'] = p2['fields']['Overhang Sequence'].strip()
         fwd_primer = cor.Primer(cor.DNA(p1['fields']['Anneal Sequence']), p1['fields']['T Anneal'], overhang=cor.DNA(p1['fields']['Overhang Sequence']))
         rev_primer = cor.Primer(cor.DNA(p2['fields']['Anneal Sequence']), p2['fields']['T Anneal'], overhang=cor.DNA(p2['fields']['Overhang Sequence']))
         pcr_result = cor.reaction.pcr(template, fwd_primer, rev_primer)
         return pcr_result, template
 
-    def gibsonAssemblyFromAqFragments(list_of_frag_ids, linear=False):
+    def gibsonAssemblyFromAqFragments(self, list_of_frag_ids, linear=False):
         frags = []
         for frag_id in list_of_frag_ids:
             frag, template = self.getAqFragmentSequence(frag_id)

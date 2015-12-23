@@ -58,11 +58,22 @@ def testBenchlingAquariumPortal():
 
     #test on misformatted sharelink plasmid
     assert_raises(BenchlingAPIException, portal.getSequenceFromAquarium, 11691)
+
+def testGibsonAssembler():
+    bench_api_key = 'sk_g7fo2vxkNUYNPkShOFIOmtY9ejIGE'
+    aq_api_key = 'GwZdTb4jr8YL3wwmVi1QYfG6jeLzUYxkLSZ7BAIKnOc'
+    aq_user = 'vrana'
+    aq_url = 'http://54.68.9.194:81/api'
+    credentials = [bench_api_key, aq_url, aq_user, aq_api_key]
+    portal = BenchlingPortal(*credentials)
+    seq = portal.getAqFragmentSequence(11229)
+    print seq
     
-bench_api_key = 'sk_g7fo2vxkNUYNPkShOFIOmtY9ejIGE'
-aq_api_key = 'GwZdTb4jr8YL3wwmVi1QYfG6jeLzUYxkLSZ7BAIKnOc'
-aq_user = 'vrana'
-aq_url = 'http://54.68.9.194:81/api'
-credentials = [bench_api, aq_url, aq_user, aq_api_key]
-portal = BenchlingPortal(*credentials)
-print portal.getSequenceFromShareLink('https://benchling.com/s/k5Y05YM2/edit')
+testGibsonAssembler()
+#bench_api_key = 'sk_g7fo2vxkNUYNPkShOFIOmtY9ejIGE'
+#aq_api_key = 'GwZdTb4jr8YL3wwmVi1QYfG6jeLzUYxkLSZ7BAIKnOc'
+#aq_user = 'vrana'
+#aq_url = 'http://54.68.9.194:81/api'
+#credentials = [bench_api, aq_url, aq_user, aq_api_key]
+#portal = BenchlingPortal(*credentials)
+#print portal.getSequenceFromShareLink('https://benchling.com/s/k5Y05YM2/edit')
