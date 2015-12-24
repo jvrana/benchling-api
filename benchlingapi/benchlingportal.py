@@ -111,10 +111,7 @@ class BenchlingPortal(BenchlingAPI):
         p2_name = frag['fields']['Reverse Primer']
         p2 = self.AqAPI.find('sample', {'name': p2_name})['rows'][0]
         template = self.convertToCoral(self.getSequenceFromShareLink(link))
-        p1['fields']['Anneal Sequence'] = p1['fields']['Anneal Sequence'].strip()
-        p1['fields']['Overhang Sequence'] = p1['fields']['Overhang Sequence'].strip()
-        p2['fields']['Anneal Sequence'] = p2['fields']['Anneal Sequence'].strip()
-        p2['fields']['Overhang Sequence'] = p2['fields']['Overhang Sequence'].strip()
+
         fwd_primer = cor.Primer(cor.DNA(p1['fields']['Anneal Sequence']), p1['fields']['T Anneal'], overhang=cor.DNA(p1['fields']['Overhang Sequence']))
         rev_primer = cor.Primer(cor.DNA(p2['fields']['Anneal Sequence']), p2['fields']['T Anneal'], overhang=cor.DNA(p2['fields']['Overhang Sequence']))
         pcr_result = cor.reaction.pcr(template, fwd_primer, rev_primer)
