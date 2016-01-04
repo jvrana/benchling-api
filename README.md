@@ -51,11 +51,12 @@ For more advanced features, a subclass of the BenchlingAPI is provided as Benchl
 BenchlingPortal contains Coral and Aquarium integration features. Initializing the BenchlingPortal
 object requires the benchling API key and Aquarium API login information.
 
-	bench_api_key = 'sk_g7fo2vxkNUYNPkShOFIOmtY9ejIGE'
+    bench_api_key = 'sk_g7fo2vxkNUYNPkShOFIOmtY9ejIGE'
     aq_api_key = 'GwZdTb4jr8YL3wwmVi1QYfG6jeLzUYxkLSZ7BAIKnOc'
     aq_user = 'vrana'
     aq_url = 'http://54.68.9.194:81/api'
-    benchlingportal = BenchlingPortal(bench_api_key, aq_api_key, aq_user, aq_url)
+    credentials = [bench_api, aq_url, aq_user, aq_api_key]
+    portal = BenchlingPortal(*credentials)
 
 The first argument is the Benchling API key, which can be requested through benchling and accessed by scrolling to the bottom of you account information on Benchling.
 
