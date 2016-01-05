@@ -13,8 +13,7 @@ Also included are more advanced features that integrate the DNA manipulation pac
 and the aquarium-api-python package. From an Aquarium sample_id, this api can return
 annotated sequences (as a Cor.DNA object) from a fragment or plasmid's benchling share-link.
 
-Future Versions: Implement POST features. Unfortunately at the moment, I cannot get POST
-requests to function properly in Benchling's API. This may be a limitation of their API.
+Future Versions: Implement POST features.
 
 This is part of a larger project to annotated and obtain sequence information for EVERY fragment
 and plasmid automatically through aquarium.
