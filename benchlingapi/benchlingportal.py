@@ -5,6 +5,7 @@ from aquariumapi import models
 import subprocess
 from .benchlingapi import BenchlingAPI, BenchlingAPIException, AquariumLoginError, BenchlingLoginError
 import requests
+import json
 
 class BenchlingPortal(BenchlingAPI):
 
@@ -31,17 +32,30 @@ class BenchlingPortal(BenchlingAPI):
         for a in bs['annotations']:
             if a['type'] == '':
                 a['type'] = 'misc_feature'
-            f = cor.Feature(
-                a['name'].encode('utf-8').strip(),
-                a['start'],
-                a['end'],
-                a['type'].encode('utf-8').strip(),
-                strand = 0 if a['strand'] == 1 else 1,
-                qualifiers = {
-                    'label': a['name'],
-                    'ApEinfo_fwdcolor': [a['color']],
-                    'ApEinfo_revcolor': [a['color']]}
-                    )
+            try:
+                f = cor.Feature(
+                    a['name'].encode('utf-8').strip(),
+                    a['start'],
+                    a['end'],
+                    a['type'].encode('utf-8').strip(),
+                    strand = 0 if a['strand'] == 1 else 1,
+                    qualifiers = {
+                        'label': a['name'],
+                        'ApEinfo_fwdcolor': [a['color']],
+                        'ApEinfo_revcolor': [a['color']]}
+                        )
+            except ValueError:
+                f = cor.Feature(
+                    a['name'].encode('utf-8').strip(),
+                    a['start'],
+                    a['end'],
+                    'misc_feature'.encode('utf-8').strip(),
+                    strand = 0 if a['strand'] == 1 else 1,
+                    qualifiers = {
+                        'label': a['name'],
+                        'ApEinfo_fwdcolor': [a['color']],
+                        'ApEinfo_revcolor': [a['color']]}
+                        )
             f.color = a['color']
             c.features.append(f)
         return c
@@ -95,9 +109,6 @@ class BenchlingPortal(BenchlingAPI):
         if share_link == '':
             message = "No share link found for plasmid {}: {}".format(query, value)
             raise BenchlingAPIException(message)
-        elif not self._verifyShareLink(share_link):
-            message = "Share link incorrectly formatted. Expected format {}. Found {}".format('https://benchling.com/s/\w+/edit', share_link)
-            raise BenchlingAPIException(message)
         benchlingsequence = self.getSequenceFromShareLink(share_link)
         return self.convertToCoral(benchlingsequence)
 
@@ -111,10 +122,10 @@ class BenchlingPortal(BenchlingAPI):
         p2_name = frag['fields']['Reverse Primer']
         p2 = self.AqAPI.find('sample', {'name': p2_name})['rows'][0]
         template = self.convertToCoral(self.getSequenceFromShareLink(link))
-
         fwd_primer = cor.Primer(cor.DNA(p1['fields']['Anneal Sequence']), p1['fields']['T Anneal'], overhang=cor.DNA(p1['fields']['Overhang Sequence']))
         rev_primer = cor.Primer(cor.DNA(p2['fields']['Anneal Sequence']), p2['fields']['T Anneal'], overhang=cor.DNA(p2['fields']['Overhang Sequence']))
         pcr_result = cor.reaction.pcr(template, fwd_primer, rev_primer)
+
         return pcr_result, template
 
     def gibsonAssemblyFromAqFragments(self, list_of_frag_ids, linear=False):
@@ -124,10 +135,12 @@ class BenchlingPortal(BenchlingAPI):
             frags.append(frag)
         return cor.reaction.gibson(frags, linear=linear)
 
-    def _verifyShareLink(self, share_link):
-        f = 'https://benchling.com/s/(\w+)/edit'
-        result = re.match(f, share_link)
-        return result != None
+    def gibsonAssemblyFromTask(self, task_id, linear=False):
+        task = self.AqAPI.find('task', {'id': task_id})['rows'][0]
+        specs = json.loads(task['specification'])
+        frags = specs['fragments Fragment']
+        return self.gibsonAssemblyFromAqFragments(frags, linear=linear)
+
 
     def getPrimerSequenceFromAquarium(self, value, query):
         pass

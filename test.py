@@ -10,12 +10,19 @@ import coral as cor
 
 from nose.tools import assert_equal, assert_true, assert_raises
 
+bench_api_key = 'sk_g7fo2vxkNUYNPkShOFIOmtY9ejIGE'
+aq_api_key = 'GwZdTb4jr8YL3wwmVi1QYfG6jeLzUYxkLSZ7BAIKnOc'
+aq_user = 'vrana'
+aq_url = 'http://54.68.9.194:81/api'
+credentials = [bench_api_key, aq_url, aq_user, aq_api_key]
+portal = BenchlingPortal(*credentials)
+
 def testBenchlingAPIConstruction():
     bench_api_key = 'sk_g7fo2vxkNUYNPkShOFIOmtY9ejIGE'
     aq_api_key = 'GwZdTb4jr8YL3wwmVi1QYfG6jeLzUYxkLSZ7BAIKnOc'
     aq_user = 'vrana'
     aq_url = 'http://54.68.9.194:81/api'
-    credentials = [bench_api, aq_url, aq_user, aq_api_key]
+    credentials = [bench_api_key, aq_url, aq_user, aq_api_key]
     portal = BenchlingPortal(*credentials)
     print "Construction Test Passed"
     
@@ -59,21 +66,26 @@ def testBenchlingAquariumPortal():
     #test on misformatted sharelink plasmid
     assert_raises(BenchlingAPIException, portal.getSequenceFromAquarium, 11691)
 
-def testGibsonAssembler():
-    bench_api_key = 'sk_g7fo2vxkNUYNPkShOFIOmtY9ejIGE'
-    aq_api_key = 'GwZdTb4jr8YL3wwmVi1QYfG6jeLzUYxkLSZ7BAIKnOc'
-    aq_user = 'vrana'
-    aq_url = 'http://54.68.9.194:81/api'
-    credentials = [bench_api_key, aq_url, aq_user, aq_api_key]
-    portal = BenchlingPortal(*credentials)
-    seq = portal.getAqFragmentSequence(11229)
-    print seq
-    
-testGibsonAssembler()
-#bench_api_key = 'sk_g7fo2vxkNUYNPkShOFIOmtY9ejIGE'
-#aq_api_key = 'GwZdTb4jr8YL3wwmVi1QYfG6jeLzUYxkLSZ7BAIKnOc'
-#aq_user = 'vrana'
-#aq_url = 'http://54.68.9.194:81/api'
-#credentials = [bench_api, aq_url, aq_user, aq_api_key]
-#portal = BenchlingPortal(*credentials)
-#print portal.getSequenceFromShareLink('https://benchling.com/s/k5Y05YM2/edit')
+def testGetAqFragment():
+    global portal
+    #seq = portal.getAqFragmentSequence(11229) #example of fragment with multiple primer binding sites
+    seq = portal.getAqFragmentSequence(10950)
+
+# def testAmbiquousPrimer():
+#     global portal
+#     assert_raises(cor.reaction._pcr.AmbiguousPrimingError, \
+#                   portal.getAqFragmentSequence, 11229)
+
+def testGibsonAssembly():
+    global portal
+    portal.gibsonAssemblyFromTask(14379)
+
+def testShareLink():
+    global portal
+    assert_raises(BenchlingAPIException, portal.getSequenceFromAquarium, 4008)
+    portal.getSequenceFromAquarium(5884)
+
+testGetAqFragment()
+testShareLink()
+testGibsonAssembly()
+testShareLink()

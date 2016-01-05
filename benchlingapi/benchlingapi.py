@@ -59,6 +59,11 @@ class BenchlingAPI(object):
             print "\tResponse:", r
         return d
 
+    def _verifyShareLink(self, share_link):
+        f = 'https://benchling.com/s/(\w+)/edit'
+        result = re.search(f, share_link)
+        return result != None
+
     def _getSequenceNameFromShareLink(self, share_link):
         ''' A really hacky way to get a sequence
         name from a Benchling share link
@@ -68,10 +73,20 @@ class BenchlingAPI(object):
         :returns: Name of Benchling Sequence
         :rtype: str
         '''
+        # try:
+        #     print share_link
+        #     gp = re.search('/seq-\w+-([-_\w]+)/edit', share_link)
+        #     return gp.group(1)
+        # except Exception as e:
+        #     print e
+        if not self._verifyShareLink(share_link):
+            message = "Share link incorrectly formatted. Expected format {}. Found {}".format('https://benchling.com/s/\w+/edit', share_link)
+            raise BenchlingAPIException(message)
         f = urlopen(share_link)
         soup = BeautifulSoup(f.read())
         title = soup.title.text
         gp = re.search("(.+)\s.\sBenchling", title)
+
         return gp.group(1)
 
     def getSequenceFromShareLink(self, share_link):
@@ -83,7 +98,6 @@ class BenchlingAPI(object):
         :returns: Benchling API sequence information
         :rtype: dict
         '''
-        print share_link
         name = self._getSequenceNameFromShareLink(share_link)
         return self.getSequence(name, query='name')
 
