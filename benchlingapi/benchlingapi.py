@@ -32,13 +32,16 @@ class BenchlingAPI(object):
         self.folder_dict = {} #folder_name: folder_information
         try:
             self._createDictionaries()
-        except requests.ConnectionError as e:
+        except requests.ConnectionError:
             raise BenchlingLoginError('Benchling login credentials incorrect. Check \
                 BenchlinAPIKey: {}'.format(api_key))
 
-    def _post(self, payload):
+    def _post(self, what, payload):
         '''Not yet implemented.'''
-        raise NotImplementedError('Benchling does not support POST requests.')
+
+        raise NotImplementedError('Benchling does not yet support POST requests.')
+        f = os.path.join(self.home, what)
+        r = requests.get(f, data=payload, auth=self.auth)
 
     def _get(self, what, verbose=False):
         ''' Get request from Benchling

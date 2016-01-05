@@ -39,10 +39,21 @@ for f in [4257, 4256, 11222]:
     frags.append(frag)
     print 'frag[0]:', frags[0].features[0].qualifiers
     filename = str(f) + '.gb'
-    #cor.seqio.write_dna(frag, filename)
-    subprocess.call(['open', '-a', 'ApE (Mavericks)', filename])
+    cor.seqio.write_dna(frag, filename)
+    subprocess.call(['open', '-a', 'ApE1', filename])
 
 result = cor.reaction.gibson(frags, linear=False)
+for f in frags:
+    loc = result.locate(f)
+    top, bottom = loc
+    if top:
+        for t in top:
+            f = cor.Feature(str(f.name), t, t+len(f), 'source')
+            result.features.append(f)
+    if bottom:
+        for b in bottom:
+            f = cor.Feature(str(f.name), b, b+len(f), 'source', strand=1)
+            result.features.append(f)
 
 cor.seqio.write_dna(result, 'plasmid.gb')
-subprocess.call(['open', '-a', 'ApE (Mavericks)', 'plasmid.gb'])
+subprocess.call(['open', '-a', 'ApE1', 'plasmid.gb'])
