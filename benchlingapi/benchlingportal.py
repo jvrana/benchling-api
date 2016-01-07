@@ -50,7 +50,6 @@ class BenchlingPortal(BenchlingAPI):
                 type = 'misc_feature'
             f = cor.Feature(name, start, stop, type, strand=strand, qualifiers=qualifiers)
             f.color = a['color']
-            print "Converting:", name, start, stop, 'from', a['start'], a['end']
             c.features.append(f)
         return c
 
