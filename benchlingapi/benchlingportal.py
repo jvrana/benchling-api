@@ -118,7 +118,7 @@ class BenchlingPortal(BenchlingAPI):
         else:
             raise ValueError("Sample is not a primer. Sample type id: {}".format(sample['sample_type_id']))
 
-    def getAqFraq(self, frag_id, try_share_link = True):
+    def getAqFrag(self, frag_id, try_share_link = True):
         frag = self.AqAPI.find('sample', {'id': frag_id})['rows'][0]
 
         # Try share link
