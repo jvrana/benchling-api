@@ -21,6 +21,7 @@ class BenchlingPortal(BenchlingAPI):
         except TypeError as e:
             raise AquariumLoginError('Aquarium url likely incorrect. {}'.format(aq_url))
 
+    # FIXME: Fix cases of start > stop and which stand
     def convertToCoral(self, benchling_seq):
         bs = benchling_seq
         c = cor.DNA(
@@ -30,33 +31,26 @@ class BenchlingPortal(BenchlingAPI):
         stranded = 'ds',
         name=bs['name'])
         for a in bs['annotations']:
-            if a['type'] == '':
-                a['type'] = 'misc_feature'
-            try:
-                f = cor.Feature(
-                    a['name'].encode('utf-8').strip(),
-                    a['start'],
-                    a['end'],
-                    a['type'].encode('utf-8').strip(),
-                    strand = 0 if a['strand'] == 1 else 1,
-                    qualifiers = {
-                        'label': a['name'],
+            name = a['name'].encode('utf-8').strip()
+            start = a['start']
+            stop = a['end']
+            # if stop == 0:
+            #     stop = len(c)
+            # if start > stop:
+            #     s = start
+            #     start = stop
+            #     stop = s
+            strand = 0 if a['strand'] == 1 else 1
+            qualifiers = {
+                        'label': name,
                         'ApEinfo_fwdcolor': [a['color']],
                         'ApEinfo_revcolor': [a['color']]}
-                        )
-            except ValueError:
-                f = cor.Feature(
-                    a['name'].encode('utf-8').strip(),
-                    a['start'],
-                    a['end'],
-                    'misc_feature'.encode('utf-8').strip(),
-                    strand = 0 if a['strand'] == 1 else 1,
-                    qualifiers = {
-                        'label': a['name'],
-                        'ApEinfo_fwdcolor': [a['color']],
-                        'ApEinfo_revcolor': [a['color']]}
-                        )
+            type = a['type'].encode('utf-8').strip()
+            if type not in list(set(cor.constants.genbank.TO_CORAL)):
+                type = 'misc_feature'
+            f = cor.Feature(name, start, stop, type, strand=strand, qualifiers=qualifiers)
             f.color = a['color']
+            print "Converting:", name, start, stop, 'from', a['start'], a['end']
             c.features.append(f)
         return c
 
@@ -94,7 +88,7 @@ class BenchlingPortal(BenchlingAPI):
                 Error Message: {}'.format(sample_type['name'], sample['id'], e))
         return share_link
 
-    def getSequenceFromAquarium(self, value, query='id'):
+    def getAqSeq(self, value, query='id'):
         ''' Collects sequence from Aquarium sample
 
         :param value: value to search aquarium
@@ -112,7 +106,7 @@ class BenchlingPortal(BenchlingAPI):
         benchlingsequence = self.getSequenceFromShareLink(share_link)
         return self.convertToCoral(benchlingsequence)
 
-    def getAqFragmentSequence(self, frag_id):
+    def getAqFraq(self, frag_id):
         frag = self.AqAPI.find('sample', {'id': frag_id})['rows'][0]
         template_name = frag['fields']['Template']
         template = self.AqAPI.find('sample', {'name': template_name})['rows'][0]
@@ -128,14 +122,14 @@ class BenchlingPortal(BenchlingAPI):
 
         return pcr_result, template
 
-    def gibsonAssemblyFromAqFragments(self, list_of_frag_ids, linear=False):
+    def gibsonFromFrags(self, list_of_frag_ids, linear=False):
         frags = []
         for frag_id in list_of_frag_ids:
             frag, template = self.getAqFragmentSequence(frag_id)
             frags.append(frag)
         return cor.reaction.gibson(frags, linear=linear)
 
-    def gibsonAssemblyFromTask(self, task_id, linear=False):
+    def gibsonFromTask(self, task_id, linear=False):
         task = self.AqAPI.find('task', {'id': task_id})['rows'][0]
         specs = json.loads(task['specification'])
         frags = specs['fragments Fragment']
