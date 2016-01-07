@@ -105,8 +105,29 @@ class BenchlingPortal(BenchlingAPI):
         benchlingsequence = self.getSequenceFromShareLink(share_link)
         return self.convertToCoral(benchlingsequence)
 
-    def getAqFraq(self, frag_id):
+    def _toCoralPrimer(self, aq_sample):
+        anneal = cor.DNA(aq_sample['fields']['Anneal Sequence'].strip())
+        overhang = cor.DNA(aq_sample['fields']['Overhang Sequence'].strip())
+        tm = int(aq_sample['fields']['T Anneal'])
+        return cor.Primer(anneal, tm, overhang)
+
+    def getAqPrimer(self, value, query='id'):
+        sample = self.AqAPI.find('sample', {query: value})['rows'][0]
+        if sample['sample_type_id'] == 1:
+            return self._toCoralPrimer(sample)
+        else:
+            raise ValueError("Sample is not a primer. Sample type id: {}".format(sample['sample_type_id']))
+
+    def getAqFraq(self, frag_id, try_share_link = True):
         frag = self.AqAPI.find('sample', {'id': frag_id})['rows'][0]
+
+        # Try share link
+        if try_share_link:
+            frag_link = frag['fields']['Sequence']
+            if self._verifyShareLink(frag_link):
+                return self.getSequenceFromShareLink(frag_link)
+
+        # Get sequence from pcr
         template_name = frag['fields']['Template']
         template = self.AqAPI.find('sample', {'name': template_name})['rows'][0]
         link = template['fields']['Sequence']
