@@ -125,7 +125,8 @@ class BenchlingPortal(BenchlingAPI):
         if try_share_link:
             frag_link = frag['fields']['Sequence']
             if self._verifyShareLink(frag_link):
-                return self.getSequenceFromShareLink(frag_link)
+                benchling_seq = self.getSequenceFromShareLink(frag_link)
+                return self.convertToCoral(benchling_seq)
 
         # Get sequence from pcr
         template_name = frag['fields']['Template']
@@ -145,7 +146,7 @@ class BenchlingPortal(BenchlingAPI):
     def gibsonFromFrags(self, list_of_frag_ids, linear=False):
         frags = []
         for frag_id in list_of_frag_ids:
-            frag, template = self.getAqFragmentSequence(frag_id)
+            frag, template = self.getAqFrag(frag_id)
             frags.append(frag)
         return cor.reaction.gibson(frags, linear=linear)
 
