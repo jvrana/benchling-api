@@ -140,7 +140,7 @@ class BenchlingPortal(BenchlingAPI):
         fwd_primer = cor.Primer(cor.DNA(p1['fields']['Anneal Sequence']), p1['fields']['T Anneal'], overhang=cor.DNA(p1['fields']['Overhang Sequence']))
         rev_primer = cor.Primer(cor.DNA(p2['fields']['Anneal Sequence']), p2['fields']['T Anneal'], overhang=cor.DNA(p2['fields']['Overhang Sequence']))
         pcr_result = cor.reaction.pcr(template, fwd_primer, rev_primer)
-
+        pcr_result.name = frag['name'].strip()
         return pcr_result, template
 
     def gibsonFromFrags(self, list_of_frag_ids, linear=False):
