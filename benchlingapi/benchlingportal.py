@@ -105,16 +105,20 @@ class BenchlingPortal(BenchlingAPI):
         benchlingsequence = self.getSequenceFromShareLink(share_link)
         return self.convertToCoral(benchlingsequence)
 
-    def _toCoralPrimer(self, aq_sample):
-        anneal = cor.DNA(aq_sample['fields']['Anneal Sequence'].strip())
-        overhang = cor.DNA(aq_sample['fields']['Overhang Sequence'].strip())
+    def toCoralPrimer(self, aq_sample):
+        anneal_seq = aq_sample['fields']['Anneal Sequence'].strip()
+        overhang_seq = aq_sample['fields']['Overhang Sequence'].strip()
+        anneal_seq.replace(' ', '')
+        overhang_seq.replace(' ', '')
+        anneal = cor.DNA(anneal_seq)
+        overhang = cor.DNA(overhang_seq)
         tm = int(aq_sample['fields']['T Anneal'])
         return cor.Primer(anneal, tm, overhang)
 
     def getAqPrimer(self, value, query='id'):
         sample = self.AqAPI.find('sample', {query: value})['rows'][0]
         if sample['sample_type_id'] == 1:
-            return self._toCoralPrimer(sample)
+            return self.toCoralPrimer(sample)
         else:
             raise ValueError("Sample is not a primer. Sample type id: {}".format(sample['sample_type_id']))
 
