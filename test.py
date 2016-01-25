@@ -85,7 +85,8 @@ def testShareLink():
     assert_raises(BenchlingAPIException, portal.getSequenceFromAquarium, 4008)
     portal.getSequenceFromAquarium(5884)
 
-testGetAqFragment()
-testShareLink()
-testGibsonAssembly()
-testShareLink()
+# testGetAqFragment()
+# testShareLink()
+# testGibsonAssembly()
+# testShareLink()
+print portal.AqAPI._request('modify', 9990)

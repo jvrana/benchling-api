@@ -34,8 +34,8 @@ class BenchlingPortal(BenchlingAPI):
             name = a['name'].encode('utf-8').strip()
             start = a['start']
             stop = a['end']
-            # if stop == 0:
-            #     stop = len(c)
+            if stop == 0:
+                stop = len(c)
             # if start > stop:
             #     s = start
             #     start = stop
@@ -122,7 +122,7 @@ class BenchlingPortal(BenchlingAPI):
         else:
             raise ValueError("Sample is not a primer. Sample type id: {}".format(sample['sample_type_id']))
 
-    def getAqFragSeq(self, frag_id, try_share_link = True, template=None, fwd_primer=None, rev_primer=None):
+    def getAqFragSeq(self, frag_id, try_share_link=True, template=None, fwd_primer=None, rev_primer=None):
         frag = self.AqAPI.find('sample', {'id': frag_id})['rows'][0]
 
         # Try share link
@@ -150,20 +150,20 @@ class BenchlingPortal(BenchlingAPI):
             rev_primer = cor.Primer(cor.DNA(p2['fields']['Anneal Sequence']), p2['fields']['T Anneal'], overhang=cor.DNA(p2['fields']['Overhang Sequence']))
         pcr_result = cor.reaction.pcr(template, fwd_primer, rev_primer)
         pcr_result.name = frag['name'].strip()
-        return pcr_result, template
+        return pcr_result
 
-    def gibsonFromFrags(self, list_of_frag_ids, linear=False):
+    def gibsonFromFrags(self, list_of_frag_ids, linear=False, tm=50, homology=14):
         frags = []
         for frag_id in list_of_frag_ids:
-            frag, template = self.getAqFragSeq(frag_id)
+            frag = self.getAqFragSeq(frag_id)
             frags.append(frag)
-        return cor.reaction.gibson(frags, linear=linear)
+        return cor.reaction.gibson(frags, linear=linear, tm=tm, homology=homology)
 
-    def gibsonFromTask(self, task_id, linear=False):
+    def gibsonFromTask(self, task_id, linear=False, tm=50, homology=14):
         task = self.AqAPI.find('task', {'id': task_id})['rows'][0]
         specs = json.loads(task['specification'])
         frags = specs['fragments Fragment']
-        return self.gibsonAssemblyFromAqFragments(frags, linear=linear)
+        return self.gibsonFromFrags(frags, linear=linear, tm=50, homology=homology)
 
     def makeCoralDNA(self, sequence):
         pass
