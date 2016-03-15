@@ -29,7 +29,6 @@ class BenchlingPortal(BenchlingAPI):
         circular=bs['circular'],
         name=bs['name'])
         for a in bs['annotations']:
-            print a
             name = a['name'].encode('utf-8').strip()
             start = a['start']
             stop = a['end']
