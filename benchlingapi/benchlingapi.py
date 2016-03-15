@@ -63,7 +63,7 @@ class BenchlingAPI(object):
         return d
 
     def _verifyShareLink(self, share_link):
-        f = 'https://benchling.com/s/(\w+)/edit'
+        f = 'https://benchling.com/s/(\w+)'
         result = re.search(f, share_link)
         return result != None
 
