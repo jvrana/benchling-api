@@ -23,32 +23,23 @@ class BenchlingPortal(BenchlingAPI):
 
     # FIXME: Fix cases of start > stop and which stand
     def convertToCoral(self, benchling_seq):
-        bs = benchling_seq
-        c = cor.DNA(
-        bs['bases'],
+        c = cor.DNA(bs['bases'],
         bottom=None,
-        topology = 'circular' if bs['circular'] else 'linear',
-        stranded = 'ds',
+        circular=bs['circular'],
         name=bs['name'])
         for a in bs['annotations']:
             name = a['name'].encode('utf-8').strip()
             start = a['start']
             stop = a['end']
-            # if stop == 0:
-            #     stop = len(c)
-            # if start > stop:
-            #     s = start
-            #     start = stop
-            #     stop = s
             strand = 0 if a['strand'] == 1 else 1
             qualifiers = {
-                        'label': name,
-                        'ApEinfo_fwdcolor': [a['color']],
-                        'ApEinfo_revcolor': [a['color']]}
-            type = a['type'].encode('utf-8').strip()
-            if type not in list(set(cor.constants.genbank.TO_CORAL)):
-                type = 'misc_feature'
-            f = cor.Feature(name, start, stop, type, strand=strand, qualifiers=qualifiers)
+                'label': name,
+                'ApEinfo_fwdcolor': [a['color']],
+                'ApEinfo_revcolor': [a['color']]}
+            ftype = a['type'].encode('utf-8').strip()
+            if ftype not in list(set(cor.constants.genbank.TO_CORAL)):
+                ftype = 'misc_feature'
+            f = cor.Feature(name, start, stop, ftype, strand=strand, qualifiers=qualifiers)
             f.color = a['color']
             c.features.append(f)
         return c
