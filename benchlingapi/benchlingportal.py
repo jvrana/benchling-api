@@ -53,104 +53,107 @@ class BenchlingPortal(BenchlingAPI):
         s['name'] = d['name']
         s['folder'] = 'lib_qCSi9wd8'
 
-    def getShareLink(self, value, query='id'):
-        ''' Collects share_link from Aquarium sample
+    # def getShareLink(self, value, query='id'):
+    #     ''' Collects share_link from Aquarium sample
+    #
+    #     :param value: value to search aquarium
+    #     :type value: str or int
+    #     :param query: query identifier for searching aquarium
+    #     :type query: str
+    #     :returns: sequence url link
+    #     :rtype: str
+    #
+    #     '''
+    #     results = self.AqAPI.find('sample', {query: value})
+    #     if len(results['rows']) == 0:
+    #         raise BenchlingAPIException('Could not find sample with query {} and value {}'.format(query, value))
+    #     sample = results['rows'][0]
+    #     share_link = ''
+    #     try:
+    #         share_link = sample['fields']['Sequence']
+    #     except KeyError as e:
+    #         sample_type = self.AqAPI.find('sample_type', {'id': sample['sample_type_id']})['rows'][0]
+    #         if sample_type['name'] not in ['Plasmid', 'Fragment']:
+    #             raise BenchlingAPIException('Could not find Sequence in aquarium sample {}. \
+    #             Sample is of sample type {} not a Fragment or Plasmid. \
+    #             Error Message: {}'.format(sample_type['name'], sample['id'], e))
+    #     return share_link
+    #
+    # def getAqSeq(self, value, query='id'):
+    #     ''' Collects sequence from Aquarium sample
+    #
+    #     :param value: value to search aquarium
+    #     :type value: str or int
+    #     :param query: query identifier for searching aquarium
+    #     :type query: str
+    #     :returns: coral DNA sequence
+    #     :rtype: Coral.DNA
+    #
+    #     '''
+    #     share_link = self.getShareLink(value, query=query)
+    #     if share_link == '':
+    #         message = "No share link found for plasmid {}: {}".format(query, value)
+    #         raise BenchlingAPIException(message)
+    #     benchlingsequence = self.getSequenceFromShareLink(share_link)
+    #     return self.convertToCoral(benchlingsequence)
+    #
+    # def _toCoralPrimer(self, aq_sample):
+    #     anneal = cor.DNA(aq_sample['fields']['Anneal Sequence'].strip())
+    #     overhang = cor.DNA(aq_sample['fields']['Overhang Sequence'].strip())
+    #     tm = int(aq_sample['fields']['T Anneal'])
+    #     return cor.Primer(anneal, tm, overhang)
+    #
+    # def getAqPrimer(self, value, query='id'):
+    #     sample = self.AqAPI.find('sample', {query: value})['rows'][0]
+    #     if sample['sample_type_id'] == 1:
+    #         return self._toCoralPrimer(sample)
+    #     else:
+    #         raise ValueError("Sample is not a primer. Sample type id: {}".format(sample['sample_type_id']))
+    #
+    # def getAqFrag(self, frag_id, try_share_link = True):
+    #     frag = self.AqAPI.find('sample', {'id': frag_id})['rows'][0]
+    #
+    #     # Try share link
+    #     if try_share_link:
+    #         frag_link = frag['fields']['Sequence']
+    #         if self._verifyShareLink(frag_link):
+    #             benchling_seq = self.getSequenceFromShareLink(frag_link)
+    #             return self.convertToCoral(benchling_seq)
+    #     else:
+    #         return self.runPCR(frag_id)
+    #
+    # def runPCR(self, frag_id):
+    #     # Get sequence from pcr
+    #     template_name = frag_id['fields']['Template']
+    #     template = self.AqAPI.find('sample', {'name': template_name})['rows'][0]
+    #     link = template['fields']['Sequence']
+    #     p1_name = frag_id['fields']['Forward Primer']
+    #     p1 = self.AqAPI.find('sample', {'name': p1_name})['rows'][0]
+    #     p2_name = frag_id['fields']['Reverse Primer']
+    #     p2 = self.AqAPI.find('sample', {'name': p2_name})['rows'][0]
+    #     template = self.convertToCoral(self.getSequenceFromShareLink(link))
+    #     fwd_primer = cor.Primer(cor.DNA(p1['fields']['Anneal Sequence']), p1['fields']['T Anneal'], overhang=cor.DNA(p1['fields']['Overhang Sequence']))
+    #     rev_primer = cor.Primer(cor.DNA(p2['fields']['Anneal Sequence']), p2['fields']['T Anneal'], overhang=cor.DNA(p2['fields']['Overhang Sequence']))
+    #     pcr_result = cor.reaction.pcr(template, fwd_primer, rev_primer)
+    #     pcr_result.name = frag_id['name'].strip()
+    #     return pcr_result
+    #
+    # def gibsonFromFrags(self, list_of_frag_ids, linear=False):
+    #     frags = []
+    #     for frag_id in list_of_frag_ids:
+    #         frag, template = self.getAqFrag(frag_id)
+    #         frags.append(frag)
+    #     return cor.reaction.gibson(frags, linear=linear)
+    #
+    # def gibsonFromTask(self, task_id, linear=False):
+    #     task = self.AqAPI.find('task', {'id': task_id})['rows'][0]
+    #     specs = json.loads(task['specification'])
+    #     frags = specs['fragments Fragment']
+    #     return self.gibsonAssemblyFromAqFragments(frags, linear=linear)
+    #
 
-        :param value: value to search aquarium
-        :type value: str or int
-        :param query: query identifier for searching aquarium
-        :type query: str
-        :returns: sequence url link
-        :rtype: str
-
-        '''
-        results = self.AqAPI.find('sample', {query: value})
-        if len(results['rows']) == 0:
-            raise BenchlingAPIException('Could not find sample with query {} and value {}'.format(query, value))
-        sample = results['rows'][0]
-        share_link = ''
-        try:
-            share_link = sample['fields']['Sequence']
-        except KeyError as e:
-            sample_type = self.AqAPI.find('sample_type', {'id': sample['sample_type_id']})['rows'][0]
-            if sample_type['name'] not in ['Plasmid', 'Fragment']:
-                raise BenchlingAPIException('Could not find Sequence in aquarium sample {}. \
-                Sample is of sample type {} not a Fragment or Plasmid. \
-                Error Message: {}'.format(sample_type['name'], sample['id'], e))
-        return share_link
-
-    def getAqSeq(self, value, query='id'):
-        ''' Collects sequence from Aquarium sample
-
-        :param value: value to search aquarium
-        :type value: str or int
-        :param query: query identifier for searching aquarium
-        :type query: str
-        :returns: coral DNA sequence
-        :rtype: Coral.DNA
-
-        '''
-        share_link = self.getShareLink(value, query=query)
-        if share_link == '':
-            message = "No share link found for plasmid {}: {}".format(query, value)
-            raise BenchlingAPIException(message)
-        benchlingsequence = self.getSequenceFromShareLink(share_link)
-        return self.convertToCoral(benchlingsequence)
-
-    def _toCoralPrimer(self, aq_sample):
-        anneal = cor.DNA(aq_sample['fields']['Anneal Sequence'].strip())
-        overhang = cor.DNA(aq_sample['fields']['Overhang Sequence'].strip())
-        tm = int(aq_sample['fields']['T Anneal'])
-        return cor.Primer(anneal, tm, overhang)
-
-    def getAqPrimer(self, value, query='id'):
-        sample = self.AqAPI.find('sample', {query: value})['rows'][0]
-        if sample['sample_type_id'] == 1:
-            return self._toCoralPrimer(sample)
-        else:
-            raise ValueError("Sample is not a primer. Sample type id: {}".format(sample['sample_type_id']))
-
-    def getAqFrag(self, frag_id, try_share_link = True):
-        frag = self.AqAPI.find('sample', {'id': frag_id})['rows'][0]
-
-        # Try share link
-        if try_share_link:
-            frag_link = frag['fields']['Sequence']
-            if self._verifyShareLink(frag_link):
-                benchling_seq = self.getSequenceFromShareLink(frag_link)
-                return self.convertToCoral(benchling_seq)
-
-        # Get sequence from pcr
-        template_name = frag['fields']['Template']
-        template = self.AqAPI.find('sample', {'name': template_name})['rows'][0]
-        link = template['fields']['Sequence']
-        p1_name = frag['fields']['Forward Primer']
-        p1 = self.AqAPI.find('sample', {'name': p1_name})['rows'][0]
-        p2_name = frag['fields']['Reverse Primer']
-        p2 = self.AqAPI.find('sample', {'name': p2_name})['rows'][0]
-        template = self.convertToCoral(self.getSequenceFromShareLink(link))
-        fwd_primer = cor.Primer(cor.DNA(p1['fields']['Anneal Sequence']), p1['fields']['T Anneal'], overhang=cor.DNA(p1['fields']['Overhang Sequence']))
-        rev_primer = cor.Primer(cor.DNA(p2['fields']['Anneal Sequence']), p2['fields']['T Anneal'], overhang=cor.DNA(p2['fields']['Overhang Sequence']))
-        pcr_result = cor.reaction.pcr(template, fwd_primer, rev_primer)
-        pcr_result.name = frag['name'].strip()
-        return pcr_result, template
-
-    def gibsonFromFrags(self, list_of_frag_ids, linear=False):
-        frags = []
-        for frag_id in list_of_frag_ids:
-            frag, template = self.getAqFrag(frag_id)
-            frags.append(frag)
-        return cor.reaction.gibson(frags, linear=linear)
-
-    def gibsonFromTask(self, task_id, linear=False):
-        task = self.AqAPI.find('task', {'id': task_id})['rows'][0]
-        specs = json.loads(task['specification'])
-        frags = specs['fragments Fragment']
-        return self.gibsonAssemblyFromAqFragments(frags, linear=linear)
-
-
-    def getPrimerSequenceFromAquarium(self, value, query):
-        pass
-
-    def makeCoralDNA(self, sequence):
-        pass
+    # def getPrimerSequenceFromAquarium(self, value, query):
+    #     pass
+    #
+    # def makeCoralDNA(self, sequence):
+    #     pass
