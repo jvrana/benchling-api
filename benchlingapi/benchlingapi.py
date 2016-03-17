@@ -204,9 +204,9 @@ class BenchlingAPI(object):
             name = value
             items = dic[name]
             if len(items) == 0:
-                raise BenchlingAPIException("No items found with {} {}".format(query, value))
+                raise BenchlingAPIException("No items found with {} \'{}\'".format(query, value))
             elif len(items) > 1:
-                warnings.warn("More {} items found with {} {}".format(len(items), query, value))
+                warnings.warn("More {} items found with {} \'{}\'".format(len(items), query, value))
                 print items
             item = items[0]
             item_id = item['id']
@@ -215,10 +215,10 @@ class BenchlingAPI(object):
         return self._get(os.path.join(what, item_id))
 
     def find_sequence(self, value, query='name'):
-        self._find('sequences', self.seq_dict, value, query=query)
+        return self._find('sequences', self.seq_dict, value, query=query)
 
     def find_folder(self, value, query='name'):
-        self._find('folders', self.seq_dict, value, query=query)
+        return self._find('folders', self.folder_dict, value, query=query)
 
     def getAllSequences(self):
         return self.seq_dict

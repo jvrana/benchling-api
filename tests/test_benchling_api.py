@@ -10,4 +10,5 @@ credentials = [bench_api_key,
                        aq_api_key]
 portal = BenchlingPortal(*credentials)
 
-print portal.folder_dict
+print portal.find_sequence('new sequence')
+print portal.find_folder('some_folder')

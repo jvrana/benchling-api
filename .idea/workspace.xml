@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65eba9a0-16f2-41dd-98b9-ae71eca52246" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/test_benchling_api.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/benchlingapitester.py" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Tadpole/tadpole/VT/browser_hacker.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Tadpole/.ipynb_checkpoints/Untitled3-checkpoint.ipynb" afterPath="$PROJECT_DIR$/../Tadpole/.ipynb_checkpoints/Untitled3-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Tadpole/Untitled3.ipynb" afterPath="$PROJECT_DIR$/../Tadpole/Untitled3.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/benchlingapi/benchlingapi.py" afterPath="$PROJECT_DIR$/benchlingapi/benchlingapi.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_benchling_api.py" afterPath="$PROJECT_DIR$/tests/test_benchling_api.py" />
     </list>
     <ignored path="benchling-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,8 +62,8 @@
       <file leaf-file-name="virtualtech.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/virtualtech.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
-              <caret line="31" column="40" selection-start-line="27" selection-start-column="4" selection-end-line="31" selection-end-column="40" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="40" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="40" />
               <folding>
                 <element signature="e#458#515#0" expanded="false" />
                 <element signature="e#1593#1936#0" expanded="false" />
@@ -160,16 +159,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_dna.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../coral/tests/tests/test_sequence/test_dna.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1111112">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test_peptide.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../coral/tests/tests/test_sequence/test_peptide.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -180,13 +169,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_benchling_api.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_benchling_api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_benchling_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36072144">
-              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
               <folding>
                 <element signature="e#165#180#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="browser_hacker.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/browser_hacker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.27054107">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -195,8 +196,8 @@
       <file leaf-file-name="benchlingapi.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/benchlingapi/benchlingapi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.25925925">
-              <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+            <state vertical-scroll-proportion="-15.259259">
+              <caret line="220" column="15" selection-start-line="220" selection-start-column="15" selection-end-line="220" selection-end-column="15" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#416#614#0" expanded="false" />
@@ -232,7 +233,7 @@
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Tadpole" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -261,12 +262,13 @@
         <option value="$PROJECT_DIR$/../Tadpole/tadpole/VT/virtualtech.py" />
         <option value="$PROJECT_DIR$/benchlingapi/benchlingapi.py" />
         <option value="$PROJECT_DIR$/tests/test_benchling_api.py" />
+        <option value="$PROJECT_DIR$/../Tadpole/tadpole/VT/browser_hacker.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="208" />
-    <option name="y" value="123" />
+    <option name="x" value="88" />
+    <option name="y" value="114" />
     <option name="width" value="1562" />
     <option name="height" value="859" />
   </component>
@@ -643,10 +645,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="208" y="123" width="1562" height="859" extended-state="0" />
+    <frame x="88" y="114" width="1562" height="859" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284251" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3284251" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3329114" sideWeight="0.5025608" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3278481" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -712,13 +714,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/benchlingapi/benchlingportal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../coral/coral/sequence/_dna.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1036,14 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../coral/tests/tests/test_sequence/test_peptide.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.38889">
-          <caret line="84" column="16" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/tests/test_virtualtech.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3419483">
@@ -1054,10 +1041,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../coral/tests/tests/test_analysis/test_anneal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2222223">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchlingapi/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchlingapi/benchlingportal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.444445">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../coral/tests/tests/test_sequence/test_peptide.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.38889">
+          <caret line="84" column="16" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchlingapi/benchlingapi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.259259">
+          <caret line="220" column="15" selection-start-line="220" selection-start-column="15" selection-end-line="220" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#416#614#0" expanded="false" />
+            <element signature="e#2862#2899#0" expanded="false" />
+            <element signature="e#2944#2983#0" expanded="false" />
+            <element signature="e#3062#3261#0" expanded="false" />
+            <element signature="e#3405#3703#0" expanded="false" />
+            <element signature="e#3778#3972#0" expanded="false" />
+            <element signature="e#4080#4380#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_benchling_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding>
+            <element signature="e#165#180#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/sample_types.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-34.444443">
+          <caret line="190" column="67" selection-start-line="190" selection-start-column="67" selection-end-line="190" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/virtualtech.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="31" column="40" selection-start-line="27" selection-start-column="4" selection-end-line="31" selection-end-column="40" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="40" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="40" />
           <folding>
             <element signature="e#458#515#0" expanded="false" />
             <element signature="e#1593#1936#0" expanded="false" />
@@ -1118,65 +1176,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/benchlingapi/benchlingportal.py">
+    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/browser_hacker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.444445">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../coral/tests/tests/test_analysis/test_anneal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2222223">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/sample_types.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.444443">
-          <caret line="190" column="67" selection-start-line="190" selection-start-column="67" selection-end-line="190" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.27054107">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchlingapi/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#102#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchlingapi/benchlingapi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.25925925">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#416#614#0" expanded="false" />
-            <element signature="e#2862#2899#0" expanded="false" />
-            <element signature="e#2944#2983#0" expanded="false" />
-            <element signature="e#3062#3261#0" expanded="false" />
-            <element signature="e#3405#3703#0" expanded="false" />
-            <element signature="e#3778#3972#0" expanded="false" />
-            <element signature="e#4080#4380#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_benchling_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36072144">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="e#165#180#0" expanded="true" />
+            <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
