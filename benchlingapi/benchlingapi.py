@@ -15,18 +15,6 @@ class BenchlingLoginError(Exception):
 class AquariumLoginError(Exception):
     '''Errors for incorrect Aquarium login credentials'''
 
-def verbose(func):
-    '''
-    Prints the response of a function
-    :param func:
-    :return:
-    '''
-    def wrapper(*params):
-        result = func(*params)
-        print result
-        return result
-    return wrapper
-
 class RequestDecorator(object):
     def __init__(self, status_code):
         self.code = status_code
@@ -44,16 +32,42 @@ class RequestDecorator(object):
                          401: "UNAUTHORIZED",
                          403: "FORBIDDEN",
                          404: "NOT FOUND",
-                         500: "INTERNAL SERVER ERROR"}
+                         500: "INTERNAL SERVER ERROR",
+                         504: "SERVER TIMEOUT"}
                     raise BenchlingAPIException("HTTP Response Failed {} {}".format(
                             r.status_code, http_codes[r.status_code]))
             return json.loads(r.text)
+        return wrapped_f
+
+
+class UpdateDecorator(object):
+    def __init__(self):
+        pass
+
+    def __call__(self, f):
+        def wrapped_f(obj, *args, **kwargs):
+            r = f(obj, *args, **kwargs)
+            obj._updateDictionaries()
+            return r
+        return wrapped_f
+
+class Verbose(object):
+    def __init__(self):
+        pass
+
+    def __call__(self, f):
+        def wrapped_f(obj, *args, **kwargs):
+            print f.__name__, 'started'
+            r = f(obj, *args, **kwargs)
+            print f.__name__, 'ended'
+            return r
         return wrapped_f
 
 # Benchling API Info: https://api.benchling.com/docs/#sequence-sequence-collections-post
 class BenchlingAPI(object):
     ''' Connector to BenchlingAPI '''
 
+    # TODO: Create SQLite Database for sequences
     def __init__(self, api_key, home='https://api.benchling.com/v1/'):
         '''
         :param key: Benchling API key.
@@ -66,8 +80,10 @@ class BenchlingAPI(object):
         self.auth = (api_key, '')
         self.seq_dict = {} #seq_name: seq_information
         self.folder_dict = {} #folder_name: folder_information
+        self.folders = []
+        self.sequences = []
         try:
-            self._createDictionaries()
+            self._updateDictionaries()
         except requests.ConnectionError:
             raise BenchlingLoginError('Benchling login credentials incorrect. Check \
                 BenchlinAPIKey: {}'.format(api_key))
@@ -88,25 +104,28 @@ class BenchlingAPI(object):
     def _delete(self, what):
         return requests.delete(what, auth=self.auth)
 
+    def deleteFolder(self, id):
+        raise BenchlingAPIException("Benchling does not yet support deleting folders through the API")
+        return self._delete('folders/{}'.format(id))
 
-
-    def delete_folder(self, id):
-        self._delete('folders/{}'.format(id))
-
-    def delete_sequence(self, id):
-        self._delete('sequences/{}'.format(id))
-
-    def patch_folder(self, name=None, description=None, owner=None):
+    @Verbose()
+    def deleteSequence(self, id):
+        d = self._delete('sequences/{}'.format(id))
+        # TODO: Update dictionaries and lists after delete
+        return d
+    @Verbose()
+    def patchFolder(self, name=None, description=None, owner=None):
         payload = {
             'name': name,
             'description': description,
             'owner': owner
         }
         self._clean_dictionary(payload)
-        self._patch('folders/{}'.format(id))
+        return self._patch('folders/{}'.format(id))
 
-    def patch_sequence(self, name=None, bases=None, circular=None,
-                       folder=None, description=None, color=None):
+    @Verbose()
+    def patchSequence(self, name=None, bases=None, circular=None,
+                      folder=None, description=None, color=None):
         payload = {
             'name': name,
             'description': description,
@@ -116,18 +135,20 @@ class BenchlingAPI(object):
              'color': color
             }
         self._clean_dictionary(payload)
-        self._patch('sequences/{}'.format(id))
+        return self._patch('sequences/{}'.format(id))
 
-    def create_folder(self, name, description=None, owner=None):
+    @Verbose()
+    def createFolder(self, name, description=None, owner=None):
         payload = {
             'name': name,
             'description': description,
             'owner': owner
         }
         self._clean_dictionary(payload)
-        self._post('folders/', payload)
+        return self._post('folders/', payload)
 
-    def create_sequence(self, name, bases, circular, folder, description=None, annotations=None):
+    @Verbose()
+    def createSequence(self, name, bases, circular, folder, description=None, annotations=None):
         payload = {
             'name': name,
             'description': description,
@@ -137,12 +158,92 @@ class BenchlingAPI(object):
             'annotations': annotations
         }
         self._clean_dictionary(payload)
-        self._post('sequences/', payload)
+        return self._post('sequences/', payload)
 
-    def get_folder(self, id):
+    def folderExists(self, value, query='name', regex=False):
+        folders = self.filterFolders({query: value}, regex=regex)
+        if len(folders) > 0:
+            return True
+        else:
+            return False
+
+    def sequenceExists(self, value, query='name', regex=False):
+        sequences = self.filterSequences({query: value}, regex=regex)
+        if len(sequences) > 0:
+            return True
+        else:
+            return False
+
+    def _filter(self, list, fields, regex=False):
+        '''
+        Filters a list of dictionaries based on a set
+        of fields. Can search using regular expressions
+        if requested.
+        :param list:
+        :param fields:
+        :param regex:
+        :return:
+        '''
+        filtered_list = []
+        for item in list:
+            a = True
+            for key in fields:
+                if regex:
+                    g = re.search(fields[key], item[key])
+                    if g is None:
+                        a = False
+                        break
+                else:
+                    if not item[key] == fields[key]:
+                        a = False
+                        break
+            if a == True:
+                filtered_list.append(item)
+        return filtered_list
+
+    def filterSequences(self, fields, regex=False):
+        '''
+        Filters sequences based on a set of fields. Can search for
+        regular expressions if requested.
+        :param fields:
+        :param regex:
+        :return:
+        '''
+        return self._filter(self.sequences, fields, regex=regex)
+
+    def filterFolders(self, fields, regex=False):
+        '''
+        Filters folders based on a set of fields. Can search for
+        regular expressions if requested.
+        :param fields:
+        :param regex:
+        :return:
+        '''
+        return self._filter(self.folders, fields, regex=regex)
+
+    def _find(self, what, dict, value, query='name', regex=False):
+        items = []
+        try:
+            items =self._filter(dict, {query: value}, regex=regex)
+        except KeyError:
+            raise BenchlingAPIException("Query {} not understood. Could not find item.".format(query))
+        if len(items) == 0:
+            raise BenchlingAPIException("No items found with {} \'{}\'.".format(query, value))
+        elif len(items) > 1:
+            warnings.warn("More {} items found with {} \'{}\'. Returning first item.".format(len(items), query, value))
+        item = items[0]
+        return self._get(os.path.join(what, item['id']))
+
+    def findSequence(self, value, query='name', regex=False):
+        return self._find('sequences', self.sequences, value, query=query, regex=regex)
+
+    def findFolder(self, value, query='name', regex=False):
+        return self._find('folders', self.folders, value, query=query, regex=regex)
+
+    def getFolder(self, id):
         return self._get('folders/{}'.format(id))
 
-    def get_sequence(self, id):
+    def getSequence(self, id):
         return self._get('sequences/{}'.format(id))
 
     def _clean_dictionary(self, dic):
@@ -152,12 +253,27 @@ class BenchlingAPI(object):
                 dic.pop(key)
         return dic
 
-
-
     def _verifyShareLink(self, share_link):
         f = 'https://benchling.com/s/(\w+)'
         result = re.search(f, share_link)
-        return result != None
+        verified = result != None
+        if not verified:
+            message = "Share link incorrectly formatted. Expected format {}. Found {}".format('https://benchling.com/s/\w+/edit', share_link)
+            raise BenchlingAPIException(message)
+
+    def _openShareLink(self, share_link):
+        self._verifyShareLink(share_link)
+        f = urlopen(share_link)
+        soup = BeautifulSoup(f.read())
+        return soup
+
+    def _getSequenceIdFromShareLink(self, share_link):
+        soup = self._openShareLink(share_link)
+        for s in soup.findAll():
+            g = re.search('\"folder_item_ids\": \[\"seq_(\w+)\"\]', s.text)
+            if not g == None:
+                return "seq_{}".format(g.group(1))
+                break
 
     def _getSequenceNameFromShareLink(self, share_link):
         ''' A really hacky way to get a sequence
@@ -168,20 +284,9 @@ class BenchlingAPI(object):
         :returns: Name of Benchling Sequence
         :rtype: str
         '''
-        # try:
-        #     print share_link
-        #     gp = re.search('/seq-\w+-([-_\w]+)/edit', share_link)
-        #     return gp.group(1)
-        # except Exception as e:
-        #     print e
-        if not self._verifyShareLink(share_link):
-            message = "Share link incorrectly formatted. Expected format {}. Found {}".format('https://benchling.com/s/\w+/edit', share_link)
-            raise BenchlingAPIException(message)
-        f = urlopen(share_link)
-        soup = BeautifulSoup(f.read())
+        soup = self._openShareLink(share_link)
         title = soup.title.text
         gp = re.search("(.+)\s.\sBenchling", title)
-
         return gp.group(1)
 
     def getSequenceFromShareLink(self, share_link):
@@ -193,54 +298,39 @@ class BenchlingAPI(object):
         :returns: Benchling API sequence information
         :rtype: dict
         '''
-        name = self._getSequenceNameFromShareLink(share_link)
-        return self.find_sequence(name, query='name')
+        id = self._getSequenceIdFromShareLink(share_link)
+        return self.getSequence(id)
 
-    def _find(self, what, dic, value, query='name'):
-        item_id = -1
-        if query == 'id':
-            item_id = value
-        elif query == 'name':
-            name = value
-            items = dic[name]
-            if len(items) == 0:
-                raise BenchlingAPIException("No items found with {} \'{}\'".format(query, value))
-            elif len(items) > 1:
-                warnings.warn("More {} items found with {} \'{}\'".format(len(items), query, value))
-                print items
-            item = items[0]
-            item_id = item['id']
-        else:
-            raise BenchlingAPIException("Query {} not understood. Could not find item.".format(query))
-        return self._get(os.path.join(what, item_id))
+    def getSeqList(self):
+        return self.sequences
 
-    def find_sequence(self, value, query='name'):
-        return self._find('sequences', self.seq_dict, value, query=query)
+    def getFolderList(self):
+        return self.folders
 
-    def find_folder(self, value, query='name'):
-        return self._find('folders', self.folder_dict, value, query=query)
+    def _clear(self):
+        self.folders = []
+        self.sequences = []
+        self.seq_dict = {}
+        self.folder_dict = {}
 
-    def getAllSequences(self):
-        return self.seq_dict
+    def _updateListsFromDictionaries(self):
+        for f in self.folders:
+            seqs = f['sequences']
+            if f['name'] not in self.folder_dict:
+                self.folder_dict[f['name']] = []
+            self.folder_dict[f['name']].append(f)
+            for s in seqs:
+                s['folder'] = f['id']
+                if not s in self.sequences:
+                    self.sequences.append(s)
+                if s['name'] not in self.seq_dict:
+                    self.seq_dict[s['name']] = []
+                self.seq_dict[s['name']].append(s)
 
-    def getAllFolders(self):
-        return self.folder_dict
-
-    def _createDictionaries(self):
+    def _updateDictionaries(self):
+        self._clear()
         r = self._get('folders')
         if 'error' in r:
             raise requests.ConnectionError('Benchling Authentication Required. Check your Benchling API key.')
         self.folders = r['folders']
-        #global folders
-        #self.folders = folders
-        fd = self.folder_dict
-        sd = self.seq_dict
-        for f in self.folders:
-            seqs = f['sequences']
-            if f['name'] not in fd:
-                fd[f['name']] = []
-            fd[f['name']].append(f)
-            for s in seqs:
-                if s['name'] not in sd:
-                    sd[s['name']] = []
-                sd[s['name']].append(s)
+        self._updateListsFromDictionaries()
