@@ -19,6 +19,7 @@ class TestBenchlingAPI(object):
         print self.portal.seq_dict
         print self.portal.folder_dict
         print self.portal.getSequenceFromShareLink('https://benchling.com/s/SEt6YmhB/edit')
+        print self.portal._parseURL('https://benchling.com/ladam/f/OSAbGRfz-arrest/seq-vs5Edlvq-ampr_ura_pp2pmod/edit')
 
     def test_create_delete_sequence(self):
         # Find the test folder

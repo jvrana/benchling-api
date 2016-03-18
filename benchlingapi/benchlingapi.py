@@ -275,6 +275,14 @@ class BenchlingAPI(object):
                 return "seq_{}".format(g.group(1))
                 break
 
+    def _parseURL(self, url):
+        g = re.search('benchling.com/(?P<user>\w+)/f/(?P<folderid>\w+)' + \
+                        '-(?P<foldername>\w+)/seq-(?P<seqid>\w+)-(?P<seqname>' + \
+                      '[a-zA-Z0-9_-]+)', url)
+        labels = ['user', 'folder_id', 'folder_name', 'seq_id', 'seq_name']
+
+        return dict(zip(labels, g.groups()))
+
     def _getSequenceNameFromShareLink(self, share_link):
         ''' A really hacky way to get a sequence
         name from a Benchling share link
