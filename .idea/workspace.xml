@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65eba9a0-16f2-41dd-98b9-ae71eca52246" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Tadpole/Untitled3.ipynb" afterPath="$PROJECT_DIR$/../Tadpole/Untitled3.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Tadpole/portal.pkl" afterPath="$PROJECT_DIR$/../Tadpole/portal.pkl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Tadpole/gui/UI/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Tadpole/CommonWorkflows.ipynb" afterPath="$PROJECT_DIR$/../Tadpole/CommonWorkflows.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/benchling-api.iml" afterPath="$PROJECT_DIR$/.idea/benchling-api.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/benchlingapi/benchlingapi.py" afterPath="$PROJECT_DIR$/benchlingapi/benchlingapi.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_benchling_api.py" afterPath="$PROJECT_DIR$/tests/test_benchling_api.py" />
     </list>
     <ignored path="benchling-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -20,168 +22,126 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="test_benchling_api.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/tests/test_benchling_api.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.46617916">
-                    <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="benchling-api" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="virtualtech.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/virtualtech.py">
+      <file leaf-file-name="scum.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/scum.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="420" column="21" selection-start-line="420" selection-start-column="21" selection-end-line="420" selection-end-column="21" />
+            <state vertical-scroll-proportion="-6.296296">
+              <caret line="178" column="30" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Workflows.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/data/Workflows.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.75">
+              <caret line="63" column="58" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tadpole.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/tadpole.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.296297">
+              <caret line="433" column="65" selection-start-line="433" selection-start-column="65" selection-end-line="433" selection-end-column="65" />
               <folding>
-                <element signature="e#0#40#0" expanded="true" />
-                <element signature="e#438#495#0" expanded="false" />
-                <element signature="e#1666#2009#0" expanded="false" />
-                <element signature="e#2043#2537#0" expanded="false" />
-                <element signature="e#2626#2816#0" expanded="false" />
-                <element signature="e#2856#2872#0" expanded="false" />
-                <element signature="e#3036#3072#0" expanded="false" />
-                <element signature="e#3463#8800#0" expanded="false" />
-                <element signature="e#3864#4788#0" expanded="false" />
-                <element signature="e#8914#9857#0" expanded="false" />
-                <element signature="e#9932#11482#0" expanded="false" />
-                <element signature="e#9932#10314#1" expanded="false" />
-                <element signature="e#11850#12758#0" expanded="false" />
-                <element signature="e#13259#17320#0" expanded="false" />
-                <element signature="e#17373#17718#0" expanded="false" />
+                <element signature="e#976#1024#0" expanded="false" />
+                <element signature="e#1134#1196#0" expanded="false" />
+                <element signature="e#1362#5304#0" expanded="false" />
+                <element signature="e#6036#6375#0" expanded="false" />
+                <element signature="e#6472#6599#0" expanded="false" />
+                <element signature="e#7117#7290#0" expanded="false" />
+                <element signature="e#10279#10434#0" expanded="false" />
+                <element signature="e#11334#12462#0" expanded="false" />
+                <element signature="e#12533#13471#0" expanded="false" />
+                <element signature="e#19895#19996#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="virtualtech.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/virtualtech.log">
+      <file leaf-file-name="_dna.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../coral/coral/sequence/_dna.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="benchlingportal.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchlingapi/benchlingportal.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.46061644">
+              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#26#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/tests/test.py">
+        <entry file="file://$PROJECT_DIR$/../Tadpole/gui/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_virtualtech.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/tests/test_virtualtech.py">
+      <file leaf-file-name="custom_classes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Tadpole/gui/UI/custom/custom_classes.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="49" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#49#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sample_types.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/sample_types.py">
+      <file leaf-file-name="search_design.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Tadpole/gui/UI/search_design.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="41" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="41" />
+              <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Tadpole/gui/UI/README">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tree_view.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../pyqt/examples/tree_view.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.333333">
+              <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
               <folding>
-                <element signature="e#0#22#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="browser_automation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/browser_automation.py">
+      <file leaf-file-name="select_unrelated_items.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../pyqt/examples/select_unrelated_items.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="62" column="45" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="benchlingapi.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/benchlingapi/benchlingapi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.945652">
-              <caret line="277" column="17" selection-start-line="277" selection-start-column="8" selection-end-line="277" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#167#207#0" expanded="false" />
-                <element signature="e#251#295#0" expanded="false" />
-                <element signature="e#338#391#0" expanded="false" />
-                <element signature="e#2221#2848#0" expanded="false" />
-                <element signature="e#2221#2359#1" expanded="false" />
-                <element signature="e#2918#2971#0" expanded="false" />
-                <element signature="e#3042#3096#0" expanded="false" />
-                <element signature="e#3159#3200#0" expanded="false" />
-                <element signature="e#3266#3310#0" expanded="false" />
-                <element signature="e#3769#3975#0" expanded="false" />
-                <element signature="e#4526#4727#0" expanded="false" />
-                <element signature="e#5666#6420#0" expanded="false" />
-                <element signature="e#5666#5896#1" expanded="false" />
-                <element signature="e#6482#6668#1" expanded="false" />
-                <element signature="e#6793#6977#1" expanded="false" />
-                <element signature="e#7117#7688#0" expanded="false" />
-                <element signature="e#7760#7839#0" expanded="false" />
-                <element signature="e#8023#8064#0" expanded="false" />
-                <element signature="e#8105#8148#0" expanded="false" />
-                <element signature="e#8196#8319#0" expanded="false" />
-                <element signature="e#9231#9549#0" expanded="false" />
-                <element signature="e#9616#10013#0" expanded="false" />
-                <element signature="e#10075#10318#1" expanded="false" />
-                <element signature="e#10448#10469#0" expanded="false" />
-                <element signature="e#10508#10527#0" expanded="false" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -198,7 +158,7 @@
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../coral" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -225,20 +185,28 @@
         <option value="$PROJECT_DIR$/../Tadpole/tadpole/VT/browser_hacker.py" />
         <option value="$PROJECT_DIR$/../Tadpole/tadpole/VT/__init__.py" />
         <option value="$PROJECT_DIR$/../Tadpole/tadpole/test.py" />
-        <option value="$PROJECT_DIR$/../Tadpole/tadpole/VT/browser_automation.py" />
         <option value="$PROJECT_DIR$/../Tadpole/tadpole/tests/test.py" />
-        <option value="$PROJECT_DIR$/../Tadpole/tadpole/VT/virtualtech.py" />
         <option value="$PROJECT_DIR$/benchlingapi/benchlingportal.py" />
-        <option value="$PROJECT_DIR$/benchlingapi/benchlingapi.py" />
         <option value="$PROJECT_DIR$/tests/test_benchling_api.py" />
+        <option value="$PROJECT_DIR$/../Tadpole/tadpole/lilypad.py" />
+        <option value="$PROJECT_DIR$/../coral/coral/analysis/_sequence/anneal.py" />
+        <option value="$PROJECT_DIR$/../Tadpole/tadpole/VT/browser_automation.py" />
+        <option value="$PROJECT_DIR$/../coral/coral/reaction/_pcr.py" />
+        <option value="$PROJECT_DIR$/benchlingapi/benchlingapi.py" />
+        <option value="$PROJECT_DIR$/../Tadpole/tadpole/VT/virtualtech.py" />
+        <option value="$PROJECT_DIR$/../Tadpole/tadpole/scum.py" />
+        <option value="$PROJECT_DIR$/../Tadpole/tadpole/tadpole.py" />
+        <option value="$PROJECT_DIR$/../Tadpole/gui/UI/README" />
+        <option value="$PROJECT_DIR$/../pyqt/examples/tree_view.py" />
+        <option value="$PROJECT_DIR$/../pyqt/examples/select_unrelated_items.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="62" />
-    <option name="y" value="100" />
+    <option name="x" value="407" />
+    <option name="y" value="23" />
     <option name="width" value="1562" />
-    <option name="height" value="924" />
+    <option name="height" value="1006" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -279,7 +247,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="benchling-api" />
+              <option name="myItemId" value="coral" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -289,11 +257,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="benchling-api" />
+              <option name="myItemId" value="coral" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
+              <option name="myItemId" value="coral" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -303,22 +271,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="benchling-api" />
+              <option name="myItemId" value="coral" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="benchlingapi" />
+              <option name="myItemId" value="coral" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sequence" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../coral" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pyqt" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="primer3&#9;FILE&#9;file:///Users/Justin/Documents/Programming/coral/docs/tutorial/design/design_primers_files/design_primers_3_0.text&#10;ape&#9;FILE&#9;file:///Users/klavinslab/anaconda/envs/python2/lib/python2.7/site-packages/astropy/coordinates/tests/test_api_ape5.py" />
@@ -332,41 +304,7 @@
       <recent name="$PROJECT_DIR$/../Tadpole/dependency_graph" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_benchling_api">
-    <configuration default="false" name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Tadpole/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Tadpole" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Tadpole/test/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="test (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Tadpole/gui" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Tadpole" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Tadpole/gui/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.tree_view">
     <configuration default="false" name="test_benchling_api" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -414,6 +352,40 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Tadpole" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Tadpole/tadpole/tests/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="tree_view" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../pyqt/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pyqt" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../pyqt/examples/tree_view.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="select_unrelated_items" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../pyqt/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pyqt" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../pyqt/examples/select_unrelated_items.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -541,19 +513,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.test (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.test (2)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test_benchling_api" />
-      <item index="3" class="java.lang.String" itemvalue="Python.browser_hacker" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test" />
+      <item index="0" class="java.lang.String" itemvalue="Python.test_benchling_api" />
+      <item index="1" class="java.lang.String" itemvalue="Python.browser_hacker" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.tree_view" />
+      <item index="4" class="java.lang.String" itemvalue="Python.select_unrelated_items" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test_benchling_api" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.browser_hacker" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test (2)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.tree_view" />
+        <item index="1" class="java.lang.String" itemvalue="Python.select_unrelated_items" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test_benchling_api" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.browser_hacker" />
       </list>
     </recent_temporary>
   </component>
@@ -571,16 +543,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="62" y="100" width="1562" height="924" extended-state="0" />
-    <editor active="true" />
+    <frame x="407" y="23" width="1562" height="1006" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3284251" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2900585" sideWeight="0.15236875" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32748538" sideWeight="0.4590269" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28922093" sideWeight="0.15620999" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32657418" sideWeight="0.44366196" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.49743918" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2900585" sideWeight="0.8476312" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28922093" sideWeight="0.84379" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -635,95 +607,11 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../coral/coral/sequence/_dna.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.897281">
-          <caret line="827" column="0" selection-start-line="827" selection-start-column="0" selection-end-line="827" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/lilypad.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.259259">
-          <caret line="199" column="4" selection-start-line="199" selection-start-column="4" selection-end-line="203" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/dependency_graph/dependency_data/dependency_json_0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/dependency_graph/dependency_data/dependency_json_300.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/dependency_graph/dependency_data/dependency_json_600.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/dependency_graph/dependency_data/dependency_json_900.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/dependency_graph/dependency_data/dependency_json_1200.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/dependency_graph/dependency_data/dependency_json_1500.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/dependency_graph/dependency_data/dependency_json_1800.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/dependency_graph/dependency_data/dependency_json_2100.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/dependency_graph/dependency_data/visited_samples.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/dependency_graph/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Tadpole/trash">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -742,13 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/tadpole.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -847,24 +728,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/riverbed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/gui/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -935,7 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -943,9 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -953,6 +816,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/tests/test_virtualtech.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/lilypad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="15" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -967,54 +844,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../coral/coral/analysis/_sequence/anneal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/browser_automation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="45" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+          <caret line="53" column="56" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="56" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/virtualtech.py">
+    <entry file="file://$PROJECT_DIR$/../coral/coral/reaction/_pcr.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="420" column="21" selection-start-line="420" selection-start-column="21" selection-end-line="420" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <element signature="e#438#495#0" expanded="false" />
-            <element signature="e#1666#2009#0" expanded="false" />
-            <element signature="e#2043#2537#0" expanded="false" />
-            <element signature="e#2626#2816#0" expanded="false" />
-            <element signature="e#2856#2872#0" expanded="false" />
-            <element signature="e#3036#3072#0" expanded="false" />
-            <element signature="e#3463#8800#0" expanded="false" />
-            <element signature="e#3864#4788#0" expanded="false" />
-            <element signature="e#8914#9857#0" expanded="false" />
-            <element signature="e#9932#11482#0" expanded="false" />
-            <element signature="e#9932#10314#1" expanded="false" />
-            <element signature="e#11850#12758#0" expanded="false" />
-            <element signature="e#13259#17320#0" expanded="false" />
-            <element signature="e#17373#17718#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/tests/test_virtualtech.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_benchling_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46617916">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1022,42 +873,183 @@
     <entry file="file://$PROJECT_DIR$/benchlingapi/benchlingportal.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <caret line="31" column="50" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/benchlingapi/benchlingapi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.945652">
-          <caret line="277" column="17" selection-start-line="277" selection-start-column="8" selection-end-line="277" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="319" column="19" selection-start-line="319" selection-start-column="19" selection-end-line="319" selection-end-column="19" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <element signature="e#167#207#0" expanded="false" />
-            <element signature="e#251#295#0" expanded="false" />
-            <element signature="e#338#391#0" expanded="false" />
-            <element signature="e#2221#2848#0" expanded="false" />
             <element signature="e#2221#2359#1" expanded="false" />
-            <element signature="e#2918#2971#0" expanded="false" />
             <element signature="e#3042#3096#0" expanded="false" />
             <element signature="e#3159#3200#0" expanded="false" />
-            <element signature="e#3266#3310#0" expanded="false" />
-            <element signature="e#3769#3975#0" expanded="false" />
-            <element signature="e#4526#4727#0" expanded="false" />
-            <element signature="e#5666#6420#0" expanded="false" />
-            <element signature="e#5666#5896#1" expanded="false" />
-            <element signature="e#6482#6668#1" expanded="false" />
-            <element signature="e#6793#6977#1" expanded="false" />
-            <element signature="e#7117#7688#0" expanded="false" />
-            <element signature="e#7760#7839#0" expanded="false" />
-            <element signature="e#8023#8064#0" expanded="false" />
-            <element signature="e#8105#8148#0" expanded="false" />
-            <element signature="e#8196#8319#0" expanded="false" />
-            <element signature="e#9231#9549#0" expanded="false" />
-            <element signature="e#9616#10013#0" expanded="false" />
-            <element signature="e#10075#10318#1" expanded="false" />
-            <element signature="e#10448#10469#0" expanded="false" />
-            <element signature="e#10508#10527#0" expanded="false" />
+            <element signature="e#5667#6421#0" expanded="false" />
+            <element signature="e#5667#5897#1" expanded="false" />
+            <element signature="e#6483#6669#1" expanded="false" />
+            <element signature="e#6794#6978#1" expanded="false" />
+            <element signature="e#7761#7840#0" expanded="false" />
+            <element signature="e#10177#10420#1" expanded="false" />
+            <element signature="e#10550#10571#0" expanded="false" />
+            <element signature="e#10610#10629#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/VT/virtualtech.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="830" column="59" selection-start-line="830" selection-start-column="59" selection-end-line="830" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#438#495#0" expanded="false" />
+            <element signature="e#2039#2382#0" expanded="false" />
+            <element signature="e#2416#2910#0" expanded="false" />
+            <element signature="e#3229#3245#0" expanded="false" />
+            <element signature="e#3284#3369#0" expanded="false" />
+            <element signature="e#4237#5161#0" expanded="false" />
+            <element signature="e#9287#10230#0" expanded="false" />
+            <element signature="e#12223#13131#0" expanded="false" />
+            <element signature="e#18913#19098#1" expanded="false" />
+            <element signature="e#19547#19760#1" expanded="false" />
+            <element signature="e#24008#24392#0" expanded="false" />
+            <element signature="e#24008#24172#1" expanded="false" />
+            <element signature="e#24466#25489#0" expanded="false" />
+            <element signature="e#24466#24667#1" expanded="false" />
+            <element signature="e#25579#25870#0" expanded="false" />
+            <element signature="e#25969#26202#0" expanded="false" />
+            <element signature="e#26287#26551#0" expanded="false" />
+            <element signature="e#26630#26715#0" expanded="false" />
+            <element signature="e#26769#26868#0" expanded="false" />
+            <element signature="e#30457#30599#0" expanded="false" />
+            <element signature="e#34118#34450#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/virtualtech.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/riverbed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_benchling_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/data/Workflows.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75">
+          <caret line="63" column="58" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/scum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.296296">
+          <caret line="178" column="30" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/gui/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/gui/UI/custom/custom_classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/gui/UI/search_design.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/gui/UI/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../pyqt/examples/select_unrelated_items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../pyqt/examples/tree_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333">
+          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Tadpole/tadpole/tadpole.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.296297">
+          <caret line="433" column="65" selection-start-line="433" selection-start-column="65" selection-end-line="433" selection-end-column="65" />
+          <folding>
+            <element signature="e#976#1024#0" expanded="false" />
+            <element signature="e#1134#1196#0" expanded="false" />
+            <element signature="e#1362#5304#0" expanded="false" />
+            <element signature="e#6036#6375#0" expanded="false" />
+            <element signature="e#6472#6599#0" expanded="false" />
+            <element signature="e#7117#7290#0" expanded="false" />
+            <element signature="e#10279#10434#0" expanded="false" />
+            <element signature="e#11334#12462#0" expanded="false" />
+            <element signature="e#12533#13471#0" expanded="false" />
+            <element signature="e#19895#19996#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../coral/coral/sequence/_dna.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46061644">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

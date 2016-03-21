@@ -113,6 +113,7 @@ class BenchlingAPI(object):
         d = self._delete('sequences/{}'.format(id))
         # TODO: Update dictionaries and lists after delete
         return d
+
     @Verbose()
     def patchFolder(self, name=None, description=None, owner=None):
         payload = {
@@ -243,8 +244,22 @@ class BenchlingAPI(object):
     def getFolder(self, id):
         return self._get('folders/{}'.format(id))
 
+    def _clean_annotations(self, sequence):
+        '''
+        Cleans up the sequence start and end points in the unusual case
+        where end == 0
+        :param sequence:
+        :return:
+        '''
+        annotations = sequence['annotations']
+        for a in annotations:
+            if a['end'] == 0:
+                a['end'] = len(sequence['bases'])
+
     def getSequence(self, id):
-        return self._get('sequences/{}'.format(id))
+        sequence = self._get('sequences/{}'.format(id))
+        self._clean_annotations(sequence)
+        return sequence
 
     def _clean_dictionary(self, dic):
         keys = dic.keys()
@@ -268,34 +283,24 @@ class BenchlingAPI(object):
         return soup
 
     def _getSequenceIdFromShareLink(self, share_link):
-        soup = self._openShareLink(share_link)
-        for s in soup.findAll():
-            g = re.search('\"folder_item_ids\": \[\"seq_(\w+)\"\]', s.text)
-            if not g == None:
-                return "seq_{}".format(g.group(1))
-                break
+        seq  = None
+        try:
+            soup = self._openShareLink(share_link)
+            for s in soup.findAll():
+                g = re.search('\"folder_item_ids\": \[\"seq_(\w+)\"\]', s.text)
+                if not g == None:
+                    break
+        except:
+            d = self._parseURL(share_link)
+            seq = d['seq_id']
+        return "seq_{}".format(g.group(1))
 
     def _parseURL(self, url):
         g = re.search('benchling.com/(?P<user>\w+)/f/(?P<folderid>\w+)' + \
                         '-(?P<foldername>\w+)/seq-(?P<seqid>\w+)-(?P<seqname>' + \
                       '[a-zA-Z0-9_-]+)', url)
         labels = ['user', 'folder_id', 'folder_name', 'seq_id', 'seq_name']
-
         return dict(zip(labels, g.groups()))
-
-    def _getSequenceNameFromShareLink(self, share_link):
-        ''' A really hacky way to get a sequence
-        name from a Benchling share link
-
-        :param share_link: A benchling share link
-        :type share_link: str
-        :returns: Name of Benchling Sequence
-        :rtype: str
-        '''
-        soup = self._openShareLink(share_link)
-        title = soup.title.text
-        gp = re.search("(.+)\s.\sBenchling", title)
-        return gp.group(1)
 
     def getSequenceFromShareLink(self, share_link):
         ''' A really hacky way to get a sequence
@@ -314,6 +319,9 @@ class BenchlingAPI(object):
 
     def getFolderList(self):
         return self.folders
+
+    def getMe(self):
+        return self._get('entities/me')
 
     def _clear(self):
         self.folders = []
