@@ -289,18 +289,21 @@ class BenchlingAPI(object):
             for s in soup.findAll():
                 g = re.search('\"folder_item_ids\": \[\"seq_(\w+)\"\]', s.text)
                 if not g == None:
+                    seq = "seq_{}".format(g.group(1))
                     break
         except:
             d = self._parseURL(share_link)
             seq = d['seq_id']
-        return "seq_{}".format(g.group(1))
+        return seq
 
     def _parseURL(self, url):
         g = re.search('benchling.com/(?P<user>\w+)/f/(?P<folderid>\w+)' + \
                         '-(?P<foldername>\w+)/seq-(?P<seqid>\w+)-(?P<seqname>' + \
                       '[a-zA-Z0-9_-]+)', url)
         labels = ['user', 'folder_id', 'folder_name', 'seq_id', 'seq_name']
-        return dict(zip(labels, g.groups()))
+        d = dict(zip(labels, g.groups()))
+        d['seq_id'] = 'seq_{}'.format(d['seq_id'])
+        return d
 
     def getSequenceFromShareLink(self, share_link):
         ''' A really hacky way to get a sequence
