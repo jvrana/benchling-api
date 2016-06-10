@@ -1,5 +1,3 @@
-# benchlingapi
-Python library for interacting with the Benchling web API
 
 # Description
 Benchling provides a convenient way to store DNA sequences (plasmids, primers, pcr
