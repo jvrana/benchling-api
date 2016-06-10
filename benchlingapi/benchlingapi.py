@@ -150,6 +150,16 @@ class BenchlingAPI(object):
 
     @Verbose()
     def createSequence(self, name, bases, circular, folder, description=None, annotations=None):
+        '''
+
+        :param name: Name of the sequence as a Str
+        :param bases: Basepairs as a Str
+        :param circular: True or False
+        :param folder: folder_id as a Str
+        :param description: description of the sequence
+        :param annotations:
+        :return:
+        '''
         payload = {
             'name': name,
             'description': description,
