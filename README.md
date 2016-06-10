@@ -6,12 +6,8 @@ Benchling provides a convenient way to store DNA sequences (plasmids, primers, p
 fragments, etc.) for an entire lab. However, accessing Benchling sequence information 
 programmatically is a huge pain as Benchling's API is extremely limited. This 
 project provides several convenience methods for accessing Benchling sequence 
-information. The most useful feature is the ability to access Benchling sequences
+information. A useful feature is the ability to access Benchling sequences
 from a sequence share-link.
-
-Also included are more advanced features that integrate the DNA manipulation package Coral
-and the aquarium-api-python package. From an Aquarium sample_id, this api can return
-annotated sequences (as a Cor.DNA object) from a fragment or plasmid's benchling share-link.
 
 # Installation
 	cd directory/that/contains/setup.py
@@ -105,3 +101,7 @@ e.g. edit a sequence
 
 	benchlingapi.patchsequence(name=None, bases=None, circular=None,
                       folder=None, description=None, color=None)
+
+## BenchlingPortal
+
+Not supported for non-aquarium users
