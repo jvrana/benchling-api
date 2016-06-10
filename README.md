@@ -7,8 +7,6 @@ project provides several convenience methods for accessing Benchling sequence
 information. A useful feature is the ability to access Benchling sequences
 from a sequence share-link.
 
-There is currently no Python3 support.
-
 # Installation
 	cd directory/that/contains/setup.py
 	pip install .
