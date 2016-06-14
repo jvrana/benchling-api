@@ -18,7 +18,7 @@ config = {
     'version': '0.0.3',
     'install_requires': ['requests'], #, 'aquariumapi'],
     #'extras_require': {'benclingportal': ['coral', 'aquariumapi'],
-    'packages': ['benchlingapi'],
+    'packages': ['benchlingapi', 'benchlingportal'],
     'scripts': [],
     'name': 'benchlingapi',
     'license': 'Copyright University of Washington'
