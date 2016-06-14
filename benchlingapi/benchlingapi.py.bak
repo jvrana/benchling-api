@@ -1,12 +1,8 @@
 from __future__ import print_function
-from future import standard_library
-standard_library.install_aliases()
-from builtins import zip
-from builtins import object
 import requests
 import json
 import os
-from urllib.request import urlopen
+from urllib2 import urlopen
 from bs4 import BeautifulSoup
 import re
 import warnings
@@ -277,7 +273,7 @@ class BenchlingAPI(object):
         return sequence
 
     def _clean_dictionary(self, dic):
-        keys = list(dic.keys())
+        keys = dic.keys()
         for key in keys:
             if dic[key] is None:
                 dic.pop(key)
@@ -316,7 +312,7 @@ class BenchlingAPI(object):
                         '-(?P<foldername>\w+)/seq-(?P<seqid>\w+)-(?P<seqname>' + \
                       '[a-zA-Z0-9_-]+)', url)
         labels = ['user', 'folder_id', 'folder_name', 'seq_id', 'seq_name']
-        d = dict(list(zip(labels, g.groups())))
+        d = dict(zip(labels, g.groups()))
         d['seq_id'] = 'seq_{}'.format(d['seq_id'])
         return d
 
