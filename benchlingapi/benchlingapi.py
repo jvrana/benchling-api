@@ -16,15 +16,17 @@ class AquariumLoginError(Exception):
     '''Errors for incorrect Aquarium login credentials'''
 
 class RequestDecorator(object):
-    def __init__(self, status_code):
-        self.code = status_code
+    def __init__(self, status_codes):
+        if not isinstance(status_codes, list):
+            status_codes = [status_codes]
+        self.code = status_codes
 
     def __call__(self, f):
         def wrapped_f(*args):
             args = list(args)
             args[1] = os.path.join(args[0].home, args[1])
             r = f(*args)
-            if not r.status_code == self.code:
+            if not r.status_code in self.code:
                     http_codes = {
                          200: "OK - Request was successful",
                          201: "CREATED - Resource was created",
@@ -88,11 +90,11 @@ class BenchlingAPI(object):
             raise BenchlingLoginError('Benchling login credentials incorrect. Check \
                 BenchlinAPIKey: {}'.format(api_key))
 
-    @RequestDecorator(201)
+    @RequestDecorator([200, 201])
     def _post(self, what, data):
         return requests.post(what, json=data, auth=self.auth)
 
-    @RequestDecorator(201)
+    @RequestDecorator([200, 201])
     def _patch(self, what, data):
         return requests.patch(what, json=data, auth=self.auth)
 
@@ -257,7 +259,7 @@ class BenchlingAPI(object):
     def _clean_annotations(self, sequence):
         '''
         Cleans up the sequence start and end points in the unusual case
-        where end == 0
+        where enda == 0
         :param sequence:
         :return:
         '''

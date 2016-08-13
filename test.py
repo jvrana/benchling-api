@@ -10,7 +10,7 @@ import coral as cor
 
 from nose.tools import assert_equal, assert_true, assert_raises
 
-bench_api_key = 'sk_g7fo2vxkNUYNPkShOFIOmtY9ejIGE'
+bench_api_key = 'sk_GbNYfhnukDU30J5fAebIjEj0d4YlJ'
 aq_api_key = 'GwZdTb4jr8YL3wwmVi1QYfG6jeLzUYxkLSZ7BAIKnOc'
 aq_user = 'vrana'
 aq_url = 'http://54.68.9.194:81/api'
