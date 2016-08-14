@@ -10,11 +10,12 @@ from nose.tools import assert_equal, assert_true, assert_raises
 
 bench_api_key = 'sk_GbNYfhnukDU30J5fAebIjEj0d4YlJ'
 
-api = None
 
 def testBenchlingAPIConstruction():
-    bench_api_key = 'sk_g7fo2vxkNUYNPkShOFIOmtY9ejIGE'
     global api
-    api = BenchlingAPI(bench_api_key)
+    api = BenchlingAPI('sk_GbNYfhnukDU30J5fAebIjEj0d4YlJ')
+    print 'Logged in'
 
-def testCreateFolder():
+    sequences = api._get('sequences', data={'limit': 10})
+    print len(sequences['sequences'])
+testBenchlingAPIConstruction()
