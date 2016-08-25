@@ -26,6 +26,8 @@ def _convert_benchling_features(benchling_seq):
                     'ApEinfo_revcolor': ftr['color'],
                     'color': ftr['color']
                 })
+        if info['type'].strip() == '':
+            info['type'] = 'misc'
         info = copy.deepcopy(info)
         encode_dictionary(info)
         seqfeature = SeqFeature(**info)
