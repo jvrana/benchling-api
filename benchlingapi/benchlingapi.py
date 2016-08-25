@@ -5,6 +5,18 @@ from urllib2 import urlopen
 from bs4 import BeautifulSoup
 import re
 import warnings
+
+
+
+"""
+Visit https://benchling.com/docs/#sequence for more information on the api or
+search github
+
+"""
+
+
+
+
 #TODO: Refactor code
 
 class BenchlingAPIException(Exception):
@@ -172,6 +184,7 @@ class BenchlingAPI(object):
         :param description: description of the sequence
         :param annotations:
         :param aliases:
+        :param tags: list of dictionary tags
         :return:
         """
         payload = {
