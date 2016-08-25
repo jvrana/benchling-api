@@ -34,6 +34,10 @@ def _convert_benchling_features(benchling_seq):
         seqfeatures.append(seqfeature)
     return seqfeatures
 
+def _clean_seqrecord_features(seqrecord):
+    for f in seqrecord.features:
+        if f.type.strip() == '':
+            f.type = 'misc'
 
 def benchling_to_seqrecord(benchling_seq):
     bseq = benchling_seq
@@ -53,7 +57,9 @@ def benchling_to_seqrecord(benchling_seq):
     for key in kwargs:
         if isinstance(kwargs[key], unicode):
             kwargs[key] = kwargs[key].encode('utf-8')
-    return SeqRecord(seq, **kwargs)
+    seqrec = SeqRecord(seq, **kwargs)
+    _clean_seqrecord_features(seqrec)
+    return seqrec
 
 
 def write_to_gb(seqrecord, filename):
