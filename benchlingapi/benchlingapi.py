@@ -163,7 +163,7 @@ class BenchlingAPI(object):
         return self._post('folders/', payload)
 
     @Verbose()
-    def create_sequence(self, name, bases, circular, folder, description=None, annotations=None, aliases=None):
+    def create_sequence(self, name, bases, circular, folder, description=None, annotations=None, aliases=None, tags=[]):
         """
         :param name: Name of the sequence as a Str
         :param bases: Basepairs as a Str
@@ -181,7 +181,8 @@ class BenchlingAPI(object):
             'circular': circular,
             'folder': folder,
             'annotations': annotations,
-            'aliases': aliases
+            'aliases': aliases,
+            'tags': tags
         }
         self._clean_dictionary(payload)
         return self._post('sequences/', payload)
