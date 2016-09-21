@@ -138,6 +138,11 @@ class BenchlingAPI(object):
 
     @Verbose()
     def delete_sequence(self, id):
+        '''
+
+        :param id:
+        :return:
+        '''
         d = self._delete('sequences/{}'.format(id))
         # TODO: Update dictionaries and lists after delete
         return d
@@ -175,7 +180,8 @@ class BenchlingAPI(object):
         return self._post('folders/', payload)
 
     @Verbose()
-    def create_sequence(self, name, bases, circular, folder, description=None, annotations=None, aliases=None, tags=[]):
+    def create_sequence(self,
+                        name, bases, circular, folder, description=None, annotations=None, aliases=None, tags=[]):
         """
         :param name: Name of the sequence as a Str
         :param bases: Basepairs as a Str

@@ -35,9 +35,16 @@ def _convert_benchling_features(benchling_seq):
     return seqfeatures
 
 def _clean_seqrecord_features(seqrecord):
+    new_feature_set = []
     for f in seqrecord.features:
         if f.type.strip() == '':
             f.type = 'misc'
+        if f.location.start < 0:
+            continue
+        elif f.location.end < 0:
+            continue
+        new_feature_set.append(f)
+    seqrecord.features = new_feature_set
 
 def benchling_to_seqrecord(benchling_seq):
     bseq = benchling_seq
