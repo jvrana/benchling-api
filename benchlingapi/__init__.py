@@ -1,2 +1,3 @@
 from .benchlingapi import BenchlingAPI, BenchlingAPIException, AquariumLoginError, BenchlingLoginError
-from .benchlingportal import BenchlingPortal
+from convert import *
+#from .benchlingportal import BenchlingPortal
