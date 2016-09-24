@@ -7,18 +7,6 @@ import re
 import warnings
 
 
-
-"""
-Visit https://benchling.com/docs/#sequence for more information on the api or
-search github
-
-"""
-
-
-
-
-#TODO: Refactor code
-
 class BenchlingAPIException(Exception):
     """Generic Exception for BenchlingAPI"""
 
@@ -107,10 +95,13 @@ class BenchlingAPI(object):
         self.sequences = []
         self.proteins = []
         try:
-            self._update_dictionaries()
+            self.update()
         except requests.ConnectionError:
             raise BenchlingLoginError('Benchling login credentials incorrect. Check \
                 BenchlinAPIKey: {}'.format(api_key))
+
+    def update(self):
+        self._update_dictionaries()
 
     @RequestDecorator([200, 201])
     def _post(self, what, data):
@@ -130,10 +121,10 @@ class BenchlingAPI(object):
     def _delete(self, what):
         return requests.delete(what, auth=self.auth)
 
-    #TODO add request decorator
+    # TODO add request decorator
     @RequestDecorator(200)
     def delete_folder(self, id):
-        #raise BenchlingAPIException("Benchling does not yet support deleting folders through the API")
+        # raise BenchlingAPIException("Benchling does not yet support deleting folders through the API")
         return self._delete('folders/{}'.format(id))
 
     @Verbose()
@@ -179,10 +170,13 @@ class BenchlingAPI(object):
         self._clean_dictionary(payload)
         return self._post('folders/', payload)
 
+    # TODO: Add a replace option for creating a sequence with same name at the folder
     @Verbose()
-    def create_sequence(self,
-                        name, bases, circular, folder, description=None, annotations=None, aliases=None, tags=[]):
+    def create_sequence(self, name, bases, circular, folder,
+                        description=None, annotations=None,
+                        aliases=None, tags=None, overwrite=False):
         """
+        :type aliases: list
         :param name: Name of the sequence as a Str
         :param bases: Basepairs as a Str
         :param circular: True or False
@@ -191,6 +185,7 @@ class BenchlingAPI(object):
         :param annotations:
         :param aliases:
         :param tags: list of dictionary tags
+        :param overwrite: whether to overwrite sequences with the same name
         :return:
         """
         payload = {
@@ -204,7 +199,17 @@ class BenchlingAPI(object):
             'tags': tags
         }
         self._clean_dictionary(payload)
-        return self._post('sequences/', payload)
+        prev_sequences = set()
+        for seq in self.get_folder(folder)['sequences']:
+            if overwrite and str(seq['name']) == str(name):
+                self.delete_sequence(seq['id'])
+            prev_sequences.add(seq)
+        self._post('sequences/', payload)
+        for seq in self.get_folder(folder)['sequences']:
+            if seq['name'] == name and seq not in prev_sequences:
+                return self.get_sequence(seq['id'])
+        raise BenchlingAPIException("Unable to return newly created sequence. \
+                Sequence may have been created nevertheless.")
 
     def folder_exists(self, value, query='name', regex=False):
         folders = self.filter_folders({query: value}, regex=regex)

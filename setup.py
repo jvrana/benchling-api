@@ -16,7 +16,7 @@ config = {
     'download_url': 'https://github.com/klavinslab/benchling-api.git',
     'author_email': 'justin.vrana@gmail.com',
     'version': '0.0.5',
-    'install_requires': ['requests', 'biopython'], #, 'aquariumapi'],
+    'install_requires': ['requests', 'biopython', 'bs4'], #, 'aquariumapi'],
     #'extras_require': {'benclingportal': ['coral', 'aquariumapi'],
     'packages': ['benchlingapi'],
     'scripts': [],
