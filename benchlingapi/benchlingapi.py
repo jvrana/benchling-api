@@ -198,16 +198,26 @@ class BenchlingAPI(object):
             'aliases': aliases,
             'tags': tags
         }
-        self._clean_dictionary(payload)
-        prev_sequences = set()
+
+        # Get list of previous sequences
+        # Delete if overwrite
+        prev_seq_ids = set()
         for seq in self.get_folder(folder)['sequences']:
             if overwrite and str(seq['name']) == str(name):
+                print 'Overwrite on: deleting seq {}'.format(seq['id'])
                 self.delete_sequence(seq['id'])
-            prev_sequences.add(seq)
+                prev_seq_ids.add(seq['id'])
+
+        # Post the sequence
+        self._clean_dictionary(payload)
         self._post('sequences/', payload)
+
+        # Find the newly created sequence
         for seq in self.get_folder(folder)['sequences']:
-            if seq['name'] == name and seq not in prev_sequences:
+            if seq['name'] == name and seq['id'] not in prev_seq_ids:
                 return self.get_sequence(seq['id'])
+
+        # Else something wrong happened
         raise BenchlingAPIException("Unable to return newly created sequence. \
                 Sequence may have been created nevertheless.")
 
