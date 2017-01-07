@@ -5,7 +5,7 @@ from urllib2 import urlopen
 from bs4 import BeautifulSoup
 import re
 import warnings
-
+import base64
 
 class BenchlingAPIException(Exception):
     """Generic Exception for BenchlingAPI"""
@@ -32,10 +32,6 @@ class RequestDecorator(object):
             r = f(*args)
             if r.status_code not in self.code:
                 http_codes = {
-                    200: "OK - Request was successful",
-                    201: "CREATED - Resource was created",
-                    400: "BAD REQUEST",
-                    401: "UNAUTHORIZED",
                     403: "FORBIDDEN",
                     404: "NOT FOUND",
                     500: "INTERNAL SERVER ERROR",
@@ -103,7 +99,7 @@ class BenchlingAPI(object):
     def update(self):
         self._update_dictionaries()
 
-    @RequestDecorator([200, 201])
+    @RequestDecorator([200, 201, 202])
     def _post(self, what, data):
         return requests.post(what, json=data, auth=self.auth)
 
@@ -304,6 +300,96 @@ class BenchlingAPI(object):
 
     def get_folder(self, id):
         return self._get('folders/{}'.format(id))
+
+
+    def submit_mafft_alignment(self, seq_id, queries,
+                               adjust_direction="no",
+                               max_iterations=0,
+                               retree=2,
+                               gap_open_penalty=1.53,
+                               gap_extension_penalty=0):
+
+        mafft_options = dict(
+            adjust_direction=adjust_direction,
+            max_iterations=max_iterations,
+            retree=retree,
+            gap_open_penalty=gap_open_penalty,
+            gap_extension_penalty=gap_extension_penalty)
+        return self.submit_alignment(seq_id, queries, 'mafft', mafft_options)
+
+    def submit_clustalo(self, seq_id, queries,
+            max_guidetree_iterations=10,
+            max_hmm_iterations=25,
+            mbed_guide_tree="yes",
+            mbed_iteration="yes",
+            num_combined_iterations=0):
+
+        clustalo_options = dict(
+            max_guidetree_iterations=max_guidetree_iterations,
+            max_hmm_iterations=max_hmm_iterations,
+            mbed_guide_tree=mbed_guide_tree,
+            mbed_iteration=mbed_iteration,
+            num_combined_iterations=num_combined_iterations,
+        )
+
+        return self.submit_alignment(seq_id, queries, 'clustalo', clustalo_options)
+
+
+    def submit_alignment(self, seq_id, queries, algorithm, algorithm_options):
+        files = [{'id': seq_id}]
+        i = 0
+
+        # if query is a tuple, then the data is already prepared
+        # else if the query is a string it could be (1) a path to a fasta or ab1 file
+        # (2) a benchling_sequence_id, or (3) encoded data with no name
+        for q in queries:
+            print q
+            # if the query is a tuple
+            if isinstance(q, tuple):
+                files.append(dict(
+                    name=q[0],
+                    data=q[1]
+                ))
+            # if the query is a string
+            elif isinstance(q, basestring):
+                # if the query is a benchling sequence_id
+                if q.startswith('seq'):
+                    files.append(dict(
+                        id=q
+                    ))
+                # if the query is a file, encode the data
+                elif os.path.exists(q):
+                    data64=None
+                    with open(q) as f:
+                        data64 = base64.b64encode(f.read())
+                    files.append(dict(
+                        name=os.path.basename(q),
+                        data=data64
+                    ))
+                # else, the data is already encoded and needs a name
+                else:
+                    files.append(dict(
+                        name='untitled_{}'.format(i),
+                        data=q
+                    ))
+                    i += 1
+
+        data = {
+            "algorithm": algorithm,
+            "algorithmOptions": algorithm_options,
+            "files": files
+        }
+        return self._post('alignments', data)
+
+    # TODO: submit batched alignments that auto-updates once tasks are complete
+    def submit_batched_alignment(self):
+        pass
+
+    def get_task(self, task_id):
+        return self._get(os.path.join('tasks', task_id))
+
+    def get_alignment(self, alignment_id):
+        return self._get(os.path.join('alignments', alignment_id))
 
     @staticmethod
     def _clean_annotations(sequence):
