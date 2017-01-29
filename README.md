@@ -22,7 +22,7 @@ on the Benchling API can be accessed here: https://api.benchling.com/docs/.
 
 	from benchlingapi import BenchlingAPI
 	
-	bench_api_key = 'sk_g7fo2vxkNUYNPkShOFIOmtY9ejIXX'
+	bench_api_key = 'sk_g7fo2vxskNUYffNPkShOFIsOmtY9ejIXX'
 	benchlingapi = BenchlingAPI(bench_api_key)
 
 The first argument is the Benchling API key, which can be requested through benchling and accessed by scrolling to the bottom of you account information on Benchling.
