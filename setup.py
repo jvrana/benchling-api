@@ -4,10 +4,10 @@ except ImportError:
     from distutils.core import setup
 
 config = {
-    'description': 'benchling-api',
+    'description': 'benchlingapi',
     'author': 'Justin D Vrana',
-    'url': 'https://github.com/klavinslab/benchling-api',
-    'download_url': 'https://github.com/klavinslab/benchling-api.git',
+    'url': 'https://github.com/klavinslab/benchlingapi',
+    'download_url': 'https://github.com/klavinslab/benchlingapi.git',
     'author_email': 'justin.vrana@gmail.com',
     'version': '0.9.1',
     'install_requires': ['requests', 'bs4'],
