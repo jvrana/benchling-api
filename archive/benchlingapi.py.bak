@@ -1,7 +1,7 @@
 import requests
 import json
 import os
-from urllib.request import urlopen
+from urllib2 import urlopen
 from bs4 import BeautifulSoup
 import re
 import warnings
@@ -20,9 +20,6 @@ class AquariumLoginError(Exception):
 
 
 class RequestDecorator(object):
-    """
-    Wraps a function to raise error with unexpected request status codes
-    """
     def __init__(self, status_codes):
         if not isinstance(status_codes, list):
             status_codes = [status_codes]
@@ -47,9 +44,6 @@ class RequestDecorator(object):
 
 
 class UpdateDecorator(object):
-    """
-    Wraps a function to update the benchling-api dictionary
-    """
     def __init__(self):
         pass
 
@@ -63,17 +57,14 @@ class UpdateDecorator(object):
 
 
 class Verbose(object):
-    """
-    Wraps a function to provide verbose mode for debugging requests
-    """
     def __init__(self):
         pass
 
     def __call__(self, f):
         def wrapped_f(obj, *args, **kwargs):
-            print(f.__name__, 'started')
+            print f.__name__, 'started'
             r = f(obj, *args, **kwargs)
-            print(f.__name__, 'ended')
+            print f.__name__, 'ended'
             return r
 
         return wrapped_f
@@ -81,17 +72,17 @@ class Verbose(object):
 
 # Benchling API Info: https://api.benchling.com/docs/#sequence-sequence-collections-post
 class BenchlingAPI(object):
-    """
-    Connects to BenchlingAPI
-    """
+    ''' Connector to BenchlingAPI '''
 
     # TODO: Create SQLite Database for sequences
     def __init__(self, api_key, home='https://api.benchling.com/v1/'):
-        """
-        BenchlingAPI connector
-        :param api_key:
-        :param home:
-        """
+        '''
+        :param api_key: Benchling API key.
+        :type api_key: str
+        :param home: Benchling API url
+        :type home: str
+
+        '''
         self.home = home
         self.auth = (api_key, '')
         self.seq_dict = {}  # seq_name: seq_information
@@ -106,10 +97,6 @@ class BenchlingAPI(object):
                 BenchlinAPIKey: {}'.format(api_key))
 
     def update(self):
-        """
-        Updates the api dictionaries
-        :return:
-        """
         self._update_dictionaries()
 
     @RequestDecorator([200, 201, 202])
@@ -133,35 +120,22 @@ class BenchlingAPI(object):
     # TODO add request decorator
     @RequestDecorator(200)
     def delete_folder(self, id):
-        """
-        Deletes a Benchling folder by id
-        :param id:
-        :return:
-        """
         # raise BenchlingAPIException("Benchling does not yet support deleting folders through the API")
         return self._delete('folders/{}'.format(id))
 
     @Verbose()
     def delete_sequence(self, id):
-        """
-        Deletes a Benchling sequence by id
+        '''
+
         :param id:
         :return:
-        """
+        '''
         d = self._delete('sequences/{}'.format(id))
         # TODO: Update dictionaries and lists after delete
         return d
 
     @Verbose()
-    def patch_folder(self, id, name=None, description=None, owner=None, type=type):
-        """
-        Updates a folder with id
-        :param name:
-        :param description:
-        :param owner:
-        :param type:
-        :return:
-        """
+    def patch_folder(self, name=None, description=None, owner=None, type=type):
         payload = {
             'name': name,
             'description': description,
@@ -172,19 +146,8 @@ class BenchlingAPI(object):
         return self._patch('folders/{}'.format(id))
 
     @Verbose()
-    def patch_sequence(self, id, name=None, bases=None, circular=None,
+    def patch_sequence(self, name=None, bases=None, circular=None,
                        folder=None, description=None, color=None, aliases=None):
-        """
-        Updates a sequence
-        :param name:
-        :param bases:
-        :param circular:
-        :param folder:
-        :param description:
-        :param color:
-        :param aliases:
-        :return:
-        """
         payload = {
             'name': name,
             'aliases': aliases,
@@ -199,13 +162,6 @@ class BenchlingAPI(object):
 
     @Verbose()
     def create_folder(self, name, description=None, folder_type='INVENTORY'):
-        """
-        Creates a new folder
-        :param name:
-        :param description:
-        :param folder_type:
-        :return:
-        """
         payload = dict(name=name, description=description, owner=self.getme()['id'], type=folder_type)
         self._clean_dictionary(payload)
         return self._post('folders/', payload)
@@ -216,16 +172,16 @@ class BenchlingAPI(object):
                         description=None, annotations=None,
                         aliases=None, tags=None, overwrite=False):
         """
-        Creates a new sequences
-        :param name:
-        :param bases:
-        :param circular:
-        :param folder:
-        :param description:
+        :type aliases: list
+        :param name: Name of the sequence as a Str
+        :param bases: Basepairs as a Str
+        :param circular: True or False
+        :param folder: folder_id as a Str
+        :param description: description of the sequence
         :param annotations:
         :param aliases:
-        :param tags:
-        :param overwrite:
+        :param tags: list of dictionary tags
+        :param overwrite: whether to overwrite sequences with the same name
         :return:
         """
         payload = {
@@ -244,7 +200,7 @@ class BenchlingAPI(object):
         prev_seq_ids = set()
         for seq in self.get_folder(folder)['sequences']:
             if overwrite and str(seq['name']) == str(name):
-                print('Overwrite on: deleting seq {}'.format(seq['id']))
+                print 'Overwrite on: deleting seq {}'.format(seq['id'])
                 self.delete_sequence(seq['id'])
                 prev_seq_ids.add(seq['id'])
 
@@ -262,13 +218,6 @@ class BenchlingAPI(object):
                 Sequence may have been created nevertheless.")
 
     def folder_exists(self, value, query='name', regex=False):
-        """
-        Whether a Benchling folder already exists
-        :param value:
-        :param query:
-        :param regex:
-        :return:
-        """
         folders = self.filter_folders({query: value}, regex=regex)
         if len(folders) > 0:
             return True
@@ -276,13 +225,6 @@ class BenchlingAPI(object):
             return False
 
     def sequence_exists(self, value, query='name', regex=False):
-        """
-        Whether a Benchling sequence already exists
-        :param value:
-        :param query:
-        :param regex:
-        :return:
-        """
         sequences = self.filter_sequences({query: value}, regex=regex)
         if len(sequences) > 0:
             return True
@@ -291,7 +233,7 @@ class BenchlingAPI(object):
 
     @staticmethod
     def _filter(item_list, fields, regex=False):
-        """
+        '''
         Filters a list of dictionaries based on a set
         of fields. Can search using regular expressions
         if requested.
@@ -299,7 +241,7 @@ class BenchlingAPI(object):
         :param fields:
         :param regex:
         :return:
-        """
+        '''
         filtered_list = []
         for item in item_list:
             a = True
@@ -318,23 +260,23 @@ class BenchlingAPI(object):
         return filtered_list
 
     def filter_sequences(self, fields, regex=False):
-        """
+        '''
         Filters sequences based on a set of fields. Can search for
         regular expressions if requested.
         :param fields:
         :param regex:
         :return:
-        """
+        '''
         return self._filter(self.sequences, fields, regex=regex)
 
     def filter_folders(self, fields, regex=False):
-        """
+        '''
         Filters folders based on a set of fields. Can search for
         regular expressions if requested.
         :param fields:
         :param regex:
         :return:
-        """
+        '''
         return self._filter(self.folders, fields, regex=regex)
 
     def _find(self, what, dict, value, query='name', regex=False):
@@ -351,13 +293,6 @@ class BenchlingAPI(object):
         return self._get(os.path.join(what, item['id']))
 
     def find_sequence(self, value, query='name', regex=False):
-        """
-        Finds a sequence based on a id, name, or regex+name query
-        :param value:
-        :param query:
-        :param regex:
-        :return:
-        """
         return self._find('sequences', self.sequences, value, query=query, regex=regex)
 
     def find_folder(self, value, query='name', regex=False):
@@ -408,7 +343,7 @@ class BenchlingAPI(object):
         # else if the query is a string it could be (1) a path to a fasta or ab1 file
         # (2) a benchling_sequence_id, or (3) encoded data with no name
         for q in queries:
-            print(q)
+            print q
             # if the query is a tuple
             if isinstance(q, tuple):
                 files.append(dict(
@@ -416,8 +351,8 @@ class BenchlingAPI(object):
                     data=q[1]
                 ))
             # if the query is a string
-            elif isinstance(q, str):
-                # if the query is a Benchling sequence_id
+            elif isinstance(q, basestring):
+                # if the query is a benchling sequence_id
                 if q.startswith('seq'):
                     files.append(dict(
                         id=q
@@ -458,24 +393,18 @@ class BenchlingAPI(object):
 
     @staticmethod
     def _clean_annotations(sequence):
-        """
+        '''
         Cleans up the sequence start and end points in the unusual case
         where end == 0
         :param sequence:
         :return:
-        """
+        '''
         annotations = sequence['annotations']
         for a in annotations:
             if a['end'] == 0:
                 a['end'] = len(sequence['bases'])
 
     def get_sequence(self, seq_id, data=None):
-        """
-        Get a sequence from a sequence id
-        :param seq_id:
-        :param data:
-        :return:
-        """
         if data is None:
             data = {}
         sequence = self._get('sequences/{}'.format(seq_id), data=data)
@@ -484,23 +413,13 @@ class BenchlingAPI(object):
 
     @staticmethod
     def _clean_dictionary(dic):
-        """
-        Removes keys whose values are None
-        :param dic:
-        :return:
-        """
-        keys = list(dic.keys())
+        keys = dic.keys()
         for key in keys:
             if dic[key] is None:
                 dic.pop(key)
         return dic
 
     def _verifysharelink(self, share_link):
-        """
-        Verifies a share_link is in the correct format
-        :param share_link:
-        :return:
-        """
         f = 'https://benchling.com/s/(\w+)'
         result = re.search(f, share_link)
         verified = result is not None
@@ -510,11 +429,6 @@ class BenchlingAPI(object):
             raise BenchlingAPIException(message)
 
     def _opensharelink(self, share_link):
-        """
-        Hacky way to read the contents of a Benchling share link
-        :param share_link:
-        :return:
-        """
         self._verifysharelink(share_link)
         f = urlopen(share_link)
         soup = BeautifulSoup(f.read())
@@ -536,57 +450,36 @@ class BenchlingAPI(object):
 
     @staticmethod
     def _parseURL(url):
-        """
-        A really hacky way to parse the Benchling api. This may become unstable.
-        :param url:
-        :return:
-        """
         g = re.search('benchling.com/(?P<user>\w+)/f/(?P<folderid>\w+)' + \
                       '-(?P<foldername>\w+)/seq-(?P<seqid>\w+)-(?P<seqname>' + \
                       '[a-zA-Z0-9_-]+)', url)
         labels = ['user', 'folder_id', 'folder_name', 'seq_id', 'seq_name']
-        d = dict(list(zip(labels, g.groups())))
+        d = dict(zip(labels, g.groups()))
         d['seq_id'] = 'seq_{}'.format(d['seq_id'])
         return d
 
     def getsequencefromsharelink(self, share_link):
-        """ A really hacky way to get a sequence
+        ''' A really hacky way to get a sequence
         from a Benchling share link
 
-        :param share_link: A Benchling share link
+        :param share_link: A benchling share link
         :type share_link: str
         :returns: Benchling API sequence information
         :rtype: dict
-        """
+        '''
         id = self._getsequenceidfromsharelink(share_link)
         return self.get_sequence(id)
 
     def getseqlist(self):
-        """
-        Return a list of sequences
-        :return:
-        """
         return self.sequences
 
     def getfolderlist(self):
-        """
-        Return a list of folders
-        :return:
-        """
         return self.folders
 
     def getme(self):
-        """
-        Gets the user associated with this api
-        :return:
-        """
         return self._get('entities/me')
 
     def _clear(self):
-        """
-        Clears the api cache
-        :return:
-        """
         self.folders = []
         self.sequences = []
         self.seq_dict = {}
@@ -607,10 +500,6 @@ class BenchlingAPI(object):
                 self.seq_dict[s['name']].append(s)
 
     def _update_dictionaries(self):
-        """
-        Updates the dictionary cache for the api
-        :return:
-        """
         self._clear()
         r = self._get('folders')
         if 'error' in r:
@@ -619,14 +508,6 @@ class BenchlingAPI(object):
         self._updatelistsfromdictionaries()
 
     def search(self, query, querytype='text', limit=10, offset=0):
-        """
-        Perform a Benchling search
-        :param query:
-        :param querytype:
-        :param limit:
-        :param offset:
-        :return:
-        """
         return self._post('search', {'query': query, 'queryType': querytype, 'limit': limit, 'offset': offset})
 
 

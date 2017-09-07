@@ -5,7 +5,7 @@ import json
 
 
 def test_alignments():
-    login_location = os.path.join(os.path.dirname(__file__), '../data/login.json')
+    login_location = os.path.join(os.path.dirname(__file__), '../data/config.json')
     with open(login_location, 'r') as f:
         credentials = json.load(f)
 
