@@ -8,7 +8,7 @@ import copy
 
 def encode_dictionary(dictionary):
     for key in dictionary:
-        if isinstance(dictionary[key], str):
+        if isinstance(dictionary[key], unicode):
             dictionary[key] = dictionary[key].encode('utf-8')
         elif isinstance(dictionary[key], dict):
             encode_dictionary(dictionary[key])
@@ -62,7 +62,7 @@ def benchling_to_seqrecord(benchling_seq):
     kwargs = copy.deepcopy(kwargs)
     encode_dictionary(kwargs)
     for key in kwargs:
-        if isinstance(kwargs[key], str):
+        if isinstance(kwargs[key], unicode):
             kwargs[key] = kwargs[key].encode('utf-8')
     seqrec = SeqRecord(seq, **kwargs)
     _clean_seqrecord_features(seqrec)
@@ -117,7 +117,7 @@ def _seqrecord_to_benchling(seqrec, default_circular=True):
     try:
         circular = seqrec.circular
     except:
-        print("Could not determine topology, defaulted to {}".format(default_circular))
+        print "Could not determine topology, defaulted to {}".format(default_circular)
         pass
     # force with argument
     aliases = seqrec.dbxrefs
