@@ -15,7 +15,7 @@ def api_init():
 def test_main():
     api = api_init()
 
-    print(api.folders)
+    print(api.folders[0])
 
     # https: // docs.pytest.org / en / latest / builtin.html
     # def test1():
