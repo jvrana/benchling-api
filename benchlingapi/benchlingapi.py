@@ -589,7 +589,8 @@ class BenchlingAPI(object):
 
     def getsequencefromsharelink(self, share_link):
         """ A really hacky way to get a sequence
-        from a Benchling share link
+        from a Benchling share link. Requires you to have
+        readable permission on sequence.
 
         :param share_link: A Benchling share link
         :type share_link: str
