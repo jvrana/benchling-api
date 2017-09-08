@@ -38,9 +38,13 @@ class RequestDecorator(object):
                     403: "FORBIDDEN",
                     404: "NOT FOUND",
                     500: "INTERNAL SERVER ERROR",
+                    503: "SERVICE UNAVAILABLE",
                     504: "SERVER TIMEOUT"}
+                msg = ""
+                if r.status_code in http_codes:
+                    msg = http_codes[r.status_code]
                 raise BenchlingAPIException("HTTP Response Failed {} {}".format(
-                    r.status_code, http_codes[r.status_code]))
+                    r.status_code, msg))
             return json.loads(r.text)
 
         return wrapped_f
@@ -48,7 +52,7 @@ class RequestDecorator(object):
 
 class UpdateDecorator(object):
     """
-    Wraps a function to update the benchling-api dictionary
+    Wraps a function to update the benchlingapi dictionary
     """
     def __init__(self):
         pass
@@ -294,7 +298,7 @@ class BenchlingAPI(object):
         """
         Filters a list of dictionaries based on a set
         of fields. Can search using regular expressions
-        if requested.
+        if requested. Uses the cached data stored in the api object.
         :param item_list:
         :param fields:
         :param regex:
@@ -320,7 +324,7 @@ class BenchlingAPI(object):
     def filter_sequences(self, fields, regex=False):
         """
         Filters sequences based on a set of fields. Can search for
-        regular expressions if requested.
+        regular expressions if requested. Uses the cached data stored in the api object.
         :param fields:
         :param regex:
         :return:
@@ -330,7 +334,7 @@ class BenchlingAPI(object):
     def filter_folders(self, fields, regex=False):
         """
         Filters folders based on a set of fields. Can search for
-        regular expressions if requested.
+        regular expressions if requested. Uses the cached data stored in the api object.
         :param fields:
         :param regex:
         :return:
@@ -338,6 +342,27 @@ class BenchlingAPI(object):
         return self._filter(self.folders, fields, regex=regex)
 
     def _find(self, what, dict, value, query='name', regex=False):
+        """
+        Uses the cached data stored in the api object to find the item
+        :param what:
+        :param dict:
+        :param value:
+        :param query:
+        :param regex:
+        :return:
+        """
+        item = self._find_cached_items(dict, query, regex, value)[0]
+        return self._get(os.path.join(what, item['id']))
+
+    def _find_cached_items(self, dict, query, regex, value):
+        """
+        Uses the cached data stored in teh api object to find items
+        :param dict:
+        :param query:
+        :param regex:
+        :param value:
+        :return:
+        """
         items = []
         try:
             items = self._filter(dict, {query: value}, regex=regex)
@@ -347,8 +372,7 @@ class BenchlingAPI(object):
             raise BenchlingAPIException("No items found with {} \'{}\'.".format(query, value))
         elif len(items) > 1:
             warnings.warn("More {} items found with {} \'{}\'. Returning first item.".format(len(items), query, value))
-        item = items[0]
-        return self._get(os.path.join(what, item['id']))
+        return items
 
     def find_sequence(self, value, query='name', regex=False):
         """
@@ -361,6 +385,13 @@ class BenchlingAPI(object):
         return self._find('sequences', self.sequences, value, query=query, regex=regex)
 
     def find_folder(self, value, query='name', regex=False):
+        """
+        Finds a folder based on a id, name, or regex+name query
+        :param value:
+        :param query:
+        :param regex:
+        :return:
+        """
         return self._find('folders', self.folders, value, query=query, regex=regex)
 
     def get_folder(self, id):
@@ -517,21 +548,28 @@ class BenchlingAPI(object):
         """
         self._verifysharelink(share_link)
         f = urlopen(share_link)
-        soup = BeautifulSoup(f.read())
+        soup = BeautifulSoup(f.read(), "lxml")
         return soup
 
     def _getsequenceidfromsharelink(self, share_link):
         seq = None
         try:
             soup = self._opensharelink(share_link)
-            for s in soup.findAll():
-                g = re.search('\"folder_item_ids\": \[\"seq_(\w+)\"\]', s.text)
-                if not g == None:
-                    seq = "seq_{}".format(g.group(1))
-                    break
-        except:
+            search_pattern = "seq_\w+"
+            possible_ids = re.findall(search_pattern, soup.text)
+            if len(possible_ids) == 0:
+                raise BenchlingAPIException("No sequence ids found in sharelink html using search pattern {}".format(
+                        search_pattern))
+            uniq_ids = list(set(possible_ids))
+            if len(uniq_ids) > 1:
+                raise BenchlingAPIException("More than one possible sequence id found in sharelink html using search "
+                                      "pattern {}".format(search_pattern))
+            seq = uniq_ids[0]
+        except BenchlingAPIException:
             d = self._parseURL(share_link)
             seq = d['seq_id']
+        if seq is None:
+            raise BenchlingAPIException("Could not find seqid in sharelink body or url.")
         return seq
 
     @staticmethod
@@ -551,7 +589,8 @@ class BenchlingAPI(object):
 
     def getsequencefromsharelink(self, share_link):
         """ A really hacky way to get a sequence
-        from a Benchling share link
+        from a Benchling share link. Requires you to have
+        readable permission on sequence.
 
         :param share_link: A Benchling share link
         :type share_link: str
@@ -560,20 +599,6 @@ class BenchlingAPI(object):
         """
         id = self._getsequenceidfromsharelink(share_link)
         return self.get_sequence(id)
-
-    def getseqlist(self):
-        """
-        Return a list of sequences
-        :return:
-        """
-        return self.sequences
-
-    def getfolderlist(self):
-        """
-        Return a list of folders
-        :return:
-        """
-        return self.folders
 
     def getme(self):
         """
@@ -620,7 +645,7 @@ class BenchlingAPI(object):
 
     def search(self, query, querytype='text', limit=10, offset=0):
         """
-        Perform a Benchling search
+        Perform a Benchling search with text, bases, aminoAcids, or prosite
         :param query:
         :param querytype:
         :param limit:

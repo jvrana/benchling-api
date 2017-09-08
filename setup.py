@@ -3,19 +3,13 @@ try:
 except ImportError:
     from distutils.core import setup
 
-try:
-	from distutils.command.build_py import build_py_2to3 \
-		as build_py
-except ImportError:
-	from distutils.command.build_py import build_py
-
 config = {
-    'description': 'benchling-api',
-    'author': 'Justin Vrana',
-    'url': 'https://github.com/klavinslab/benchling-api',
-    'download_url': 'https://github.com/klavinslab/benchling-api.git',
+    'description': 'benchlingapi',
+    'author': 'Justin D Vrana',
+    'url': 'https://github.com/klavinslab/benchlingapi',
+    'download_url': 'https://github.com/klavinslab/benchlingapi.git',
     'author_email': 'justin.vrana@gmail.com',
-    'version': '0.9.0',
+    'version': '0.9.1',
     'install_requires': ['requests', 'bs4'],
     'packages': ['benchlingapi'],
     'tests_require': ['pytest'],
