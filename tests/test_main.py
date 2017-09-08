@@ -1,6 +1,6 @@
-from benchlingapi import BenchlingAPI as api
-import re
-
+import pytest
+import json
+import os
 
 def test_init(api):
     # Init called from fixture once per test run
@@ -69,6 +69,13 @@ def test_alignments(api):
     raise ValueError("Not implemented")
 
 
-def test_main(api):
-    s = api.get_sequence("seq_uT2Pj9eV")
-    print(s)
+def test_exports(api):
+    print(os.getcwd())
+    with open(os.path.abspath("tests/example_outputs/example_folder.json"), "w") as handle:
+        f = api.folders[0]
+        folder = api.get_folder(f['id'])
+        json.dump(folder, handle)
+    with open(os.path.abspath("tests/example_outputs/example_sequence.json"), "w") as handle:
+        f = api.sequences[0]
+        sequence = api.get_sequence(f['id'])
+        json.dump(sequence, handle)
