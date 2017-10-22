@@ -1,9 +1,17 @@
 # Created by .ignore support plugin (hsz.mobi)
-### Example user template template
-### Example user template
+# Example user template template
+# Example user template
 
-# IntelliJ project files
-.idea
-.idea/workspace.xml
+## IntelliJ project files
+**/.idea
+**/.idea/workspace.xml
 .cache
 tests/secrets/config.json
+.DS_Store
+**/tests/secrets/config.json
+**/tests/example_outputs
+**/__pycache__/*
+**/*.pyc
+.coverage
+*.pyc
+*.xml
