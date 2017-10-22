@@ -15,7 +15,7 @@ tests_require = [
     'pytest-pep8'
 ]
 
-install_requires = ['requests', 'bs4', 'biopython']
+install_requires = ['requests', 'bs4', 'biopython', 'lxml']
 
 # setup functions
 def read(fname):
