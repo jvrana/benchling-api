@@ -1,0 +1,29 @@
+language: python
+python:
+- '3.4'
+- '3.5'
+- '3.5-dev'
+- '3.6'
+- '3.6-dev'
+- '3.7-dev'
+- 'nightly'
+install:
+- pip install .
+before_install:
+- pip install pyandoc
+- pip install pytest pytest-cov
+- pip install coveralls
+after_install:
+- pandoc --from=markdown --to=rst --output=README README.md
+script:
+- py.test --cov benchling-api --cov-report term-missing
+after_success:
+- coveralls
+deploy:
+  provider: pypi
+  user: jvrana
+  password:
+    secure: iqfN4Q7LVekxWaLc7bsQvUbIBHzBsGgiYHpHJLzxU5vp9DULeKygI6bVFEaFY3oRWqUzHrXEUeb6WDQhUVj7rxNXuCun1uWe4xYRyYW+lBCJMy5PKozz2yC0AeQyrhcwI6Zd63/9Je5sYHhMcaNL1rbGP9SmuwxzP5UcCY9LexqOJRrYXB6xwOFVES92h9NkAg4OwkYn56H/5rmH0xP64Kx2HQHXP0gW6NxKH83grqN0vq2L2vD67vmB0tnVA4lwpIp+pOGdlTcLPSJIyVP0zp5myTT49uyQKpinis7gGvjoIFN7pDGqNEwDOi/BJ2Z7iPaq+5UlHZIUNFTBThr0EgCq+qDdnRL0oSvQPs7IDy2A5T62kQojKQZ/pw+pCfuD8INm1cmPkGA8s4sGTETE5+mp43eH62ESz37BCk0VkN4HntKyXUwJbEMXydvd0z5JdR4Q/7URPhaVD5akq0+tVujdQtaGYmdMz+foqJrR5gsZrb7q7QeIzNdiPKWTzKUK72oiZtGsnZZm0lJWyvPwcivOI+fDr9WYIgkhfI/h7UtOHfy8BRWwIU6swV5XIa8utZCeltdmV2tMF6qiBKO9p6RWYzKg7/8uNbJQIJnLtIvWgAr0tGMiwglc74i/QWAwpLfCungD2HBD7LKpmQdTin1ZbGQPDygcd0qk+6tFNsc=
+  on:
+    tags: true
+    branch: master
