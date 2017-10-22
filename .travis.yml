@@ -16,7 +16,7 @@ before_install:
 after_install:
 - pandoc --from=markdown --to=rst --output=README README.md
 script:
-- py.test --cov benchling-api --cov-report term-missing
+- py.test --cov benchlingapi --cov-report term-missing
 after_success:
 - coveralls
 deploy:
