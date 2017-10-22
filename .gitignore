@@ -3,7 +3,7 @@
 # Example user template
 
 ## IntelliJ project files
-.idea/*
+**/.idea
 **/.idea/workspace.xml
 .cache
 tests/secrets/config.json
@@ -13,3 +13,5 @@ tests/secrets/config.json
 **/__pycache__/*
 **/*.pyc
 .coverage
+*.pyc
+*.xml
