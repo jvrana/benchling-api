@@ -1,7 +1,6 @@
 [![travis build](https://img.shields.io/travis/klavinslab/benchling-api.svg)](https://travis-ci.org/klavinslab/benchling-api)
 [![Coverage Status](https://coveralls.io/repos/github/klavinslab/benchling-api/badge.svg?branch=master)](https://coveralls.io/github/klavinslab/benchling-api?branch=master)
 
-
 # Description
 Benchling provides a convenient way to store DNA sequences (plasmids, primers, pcr
 fragments, etc.) for an entire lab. This repo provides a convinient wrapper for
