@@ -1,8 +1,9 @@
-[![travis build](https://img.shields.io/travis/klavinslab/benchling-api.svg)](https://travis-ci.org/klavinslab/benchling-api)
 
+[![travis build](https://img.shields.io/travis/klavinslab/benchling-api.svg)](https://travis-ci.org/klavinslab/benchling-api)
 
 # BenchlingAPI
 
+#### Build/Coverage Status
 Branch | Build | Coverage
 :---: | :---: | :---:
 **master** | [![travis build](https://img.shields.io/travis/klavinslab/benchling-api/master.svg)](https://travis-ci.org/klavinslab/benchling-api/master) | [![Coverage Status](https://coveralls.io/repos/github/klavinslab/benchling-api/badge.svg?branch=master)](https://coveralls.io/github/klavinslab/benchling-api?branch=master)
