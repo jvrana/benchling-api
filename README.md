@@ -1,10 +1,12 @@
 [![travis build](https://img.shields.io/travis/klavinslab/benchling-api.svg)](https://travis-ci.org/klavinslab/benchling-api)
 
 
-Branch | Coverage
-:---: | :---:
-**master** | [![Coverage Status](https://coveralls.io/repos/github/klavinslab/benchling-api/badge.svg?branch=master)](https://coveralls.io/github/klavinslab/benchling-api?branch=master)
-**development** | [![Coverage Status](https://coveralls.io/repos/github/klavinslab/benchling-api/badge.svg?branch=development)](https://coveralls.io/github/klavinslab/benchling-api?branch=development)
+Branch | Build | Coverage
+:---: | :---: | :---:
+**master** | [![travis build](https://img.shields.io/travis/klavinslab/benchling-api/master.svg)](https://travis-ci.org/klavinslab/benchling-api/master) | [![Coverage Status](https://coveralls.io/repos/github/klavinslab/benchling-api/badge.svg?branch=master)](https://coveralls.io/github/klavinslab/benchling-api?branch=master)
+**development** | [![travis build](https://img.shields.io/travis/klavinslab/benchling-api/development.svg)](https://travis-ci.org/klavinslab/benchling-api/development) | [![Coverage Status](https://coveralls.io/repos/github/klavinslab/benchling-api/badge.svg?branch=development)](https://coveralls.io/github/klavinslab/benchling-api?branch=development)
+
+# BenchlingAPI
 
 # Description
 Benchling provides a convenient way to store DNA sequences (plasmids, primers, pcr
