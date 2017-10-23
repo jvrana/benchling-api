@@ -1,5 +1,5 @@
-
 [![travis build](https://img.shields.io/travis/klavinslab/benchling-api.svg)](https://travis-ci.org/klavinslab/benchling-api)
+[![PyPI version](https://badge.fury.io/py/benchlingapi.svg)](https://badge.fury.io/py/benchlingapi)
 
 # BenchlingAPI
 
