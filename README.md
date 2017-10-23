@@ -1,7 +1,15 @@
 [![travis build](https://img.shields.io/travis/klavinslab/benchling-api.svg)](https://travis-ci.org/klavinslab/benchling-api)
-[![Coverage Status](https://coveralls.io/repos/github/klavinslab/benchling-api/badge.svg?branch=master)](https://coveralls.io/github/klavinslab/benchling-api?branch=master)
+[![PyPI version](https://badge.fury.io/py/benchlingapi.svg)](https://badge.fury.io/py/benchlingapi)
 
-# Description
+# BenchlingAPI
+
+#### Build/Coverage Status
+Branch | Build | Coverage
+:---: | :---: | :---:
+**master** | [![travis build](https://img.shields.io/travis/klavinslab/benchling-api/master.svg)](https://travis-ci.org/klavinslab/benchling-api/master) | [![Coverage Status](https://coveralls.io/repos/github/klavinslab/benchling-api/badge.svg?branch=master)](https://coveralls.io/github/klavinslab/benchling-api?branch=master)
+**development** | [![travis build](https://img.shields.io/travis/klavinslab/benchling-api/development.svg)](https://travis-ci.org/klavinslab/benchling-api/development) | [![Coverage Status](https://coveralls.io/repos/github/klavinslab/benchling-api/badge.svg?branch=development)](https://coveralls.io/github/klavinslab/benchling-api?branch=development)
+
+## Description
 Benchling provides a convenient way to store DNA sequences (plasmids, primers, pcr
 fragments, etc.) for an entire lab. This repo provides a convinient wrapper for
 making Benchling API requests.
@@ -15,7 +23,7 @@ making Benchling API requests.
 <li>Opening and accessing sequences in a Benchling Share links</li>
 </ul>
 
-# Installation
+## Installation
 	cd directory/that/contains/benchling-api
 	pip install .
 

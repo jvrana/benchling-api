@@ -65,8 +65,8 @@ def test_create_patch_and_delete_sequence(api):
     pass
 
 
-def test_alignments(api):
-    raise ValueError("Not implemented")
+# def test_alignments(api):
+#     raise ValueError("Not implemented")
 
 
 def test_exports(api):
