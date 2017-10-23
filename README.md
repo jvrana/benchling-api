@@ -24,8 +24,7 @@ making Benchling API requests.
 </ul>
 
 ## Installation
-	cd directory/that/contains/benchling-api
-	pip install .
+	pip install benchlingapi
 
 # Usage
 
