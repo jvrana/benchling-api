@@ -30,12 +30,12 @@ making Benchling API requests.
 
 ## Initializing the API object
 
-The BenchlingAPI object provides an interface for accessing Benchling sequences. 
+The BenchlingAPI object provides an interface for accessing Benchling sequences.
 It requires a benchling API-key, which can be requested from Benchling. More information
 on the Benchling API can be accessed here: https://api.benchling.com/docs/.
 
 	from benchlingapi import BenchlingAPI
-	
+
 	bench_api_key = 'sk_g7fo2vxskNUYffNPkShOFIsOmtY9ejIXX'
 	benchlingapi = BenchlingAPI(bench_api_key)
 
@@ -51,28 +51,28 @@ getting folders
 e.g. find all sequences that contain the word "CRY2" in the name
 
 	benchlingapi.findSequence('CRY2', query='name', regex=True)
-	
+
 e.g. find all sequences that with regular expression pattern
 
 	benchlingapi.findSequence('\wcas9.+', query='name', regex=True)
-	
+
 e.g. find all sequence with id 'seq_aupKOZRb'
 
 	benchlingapi.findSequence('seq_aupKOZRb', query='id', regex=False)
-	
-	
+
+
 e.g. find all folders that contain the word "CRY2" in the name
 
 	benchlingapi.findFolder('CRY2', query='name', regex=True)
-	
+
 e.g. get all folders
 
 	benchlingapi.getFolderList()
-	
+
 e.g. get all sequences
-	
+
 	benchlingapi.getSequenceList()
-	
+
 e.g. get sequence from a share link
 
 	benchlingapi.getSequenceFromShareLink('share_link')
@@ -93,11 +93,11 @@ e.g. create a sequence
 		description='sequence description',
 		#annotations=[], #annotations are not currently supported in Benchling's api
 		)
-		
+
 e.g. create a folder
 
 	benchlingapi.createFolder('folder_Name', description='folder_description', 'owner'='ent_OMJXXX')
-	
+
 #### Delete
 
 e.g. delete a folder

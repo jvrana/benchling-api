@@ -66,6 +66,22 @@ class UpdateDecorator(object):
         return wrapped_f
 
 
+def Deprecated(message):
+  """
+  Deprecated Decorator for api v1 functions
+  """
+  def deprecated_decorator(func):
+      def deprecated_func(*args, **kwargs):
+          warnings.warn("{} is a deprecated under v2 of the api. {}".format(func.__name__, message),
+                        category=DeprecationWarning,
+                        stacklevel=2)
+          warnings.simplefilter('default', DeprecationWarning)
+          return func(*args, **kwargs)
+      return deprecated_func
+  return deprecated_decorator
+
+
+
 class Verbose(object):
     """
     Wraps a function to provide verbose mode for debugging requests
@@ -90,19 +106,29 @@ class BenchlingAPI(object):
     """
 
     # TODO: Create SQLite Database for sequences
-    def __init__(self, api_key, home='https://api.benchling.com/v1/'):
+    def __init__(self, api_key, home='https://{owner}benchling.com/api/v2/', owner='', *args, **kwargs):
         """
         BenchlingAPI connector
         :param api_key:
         :param home:
+        :para owner:
         """
         self.home = home
+        try:
+          self.home = home.format(owner=owner + '.')
+        except KeyError:
+          self.home = home.format(**kwargs)
+        self.owner = owner
         self.auth = (api_key, '')
         self.seq_dict = {}  # seq_name: seq_information
         self.folder_dict = {}  # folder_name: folder_information
         self.folders = []
         self.sequences = []
         self.proteins = []
+        self.registries = []
+        self.schemas = []
+        self.dropdowns = []
+
         try:
             self.update()
         except requests.ConnectionError:
@@ -125,10 +151,32 @@ class BenchlingAPI(object):
         return requests.patch(what, json=data, auth=self.auth)
 
     @RequestDecorator(200)
-    def _get(self, what, data=None):
+    def _get(self, what, data=None, *args, **kwargs):
         if data is None:
             data = {}
-        return requests.get(what, json=data, auth=self.auth)
+
+        return requests.get(what, json=data, auth=self.auth, *args, **kwargs)
+
+    def _get_pages(self, what, whatKey, data=None, nextToken=None, params=None, **kwargs):
+        if data is None:
+            data = {}
+
+        if nextToken is not None:
+          try:
+            params.update({'nextToken':nextToken})
+          except AttributeError:
+            params = {'nextToken':nextToken}
+        out = self._get(what, data=data, params=params, **kwargs)
+        try:
+          next = out['nextToken']
+          if next:
+            return out[whatKey] +
+                self._get_pages(what, whatKey, data, nextToken=next,
+                               params=params, **kwargs)
+          else:
+            return(out[whatKey])
+        except KeyError:
+          return out
 
     @RequestDecorator(200)
     def _delete(self, what):
@@ -397,6 +445,101 @@ class BenchlingAPI(object):
     def get_folder(self, id):
         return self._get('folders/{}'.format(id))
 
+    def list_dropdowns(self):
+        fmtstr = lambda x: 'registries/{}/dropdowns'.format(x)
+        return list(*[self._get(fmtstr(r['id']))['dropdowns']
+                    for r in self.registries])
+
+    def get_dropdown(self, name=None, id=None):
+        if id and name:
+          raise ValueError('Only give dropdown id or name, not both')
+        if id:
+            ## TODO: make sure only a single id is given
+            return self._get('dropdowns/{}'.format(id))
+        elif name:
+            if isinstance(name, str):
+                name = [name]
+            return [self.get_dropdown(id=d['id']) for d in self.dropdowns if d['name'] in name]
+
+
+    def list_entity_schemas(self):
+        """
+        Returns a list of EntitySchema resources.
+        """
+        fmtstr = lambda x: 'registries/{}/entity-schemas'.format(x)
+        return list(*[self._get(fmtstr(r['id']))['entitySchemas']
+                    for r in self.registries])
+
+    def list_batch_schemas(self):
+        """
+        Returns a list of BatchSchema resources.
+        """
+        fmtstr = lambda x: 'registries/{}/batch-schemas'.format(x)
+        return list(*[self._get(fmtstr(r['id']))['batchSchemas']
+                    for r in self.registries])
+
+    def list_custom_entities(self, schemaName=None, name=None, schemaId=None, pageSize=100):
+        return self._list_registered_entities('aa-sequences', 'aaSequences',
+                      name=name,schemaId=schemaId,
+                      schemaName=schemaName, pageSize=pageSize)
+
+    def list_dna_sequences(self, schemaName=None, schemaId=None,  name=None, pageSize=100):
+        return self._list_registered_entities('dna-sequences', 'dnaSequences',
+                    name=name, schemaId=schemaId, schemaName=schemaName)
+
+    def list_aa_sequences(self,  schemaName=None, schemaId=None, name=None, pageSize=100):
+        return self._list_registered_entities('dna-sequences', 'dnaSequences',
+                    name=name, schemaId=schemaId, schemaName=schemaName)
+
+    def list_custom_entities(self, schemaName=None, name=None, schemaId=None, pageSize=100):
+        return self._list_registered_entities('aa-sequences', 'aaSequences',
+                      name=name,
+                      schemaId=schemaId, schemaName=schemaName,
+                      pageSize=pageSize)
+
+    def list_dna_sequences(self, schemaName=None, schemaId=None,  name=None, pageSize=100):
+        return self._list_registered_entities('dna-sequences', 'dnaSequences',
+                    name=name, schemaId=schemaId, schemaName=schemaName)
+
+    def list_aa_sequences(self,  schemaName=None, schemaId=None, name=None, pageSize=100):
+        return self._list_registered_entities('dna-sequences', 'dnaSequences',
+                    name=name, schemaId=schemaId, schemaName=schemaName)
+
+    def list_batches(self, schemaName=None, schemaId=None, registryId=None, pageSize=100):
+        return self._list_registered_entities('batches', 'Batches',
+                    schemaId=schemaId, schemaName=schemaName)
+
+    def _list_registered_entities(self, what, whatKey, schemaName=None, *args, **kwargs):
+        if schemaName:
+            try:
+              scId = kwargs.pop('schemaId')
+              raise BenchlingAPIException('Provide schemaName or schemaId but not both.')
+            except:
+                pass
+            ## get IDs based on name
+            scIds = [s['id'] for s in self.schemas if s['name'] == schemaName]
+            return self._list_registered_entities(what, whatKey, schemaId=scIds, **kwargs)
+        else:
+            pdict = {k:v for k,v in kwargs.items() if v is not None}
+            return self._get_pages(what, whatKey, params=pdict)
+
+    def list_batches(self, schemaName=None, schemaId=None, registryId=None, pageSize=100):
+        return self._list_registered_entities('batches', 'Batches',
+                    schemaId=schemaId, schemaName=schemaName)
+
+    def _list_registered_entities(self, what, whatKey, schemaName=None, *args, **kwargs):
+        if schemaName:
+            try:
+              scId = kwargs.pop('schemaId')
+              raise BenchlingAPIException('Provide schemaName or schemaId but not both.')
+            except:
+                pass
+            ## get IDs based on name
+            scIds = [s['id'] for s in self.schemas if s['name'] == schemaName]
+            return self._list_registered_entities(what, whatKey, schemaId=scIds, **kwargs)
+        else:
+            pdict = {k:v for k,v in kwargs.items() if v is not None}
+            return self._get_pages(what, whatKey, params=pdict)
 
     def submit_mafft_alignment(self, seq_id, queries,
                                adjust_direction="no",
@@ -500,6 +643,7 @@ class BenchlingAPI(object):
             if a['end'] == 0:
                 a['end'] = len(sequence['bases'])
 
+    @deprecated("Use list_dna_sequences or list_aa_sequences instead")
     def get_sequence(self, seq_id, data=None):
         """
         Get a sequence from a sequence id
@@ -619,17 +763,9 @@ class BenchlingAPI(object):
 
     def _updatelistsfromdictionaries(self):
         for f in self.folders:
-            seqs = f['sequences']
             if f['name'] not in self.folder_dict:
                 self.folder_dict[f['name']] = []
             self.folder_dict[f['name']].append(f)
-            for s in seqs:
-                s['folder'] = f['id']
-                if s not in self.sequences:
-                    self.sequences.append(s)
-                if s['name'] not in self.seq_dict:
-                    self.seq_dict[s['name']] = []
-                self.seq_dict[s['name']].append(s)
 
     def _update_dictionaries(self):
         """
@@ -640,7 +776,18 @@ class BenchlingAPI(object):
         r = self._get('folders')
         if 'error' in r:
             raise requests.ConnectionError('Benchling Authentication Required. Check your Benchling API key.')
+
         self.folders = r['folders']
+        self._updatelistsfromdictionaries()
+        self.folders    = f['folders']
+
+        ## Filter registries not owned by specified organization
+        ## split owner / organization / subdomain (specific user)
+        self.registries = [rdict for rdict in r['registries']
+                            if rdict['owner']['handle'].find(self.owner)>-1]
+        self.schemas = self.list_entity_schemas()
+        self.dropdowns = self.list_dropdowns()
+
         self._updatelistsfromdictionaries()
 
     def search(self, query, querytype='text', limit=10, offset=0):
