@@ -32,7 +32,7 @@ class RequestDecorator(object):
         def wrapped_f(*args, **kwargs):
             args = list(args)
             args[1] = os.path.join(args[0].home, args[1])
-            r = f(*args)
+            r = f(*args, **kwargs)
             if r.status_code not in self.code:
                 http_codes = {
                     403: "FORBIDDEN",
@@ -106,7 +106,7 @@ class BenchlingAPI(object):
     """
 
     # TODO: Create SQLite Database for sequences
-    def __init__(self, api_key, home='https://{owner}benchling.com/api/v2/', owner='', *args, **kwargs):
+    def __init__(self, api_key, owner='', home='https://{owner}benchling.com/api/v2/',  *args, **kwargs):
         """
         BenchlingAPI connector
         :param api_key:
@@ -133,7 +133,7 @@ class BenchlingAPI(object):
             self.update()
         except requests.ConnectionError:
             raise BenchlingLoginError('Benchling login credentials incorrect. Check \
-                BenchlinAPIKey: {}'.format(api_key))
+                BenchlingAPIKey: {}'.format(api_key))
 
     def update(self):
         """
@@ -151,28 +151,25 @@ class BenchlingAPI(object):
         return requests.patch(what, json=data, auth=self.auth)
 
     @RequestDecorator(200)
-    def _get(self, what, data=None, *args, **kwargs):
+    def _get(self, what, data=None, **kwargs):
         if data is None:
             data = {}
 
-        return requests.get(what, json=data, auth=self.auth, *args, **kwargs)
+        return requests.get(what, json=data, auth=self.auth, **kwargs)
 
-    def _get_pages(self, what, whatKey, data=None, nextToken=None, params=None, **kwargs):
+    def _get_pages(self, what, whatKey, data=None, nextToken=None, params={}, **kwargs):
         if data is None:
             data = {}
 
         if nextToken is not None:
-          try:
-            params.update({'nextToken':nextToken})
-          except AttributeError:
-            params = {'nextToken':nextToken}
-        out = self._get(what, data=data, params=params, **kwargs)
+          params['nextToken'] = nextToken
+
+        out = self._get(what, data, params=params, **kwargs)
         try:
           next = out['nextToken']
           if next:
-            return out[whatKey] +
-                self._get_pages(what, whatKey, data, nextToken=next,
-                               params=params, **kwargs)
+            return out[whatKey] + self._get_pages(what, whatKey, data,
+                                    nextToken=next, params=params)
           else:
             return(out[whatKey])
         except KeyError:
@@ -479,7 +476,7 @@ class BenchlingAPI(object):
                     for r in self.registries])
 
     def list_custom_entities(self, schemaName=None, name=None, schemaId=None, pageSize=100):
-        return self._list_registered_entities('aa-sequences', 'aaSequences',
+        return self._list_registered_entities('custom-entities', 'customEntities',
                       name=name,schemaId=schemaId,
                       schemaName=schemaName, pageSize=pageSize)
 
@@ -490,38 +487,6 @@ class BenchlingAPI(object):
     def list_aa_sequences(self,  schemaName=None, schemaId=None, name=None, pageSize=100):
         return self._list_registered_entities('dna-sequences', 'dnaSequences',
                     name=name, schemaId=schemaId, schemaName=schemaName)
-
-    def list_custom_entities(self, schemaName=None, name=None, schemaId=None, pageSize=100):
-        return self._list_registered_entities('aa-sequences', 'aaSequences',
-                      name=name,
-                      schemaId=schemaId, schemaName=schemaName,
-                      pageSize=pageSize)
-
-    def list_dna_sequences(self, schemaName=None, schemaId=None,  name=None, pageSize=100):
-        return self._list_registered_entities('dna-sequences', 'dnaSequences',
-                    name=name, schemaId=schemaId, schemaName=schemaName)
-
-    def list_aa_sequences(self,  schemaName=None, schemaId=None, name=None, pageSize=100):
-        return self._list_registered_entities('dna-sequences', 'dnaSequences',
-                    name=name, schemaId=schemaId, schemaName=schemaName)
-
-    def list_batches(self, schemaName=None, schemaId=None, registryId=None, pageSize=100):
-        return self._list_registered_entities('batches', 'Batches',
-                    schemaId=schemaId, schemaName=schemaName)
-
-    def _list_registered_entities(self, what, whatKey, schemaName=None, *args, **kwargs):
-        if schemaName:
-            try:
-              scId = kwargs.pop('schemaId')
-              raise BenchlingAPIException('Provide schemaName or schemaId but not both.')
-            except:
-                pass
-            ## get IDs based on name
-            scIds = [s['id'] for s in self.schemas if s['name'] == schemaName]
-            return self._list_registered_entities(what, whatKey, schemaId=scIds, **kwargs)
-        else:
-            pdict = {k:v for k,v in kwargs.items() if v is not None}
-            return self._get_pages(what, whatKey, params=pdict)
 
     def list_batches(self, schemaName=None, schemaId=None, registryId=None, pageSize=100):
         return self._list_registered_entities('batches', 'Batches',
@@ -643,7 +608,7 @@ class BenchlingAPI(object):
             if a['end'] == 0:
                 a['end'] = len(sequence['bases'])
 
-    @deprecated("Use list_dna_sequences or list_aa_sequences instead")
+    @Deprecated("Use list_dna_sequences or list_aa_sequences instead")
     def get_sequence(self, seq_id, data=None):
         """
         Get a sequence from a sequence id
@@ -773,13 +738,14 @@ class BenchlingAPI(object):
         :return:
         """
         self._clear()
-        r = self._get('folders')
+        f = self._get('folders')
+        r = self._get('registries')
         if 'error' in r:
             raise requests.ConnectionError('Benchling Authentication Required. Check your Benchling API key.')
 
-        self.folders = r['folders']
+        self.folders = f['folders']
         self._updatelistsfromdictionaries()
-        self.folders    = f['folders']
+
 
         ## Filter registries not owned by specified organization
         ## split owner / organization / subdomain (specific user)
