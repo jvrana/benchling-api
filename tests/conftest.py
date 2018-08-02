@@ -1,7 +1,10 @@
-import pytest
-from benchlingapi import BenchlingAPI
-import os
 import json
+import os
+
+import pytest
+
+from benchlingapi.session import Session
+
 
 @pytest.fixture
 def config(scope="module"):
@@ -10,6 +13,7 @@ def config(scope="module"):
     with open(config_location, 'rU') as handle:
         return json.load(handle)
 
+
 @pytest.fixture(scope="module")
-def api():
-    return BenchlingAPI(**config()["credentials"])
+def session():
+    return Session(config()["credentials"]["api_key"])

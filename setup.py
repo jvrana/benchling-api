@@ -1,52 +1,76 @@
 import os
 import re
+import sys
 from distutils.core import setup
+from setuptools.command.install import install
 
-# about
-__author__ = 'Justin Dane Vrana'
-__license__ = 'MIT'
-__package__ = "benchlingapi"
-__readme__ = "README"
 
 tests_require = [
     'pytest',
-    'pytest-runner',
-    'python-coveralls',
-    'pytest-pep8'
+    'pytest-cov'
 ]
 
-install_requires = ['requests', 'bs4', 'biopython', 'lxml']
+# 3.0.0b12
+install_requires = [
+    "requests",
+    "marshmallow==2.15.1",
+    "inflection",
+]
 
-# setup functions
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+def parse_version_file():
+    here = os.path.abspath(os.path.dirname(__file__))
+    ver_dict = {}
+    with open(os.path.join(here, 'benchlingapi', '__version__.py'), 'r') as f:
+        for line in f.readlines():
+            m = re.match('__(\w+)__\s*=\s*(.+)', line)
+            if m:
+                key = m.group(1)
+                val = m.group(2)
+                val = re.sub("[\'\"]", "", val)
+                ver_dict[key] = val
+    return ver_dict
 
-def get_property(prop, project):
-    result = re.search(r'{}\s*=\s*[\'"]([^\'"]*)[\'"]'.format(prop), open(project + '/__init__.py').read())
-    if result:
-        return result.group(1)
-    else:
-        raise RuntimeError("Unable to find property {0} in project \"{1}\".".format(prop, project))
 
-def get_version():
-    try:
-        return get_property("__version__", __package__)
-    except RuntimeError as e:
-        raise RuntimeError("Unable to find __version__ string in project \"{0}\"".format(__package__))
+def readme():
+    """print long description"""
+    with open('README.rst') as f:
+        return f.read()
+
+
+class VerifyVersionCommand(install):
+    """Custom command to verify that the git tag matches our version"""
+    description = 'verify that the git tag matches our version'
+
+    def run(self):
+        tag = os.getenv('CIRCLE_TAG')
+
+        if tag != ver['version']:
+            info = "Git tag: {0} does not match the version of this app: {1}".format(
+                tag, ver['version']
+            )
+            sys.exit(info)
+
+
+ver = parse_version_file()
 
 # setup
 setup(
-        name=__package__,
-        version=get_version(),
-        packages=[__package__],
-        url='https://github.com/klavinslab/benchling-api',
-        license=__license__,
-        author=__author__,
-        author_email='justin.vrana@gmail.com',
-        keywords='api benchling dna sequence wrapper',
-        description='Intuitive API wrapper framework for Benchling',
-        long_description=read(__readme__),
+        title=ver['title'],
+        name='benchlingapi',
+        version=ver['version'],
+        packages=["benchlingapi"],
+        long_description=readme(),
+        url=ver['url'],
+        license='',
+        author=ver['author'],
+        author_email=ver['author_email'],
+        keywords='aquarium api',
+        description=ver['description'],
         install_requires=install_requires,
         python_requires='>=3.4',
         tests_require=tests_require,
+        classifiers=[],
+        cmdclass={
+            'verify': VerifyVersionCommand,
+        }
 )
