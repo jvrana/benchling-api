@@ -166,3 +166,5 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+/tests/secrets/.secret.json
+/tests/secrets/config.json
