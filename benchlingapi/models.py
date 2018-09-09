@@ -66,11 +66,19 @@ class DNASequence(ModelBase, ArchiveMixin):
 
     # TODO: remove schema_dumper with marshmallow > 3
     def save(self):
-        return self.create_model(self.schema_dumper(self.save_schema(), self))
+        data = self.schema_dumper(self.save_schema(), self)
+        return self._create_from_data(data)
 
     # TODO: remove schema_dumper with marshmallow > 3
+    def reload(self):
+        seq = self.find(self.id)
+        data = self.schema_dumper(seq.update_schema(), seq)
+        self.__dict__.update(data)
+        return self
+
     def update(self):
-        return self.update_model(self.id, self.schema_dumper(self.update_schema(), self))
+        data = self.schema_dumper(self.update_schema(), self)
+        return self._update_from_data(data)
 
     @staticmethod
     def _opensharelink(share_link):

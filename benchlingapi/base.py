@@ -163,7 +163,7 @@ class ModelBase(object, metaclass=ModelRegistry):
 
     @classmethod
     def find(cls, id, **params):
-        cls.get(id, **params)
+        return cls.get(id, **params)
 
     @classmethod
     def find_by_name(cls, name, **page_params):
@@ -191,12 +191,12 @@ class ModelBase(object, metaclass=ModelRegistry):
         response = cls._post(data, **params)
         return cls.load(response)
 
-    def create(self, data):
+    def _create_from_data(self, data):
         r = self.create_model(data)
         self.__dict__.update(r.__dict__)
         return self
 
-    def update(self, data):
+    def _update_from_data(self, data):
         r = self.update_model(self.id, data)
         self.__dict__.update(r.__dict__)
         return self

@@ -5,6 +5,11 @@ from uuid import uuid4
 from benchlingapi.models import DNASequence
 
 
+def test_find(session):
+    assert session.DNASequence.get('seq_6rvTvctB') is not None
+    assert session.DNASequence.find('seq_6rvTvctB') is not None
+
+
 def test_tableize(session):
     assert session.DNASequence.tableize() == "dna-sequences"
 
@@ -20,10 +25,26 @@ def test_get(session):
     result = session.DNASequence.get("seq_6rvTvctB")
     print(result)
 
+def test_save_new(session):
+    new_dna = session.DNASequence(
+        **{'aliases': [],
+         'annotations': [],
+         'bases': 'agtagatacgaa',
+         'folderId': 'lib_Y8XL068P',
+         'isCircular': False,
+         'name': 'temp',
+         'translations': []}
+    )
+    new_dna.save()
+    assert new_dna.id is not None
+    new_dna.delete
+
 def test_save(session):
+    """Should copy"""
     result = session.DNASequence.get("seq_6rvTvctB")
     response = result.save()
     new_id = response.id
+    assert new_id is not None
     assert new_id is not result.id
 
 def test_create_new(session):
@@ -53,17 +74,31 @@ def test_create_new(session):
         folderId=folder.id
     )
     new_seq.save()
+    assert new_seq.id is not None
+
 
 def test_update(session):
     seq_id = "seq_6rvTvctB"
     result = session.DNASequence.get(seq_id)
-    old_name = result.name
-    result.name = str(uuid4())
-    new_response = result.update()
-    new_name = session.DNASequence.get(seq_id).name
+    new_name = str(uuid4())
+    result.name = new_name
+    result.update()
+    result2 = session.DNASequence.get(seq_id)
+    assert result2.name == new_name
 
-    assert new_name != old_name
-    assert new_name == new_response.name
+
+def test_reload(session):
+    seq_id = "seq_6rvTvctB"
+    result = session.DNASequence.get(seq_id)
+    old_name = result.name
+    new_name = str(uuid4())
+    result.name = new_name
+
+    # should restore to old_name
+    assert not result.name == old_name
+    result.reload()
+    assert not result.name == new_name
+    assert result.name == old_name
 
 
 def test_from_share_link(session):
