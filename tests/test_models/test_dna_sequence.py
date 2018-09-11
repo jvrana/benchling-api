@@ -1,5 +1,4 @@
-from benchlingapi.models import DNASequence
-from uuid import uuid4
+from benchlingapi.models import DNASequence, Annotation, Folder
 from uuid import uuid4
 
 from benchlingapi.models import DNASequence
@@ -37,7 +36,6 @@ def test_save_new(session):
     )
     new_dna.save()
     assert new_dna.id is not None
-    new_dna.delete
 
 def test_save(session):
     """Should copy"""
@@ -121,3 +119,8 @@ def test_list_pages(session):
     assert issubclass(type(p2[0]), DNASequence)
     assert p[0].id != p2[0].id
 
+
+def test_nested_annotations(session):
+    seq = session.DNASequence.find('seq_Gp4Goekc')
+
+    assert isinstance(seq.annotations[0], Annotation)

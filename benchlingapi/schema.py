@@ -65,15 +65,16 @@ class SequenceSchema(EntitySchema, ModelSchemaMixin):
 
 class DNASequenceSchema(SequenceSchema):
 
-    annotations = mfields.List(mfields.Nested("AnnotationSchema"))
+    annotations = mfields.Nested("AnnotationSchema", many=True)
     bases = mfields.String(required=True)
     isCircular = mfields.Boolean(required=True)
-    translations = mfields.List(mfields.Nested("TranslationSchema"))
+    translations = mfields.Nested("TranslationSchema", many=True)
     customFields = mfields.Raw()
+
 
 class AASequenceSchema(SequenceSchema):
 
-    annotations = mfields.List(mfields.Nested("AnnotationSchema"))
+    annotations = mfields.Nested("AnnotationSchema", many=True)
     aminoAcids = mfields.String(required=True)
 
 
@@ -87,7 +88,7 @@ class BatchSchema(EntitySchema):
     pass
 
 
-class AnnotationSchema(Schema):
+class AnnotationSchema(Schema, ModelSchemaMixin):
     color = mfields.String()
     start = mfields.Integer()
     end = mfields.Integer()
@@ -130,8 +131,6 @@ class FolderSchema(Schema, ModelSchemaMixin):
     parentFolderId = mfields.String(allow_none=True)
     projectId = mfields.String(required=True)
     archiveRecord = mfields.Nested(ArchiveRecordSchema, allow_none=True)
-
-
 
 class ProjectSchema(Schema, ModelSchemaMixin):
     id = mfields.String()
