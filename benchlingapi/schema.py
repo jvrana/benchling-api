@@ -54,12 +54,12 @@ class EntitySchema(Schema):
 
 class CustomEntity(EntitySchema):
     aliases = mfields.List(mfields.String())
-    folderId = mfields.String(required=True)
+    folderId = mfields.String(required=True, allow_none=True)
 
 
-class SequenceSchema(EntitySchema, ModelSchemaMixin):
+class SequenceSchema(ModelSchemaMixin, EntitySchema):
     aliases = mfields.List(mfields.String())
-    folderId = mfields.String(required=True)
+    folderId = mfields.String(required=True, allow_none=True)
     length = mfields.Integer()
 
 
@@ -88,7 +88,7 @@ class BatchSchema(EntitySchema):
     pass
 
 
-class AnnotationSchema(Schema, ModelSchemaMixin):
+class AnnotationSchema(ModelSchemaMixin, Schema):
     color = mfields.String()
     start = mfields.Integer()
     end = mfields.Integer()
@@ -125,17 +125,22 @@ class UserSummarySchema(Schema):
 ####################################
 
 
-class FolderSchema(Schema, ModelSchemaMixin):
+class FolderSchema(ModelSchemaMixin, Schema):
     id = mfields.String()
     name = mfields.String(required=True)
     parentFolderId = mfields.String(allow_none=True)
     projectId = mfields.String(required=True)
     archiveRecord = mfields.Nested(ArchiveRecordSchema, allow_none=True)
 
-class ProjectSchema(Schema, ModelSchemaMixin):
+
+class ProjectSchema(ModelSchemaMixin, Schema):
     id = mfields.String()
     name = mfields.String()
     owner = mfields.Nested(UserSummarySchema)
     archiveRecord = mfields.Nested(ArchiveRecordSchema, allow_none=True)
 
 
+class RegistrySchema(ModelSchemaMixin, Schema):
+    id = mfields.String()
+    name = mfields.String()
+    owner = mfields.Nested(UserSummarySchema)
