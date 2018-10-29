@@ -275,7 +275,17 @@ class RegistryMixin(EntityMixin):
         self.reload()
         return self
 
-    def register_and_overwrite_name(self):
+    # TODO: test this method
+    def register_with_custom_id(self, id):
+        name = self.name
+        self.name = id
+        self.register(naming_strategy=self.NAMING_STRATEGY.DELETE_NAMES)
+        self.name = name
+        self.update()
+        return self
+
+    # TODO: test this method
+    def register_and_save_name_as_alias(self):
         self.register(naming_strategy=self.NAMING_STRATEGY.DELETE_NAMES)
         if self.name not in self.aliases:
             self.add_alias(self.name)
@@ -301,10 +311,6 @@ class RegistryMixin(EntityMixin):
     def registry_dict(cls, registry_id=None, registry_name=None, **params):
         entities = cls.list_in_registry(registry_id=registry_id, registry_name=registry_name, **params)
         return {e.entityRegistryId: e for e in entities}
-
-    @classmethod
-    def find_in_registry(cls, id, registry_id=None, registry_name=None, **params):
-        return cls.registry_dict.get(id, registry_id=registry_id, registry_name=registry_name, **params)
 
     @classmethod
     def find_by_name_in_registry(cls, name, registry_id=None, registry_name=None, **params):

@@ -186,6 +186,11 @@ class Registry(ListMixin, ModelBase):
             if len(registries) == 1:
                 return registries[0]
 
+    def get_entities(self, entity_ids):
+        return self._get([self.id, "registered-entities"], action="bulk-get", params={
+            'entityRegistryIds': entity_ids
+        })
+
     @property
     def entity_schemas(self):
         data = self._get([self.id, 'entity-schemas'])['entitySchemas']
@@ -229,6 +234,16 @@ class Registry(ListMixin, ModelBase):
 
     def unregister_entities(self, entity_ids, folder_id):
         return self.unregister(self.id, entity_ids, folder_id)
+
+    def get_entities(self, entity_registry_ids):
+        return self._get([self.id, 'registered-entities'], action='bulk-get', params={
+            'entityRegistryIds': entity_registry_ids
+        })
+
+    def find_in_registry(self, entity_registry_id):
+        models = self.get_entities([entity_registry_id])
+        if models:
+            return models[0]
 
 # class Annotation(ModelBase):
 #
