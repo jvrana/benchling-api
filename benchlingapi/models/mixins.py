@@ -1,8 +1,15 @@
+"""
+Exposes models to various API endpoints.
+"""
+
 from benchlingapi.models.base import ModelRegistry
 from benchlingapi.exceptions import BenchlingAPIException
 
 
 class GetMixin:
+    """
+    Exposes the `get` and `find` by id methods
+    """
 
     @classmethod
     def get(cls, id, **params):
@@ -20,6 +27,10 @@ class GetMixin:
 
 
 class ListMixin:
+    """
+    Exposes the methods that return many model instances (e.g. `all`, `list`, `one`, etc.)
+    """
+
     MAX_PAGE_SIZE = 100
 
     @classmethod
@@ -36,6 +47,26 @@ class ListMixin:
         return models[0]
 
     @classmethod
+    def list_pages(cls, page_limit=None, **params):
+        generator = cls._get_pages(params=params)
+        response = next(generator, None)
+        page_num = 1
+        while response is not None and (page_limit is None or page_num <= page_limit):
+            yield cls.load_many(response[cls.camelize()])
+            response = next(generator, None)
+            page_num += 1
+
+    @classmethod
+    def all(cls, page_limit=None, limit=None, **params):
+        num = 0
+        for page in cls.list_pages(page_limit=page_limit, **params):
+            for m in page:
+                yield m
+                num += 1
+                if limit is not None and num >= limit:
+                    return
+
+    @classmethod
     def last(cls, num, **params):
         """
         Returns the most recent models.
@@ -48,39 +79,25 @@ class ListMixin:
         :rtype: list
         """
         max_page_size = min(cls.MAX_PAGE_SIZE, params.get("pageSize", cls.MAX_PAGE_SIZE))
-        if num < max_page_size:
-            return cls.list(pageSize=num, **params)
-        else:
-            models = []
-            pageSizes = [max_page_size] * (num // max_page_size) + [num % max_page_size]
-            pages = cls.list_pages(pageSize=max_page_size, **params)
-            for pageSize in pageSizes:
-                models += next(pages)[:pageSize]
-            return models
+        if num <= max_page_size:
+            max_page_size = num
+        return list(cls.all(pageSize=max_page_size, limit=num))
 
     @classmethod
-    def list_pages(cls, **params):
-        generator = cls._get_pages(params=params)
-        response = next(generator, None)
-        while response is not None:
-            yield cls.load_many(response[cls.camelize()])
-            response = next(generator, None)
-
-    @classmethod
-    def search(cls, fxn, limit=1, **params):
+    def search(cls, fxn, limit=1, page_limit=5, **params):
         found = []
-        for models in cls.list_pages(**params):
-            for m in models:
-                if fxn(m):
-                    found.append(m)
-                if len(found) >= limit:
-                    return found
+        for model in cls.all(page_limit=page_limit, **params):
+            if fxn(model):
+                found.append(model)
+            if len(found) >= limit:
+                return found
         return found
 
     @classmethod
-    def find_by_name(cls, name, **params):
-        models = cls.search(lambda x: x.name == name, limit=1, **params)
-        return models
+    def find_by_name(cls, name, page_limit=5, **params):
+        models = cls.search(lambda x: x.name == name, limit=1, page_limit=page_limit, **params)
+        if models:
+            return models[0]
 
     @classmethod
     def get(cls, id, **params):
@@ -92,8 +109,12 @@ class ListMixin:
     def find(cls, id, **params):
         return cls.get(id, **params)
 
-
 class UpdateMixin:
+    """
+    Exposes methods to update models on the Benchling server.
+    """
+
+    UPDATE_SCHEMA = "NOT IMPLEMENTED"
 
     @classmethod
     def update_model(cls, model_id, data, **params):
@@ -105,15 +126,17 @@ class UpdateMixin:
         self._update_from_other(r)
         return self
 
-    def update_schema(self):
-        raise NotImplementedError
-
     def update(self):
-        data = self.schema_dumper(self.update_schema(), self)
+        data = self.dump(**dict(self.UPDATE_SCHEMA))
         return self._update_from_data(data)
 
 
 class CreateMixin:
+    """
+    Exposes methods that create new models on the Benchling server.
+    """
+
+    CREATE_SCHEMA = "Not implemented"
 
     @classmethod
     def create_model(cls, data, **params):
@@ -130,15 +153,16 @@ class CreateMixin:
         self._update_from_other(r)
         return self
 
-    def save_schema(self):
-        raise NotImplementedError
-
     # TODO: remove schema_dumper with marshmallow > 3
     def save(self):
-        data = self.schema_dumper(self.save_schema(), self)
+        data = self.dump(**self.CREATE_SCHEMA)
         return self._create_from_data(data)
 
+
 class ArchiveMixin:
+    """
+    Exposes archiving and unarchiving methods
+    """
 
     class ARCHIVE_REASONS:
         ERROR = "Made in error"
@@ -164,7 +188,7 @@ class ArchiveMixin:
     @classmethod
     def unarchive_many(cls, model_ids):
         key = cls.camelize("id")
-        return cls._post(action="archive", data={key: model_ids})
+        return cls._post(action="unarchive", data={key: model_ids})
 
     def archive(self, reason=ARCHIVE_REASONS._DEFAULT):
         self.archive_many([self.id], reason)
@@ -189,19 +213,20 @@ class ArchiveMixin:
 
 
 class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
+    """
+    Entity methods (includes get, list, create, update)
+    """
 
     @classmethod
     def find_by_name(cls, name, **params):
-        return cls.list(name=name, **params)
+        models = cls.list(name=name, **params)
+        if models:
+            return models[0]
 
     def batches(self):
         """Get an entities batches"""
         result = self.session.http.get(self._url_build("entities", self.id, "batches"))
         return ModelRegistry.get_model("Batch").load_many(result['batches'])
-
-    def move(self, folderId):
-        self.folderId = folderId
-        self.update()
 
     @classmethod
     def list_archived(cls, reason=ArchiveMixin.ARCHIVE_REASONS.OTHER):
@@ -213,7 +238,20 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
         return self
 
 
-class RegistryMixin(EntityMixin):
+class InventoryMixin():
+    """
+    Designates model as having a folderId
+    """
+
+    def move(self, folderId):
+        self.folderId = folderId
+        self.update()
+
+
+class RegistryMixin():
+    """
+    Allows model to be registered and unregistered.
+    """
 
     ENTITY_TYPE = "unknown"
 
@@ -270,7 +308,9 @@ class RegistryMixin(EntityMixin):
             self.reload()
         return self
 
-    def unregister(self, folder_id):
+    def unregister(self, folder_id=None):
+        if folder_id is None:
+            folder_id = self.folderId
         self.registry.unregister(self.registryId, [self.id], folder_id)
         self.reload()
         return self
@@ -319,8 +359,16 @@ class RegistryMixin(EntityMixin):
             return models[0]
 
     def unregister(self, folderId):
-        registry = self.get_registry()
+        registry = self.registry
         if registry is None:
             return
         registry.unregister_entities([self.id], folderId)
-        self._update_from_other(self.session.DNASequence.find(self.id))
+        self.reload()
+        return self
+
+
+class InventoryEntityMixin(InventoryMixin, RegistryMixin, EntityMixin):
+    """
+    Mixin for :class:`DNASequence`, :class:`AASequence`, and :class:`CustomEntity`
+    """
+    pass

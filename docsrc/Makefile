@@ -5,7 +5,7 @@
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = BenchlingPyAPI
-SOURCEDIR     = source
+SOURCEDIR     = .
 BUILDDIR      = ../docs
 
 # Put it first so that "make" without argument is like "make help".

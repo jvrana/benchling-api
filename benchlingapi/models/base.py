@@ -1,4 +1,10 @@
+"""
+The base model class and registry for all model instances.
+"""
+
+import inspect
 from distutils.version import LooseVersion
+from functools import reduce
 
 import inflection
 from marshmallow import __version__
@@ -28,6 +34,26 @@ class ModelRegistry(type):
         else:
             return ModelRegistry.models[model_name]
 
+    @staticmethod
+    def models_by_base_classes():
+        models_by_base_classes = {}
+        for m in ModelRegistry.models.values():
+            hierarchy = inspect.getmro(m)
+            for base_model in hierarchy:
+                models_by_base_classes.setdefault(base_model.__name__, []).append(m)
+        return models_by_base_classes
+
+    @staticmethod
+    def filter_models_by_base_classes(bases):
+        if isinstance(bases, list):
+            model_sets = []
+            for only_model in bases:
+                model_sets.append(set(ModelRegistry.models_by_base_classes()[only_model.__name__]))
+            models = reduce(lambda x, y: x.intersection(y), model_sets)
+        else:
+            models = ModelRegistry.models_by_base_classes()[bases.__name__]
+        return models
+
     def __getattr__(cls, item):
         """
         Special warning for attribute errors.
@@ -45,12 +71,16 @@ class ModelRegistry(type):
 
 
 class ModelBase(object, metaclass=ModelRegistry):
+    """
+    The model base for all BenchlingAPI model instances.
+    """
     # http = None  # initialized with Session calls a model interface
     session = None
     alias = None
 
     def __init__(self, **data):
-        vars(self).update(data)
+        for k, v in data.items():
+            setattr(self, k, v)
 
     @staticmethod
     def _url_build(*parts):
@@ -63,7 +93,7 @@ class ModelBase(object, metaclass=ModelRegistry):
         return self.__class__.__name__
 
     @classmethod
-    def schema(cls, *args, **kwargs):
+    def serialization_schema(cls, *args, **kwargs):
         schema = class_registry.get_class(cls.__name__ + "Schema")
         schema_inst = schema(*args, **kwargs)
         schema_inst.context["session"] = cls.session
@@ -71,7 +101,7 @@ class ModelBase(object, metaclass=ModelRegistry):
 
     # TODO: remove schema_loader for marshmallow > 3
     @staticmethod
-    def schema_loader(schema_inst, data):
+    def deserializer(schema_inst, data):
         result = schema_inst.load(data)
         if LooseVersion(__version__) < LooseVersion('3.0.0'):
             if len(result.errors) > 0:
@@ -81,7 +111,7 @@ class ModelBase(object, metaclass=ModelRegistry):
 
     # TODO: remove schema_dumper for marshmallow > 3
     @staticmethod
-    def schema_dumper(schema_inst, inst):
+    def serializer(schema_inst, inst):
         result = schema_inst.dump(inst)
         if LooseVersion(__version__) < LooseVersion('3.0.0'):
             if len(result.errors) > 0:
@@ -91,20 +121,20 @@ class ModelBase(object, metaclass=ModelRegistry):
 
     @classmethod
     def load(cls, data, *args, **kwargs):
-        schema_inst = cls.schema(*args, **kwargs)
-        inst = cls.schema_loader(schema_inst, data)
+        schema_inst = cls.serialization_schema(*args, **kwargs)
+        inst = cls.deserializer(schema_inst, data)
         inst.raw = data
         return inst
 
     def dump(self, *args, **kwargs):
-        schema = self.schema(*args, **kwargs)
-        return self.schema_dumper(schema, self)
+        schema = self.serialization_schema(*args, **kwargs)
+        return self.serializer(schema, self)
 
     @classmethod
     def load_many(cls, data, *args, **kwargs):
-        schema_inst = cls.schema(*args, many=True, **kwargs)
+        schema_inst = cls.serialization_schema(*args, many=True, **kwargs)
         # TODO: change for marshmallow > v3
-        insts = cls.schema_loader(schema_inst, data)
+        insts = cls.deserializer(schema_inst, data)
         for inst_data, inst in zip(data, insts):
             try:
                 inst.raw = inst_data

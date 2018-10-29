@@ -1,3 +1,7 @@
+"""
+BenchlingAPI specific exceptions
+"""
+
 class BenchlingAPIException(Exception):
     """Generic Exception for BenchlingAPI"""
 

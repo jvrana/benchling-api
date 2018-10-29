@@ -1,6 +1,8 @@
 PIP=pip3
 
-documentation:
+.PHONY: docs
+
+docs:
 	@echo "Updating docs"
 
 	# copy README.md to README.rst format for Sphinx documentation
@@ -14,3 +16,6 @@ documentation:
 	@echo "\033[95m\n\nBuild successful! View the docs homepage at docs/html/index.html.\n\033[0m"
 
 	touch docs/.nojekyll
+
+klocs:
+	find . -name '*.py' | xargs wc -l

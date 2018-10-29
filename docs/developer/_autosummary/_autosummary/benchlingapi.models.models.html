@@ -1,0 +1,570 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../../../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../../../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>benchlingapi.models.models &#8212; BenchlingAPI 2.0.0-development documentation</title>
+    <link rel="stylesheet" href="../../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="benchlingapi.models.schema" href="benchlingapi.models.schema.html" />
+    <link rel="prev" title="benchlingapi.models.mixins" href="benchlingapi.models.mixins.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="benchlingapi.models.schema.html" title="benchlingapi.models.schema"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="benchlingapi.models.mixins.html" title="benchlingapi.models.mixins"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">BenchlingAPI 2.0.0-development documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../benchlingapi.models.html" accesskey="U">benchlingapi.models</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar"><div>
+    <p class="sidebar-subtitle">
+        <a href="../../../index.html">
+            <h1>Benchling API</h1>
+        </a>
+        <h4>Version: 2.0.0-development</h4>
+    </p>
+
+    <p>
+        An unofficial python wrapper for the BenchlingAPI.
+        Official documentation for BenchlingAPI can be found here:
+        <a href="http://docs.benchling.com/reference">https://docs.benchling.com/reference</a>
+    </p>
+    <p>
+
+        You are looking at documentation
+        for version <b>2.0.0-development</b>.
+    </p>
+</div>
+<div>
+    <!--<a href="https://circleci.com/gh/klavinslab/trident/tree/master"><img-->
+            <!--src="https://circleci.com/gh/klavinslab/trident.svg?style=svg" alt="build status"></a>-->
+    <!--<a href="https://badge.fury.io/py/pydent"><img src="https://badge.fury.io/py/pydent.svg" alt="PyPI version" height="18"></a>-->
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Table Of Contents</h2>
+  </div>
+  <div class="sidebar-toc">
+    
+    
+      <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api_reference.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../api_reference.html#modules">Modules</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  </div>
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../../../index.html">Docs</a></li>
+              
+                <li><a href="../../api_reference.html">API Reference</a></li>
+              
+                <li><a href="../benchlingapi.models.html">benchlingapi.models</a></li>
+              
+              <li>benchlingapi.models.models</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="module-benchlingapi.models.models">
+<span id="benchlingapi-models-models"></span><h1>benchlingapi.models.models<a class="headerlink" href="#module-benchlingapi.models.models" title="Permalink to this headline">¶</a></h1>
+<p>All BenchlingAPI models</p>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#benchlingapi.models.models.AASequence" title="benchlingapi.models.models.AASequence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AASequence</span></code></a>([aliases,&nbsp;aminoAcids,&nbsp;…])</td>
+<td>A model representing Benchling’s AASequence (protein).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#benchlingapi.models.models.Annotation" title="benchlingapi.models.models.Annotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Annotation</span></code></a>(**data)</td>
+<td>A model representing a sequence Annotation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#benchlingapi.models.models.Batch" title="benchlingapi.models.models.Batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Batch</span></code></a>([entityId,&nbsp;fields])</td>
+<td>A model representing a Batch.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#benchlingapi.models.models.CustomEntity" title="benchlingapi.models.models.CustomEntity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CustomEntity</span></code></a>([aliases,&nbsp;customFields,&nbsp;…])</td>
+<td>A Benchling CustomEntity model.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#benchlingapi.models.models.DNASequence" title="benchlingapi.models.models.DNASequence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DNASequence</span></code></a>([aliases,&nbsp;annotations,&nbsp;bases,&nbsp;…])</td>
+<td>A model representing Benchling’s DNASequence.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#benchlingapi.models.models.EntitySchema" title="benchlingapi.models.models.EntitySchema"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EntitySchema</span></code></a>(**data)</td>
+<td>A model representing an EntitySchema.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#benchlingapi.models.models.Folder" title="benchlingapi.models.models.Folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Folder</span></code></a>(**data)</td>
+<td>A model representing a Benchling Folder.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#benchlingapi.models.models.Oligo" title="benchlingapi.models.models.Oligo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Oligo</span></code></a>([aliases,&nbsp;bases,&nbsp;customFields,&nbsp;…])</td>
+<td>A model representing an Oligo.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#benchlingapi.models.models.Project" title="benchlingapi.models.models.Project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Project</span></code></a>(**data)</td>
+<td>A model representing a Benchling Project.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#benchlingapi.models.models.Registry" title="benchlingapi.models.models.Registry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Registry</span></code></a>(**data)</td>
+<td>A model representing a Registry.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#benchlingapi.models.models.Translation" title="benchlingapi.models.models.Translation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Translation</span></code></a>(**data)</td>
+<td>A model representing a protein translation.</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="benchlingapi.models.models.DNASequence">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">DNASequence</code><span class="sig-paren">(</span><em>aliases=None</em>, <em>annotations=None</em>, <em>bases=None</em>, <em>customFields=None</em>, <em>fields=None</em>, <em>folderId=None</em>, <em>isCircular=None</em>, <em>name=None</em>, <em>schemaId=None</em>, <em>schema=None</em>, <em>translations=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#DNASequence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.DNASequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.InventoryEntityMixin" title="benchlingapi.models.mixins.InventoryEntityMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.InventoryEntityMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
+<p>A model representing Benchling’s DNASequence.</p>
+<dl class="staticmethod">
+<dt id="benchlingapi.models.models.DNASequence._opensharelink">
+<em class="property">static </em><code class="descname">_opensharelink</code><span class="sig-paren">(</span><em>share_link</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#DNASequence._opensharelink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.DNASequence._opensharelink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hacky way to read the contents of a Benchling share link
+:param share_link:
+:return:</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="benchlingapi.models.models.DNASequence._parseURL">
+<em class="property">static </em><code class="descname">_parseURL</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#DNASequence._parseURL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.DNASequence._parseURL" title="Permalink to this definition">¶</a></dt>
+<dd><p>A really hacky way to parse the Benchling api. This may become unstable.
+:param url:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.batches">
+<code class="descname">batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entities batches</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.last">
+<em class="property">classmethod </em><code class="descname">last</code><span class="sig-paren">(</span><em>num</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most recent models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>num</strong> (<em>int</em>) – number of models to return</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.one">
+<em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a single example model (default: most recent)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="benchlingapi.models.models.AASequence">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">AASequence</code><span class="sig-paren">(</span><em>aliases=None</em>, <em>aminoAcids=None</em>, <em>customFields=None</em>, <em>fields=None</em>, <em>folderId=None</em>, <em>name=None</em>, <em>schemaId=None</em>, <em>schema=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#AASequence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.AASequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.InventoryEntityMixin" title="benchlingapi.models.mixins.InventoryEntityMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.InventoryEntityMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
+<p>A model representing Benchling’s AASequence (protein).</p>
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.batches">
+<code class="descname">batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entities batches</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.last">
+<em class="property">classmethod </em><code class="descname">last</code><span class="sig-paren">(</span><em>num</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most recent models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>num</strong> (<em>int</em>) – number of models to return</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.one">
+<em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a single example model (default: most recent)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="benchlingapi.models.models.Annotation">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">Annotation</code><span class="sig-paren">(</span><em>**data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Annotation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Annotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
+<p>A model representing a sequence Annotation.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="benchlingapi.models.models.Oligo">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">Oligo</code><span class="sig-paren">(</span><em>aliases=None</em>, <em>bases=None</em>, <em>customFields=None</em>, <em>fields=None</em>, <em>folderId=None</em>, <em>name=None</em>, <em>schemaId=None</em>, <em>schema=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Oligo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Oligo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.GetMixin" title="benchlingapi.models.mixins.GetMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.GetMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.CreateMixin" title="benchlingapi.models.mixins.CreateMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.CreateMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.InventoryMixin" title="benchlingapi.models.mixins.InventoryMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.InventoryMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.RegistryMixin" title="benchlingapi.models.mixins.RegistryMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.RegistryMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
+<p>A model representing an Oligo.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="benchlingapi.models.models.Translation">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">Translation</code><span class="sig-paren">(</span><em>**data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Translation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Translation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
+<p>A model representing a protein translation.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="benchlingapi.models.models.Folder">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">Folder</code><span class="sig-paren">(</span><em>**data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Folder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.GetMixin" title="benchlingapi.models.mixins.GetMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.GetMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.ListMixin" title="benchlingapi.models.mixins.ListMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.ListMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.ArchiveMixin" title="benchlingapi.models.mixins.ArchiveMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.ArchiveMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
+<p>A model representing a Benchling Folder.</p>
+<dl class="method">
+<dt id="benchlingapi.models.models.Folder.all_entities">
+<code class="descname">all_entities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Folder.all_entities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Folder.all_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generator that retrieves all entities in the folder.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Folder.last">
+<em class="property">classmethod </em><code class="descname">last</code><span class="sig-paren">(</span><em>num</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most recent models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>num</strong> (<em>int</em>) – number of models to return</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Folder.one">
+<em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a single example model (default: most recent)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="benchlingapi.models.models.Project">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">Project</code><span class="sig-paren">(</span><em>**data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.ListMixin" title="benchlingapi.models.mixins.ListMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.ListMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.ArchiveMixin" title="benchlingapi.models.mixins.ArchiveMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.ArchiveMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
+<p>A model representing a Benchling Project.</p>
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Project.last">
+<em class="property">classmethod </em><code class="descname">last</code><span class="sig-paren">(</span><em>num</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most recent models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>num</strong> (<em>int</em>) – number of models to return</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Project.one">
+<em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a single example model (default: most recent)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="benchlingapi.models.models.CustomEntity">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">CustomEntity</code><span class="sig-paren">(</span><em>aliases=None</em>, <em>customFields=None</em>, <em>fields=None</em>, <em>folderId=None</em>, <em>name=None</em>, <em>schemaId=None</em>, <em>schema=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#CustomEntity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.CustomEntity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.InventoryEntityMixin" title="benchlingapi.models.mixins.InventoryEntityMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.InventoryEntityMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
+<p>A Benchling CustomEntity model.</p>
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.batches">
+<code class="descname">batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entities batches</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.last">
+<em class="property">classmethod </em><code class="descname">last</code><span class="sig-paren">(</span><em>num</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most recent models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>num</strong> (<em>int</em>) – number of models to return</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.one">
+<em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a single example model (default: most recent)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="benchlingapi.models.models.Batch">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">Batch</code><span class="sig-paren">(</span><em>entityId=None</em>, <em>fields=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.RegistryMixin" title="benchlingapi.models.mixins.RegistryMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.RegistryMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.EntityMixin" title="benchlingapi.models.mixins.EntityMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.EntityMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
+<p>A model representing a Batch.</p>
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.batches">
+<code class="descname">batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entities batches</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.last">
+<em class="property">classmethod </em><code class="descname">last</code><span class="sig-paren">(</span><em>num</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most recent models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>num</strong> (<em>int</em>) – number of models to return</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.one">
+<em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a single example model (default: most recent)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="benchlingapi.models.models.Registry">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">Registry</code><span class="sig-paren">(</span><em>**data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Registry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.ListMixin" title="benchlingapi.models.mixins.ListMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.ListMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
+<p>A model representing a Registry.</p>
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Registry.find_registry">
+<em class="property">classmethod </em><code class="descname">find_registry</code><span class="sig-paren">(</span><em>id=None</em>, <em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Registry.find_registry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Registry.find_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds a registry based on either id or name. If neither is provided and there
+is only 1 registry, return the only registry.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Registry.last">
+<em class="property">classmethod </em><code class="descname">last</code><span class="sig-paren">(</span><em>num</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Registry.last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most recent models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>num</strong> (<em>int</em>) – number of models to return</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Registry.one">
+<em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Registry.one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a single example model (default: most recent)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="benchlingapi.models.models.EntitySchema">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">EntitySchema</code><span class="sig-paren">(</span><em>**data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#EntitySchema"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.EntitySchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
+<p>A model representing an EntitySchema.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="benchlingapi.models.mixins.html" title="previous chapter (use the left arrow)">benchlingapi.models.mixins</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="benchlingapi.models.schema.html" title="next chapter (use the right arrow)">benchlingapi.models.schema</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="benchlingapi.models.schema.html" title="benchlingapi.models.schema"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="benchlingapi.models.mixins.html" title="benchlingapi.models.mixins"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">BenchlingAPI 2.0.0-development documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../benchlingapi.models.html" >benchlingapi.models</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../../../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2017, University of Washington. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

@@ -5,11 +5,6 @@ from uuid import uuid4
 from benchlingapi.models import models
 
 
-def test_nested_annotations(session):
-    seq = session.DNASequence.one()
-    assert isinstance(seq.annotations[0], models.Annotation)
-
-
 def test_list_with_entityRegistryId(session):
 
     dnas = session.DNASequence.list(registryId=session.Registry.list()[0].id)

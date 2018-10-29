@@ -1,3 +1,7 @@
+"""
+BenchlingAPI session object
+"""
+
 import requests
 from benchlingapi.exceptions import BenchlingAPIException, ModelNotFoundError
 import json
@@ -45,6 +49,10 @@ class RequestDecorator(object):
 
 
 class Http(object):
+    """
+    Creates and responds to the Benchling server.
+    """
+
     TIMEOUT = 30
     HOME = 'https://benchling.com/api/v2'
     NEXT = "nextToken"
@@ -74,19 +82,21 @@ class Http(object):
             yield response
 
             next = response.get(self.NEXT, None)
-
             # update params with nextToken
             params = kwargs.get(self.NEXT, {})
             params.update({self.NEXT: next})
             kwargs["params"] = params
 
-            if next is not None:
+            if next:
                 response = get_response(**kwargs)
             else:
                 response = None
 
 
 class Session(object):
+    """
+    The session object. This serves as the main interface for using the BenchlingAPI.
+    """
 
     def __init__(self, api_key):
         self.__http = Http(api_key)
@@ -94,9 +104,6 @@ class Session(object):
         for model_name in allmodels:
             model_cls = ModelRegistry.get_model(model_name)
             nmspc = {"session": self}
-            # if model_cls.blacklist is not None:
-            #     for blacklisted_method in model_cls.blacklist:
-            #         nmspc[blacklisted_method] = None
             mymodel = type(model_name, (model_cls,), nmspc)
             setattr(self, model_name, mymodel)
             self.__interfaces[model_name] = mymodel

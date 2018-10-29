@@ -1,0 +1,230 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../../../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../../../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>benchlingapi.models.base &#8212; BenchlingAPI 2.0.0-development documentation</title>
+    <link rel="stylesheet" href="../../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="benchlingapi.models.mixins" href="benchlingapi.models.mixins.html" />
+    <link rel="prev" title="benchlingapi.models" href="../benchlingapi.models.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="benchlingapi.models.mixins.html" title="benchlingapi.models.mixins"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../benchlingapi.models.html" title="benchlingapi.models"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">BenchlingAPI 2.0.0-development documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../benchlingapi.models.html" accesskey="U">benchlingapi.models</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar"><div>
+    <p class="sidebar-subtitle">
+        <a href="../../../index.html">
+            <h1>Benchling API</h1>
+        </a>
+        <h4>Version: 2.0.0-development</h4>
+    </p>
+
+    <p>
+        An unofficial python wrapper for the BenchlingAPI.
+        Official documentation for BenchlingAPI can be found here:
+        <a href="http://docs.benchling.com/reference">https://docs.benchling.com/reference</a>
+    </p>
+    <p>
+
+        You are looking at documentation
+        for version <b>2.0.0-development</b>.
+    </p>
+</div>
+<div>
+    <!--<a href="https://circleci.com/gh/klavinslab/trident/tree/master"><img-->
+            <!--src="https://circleci.com/gh/klavinslab/trident.svg?style=svg" alt="build status"></a>-->
+    <!--<a href="https://badge.fury.io/py/pydent"><img src="https://badge.fury.io/py/pydent.svg" alt="PyPI version" height="18"></a>-->
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Table Of Contents</h2>
+  </div>
+  <div class="sidebar-toc">
+    
+    
+      <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api_reference.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../api_reference.html#modules">Modules</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  </div>
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../../../index.html">Docs</a></li>
+              
+                <li><a href="../../api_reference.html">API Reference</a></li>
+              
+                <li><a href="../benchlingapi.models.html">benchlingapi.models</a></li>
+              
+              <li>benchlingapi.models.base</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="module-benchlingapi.models.base">
+<span id="benchlingapi-models-base"></span><h1>benchlingapi.models.base<a class="headerlink" href="#module-benchlingapi.models.base" title="Permalink to this headline">¶</a></h1>
+<p>The base model class and registry for all model instances.</p>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModelBase</span></code></a>(**data)</td>
+<td>The model base for all BenchlingAPI model instances.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#benchlingapi.models.base.ModelRegistry" title="benchlingapi.models.base.ModelRegistry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModelRegistry</span></code></a>(name,&nbsp;bases,&nbsp;nmspc)</td>
+<td>Stores a list of models that can be accessed by name.</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="benchlingapi.models.base.ModelBase">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.base.</code><code class="descname">ModelBase</code><span class="sig-paren">(</span><em>**data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/base.html#ModelBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.base.ModelBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The model base for all BenchlingAPI model instances.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="benchlingapi.models.base.ModelRegistry">
+<em class="property">class </em><code class="descclassname">benchlingapi.models.base.</code><code class="descname">ModelRegistry</code><span class="sig-paren">(</span><em>name</em>, <em>bases</em>, <em>nmspc</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/base.html#ModelRegistry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.base.ModelRegistry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+<p>Stores a list of models that can be accessed by name.</p>
+<p>Saves model to the registry</p>
+<dl class="staticmethod">
+<dt id="benchlingapi.models.base.ModelRegistry.get_model">
+<em class="property">static </em><code class="descname">get_model</code><span class="sig-paren">(</span><em>model_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/base.html#ModelRegistry.get_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.base.ModelRegistry.get_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets model by model_name</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.base.ModelRegistry.mro">
+<code class="descname">mro</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#benchlingapi.models.base.ModelRegistry.mro" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a type’s method resolution order</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="../benchlingapi.models.html" title="previous chapter (use the left arrow)">benchlingapi.models</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="benchlingapi.models.mixins.html" title="next chapter (use the right arrow)">benchlingapi.models.mixins</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="benchlingapi.models.mixins.html" title="benchlingapi.models.mixins"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../benchlingapi.models.html" title="benchlingapi.models"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">BenchlingAPI 2.0.0-development documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../api_reference.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../benchlingapi.models.html" >benchlingapi.models</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../../../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2017, University of Washington. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

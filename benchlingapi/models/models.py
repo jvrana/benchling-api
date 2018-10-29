@@ -1,9 +1,14 @@
+"""
+All BenchlingAPI models
+"""
+
 import re
 from urllib.request import urlopen
 
-from benchlingapi.models.base import ModelBase
 from benchlingapi.exceptions import BenchlingAPIException
-from benchlingapi.models.mixins import GetMixin, ListMixin, ArchiveMixin, EntityMixin, RegistryMixin, CreateMixin, UpdateMixin
+from benchlingapi.models.base import ModelBase, ModelRegistry
+from benchlingapi.models.mixins import GetMixin, ListMixin, ArchiveMixin, EntityMixin, RegistryMixin, CreateMixin, \
+    InventoryMixin, InventoryEntityMixin
 
 __all__ = [
     "DNASequence",
@@ -19,17 +24,50 @@ __all__ = [
     "EntitySchema"
 ]
 
-class CustomEntity(RegistryMixin, ModelBase):
+# TODO: implement 'fields' for CustomEntity
+class CustomEntity(InventoryEntityMixin, ModelBase):
+    """
+    A Benchling CustomEntity model.
+    """
 
     ENTITY_TYPE = "custom_entity"
 
+    CREATE_SCHEMA = dict(only=(
+        "aliases",
+        "customFields",
+        "folderId",
+        "name",
+        "schemaId"
+    )
+    )
 
-class DNASequence(RegistryMixin, ModelBase):
+    UPDATE_SCHEMA = dict(only=("aliases", "customFields",
+                               "folderId", "name", "schemaId"
+                               )
+                         )
+
+    def __init__(self, aliases=None, customFields=None,
+                 fields=None, folderId=None,
+                 name=None, schemaId=None, schema=None, **kwargs):
+        self.aliases = aliases
+        self.customFields = customFields
+        self.fields = fields
+        self.folderId = folderId
+        self.name = name
+        self.schema = schema
+        self.schemaId = schemaId
+        super().__init__(**kwargs)
+
+
+class DNASequence(InventoryEntityMixin, ModelBase):
+    """
+    A model representing Benchling's DNASequence.
+    """
 
     ENTITY_TYPE = "dna_sequence"
 
-    def save_schema(self):
-        return self.schema(only=(
+    CREATE_SCHEMA = dict(
+        only=(
             "aliases",
             "annotations",
             "bases",
@@ -40,10 +78,11 @@ class DNASequence(RegistryMixin, ModelBase):
             "name",
             "schemaId",
             "translations"
-        ))
+        )
+    )
 
-    def update_schema(self):
-        return self.schema(only=(
+    UPDATE_SCHEMA = dict(
+        only=(
             "aliases",
             "bases",
             "customFields",
@@ -52,7 +91,25 @@ class DNASequence(RegistryMixin, ModelBase):
             "isCircular",
             "name",
             "schemaId",
-        ))
+        )
+    )
+
+    def __init__(self, aliases=None, annotations=None, bases=None, customFields=None,
+                 fields=None, folderId=None, isCircular=None, name=None, schemaId=None,
+                 schema=None,
+                 translations=None, **kwargs):
+        self.aliases = aliases
+        self.annotations = annotations
+        self.bases = bases
+        self.customFields = customFields
+        self.fields = fields
+        self.folderId = folderId
+        self.isCircular = isCircular
+        self.name = name
+        self.translations = translations
+        self.schemaId = schemaId
+        self.schema = schema
+        super().__init__(**kwargs)
 
     @staticmethod
     def _opensharelink(share_link):
@@ -103,69 +160,155 @@ class DNASequence(RegistryMixin, ModelBase):
 
 
 # TODO: use alias for parameters
-class AASequence(RegistryMixin, ModelBase):
+class AASequence(InventoryEntityMixin, ModelBase):
+    """
+    A model representing Benchling's AASequence (protein).
+    """
 
     ENTITY_TYPE = "aa_sequence"
     alias = "Protein"
 
-    def save_schema(self):
-        return self.schema(only=(
-            "aliases",
-            "aminoAcids",
-            "customFields",
-            "fields",
-            "folderId",
-            "name",
-            "schemaId",
-        ))
+    CREATE_SCHEMA = (
+        dict(
+            only=(
+                "aliases",
+                "aminoAcids",
+                "customFields",
+                "fields",
+                "folderId",
+                "name",
+                "schemaId",
+            )
+        )
+    )
 
-    def update_schema(self):
-        return self.schema(only=(
-            "aliases",
-            "aminoAcids",
-            "customFields",
-            "fields",
-            "folderId",
-            "name",
-            "schemaId",
-        ))
+    UPDATE_SCHEMA = (
+        dict(
+            only=(
+                "aliases",
+                "aminoAcids",
+                "customFields",
+                "fields",
+                "folderId",
+                "name",
+                "schemaId",
+            )
+        )
+    )
+
+    def __init__(self, aliases=None, aminoAcids=None, customFields=None,
+                 fields=None, folderId=None, name=None, schemaId=None,
+                 schema=None,
+                 **kwargs):
+        self.aliases = aliases
+        self.aminoAcids = aminoAcids
+        self.customFields = customFields
+        self.fields = fields
+        self.folderId = folderId
+        self.name = name
+        self.schema = schema
+        self.schemaId = schemaId
+        super().__init__(**kwargs)
 
 
-class Batch(EntityMixin, ModelBase):
+class Batch(RegistryMixin, EntityMixin, ModelBase):
+    """
+    A model representing a Batch.
+    """
 
-    pass
+    CREATE_SCHEMA = dict(
+        only=(
+            'entityId',
+            'fields'
+        )
+    )
+
+    UPDATE_SCHEMA = dict(
+        only=(
+            'fields'
+        )
+    )
+
+    def __init__(self, entityId=None, fields=None, **kwargs):
+        self.entityId = entityId
+        self.fields = fields
+        super().__init__(**kwargs)
 
 
 class Annotation(ModelBase):
+    """
+    A model representing a sequence Annotation.
+    """
     pass
 
 
 class Translation(ModelBase):
+    """
+    A model representing a protein translation.
+    """
     pass
 
+class Oligo(GetMixin, CreateMixin, InventoryMixin, RegistryMixin, ModelBase):
+    """
+    A model representing an Oligo.
+    """
 
+    CREATE_SCHEMA = dict(
+        only=(
+            "aliases",
+            "bases",
+            "customFields",
+            "fields",
+            "folderId",
+            "name",
+            "schemaId"
+        )
+    )
 
-class Oligo(GetMixin, CreateMixin, ModelBase):
-
-    ENTITY_TYPE = "sequence"
+    def __init__(self, aliases=None, bases=None, customFields=None, fields=None,
+                 folderId=None, name=None, schemaId=None, schema=None, **kwargs):
+        self.aliases = aliases
+        self.bases = bases
+        self.customFields = customFields
+        self.fields = fields
+        self.folderId = folderId
+        self.name = name
+        self.schemaId = schemaId
+        self.schema = schema
+        super().__init__(**kwargs)
 
 
 class Folder(GetMixin, ListMixin, ArchiveMixin, ModelBase):
+    """
+    A model representing a Benchling Folder.
+    """
 
-    pass
+    def all_entities(self):
+        """Generator that retrieves all entities in the folder."""
+        entity_models = ModelRegistry.filter_models_by_base_classes(InventoryEntityMixin)
+        for model in entity_models:
+
+            interface = self.session.interface(model.__name__)
+            for m in interface.all(folderId=self.id):
+                yield m
 
 
 class Project(ListMixin, ArchiveMixin, ModelBase):
-
-    pass
+    """
+    A model representing a Benchling Project.
+    """
 
 
 class EntitySchema(ModelBase):
-
+    """
+    A model representing an EntitySchema.
+    """
     pass
 
-
 class Registry(ListMixin, ModelBase):
+    """
+    A model representing a Registry.
+    """
 
     @classmethod
     def get(cls, id):
