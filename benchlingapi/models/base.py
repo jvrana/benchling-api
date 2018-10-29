@@ -1,7 +1,9 @@
-import inflection
-from marshmallow import class_registry
-from marshmallow import __version__
 from distutils.version import LooseVersion
+
+import inflection
+from marshmallow import __version__
+from marshmallow import class_registry
+
 from benchlingapi.exceptions import ModelNotFoundError
 from benchlingapi.utils import url_build
 
@@ -48,7 +50,11 @@ class ModelBase(object, metaclass=ModelRegistry):
     alias = None
 
     def __init__(self, **data):
-        self.__dict__.update(data)
+        vars(self).update(data)
+
+    @staticmethod
+    def _url_build(*parts):
+        return url_build(*parts)
 
     @property
     def model_name(self):
@@ -90,6 +96,10 @@ class ModelBase(object, metaclass=ModelRegistry):
         inst.raw = data
         return inst
 
+    def dump(self, *args, **kwargs):
+        schema = self.schema(*args, **kwargs)
+        return self.schema_dumper(schema, self)
+
     @classmethod
     def load_many(cls, data, *args, **kwargs):
         schema_inst = cls.schema(*args, many=True, **kwargs)
@@ -126,7 +136,15 @@ class ModelBase(object, metaclass=ModelRegistry):
             if not isinstance(additional_paths, list):
                 additional_paths = [additional_paths]
             path += additional_paths
-        return url_build(*path)
+        return cls._url_build(*path)
+
+    def _update_from_other(self, other):
+        vars(self).update(vars(other))
+
+    def reload(self):
+        seq = self.find(self.id)
+        self._update_from_other(seq)
+        return self
 
     @classmethod
     def _get(cls, path_params=None, params=None, action=None):
@@ -151,71 +169,8 @@ class ModelBase(object, metaclass=ModelRegistry):
                                           action=action)
         return response
 
-    @classmethod
-    def list(cls, **params):
-        response = cls._get(params=params)
-        return cls.load_many(response[cls.camelize()])
-
-    @classmethod
-    def get(cls, id, **params):
-        response = cls._get(id, params=params)
-        return cls.load(response)
-
-    @classmethod
-    def find(cls, id, **params):
-        return cls.get(id, **params)
-
-    @classmethod
-    def find_by_name(cls, name, **page_params):
-        for page in cls.list_pages(**page_params):
-            for inst in page:
-                if inst.name == name:
-                    return inst
-
-    @classmethod
-    def list_pages(cls, **params):
-        generator = cls._get_pages(params=params)
-        response = next(generator, None)
-        while response is not None:
-            yield cls.load_many(response[cls.camelize()])
-
-            response = next(generator, None)
-
-    @classmethod
-    def update_model(cls, model_id, data, **params):
-        response = cls._patch(data, path_params=[model_id], **params)
-        return cls.load(response)
-
-    @classmethod
-    def create_model(cls, data, **params):
-        response = cls._post(data, **params)
-        return cls.load(response)
-
-    def _create_from_data(self, data):
-        r = self.create_model(data)
-        self.__dict__.update(r.__dict__)
-        return self
-
-    def _update_from_data(self, data):
-        r = self.update_model(self.id, data)
-        self.__dict__.update(r.__dict__)
-        return self
-
-    # return cls._get_pages()
-
-    # return cls._get(id)
-    #
-    # def bulk_get(self, ids):
-    #     return self._get(params={self.camelize("id"): ids}, action="bulk-get")
-    #
-    # def create(self, data):
-    #     return self._post(data)
-    #
-    # def bulk_create(self, data):
-    #     return self._post(data, action="bulk-create")
-    #
-    # def update(self, id, data):
-    #     return self._patch(data, path_params=id)
+    def copy(self):
+        return self.load(self.dump())
 
     def __repr__(self):
         return f"<{self.__class__.__name__} ({self.__class__.model_name}) at {id(self)}>"

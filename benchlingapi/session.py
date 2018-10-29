@@ -1,8 +1,8 @@
 import requests
 from benchlingapi.exceptions import BenchlingAPIException, ModelNotFoundError
 import json
-from benchlingapi.base import ModelRegistry
-from benchlingapi.models import __all__ as allmodels
+from benchlingapi.models import ModelRegistry
+from benchlingapi.models.models import __all__ as allmodels
 from benchlingapi.utils import url_build
 from functools import partial, wraps
 
@@ -34,8 +34,11 @@ class RequestDecorator(object):
                     msg += f"\nrequest: {r.request}"
                     msg += f"\nurl: {r.request.path_url}"
                     msg += f"\nresponse: {r.text}"
-                raise BenchlingAPIException("HTTP Response Failed {} {}".format(
+
+                e = BenchlingAPIException("HTTP Response Failed {} {}".format(
                     r.status_code, msg))
+                e.response = r
+                raise e
             return r.json()
 
         return wrapped_f
@@ -100,24 +103,34 @@ class Session(object):
 
     @property
     def http(self):
+        """Return the http requester object"""
         return self.__http
 
     @property
     def url(self):
+        """Return home benchling url"""
         return self.__http.HOME
+
+    def help(self):
+        help_url = "https://docs.benchling.com/reference"
+        print("Visit \"{}\"".format(help_url))
 
     @property
     def models(self):
+        """List all models"""
         return list(ModelRegistry.models.keys())
 
     def set_timeout(self, timeout_in_seconds):
+        """Set the request timeout"""
         self.__http.timeout = timeout_in_seconds
 
     @property
     def interfaces(self):
+        """List all model interfaces"""
         return self.__interfaces
 
     def interface(self, model_name):
+        """Return a model interface by name"""
         if model_name not in self.interfaces:
             raise ModelNotFoundError("No model by name of \"{}\"".format(model_name))
         return self.interfaces[model_name]

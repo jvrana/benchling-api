@@ -1,15 +1,15 @@
 import pytest
-from benchlingapi.models import __all__
+from benchlingapi.models import models
 from benchlingapi.exceptions import ModelNotFoundError
 
 def test_all_models(session):
 
-    assert len(session.models) == len(__all__)
+    assert len(session.models) == len(models.__all__)
 
 
 def test_model_interface(session):
 
-    for model_name in __all__:
+    for model_name in models.__all__:
         interface = session.interface(model_name)
         interface_from_attr = getattr(session, model_name)
 

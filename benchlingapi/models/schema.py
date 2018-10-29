@@ -1,11 +1,5 @@
 from marshmallow import Schema, post_load, SchemaOpts, validate
 from marshmallow import fields as mfields
-from benchlingapi.models import DNASequence, AASequence
-from benchlingapi.base import ModelRegistry
-# class DefaultFieldOptions(SchemaOpts):
-#
-#     allow_none = True
-#     load_all = True
 
 
 class ModelSchemaMixin(object):
@@ -29,8 +23,8 @@ class ModelSchemaMixin(object):
 
 
 class EntitySchema(Schema):
-    entityRegistryId = mfields.String(allow_none=True)
-    registryId = mfields.String(allow_none=True)
+    entityRegistryId = mfields.String(default=None, allow_none=True)
+    registryId = mfields.String(default=None, allow_none=True)
     archiveRecord = mfields.Dict(allow_none=True)
     id = mfields.String()
     name = mfields.String(required=True)
@@ -39,7 +33,9 @@ class EntitySchema(Schema):
     creator = mfields.Dict()
     customfields = mfields.Dict()
     fields = mfields.Dict()
-    schemaId = mfields.String()
+    schemaId = mfields.String(allow_none=False)
+    aliases = mfields.List(mfields.String())
+    folderId = mfields.String(required=True, allow_none=True)
     # schema = mfields.Dict(allow_none=True)
     # schema
     # entity
@@ -52,35 +48,32 @@ class EntitySchema(Schema):
         additional = ("id",)
 
 
-class CustomEntity(EntitySchema):
-    aliases = mfields.List(mfields.String())
-    folderId = mfields.String(required=True, allow_none=True)
+class CustomEntitySchema(ModelSchemaMixin, EntitySchema):
+    pass
 
 
-class SequenceSchema(ModelSchemaMixin, EntitySchema):
-    aliases = mfields.List(mfields.String())
-    folderId = mfields.String(required=True, allow_none=True)
-    length = mfields.Integer()
-
-
-class DNASequenceSchema(SequenceSchema):
+class DNASequenceSchema(ModelSchemaMixin, EntitySchema):
 
     annotations = mfields.Nested("AnnotationSchema", many=True)
+    length = mfields.Integer()
     bases = mfields.String(required=True)
     isCircular = mfields.Boolean(required=True)
     translations = mfields.Nested("TranslationSchema", many=True)
     customFields = mfields.Raw()
 
 
-class AASequenceSchema(SequenceSchema):
+class AASequenceSchema(ModelSchemaMixin, EntitySchema):
 
     annotations = mfields.Nested("AnnotationSchema", many=True)
     aminoAcids = mfields.String(required=True)
+    length = mfields.Integer()
+    customFields = mfields.Raw()
 
 
-class OligoSchema(SequenceSchema):
+class OligoSchema(ModelSchemaMixin, EntitySchema):
 
     bases = mfields.String(required=True)
+    length = mfields.Integer()
 
 
 class BatchSchema(EntitySchema):
@@ -110,8 +103,20 @@ class TranslationSchema(Schema):
 # Common Resources
 ####################################
 
-class ArchiveRecordSchema(Schema):
-    reason = mfields.String()
+# class ArchiveRecordSchema(Schema):
+#     reason = mfields.String()
+
+
+class EntitySchemaSchema(Schema):
+
+    archiveRecord = mfields.Dict(allow_none=True)
+    id = mfields.String()
+    name = mfields.String(required=True)
+    type = mfields.String()
+    fieldDefinitions = mfields.List(mfields.Dict)
+    prefix = mfields.String()
+    registryId = mfields.String(default=None, allow_none=True)
+    constrain = mfields.Dict()
 
 
 class UserSummarySchema(Schema):
@@ -130,14 +135,14 @@ class FolderSchema(ModelSchemaMixin, Schema):
     name = mfields.String(required=True)
     parentFolderId = mfields.String(allow_none=True)
     projectId = mfields.String(required=True)
-    archiveRecord = mfields.Nested(ArchiveRecordSchema, allow_none=True)
+    archiveRecord = mfields.Dict(allow_none=True)
 
 
 class ProjectSchema(ModelSchemaMixin, Schema):
     id = mfields.String()
     name = mfields.String()
     owner = mfields.Nested(UserSummarySchema)
-    archiveRecord = mfields.Nested(ArchiveRecordSchema, allow_none=True)
+    archiveRecord = mfields.Dict(allow_none=True)
 
 
 class RegistrySchema(ModelSchemaMixin, Schema):
