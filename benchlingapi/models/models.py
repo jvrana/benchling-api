@@ -329,11 +329,6 @@ class Registry(ListMixin, ModelBase):
             if len(registries) == 1:
                 return registries[0]
 
-    def get_entities(self, entity_ids):
-        return self._get([self.id, "registered-entities"], action="bulk-get", params={
-            'entityRegistryIds': entity_ids
-        })
-
     @property
     def entity_schemas(self):
         data = self._get([self.id, 'entity-schemas'])['entitySchemas']

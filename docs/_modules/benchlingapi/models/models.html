@@ -440,11 +440,6 @@
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">registries</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">registries</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
 
-    <span class="k">def</span> <span class="nf">get_entities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity_ids</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">&quot;registered-entities&quot;</span><span class="p">],</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;bulk-get&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-            <span class="s1">&#39;entityRegistryIds&#39;</span><span class="p">:</span> <span class="n">entity_ids</span>
-        <span class="p">})</span>
-
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">entity_schemas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;entity-schemas&#39;</span><span class="p">])[</span><span class="s1">&#39;entitySchemas&#39;</span><span class="p">]</span>

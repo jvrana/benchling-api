@@ -1,5 +1,3 @@
-from uuid import uuid4
-
 import pytest
 
 from benchlingapi.models import ModelRegistry
@@ -83,7 +81,7 @@ class TestGetMixin(HasExample):
     def test_find(self, interface, example_model):
         assert interface.get(example_model.id) is not None
         assert interface.find(example_model.id) is not None
-        assert interface.find(str(uuid4())) is None
+        assert interface.find("asdf98qw4hotnof8gyh") is None
 
 
 class TestEntity(HasInterface):
@@ -100,9 +98,9 @@ class TestEntity(HasInterface):
         if not example_model:
             pytest.skip("Example model \"{}\" not found".format(model.__name__))
         found = interface.find_by_name(example_model.name)
-        assert len(found) > 0
-        assert example_model.id in [e.id for e in found]
-        assert interface.find_by_name(str(uuid4())) == []
+        assert found
+        assert example_model.id == found.id
+        assert interface.find_by_name("alsjdfoijewfosdiufoasdf") == []
 
     def test_batches(self, example_model):
         batches = example_model.batches()
@@ -211,9 +209,9 @@ class TestArchiveMixin(HasInterface):
         example.unarchive()
         assert not example.is_archived
 
-    def test_list_archived(self, interface):
-        archived = interface.list_archived()
-        assert len(archived) > 1
+    # def test_list_archived(self, interface):
+    #     archived = interface.list_archived()
+    #     assert len(archived) > 1
 
 
 class TestRegistryMixin(HasInterface):

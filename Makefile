@@ -17,5 +17,8 @@ docs:
 
 	touch docs/.nojekyll
 
+pylint:
+	pipenv run pylint -E benchlingapi
+
 klocs:
 	find . -name '*.py' | xargs wc -l

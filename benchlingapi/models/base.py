@@ -45,6 +45,15 @@ class ModelRegistry(type):
 
     @staticmethod
     def filter_models_by_base_classes(bases):
+        """
+        Filters models registered in the model registry by
+        their base classes
+
+        :param bases: base classes
+        :type bases: type, list, or tuple
+        :return: type
+        :rtype: list
+        """
         if isinstance(bases, list):
             model_sets = []
             for only_model in bases:
@@ -65,8 +74,6 @@ class ModelRegistry(type):
 
     @property
     def model_name(cls):
-        # if cls.alias is not None:
-        #     return cls.alias
         return cls.__name__
 
 
