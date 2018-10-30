@@ -97,7 +97,10 @@ pygments_style = 'sphinx'
 todo_include_todos = False
 
 
-html_context = {'version': version}
+html_context = {'version': version,
+                'github': benchlingapi.__url__,
+                'pypi': benchlingapi.__pypi__
+                }
 
 # -- Options for HTML output ----------------------------------------------
 

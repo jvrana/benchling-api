@@ -6,6 +6,17 @@
 Python Benchling API
 ====================
 
+The benchling
+
+**Related Links**
+
+* `Benchling <https://www.benchling.com>`_
+* `Official BenchlingAPI reference <https://docs.benchling.com/reference>`_
+* `The Python BenchlingAPI github <https://github.com/klavinslab/benchling-api>`_
+* `The Python BenchlingAPI PyPI repo <https:://www.pypi.org/benchling-api`
+* `Klavins Lab <https://www.klavinslab.org>`_
+
+
 Getting Started
 ---------------
 
@@ -19,6 +30,7 @@ Indices and tables
 .. toctree::
    :maxdepth: 4
 
+   self
    overview
    quickstart
    developer/api_reference
