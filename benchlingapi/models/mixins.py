@@ -126,8 +126,11 @@ class UpdateMixin:
         self._update_from_other(r)
         return self
 
+    def update_json(self):
+        return self.dump(**dict(self.UPDATE_SCHEMA))
+
     def update(self):
-        data = self.dump(**dict(self.UPDATE_SCHEMA))
+        data = self.update_json()
         return self._update_from_data(data)
 
 
@@ -153,9 +156,13 @@ class CreateMixin:
         self._update_from_other(r)
         return self
 
+    def save_json(self):
+        data = self.dump(**self.CREATE_SCHEMA)
+        return data
+
     # TODO: remove schema_dumper with marshmallow > 3
     def save(self):
-        data = self.dump(**self.CREATE_SCHEMA)
+        data = self.save_json()
         return self._create_from_data(data)
 
 
