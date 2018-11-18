@@ -3,8 +3,7 @@ BenchlingAPI session object
 """
 
 import requests
-from benchlingapi.exceptions import BenchlingAPIException, ModelNotFoundError
-import json
+from benchlingapi.exceptions import BenchlingAPIException, ModelNotFoundError, exception_dispatch
 from benchlingapi.models import ModelRegistry
 from benchlingapi.models.models import __all__ as allmodels
 from benchlingapi.utils import url_build
@@ -42,7 +41,7 @@ class RequestDecorator(object):
                 e = BenchlingAPIException("HTTP Response Failed {} {}".format(
                     r.status_code, msg))
                 e.response = r
-                raise e
+                exception_dispatch(e)
             return r.json()
 
         return wrapped_f

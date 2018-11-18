@@ -305,6 +305,7 @@ class EntitySchema(ModelBase):
     """
     pass
 
+
 class Registry(ListMixin, ModelBase):
     """
     A model representing a Registry.
@@ -376,7 +377,7 @@ class Registry(ListMixin, ModelBase):
     def get_entities(self, entity_registry_ids):
         return self._get([self.id, 'registered-entities'], action='bulk-get', params={
             'entityRegistryIds': entity_registry_ids
-        })
+        })['entities']
 
     def find_in_registry(self, entity_registry_id):
         models = self.get_entities([entity_registry_id])

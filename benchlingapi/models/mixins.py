@@ -3,7 +3,7 @@ Exposes models to various API endpoints.
 """
 
 from benchlingapi.models.base import ModelRegistry
-from benchlingapi.exceptions import BenchlingAPIException
+from benchlingapi.exceptions import BenchlingAPIException, BenchlingException
 
 
 class GetMixin:
@@ -108,6 +108,7 @@ class ListMixin:
     @classmethod
     def find(cls, id, **params):
         return cls.get(id, **params)
+
 
 class UpdateMixin:
     """
@@ -310,9 +311,12 @@ class RegistryMixin():
         self.update()
 
     def register(self, naming_strategy=NAMING_STRATEGY._DEFAULT):
-        if not self.is_registered:
-            self.session.Registry.register(self.new_registry_id, [self.id], naming_strategy=naming_strategy)
-            self.reload()
+        if not hasattr(self, 'new_registry_id'):
+                raise BenchlingAPIException("No schema set. Please use '{}' to set a schema. You may use '{}' "
+                                            "to look at available schemas.".format(self.set_schema.__name__,
+                                                                                   self.print_valid_schemas.__name__))
+        self.session.Registry.register(self.new_registry_id, [self.id], naming_strategy=naming_strategy)
+        self.reload()
         return self
 
     def unregister(self, folder_id=None):
@@ -326,9 +330,14 @@ class RegistryMixin():
     def register_with_custom_id(self, id):
         name = self.name
         self.name = id
-        self.register(naming_strategy=self.NAMING_STRATEGY.DELETE_NAMES)
-        self.name = name
         self.update()
+        try:
+            self.register(naming_strategy=self.NAMING_STRATEGY.IDS_FROM_NAMES)
+        except BenchlingException as e:
+            raise e
+        finally:
+            self.name = name
+            self.update()
         return self
 
     # TODO: test this method
@@ -364,6 +373,19 @@ class RegistryMixin():
         models = cls.list_in_registry(registry_id=registry_id, registry_name=registry_name, name=name, **params)
         if models:
             return models[0]
+
+    @classmethod
+    def get_in_registry(cls, entity_registry_ids, registry_id=None, registry_name=None):
+        registry = cls.session.Registry.find_registry(id=registry_id, name=registry_name)
+        entity_data = registry.get_entities(entity_registry_ids)
+        return cls.load_many(entity_data)
+
+    @classmethod
+    def find_in_registry(cls, entity_registry_id, registry_id=None, registry_name=None):
+        entities = cls.get_in_registry([entity_registry_id], registry_id=registry_id, registry_name=registry_name)
+        if entities:
+            return entities[0]
+        return None
 
     def unregister(self, folderId):
         registry = self.registry
