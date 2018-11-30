@@ -189,9 +189,190 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.add_alias">
+<code class="descname">add_alias</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.add_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an alias to the entity</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.all">
+<em class="property">classmethod </em><code class="descname">all</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generator comprising of all models</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.archive">
+<code class="descname">archive</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive model instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.archive_many">
+<em class="property">classmethod </em><code class="descname">archive_many</code><span class="sig-paren">(</span><em>model_ids</em>, <em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.archive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model_ids</strong> (<em>list</em>) – list of ids</li>
+<li><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models archived</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.DNASequence.archive_reason">
+<code class="descname">archive_reason</code><a class="headerlink" href="#benchlingapi.models.models.DNASequence.archive_reason" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the archive reason. Return None if not archived.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="benchlingapi.models.models.DNASequence.batches">
 <code class="descname">batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.batches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an entities batches</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.bulk_create">
+<em class="property">classmethod </em><code class="descname">bulk_create</code><span class="sig-paren">(</span><em>model_data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.bulk_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create many models from a list of data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.create_model">
+<em class="property">classmethod </em><code class="descname">create_model</code><span class="sig-paren">(</span><em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.create_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create model from data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.find">
+<em class="property">classmethod </em><code class="descname">find</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find model by id (see ‘get’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.find_by_name">
+<em class="property">classmethod </em><code class="descname">find_by_name</code><span class="sig-paren">(</span><em>name</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.find_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.find_by_name_in_registry">
+<em class="property">classmethod </em><code class="descname">find_by_name_in_registry</code><span class="sig-paren">(</span><em>name</em>, <em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.find_by_name_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name in a registry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – name of entity</td>
+</tr>
+</tbody>
+</table>
+<p>:type basestring
+:param registry_id: registery id. If none, ‘registry_name’ must be provided.
+:type registry_id: basestring
+:param registry_name: registry name. If None, ‘registry_id’ must be provided
+:type registry_name: basestring
+:param params: additional search parameters
+:type params: dict
+:return: first model found
+:rtype: Model</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.find_in_registry">
+<em class="property">classmethod </em><code class="descname">find_in_registry</code><span class="sig-paren">(</span><em>entity_registry_id</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.find_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entity from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_id</strong> (<em>basestring</em>) – entity registry id</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">instance</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.from_share_link">
+<em class="property">classmethod </em><code class="descname">from_share_link</code><span class="sig-paren">(</span><em>share_link</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#DNASequence.from_share_link"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.DNASequence.from_share_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a DNASequence based on its weblink. Weblink may be a share link or a url</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get model by id (see ‘find’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.get_in_registry">
+<em class="property">classmethod </em><code class="descname">get_in_registry</code><span class="sig-paren">(</span><em>entity_registry_ids</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.get_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get entities from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_ids</strong> (<em>list</em>) – list of entity registry ids</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.DNASequence.is_archived">
+<code class="descname">is_archived</code><a class="headerlink" href="#benchlingapi.models.models.DNASequence.is_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether model instance is archived.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.DNASequence.is_registered">
+<code class="descname">is_registered</code><a class="headerlink" href="#benchlingapi.models.models.DNASequence.is_registered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if instance is registered</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -219,9 +400,284 @@
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.list">
+<em class="property">classmethod </em><code class="descname">list</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.list_archived">
+<em class="property">classmethod </em><code class="descname">list_archived</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.list_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>List archived entities</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.list_in_registry">
+<em class="property">classmethod </em><code class="descname">list_in_registry</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.list_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all instances contained in the registry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.list_pages">
+<em class="property">classmethod </em><code class="descname">list_pages</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.list_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models by pages</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>folderId</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the entity to a new benchling folder</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folderId</strong> (<em>basestring</em>) – the folder id to move entity to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="benchlingapi.models.models.DNASequence.one">
 <em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.one" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a single example model (default: most recent)</p>
+<dd><p>Returns one model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.print_valid_schemas">
+<code class="descname">print_valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.print_valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print available valid schemas for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>naming_strategy='NEW_IDS'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register this instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>naming_strategy</strong> – naming strategy for registry.
+- NEW_IDS (default): Generates new registry IDs, and leaves entity name as-is
+- IDS_FROM_NAMES: Converts names into registry IDs
+- DELETE_NAMES: Generates new registry IDs and sets entity name to new registry ID, and does not keep old names as aliases
+- SET_FROM_NAME_PARTS: Generates new registry IDs and generates new entity name based on the entity schema’s name template, if it has one.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.register_and_save_name_as_alias">
+<code class="descname">register_and_save_name_as_alias</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.register_and_save_name_as_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance, automatically generating a new id and setting
+the instance name to the new id. Save the old name as an alias.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.register_with_custom_id">
+<code class="descname">register_with_custom_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.register_with_custom_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance with a custom id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>basestring</em>) – custom registry id for the newly registered instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.DNASequence.registry">
+<code class="descname">registry</code><a class="headerlink" href="#benchlingapi.models.models.DNASequence.registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <code class="xref py py-class docutils literal notranslate"><span class="pre">models.Registry</span></code> that this entity is contained in</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.registry_dict">
+<em class="property">classmethod </em><code class="descname">registry_dict</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.registry_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary of registry ids to entities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save this model to Benchling</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.save_json">
+<code class="descname">save_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.save_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the save json for this model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.search">
+<em class="property">classmethod </em><code class="descname">search</code><span class="sig-paren">(</span><em>fxn</em>, <em>limit=1</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search all models such that ‘fxn’ is True.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fxn</strong> (<em>callbable</em>) – function to return model</li>
+<li><strong>limit</strong> (<em>int</em>) – number of models to return (default 1)</li>
+<li><strong>page_limit</strong> (<em>int</em>) – number of pages to iterate (default 5)</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models where ‘fxn(model)’ is True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.set_schema">
+<code class="descname">set_schema</code><span class="sig-paren">(</span><em>schema_name</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.set_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the schema for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.unarchive">
+<code class="descname">unarchive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.unarchive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive the model instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">self</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.unarchive_many">
+<em class="property">classmethod </em><code class="descname">unarchive_many</code><span class="sig-paren">(</span><em>model_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.unarchive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model_ids</strong> (<em>list</em>) – list of ids</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of models unarchived</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.unregister">
+<code class="descname">unregister</code><span class="sig-paren">(</span><em>folder_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.unregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregister the instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folder_id</strong> (<em>basestring</em>) – folder to move unregistered instance to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.DNASequence.update_json">
+<code class="descname">update_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.update_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the update json for the model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.update_model">
+<em class="property">classmethod </em><code class="descname">update_model</code><span class="sig-paren">(</span><em>model_id</em>, <em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.update_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model with data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.DNASequence.valid_schemas">
+<em class="property">classmethod </em><code class="descname">valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.DNASequence.valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return valid schemas for this model class</p>
 </dd></dl>
 
 </dd></dl>
@@ -232,9 +688,184 @@
 <dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.InventoryEntityMixin" title="benchlingapi.models.mixins.InventoryEntityMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.InventoryEntityMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
 <p>A model representing Benchling’s AASequence (protein).</p>
 <dl class="method">
+<dt id="benchlingapi.models.models.AASequence.add_alias">
+<code class="descname">add_alias</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.add_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an alias to the entity</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.all">
+<em class="property">classmethod </em><code class="descname">all</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generator comprising of all models</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.archive">
+<code class="descname">archive</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive model instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.archive_many">
+<em class="property">classmethod </em><code class="descname">archive_many</code><span class="sig-paren">(</span><em>model_ids</em>, <em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.archive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model_ids</strong> (<em>list</em>) – list of ids</li>
+<li><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models archived</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.AASequence.archive_reason">
+<code class="descname">archive_reason</code><a class="headerlink" href="#benchlingapi.models.models.AASequence.archive_reason" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the archive reason. Return None if not archived.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="benchlingapi.models.models.AASequence.batches">
 <code class="descname">batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.batches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an entities batches</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.bulk_create">
+<em class="property">classmethod </em><code class="descname">bulk_create</code><span class="sig-paren">(</span><em>model_data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.bulk_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create many models from a list of data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.create_model">
+<em class="property">classmethod </em><code class="descname">create_model</code><span class="sig-paren">(</span><em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.create_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create model from data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.find">
+<em class="property">classmethod </em><code class="descname">find</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find model by id (see ‘get’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.find_by_name">
+<em class="property">classmethod </em><code class="descname">find_by_name</code><span class="sig-paren">(</span><em>name</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.find_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.find_by_name_in_registry">
+<em class="property">classmethod </em><code class="descname">find_by_name_in_registry</code><span class="sig-paren">(</span><em>name</em>, <em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.find_by_name_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name in a registry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – name of entity</td>
+</tr>
+</tbody>
+</table>
+<p>:type basestring
+:param registry_id: registery id. If none, ‘registry_name’ must be provided.
+:type registry_id: basestring
+:param registry_name: registry name. If None, ‘registry_id’ must be provided
+:type registry_name: basestring
+:param params: additional search parameters
+:type params: dict
+:return: first model found
+:rtype: Model</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.find_in_registry">
+<em class="property">classmethod </em><code class="descname">find_in_registry</code><span class="sig-paren">(</span><em>entity_registry_id</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.find_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entity from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_id</strong> (<em>basestring</em>) – entity registry id</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">instance</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get model by id (see ‘find’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.get_in_registry">
+<em class="property">classmethod </em><code class="descname">get_in_registry</code><span class="sig-paren">(</span><em>entity_registry_ids</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.get_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get entities from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_ids</strong> (<em>list</em>) – list of entity registry ids</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.AASequence.is_archived">
+<code class="descname">is_archived</code><a class="headerlink" href="#benchlingapi.models.models.AASequence.is_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether model instance is archived.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.AASequence.is_registered">
+<code class="descname">is_registered</code><a class="headerlink" href="#benchlingapi.models.models.AASequence.is_registered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if instance is registered</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -262,9 +893,284 @@
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.list">
+<em class="property">classmethod </em><code class="descname">list</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.list_archived">
+<em class="property">classmethod </em><code class="descname">list_archived</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.list_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>List archived entities</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.list_in_registry">
+<em class="property">classmethod </em><code class="descname">list_in_registry</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.list_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all instances contained in the registry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.list_pages">
+<em class="property">classmethod </em><code class="descname">list_pages</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.list_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models by pages</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>folderId</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the entity to a new benchling folder</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folderId</strong> (<em>basestring</em>) – the folder id to move entity to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="benchlingapi.models.models.AASequence.one">
 <em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.one" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a single example model (default: most recent)</p>
+<dd><p>Returns one model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.print_valid_schemas">
+<code class="descname">print_valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.print_valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print available valid schemas for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>naming_strategy='NEW_IDS'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register this instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>naming_strategy</strong> – naming strategy for registry.
+- NEW_IDS (default): Generates new registry IDs, and leaves entity name as-is
+- IDS_FROM_NAMES: Converts names into registry IDs
+- DELETE_NAMES: Generates new registry IDs and sets entity name to new registry ID, and does not keep old names as aliases
+- SET_FROM_NAME_PARTS: Generates new registry IDs and generates new entity name based on the entity schema’s name template, if it has one.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.register_and_save_name_as_alias">
+<code class="descname">register_and_save_name_as_alias</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.register_and_save_name_as_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance, automatically generating a new id and setting
+the instance name to the new id. Save the old name as an alias.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.register_with_custom_id">
+<code class="descname">register_with_custom_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.register_with_custom_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance with a custom id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>basestring</em>) – custom registry id for the newly registered instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.AASequence.registry">
+<code class="descname">registry</code><a class="headerlink" href="#benchlingapi.models.models.AASequence.registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <code class="xref py py-class docutils literal notranslate"><span class="pre">models.Registry</span></code> that this entity is contained in</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.registry_dict">
+<em class="property">classmethod </em><code class="descname">registry_dict</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.registry_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary of registry ids to entities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save this model to Benchling</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.save_json">
+<code class="descname">save_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.save_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the save json for this model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.search">
+<em class="property">classmethod </em><code class="descname">search</code><span class="sig-paren">(</span><em>fxn</em>, <em>limit=1</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search all models such that ‘fxn’ is True.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fxn</strong> (<em>callbable</em>) – function to return model</li>
+<li><strong>limit</strong> (<em>int</em>) – number of models to return (default 1)</li>
+<li><strong>page_limit</strong> (<em>int</em>) – number of pages to iterate (default 5)</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models where ‘fxn(model)’ is True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.set_schema">
+<code class="descname">set_schema</code><span class="sig-paren">(</span><em>schema_name</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.set_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the schema for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.unarchive">
+<code class="descname">unarchive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.unarchive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive the model instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">self</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.unarchive_many">
+<em class="property">classmethod </em><code class="descname">unarchive_many</code><span class="sig-paren">(</span><em>model_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.unarchive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model_ids</strong> (<em>list</em>) – list of ids</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of models unarchived</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.unregister">
+<code class="descname">unregister</code><span class="sig-paren">(</span><em>folder_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.unregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregister the instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folder_id</strong> (<em>basestring</em>) – folder to move unregistered instance to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.AASequence.update_json">
+<code class="descname">update_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.update_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the update json for the model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.update_model">
+<em class="property">classmethod </em><code class="descname">update_model</code><span class="sig-paren">(</span><em>model_id</em>, <em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.update_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model with data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.AASequence.valid_schemas">
+<em class="property">classmethod </em><code class="descname">valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.AASequence.valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return valid schemas for this model class</p>
 </dd></dl>
 
 </dd></dl>
@@ -281,6 +1187,288 @@
 <em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">Oligo</code><span class="sig-paren">(</span><em>aliases=None</em>, <em>bases=None</em>, <em>customFields=None</em>, <em>fields=None</em>, <em>folderId=None</em>, <em>name=None</em>, <em>schemaId=None</em>, <em>schema=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Oligo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Oligo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.GetMixin" title="benchlingapi.models.mixins.GetMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.GetMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.CreateMixin" title="benchlingapi.models.mixins.CreateMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.CreateMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.InventoryMixin" title="benchlingapi.models.mixins.InventoryMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.InventoryMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.RegistryMixin" title="benchlingapi.models.mixins.RegistryMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.RegistryMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
 <p>A model representing an Oligo.</p>
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Oligo.bulk_create">
+<em class="property">classmethod </em><code class="descname">bulk_create</code><span class="sig-paren">(</span><em>model_data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.bulk_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create many models from a list of data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Oligo.create_model">
+<em class="property">classmethod </em><code class="descname">create_model</code><span class="sig-paren">(</span><em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.create_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create model from data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Oligo.find">
+<em class="property">classmethod </em><code class="descname">find</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find model by id (see ‘get’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Oligo.find_by_name_in_registry">
+<em class="property">classmethod </em><code class="descname">find_by_name_in_registry</code><span class="sig-paren">(</span><em>name</em>, <em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.find_by_name_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name in a registry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – name of entity</td>
+</tr>
+</tbody>
+</table>
+<p>:type basestring
+:param registry_id: registery id. If none, ‘registry_name’ must be provided.
+:type registry_id: basestring
+:param registry_name: registry name. If None, ‘registry_id’ must be provided
+:type registry_name: basestring
+:param params: additional search parameters
+:type params: dict
+:return: first model found
+:rtype: Model</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Oligo.find_in_registry">
+<em class="property">classmethod </em><code class="descname">find_in_registry</code><span class="sig-paren">(</span><em>entity_registry_id</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.find_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entity from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_id</strong> (<em>basestring</em>) – entity registry id</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">instance</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Oligo.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get model by id (see ‘find’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Oligo.get_in_registry">
+<em class="property">classmethod </em><code class="descname">get_in_registry</code><span class="sig-paren">(</span><em>entity_registry_ids</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.get_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get entities from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_ids</strong> (<em>list</em>) – list of entity registry ids</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.Oligo.is_registered">
+<code class="descname">is_registered</code><a class="headerlink" href="#benchlingapi.models.models.Oligo.is_registered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if instance is registered</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Oligo.list_in_registry">
+<em class="property">classmethod </em><code class="descname">list_in_registry</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.list_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all instances contained in the registry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Oligo.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>folderId</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the entity to a new benchling folder</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folderId</strong> (<em>basestring</em>) – the folder id to move entity to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Oligo.print_valid_schemas">
+<code class="descname">print_valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.print_valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print available valid schemas for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Oligo.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>naming_strategy='NEW_IDS'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register this instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>naming_strategy</strong> – naming strategy for registry.
+- NEW_IDS (default): Generates new registry IDs, and leaves entity name as-is
+- IDS_FROM_NAMES: Converts names into registry IDs
+- DELETE_NAMES: Generates new registry IDs and sets entity name to new registry ID, and does not keep old names as aliases
+- SET_FROM_NAME_PARTS: Generates new registry IDs and generates new entity name based on the entity schema’s name template, if it has one.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Oligo.register_and_save_name_as_alias">
+<code class="descname">register_and_save_name_as_alias</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.register_and_save_name_as_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance, automatically generating a new id and setting
+the instance name to the new id. Save the old name as an alias.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Oligo.register_with_custom_id">
+<code class="descname">register_with_custom_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.register_with_custom_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance with a custom id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>basestring</em>) – custom registry id for the newly registered instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.Oligo.registry">
+<code class="descname">registry</code><a class="headerlink" href="#benchlingapi.models.models.Oligo.registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <code class="xref py py-class docutils literal notranslate"><span class="pre">models.Registry</span></code> that this entity is contained in</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Oligo.registry_dict">
+<em class="property">classmethod </em><code class="descname">registry_dict</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.registry_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary of registry ids to entities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Oligo.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save this model to Benchling</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Oligo.save_json">
+<code class="descname">save_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.save_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the save json for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Oligo.set_schema">
+<code class="descname">set_schema</code><span class="sig-paren">(</span><em>schema_name</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.set_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the schema for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Oligo.unregister">
+<code class="descname">unregister</code><span class="sig-paren">(</span><em>folder_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.unregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregister the instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folder_id</strong> (<em>basestring</em>) – folder to move unregistered instance to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Oligo.valid_schemas">
+<em class="property">classmethod </em><code class="descname">valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Oligo.valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return valid schemas for this model class</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -295,10 +1483,88 @@
 <em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">Folder</code><span class="sig-paren">(</span><em>**data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Folder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Folder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.GetMixin" title="benchlingapi.models.mixins.GetMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.GetMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.ListMixin" title="benchlingapi.models.mixins.ListMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.ListMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.ArchiveMixin" title="benchlingapi.models.mixins.ArchiveMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.ArchiveMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
 <p>A model representing a Benchling Folder.</p>
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Folder.all">
+<em class="property">classmethod </em><code class="descname">all</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generator comprising of all models</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="benchlingapi.models.models.Folder.all_entities">
 <code class="descname">all_entities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Folder.all_entities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Folder.all_entities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generator that retrieves all entities in the folder.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Folder.archive">
+<code class="descname">archive</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive model instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Folder.archive_many">
+<em class="property">classmethod </em><code class="descname">archive_many</code><span class="sig-paren">(</span><em>model_ids</em>, <em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.archive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model_ids</strong> (<em>list</em>) – list of ids</li>
+<li><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models archived</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.Folder.archive_reason">
+<code class="descname">archive_reason</code><a class="headerlink" href="#benchlingapi.models.models.Folder.archive_reason" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the archive reason. Return None if not archived.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Folder.find">
+<em class="property">classmethod </em><code class="descname">find</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find model by id (see ‘get’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Folder.find_by_name">
+<em class="property">classmethod </em><code class="descname">find_by_name</code><span class="sig-paren">(</span><em>name</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.find_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a model by name</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Folder.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get model by id (see ‘find’)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.Folder.is_archived">
+<code class="descname">is_archived</code><a class="headerlink" href="#benchlingapi.models.models.Folder.is_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether model instance is archived.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -326,9 +1592,81 @@
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="benchlingapi.models.models.Folder.list">
+<em class="property">classmethod </em><code class="descname">list</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Folder.list_pages">
+<em class="property">classmethod </em><code class="descname">list_pages</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.list_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models by pages</p>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="benchlingapi.models.models.Folder.one">
 <em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.one" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a single example model (default: most recent)</p>
+<dd><p>Returns one model</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Folder.search">
+<em class="property">classmethod </em><code class="descname">search</code><span class="sig-paren">(</span><em>fxn</em>, <em>limit=1</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search all models such that ‘fxn’ is True.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fxn</strong> (<em>callbable</em>) – function to return model</li>
+<li><strong>limit</strong> (<em>int</em>) – number of models to return (default 1)</li>
+<li><strong>page_limit</strong> (<em>int</em>) – number of pages to iterate (default 5)</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models where ‘fxn(model)’ is True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Folder.unarchive">
+<code class="descname">unarchive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.unarchive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive the model instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">self</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Folder.unarchive_many">
+<em class="property">classmethod </em><code class="descname">unarchive_many</code><span class="sig-paren">(</span><em>model_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Folder.unarchive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model_ids</strong> (<em>list</em>) – list of ids</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of models unarchived</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -338,6 +1676,84 @@
 <em class="property">class </em><code class="descclassname">benchlingapi.models.models.</code><code class="descname">Project</code><span class="sig-paren">(</span><em>**data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Project" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.ListMixin" title="benchlingapi.models.mixins.ListMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.ListMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.ArchiveMixin" title="benchlingapi.models.mixins.ArchiveMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.ArchiveMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
 <p>A model representing a Benchling Project.</p>
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Project.all">
+<em class="property">classmethod </em><code class="descname">all</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generator comprising of all models</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Project.archive">
+<code class="descname">archive</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive model instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Project.archive_many">
+<em class="property">classmethod </em><code class="descname">archive_many</code><span class="sig-paren">(</span><em>model_ids</em>, <em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.archive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model_ids</strong> (<em>list</em>) – list of ids</li>
+<li><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models archived</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.Project.archive_reason">
+<code class="descname">archive_reason</code><a class="headerlink" href="#benchlingapi.models.models.Project.archive_reason" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the archive reason. Return None if not archived.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Project.find">
+<em class="property">classmethod </em><code class="descname">find</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a model by id</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Project.find_by_name">
+<em class="property">classmethod </em><code class="descname">find_by_name</code><span class="sig-paren">(</span><em>name</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.find_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a model by name</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Project.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a model by id</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.Project.is_archived">
+<code class="descname">is_archived</code><a class="headerlink" href="#benchlingapi.models.models.Project.is_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether model instance is archived.</p>
+</dd></dl>
+
 <dl class="classmethod">
 <dt id="benchlingapi.models.models.Project.last">
 <em class="property">classmethod </em><code class="descname">last</code><span class="sig-paren">(</span><em>num</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.last" title="Permalink to this definition">¶</a></dt>
@@ -363,9 +1779,81 @@
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="benchlingapi.models.models.Project.list">
+<em class="property">classmethod </em><code class="descname">list</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Project.list_pages">
+<em class="property">classmethod </em><code class="descname">list_pages</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.list_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models by pages</p>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="benchlingapi.models.models.Project.one">
 <em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.one" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a single example model (default: most recent)</p>
+<dd><p>Returns one model</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Project.search">
+<em class="property">classmethod </em><code class="descname">search</code><span class="sig-paren">(</span><em>fxn</em>, <em>limit=1</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search all models such that ‘fxn’ is True.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fxn</strong> (<em>callbable</em>) – function to return model</li>
+<li><strong>limit</strong> (<em>int</em>) – number of models to return (default 1)</li>
+<li><strong>page_limit</strong> (<em>int</em>) – number of pages to iterate (default 5)</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models where ‘fxn(model)’ is True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Project.unarchive">
+<code class="descname">unarchive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.unarchive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive the model instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">self</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Project.unarchive_many">
+<em class="property">classmethod </em><code class="descname">unarchive_many</code><span class="sig-paren">(</span><em>model_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.unarchive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model_ids</strong> (<em>list</em>) – list of ids</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of models unarchived</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -376,9 +1864,184 @@
 <dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.InventoryEntityMixin" title="benchlingapi.models.mixins.InventoryEntityMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.InventoryEntityMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
 <p>A Benchling CustomEntity model.</p>
 <dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.add_alias">
+<code class="descname">add_alias</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.add_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an alias to the entity</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.all">
+<em class="property">classmethod </em><code class="descname">all</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generator comprising of all models</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.archive">
+<code class="descname">archive</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive model instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.archive_many">
+<em class="property">classmethod </em><code class="descname">archive_many</code><span class="sig-paren">(</span><em>model_ids</em>, <em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.archive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model_ids</strong> (<em>list</em>) – list of ids</li>
+<li><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models archived</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.CustomEntity.archive_reason">
+<code class="descname">archive_reason</code><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.archive_reason" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the archive reason. Return None if not archived.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="benchlingapi.models.models.CustomEntity.batches">
 <code class="descname">batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.batches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an entities batches</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.bulk_create">
+<em class="property">classmethod </em><code class="descname">bulk_create</code><span class="sig-paren">(</span><em>model_data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.bulk_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create many models from a list of data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.create_model">
+<em class="property">classmethod </em><code class="descname">create_model</code><span class="sig-paren">(</span><em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.create_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create model from data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.find">
+<em class="property">classmethod </em><code class="descname">find</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find model by id (see ‘get’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.find_by_name">
+<em class="property">classmethod </em><code class="descname">find_by_name</code><span class="sig-paren">(</span><em>name</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.find_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.find_by_name_in_registry">
+<em class="property">classmethod </em><code class="descname">find_by_name_in_registry</code><span class="sig-paren">(</span><em>name</em>, <em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.find_by_name_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name in a registry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – name of entity</td>
+</tr>
+</tbody>
+</table>
+<p>:type basestring
+:param registry_id: registery id. If none, ‘registry_name’ must be provided.
+:type registry_id: basestring
+:param registry_name: registry name. If None, ‘registry_id’ must be provided
+:type registry_name: basestring
+:param params: additional search parameters
+:type params: dict
+:return: first model found
+:rtype: Model</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.find_in_registry">
+<em class="property">classmethod </em><code class="descname">find_in_registry</code><span class="sig-paren">(</span><em>entity_registry_id</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.find_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entity from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_id</strong> (<em>basestring</em>) – entity registry id</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">instance</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get model by id (see ‘find’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.get_in_registry">
+<em class="property">classmethod </em><code class="descname">get_in_registry</code><span class="sig-paren">(</span><em>entity_registry_ids</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.get_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get entities from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_ids</strong> (<em>list</em>) – list of entity registry ids</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.CustomEntity.is_archived">
+<code class="descname">is_archived</code><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.is_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether model instance is archived.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.CustomEntity.is_registered">
+<code class="descname">is_registered</code><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.is_registered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if instance is registered</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -406,9 +2069,284 @@
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.list">
+<em class="property">classmethod </em><code class="descname">list</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.list_archived">
+<em class="property">classmethod </em><code class="descname">list_archived</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.list_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>List archived entities</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.list_in_registry">
+<em class="property">classmethod </em><code class="descname">list_in_registry</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.list_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all instances contained in the registry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.list_pages">
+<em class="property">classmethod </em><code class="descname">list_pages</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.list_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models by pages</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>folderId</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the entity to a new benchling folder</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folderId</strong> (<em>basestring</em>) – the folder id to move entity to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="benchlingapi.models.models.CustomEntity.one">
 <em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.one" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a single example model (default: most recent)</p>
+<dd><p>Returns one model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.print_valid_schemas">
+<code class="descname">print_valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.print_valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print available valid schemas for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>naming_strategy='NEW_IDS'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register this instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>naming_strategy</strong> – naming strategy for registry.
+- NEW_IDS (default): Generates new registry IDs, and leaves entity name as-is
+- IDS_FROM_NAMES: Converts names into registry IDs
+- DELETE_NAMES: Generates new registry IDs and sets entity name to new registry ID, and does not keep old names as aliases
+- SET_FROM_NAME_PARTS: Generates new registry IDs and generates new entity name based on the entity schema’s name template, if it has one.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.register_and_save_name_as_alias">
+<code class="descname">register_and_save_name_as_alias</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.register_and_save_name_as_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance, automatically generating a new id and setting
+the instance name to the new id. Save the old name as an alias.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.register_with_custom_id">
+<code class="descname">register_with_custom_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.register_with_custom_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance with a custom id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>basestring</em>) – custom registry id for the newly registered instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.CustomEntity.registry">
+<code class="descname">registry</code><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <code class="xref py py-class docutils literal notranslate"><span class="pre">models.Registry</span></code> that this entity is contained in</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.registry_dict">
+<em class="property">classmethod </em><code class="descname">registry_dict</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.registry_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary of registry ids to entities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save this model to Benchling</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.save_json">
+<code class="descname">save_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.save_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the save json for this model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.search">
+<em class="property">classmethod </em><code class="descname">search</code><span class="sig-paren">(</span><em>fxn</em>, <em>limit=1</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search all models such that ‘fxn’ is True.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fxn</strong> (<em>callbable</em>) – function to return model</li>
+<li><strong>limit</strong> (<em>int</em>) – number of models to return (default 1)</li>
+<li><strong>page_limit</strong> (<em>int</em>) – number of pages to iterate (default 5)</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models where ‘fxn(model)’ is True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.set_schema">
+<code class="descname">set_schema</code><span class="sig-paren">(</span><em>schema_name</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.set_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the schema for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.unarchive">
+<code class="descname">unarchive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.unarchive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive the model instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">self</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.unarchive_many">
+<em class="property">classmethod </em><code class="descname">unarchive_many</code><span class="sig-paren">(</span><em>model_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.unarchive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model_ids</strong> (<em>list</em>) – list of ids</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of models unarchived</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.unregister">
+<code class="descname">unregister</code><span class="sig-paren">(</span><em>folder_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.unregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregister the instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folder_id</strong> (<em>basestring</em>) – folder to move unregistered instance to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.CustomEntity.update_json">
+<code class="descname">update_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.update_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the update json for the model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.update_model">
+<em class="property">classmethod </em><code class="descname">update_model</code><span class="sig-paren">(</span><em>model_id</em>, <em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.update_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model with data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.CustomEntity.valid_schemas">
+<em class="property">classmethod </em><code class="descname">valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.CustomEntity.valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return valid schemas for this model class</p>
 </dd></dl>
 
 </dd></dl>
@@ -419,9 +2357,184 @@
 <dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.RegistryMixin" title="benchlingapi.models.mixins.RegistryMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.RegistryMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.EntityMixin" title="benchlingapi.models.mixins.EntityMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.EntityMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
 <p>A model representing a Batch.</p>
 <dl class="method">
+<dt id="benchlingapi.models.models.Batch.add_alias">
+<code class="descname">add_alias</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.add_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an alias to the entity</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.all">
+<em class="property">classmethod </em><code class="descname">all</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generator comprising of all models</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.archive">
+<code class="descname">archive</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive model instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.archive_many">
+<em class="property">classmethod </em><code class="descname">archive_many</code><span class="sig-paren">(</span><em>model_ids</em>, <em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.archive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model_ids</strong> (<em>list</em>) – list of ids</li>
+<li><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models archived</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.Batch.archive_reason">
+<code class="descname">archive_reason</code><a class="headerlink" href="#benchlingapi.models.models.Batch.archive_reason" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the archive reason. Return None if not archived.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="benchlingapi.models.models.Batch.batches">
 <code class="descname">batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.batches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an entities batches</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.bulk_create">
+<em class="property">classmethod </em><code class="descname">bulk_create</code><span class="sig-paren">(</span><em>model_data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.bulk_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create many models from a list of data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.create_model">
+<em class="property">classmethod </em><code class="descname">create_model</code><span class="sig-paren">(</span><em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.create_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create model from data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.find">
+<em class="property">classmethod </em><code class="descname">find</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find model by id (see ‘get’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.find_by_name">
+<em class="property">classmethod </em><code class="descname">find_by_name</code><span class="sig-paren">(</span><em>name</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.find_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.find_by_name_in_registry">
+<em class="property">classmethod </em><code class="descname">find_by_name_in_registry</code><span class="sig-paren">(</span><em>name</em>, <em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.find_by_name_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name in a registry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – name of entity</td>
+</tr>
+</tbody>
+</table>
+<p>:type basestring
+:param registry_id: registery id. If none, ‘registry_name’ must be provided.
+:type registry_id: basestring
+:param registry_name: registry name. If None, ‘registry_id’ must be provided
+:type registry_name: basestring
+:param params: additional search parameters
+:type params: dict
+:return: first model found
+:rtype: Model</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.find_in_registry">
+<em class="property">classmethod </em><code class="descname">find_in_registry</code><span class="sig-paren">(</span><em>entity_registry_id</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.find_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entity from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_id</strong> (<em>basestring</em>) – entity registry id</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">instance</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get model by id (see ‘find’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.get_in_registry">
+<em class="property">classmethod </em><code class="descname">get_in_registry</code><span class="sig-paren">(</span><em>entity_registry_ids</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.get_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get entities from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_ids</strong> (<em>list</em>) – list of entity registry ids</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.Batch.is_archived">
+<code class="descname">is_archived</code><a class="headerlink" href="#benchlingapi.models.models.Batch.is_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether model instance is archived.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.Batch.is_registered">
+<code class="descname">is_registered</code><a class="headerlink" href="#benchlingapi.models.models.Batch.is_registered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if instance is registered</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -449,9 +2562,266 @@
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.list">
+<em class="property">classmethod </em><code class="descname">list</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.list_archived">
+<em class="property">classmethod </em><code class="descname">list_archived</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.list_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>List archived entities</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.list_in_registry">
+<em class="property">classmethod </em><code class="descname">list_in_registry</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.list_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all instances contained in the registry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.list_pages">
+<em class="property">classmethod </em><code class="descname">list_pages</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.list_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models by pages</p>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="benchlingapi.models.models.Batch.one">
 <em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.one" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a single example model (default: most recent)</p>
+<dd><p>Returns one model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.print_valid_schemas">
+<code class="descname">print_valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.print_valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print available valid schemas for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>naming_strategy='NEW_IDS'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register this instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>naming_strategy</strong> – naming strategy for registry.
+- NEW_IDS (default): Generates new registry IDs, and leaves entity name as-is
+- IDS_FROM_NAMES: Converts names into registry IDs
+- DELETE_NAMES: Generates new registry IDs and sets entity name to new registry ID, and does not keep old names as aliases
+- SET_FROM_NAME_PARTS: Generates new registry IDs and generates new entity name based on the entity schema’s name template, if it has one.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.register_and_save_name_as_alias">
+<code class="descname">register_and_save_name_as_alias</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.register_and_save_name_as_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance, automatically generating a new id and setting
+the instance name to the new id. Save the old name as an alias.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.register_with_custom_id">
+<code class="descname">register_with_custom_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.register_with_custom_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance with a custom id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>basestring</em>) – custom registry id for the newly registered instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.Batch.registry">
+<code class="descname">registry</code><a class="headerlink" href="#benchlingapi.models.models.Batch.registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <code class="xref py py-class docutils literal notranslate"><span class="pre">models.Registry</span></code> that this entity is contained in</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.registry_dict">
+<em class="property">classmethod </em><code class="descname">registry_dict</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.registry_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary of registry ids to entities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save this model to Benchling</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.save_json">
+<code class="descname">save_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.save_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the save json for this model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.search">
+<em class="property">classmethod </em><code class="descname">search</code><span class="sig-paren">(</span><em>fxn</em>, <em>limit=1</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search all models such that ‘fxn’ is True.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fxn</strong> (<em>callbable</em>) – function to return model</li>
+<li><strong>limit</strong> (<em>int</em>) – number of models to return (default 1)</li>
+<li><strong>page_limit</strong> (<em>int</em>) – number of pages to iterate (default 5)</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models where ‘fxn(model)’ is True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.set_schema">
+<code class="descname">set_schema</code><span class="sig-paren">(</span><em>schema_name</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.set_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the schema for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.unarchive">
+<code class="descname">unarchive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.unarchive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive the model instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">self</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.unarchive_many">
+<em class="property">classmethod </em><code class="descname">unarchive_many</code><span class="sig-paren">(</span><em>model_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.unarchive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model_ids</strong> (<em>list</em>) – list of ids</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of models unarchived</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.unregister">
+<code class="descname">unregister</code><span class="sig-paren">(</span><em>folder_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.unregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregister the instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folder_id</strong> (<em>basestring</em>) – folder to move unregistered instance to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Batch.update_json">
+<code class="descname">update_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.update_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the update json for the model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.update_model">
+<em class="property">classmethod </em><code class="descname">update_model</code><span class="sig-paren">(</span><em>model_id</em>, <em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.update_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model with data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Batch.valid_schemas">
+<em class="property">classmethod </em><code class="descname">valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Batch.valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return valid schemas for this model class</p>
 </dd></dl>
 
 </dd></dl>
@@ -462,10 +2832,64 @@
 <dd><p>Bases: <a class="reference internal" href="benchlingapi.models.mixins.html#benchlingapi.models.mixins.ListMixin" title="benchlingapi.models.mixins.ListMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.ListMixin</span></code></a>, <a class="reference internal" href="benchlingapi.models.base.html#benchlingapi.models.base.ModelBase" title="benchlingapi.models.base.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.base.ModelBase</span></code></a></p>
 <p>A model representing a Registry.</p>
 <dl class="classmethod">
+<dt id="benchlingapi.models.models.Registry.all">
+<em class="property">classmethod </em><code class="descname">all</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Registry.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generator comprising of all models</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.models.Registry.entity_schemas">
+<code class="descname">entity_schemas</code><a class="headerlink" href="#benchlingapi.models.models.Registry.entity_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>List schemas</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Registry.find">
+<em class="property">classmethod </em><code class="descname">find</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Registry.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a model by id</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Registry.find_by_name">
+<em class="property">classmethod </em><code class="descname">find_by_name</code><span class="sig-paren">(</span><em>name</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Registry.find_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a model by name</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Registry.find_from_schema_id">
+<em class="property">classmethod </em><code class="descname">find_from_schema_id</code><span class="sig-paren">(</span><em>schema_id</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Registry.find_from_schema_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Registry.find_from_schema_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find registry from a schema id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Registry.find_in_registry">
+<code class="descname">find_in_registry</code><span class="sig-paren">(</span><em>entity_registry_id</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Registry.find_in_registry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Registry.find_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by its id</p>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="benchlingapi.models.models.Registry.find_registry">
 <em class="property">classmethod </em><code class="descname">find_registry</code><span class="sig-paren">(</span><em>id=None</em>, <em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Registry.find_registry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Registry.find_registry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds a registry based on either id or name. If neither is provided and there
 is only 1 registry, return the only registry.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Registry.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Registry.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Registry.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get registry by id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Registry.get_entities">
+<code class="descname">get_entities</code><span class="sig-paren">(</span><em>entity_registry_ids</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Registry.get_entities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Registry.get_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get entities by their ids</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Registry.get_schema">
+<code class="descname">get_schema</code><span class="sig-paren">(</span><em>name=None</em>, <em>id=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Registry.get_schema"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Registry.get_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a registry schema by name or id</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -493,9 +2917,59 @@ is only 1 registry, return the only registry.</p>
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="benchlingapi.models.models.Registry.list">
+<em class="property">classmethod </em><code class="descname">list</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Registry.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Registry.list_pages">
+<em class="property">classmethod </em><code class="descname">list_pages</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Registry.list_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models by pages</p>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="benchlingapi.models.models.Registry.one">
 <em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Registry.one" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a single example model (default: most recent)</p>
+<dd><p>Returns one model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Registry.register_entities">
+<code class="descname">register_entities</code><span class="sig-paren">(</span><em>entity_ids</em>, <em>naming_strategy=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Registry.register_entities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Registry.register_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register entities by their ids</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.models.Registry.search">
+<em class="property">classmethod </em><code class="descname">search</code><span class="sig-paren">(</span><em>fxn</em>, <em>limit=1</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Registry.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search all models such that ‘fxn’ is True.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fxn</strong> (<em>callbable</em>) – function to return model</li>
+<li><strong>limit</strong> (<em>int</em>) – number of models to return (default 1)</li>
+<li><strong>page_limit</strong> (<em>int</em>) – number of pages to iterate (default 5)</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models where ‘fxn(model)’ is True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.models.Registry.unregister_entities">
+<code class="descname">unregister_entities</code><span class="sig-paren">(</span><em>entity_ids</em>, <em>folder_id</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/models.html#Registry.unregister_entities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.models.Registry.unregister_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregister entities by their ids and move them to a new folder</p>
 </dd></dl>
 
 </dd></dl>

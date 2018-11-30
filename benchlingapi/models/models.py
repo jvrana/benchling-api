@@ -84,6 +84,7 @@ class DNASequence(InventoryEntityMixin, ModelBase):
     UPDATE_SCHEMA = dict(
         only=(
             "aliases",
+            "annotations",
             "bases",
             "customFields",
             "fields",
@@ -139,6 +140,7 @@ class DNASequence(InventoryEntityMixin, ModelBase):
 
     @classmethod
     def from_share_link(cls, share_link):
+        """Return a DNASequence based on its weblink. Weblink may be a share link or a url"""
         try:
             text = cls._opensharelink(share_link)
             search_pattern = "seq_\w+"
@@ -186,7 +188,7 @@ class AASequence(InventoryEntityMixin, ModelBase):
         dict(
             only=(
                 "aliases",
-                "aminoAcids",
+                # "aminoAcids",
                 "customFields",
                 "fields",
                 "folderId",
@@ -313,6 +315,7 @@ class Registry(ListMixin, ModelBase):
 
     @classmethod
     def get(cls, id):
+        """Get registry by id"""
         for r in cls.list():
             if r.id == id:
                 return r
@@ -332,10 +335,12 @@ class Registry(ListMixin, ModelBase):
 
     @property
     def entity_schemas(self):
+        """List schemas"""
         data = self._get([self.id, 'entity-schemas'])['entitySchemas']
         return EntitySchema.load_many(data)
 
     def get_schema(self, name=None, id=None):
+        """Get a registry schema by name or id"""
         for schema in self.entity_schemas:
             if id:
                 if schema['id'] == id:
@@ -346,6 +351,7 @@ class Registry(ListMixin, ModelBase):
 
     @classmethod
     def find_from_schema_id(cls, schema_id):
+        """Find registry from a schema id"""
         for r in cls.list():
             for schema in r.entity_schemas:
                 if schema['id'] == schema_id:
@@ -369,17 +375,21 @@ class Registry(ListMixin, ModelBase):
         return cls._post(data, path_params=[registry_id], action="unregister-entities")
 
     def register_entities(self, entity_ids, naming_strategy=None):
+        """Register entities by their ids"""
         return self.register(self.id, entity_ids, naming_strategy=naming_strategy)
 
     def unregister_entities(self, entity_ids, folder_id):
+        """Unregister entities by their ids and move them to a new folder"""
         return self.unregister(self.id, entity_ids, folder_id)
 
     def get_entities(self, entity_registry_ids):
+        """Get entities by their ids"""
         return self._get([self.id, 'registered-entities'], action='bulk-get', params={
             'entityRegistryIds': entity_registry_ids
         })['entities']
 
     def find_in_registry(self, entity_registry_id):
+        """Find entity by its id"""
         models = self.get_entities([entity_registry_id])
         if models:
             return models[0]

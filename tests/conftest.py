@@ -37,7 +37,7 @@ def matcher(r1, r2):
 myvcr = vcr.VCR()
 myvcr.register_matcher('matcher', matcher)
 myvcr.match_on = ['matcher']
-myvcr.record_mode = "new_episodes"
+myvcr.record_mode = "all"
 here = os.path.abspath(os.path.dirname(__file__))
 fixtures_path = os.path.join(here, "fixtures/vcr_cassettes")
 

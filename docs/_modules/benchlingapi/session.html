@@ -114,8 +114,7 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">benchlingapi.exceptions</span> <span class="k">import</span> <span class="n">BenchlingAPIException</span><span class="p">,</span> <span class="n">ModelNotFoundError</span>
-<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">benchlingapi.exceptions</span> <span class="k">import</span> <span class="n">BenchlingAPIException</span><span class="p">,</span> <span class="n">ModelNotFoundError</span><span class="p">,</span> <span class="n">exception_dispatch</span>
 <span class="kn">from</span> <span class="nn">benchlingapi.models</span> <span class="k">import</span> <span class="n">ModelRegistry</span>
 <span class="kn">from</span> <span class="nn">benchlingapi.models.models</span> <span class="k">import</span> <span class="n">__all__</span> <span class="k">as</span> <span class="n">allmodels</span>
 <span class="kn">from</span> <span class="nn">benchlingapi.utils</span> <span class="k">import</span> <span class="n">url_build</span>
@@ -153,7 +152,7 @@
                 <span class="n">e</span> <span class="o">=</span> <span class="n">BenchlingAPIException</span><span class="p">(</span><span class="s2">&quot;HTTP Response Failed </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                     <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">msg</span><span class="p">))</span>
                 <span class="n">e</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="n">r</span>
-                <span class="k">raise</span> <span class="n">e</span>
+                <span class="n">exception_dispatch</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
         <span class="k">return</span> <span class="n">wrapped_f</span></div>

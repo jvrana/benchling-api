@@ -166,6 +166,94 @@
 <em class="property">class </em><code class="descclassname">benchlingapi.models.mixins.</code><code class="descname">ArchiveMixin</code><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ArchiveMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ArchiveMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Exposes archiving and unarchiving methods</p>
+<dl class="method">
+<dt id="benchlingapi.models.mixins.ArchiveMixin.archive">
+<code class="descname">archive</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ArchiveMixin.archive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ArchiveMixin.archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive model instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.ArchiveMixin.archive_many">
+<em class="property">classmethod </em><code class="descname">archive_many</code><span class="sig-paren">(</span><em>model_ids</em>, <em>reason='Other'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ArchiveMixin.archive_many"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ArchiveMixin.archive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model_ids</strong> (<em>list</em>) – list of ids</li>
+<li><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models archived</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.mixins.ArchiveMixin.archive_reason">
+<code class="descname">archive_reason</code><a class="headerlink" href="#benchlingapi.models.mixins.ArchiveMixin.archive_reason" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the archive reason. Return None if not archived.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.mixins.ArchiveMixin.is_archived">
+<code class="descname">is_archived</code><a class="headerlink" href="#benchlingapi.models.mixins.ArchiveMixin.is_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether model instance is archived.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.ArchiveMixin.unarchive">
+<code class="descname">unarchive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ArchiveMixin.unarchive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ArchiveMixin.unarchive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive the model instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">self</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.ArchiveMixin.unarchive_many">
+<em class="property">classmethod </em><code class="descname">unarchive_many</code><span class="sig-paren">(</span><em>model_ids</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ArchiveMixin.unarchive_many"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ArchiveMixin.unarchive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model_ids</strong> (<em>list</em>) – list of ids</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of models unarchived</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -173,6 +261,30 @@
 <em class="property">class </em><code class="descclassname">benchlingapi.models.mixins.</code><code class="descname">CreateMixin</code><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#CreateMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.CreateMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Exposes methods that create new models on the Benchling server.</p>
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.CreateMixin.bulk_create">
+<em class="property">classmethod </em><code class="descname">bulk_create</code><span class="sig-paren">(</span><em>model_data</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#CreateMixin.bulk_create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.CreateMixin.bulk_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create many models from a list of data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.CreateMixin.create_model">
+<em class="property">classmethod </em><code class="descname">create_model</code><span class="sig-paren">(</span><em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#CreateMixin.create_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.CreateMixin.create_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create model from data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.CreateMixin.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#CreateMixin.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.CreateMixin.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save this model to Benchling</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.CreateMixin.save_json">
+<code class="descname">save_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#CreateMixin.save_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.CreateMixin.save_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the save json for this model instance</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -181,9 +293,105 @@
 <dd><p>Bases: <a class="reference internal" href="#benchlingapi.models.mixins.ArchiveMixin" title="benchlingapi.models.mixins.ArchiveMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.ArchiveMixin</span></code></a>, <a class="reference internal" href="#benchlingapi.models.mixins.GetMixin" title="benchlingapi.models.mixins.GetMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.GetMixin</span></code></a>, <a class="reference internal" href="#benchlingapi.models.mixins.ListMixin" title="benchlingapi.models.mixins.ListMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.ListMixin</span></code></a>, <a class="reference internal" href="#benchlingapi.models.mixins.CreateMixin" title="benchlingapi.models.mixins.CreateMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.CreateMixin</span></code></a>, <a class="reference internal" href="#benchlingapi.models.mixins.UpdateMixin" title="benchlingapi.models.mixins.UpdateMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.UpdateMixin</span></code></a></p>
 <p>Entity methods (includes get, list, create, update)</p>
 <dl class="method">
+<dt id="benchlingapi.models.mixins.EntityMixin.add_alias">
+<code class="descname">add_alias</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#EntityMixin.add_alias"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.add_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an alias to the entity</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.all">
+<em class="property">classmethod </em><code class="descname">all</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generator comprising of all models</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.EntityMixin.archive">
+<code class="descname">archive</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive model instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.archive_many">
+<em class="property">classmethod </em><code class="descname">archive_many</code><span class="sig-paren">(</span><em>model_ids</em>, <em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.archive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model_ids</strong> (<em>list</em>) – list of ids</li>
+<li><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models archived</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.mixins.EntityMixin.archive_reason">
+<code class="descname">archive_reason</code><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.archive_reason" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the archive reason. Return None if not archived.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="benchlingapi.models.mixins.EntityMixin.batches">
 <code class="descname">batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#EntityMixin.batches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.batches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an entities batches</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.bulk_create">
+<em class="property">classmethod </em><code class="descname">bulk_create</code><span class="sig-paren">(</span><em>model_data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.bulk_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create many models from a list of data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.create_model">
+<em class="property">classmethod </em><code class="descname">create_model</code><span class="sig-paren">(</span><em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.create_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create model from data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.find">
+<em class="property">classmethod </em><code class="descname">find</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find model by id (see ‘get’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.find_by_name">
+<em class="property">classmethod </em><code class="descname">find_by_name</code><span class="sig-paren">(</span><em>name</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#EntityMixin.find_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.find_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get model by id (see ‘find’)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.mixins.EntityMixin.is_archived">
+<code class="descname">is_archived</code><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.is_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether model instance is archived.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -211,9 +419,117 @@
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.list">
+<em class="property">classmethod </em><code class="descname">list</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.list_archived">
+<em class="property">classmethod </em><code class="descname">list_archived</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#EntityMixin.list_archived"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.list_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>List archived entities</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.list_pages">
+<em class="property">classmethod </em><code class="descname">list_pages</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.list_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models by pages</p>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="benchlingapi.models.mixins.EntityMixin.one">
 <em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.one" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a single example model (default: most recent)</p>
+<dd><p>Returns one model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.EntityMixin.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save this model to Benchling</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.EntityMixin.save_json">
+<code class="descname">save_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.save_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the save json for this model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.search">
+<em class="property">classmethod </em><code class="descname">search</code><span class="sig-paren">(</span><em>fxn</em>, <em>limit=1</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search all models such that ‘fxn’ is True.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fxn</strong> (<em>callbable</em>) – function to return model</li>
+<li><strong>limit</strong> (<em>int</em>) – number of models to return (default 1)</li>
+<li><strong>page_limit</strong> (<em>int</em>) – number of pages to iterate (default 5)</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models where ‘fxn(model)’ is True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.EntityMixin.unarchive">
+<code class="descname">unarchive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.unarchive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive the model instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">self</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.unarchive_many">
+<em class="property">classmethod </em><code class="descname">unarchive_many</code><span class="sig-paren">(</span><em>model_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.unarchive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model_ids</strong> (<em>list</em>) – list of ids</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of models unarchived</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.EntityMixin.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.EntityMixin.update_json">
+<code class="descname">update_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.update_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the update json for the model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.EntityMixin.update_model">
+<em class="property">classmethod </em><code class="descname">update_model</code><span class="sig-paren">(</span><em>model_id</em>, <em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.EntityMixin.update_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model with data</p>
 </dd></dl>
 
 </dd></dl>
@@ -223,6 +539,18 @@
 <em class="property">class </em><code class="descclassname">benchlingapi.models.mixins.</code><code class="descname">GetMixin</code><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#GetMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.GetMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Exposes the <cite>get</cite> and <cite>find</cite> by id methods</p>
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.GetMixin.find">
+<em class="property">classmethod </em><code class="descname">find</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#GetMixin.find"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.GetMixin.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find model by id (see ‘get’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.GetMixin.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#GetMixin.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.GetMixin.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get model by id (see ‘find’)</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -231,9 +559,184 @@
 <dd><p>Bases: <a class="reference internal" href="#benchlingapi.models.mixins.InventoryMixin" title="benchlingapi.models.mixins.InventoryMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.InventoryMixin</span></code></a>, <a class="reference internal" href="#benchlingapi.models.mixins.RegistryMixin" title="benchlingapi.models.mixins.RegistryMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.RegistryMixin</span></code></a>, <a class="reference internal" href="#benchlingapi.models.mixins.EntityMixin" title="benchlingapi.models.mixins.EntityMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.models.mixins.EntityMixin</span></code></a></p>
 <p>Mixin for <code class="xref py py-class docutils literal notranslate"><span class="pre">DNASequence</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">AASequence</span></code>, and <code class="xref py py-class docutils literal notranslate"><span class="pre">CustomEntity</span></code></p>
 <dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.add_alias">
+<code class="descname">add_alias</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.add_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an alias to the entity</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.all">
+<em class="property">classmethod </em><code class="descname">all</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generator comprising of all models</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.archive">
+<code class="descname">archive</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive model instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.archive_many">
+<em class="property">classmethod </em><code class="descname">archive_many</code><span class="sig-paren">(</span><em>model_ids</em>, <em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.archive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model_ids</strong> (<em>list</em>) – list of ids</li>
+<li><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from <cite>model.ARCHIVE_REASONS</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models archived</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.archive_reason">
+<code class="descname">archive_reason</code><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.archive_reason" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the archive reason. Return None if not archived.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="benchlingapi.models.mixins.InventoryEntityMixin.batches">
 <code class="descname">batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.batches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an entities batches</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.bulk_create">
+<em class="property">classmethod </em><code class="descname">bulk_create</code><span class="sig-paren">(</span><em>model_data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.bulk_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create many models from a list of data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.create_model">
+<em class="property">classmethod </em><code class="descname">create_model</code><span class="sig-paren">(</span><em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.create_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create model from data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.find">
+<em class="property">classmethod </em><code class="descname">find</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find model by id (see ‘get’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.find_by_name">
+<em class="property">classmethod </em><code class="descname">find_by_name</code><span class="sig-paren">(</span><em>name</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.find_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.find_by_name_in_registry">
+<em class="property">classmethod </em><code class="descname">find_by_name_in_registry</code><span class="sig-paren">(</span><em>name</em>, <em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.find_by_name_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name in a registry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – name of entity</td>
+</tr>
+</tbody>
+</table>
+<p>:type basestring
+:param registry_id: registery id. If none, ‘registry_name’ must be provided.
+:type registry_id: basestring
+:param registry_name: registry name. If None, ‘registry_id’ must be provided
+:type registry_name: basestring
+:param params: additional search parameters
+:type params: dict
+:return: first model found
+:rtype: Model</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.find_in_registry">
+<em class="property">classmethod </em><code class="descname">find_in_registry</code><span class="sig-paren">(</span><em>entity_registry_id</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.find_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entity from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_id</strong> (<em>basestring</em>) – entity registry id</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">instance</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get model by id (see ‘find’)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.get_in_registry">
+<em class="property">classmethod </em><code class="descname">get_in_registry</code><span class="sig-paren">(</span><em>entity_registry_ids</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.get_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get entities from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_ids</strong> (<em>list</em>) – list of entity registry ids</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.is_archived">
+<code class="descname">is_archived</code><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.is_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether model instance is archived.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.is_registered">
+<code class="descname">is_registered</code><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.is_registered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if instance is registered</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -261,9 +764,284 @@
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.list">
+<em class="property">classmethod </em><code class="descname">list</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.list_archived">
+<em class="property">classmethod </em><code class="descname">list_archived</code><span class="sig-paren">(</span><em>reason='Other'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.list_archived" title="Permalink to this definition">¶</a></dt>
+<dd><p>List archived entities</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.list_in_registry">
+<em class="property">classmethod </em><code class="descname">list_in_registry</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.list_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all instances contained in the registry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.list_pages">
+<em class="property">classmethod </em><code class="descname">list_pages</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.list_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models by pages</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>folderId</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the entity to a new benchling folder</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folderId</strong> (<em>basestring</em>) – the folder id to move entity to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="benchlingapi.models.mixins.InventoryEntityMixin.one">
 <em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.one" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a single example model (default: most recent)</p>
+<dd><p>Returns one model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.print_valid_schemas">
+<code class="descname">print_valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.print_valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print available valid schemas for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>naming_strategy='NEW_IDS'</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register this instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>naming_strategy</strong> – naming strategy for registry.
+- NEW_IDS (default): Generates new registry IDs, and leaves entity name as-is
+- IDS_FROM_NAMES: Converts names into registry IDs
+- DELETE_NAMES: Generates new registry IDs and sets entity name to new registry ID, and does not keep old names as aliases
+- SET_FROM_NAME_PARTS: Generates new registry IDs and generates new entity name based on the entity schema’s name template, if it has one.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.register_and_save_name_as_alias">
+<code class="descname">register_and_save_name_as_alias</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.register_and_save_name_as_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance, automatically generating a new id and setting
+the instance name to the new id. Save the old name as an alias.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.register_with_custom_id">
+<code class="descname">register_with_custom_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.register_with_custom_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance with a custom id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>basestring</em>) – custom registry id for the newly registered instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.registry">
+<code class="descname">registry</code><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <code class="xref py py-class docutils literal notranslate"><span class="pre">models.Registry</span></code> that this entity is contained in</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.registry_dict">
+<em class="property">classmethod </em><code class="descname">registry_dict</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.registry_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary of registry ids to entities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save this model to Benchling</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.save_json">
+<code class="descname">save_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.save_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the save json for this model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.search">
+<em class="property">classmethod </em><code class="descname">search</code><span class="sig-paren">(</span><em>fxn</em>, <em>limit=1</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search all models such that ‘fxn’ is True.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fxn</strong> (<em>callbable</em>) – function to return model</li>
+<li><strong>limit</strong> (<em>int</em>) – number of models to return (default 1)</li>
+<li><strong>page_limit</strong> (<em>int</em>) – number of pages to iterate (default 5)</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models where ‘fxn(model)’ is True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.set_schema">
+<code class="descname">set_schema</code><span class="sig-paren">(</span><em>schema_name</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.set_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the schema for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.unarchive">
+<code class="descname">unarchive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.unarchive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive the model instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">self</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.unarchive_many">
+<em class="property">classmethod </em><code class="descname">unarchive_many</code><span class="sig-paren">(</span><em>model_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.unarchive_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unarchive many models by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model_ids</strong> (<em>list</em>) – list of ids</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of models unarchived</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.unregister">
+<code class="descname">unregister</code><span class="sig-paren">(</span><em>folder_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.unregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregister the instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folder_id</strong> (<em>basestring</em>) – folder to move unregistered instance to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.update_json">
+<code class="descname">update_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.update_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the update json for the model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.update_model">
+<em class="property">classmethod </em><code class="descname">update_model</code><span class="sig-paren">(</span><em>model_id</em>, <em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.update_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model with data</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.InventoryEntityMixin.valid_schemas">
+<em class="property">classmethod </em><code class="descname">valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.mixins.InventoryEntityMixin.valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return valid schemas for this model class</p>
 </dd></dl>
 
 </dd></dl>
@@ -273,6 +1051,24 @@
 <em class="property">class </em><code class="descclassname">benchlingapi.models.mixins.</code><code class="descname">InventoryMixin</code><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#InventoryMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.InventoryMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Designates model as having a folderId</p>
+<dl class="method">
+<dt id="benchlingapi.models.mixins.InventoryMixin.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>folderId</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#InventoryMixin.move"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.InventoryMixin.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the entity to a new benchling folder</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folderId</strong> (<em>basestring</em>) – the folder id to move entity to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -280,6 +1076,30 @@
 <em class="property">class </em><code class="descclassname">benchlingapi.models.mixins.</code><code class="descname">ListMixin</code><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ListMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ListMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Exposes the methods that return many model instances (e.g. <cite>all</cite>, <cite>list</cite>, <cite>one</cite>, etc.)</p>
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.ListMixin.all">
+<em class="property">classmethod </em><code class="descname">all</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ListMixin.all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ListMixin.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generator comprising of all models</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.ListMixin.find">
+<em class="property">classmethod </em><code class="descname">find</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ListMixin.find"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ListMixin.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a model by id</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.ListMixin.find_by_name">
+<em class="property">classmethod </em><code class="descname">find_by_name</code><span class="sig-paren">(</span><em>name</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ListMixin.find_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ListMixin.find_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a model by name</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.ListMixin.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>id</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ListMixin.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ListMixin.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a model by id</p>
+</dd></dl>
+
 <dl class="classmethod">
 <dt id="benchlingapi.models.mixins.ListMixin.last">
 <em class="property">classmethod </em><code class="descname">last</code><span class="sig-paren">(</span><em>num</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ListMixin.last"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ListMixin.last" title="Permalink to this definition">¶</a></dt>
@@ -305,9 +1125,47 @@
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="benchlingapi.models.mixins.ListMixin.list">
+<em class="property">classmethod </em><code class="descname">list</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ListMixin.list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ListMixin.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.ListMixin.list_pages">
+<em class="property">classmethod </em><code class="descname">list_pages</code><span class="sig-paren">(</span><em>page_limit=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ListMixin.list_pages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ListMixin.list_pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>List models by pages</p>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="benchlingapi.models.mixins.ListMixin.one">
 <em class="property">classmethod </em><code class="descname">one</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ListMixin.one"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ListMixin.one" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a single example model (default: most recent)</p>
+<dd><p>Returns one model</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.ListMixin.search">
+<em class="property">classmethod </em><code class="descname">search</code><span class="sig-paren">(</span><em>fxn</em>, <em>limit=1</em>, <em>page_limit=5</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#ListMixin.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.ListMixin.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search all models such that ‘fxn’ is True.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fxn</strong> (<em>callbable</em>) – function to return model</li>
+<li><strong>limit</strong> (<em>int</em>) – number of models to return (default 1)</li>
+<li><strong>page_limit</strong> (<em>int</em>) – number of pages to iterate (default 5)</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models where ‘fxn(model)’ is True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -317,6 +1175,234 @@
 <em class="property">class </em><code class="descclassname">benchlingapi.models.mixins.</code><code class="descname">RegistryMixin</code><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Allows model to be registered and unregistered.</p>
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.RegistryMixin.find_by_name_in_registry">
+<em class="property">classmethod </em><code class="descname">find_by_name_in_registry</code><span class="sig-paren">(</span><em>name</em>, <em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin.find_by_name_in_registry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.find_by_name_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find entity by name in a registry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – name of entity</td>
+</tr>
+</tbody>
+</table>
+<p>:type basestring
+:param registry_id: registery id. If none, ‘registry_name’ must be provided.
+:type registry_id: basestring
+:param registry_name: registry name. If None, ‘registry_id’ must be provided
+:type registry_name: basestring
+:param params: additional search parameters
+:type params: dict
+:return: first model found
+:rtype: Model</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.RegistryMixin.find_in_registry">
+<em class="property">classmethod </em><code class="descname">find_in_registry</code><span class="sig-paren">(</span><em>entity_registry_id</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin.find_in_registry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.find_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entity from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_id</strong> (<em>basestring</em>) – entity registry id</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">instance</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Model</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.RegistryMixin.get_in_registry">
+<em class="property">classmethod </em><code class="descname">get_in_registry</code><span class="sig-paren">(</span><em>entity_registry_ids</em>, <em>registry_id=None</em>, <em>registry_name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin.get_in_registry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.get_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get entities from a registry by their ids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_registry_ids</strong> (<em>list</em>) – list of entity registry ids</li>
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.mixins.RegistryMixin.is_registered">
+<code class="descname">is_registered</code><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.is_registered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if instance is registered</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.RegistryMixin.list_in_registry">
+<em class="property">classmethod </em><code class="descname">list_in_registry</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin.list_in_registry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.list_in_registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all instances contained in the registry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.RegistryMixin.print_valid_schemas">
+<code class="descname">print_valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin.print_valid_schemas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.print_valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print available valid schemas for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.RegistryMixin.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>naming_strategy='NEW_IDS'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register this instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>naming_strategy</strong> – naming strategy for registry.
+- NEW_IDS (default): Generates new registry IDs, and leaves entity name as-is
+- IDS_FROM_NAMES: Converts names into registry IDs
+- DELETE_NAMES: Generates new registry IDs and sets entity name to new registry ID, and does not keep old names as aliases
+- SET_FROM_NAME_PARTS: Generates new registry IDs and generates new entity name based on the entity schema’s name template, if it has one.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">model instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.RegistryMixin.register_and_save_name_as_alias">
+<code class="descname">register_and_save_name_as_alias</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin.register_and_save_name_as_alias"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.register_and_save_name_as_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance, automatically generating a new id and setting
+the instance name to the new id. Save the old name as an alias.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.RegistryMixin.register_with_custom_id">
+<code class="descname">register_with_custom_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin.register_with_custom_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.register_with_custom_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the instance with a custom id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>basestring</em>) – custom registry id for the newly registered instance</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="benchlingapi.models.mixins.RegistryMixin.registry">
+<code class="descname">registry</code><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.registry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <code class="xref py py-class docutils literal notranslate"><span class="pre">models.Registry</span></code> that this entity is contained in</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.RegistryMixin.registry_dict">
+<em class="property">classmethod </em><code class="descname">registry_dict</code><span class="sig-paren">(</span><em>registry_id=None</em>, <em>registry_name=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin.registry_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.registry_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary of registry ids to entities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</li>
+<li><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</li>
+<li><strong>params</strong> (<em>dict</em>) – additional search parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict of models in registry</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.RegistryMixin.set_schema">
+<code class="descname">set_schema</code><span class="sig-paren">(</span><em>schema_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin.set_schema"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.set_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the schema for this model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.RegistryMixin.unregister">
+<code class="descname">unregister</code><span class="sig-paren">(</span><em>folder_id=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin.unregister"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.unregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregister the instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folder_id</strong> (<em>basestring</em>) – folder to move unregistered instance to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.RegistryMixin.valid_schemas">
+<em class="property">classmethod </em><code class="descname">valid_schemas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#RegistryMixin.valid_schemas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.RegistryMixin.valid_schemas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return valid schemas for this model class</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -324,6 +1410,24 @@
 <em class="property">class </em><code class="descclassname">benchlingapi.models.mixins.</code><code class="descname">UpdateMixin</code><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#UpdateMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.UpdateMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Exposes methods to update models on the Benchling server.</p>
+<dl class="method">
+<dt id="benchlingapi.models.mixins.UpdateMixin.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#UpdateMixin.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.UpdateMixin.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="benchlingapi.models.mixins.UpdateMixin.update_json">
+<code class="descname">update_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#UpdateMixin.update_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.UpdateMixin.update_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the update json for the model instance</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="benchlingapi.models.mixins.UpdateMixin.update_model">
+<em class="property">classmethod </em><code class="descname">update_model</code><span class="sig-paren">(</span><em>model_id</em>, <em>data</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/benchlingapi/models/mixins.html#UpdateMixin.update_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.models.mixins.UpdateMixin.update_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model with data</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>

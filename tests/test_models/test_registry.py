@@ -1,3 +1,5 @@
+import pytest
+from benchlingapi.exceptions import InvalidRegistryId
 
 
 def test_get_entities_in_registry(session):
@@ -9,4 +11,5 @@ def test_get_entities_in_registry(session):
 def test_invalid_registry(session):
     registries = session.Registry.all()
     for registry in registries:
-        session.DNASequence.find_in_registry('adsklfherhg', registry_id=registry.id)
+        with pytest.raises(InvalidRegistryId):
+            session.DNASequence.find_in_registry('adsklfherhg', registry_id=registry.id)

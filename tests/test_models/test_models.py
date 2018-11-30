@@ -100,7 +100,7 @@ class TestEntity(HasInterface):
         found = interface.find_by_name(example_model.name)
         assert found
         assert example_model.id == found.id
-        assert interface.find_by_name("alsjdfoijewfosdiufoasdf") == []
+        assert interface.find_by_name("alsjdfoijewfosdiufoasdf") is None
 
     def test_batches(self, example_model):
         batches = example_model.batches()

@@ -130,6 +130,38 @@
 
 <div class="viewcode-block" id="SchemaNotFoundError"><a class="viewcode-back" href="../../developer/_autosummary/benchlingapi.exceptions.html#benchlingapi.exceptions.SchemaNotFoundError">[docs]</a><span class="k">class</span> <span class="nc">SchemaNotFoundError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Model not found&quot;&quot;&quot;</span></div>
+
+<span class="c1">################################</span>
+<span class="c1"># Benchling request exceptions</span>
+<span class="c1">################################</span>
+<div class="viewcode-block" id="BenchlingException"><a class="viewcode-back" href="../../developer/_autosummary/benchlingapi.exceptions.html#benchlingapi.exceptions.BenchlingException">[docs]</a><span class="k">class</span> <span class="nc">BenchlingException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exceptions received from the Benchling site&quot;&quot;&quot;</span></div>
+
+<div class="viewcode-block" id="RegistryException"><a class="viewcode-back" href="../../developer/_autosummary/benchlingapi.exceptions.html#benchlingapi.exceptions.RegistryException">[docs]</a><span class="k">class</span> <span class="nc">RegistryException</span><span class="p">(</span><span class="n">BenchlingException</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="InvalidRegistryId"><a class="viewcode-back" href="../../developer/_autosummary/benchlingapi.exceptions.html#benchlingapi.exceptions.InvalidRegistryId">[docs]</a><span class="k">class</span> <span class="nc">InvalidRegistryId</span><span class="p">(</span><span class="n">RegistryException</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="RegistryValidationError"><a class="viewcode-back" href="../../developer/_autosummary/benchlingapi.exceptions.html#benchlingapi.exceptions.RegistryValidationError">[docs]</a><span class="k">class</span> <span class="nc">RegistryValidationError</span><span class="p">(</span><span class="n">RegistryException</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="exception_dispatch"><a class="viewcode-back" href="../../developer/_autosummary/benchlingapi.exceptions.html#benchlingapi.exceptions.exception_dispatch">[docs]</a><span class="k">def</span> <span class="nf">exception_dispatch</span><span class="p">(</span><span class="n">exception_with_response</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Dispatches Benchling exceptions (from the site) to Pythonic exceptions&quot;&quot;&quot;</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">exception_with_response</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">error_data</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="n">userMessage</span> <span class="o">=</span> <span class="n">error_data</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">][</span><span class="s1">&#39;userMessage&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;Invalid entityRegistryId&#39;</span> <span class="ow">in</span> <span class="n">userMessage</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidRegistryId</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+        <span class="k">elif</span> <span class="s1">&#39;entities you attempted to register failed validation&#39;</span> <span class="ow">in</span> <span class="n">userMessage</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">RegistryValidationError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">raise</span> <span class="n">e</span></div>
 </pre></div>
 
           </div>

@@ -5,6 +5,12 @@ benchlingapi.exceptions
 
    
    
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      exception_dispatch
+   
    
 
    
@@ -18,8 +24,12 @@ benchlingapi.exceptions
    .. autosummary::
    
       BenchlingAPIException
+      BenchlingException
       BenchlingLoginError
+      InvalidRegistryId
       ModelNotFoundError
+      RegistryException
+      RegistryValidationError
       SchemaNotFoundError
    
    
