@@ -84,6 +84,12 @@ class ListMixin:
         return list(cls.all(pageSize=max_page_size, limit=num))
 
     @classmethod
+    def one(cls):
+        models = cls.last(1)
+        if models:
+            return models[0]
+
+    @classmethod
     def search(cls, fxn, limit=1, page_limit=5, **params):
         found = []
         for model in cls.all(page_limit=page_limit, **params):

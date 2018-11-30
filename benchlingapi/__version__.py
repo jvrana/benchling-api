@@ -1,5 +1,3 @@
-# TRIDENT
-
 __title__ = 'BenchlingAPI'
 __description__ = 'Shallow wrapper for the BenchlingAPI (https://docs.benchling.com)'
 __url__ = 'http://klavinslab.org/benchling-api'

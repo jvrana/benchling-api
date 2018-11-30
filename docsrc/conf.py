@@ -192,7 +192,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'BenchlingAPI', 'Python BenchlingAPI Documentation',
-     author, 'BenchlingAPI', 'One line description of project.',
+     author, 'BenchlingAPI', 'Python BenchlingAPI Documentation.',
      'Miscellaneous'),
 ]
 

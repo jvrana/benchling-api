@@ -65,7 +65,7 @@ setup(
         license='',
         author=ver['author'],
         author_email=ver['author_email'],
-        keywords='aquarium api',
+        keywords='',
         description=ver['description'],
         install_requires=install_requires,
         python_requires='>=3.4',
