@@ -4,7 +4,7 @@ Exposes models to various API endpoints.
 
 from benchlingapi.models.base import ModelRegistry
 from benchlingapi.exceptions import BenchlingAPIException, BenchlingException
-
+import webbrowser
 
 class GetMixin:
     """
@@ -309,6 +309,10 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
         if name not in self.aliases:
             self.aliases.append(name)
         return self
+
+    def open(self, key="webURL"):
+        if hasattr(self, key):
+            webbrowser.open(getattr(self, key))
 
 
 class InventoryMixin():
