@@ -3,7 +3,7 @@ All BenchlingAPI models
 """
 
 import re
-from urllib.request import urlopen
+import urllib
 
 from benchlingapi.exceptions import BenchlingAPIException
 from benchlingapi.models.base import ModelBase, ModelRegistry
@@ -120,7 +120,7 @@ class DNASequence(InventoryEntityMixin, ModelBase):
         :return:
         """
         # self._verifysharelink(share_link)
-        f = urlopen(share_link)
+        f = urllib.request.urlopen(share_link)
         return f.read().decode("utf-8")
 
     @staticmethod
@@ -153,7 +153,7 @@ class DNASequence(InventoryEntityMixin, ModelBase):
                 raise BenchlingAPIException("More than one possible sequence id found in sharelink html using search "
                                             "pattern {}".format(search_pattern))
             seq = uniq_ids[0]
-        except BenchlingAPIException:
+        except (BenchlingAPIException, urllib.error.HTTPError):
             d = cls._parseURL(share_link)
             seq = d['seq_id']
         if seq is None:

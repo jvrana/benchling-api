@@ -17,6 +17,7 @@ class BenchlingLoginError(Exception):
 class ModelNotFoundError(Exception):
     """Model not found"""
 
+
 class SchemaNotFoundError(Exception):
     """Model not found"""
 
@@ -25,6 +26,7 @@ class SchemaNotFoundError(Exception):
 ################################
 class BenchlingException(Exception):
     """Exceptions received from the Benchling site"""
+
 
 class RegistryException(BenchlingException):
     pass
@@ -45,6 +47,8 @@ def exception_dispatch(exception_with_response):
         error_data = e.response.json()
         userMessage = error_data['error']['userMessage']
         if 'Invalid entityRegistryId' in userMessage:
+            raise InvalidRegistryId(str(e)) from e
+        elif 'That name is already used as either an alias or a name in this registry' in userMessage:
             raise InvalidRegistryId(str(e)) from e
         elif 'entities you attempted to register failed validation' in userMessage:
             raise RegistryValidationError(str(e)) from e
