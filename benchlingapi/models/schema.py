@@ -4,7 +4,7 @@ Model serialization/deserialization classes
 
 import re
 
-from marshmallow import Schema, post_load, post_dump, validate
+from marshmallow import Schema, post_load, post_dump, validate, INCLUDE
 from marshmallow import fields as mfields
 
 
@@ -45,8 +45,8 @@ class EntitySchema(Schema):
     archiveRecord = mfields.Dict(allow_none=True)
     id = mfields.String()
     name = mfields.String(required=True, allow_none=False)
-    createdAt = mfields.DateTime(load_only=True)
-    modifiedAt = mfields.DateTime(load_only=True)
+    createdAt = mfields.String(load_only=True)
+    modifiedAt = mfields.String(load_only=True)
     creator = mfields.Dict()
     customFields = mfields.Dict()
     fields = mfields.Dict(allow_none=False)
@@ -63,6 +63,7 @@ class EntitySchema(Schema):
     webURL = mfields.URL()
 
     class Meta:
+        unknown = INCLUDE
         additional = ("id",)
 
     def get_schema_id(self, obj):
@@ -71,8 +72,10 @@ class EntitySchema(Schema):
         elif hasattr(obj, 'schema') and obj.schema:
             return obj.schema['id']
 
+
 class CustomEntitySchema(ModelSchemaMixin, EntitySchema):
-    pass
+    class Meta:
+        unknown = INCLUDE
 
 
 class DNASequenceSchema(ModelSchemaMixin, EntitySchema):
@@ -82,20 +85,31 @@ class DNASequenceSchema(ModelSchemaMixin, EntitySchema):
     isCircular = mfields.Boolean(required=True)
     translations = mfields.Nested("TranslationSchema", many=True)
 
+    class Meta:
+        unknown = INCLUDE
+
 
 class AASequenceSchema(ModelSchemaMixin, EntitySchema):
     annotations = mfields.Nested("AnnotationSchema", many=True)
     aminoAcids = mfields.String(required=True)
     length = mfields.Integer()
 
+    class Meta:
+        unknown = INCLUDE
+
 
 class OligoSchema(ModelSchemaMixin, EntitySchema):
     bases = mfields.String(required=True)
     length = mfields.Integer()
 
+    class Meta:
+        unknown = INCLUDE
+
 
 class BatchSchema(EntitySchema):
-    pass
+
+    class Meta:
+        unknown = INCLUDE
 
 
 class AnnotationSchema(ModelSchemaMixin, Schema):
@@ -106,6 +120,9 @@ class AnnotationSchema(ModelSchemaMixin, Schema):
     strand = mfields.Integer(validate=validate.OneOf([0, 1, -1]))
     type = mfields.String()
 
+    class Meta:
+        unknown = INCLUDE
+
 
 class TranslationSchema(Schema):
     start = mfields.Integer()
@@ -113,6 +130,9 @@ class TranslationSchema(Schema):
     strand = mfields.Integer(validate=validate.OneOf([0, 1, -1]))
     aminoAcids = mfields.String()
     regions = mfields.List(mfields.Dict())
+
+    class Meta:
+        unknown = INCLUDE
 
 
 ####################################
@@ -124,11 +144,13 @@ class TranslationSchema(Schema):
 
 
 class FieldSchema(Schema):
-
     type = mfields.String(load_only=True)
     isMulti = mfields.Boolean(load_only=True)
     value = mfields.Raw()
-    textValue = mfields.String(load_only=True)
+    textValue = mfields.String(load_only=True, allow_none=True)
+
+    class Meta:
+        unknown = INCLUDE
 
 
 class EntitySchemaSchema(Schema):
@@ -141,11 +163,17 @@ class EntitySchemaSchema(Schema):
     registryId = mfields.String(default=None, allow_none=True)
     constrain = mfields.Dict()
 
+    class Meta:
+        unknown = INCLUDE
+
 
 class UserSummarySchema(Schema):
     handle = mfields.String()
     id = mfields.String()
     name = mfields.String(allow_none=True)
+
+    class Meta:
+        unknown = INCLUDE
 
 
 ####################################
@@ -160,6 +188,9 @@ class FolderSchema(ModelSchemaMixin, Schema):
     projectId = mfields.String(required=True)
     archiveRecord = mfields.Dict(allow_none=True)
 
+    class Meta:
+        unknown = INCLUDE
+
 
 class ProjectSchema(ModelSchemaMixin, Schema):
     id = mfields.String()
@@ -167,8 +198,14 @@ class ProjectSchema(ModelSchemaMixin, Schema):
     owner = mfields.Nested(UserSummarySchema)
     archiveRecord = mfields.Dict(allow_none=True)
 
+    class Meta:
+        unknown = INCLUDE
+
 
 class RegistrySchema(ModelSchemaMixin, Schema):
     id = mfields.String()
     name = mfields.String()
     owner = mfields.Nested(UserSummarySchema)
+
+    class Meta:
+        unknown = INCLUDE

@@ -14,7 +14,7 @@ tests_require = [
 # 3.0.0b12
 install_requires = [
     "requests",
-    "marshmallow==2.15.1",
+    "marshmallow==3.0.0rc1",
     "inflection",
 ]
 
@@ -59,7 +59,7 @@ setup(
         title=ver['title'],
         name='benchlingapi',
         version=ver['version'],
-        packages=["benchlingapi"],
+        packages=["benchlingapi", 'benchlingapi.models'],
         long_description=readme(),
         url=ver['url'],
         license='',
