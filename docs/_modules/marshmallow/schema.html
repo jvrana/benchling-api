@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
   
   <!-- Licensed under the Apache 2.0 License -->
   <link rel="stylesheet" type="text/css" href="../../_static/fonts/open-sans/stylesheet.css" />
@@ -15,14 +13,14 @@
   <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>marshmallow.schema &#8212; BenchlingAPI 2.0.0-development documentation</title>
+    <title>marshmallow.schema &#8212; benchlingapi 2.0.0a documentation</title>
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   
@@ -38,7 +36,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">BenchlingAPI 2.0.0-development documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
     </div>
@@ -48,7 +46,7 @@
         <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
       </div>
   <div id="left-column">
-    <div class="sphinxsidebar"><a href="http://klavinslab.org/benchling-api" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <div class="sphinxsidebar"><a href="https://www.github.com/klavinslab/benchlngapi" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
 <div>
     <div>
@@ -57,7 +55,7 @@
     </div>
 </div>
 
-<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.0-development</a></p>
+<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.0a</a></p>
 <div>
 
 </div>
@@ -113,30 +111,30 @@
 <span class="sd">&quot;&quot;&quot;The :class:`Schema` class, including its metaclass and options (class Meta).&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">unicode_literals</span>
 
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">namedtuple</span>
-<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span><span class="p">,</span> <span class="n">OrderedDict</span>
 <span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">import</span> <span class="nn">uuid</span>
 <span class="kn">import</span> <span class="nn">decimal</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">copy</span>
 <span class="kn">import</span> <span class="nn">inspect</span>
 <span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">uuid</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
-<span class="kn">import</span> <span class="nn">functools</span>
 
 <span class="kn">from</span> <span class="nn">marshmallow</span> <span class="k">import</span> <span class="n">base</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">utils</span><span class="p">,</span> <span class="n">class_registry</span><span class="p">,</span> <span class="n">marshalling</span>
-<span class="kn">from</span> <span class="nn">marshmallow.compat</span> <span class="k">import</span> <span class="p">(</span><span class="n">with_metaclass</span><span class="p">,</span> <span class="n">iteritems</span><span class="p">,</span> <span class="n">text_type</span><span class="p">,</span>
-                                <span class="n">binary_type</span><span class="p">,</span> <span class="n">OrderedDict</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">marshmallow.exceptions</span> <span class="k">import</span> <span class="n">ValidationError</span>
+<span class="kn">from</span> <span class="nn">marshmallow.compat</span> <span class="k">import</span> <span class="n">iteritems</span><span class="p">,</span> <span class="n">iterkeys</span><span class="p">,</span> <span class="n">with_metaclass</span><span class="p">,</span> <span class="n">text_type</span><span class="p">,</span> <span class="n">binary_type</span>
+<span class="kn">from</span> <span class="nn">marshmallow.exceptions</span> <span class="k">import</span> <span class="n">ValidationError</span><span class="p">,</span> <span class="n">StringNotCollectionError</span>
 <span class="kn">from</span> <span class="nn">marshmallow.orderedset</span> <span class="k">import</span> <span class="n">OrderedSet</span>
-<span class="kn">from</span> <span class="nn">marshmallow.decorators</span> <span class="k">import</span> <span class="p">(</span><span class="n">PRE_DUMP</span><span class="p">,</span> <span class="n">POST_DUMP</span><span class="p">,</span> <span class="n">PRE_LOAD</span><span class="p">,</span> <span class="n">POST_LOAD</span><span class="p">,</span>
-                                    <span class="n">VALIDATES</span><span class="p">,</span> <span class="n">VALIDATES_SCHEMA</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">marshmallow.utils</span> <span class="k">import</span> <span class="n">missing</span>
+<span class="kn">from</span> <span class="nn">marshmallow.decorators</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">POST_DUMP</span><span class="p">,</span>
+    <span class="n">POST_LOAD</span><span class="p">,</span>
+    <span class="n">PRE_DUMP</span><span class="p">,</span>
+    <span class="n">PRE_LOAD</span><span class="p">,</span>
+    <span class="n">VALIDATES</span><span class="p">,</span>
+    <span class="n">VALIDATES_SCHEMA</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">marshmallow.utils</span> <span class="k">import</span> <span class="n">RAISE</span><span class="p">,</span> <span class="n">missing</span><span class="p">,</span> <span class="n">is_collection</span>
 
-
-<span class="c1">#: Return type of :meth:`Schema.dump` including serialized data and errors</span>
-<span class="n">MarshalResult</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;MarshalResult&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;errors&#39;</span><span class="p">])</span>
-<span class="c1">#: Return type of :meth:`Schema.load`, including deserialized data and errors</span>
-<span class="n">UnmarshalResult</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;UnmarshalResult&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;errors&#39;</span><span class="p">])</span>
 
 <span class="k">def</span> <span class="nf">_get_fields</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span> <span class="n">field_class</span><span class="p">,</span> <span class="n">pop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Get fields from a class. If ordered=True, fields will sorted by creation index.</span>
@@ -145,19 +143,17 @@
 <span class="sd">    :param type field_class: Base field class</span>
 <span class="sd">    :param bool pop: Remove matching fields</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">getter</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span> <span class="s1">&#39;pop&#39;</span> <span class="k">if</span> <span class="n">pop</span> <span class="k">else</span> <span class="s1">&#39;get&#39;</span><span class="p">)</span>
     <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">getter</span><span class="p">(</span><span class="n">field_name</span><span class="p">))</span>
-        <span class="k">for</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">field_value</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">iteritems</span><span class="p">(</span><span class="n">attrs</span><span class="p">))</span>
+        <span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">field_value</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">field_value</span> <span class="ow">in</span> <span class="n">iteritems</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">utils</span><span class="o">.</span><span class="n">is_instance_or_subclass</span><span class="p">(</span><span class="n">field_value</span><span class="p">,</span> <span class="n">field_class</span><span class="p">)</span>
     <span class="p">]</span>
+    <span class="k">if</span> <span class="n">pop</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">attrs</span><span class="p">[</span><span class="n">field_name</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">ordered</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span>
-            <span class="n">fields</span><span class="p">,</span>
-            <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">pair</span><span class="p">:</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">_creation_index</span><span class="p">,</span>
-        <span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">fields</span>
+        <span class="n">fields</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">pair</span><span class="p">:</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">_creation_index</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fields</span>
 
 <span class="c1"># This function allows Schemas to inherit from non-Schema classes and ensures</span>
 <span class="c1">#   inheritance according to the MRO</span>
@@ -176,7 +172,7 @@
             <span class="n">_get_fields</span><span class="p">(</span>
                 <span class="nb">getattr</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="s1">&#39;_declared_fields&#39;</span><span class="p">,</span> <span class="n">base</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">),</span>
                 <span class="n">field_class</span><span class="p">,</span>
-                <span class="n">ordered</span><span class="o">=</span><span class="n">ordered</span>
+                <span class="n">ordered</span><span class="o">=</span><span class="n">ordered</span><span class="p">,</span>
             <span class="p">)</span>
             <span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">mro</span><span class="p">[:</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         <span class="p">),</span>
@@ -213,9 +209,7 @@
         <span class="n">meta</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">klass</span><span class="p">,</span> <span class="s1">&#39;Meta&#39;</span><span class="p">)</span>
         <span class="c1"># Set klass.opts in __new__ rather than __init__ so that it is accessible in</span>
         <span class="c1"># get_declared_fields</span>
-        <span class="n">klass</span><span class="o">.</span><span class="n">opts</span> <span class="o">=</span> <span class="n">klass</span><span class="o">.</span><span class="n">OPTIONS_CLASS</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
-        <span class="c1"># Pass the inherited `ordered` into opts</span>
-        <span class="n">klass</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">ordered</span> <span class="o">=</span> <span class="n">ordered</span>
+        <span class="n">klass</span><span class="o">.</span><span class="n">opts</span> <span class="o">=</span> <span class="n">klass</span><span class="o">.</span><span class="n">OPTIONS_CLASS</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="n">ordered</span><span class="p">)</span>
         <span class="c1"># Add fields specifid in the `include` class Meta option</span>
         <span class="n">cls_fields</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">klass</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">include</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 
@@ -225,7 +219,7 @@
             <span class="n">klass</span><span class="o">=</span><span class="n">klass</span><span class="p">,</span>
             <span class="n">cls_fields</span><span class="o">=</span><span class="n">cls_fields</span><span class="p">,</span>
             <span class="n">inherited_fields</span><span class="o">=</span><span class="n">inherited_fields</span><span class="p">,</span>
-            <span class="n">dict_cls</span><span class="o">=</span><span class="n">dict_cls</span>
+            <span class="n">dict_cls</span><span class="o">=</span><span class="n">dict_cls</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">klass</span>
 
@@ -249,17 +243,18 @@
         <span class="nb">super</span><span class="p">(</span><span class="n">SchemaMeta</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
             <span class="n">class_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_processors</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hooks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_hooks</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_resolve_processors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">resolve_hooks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add in the decorated processors</span>
 
 <span class="sd">        By doing this after constructing the class, we let standard inheritance</span>
 <span class="sd">        do all the hard work.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">mro</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmro</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_has_processors</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__processors__</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+        <span class="n">hooks</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
         <span class="k">for</span> <span class="n">attr_name</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="c1"># Need to look up the actual descriptor, not whatever might be</span>
             <span class="c1"># bound to the class. This needs to come from the __dict__ of the</span>
@@ -278,47 +273,53 @@
                 <span class="k">continue</span>
 
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">processor_tags</span> <span class="o">=</span> <span class="n">attr</span><span class="o">.</span><span class="n">__marshmallow_tags__</span>
+                <span class="n">hook_config</span> <span class="o">=</span> <span class="n">attr</span><span class="o">.</span><span class="n">__marshmallow_hook__</span>
             <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-                <span class="k">continue</span>
+                <span class="k">pass</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">iterkeys</span><span class="p">(</span><span class="n">hook_config</span><span class="p">):</span>
+                    <span class="c1"># Use name here so we can get the bound method later, in</span>
+                    <span class="c1"># case the processor was a descriptor or something.</span>
+                    <span class="n">hooks</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attr_name</span><span class="p">)</span>
 
-            <span class="bp">self</span><span class="o">.</span><span class="n">_has_processors</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">processor_tags</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">processor_tags</span><span class="p">:</span>
-                <span class="c1"># Use name here so we can get the bound method later, in case</span>
-                <span class="c1"># the processor was a descriptor or something.</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__processors__</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attr_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">hooks</span>
 
 
 <span class="k">class</span> <span class="nc">SchemaOpts</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;class Meta options for the :class:`Schema`. Defines defaults.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="p">())</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;`fields` option must be a list or tuple.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;`fields` option must be a list or tuple.&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">additional</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;additional&#39;</span><span class="p">,</span> <span class="p">())</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">additional</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;`additional` option must be a list or tuple.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;`additional` option must be a list or tuple.&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">additional</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot set both `fields` and `additional` options&quot;</span>
-                            <span class="s2">&quot; for the same Schema.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s1">&#39;Cannot set both `fields` and `additional` options&#39;</span>
+                <span class="s1">&#39; for the same Schema.&#39;</span><span class="p">,</span>
+            <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exclude</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;exclude&#39;</span><span class="p">,</span> <span class="p">())</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">exclude</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;`exclude` must be a list or tuple.&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">strict</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;strict&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;`exclude` must be a list or tuple.&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dateformat</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;dateformat&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">json_module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;json_module&#39;</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;skip_missing&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">datetimeformat</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;datetimeformat&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;json_module&#39;</span><span class="p">):</span>
             <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                <span class="s1">&#39;The skip_missing option is no longer necessary. Missing inputs passed to &#39;</span>
-                <span class="s1">&#39;Schema.dump will be excluded from the serialized output by default.&#39;</span><span class="p">,</span>
-                <span class="ne">UserWarning</span>
+                <span class="s1">&#39;The json_module class Meta option is deprecated. Use render_module instead.&#39;</span><span class="p">,</span>
+                <span class="ne">DeprecationWarning</span><span class="p">,</span>
             <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ordered</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;ordered&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="n">render_module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;json_module&#39;</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">render_module</span> <span class="o">=</span> <span class="n">json</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;render_module&#39;</span><span class="p">,</span> <span class="n">render_module</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ordered</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;ordered&#39;</span><span class="p">,</span> <span class="n">ordered</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">index_errors</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;index_errors&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">include</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;include&#39;</span><span class="p">,</span> <span class="p">{})</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">load_only</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;load_only&#39;</span><span class="p">,</span> <span class="p">())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dump_only</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;dump_only&#39;</span><span class="p">,</span> <span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unknown</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;unknown&#39;</span><span class="p">,</span> <span class="n">RAISE</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">BaseSchema</span><span class="p">(</span><span class="n">base</span><span class="o">.</span><span class="n">SchemaABC</span><span class="p">):</span>
@@ -350,17 +351,13 @@
 <span class="sd">        data, errors = schema.dump(album)</span>
 <span class="sd">        data  # {&#39;release_date&#39;: &#39;1968-12-06&#39;, &#39;title&#39;: &#39;Beggars Banquet&#39;}</span>
 
-<span class="sd">    :param dict extra: A dict of extra attributes to bind to the serialized result.</span>
-<span class="sd">    :param tuple|list only: Whitelist of fields to select when instantiating the Schema.</span>
-<span class="sd">        If None, all fields are used.</span>
-<span class="sd">        Nested fields can be represented with dot delimiters.</span>
-<span class="sd">    :param tuple|list exclude: Blacklist of fields to exclude when instantiating the Schema.</span>
-<span class="sd">        If a field appears in both `only` and `exclude`, it is not used.</span>
-<span class="sd">        Nested fields can be represented with dot delimiters.</span>
-<span class="sd">    :param str prefix: Optional prefix that will be prepended to all the</span>
-<span class="sd">        serialized field names.</span>
-<span class="sd">    :param bool strict: If `True`, raise errors if invalid data are passed in</span>
-<span class="sd">        instead of failing silently and storing the errors.</span>
+<span class="sd">    :param tuple|list only: Whitelist of the declared fields to select when</span>
+<span class="sd">        instantiating the Schema. If None, all fields are used. Nested fields</span>
+<span class="sd">        can be represented with dot delimiters.</span>
+<span class="sd">    :param tuple|list exclude: Blacklist of the declared fields to exclude</span>
+<span class="sd">        when instantiating the Schema. If a field appears in both `only` and</span>
+<span class="sd">        `exclude`, it is not used. Nested fields can be represented with dot</span>
+<span class="sd">        delimiters.</span>
 <span class="sd">    :param bool many: Should be set to `True` if ``obj`` is a collection</span>
 <span class="sd">        so that the object will be serialized to a list.</span>
 <span class="sd">    :param dict context: Optional context passed to :class:`fields.Method` and</span>
@@ -370,6 +367,11 @@
 <span class="sd">    :param bool|tuple partial: Whether to ignore missing fields. If its value</span>
 <span class="sd">        is an iterable, only missing fields listed in that iterable will be</span>
 <span class="sd">        ignored.</span>
+<span class="sd">    :param unknown: Whether to exclude, include, or raise an error for unknown</span>
+<span class="sd">        fields in the data. Use `EXCLUDE`, `INCLUDE` or `RAISE`.</span>
+
+<span class="sd">    .. versionchanged:: 3.0.0</span>
+<span class="sd">        `prefix` parameter removed.</span>
 
 <span class="sd">    .. versionchanged:: 2.0.0</span>
 <span class="sd">        `__validators__`, `__preprocessors__`, and `__data_handlers__` are removed in favor of</span>
@@ -377,7 +379,7 @@
 <span class="sd">        `marshmallow.decorators.pre_load` and `marshmallow.decorators.post_dump`.</span>
 <span class="sd">        `__accessor__` and `__error_handler__` are deprecated. Implement the</span>
 <span class="sd">        `handle_error` and `get_attribute` methods instead.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">TYPE_MAPPING</span> <span class="o">=</span> <span class="p">{</span>
         <span class="n">text_type</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
         <span class="n">binary_type</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
@@ -396,11 +398,6 @@
     <span class="p">}</span>
 
     <span class="n">OPTIONS_CLASS</span> <span class="o">=</span> <span class="n">SchemaOpts</span>
-
-    <span class="c1">#: DEPRECATED: Custom error handler function. May be `None`.</span>
-    <span class="n">__error_handler__</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="c1">#: DEPRECATED: Function used to get values of an object.</span>
-    <span class="n">__accessor__</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Options object for a Schema.</span>
@@ -425,10 +422,8 @@
 <span class="sd">            Nested fields can be represented with dot delimiters.</span>
 <span class="sd">        - ``dateformat``: Date format for all DateTime fields that do not have their</span>
 <span class="sd">            date format explicitly specified.</span>
-<span class="sd">        - ``strict``: If `True`, raise errors during marshalling rather than</span>
-<span class="sd">            storing them.</span>
-<span class="sd">        - ``json_module``: JSON module to use for `loads` and `dumps`.</span>
-<span class="sd">            Defaults to the ``json`` module in the stdlib.</span>
+<span class="sd">        - ``render_module``: Module to use for `loads` and `dumps`. Defaults to</span>
+<span class="sd">            `json` from the standard library.</span>
 <span class="sd">        - ``ordered``: If `True`, order serialization output according to the</span>
 <span class="sd">            order in which fields were declared. Output of `Schema.dump` will be a</span>
 <span class="sd">            `collections.OrderedDict`.</span>
@@ -436,56 +431,39 @@
 <span class="sd">            of invalid items in a collection.</span>
 <span class="sd">        - ``load_only``: Tuple or list of fields to exclude from serialized results.</span>
 <span class="sd">        - ``dump_only``: Tuple or list of fields to exclude from deserialization</span>
+<span class="sd">        - ``unknown``: Whether to exclude, include, or raise an error for unknown</span>
+<span class="sd">            fields in the data. Use `EXCLUDE`, `INCLUDE` or `RAISE`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">only</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">(),</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="n">many</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">load_only</span><span class="o">=</span><span class="p">(),</span> <span class="n">dump_only</span><span class="o">=</span><span class="p">(),</span>
-                 <span class="n">partial</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">only</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">(),</span> <span class="n">many</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">load_only</span><span class="o">=</span><span class="p">(),</span> <span class="n">dump_only</span><span class="o">=</span><span class="p">(),</span> <span class="n">partial</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unknown</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="c1"># Raise error if only or exclude is passed as string, not list of strings</span>
+        <span class="k">if</span> <span class="n">only</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_collection</span><span class="p">(</span><span class="n">only</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">StringNotCollectionError</span><span class="p">(</span><span class="s1">&#39;&quot;only&quot; should be a list of strings&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">exclude</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_collection</span><span class="p">(</span><span class="n">exclude</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">StringNotCollectionError</span><span class="p">(</span><span class="s1">&#39;&quot;exclude&quot; should be a list of strings&#39;</span><span class="p">)</span>
         <span class="c1"># copy declared fields from metaclass</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">declared_fields</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_declared_fields</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">many</span> <span class="o">=</span> <span class="n">many</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">only</span> <span class="o">=</span> <span class="n">only</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exclude</span> <span class="o">=</span> <span class="n">exclude</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">strict</span> <span class="o">=</span> <span class="n">strict</span> <span class="k">if</span> <span class="n">strict</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">strict</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ordered</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">ordered</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">load_only</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">load_only</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">load_only</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dump_only</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">dump_only</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">dump_only</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">partial</span> <span class="o">=</span> <span class="n">partial</span>
-        <span class="c1">#: Dictionary mapping field_names -&gt; :class:`Field` objects</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict_class</span><span class="p">()</span>
-        <span class="c1">#: Callable marshalling object</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_marshal</span> <span class="o">=</span> <span class="n">marshalling</span><span class="o">.</span><span class="n">Marshaller</span><span class="p">(</span>
-            <span class="n">prefix</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">prefix</span>
-        <span class="p">)</span>
-        <span class="c1">#: Callable unmarshalling object</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_unmarshal</span> <span class="o">=</span> <span class="n">marshalling</span><span class="o">.</span><span class="n">Unmarshaller</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">extra</span><span class="p">:</span>
-            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                <span class="s1">&#39;The `extra` argument is deprecated. Use a post_dump &#39;</span>
-                <span class="s1">&#39;method to add additional data instead.&#39;</span><span class="p">,</span>
-                <span class="ne">DeprecationWarning</span>
-            <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">extra</span> <span class="o">=</span> <span class="n">extra</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unknown</span> <span class="o">=</span> <span class="n">unknown</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">unknown</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="n">context</span> <span class="ow">or</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_nested_options</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_types_seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_update_fields</span><span class="p">(</span><span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">)</span>
+        <span class="c1">#: Dictionary mapping field_names -&gt; :class:`Field` objects</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_fields</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;&lt;</span><span class="si">{ClassName}</span><span class="s1">(many=</span><span class="si">{self.many}</span><span class="s1">, strict=</span><span class="si">{self.strict}</span><span class="s1">)&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">ClassName</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">=</span><span class="bp">self</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;</span><span class="si">{ClassName}</span><span class="s1">(many=</span><span class="si">{self.many}</span><span class="s1">)&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">ClassName</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
         <span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">_postprocess</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">extra</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">many</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-                    <span class="n">each</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">extra</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">extra</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">data</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dict_class</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -507,97 +485,49 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
-    <span class="k">def</span> <span class="nf">get_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">default</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">default</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Defines how to pull values from an object to serialize.</span>
 
 <span class="sd">        .. versionadded:: 2.0.0</span>
+
+<span class="sd">        .. versionchanged:: 3.0.0a1</span>
+<span class="sd">            Changed position of ``obj`` and ``attr``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
-
-    <span class="c1">##### Handler decorators (deprecated) #####</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">error_handler</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Decorator that registers an error handler function for the schema.</span>
-<span class="sd">        The function receives the :class:`Schema` instance, a dictionary of errors,</span>
-<span class="sd">        and the serialized object (if serializing data) or data dictionary (if</span>
-<span class="sd">        deserializing data) as arguments.</span>
-
-<span class="sd">        Example: ::</span>
-
-<span class="sd">            class UserSchema(Schema):</span>
-<span class="sd">                email = fields.Email()</span>
-
-<span class="sd">            @UserSchema.error_handler</span>
-<span class="sd">            def handle_errors(schema, errors, obj):</span>
-<span class="sd">                raise ValueError(&#39;An error occurred while marshalling {}&#39;.format(obj))</span>
-
-<span class="sd">            user = User(email=&#39;invalid&#39;)</span>
-<span class="sd">            UserSchema().dump(user)  # =&gt; raises ValueError</span>
-<span class="sd">            UserSchema().load({&#39;email&#39;: &#39;bademail&#39;})  # raises ValueError</span>
-
-<span class="sd">        .. versionadded:: 0.7.0</span>
-<span class="sd">        .. deprecated:: 2.0.0</span>
-<span class="sd">            Set the ``error_handler`` class Meta option instead.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-            <span class="s1">&#39;Schema.error_handler is deprecated. Set the error_handler class Meta option &#39;</span>
-            <span class="s1">&#39;instead.&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span>
-        <span class="p">)</span>
-        <span class="bp">cls</span><span class="o">.</span><span class="n">__error_handler__</span> <span class="o">=</span> <span class="n">func</span>
-        <span class="k">return</span> <span class="n">func</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">accessor</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Decorator that registers a function for pulling values from an object</span>
-<span class="sd">        to serialize. The function receives the :class:`Schema` instance, the</span>
-<span class="sd">        ``key`` of the value to get, the ``obj`` to serialize, and an optional</span>
-<span class="sd">        ``default`` value.</span>
-
-<span class="sd">        .. deprecated:: 2.0.0</span>
-<span class="sd">            Set the ``error_handler`` class Meta option instead.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-            <span class="s1">&#39;Schema.accessor is deprecated. Set the accessor class Meta option &#39;</span>
-            <span class="s1">&#39;instead.&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span>
-        <span class="p">)</span>
-        <span class="bp">cls</span><span class="o">.</span><span class="n">__accessor__</span> <span class="o">=</span> <span class="n">func</span>
-        <span class="k">return</span> <span class="n">func</span>
+        <span class="k">return</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
 
     <span class="c1">##### Serialization/Deserialization API #####</span>
 
-    <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">update_fields</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Serialize an object to native Python data types according to this</span>
 <span class="sd">        Schema&#39;s fields.</span>
 
 <span class="sd">        :param obj: The object to serialize.</span>
 <span class="sd">        :param bool many: Whether to serialize `obj` as a collection. If `None`, the value</span>
 <span class="sd">            for `self.many` is used.</span>
-<span class="sd">        :param bool update_fields: Whether to update the schema&#39;s field classes. Typically</span>
-<span class="sd">            set to `True`, but may be `False` when serializing a homogenous collection.</span>
-<span class="sd">            This parameter is used by `fields.Nested` to avoid multiple updates.</span>
-<span class="sd">        :return: A tuple of the form (``data``, ``errors``)</span>
-<span class="sd">        :rtype: `MarshalResult`, a `collections.namedtuple`</span>
+<span class="sd">        :return: A dict of serialized data</span>
+<span class="sd">        :rtype: dict</span>
 
 <span class="sd">        .. versionadded:: 1.0.0</span>
+<span class="sd">        .. versionchanged:: 3.0.0b7</span>
+<span class="sd">            This method returns the serialized data rather than a ``(data, errors)`` duple.</span>
+<span class="sd">            A :exc:`ValidationError &lt;marshmallow.exceptions.ValidationError&gt;` is raised</span>
+<span class="sd">            if ``obj`` is invalid.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Callable marshalling object</span>
+        <span class="n">marshal</span> <span class="o">=</span> <span class="n">marshalling</span><span class="o">.</span><span class="n">Marshaller</span><span class="p">()</span>
         <span class="n">errors</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">many</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">many</span> <span class="k">if</span> <span class="n">many</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">bool</span><span class="p">(</span><span class="n">many</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">many</span> <span class="ow">and</span> <span class="n">utils</span><span class="o">.</span><span class="n">is_collection</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">utils</span><span class="o">.</span><span class="n">is_keyed_tuple</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Implicit collection handling is deprecated. Set &#39;</span>
-                            <span class="s1">&#39;many=True to serialize a collection.&#39;</span><span class="p">,</span>
-                            <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
-
         <span class="k">if</span> <span class="n">many</span> <span class="ow">and</span> <span class="n">utils</span><span class="o">.</span><span class="n">is_iterable_but_not_string</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
             <span class="n">obj</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_processors</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_processors</span><span class="p">(</span><span class="n">PRE_DUMP</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">processed_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_dump_processors</span><span class="p">(</span>
                     <span class="n">PRE_DUMP</span><span class="p">,</span>
                     <span class="n">obj</span><span class="p">,</span>
                     <span class="n">many</span><span class="p">,</span>
-                    <span class="n">original_data</span><span class="o">=</span><span class="n">obj</span><span class="p">)</span>
+                    <span class="n">original_data</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span>
+                <span class="p">)</span>
             <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
                 <span class="n">errors</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">normalized_messages</span><span class="p">()</span>
                 <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
@@ -605,77 +535,59 @@
             <span class="n">processed_obj</span> <span class="o">=</span> <span class="n">obj</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">errors</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">update_fields</span><span class="p">:</span>
-                <span class="n">obj_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">processed_obj</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">obj_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_types_seen</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_update_fields</span><span class="p">(</span><span class="n">processed_obj</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">processed_obj</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">_types_seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">obj_type</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">marshal</span><span class="p">(</span>
+                <span class="n">processed_obj</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">,</span>
+                <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span>
+                <span class="n">accessor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">,</span>
+                <span class="n">dict_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dict_class</span><span class="p">,</span>
+                <span class="n">index_errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">index_errors</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">errors</span> <span class="o">=</span> <span class="n">marshal</span><span class="o">.</span><span class="n">errors</span>
 
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">preresult</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_marshal</span><span class="p">(</span>
-                    <span class="n">processed_obj</span><span class="p">,</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">,</span>
-                    <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span>
-                    <span class="c1"># TODO: Remove self.__accessor__ in a later release</span>
-                    <span class="n">accessor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">__accessor__</span><span class="p">,</span>
-                    <span class="n">dict_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dict_class</span><span class="p">,</span>
-                    <span class="n">index_errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">index_errors</span><span class="p">,</span>
-                    <span class="o">**</span><span class="n">kwargs</span>
-                <span class="p">)</span>
-            <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-                <span class="n">errors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_marshal</span><span class="o">.</span><span class="n">errors</span>
-                <span class="n">preresult</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">data</span>
-
-            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_postprocess</span><span class="p">(</span><span class="n">preresult</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="n">obj</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">errors</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_processors</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">errors</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_processors</span><span class="p">(</span><span class="n">POST_DUMP</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_dump_processors</span><span class="p">(</span>
                     <span class="n">POST_DUMP</span><span class="p">,</span>
                     <span class="n">result</span><span class="p">,</span>
                     <span class="n">many</span><span class="p">,</span>
-                    <span class="n">original_data</span><span class="o">=</span><span class="n">obj</span><span class="p">)</span>
+                    <span class="n">original_data</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span>
+                <span class="p">)</span>
             <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
                 <span class="n">errors</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">normalized_messages</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
-            <span class="c1"># TODO: Remove self.__error_handler__ in a later release</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__error_handler__</span> <span class="ow">and</span> <span class="n">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__error_handler__</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__error_handler__</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
             <span class="n">exc</span> <span class="o">=</span> <span class="n">ValidationError</span><span class="p">(</span>
                 <span class="n">errors</span><span class="p">,</span>
-                <span class="n">field_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_marshal</span><span class="o">.</span><span class="n">error_field_names</span><span class="p">,</span>
-                <span class="n">fields</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_marshal</span><span class="o">.</span><span class="n">error_fields</span><span class="p">,</span>
                 <span class="n">data</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span>
-                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_marshal</span><span class="o">.</span><span class="n">error_kwargs</span>
+                <span class="n">valid_data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">marshal</span><span class="o">.</span><span class="n">error_kwargs</span>
             <span class="p">)</span>
+            <span class="c1"># User-defined error handler</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">handle_error</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">strict</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">exc</span>
+            <span class="k">raise</span> <span class="n">exc</span>
 
-        <span class="k">return</span> <span class="n">MarshalResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
 
-    <span class="k">def</span> <span class="nf">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">update_fields</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Same as :meth:`dump`, except return a JSON-encoded string.</span>
 
 <span class="sd">        :param obj: The object to serialize.</span>
 <span class="sd">        :param bool many: Whether to serialize `obj` as a collection. If `None`, the value</span>
 <span class="sd">            for `self.many` is used.</span>
-<span class="sd">        :param bool update_fields: Whether to update the schema&#39;s field classes. Typically</span>
-<span class="sd">            set to `True`, but may be `False` when serializing a homogenous collection.</span>
-<span class="sd">            This parameter is used by `fields.Nested` to avoid multiple updates.</span>
-<span class="sd">        :return: A tuple of the form (``data``, ``errors``)</span>
-<span class="sd">        :rtype: `MarshalResult`, a `collections.namedtuple`</span>
+<span class="sd">        :return: A ``json`` string</span>
+<span class="sd">        :rtype: str</span>
 
 <span class="sd">        .. versionadded:: 1.0.0</span>
+<span class="sd">        .. versionchanged:: 3.0.0b7</span>
+<span class="sd">            This method returns the serialized data rather than a ``(data, errors)`` duple.</span>
+<span class="sd">            A :exc:`ValidationError &lt;marshmallow.exceptions.ValidationError&gt;` is raised</span>
+<span class="sd">            if ``obj`` is invalid.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">deserialized</span><span class="p">,</span> <span class="n">errors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span> <span class="n">update_fields</span><span class="o">=</span><span class="n">update_fields</span><span class="p">)</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">json_module</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">deserialized</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">MarshalResult</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+        <span class="n">serialized</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">render_module</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">serialized</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Deserialize a data structure to an object defined by this Schema&#39;s</span>
-<span class="sd">        fields and :meth:`make_object`.</span>
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unknown</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Deserialize a data structure to an object defined by this Schema&#39;s fields.</span>
 
 <span class="sd">        :param dict data: The data to deserialize.</span>
 <span class="sd">        :param bool many: Whether to deserialize `data` as a collection. If `None`, the</span>
@@ -683,15 +595,28 @@
 <span class="sd">        :param bool|tuple partial: Whether to ignore missing fields. If `None`,</span>
 <span class="sd">            the value for `self.partial` is used. If its value is an iterable,</span>
 <span class="sd">            only missing fields listed in that iterable will be ignored.</span>
-<span class="sd">        :return: A tuple of the form (``data``, ``errors``)</span>
-<span class="sd">        :rtype: `UnmarshalResult`, a `collections.namedtuple`</span>
+<span class="sd">            Use dot delimiters to specify nested fields.</span>
+<span class="sd">        :param unknown: Whether to exclude, include, or raise an error for unknown</span>
+<span class="sd">            fields in the data. Use `EXCLUDE`, `INCLUDE` or `RAISE`.</span>
+<span class="sd">            If `None`, the value for `self.unknown` is used.</span>
+<span class="sd">        :return: A dict of deserialized data</span>
+<span class="sd">        :rtype: dict</span>
 
 <span class="sd">        .. versionadded:: 1.0.0</span>
+<span class="sd">        .. versionchanged:: 3.0.0b7</span>
+<span class="sd">            This method returns the deserialized data rather than a ``(data, errors)`` duple.</span>
+<span class="sd">            A :exc:`ValidationError &lt;marshmallow.exceptions.ValidationError&gt;` is raised</span>
+<span class="sd">            if invalid data are passed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">result</span><span class="p">,</span> <span class="n">errors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_do_load</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="n">partial</span><span class="p">,</span> <span class="n">postprocess</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">UnmarshalResult</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_do_load</span><span class="p">(</span>
+            <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="n">partial</span><span class="p">,</span> <span class="n">unknown</span><span class="o">=</span><span class="n">unknown</span><span class="p">,</span>
+            <span class="n">postprocess</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">json_data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unknown</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Same as :meth:`load`, except it takes a JSON string as input.</span>
 
 <span class="sd">        :param str json_data: A JSON string of the data to deserialize.</span>
@@ -700,18 +625,21 @@
 <span class="sd">        :param bool|tuple partial: Whether to ignore missing fields. If `None`,</span>
 <span class="sd">            the value for `self.partial` is used. If its value is an iterable,</span>
 <span class="sd">            only missing fields listed in that iterable will be ignored.</span>
-<span class="sd">        :return: A tuple of the form (``data``, ``errors``)</span>
-<span class="sd">        :rtype: `UnmarshalResult`, a `collections.namedtuple`</span>
+<span class="sd">            Use dot delimiters to specify nested fields.</span>
+<span class="sd">        :param unknown: Whether to exclude, include, or raise an error for unknown</span>
+<span class="sd">            fields in the data. Use `EXCLUDE`, `INCLUDE` or `RAISE`.</span>
+<span class="sd">            If `None`, the value for `self.unknown` is used.</span>
+<span class="sd">        :return: A dict of deserialized data</span>
+<span class="sd">        :rtype: dict</span>
 
 <span class="sd">        .. versionadded:: 1.0.0</span>
+<span class="sd">        .. versionchanged:: 3.0.0b7</span>
+<span class="sd">            This method returns the deserialized data rather than a ``(data, errors)`` duple.</span>
+<span class="sd">            A :exc:`ValidationError &lt;marshmallow.exceptions.ValidationError&gt;` is raised</span>
+<span class="sd">            if invalid data are passed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># TODO: This avoids breaking backward compatibility if people were</span>
-        <span class="c1"># passing in positional args after `many` for use by `json.loads`, but</span>
-        <span class="c1"># ideally we shouldn&#39;t have to do this.</span>
-        <span class="n">partial</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;partial&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">json_module</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_data</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="n">partial</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">render_module</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="n">partial</span><span class="p">,</span> <span class="n">unknown</span><span class="o">=</span><span class="n">unknown</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Validate `data` against the schema, returning a dictionary of</span>
@@ -723,19 +651,25 @@
 <span class="sd">        :param bool|tuple partial: Whether to ignore missing fields. If `None`,</span>
 <span class="sd">            the value for `self.partial` is used. If its value is an iterable,</span>
 <span class="sd">            only missing fields listed in that iterable will be ignored.</span>
+<span class="sd">            Use dot delimiters to specify nested fields.</span>
 <span class="sd">        :return: A dictionary of validation errors.</span>
 <span class="sd">        :rtype: dict</span>
 
 <span class="sd">        .. versionadded:: 1.1.0</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">_</span><span class="p">,</span> <span class="n">errors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_do_load</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="n">partial</span><span class="p">,</span> <span class="n">postprocess</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">errors</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_do_load</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="n">partial</span><span class="p">,</span> <span class="n">postprocess</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">exc</span><span class="o">.</span><span class="n">messages</span>
+        <span class="k">return</span> <span class="p">{}</span>
 
     <span class="c1">##### Private Helpers #####</span>
 
-    <span class="k">def</span> <span class="nf">_do_load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">postprocess</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Deserialize `data`, returning the deserialized result and a dictonary of</span>
-<span class="sd">        validation errors.</span>
+    <span class="k">def</span> <span class="nf">_do_load</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unknown</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">postprocess</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Deserialize `data`, returning the deserialized result.</span>
 
 <span class="sd">        :param data: The data to deserialize.</span>
 <span class="sd">        :param bool many: Whether to deserialize `data` as a collection. If `None`, the</span>
@@ -744,97 +678,115 @@
 <span class="sd">            only fields listed in that iterable will be ignored will be allowed missing.</span>
 <span class="sd">            If `True`, all fields will be allowed missing.</span>
 <span class="sd">            If `None`, the value for `self.partial` is used.</span>
+<span class="sd">        :param unknown: Whether to exclude, include, or raise an error for unknown</span>
+<span class="sd">            fields in the data. Use `EXCLUDE`, `INCLUDE` or `RAISE`.</span>
+<span class="sd">            If `None`, the value for `self.unknown` is used.</span>
 <span class="sd">        :param bool postprocess: Whether to run post_load methods..</span>
-<span class="sd">        :return: A tuple of the form (`data`, `errors`)</span>
+<span class="sd">        :return: A dict of deserialized data</span>
+<span class="sd">        :rtype: dict</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Callable unmarshalling object</span>
+        <span class="n">unmarshal</span> <span class="o">=</span> <span class="n">marshalling</span><span class="o">.</span><span class="n">Unmarshaller</span><span class="p">()</span>
         <span class="n">errors</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">many</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">many</span> <span class="k">if</span> <span class="n">many</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">bool</span><span class="p">(</span><span class="n">many</span><span class="p">)</span>
+        <span class="n">unknown</span> <span class="o">=</span> <span class="n">unknown</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">unknown</span>
         <span class="k">if</span> <span class="n">partial</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">partial</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">partial</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">processed_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_load_processors</span><span class="p">(</span>
-                <span class="n">PRE_LOAD</span><span class="p">,</span>
-                <span class="n">data</span><span class="p">,</span>
-                <span class="n">many</span><span class="p">,</span>
-                <span class="n">original_data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-        <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-            <span class="n">errors</span> <span class="o">=</span> <span class="n">err</span><span class="o">.</span><span class="n">normalized_messages</span><span class="p">()</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">errors</span><span class="p">:</span>
+        <span class="c1"># Run preprocessors</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_processors</span><span class="p">(</span><span class="n">PRE_LOAD</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unmarshal</span><span class="p">(</span>
-                    <span class="n">processed_data</span><span class="p">,</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">,</span>
-                    <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span>
-                    <span class="n">partial</span><span class="o">=</span><span class="n">partial</span><span class="p">,</span>
-                    <span class="n">dict_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dict_class</span><span class="p">,</span>
-                    <span class="n">index_errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">index_errors</span><span class="p">,</span>
-                <span class="p">)</span>
-            <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-                <span class="n">result</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">data</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_field_validators</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">)</span>
-            <span class="n">errors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unmarshal</span><span class="o">.</span><span class="n">errors</span>
-            <span class="n">field_errors</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
-            <span class="c1"># Run schema-level migration</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_validators</span><span class="p">(</span><span class="n">pass_many</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span>
-                                        <span class="n">field_errors</span><span class="o">=</span><span class="n">field_errors</span><span class="p">)</span>
-            <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-                <span class="n">errors</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">err</span><span class="o">.</span><span class="n">messages</span><span class="p">)</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_validators</span><span class="p">(</span><span class="n">pass_many</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span>
-                                        <span class="n">field_errors</span><span class="o">=</span><span class="n">field_errors</span><span class="p">)</span>
-            <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-                <span class="n">errors</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">err</span><span class="o">.</span><span class="n">messages</span><span class="p">)</span>
-        <span class="c1"># Run post processors</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">errors</span> <span class="ow">and</span> <span class="n">postprocess</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_load_processors</span><span class="p">(</span>
-                    <span class="n">POST_LOAD</span><span class="p">,</span>
-                    <span class="n">result</span><span class="p">,</span>
+                <span class="n">processed_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_load_processors</span><span class="p">(</span>
+                    <span class="n">PRE_LOAD</span><span class="p">,</span>
+                    <span class="n">data</span><span class="p">,</span>
                     <span class="n">many</span><span class="p">,</span>
-                    <span class="n">original_data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+                    <span class="n">original_data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                <span class="p">)</span>
             <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
                 <span class="n">errors</span> <span class="o">=</span> <span class="n">err</span><span class="o">.</span><span class="n">normalized_messages</span><span class="p">()</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">processed_data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">errors</span><span class="p">:</span>
+            <span class="c1"># Deserialize data</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">unmarshal</span><span class="p">(</span>
+                <span class="n">processed_data</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">,</span>
+                <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span>
+                <span class="n">partial</span><span class="o">=</span><span class="n">partial</span><span class="p">,</span>
+                <span class="n">unknown</span><span class="o">=</span><span class="n">unknown</span><span class="p">,</span>
+                <span class="n">dict_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dict_class</span><span class="p">,</span>
+                <span class="n">index_errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">index_errors</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="c1"># Run field-level validation</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_field_validators</span><span class="p">(</span><span class="n">unmarshal</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">)</span>
+            <span class="c1"># Run schema-level validation</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_processors</span><span class="p">(</span><span class="n">VALIDATES_SCHEMA</span><span class="p">):</span>
+                <span class="n">field_errors</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">unmarshal</span><span class="o">.</span><span class="n">errors</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_schema_validators</span><span class="p">(</span>
+                    <span class="n">unmarshal</span><span class="p">,</span>
+                    <span class="n">pass_many</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+                    <span class="n">original_data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                    <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span>
+                    <span class="n">field_errors</span><span class="o">=</span><span class="n">field_errors</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_schema_validators</span><span class="p">(</span>
+                    <span class="n">unmarshal</span><span class="p">,</span>
+                    <span class="n">pass_many</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+                    <span class="n">original_data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                    <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span>
+                    <span class="n">field_errors</span><span class="o">=</span><span class="n">field_errors</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="n">errors</span> <span class="o">=</span> <span class="n">unmarshal</span><span class="o">.</span><span class="n">errors</span>
+            <span class="c1"># Run post processors</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">errors</span> <span class="ow">and</span> <span class="n">postprocess</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_processors</span><span class="p">(</span><span class="n">POST_LOAD</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_load_processors</span><span class="p">(</span>
+                        <span class="n">POST_LOAD</span><span class="p">,</span>
+                        <span class="n">result</span><span class="p">,</span>
+                        <span class="n">many</span><span class="p">,</span>
+                        <span class="n">original_data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                    <span class="p">)</span>
+                <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+                    <span class="n">errors</span> <span class="o">=</span> <span class="n">err</span><span class="o">.</span><span class="n">normalized_messages</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
-            <span class="c1"># TODO: Remove self.__error_handler__ in a later release</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__error_handler__</span> <span class="ow">and</span> <span class="n">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__error_handler__</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__error_handler__</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
             <span class="n">exc</span> <span class="o">=</span> <span class="n">ValidationError</span><span class="p">(</span>
                 <span class="n">errors</span><span class="p">,</span>
-                <span class="n">field_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_unmarshal</span><span class="o">.</span><span class="n">error_field_names</span><span class="p">,</span>
-                <span class="n">fields</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_unmarshal</span><span class="o">.</span><span class="n">error_fields</span><span class="p">,</span>
                 <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_unmarshal</span><span class="o">.</span><span class="n">error_kwargs</span>
+                <span class="n">valid_data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">unmarshal</span><span class="o">.</span><span class="n">error_kwargs</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">handle_error</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">strict</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">exc</span>
+            <span class="k">raise</span> <span class="n">exc</span>
 
-        <span class="k">return</span> <span class="n">result</span><span class="p">,</span> <span class="n">errors</span>
+        <span class="k">return</span> <span class="n">result</span>
 
     <span class="k">def</span> <span class="nf">_normalize_nested_options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Apply then flatten nested schema options&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">only</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># Apply the only option to nested fields.</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__apply_nested_option</span><span class="p">(</span><span class="s1">&#39;only&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">only</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__apply_nested_option</span><span class="p">(</span><span class="s1">&#39;only&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">only</span><span class="p">,</span> <span class="s1">&#39;intersection&#39;</span><span class="p">)</span>
             <span class="c1"># Remove the child field names from the only option.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">only</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span>
-                <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">only</span><span class="p">])</span>
+                <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">only</span><span class="p">],</span>
+            <span class="p">)</span>
         <span class="n">excludes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">exclude</span><span class="p">)</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">exclude</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">excludes</span><span class="p">:</span>
             <span class="c1"># Apply the exclude option to nested fields.</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__apply_nested_option</span><span class="p">(</span><span class="s1">&#39;exclude&#39;</span><span class="p">,</span> <span class="n">excludes</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__apply_nested_option</span><span class="p">(</span><span class="s1">&#39;exclude&#39;</span><span class="p">,</span> <span class="n">excludes</span><span class="p">,</span> <span class="s1">&#39;union&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">exclude</span><span class="p">:</span>
             <span class="c1"># Remove the parent field names from the exclude option.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">exclude</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span>
-                <span class="p">[</span><span class="n">field</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">exclude</span> <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">field</span><span class="p">])</span>
+                <span class="p">[</span><span class="n">field</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">exclude</span> <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">field</span><span class="p">],</span>
+            <span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">exclude</span><span class="p">:</span>
             <span class="c1"># Remove the parent field names from the meta exclude option.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">exclude</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span>
-                <span class="p">[</span><span class="n">field</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">exclude</span> <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">field</span><span class="p">])</span>
+                <span class="p">[</span><span class="n">field</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">exclude</span> <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">field</span><span class="p">],</span>
+            <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__apply_nested_option</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">option_name</span><span class="p">,</span> <span class="n">field_names</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__apply_nested_option</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">option_name</span><span class="p">,</span> <span class="n">field_names</span><span class="p">,</span> <span class="n">set_operation</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Apply nested options to nested fields&quot;&quot;&quot;</span>
         <span class="c1"># Split nested field names on the first dot.</span>
         <span class="n">nested_fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">field_names</span> <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">]</span>
@@ -844,135 +796,144 @@
             <span class="n">nested_options</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nested_names</span><span class="p">)</span>
         <span class="c1"># Apply the nested field options.</span>
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">options</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="n">nested_options</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">declared_fields</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">option_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="n">options</span><span class="p">))</span>
+            <span class="n">new_options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+            <span class="n">original_options</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">declared_fields</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">option_name</span><span class="p">,</span> <span class="p">())</span>
+            <span class="k">if</span> <span class="n">original_options</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">set_operation</span> <span class="o">==</span> <span class="s1">&#39;union&#39;</span><span class="p">:</span>
+                    <span class="n">new_options</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="n">original_options</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">set_operation</span> <span class="o">==</span> <span class="s1">&#39;intersection&#39;</span><span class="p">:</span>
+                        <span class="n">new_options</span> <span class="o">&amp;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="n">original_options</span><span class="p">)</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">declared_fields</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">option_name</span><span class="p">,</span> <span class="n">new_options</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_update_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Update fields based on the passed in object.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">_init_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Update fields based on schema options.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+            <span class="n">available_field_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">fields</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">available_field_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">declared_fields</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">additional</span><span class="p">:</span>
+                <span class="n">available_field_names</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">additional</span><span class="p">)</span>
+
+        <span class="n">invalid_fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">()</span>
+
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">only</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># Return only fields specified in only option</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
-                <span class="n">field_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">fields</span><span class="p">)</span> <span class="o">&amp;</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">only</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">field_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">only</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
-            <span class="c1"># Return fields specified in fields option</span>
-            <span class="n">field_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">fields</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">additional</span><span class="p">:</span>
-            <span class="c1"># Return declared fields + additional fields</span>
-            <span class="n">field_names</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">declared_fields</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">|</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">additional</span><span class="p">))</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">field_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">declared_fields</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="n">field_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">only</span><span class="p">)</span>
 
-        <span class="c1"># If &quot;exclude&quot; option or param is specified, remove those fields</span>
-        <span class="n">excludes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">exclude</span><span class="p">)</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">exclude</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">excludes</span><span class="p">:</span>
-            <span class="n">field_names</span> <span class="o">=</span> <span class="n">field_names</span> <span class="o">-</span> <span class="n">excludes</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__filter_fields</span><span class="p">(</span><span class="n">field_names</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">)</span>
-        <span class="c1"># Set parents</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__set_field_attrs</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="n">ret</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span>
+            <span class="n">invalid_fields</span> <span class="o">|=</span> <span class="n">field_names</span> <span class="o">-</span> <span class="n">available_field_names</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">field_names</span> <span class="o">=</span> <span class="n">available_field_names</span>
+
+        <span class="c1"># If &quot;exclude&quot; option or param is specified, remove those fields.</span>
+        <span class="n">exclude_field_names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">exclude</span><span class="p">)</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">exclude</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">exclude_field_names</span><span class="p">:</span>
+            <span class="c1"># Note that this isn&#39;t available_field_names, since we want to</span>
+            <span class="c1"># apply &quot;only&quot; for the actual calculation.</span>
+            <span class="n">field_names</span> <span class="o">=</span> <span class="n">field_names</span> <span class="o">-</span> <span class="n">exclude_field_names</span>
+
+            <span class="n">invalid_fields</span> <span class="o">|=</span> <span class="n">exclude_field_names</span> <span class="o">-</span> <span class="n">available_field_names</span>
+
+        <span class="k">if</span> <span class="n">invalid_fields</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Invalid fields for </span><span class="si">{0}</span><span class="s1">: </span><span class="si">{1}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">invalid_fields</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+        <span class="n">fields_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict_class</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">field_name</span> <span class="ow">in</span> <span class="n">field_names</span><span class="p">:</span>
+            <span class="n">field_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">declared_fields</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">fields</span><span class="o">.</span><span class="n">Inferred</span><span class="p">())</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_bind_field</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">field_obj</span><span class="p">)</span>
+            <span class="n">fields_dict</span><span class="p">[</span><span class="n">field_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_obj</span>
+
+        <span class="n">dump_data_keys</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">data_key</span> <span class="ow">or</span> <span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">iteritems</span><span class="p">(</span><span class="n">fields_dict</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">load_only</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dump_data_keys</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">dump_data_keys</span><span class="p">)):</span>
+            <span class="n">data_keys_duplicates</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">dump_data_keys</span> <span class="k">if</span> <span class="n">dump_data_keys</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">}</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s1">&#39;The data_key argument for one or more fields collides &#39;</span>
+                <span class="s2">&quot;with another field&#39;s name or data_key argument. &quot;</span>
+                <span class="s1">&#39;Check the following field names and &#39;</span>
+                <span class="s1">&#39;data_key arguments: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">data_keys_duplicates</span><span class="p">)),</span>
+            <span class="p">)</span>
+
+        <span class="n">load_attributes</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">attribute</span> <span class="ow">or</span> <span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">iteritems</span><span class="p">(</span><span class="n">fields_dict</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">dump_only</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">load_attributes</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">load_attributes</span><span class="p">)):</span>
+            <span class="n">attributes_duplicates</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">load_attributes</span> <span class="k">if</span> <span class="n">load_attributes</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">}</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s1">&#39;The attribute argument for one or more fields collides &#39;</span>
+                <span class="s2">&quot;with another field&#39;s name or attribute argument. &quot;</span>
+                <span class="s1">&#39;Check the following field names and &#39;</span>
+                <span class="s1">&#39;attribute arguments: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">attributes_duplicates</span><span class="p">)),</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">fields_dict</span>
 
     <span class="k">def</span> <span class="nf">on_bind_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">field_obj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Hook to modify a field when it is bound to the `Schema`. No-op by default.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Hook to modify a field when it is bound to the `Schema`.</span>
+
+<span class="sd">        No-op by default.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">__set_field_attrs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fields_dict</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Bind fields to the schema, setting any necessary attributes</span>
-<span class="sd">        on the fields (e.g. parent and name).</span>
+    <span class="k">def</span> <span class="nf">_bind_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">field_obj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Bind field to the schema, setting any necessary attributes on the</span>
+<span class="sd">        field (e.g. parent and name).</span>
 
 <span class="sd">        Also set field load_only and dump_only values if field_name was</span>
 <span class="sd">        specified in ``class Meta``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">field_obj</span> <span class="ow">in</span> <span class="n">iteritems</span><span class="p">(</span><span class="n">fields_dict</span><span class="p">):</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">field_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_only</span><span class="p">:</span>
-                    <span class="n">field_obj</span><span class="o">.</span><span class="n">load_only</span> <span class="o">=</span> <span class="kc">True</span>
-                <span class="k">if</span> <span class="n">field_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dump_only</span><span class="p">:</span>
-                    <span class="n">field_obj</span><span class="o">.</span><span class="n">dump_only</span> <span class="o">=</span> <span class="kc">True</span>
-                <span class="n">field_obj</span><span class="o">.</span><span class="n">_add_to_schema</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">on_bind_field</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">field_obj</span><span class="p">)</span>
-            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-                <span class="c1"># field declared as a class, not an instance</span>
-                <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">field_obj</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">and</span>
-                        <span class="nb">issubclass</span><span class="p">(</span><span class="n">field_obj</span><span class="p">,</span> <span class="n">base</span><span class="o">.</span><span class="n">FieldABC</span><span class="p">)):</span>
-                    <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Field for &quot;</span><span class="si">{0}</span><span class="s1">&quot; must be declared as a &#39;</span>
-                           <span class="s1">&#39;Field instance, not a class. &#39;</span>
-                           <span class="s1">&#39;Did you mean &quot;fields.</span><span class="si">{1}</span><span class="s1">()&quot;?&#39;</span>
-                           <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">field_obj</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
-                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">fields_dict</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">field_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_only</span><span class="p">:</span>
+                <span class="n">field_obj</span><span class="o">.</span><span class="n">load_only</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">field_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dump_only</span><span class="p">:</span>
+                <span class="n">field_obj</span><span class="o">.</span><span class="n">dump_only</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">field_obj</span><span class="o">.</span><span class="n">_bind_to_schema</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">on_bind_field</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">field_obj</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="c1"># field declared as a class, not an instance</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">field_obj</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">and</span>
+                    <span class="nb">issubclass</span><span class="p">(</span><span class="n">field_obj</span><span class="p">,</span> <span class="n">base</span><span class="o">.</span><span class="n">FieldABC</span><span class="p">)):</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Field for &quot;</span><span class="si">{0}</span><span class="s1">&quot; must be declared as a &#39;</span>
+                       <span class="s1">&#39;Field instance, not a class. &#39;</span>
+                       <span class="s1">&#39;Did you mean &quot;fields.</span><span class="si">{1}</span><span class="s1">()&quot;?&#39;</span>
+                       <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="n">field_obj</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__filter_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_names</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return only those field_name:field_obj pairs specified by</span>
-<span class="sd">        ``field_names``.</span>
+    <span class="k">def</span> <span class="nf">_has_processors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hooks</span><span class="p">[(</span><span class="n">tag</span><span class="p">,</span> <span class="kc">True</span><span class="p">)]</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hooks</span><span class="p">[(</span><span class="n">tag</span><span class="p">,</span> <span class="kc">False</span><span class="p">)]</span>
 
-<span class="sd">        :param set field_names: Field names to include in the final</span>
-<span class="sd">            return dictionary.</span>
-<span class="sd">        :returns: An dict of field_name:field_obj pairs.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">obj</span> <span class="ow">and</span> <span class="n">many</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>  <span class="c1"># Homogeneous collection</span>
-                <span class="c1"># Prefer getitem over iter to prevent breaking serialization</span>
-                <span class="c1"># of objects for which iter will modify position in the collection</span>
-                <span class="c1"># e.g. Pymongo cursors</span>
-                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;__getitem__&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">callable</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;__getitem__&#39;</span><span class="p">)):</span>
-                    <span class="k">try</span><span class="p">:</span>
-                        <span class="n">obj_prototype</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-                        <span class="n">obj_prototype</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">obj_prototype</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
-            <span class="k">except</span> <span class="p">(</span><span class="ne">StopIteration</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>  <span class="c1"># Nothing to serialize</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">declared_fields</span>
-            <span class="n">obj</span> <span class="o">=</span> <span class="n">obj_prototype</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict_class</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">field_names</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">declared_fields</span><span class="p">:</span>
-                <span class="n">ret</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">declared_fields</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-            <span class="k">else</span><span class="p">:</span>  <span class="c1"># Implicit field creation (class Meta &#39;fields&#39; or &#39;additional&#39;)</span>
-                <span class="k">if</span> <span class="n">obj</span><span class="p">:</span>
-                    <span class="n">attribute_type</span> <span class="o">=</span> <span class="kc">None</span>
-                    <span class="k">try</span><span class="p">:</span>
-                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
-                            <span class="n">attribute_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
-                        <span class="k">else</span><span class="p">:</span>
-                            <span class="n">attribute_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
-                    <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-                        <span class="n">err_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-                        <span class="k">raise</span> <span class="n">err_type</span><span class="p">(</span>
-                            <span class="s1">&#39;&quot;</span><span class="si">{0}</span><span class="s1">&quot; is not a valid field for </span><span class="si">{1}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">obj</span><span class="p">))</span>
-                    <span class="n">field_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TYPE_MAPPING</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">attribute_type</span><span class="p">,</span> <span class="n">fields</span><span class="o">.</span><span class="n">Field</span><span class="p">)()</span>
-                <span class="k">else</span><span class="p">:</span>  <span class="c1"># Object is None</span>
-                    <span class="n">field_obj</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Field</span><span class="p">()</span>
-                <span class="c1"># map key -&gt; field (default to Raw)</span>
-                <span class="n">ret</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_obj</span>
-        <span class="k">return</span> <span class="n">ret</span>
-
-    <span class="k">def</span> <span class="nf">_invoke_dump_processors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag_name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_invoke_dump_processors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="c1"># The pass_many post-dump processors may do things like add an envelope, so</span>
         <span class="c1"># invoke those after invoking the non-pass_many processors which will expect</span>
         <span class="c1"># to get a list of items.</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_processors</span><span class="p">(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">pass_many</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="n">original_data</span><span class="p">)</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_processors</span><span class="p">(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">pass_many</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="n">original_data</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_processors</span><span class="p">(</span>
+            <span class="n">tag</span><span class="p">,</span> <span class="n">pass_many</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="n">original_data</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_processors</span><span class="p">(</span>
+            <span class="n">tag</span><span class="p">,</span> <span class="n">pass_many</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="n">original_data</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="n">data</span>
 
-    <span class="k">def</span> <span class="nf">_invoke_load_processors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag_name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_invoke_load_processors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="c1"># This has to invert the order of the dump processors, so run the pass_many</span>
         <span class="c1"># processors first.</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_processors</span><span class="p">(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">pass_many</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="n">original_data</span><span class="p">)</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_processors</span><span class="p">(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">pass_many</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="n">original_data</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_processors</span><span class="p">(</span>
+            <span class="n">tag</span><span class="p">,</span> <span class="n">pass_many</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="n">original_data</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_processors</span><span class="p">(</span>
+            <span class="n">tag</span><span class="p">,</span> <span class="n">pass_many</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="n">original_data</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="n">data</span>
 
-    <span class="k">def</span> <span class="nf">_invoke_field_validators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">attr_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__processors__</span><span class="p">[(</span><span class="n">VALIDATES</span><span class="p">,</span> <span class="kc">False</span><span class="p">)]:</span>
+    <span class="k">def</span> <span class="nf">_invoke_field_validators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unmarshal</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">attr_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hooks</span><span class="p">[</span><span class="n">VALIDATES</span><span class="p">]:</span>
             <span class="n">validator</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr_name</span><span class="p">)</span>
-            <span class="n">validator_kwargs</span> <span class="o">=</span> <span class="n">validator</span><span class="o">.</span><span class="n">__marshmallow_kwargs__</span><span class="p">[(</span><span class="n">VALIDATES</span><span class="p">,</span> <span class="kc">False</span><span class="p">)]</span>
+            <span class="n">validator_kwargs</span> <span class="o">=</span> <span class="n">validator</span><span class="o">.</span><span class="n">__marshmallow_hook__</span><span class="p">[</span><span class="n">VALIDATES</span><span class="p">]</span>
             <span class="n">field_name</span> <span class="o">=</span> <span class="n">validator_kwargs</span><span class="p">[</span><span class="s1">&#39;field_name&#39;</span><span class="p">]</span>
 
             <span class="k">try</span><span class="p">:</span>
@@ -989,12 +950,11 @@
                     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
                         <span class="k">pass</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="n">validated_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unmarshal</span><span class="o">.</span><span class="n">call_and_store</span><span class="p">(</span>
+                        <span class="n">validated_value</span> <span class="o">=</span> <span class="n">unmarshal</span><span class="o">.</span><span class="n">call_and_store</span><span class="p">(</span>
                             <span class="n">getter_func</span><span class="o">=</span><span class="n">validator</span><span class="p">,</span>
                             <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
-                            <span class="n">field_name</span><span class="o">=</span><span class="n">field_name</span><span class="p">,</span>
-                            <span class="n">field_obj</span><span class="o">=</span><span class="n">field_obj</span><span class="p">,</span>
-                            <span class="n">index</span><span class="o">=</span><span class="p">(</span><span class="n">idx</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">index_errors</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+                            <span class="n">field_name</span><span class="o">=</span><span class="n">field_obj</span><span class="o">.</span><span class="n">data_key</span> <span class="ow">or</span> <span class="n">field_name</span><span class="p">,</span>
+                            <span class="n">index</span><span class="o">=</span><span class="p">(</span><span class="n">idx</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">opts</span><span class="o">.</span><span class="n">index_errors</span> <span class="k">else</span> <span class="kc">None</span><span class="p">),</span>
                         <span class="p">)</span>
                         <span class="k">if</span> <span class="n">validated_value</span> <span class="ow">is</span> <span class="n">missing</span><span class="p">:</span>
                             <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -1004,71 +964,87 @@
                 <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
                     <span class="k">pass</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">validated_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unmarshal</span><span class="o">.</span><span class="n">call_and_store</span><span class="p">(</span>
+                    <span class="n">validated_value</span> <span class="o">=</span> <span class="n">unmarshal</span><span class="o">.</span><span class="n">call_and_store</span><span class="p">(</span>
                         <span class="n">getter_func</span><span class="o">=</span><span class="n">validator</span><span class="p">,</span>
                         <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
-                        <span class="n">field_name</span><span class="o">=</span><span class="n">field_name</span><span class="p">,</span>
-                        <span class="n">field_obj</span><span class="o">=</span><span class="n">field_obj</span>
+                        <span class="n">field_name</span><span class="o">=</span><span class="n">field_obj</span><span class="o">.</span><span class="n">data_key</span> <span class="ow">or</span> <span class="n">field_name</span><span class="p">,</span>
                     <span class="p">)</span>
                     <span class="k">if</span> <span class="n">validated_value</span> <span class="ow">is</span> <span class="n">missing</span><span class="p">:</span>
                         <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">field_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_invoke_validators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pass_many</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">original_data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">field_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="n">errors</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">for</span> <span class="n">attr_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__processors__</span><span class="p">[(</span><span class="n">VALIDATES_SCHEMA</span><span class="p">,</span> <span class="n">pass_many</span><span class="p">)]:</span>
+    <span class="k">def</span> <span class="nf">_invoke_schema_validators</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">unmarshal</span><span class="p">,</span>
+        <span class="n">pass_many</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">,</span>
+        <span class="n">original_data</span><span class="p">,</span>
+        <span class="n">many</span><span class="p">,</span>
+        <span class="n">field_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">for</span> <span class="n">attr_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hooks</span><span class="p">[(</span><span class="n">VALIDATES_SCHEMA</span><span class="p">,</span> <span class="n">pass_many</span><span class="p">)]:</span>
             <span class="n">validator</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr_name</span><span class="p">)</span>
-            <span class="n">validator_kwargs</span> <span class="o">=</span> <span class="n">validator</span><span class="o">.</span><span class="n">__marshmallow_kwargs__</span><span class="p">[(</span><span class="n">VALIDATES_SCHEMA</span><span class="p">,</span> <span class="n">pass_many</span><span class="p">)]</span>
-            <span class="n">pass_original</span> <span class="o">=</span> <span class="n">validator_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pass_original&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-
-            <span class="n">skip_on_field_errors</span> <span class="o">=</span> <span class="n">validator_kwargs</span><span class="p">[</span><span class="s1">&#39;skip_on_field_errors&#39;</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">skip_on_field_errors</span> <span class="ow">and</span> <span class="n">field_errors</span><span class="p">:</span>
+            <span class="n">validator_kwargs</span> <span class="o">=</span> <span class="n">validator</span><span class="o">.</span><span class="n">__marshmallow_hook__</span><span class="p">[(</span><span class="n">VALIDATES_SCHEMA</span><span class="p">,</span> <span class="n">pass_many</span><span class="p">)]</span>
+            <span class="k">if</span> <span class="n">field_errors</span> <span class="ow">and</span> <span class="n">validator_kwargs</span><span class="p">[</span><span class="s1">&#39;skip_on_field_errors&#39;</span><span class="p">]:</span>
                 <span class="k">continue</span>
+            <span class="n">pass_original</span> <span class="o">=</span> <span class="n">validator_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pass_original&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">pass_many</span><span class="p">:</span>
                 <span class="n">validator</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">validator</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">many</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">pass_many</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-                    <span class="k">try</span><span class="p">:</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">_unmarshal</span><span class="o">.</span><span class="n">run_validator</span><span class="p">(</span><span class="n">validator</span><span class="p">,</span>
-                                                  <span class="n">item</span><span class="p">,</span> <span class="n">original_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span>
-                                                  <span class="n">index</span><span class="o">=</span><span class="n">idx</span><span class="p">,</span> <span class="n">pass_original</span><span class="o">=</span><span class="n">pass_original</span><span class="p">)</span>
-                    <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-                        <span class="n">errors</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">err</span><span class="o">.</span><span class="n">messages</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">orig</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">original_data</span><span class="p">)):</span>
+                    <span class="n">unmarshal</span><span class="o">.</span><span class="n">run_validator</span><span class="p">(</span>
+                        <span class="n">validator</span><span class="p">,</span>
+                        <span class="n">item</span><span class="p">,</span>
+                        <span class="n">orig</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">,</span>
+                        <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span>
+                        <span class="n">index</span><span class="o">=</span><span class="n">idx</span><span class="p">,</span>
+                        <span class="n">pass_original</span><span class="o">=</span><span class="n">pass_original</span><span class="p">,</span>
+                    <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">try</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_unmarshal</span><span class="o">.</span><span class="n">run_validator</span><span class="p">(</span><span class="n">validator</span><span class="p">,</span>
-                                              <span class="n">data</span><span class="p">,</span> <span class="n">original_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span>
-                                              <span class="n">pass_original</span><span class="o">=</span><span class="n">pass_original</span><span class="p">)</span>
-                <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-                    <span class="n">errors</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">err</span><span class="o">.</span><span class="n">messages</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
+                <span class="n">unmarshal</span><span class="o">.</span><span class="n">run_validator</span><span class="p">(</span>
+                    <span class="n">validator</span><span class="p">,</span>
+                    <span class="n">data</span><span class="p">,</span>
+                    <span class="n">original_data</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">,</span>
+                    <span class="n">many</span><span class="o">=</span><span class="n">many</span><span class="p">,</span>
+                    <span class="n">pass_original</span><span class="o">=</span><span class="n">pass_original</span><span class="p">,</span>
+                <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_invoke_processors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag_name</span><span class="p">,</span> <span class="n">pass_many</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">attr_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__processors__</span><span class="p">[(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">pass_many</span><span class="p">)]:</span>
+    <span class="k">def</span> <span class="nf">_invoke_processors</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">tag</span><span class="p">,</span>
+        <span class="n">pass_many</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">,</span>
+        <span class="n">many</span><span class="p">,</span>
+        <span class="n">original_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">pass_many</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">attr_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hooks</span><span class="p">[</span><span class="n">key</span><span class="p">]:</span>
             <span class="c1"># This will be a bound method.</span>
             <span class="n">processor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr_name</span><span class="p">)</span>
 
-            <span class="n">processor_kwargs</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">__marshmallow_kwargs__</span><span class="p">[(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">pass_many</span><span class="p">)]</span>
+            <span class="n">processor_kwargs</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">__marshmallow_hook__</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
             <span class="n">pass_original</span> <span class="o">=</span> <span class="n">processor_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pass_original&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">pass_many</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">pass_original</span><span class="p">:</span>
-                    <span class="n">data</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">if_none</span><span class="p">(</span><span class="n">processor</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="p">),</span> <span class="n">data</span><span class="p">)</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">processor</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">,</span> <span class="n">original_data</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">data</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">if_none</span><span class="p">(</span><span class="n">processor</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">),</span> <span class="n">data</span><span class="p">)</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">processor</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">many</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">many</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">pass_original</span><span class="p">:</span>
-                    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">utils</span><span class="o">.</span><span class="n">if_none</span><span class="p">(</span><span class="n">processor</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">original_data</span><span class="p">),</span> <span class="n">item</span><span class="p">)</span>
-                            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+                        <span class="n">processor</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">original</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">original</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">original_data</span><span class="p">)</span>
+                    <span class="p">]</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">utils</span><span class="o">.</span><span class="n">if_none</span><span class="p">(</span><span class="n">processor</span><span class="p">(</span><span class="n">item</span><span class="p">),</span> <span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">processor</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">pass_original</span><span class="p">:</span>
-                    <span class="n">data</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">if_none</span><span class="p">(</span><span class="n">processor</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">original_data</span><span class="p">),</span> <span class="n">data</span><span class="p">)</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">processor</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">original_data</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">data</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">if_none</span><span class="p">(</span><span class="n">processor</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">data</span><span class="p">)</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">processor</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">data</span>
 
 
@@ -1090,7 +1066,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">BenchlingAPI 2.0.0-development documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
       </ul>
     </div>

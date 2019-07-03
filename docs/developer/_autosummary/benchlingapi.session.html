@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
   
   <!-- Licensed under the Apache 2.0 License -->
   <link rel="stylesheet" type="text/css" href="../../_static/fonts/open-sans/stylesheet.css" />
@@ -15,14 +13,14 @@
   <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>benchlingapi.session &#8212; BenchlingAPI 2.0.0-development documentation</title>
+    <title>benchlingapi.session &#8212; benchlingapi 2.0.0a documentation</title>
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="benchlingapi.exceptions" href="benchlingapi.exceptions.html" />
@@ -46,7 +44,7 @@
         <li class="right" >
           <a href="../api_reference.html" title="API Reference"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">BenchlingAPI 2.0.0-development documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api_reference.html" accesskey="U">API Reference</a> &#187;</li> 
       </ul>
     </div>
@@ -56,7 +54,7 @@
         <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
       </div>
   <div id="left-column">
-    <div class="sphinxsidebar"><a href="http://klavinslab.org/benchling-api" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <div class="sphinxsidebar"><a href="https://www.github.com/klavinslab/benchlngapi" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
 <div>
     <div>
@@ -65,7 +63,7 @@
     </div>
 </div>
 
-<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.0-development</a></p>
+<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.0a</a></p>
 <div>
 
 </div>
@@ -123,75 +121,75 @@
 <span id="benchlingapi-session"></span><h1>benchlingapi.session<a class="headerlink" href="#module-benchlingapi.session" title="Permalink to this headline">¶</a></h1>
 <p>BenchlingAPI session object</p>
 <p class="rubric">Classes</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#benchlingapi.session.Http" title="benchlingapi.session.Http"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Http</span></code></a>(api_key)</td>
-<td>Creates and responds to the Benchling server.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.session.Http" title="benchlingapi.session.Http"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Http</span></code></a>(api_key)</p></td>
+<td><p>Creates and responds to the Benchling server.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#benchlingapi.session.RequestDecorator" title="benchlingapi.session.RequestDecorator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestDecorator</span></code></a>(status_codes)</td>
-<td>Wraps a function to raise error with unexpected request status codes</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#benchlingapi.session.RequestDecorator" title="benchlingapi.session.RequestDecorator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestDecorator</span></code></a>(status_codes)</p></td>
+<td><p>Wraps a function to raise error with unexpected request status codes</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#benchlingapi.session.Session" title="benchlingapi.session.Session"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Session</span></code></a>(api_key)</td>
-<td>The session object.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.session.Session" title="benchlingapi.session.Session"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Session</span></code></a>(api_key)</p></td>
+<td><p>The session object.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="class">
 <dt id="benchlingapi.session.Http">
-<em class="property">class </em><code class="descclassname">benchlingapi.session.</code><code class="descname">Http</code><span class="sig-paren">(</span><em>api_key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/benchlingapi/session.html#Http"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.session.Http" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">benchlingapi.session.</code><code class="sig-name descname">Http</code><span class="sig-paren">(</span><em class="sig-param">api_key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/benchlingapi/session.html#Http"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.session.Http" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Creates and responds to the Benchling server.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="benchlingapi.session.RequestDecorator">
-<em class="property">class </em><code class="descclassname">benchlingapi.session.</code><code class="descname">RequestDecorator</code><span class="sig-paren">(</span><em>status_codes</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/benchlingapi/session.html#RequestDecorator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.session.RequestDecorator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">benchlingapi.session.</code><code class="sig-name descname">RequestDecorator</code><span class="sig-paren">(</span><em class="sig-param">status_codes</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/benchlingapi/session.html#RequestDecorator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.session.RequestDecorator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Wraps a function to raise error with unexpected request status codes</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="benchlingapi.session.Session">
-<em class="property">class </em><code class="descclassname">benchlingapi.session.</code><code class="descname">Session</code><span class="sig-paren">(</span><em>api_key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/benchlingapi/session.html#Session"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.session.Session" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">benchlingapi.session.</code><code class="sig-name descname">Session</code><span class="sig-paren">(</span><em class="sig-param">api_key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/benchlingapi/session.html#Session"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.session.Session" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The session object. This serves as the main interface for using the BenchlingAPI.</p>
-<dl class="attribute">
+<dl class="method">
 <dt id="benchlingapi.session.Session.http">
-<code class="descname">http</code><a class="headerlink" href="#benchlingapi.session.Session.http" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">http</code><a class="headerlink" href="#benchlingapi.session.Session.http" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the http requester object</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="benchlingapi.session.Session.interface">
-<code class="descname">interface</code><span class="sig-paren">(</span><em>model_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/benchlingapi/session.html#Session.interface"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.session.Session.interface" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">interface</code><span class="sig-paren">(</span><em class="sig-param">model_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/benchlingapi/session.html#Session.interface"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.session.Session.interface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a model interface by name</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="benchlingapi.session.Session.interfaces">
-<code class="descname">interfaces</code><a class="headerlink" href="#benchlingapi.session.Session.interfaces" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">interfaces</code><a class="headerlink" href="#benchlingapi.session.Session.interfaces" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all model interfaces</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="benchlingapi.session.Session.models">
-<code class="descname">models</code><a class="headerlink" href="#benchlingapi.session.Session.models" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">models</code><a class="headerlink" href="#benchlingapi.session.Session.models" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all models</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="benchlingapi.session.Session.set_timeout">
-<code class="descname">set_timeout</code><span class="sig-paren">(</span><em>timeout_in_seconds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/benchlingapi/session.html#Session.set_timeout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.session.Session.set_timeout" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_timeout</code><span class="sig-paren">(</span><em class="sig-param">timeout_in_seconds</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/benchlingapi/session.html#Session.set_timeout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.session.Session.set_timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the request timeout</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="benchlingapi.session.Session.url">
-<code class="descname">url</code><a class="headerlink" href="#benchlingapi.session.Session.url" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">url</code><a class="headerlink" href="#benchlingapi.session.Session.url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return home benchling url</p>
 </dd></dl>
 
@@ -232,7 +230,7 @@
         <li class="right" >
           <a href="../api_reference.html" title="API Reference"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">BenchlingAPI 2.0.0-development documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api_reference.html" >API Reference</a> &#187;</li> 
       </ul>
     </div>
