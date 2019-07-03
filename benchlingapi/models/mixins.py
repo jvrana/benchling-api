@@ -6,6 +6,7 @@ from benchlingapi.models.base import ModelRegistry
 from benchlingapi.exceptions import BenchlingAPIException, BenchlingException
 import webbrowser
 
+
 class GetMixin:
     """
     Exposes the `get` and `find` by id methods
@@ -75,7 +76,9 @@ class ListMixin:
         :return: list of models
         :rtype: list
         """
-        max_page_size = min(cls.MAX_PAGE_SIZE, params.get("pageSize", cls.MAX_PAGE_SIZE))
+        max_page_size = min(
+            cls.MAX_PAGE_SIZE, params.get("pageSize", cls.MAX_PAGE_SIZE)
+        )
         if num <= max_page_size:
             max_page_size = num
         return list(cls.all(pageSize=max_page_size, limit=num))
@@ -114,7 +117,9 @@ class ListMixin:
     @classmethod
     def find_by_name(cls, name, page_limit=5, **params):
         """Find a model by name"""
-        models = cls.search(lambda x: x.name == name, limit=1, page_limit=page_limit, **params)
+        models = cls.search(
+            lambda x: x.name == name, limit=1, page_limit=page_limit, **params
+        )
         if models:
             return models[0]
 
@@ -202,7 +207,7 @@ class ArchiveMixin:
 
     class ARCHIVE_REASONS:
         ERROR = "Made in error"
-        RETIRED = 'Retired'
+        RETIRED = "Retired"
         EXPENDED = "Expended"
         SHIPPED = "Shipped"
         CONTAMINATED = "Contaminated"
@@ -211,8 +216,16 @@ class ArchiveMixin:
         OTHER = "Other"
         NOT_ARCHIVED = "NOT_ARCHIVED"
         _DEFAULT = OTHER
-        _REASONS = [ERROR, RETIRED, EXPENDED, SHIPPED, CONTAMINATED, EXPIRED, MISSING, OTHER]
-
+        _REASONS = [
+            ERROR,
+            RETIRED,
+            EXPENDED,
+            SHIPPED,
+            CONTAMINATED,
+            EXPIRED,
+            MISSING,
+            OTHER,
+        ]
 
     @classmethod
     def archive_many(cls, model_ids, reason=ARCHIVE_REASONS._DEFAULT):
@@ -227,9 +240,11 @@ class ArchiveMixin:
         :rtype: list
         """
         if reason not in cls.ARCHIVE_REASONS._REASONS:
-            raise Exception("Reason must be one of {}".format(cls.ARCHIVE_REASONS._REASONS))
+            raise Exception(
+                "Reason must be one of {}".format(cls.ARCHIVE_REASONS._REASONS)
+            )
         key = cls.camelize("id")
-        return cls._post(action="archive", data={key: model_ids, 'reason': reason})
+        return cls._post(action="archive", data={key: model_ids, "reason": reason})
 
     @classmethod
     def unarchive_many(cls, model_ids):
@@ -271,7 +286,7 @@ class ArchiveMixin:
     @property
     def is_archived(self):
         """Check whether model instance is archived."""
-        if hasattr(self, 'archiveRecord') and self.archiveRecord is not None:
+        if hasattr(self, "archiveRecord") and self.archiveRecord is not None:
             return True
         return False
 
@@ -279,7 +294,7 @@ class ArchiveMixin:
     def archive_reason(self):
         """Return the archive reason. Return None if not archived."""
         if self.is_archived:
-            return self.archiveRecord['reason']
+            return self.archiveRecord["reason"]
 
 
 class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
@@ -297,7 +312,7 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
     def batches(self):
         """Get an entities batches"""
         result = self.session.http.get(self._url_build("entities", self.id, "batches"))
-        return ModelRegistry.get_model("Batch").load_many(result['batches'])
+        return ModelRegistry.get_model("Batch").load_many(result["batches"])
 
     @classmethod
     def list_archived(cls, reason=ArchiveMixin.ARCHIVE_REASONS.OTHER):
@@ -315,7 +330,7 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
             webbrowser.open(getattr(self, key))
 
 
-class InventoryMixin():
+class InventoryMixin:
     """
     Designates model as having a folderId
     """
@@ -333,7 +348,7 @@ class InventoryMixin():
         self.update()
 
 
-class RegistryMixin():
+class RegistryMixin:
     """
     Allows model to be registered and unregistered.
     """
@@ -356,21 +371,23 @@ class RegistryMixin():
 
     @classmethod
     def _valid_schema(cls, schema):
-        return schema['type'] == cls.ENTITY_TYPE
+        return schema["type"] == cls.ENTITY_TYPE
 
     @classmethod
     def valid_schemas(cls):
         """Return valid schemas for this model class"""
         valid = []
         for r in cls.session.Registry.list():
-            valid += [(r, schema) for schema in r.entity_schemas if cls._valid_schema(schema)]
+            valid += [
+                (r, schema) for schema in r.entity_schemas if cls._valid_schema(schema)
+            ]
         return valid
 
     def print_valid_schemas(self):
         """Print available valid schemas for this model instance"""
         schemas = self.valid_schemas()
         for r, s in schemas:
-            print("Registry {} id={} -- {}".format(r.name, r.id, s['name']))
+            print("Registry {} id={} -- {}".format(r.name, r.id, s["name"]))
 
     def set_schema(self, schema_name):
         """Set the schema for this model instance"""
@@ -379,16 +396,17 @@ class RegistryMixin():
         if not valid_schemas:
             raise BenchlingAPIException("No valid schemas found.")
         for r, s in valid_schemas:
-            if s['name'] == schema_name:
+            if s["name"] == schema_name:
                 schema = s
 
         if not schema:
-            raise BenchlingAPIException("No schema \"{}\" found. Select from {}".format(
-                schema_name,
-                [s['name'] for r, s in self.valid_schemas()]
-            ))
-        self.new_registry_id = schema['registryId']
-        self.schemaId = schema['id']
+            raise BenchlingAPIException(
+                'No schema "{}" found. Select from {}'.format(
+                    schema_name, [s["name"] for r, s in self.valid_schemas()]
+                )
+            )
+        self.new_registry_id = schema["registryId"]
+        self.schemaId = schema["id"]
         self.update()
 
     def register(self, naming_strategy=NAMING_STRATEGY._DEFAULT):
@@ -404,11 +422,16 @@ class RegistryMixin():
         :return: model instance
         :rtype: Model
         """
-        if not hasattr(self, 'new_registry_id'):
-                raise BenchlingAPIException("No schema set. Please use '{}' to set a schema. You may use '{}' "
-                                            "to look at available schemas.".format(self.set_schema.__name__,
-                                                                                   self.print_valid_schemas.__name__))
-        self.session.Registry.register(self.new_registry_id, [self.id], naming_strategy=naming_strategy)
+        if not hasattr(self, "new_registry_id"):
+            raise BenchlingAPIException(
+                "No schema set. Please use '{}' to set a schema. You may use '{}' "
+                "to look at available schemas.".format(
+                    self.set_schema.__name__, self.print_valid_schemas.__name__
+                )
+            )
+        self.session.Registry.register(
+            self.new_registry_id, [self.id], naming_strategy=naming_strategy
+        )
         self.reload()
         return self
 
@@ -467,8 +490,8 @@ class RegistryMixin():
     @property
     def is_registered(self):
         """Check if instance is registered"""
-        if hasattr(self, 'registryId') and self.registryId is not None:
-            if hasattr(self, 'new_registry_id'):
+        if hasattr(self, "registryId") and self.registryId is not None:
+            if hasattr(self, "new_registry_id"):
                 if self.new_registry_id != self.registryId:
                     return False
             return True
@@ -489,7 +512,9 @@ class RegistryMixin():
         :rtype: list
         """
         if registry_id is None:
-            registry_id = cls.session.Registry.find_registry(id=registry_id, name=registry_name).id
+            registry_id = cls.session.Registry.find_registry(
+                id=registry_id, name=registry_name
+            ).id
         return cls.list(registryId=registry_id, **params)
 
     @classmethod
@@ -506,11 +531,15 @@ class RegistryMixin():
         :return: dict of models in registry
         :rtype: dict
         """
-        entities = cls.list_in_registry(registry_id=registry_id, registry_name=registry_name, **params)
+        entities = cls.list_in_registry(
+            registry_id=registry_id, registry_name=registry_name, **params
+        )
         return {e.entityRegistryId: e for e in entities}
 
     @classmethod
-    def find_by_name_in_registry(cls, name, registry_id=None, registry_name=None, **params):
+    def find_by_name_in_registry(
+        cls, name, registry_id=None, registry_name=None, **params
+    ):
         """
         Find entity by name in a registry
 
@@ -525,7 +554,9 @@ class RegistryMixin():
         :return: first model found
         :rtype: Model
         """
-        models = cls.list_in_registry(registry_id=registry_id, registry_name=registry_name, name=name, **params)
+        models = cls.list_in_registry(
+            registry_id=registry_id, registry_name=registry_name, name=name, **params
+        )
         if models:
             return models[0]
 
@@ -543,7 +574,9 @@ class RegistryMixin():
         :return: list of models in registry
         :rtype: list
         """
-        registry = cls.session.Registry.find_registry(id=registry_id, name=registry_name)
+        registry = cls.session.Registry.find_registry(
+            id=registry_id, name=registry_name
+        )
         entity_data = registry.get_entities(entity_registry_ids)
         return cls.load_many(entity_data)
 
@@ -561,13 +594,17 @@ class RegistryMixin():
         :return: instance
         :rtype: Model
         """
-        entities = cls.get_in_registry([entity_registry_id], registry_id=registry_id, registry_name=registry_name)
+        entities = cls.get_in_registry(
+            [entity_registry_id], registry_id=registry_id, registry_name=registry_name
+        )
         if entities:
             return entities[0]
         return None
+
 
 class InventoryEntityMixin(InventoryMixin, RegistryMixin, EntityMixin):
     """
     Mixin for :class:`DNASequence`, :class:`AASequence`, and :class:`CustomEntity`
     """
+
     pass

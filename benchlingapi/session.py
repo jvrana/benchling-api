@@ -3,7 +3,11 @@ BenchlingAPI session object
 """
 
 import requests
-from benchlingapi.exceptions import BenchlingAPIException, ModelNotFoundError, exception_dispatch
+from benchlingapi.exceptions import (
+    BenchlingAPIException,
+    ModelNotFoundError,
+    exception_dispatch,
+)
 from benchlingapi.models import ModelRegistry
 from benchlingapi.models.models import __all__ as allmodels
 from benchlingapi.utils import url_build
@@ -14,6 +18,7 @@ class RequestDecorator(object):
     """
     Wraps a function to raise error with unexpected request status codes
     """
+
     def __init__(self, status_codes):
         if not isinstance(status_codes, list):
             status_codes = [status_codes]
@@ -30,7 +35,8 @@ class RequestDecorator(object):
                     404: "NOT FOUND",
                     500: "INTERNAL SERVER ERROR",
                     503: "SERVICE UNAVAILABLE",
-                    504: "SERVER TIMEOUT"}
+                    504: "SERVER TIMEOUT",
+                }
                 msg = ""
                 if r.status_code in http_codes:
                     msg = http_codes[r.status_code]
@@ -38,8 +44,9 @@ class RequestDecorator(object):
                     msg += f"\nurl: {r.request.path_url}"
                     msg += f"\nresponse: {r.text}"
 
-                e = BenchlingAPIException("HTTP Response Failed {} {}".format(
-                    r.status_code, msg))
+                e = BenchlingAPIException(
+                    "HTTP Response Failed {} {}".format(r.status_code, msg)
+                )
                 e.response = r
                 exception_dispatch(e)
             return r.json()
@@ -53,12 +60,12 @@ class Http(object):
     """
 
     TIMEOUT = 30
-    HOME = 'https://benchling.com/api/v2'
+    HOME = "https://benchling.com/api/v2"
     NEXT = "nextToken"
 
     def __init__(self, api_key):
         session = requests.Session()
-        session.auth = (api_key, '')
+        session.auth = (api_key, "")
         self.__session = session
         self.post = RequestDecorator([200, 201, 202])(partial(self.request, "post"))
         self.get = RequestDecorator(200)(partial(self.request, "get"))
@@ -70,7 +77,9 @@ class Http(object):
             timeout = self.TIMEOUT
         if action is not None:
             path += ":" + action
-        return self.__session.request(method, url_build(self.HOME, path), timeout=timeout, **kwargs)
+        return self.__session.request(
+            method, url_build(self.HOME, path), timeout=timeout, **kwargs
+        )
 
     def get_pages(self, path, timeout=None, action=None, **kwargs):
         get_response = partial(self.get, path, timeout=timeout, action=action)
@@ -119,7 +128,7 @@ class Session(object):
 
     def help(self):
         help_url = "https://docs.benchling.com/reference"
-        print("Visit \"{}\"".format(help_url))
+        print('Visit "{}"'.format(help_url))
 
     @property
     def models(self):
@@ -138,5 +147,5 @@ class Session(object):
     def interface(self, model_name):
         """Return a model interface by name"""
         if model_name not in self.interfaces:
-            raise ModelNotFoundError("No model by name of \"{}\"".format(model_name))
+            raise ModelNotFoundError('No model by name of "{}"'.format(model_name))
         return self.interfaces[model_name]

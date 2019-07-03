@@ -2,6 +2,7 @@
 BenchlingAPI specific exceptions
 """
 
+
 class BenchlingAPIException(Exception):
     """Generic Exception for BenchlingAPI"""
 
@@ -20,6 +21,7 @@ class ModelNotFoundError(Exception):
 
 class SchemaNotFoundError(Exception):
     """Model not found"""
+
 
 ################################
 # Benchling request exceptions
@@ -45,12 +47,15 @@ def exception_dispatch(exception_with_response):
     e = exception_with_response
     try:
         error_data = e.response.json()
-        userMessage = error_data['error']['userMessage']
-        if 'Invalid entityRegistryId' in userMessage:
+        userMessage = error_data["error"]["userMessage"]
+        if "Invalid entityRegistryId" in userMessage:
             raise InvalidRegistryId(str(e)) from e
-        elif 'That name is already used as either an alias or a name in this registry' in userMessage:
+        elif (
+            "That name is already used as either an alias or a name in this registry"
+            in userMessage
+        ):
             raise InvalidRegistryId(str(e)) from e
-        elif 'entities you attempted to register failed validation' in userMessage:
+        elif "entities you attempted to register failed validation" in userMessage:
             raise RegistryValidationError(str(e)) from e
     except KeyError:
         pass

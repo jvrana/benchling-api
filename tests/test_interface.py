@@ -2,6 +2,7 @@ import pytest
 from benchlingapi.models import models
 from benchlingapi.exceptions import ModelNotFoundError
 
+
 def test_all_models(session):
 
     assert len(session.models) == len(models.__all__)

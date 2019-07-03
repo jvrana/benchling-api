@@ -1,9 +1,9 @@
 {
   "name": "benchlingapi",
-  "version": "2.0.0a",
-  "description": "",
+  "version": "2.0.1a",
+  "description": "An unofficial python wrapper for the Benchling API",
   "authors": [
-    "Justin Vrana <youemail@domain.com>"
+    "Justin Vrana <justin.vrana@gmail.com>"
   ],
   "homepage": "https://www.github.com/klavinslab/benchlingapi",
   "repository": "https://www.github.com/klavinslab/benchlngapi",
@@ -26,9 +26,6 @@
     "pre-commit": "^1.17",
     "toml": "^0.10.0",
     "sphinx": "^2.1",
-    "pytest-cov": "^2.7",
-    "pylint": "^2.3",
-    "pandoc": "^1.0",
     "guzzle-sphinx-theme": "^0.7.11",
     "vcrpy": "^2.0"
   },

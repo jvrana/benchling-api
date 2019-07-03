@@ -2,49 +2,55 @@ import pytest
 
 from benchlingapi.models import ModelRegistry
 from benchlingapi.models.models import Project, Folder
-from benchlingapi.models.mixins import ListMixin, GetMixin, CreateMixin, ArchiveMixin, RegistryMixin, EntityMixin, InventoryMixin
+from benchlingapi.models.mixins import (
+    ListMixin,
+    GetMixin,
+    CreateMixin,
+    ArchiveMixin,
+    RegistryMixin,
+    EntityMixin,
+    InventoryMixin,
+)
 
 
 def pytest_generate_tests(metafunc):
     # parameterize with models that match the expected model test
     only_models = ModelRegistry.filter_models_by_base_classes(metafunc.cls.only)
 
-    create_params_dict = metafunc.cls.__dict__.get('create_params', {})
+    create_params_dict = metafunc.cls.__dict__.get("create_params", {})
 
-    argdict = {'model': [], 'create_params': []}
+    argdict = {"model": [], "create_params": []}
     for m in only_models:
         create_params = create_params_dict.get(m.__name__, None)
         if isinstance(create_params, list):
             for cp in create_params:
-                argdict['model'].append(m)
-                argdict['create_params'].append(cp)
+                argdict["model"].append(m)
+                argdict["create_params"].append(cp)
         else:
-            argdict['model'].append(m)
-            argdict['create_params'].append(create_params)
+            argdict["model"].append(m)
+            argdict["create_params"].append(create_params)
 
-    argnames = [n for n in metafunc.funcargnames if n in argdict]
+    argnames = [n for n in metafunc.fixturenames if n in argdict]
     argvalues = zip(*[argdict[n] for n in argnames])
 
     if len(argnames) == 1:
         argvalues = [a[0] for a in argvalues]
 
-    metafunc.parametrize(','.join(argnames), argvalues, scope="class")
+    metafunc.parametrize(",".join(argnames), argvalues, scope="class")
 
 
 class HasInterface:
-
     @pytest.fixture(scope="function")
     def interface(self, session, model):
         return session.interface(model.__name__)
 
 
 class HasExample(HasInterface):
-
     @pytest.fixture(scope="function")
     def example_model(self, interface, model):
         one = interface.one()
         if not one:
-            pytest.skip("Example model \"{}\" not found".format(model.__name__))
+            pytest.skip('Example model "{}" not found'.format(model.__name__))
         return one
 
 
@@ -57,14 +63,14 @@ class TestListMixin(HasExample):
     def test_last_1(self, interface, model):
         size1 = interface.last(1)
         if len(size1) == 0:
-            pytest.skip("No models found for \"{}\"".format(model))
+            pytest.skip('No models found for "{}"'.format(model))
         assert 1 == len(size1)
         assert isinstance(size1[0], model)
 
     def test_last_20(self, interface, model):
         size20 = interface.last(20)
         if len(size20) == 0:
-            pytest.skip("No models found for \"{}\"".format(model))
+            pytest.skip('No models found for "{}"'.format(model))
         size_list = interface.list()
         assert min(len(size20), len(size_list)) <= 20
         assert isinstance(size20[-1], model)
@@ -91,12 +97,12 @@ class TestEntity(HasInterface):
     def example_model(self, interface, model):
         one = interface.one()
         if not one:
-            pytest.skip("Example model \"{}\" not found".format(model.__name__))
+            pytest.skip('Example model "{}" not found'.format(model.__name__))
         return one
 
     def test_find_by_name(self, session, interface, model, example_model):
         if not example_model:
-            pytest.skip("Example model \"{}\" not found".format(model.__name__))
+            pytest.skip('Example model "{}" not found'.format(model.__name__))
         found = interface.find_by_name(example_model.name)
         assert found
         assert example_model.id == found.id
@@ -124,7 +130,7 @@ class TestCreateMixin(HasInterface):
                     "name": "bla gene",
                     "start": 1,
                     "strand": 1,
-                    "type": "gene"
+                    "type": "gene",
                 },
                 {
                     "color": "#FF9CCD",
@@ -132,9 +138,9 @@ class TestCreateMixin(HasInterface):
                     "name": "bla gene",
                     "start": 1,
                     "strand": -1,
-                    "type": "gene"
-                }
-            ]
+                    "type": "gene",
+                },
+            ],
         ),
         "AASequence": dict(
             aminoAcids="AMVGKLALDLSD",
@@ -145,48 +151,34 @@ class TestCreateMixin(HasInterface):
                     "name": "bla gene",
                     "start": 1,
                     "strand": -1,
-                    "type": "gene"
+                    "type": "gene",
                 }
             ],
             schemaId=None,
-            name="MyProtein"
+            name="MyProtein",
         ),
-        "CustomEntity": dict(
-            name="MyEntity",
-            aliases=[],
-            schemaId=None,
-        ),
-        "Batch": dict(
-            entityId=None,
-            fields={},
-        ),
-        "Oligo": dict(
-            name="MyOligo",
-            bases="AGTAGCATG",
-        )
+        "CustomEntity": dict(name="MyEntity", aliases=[], schemaId=None),
+        "Batch": dict(entityId=None, fields={}),
+        "Oligo": dict(name="MyOligo", bases="AGTAGCATG"),
     }
 
     @pytest.fixture(scope="function")
     def create_param(self, session, trash_folder, create_params, interface):
-        create_params['folderId'] = trash_folder.id
-        if 'schemaId' in create_params:
+        create_params["folderId"] = trash_folder.id
+        if "schemaId" in create_params:
             schema = interface.valid_schemas()[0][1]
-            create_params['schemaId'] = schema['id']
-        if 'entityId' in create_params:
+            create_params["schemaId"] = schema["id"]
+        if "entityId" in create_params:
             entity = session.CustomEntity.one()
-            create_params['entityId'] = entity.id
+            create_params["entityId"] = entity.id
         return create_params
 
     def test_model_constructor(self, interface, create_param):
-        new_model = interface(
-            **create_param
-        )
+        new_model = interface(**create_param)
         assert new_model
 
     def test_model_save(self, interface, create_param):
-        new_model = interface(
-            **create_param
-        )
+        new_model = interface(**create_param)
         new_model.save()
         assert new_model.id
 
@@ -195,12 +187,12 @@ class TestArchiveMixin(HasInterface):
 
     only = [ArchiveMixin, ListMixin, InventoryMixin]
 
-    @pytest.fixture(scope='function')
+    @pytest.fixture(scope="function")
     def example(self, model, example_from_inventory):
         if model not in [Project, Folder]:
             return example_from_inventory
         else:
-            pytest.skip("Skipping \"{}\"".format(model))
+            pytest.skip('Skipping "{}"'.format(model))
 
     def test_archive(self, interface, example):
         assert not example.is_archived
@@ -217,17 +209,17 @@ class TestArchiveMixin(HasInterface):
 class TestRegistryMixin(HasInterface):
     only = [RegistryMixin, CreateMixin, ListMixin, InventoryMixin]
 
-    @pytest.fixture(scope='function')
+    @pytest.fixture(scope="function")
     def example(self, model, example_from_inventory):
         if model not in [Project, Folder]:
             return example_from_inventory
         else:
-            pytest.skip("Skipping \"{}\"".format(model))
+            pytest.skip('Skipping "{}"'.format(model))
 
     def test_print_valid_schemas(self, example):
         example.print_valid_schemas()
 
-    @pytest.fixture(scope='function')
+    @pytest.fixture(scope="function")
     def copy_sample(self, example, interface):
         example_copy = example.copy()
         example_copy.save()
@@ -238,9 +230,8 @@ class TestRegistryMixin(HasInterface):
     def test_register(self, copy_sample, trash_folder):
         valid_schemas = copy_sample.valid_schemas
         assert not copy_sample.is_registered
-        copy_sample.set_schema(valid_schemas()[0][1]['name'])
+        copy_sample.set_schema(valid_schemas()[0][1]["name"])
         copy_sample.register()
         assert copy_sample.is_registered
         copy_sample.unregister(trash_folder.id)
         assert not copy_sample.is_registered
-

@@ -16,6 +16,7 @@ from benchlingapi.utils import url_build
 
 class ModelRegistry(type):
     """Stores a list of models that can be accessed by name."""
+
     models = {}
 
     def __init__(cls, name, bases, nmspc):
@@ -30,7 +31,8 @@ class ModelRegistry(type):
         """Gets model by model_name"""
         if model_name not in ModelRegistry.models:
             raise ModelNotFoundError(
-                "Model \"{}\" not found in ModelRegistry.".format(model_name))
+                'Model "{}" not found in ModelRegistry.'.format(model_name)
+            )
         else:
             return ModelRegistry.models[model_name]
 
@@ -57,7 +59,9 @@ class ModelRegistry(type):
         if isinstance(bases, list):
             model_sets = []
             for only_model in bases:
-                model_sets.append(set(ModelRegistry.models_by_base_classes()[only_model.__name__]))
+                model_sets.append(
+                    set(ModelRegistry.models_by_base_classes()[only_model.__name__])
+                )
             models = reduce(lambda x, y: x.intersection(y), model_sets)
         else:
             models = ModelRegistry.models_by_base_classes()[bases.__name__]
@@ -69,8 +73,7 @@ class ModelRegistry(type):
         Its likely that user may have wanted to use a model interface instead of
         the Base class.
         """
-        raise AttributeError("'{0}' has no attribute '{1}'"
-                             .format(cls.__name__, item))
+        raise AttributeError("'{0}' has no attribute '{1}'".format(cls.__name__, item))
 
     @property
     def model_name(cls):
@@ -81,6 +84,7 @@ class ModelBase(object, metaclass=ModelRegistry):
     """
     The model base for all BenchlingAPI model instances.
     """
+
     # http = None  # initialized with Session calls a model interface
     session = None
     alias = None
@@ -110,7 +114,7 @@ class ModelBase(object, metaclass=ModelRegistry):
     @staticmethod
     def deserializer(schema_inst, data):
         result = schema_inst.load(data)
-        if LooseVersion(__version__) < LooseVersion('3.0.0'):
+        if LooseVersion(__version__) < LooseVersion("3.0.0"):
             if len(result.errors) > 0:
                 raise Exception(str(result.errors))
             return result.data
@@ -120,7 +124,7 @@ class ModelBase(object, metaclass=ModelRegistry):
     @staticmethod
     def serializer(schema_inst, inst):
         result = schema_inst.dump(inst)
-        if LooseVersion(__version__) < LooseVersion('3.0.0'):
+        if LooseVersion(__version__) < LooseVersion("3.0.0"):
             if len(result.errors) > 0:
                 raise Exception(str(result.errors))
             return result.data
@@ -185,29 +189,43 @@ class ModelBase(object, metaclass=ModelRegistry):
 
     @classmethod
     def _get(cls, path_params=None, params=None, action=None):
-        response = cls.session.http.get(cls.path(additional_paths=path_params), params=params, action=action)
+        response = cls.session.http.get(
+            cls.path(additional_paths=path_params), params=params, action=action
+        )
         return response
         # return cls.load(response)
 
     @classmethod
     def _get_pages(cls, path_params=None, params=None, action=None):
-        pages = cls.session.http.get_pages(cls.path(additional_paths=path_params), params=params, action=action)
+        pages = cls.session.http.get_pages(
+            cls.path(additional_paths=path_params), params=params, action=action
+        )
         return pages
 
     @classmethod
     def _post(cls, data, path_params=None, params=None, action=None):
-        response = cls.session.http.post(cls.path(additional_paths=path_params), json=data, params=params,
-                                         action=action)
+        response = cls.session.http.post(
+            cls.path(additional_paths=path_params),
+            json=data,
+            params=params,
+            action=action,
+        )
         return response
 
     @classmethod
     def _patch(cls, data, path_params=None, params=None, action=None):
-        response = cls.session.http.patch(cls.path(additional_paths=path_params), json=data, params=params,
-                                          action=action)
+        response = cls.session.http.patch(
+            cls.path(additional_paths=path_params),
+            json=data,
+            params=params,
+            action=action,
+        )
         return response
 
     def copy(self):
         return self.load(self.dump())
 
     def __repr__(self):
-        return f"<{self.__class__.__name__} ({self.__class__.model_name}) at {id(self)}>"
+        return (
+            f"<{self.__class__.__name__} ({self.__class__.model_name}) at {id(self)}>"
+        )

@@ -51,7 +51,7 @@ class EntitySchema(Schema):
     customFields = mfields.Dict()
     fields = mfields.Dict(allow_none=False)
     schema = mfields.Nested("EntitySchemaSchema", allow_none=True)
-    schemaId = mfields.Method('get_schema_id')
+    schemaId = mfields.Method("get_schema_id")
     aliases = mfields.List(mfields.String())
     folderId = mfields.String(required=True, allow_none=True)
     # schema = mfields.Dict(allow_none=True)
@@ -67,10 +67,10 @@ class EntitySchema(Schema):
         additional = ("id",)
 
     def get_schema_id(self, obj):
-        if hasattr(obj, 'schemaId') and obj.schemaId:
+        if hasattr(obj, "schemaId") and obj.schemaId:
             return obj.schemaId
-        elif hasattr(obj, 'schema') and obj.schema:
-            return obj.schema['id']
+        elif hasattr(obj, "schema") and obj.schema:
+            return obj.schema["id"]
 
 
 class CustomEntitySchema(ModelSchemaMixin, EntitySchema):
@@ -107,7 +107,6 @@ class OligoSchema(ModelSchemaMixin, EntitySchema):
 
 
 class BatchSchema(EntitySchema):
-
     class Meta:
         unknown = INCLUDE
 
