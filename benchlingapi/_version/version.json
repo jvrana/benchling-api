@@ -1,0 +1,29 @@
+{
+  "name": "benchlingapi",
+  "version": "0.0.1",
+  "description": "",
+  "authors": [
+    "Justin Vrana <youemail@domain.com>"
+  ],
+  "homepage": "https://www.github.com/jvrana/PythonInstallBoilerplate",
+  "repository": "https://www.github.com/jvrana/PythonInstallBoilerplate",
+  "documentation": "https://www.github.com/jvrana/PythonInstallBoilerplate",
+  "readme": "README.md",
+  "dependencies": {
+    "python": "^3.7"
+  },
+  "dev-dependencies": {
+    "black": {
+      "version": "^18.3-alpha.0",
+      "allows-prereleases": true
+    },
+    "pytest": "^4.6",
+    "pre-commit": "^1.17",
+    "toml": "^0.10.0"
+  },
+  "scripts": {
+    "upver": "benchlingapi:_version.pull_version",
+    "version": "benchlingapi:_version.get_version",
+    "name": "benchlingapi:_version.get_name"
+  }
+}

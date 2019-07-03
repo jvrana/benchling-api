@@ -1,24 +1,48 @@
-PIP=pip3
+init:
+	pip install pip -U
+	curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+	poetry self:update
+	poetry install
+	poetry run pre-commit install
 
-.PHONY: docs
+
+clean:
+	rm -rf dist
+	rm -rf pip-wheel-metadata
+	rm -rf docs
+	rm -rf .pytest_cache
+
+
+test:
+	poetry run python -m pytest
+
+
+lint:
+	poetry run pylint -E pydent
+
 
 docs:
-	@echo "Updating docs"
+	echo "No documentation"
 
-	# copy README.md to README.rst format for Sphinx documentation
-	# we can comment this out if we do not want to include the README.md in the sphinx documentation
-	#pipenv run pandoc --from=markdown --to=rst --output=docsrc/README.rst README.md
 
-	pandoc --from=markdown --to=rst --output=README.rst README.md
-	rm -rf docs
-	cd docsrc && pipenv run make html
-	find docs -type f -exec chmod 444 {} \;
-	@echo "\033[95m\n\nBuild successful! View the docs homepage at docs/html/index.html.\n\033[0m"
+format:
+	poetry run upver
+	poetry run black benchlingapi tests
 
-	touch docs/.nojekyll
 
-pylint:
-	pipenv run pylint -E benchlingapi
+lock:
+	poetry run upver
+	poetry update
+
+
+build:
+	poetry run upver
+	poetry build
+
+
+release:
+	sh scripts/release.sh
+
 
 klocs:
 	find . -name '*.py' | xargs wc -l
