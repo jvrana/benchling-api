@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>benchlingapi.models.models &#8212; benchlingapi 2.0.0a documentation</title>
+    <title>benchlingapi.models.models &#8212; benchlingapi 2.0.1a documentation</title>
     <link rel="stylesheet" href="../../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.1a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
     </div>
@@ -55,7 +55,7 @@
     </div>
 </div>
 
-<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.0a</a></p>
+<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.1a</a></p>
 <div>
 
 </div>
@@ -71,6 +71,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">Change log</a></li>
 </ul>
 
     
@@ -116,8 +117,16 @@
 
 <span class="kn">from</span> <span class="nn">benchlingapi.exceptions</span> <span class="k">import</span> <span class="n">BenchlingAPIException</span>
 <span class="kn">from</span> <span class="nn">benchlingapi.models.base</span> <span class="k">import</span> <span class="n">ModelBase</span><span class="p">,</span> <span class="n">ModelRegistry</span>
-<span class="kn">from</span> <span class="nn">benchlingapi.models.mixins</span> <span class="k">import</span> <span class="n">GetMixin</span><span class="p">,</span> <span class="n">ListMixin</span><span class="p">,</span> <span class="n">ArchiveMixin</span><span class="p">,</span> <span class="n">EntityMixin</span><span class="p">,</span> <span class="n">RegistryMixin</span><span class="p">,</span> <span class="n">CreateMixin</span><span class="p">,</span> \
-    <span class="n">InventoryMixin</span><span class="p">,</span> <span class="n">InventoryEntityMixin</span>
+<span class="kn">from</span> <span class="nn">benchlingapi.models.mixins</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">GetMixin</span><span class="p">,</span>
+    <span class="n">ListMixin</span><span class="p">,</span>
+    <span class="n">ArchiveMixin</span><span class="p">,</span>
+    <span class="n">EntityMixin</span><span class="p">,</span>
+    <span class="n">RegistryMixin</span><span class="p">,</span>
+    <span class="n">CreateMixin</span><span class="p">,</span>
+    <span class="n">InventoryMixin</span><span class="p">,</span>
+    <span class="n">InventoryEntityMixin</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;DNASequence&quot;</span><span class="p">,</span>
@@ -130,7 +139,7 @@
     <span class="s2">&quot;CustomEntity&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Batch&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Registry&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;EntitySchema&quot;</span>
+    <span class="s2">&quot;EntitySchema&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="c1"># TODO: implement &#39;fields&#39; for CustomEntity</span>
@@ -141,23 +150,25 @@
 
     <span class="n">ENTITY_TYPE</span> <span class="o">=</span> <span class="s2">&quot;custom_entity&quot;</span>
 
-    <span class="n">CREATE_SCHEMA</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">only</span><span class="o">=</span><span class="p">(</span>
-        <span class="s2">&quot;aliases&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;customFields&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;folderId&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;name&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;schemaId&quot;</span>
-    <span class="p">)</span>
+    <span class="n">CREATE_SCHEMA</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">only</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;aliases&quot;</span><span class="p">,</span> <span class="s2">&quot;customFields&quot;</span><span class="p">,</span> <span class="s2">&quot;folderId&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;schemaId&quot;</span><span class="p">)</span>
     <span class="p">)</span>
 
-    <span class="n">UPDATE_SCHEMA</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">only</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;aliases&quot;</span><span class="p">,</span> <span class="s2">&quot;customFields&quot;</span><span class="p">,</span>
-                               <span class="s2">&quot;folderId&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;schemaId&quot;</span>
-                               <span class="p">)</span>
-                         <span class="p">)</span>
+    <span class="n">UPDATE_SCHEMA</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">only</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;aliases&quot;</span><span class="p">,</span> <span class="s2">&quot;customFields&quot;</span><span class="p">,</span> <span class="s2">&quot;folderId&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;schemaId&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">customFields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">folderId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schemaId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">aliases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">customFields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">folderId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">schemaId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">aliases</span> <span class="o">=</span> <span class="n">aliases</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">customFields</span> <span class="o">=</span> <span class="n">customFields</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="n">fields</span>
@@ -186,7 +197,7 @@
             <span class="s2">&quot;isCircular&quot;</span><span class="p">,</span>
             <span class="s2">&quot;name&quot;</span><span class="p">,</span>
             <span class="s2">&quot;schemaId&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;translations&quot;</span>
+            <span class="s2">&quot;translations&quot;</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="p">)</span>
 
@@ -204,10 +215,21 @@
         <span class="p">)</span>
     <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">customFields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">folderId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">isCircular</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schemaId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="n">translations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">aliases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">annotations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">bases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">customFields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">folderId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">isCircular</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">schemaId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">translations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">aliases</span> <span class="o">=</span> <span class="n">aliases</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">annotations</span> <span class="o">=</span> <span class="n">annotations</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">bases</span> <span class="o">=</span> <span class="n">bases</span>
@@ -239,12 +261,15 @@
 <span class="sd">        :param url:</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">g</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;benchling.com/(?P&lt;user&gt;\w+)/f/(?P&lt;folderid&gt;\w+)&#39;</span> <span class="o">+</span> \
-                      <span class="s1">&#39;-(?P&lt;foldername&gt;\w+)/seq-(?P&lt;seqid&gt;\w+)-(?P&lt;seqname&gt;&#39;</span> <span class="o">+</span> \
-                      <span class="s1">&#39;[a-zA-Z0-9_-]+)&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
-        <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;folder_id&#39;</span><span class="p">,</span> <span class="s1">&#39;folder_name&#39;</span><span class="p">,</span> <span class="s1">&#39;seq_id&#39;</span><span class="p">,</span> <span class="s1">&#39;seq_name&#39;</span><span class="p">]</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+            <span class="s2">&quot;benchling.com/(?P&lt;user&gt;\w+)/f/(?P&lt;folderid&gt;\w+)&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;-(?P&lt;foldername&gt;\w+)/seq-(?P&lt;seqid&gt;\w+)-(?P&lt;seqname&gt;&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;[a-zA-Z0-9_-]+)&quot;</span><span class="p">,</span>
+            <span class="n">url</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;folder_id&quot;</span><span class="p">,</span> <span class="s2">&quot;folder_name&quot;</span><span class="p">,</span> <span class="s2">&quot;seq_id&quot;</span><span class="p">,</span> <span class="s2">&quot;seq_name&quot;</span><span class="p">]</span>
         <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">groups</span><span class="p">())))</span>
-        <span class="n">d</span><span class="p">[</span><span class="s1">&#39;seq_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;seq_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;seq_id&#39;</span><span class="p">])</span>
+        <span class="n">d</span><span class="p">[</span><span class="s2">&quot;seq_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;seq_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;seq_id&quot;</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">d</span></div>
 
 <div class="viewcode-block" id="DNASequence.from_share_link"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.models.html#benchlingapi.models.models.DNASequence.from_share_link">[docs]</a>    <span class="nd">@classmethod</span>
@@ -255,18 +280,25 @@
             <span class="n">search_pattern</span> <span class="o">=</span> <span class="s2">&quot;seq_\w+&quot;</span>
             <span class="n">possible_ids</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">search_pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">possible_ids</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">BenchlingAPIException</span><span class="p">(</span><span class="s2">&quot;No sequence ids found in sharelink html using search pattern </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                    <span class="n">search_pattern</span><span class="p">))</span>
+                <span class="k">raise</span> <span class="n">BenchlingAPIException</span><span class="p">(</span>
+                    <span class="s2">&quot;No sequence ids found in sharelink html using search pattern </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">search_pattern</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
             <span class="n">uniq_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">possible_ids</span><span class="p">))</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">uniq_ids</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">BenchlingAPIException</span><span class="p">(</span><span class="s2">&quot;More than one possible sequence id found in sharelink html using search &quot;</span>
-                                            <span class="s2">&quot;pattern </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">search_pattern</span><span class="p">))</span>
+                <span class="k">raise</span> <span class="n">BenchlingAPIException</span><span class="p">(</span>
+                    <span class="s2">&quot;More than one possible sequence id found in sharelink html using search &quot;</span>
+                    <span class="s2">&quot;pattern </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">search_pattern</span><span class="p">)</span>
+                <span class="p">)</span>
             <span class="n">seq</span> <span class="o">=</span> <span class="n">uniq_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">except</span> <span class="p">(</span><span class="n">BenchlingAPIException</span><span class="p">,</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">):</span>
             <span class="n">d</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_parseURL</span><span class="p">(</span><span class="n">share_link</span><span class="p">)</span>
-            <span class="n">seq</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;seq_id&#39;</span><span class="p">]</span>
+            <span class="n">seq</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;seq_id&quot;</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">seq</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">BenchlingAPIException</span><span class="p">(</span><span class="s2">&quot;Could not find seqid in sharelink body or url.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">BenchlingAPIException</span><span class="p">(</span>
+                <span class="s2">&quot;Could not find seqid in sharelink body or url.&quot;</span>
+            <span class="p">)</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span></div></div>
 
 
@@ -279,38 +311,42 @@
     <span class="n">ENTITY_TYPE</span> <span class="o">=</span> <span class="s2">&quot;aa_sequence&quot;</span>
     <span class="n">alias</span> <span class="o">=</span> <span class="s2">&quot;Protein&quot;</span>
 
-    <span class="n">CREATE_SCHEMA</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">only</span><span class="o">=</span><span class="p">(</span>
-                <span class="s2">&quot;aliases&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;aminoAcids&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;customFields&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;fields&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;folderId&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;name&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;schemaId&quot;</span><span class="p">,</span>
-            <span class="p">)</span>
+    <span class="n">CREATE_SCHEMA</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">only</span><span class="o">=</span><span class="p">(</span>
+            <span class="s2">&quot;aliases&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;aminoAcids&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;customFields&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fields&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;folderId&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;schemaId&quot;</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="p">)</span>
 
-    <span class="n">UPDATE_SCHEMA</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">only</span><span class="o">=</span><span class="p">(</span>
-                <span class="s2">&quot;aliases&quot;</span><span class="p">,</span>
-                <span class="c1"># &quot;aminoAcids&quot;,</span>
-                <span class="s2">&quot;customFields&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;fields&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;folderId&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;name&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;schemaId&quot;</span><span class="p">,</span>
-            <span class="p">)</span>
+    <span class="n">UPDATE_SCHEMA</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">only</span><span class="o">=</span><span class="p">(</span>
+            <span class="s2">&quot;aliases&quot;</span><span class="p">,</span>
+            <span class="c1"># &quot;aminoAcids&quot;,</span>
+            <span class="s2">&quot;customFields&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fields&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;folderId&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;schemaId&quot;</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">aminoAcids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">customFields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">folderId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schemaId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">aliases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">aminoAcids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">customFields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">folderId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">schemaId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">aliases</span> <span class="o">=</span> <span class="n">aliases</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">aminoAcids</span> <span class="o">=</span> <span class="n">aminoAcids</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">customFields</span> <span class="o">=</span> <span class="n">customFields</span>
@@ -327,18 +363,9 @@
 <span class="sd">    A model representing a Batch.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">CREATE_SCHEMA</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">only</span><span class="o">=</span><span class="p">(</span>
-            <span class="s1">&#39;entityId&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;fields&#39;</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
+    <span class="n">CREATE_SCHEMA</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">only</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;entityId&quot;</span><span class="p">,</span> <span class="s2">&quot;fields&quot;</span><span class="p">))</span>
 
-    <span class="n">UPDATE_SCHEMA</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">only</span><span class="o">=</span><span class="p">(</span>
-            <span class="s1">&#39;fields&#39;</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
+    <span class="n">UPDATE_SCHEMA</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">only</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;fields&quot;</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entityId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">entityId</span> <span class="o">=</span> <span class="n">entityId</span>
@@ -350,6 +377,7 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A model representing a sequence Annotation.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">pass</span></div>
 
 
@@ -357,7 +385,9 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A model representing a protein translation.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">pass</span></div>
+
 
 <div class="viewcode-block" id="Oligo"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.models.html#benchlingapi.models.models.Oligo">[docs]</a><span class="k">class</span> <span class="nc">Oligo</span><span class="p">(</span><span class="n">GetMixin</span><span class="p">,</span> <span class="n">CreateMixin</span><span class="p">,</span> <span class="n">InventoryMixin</span><span class="p">,</span> <span class="n">RegistryMixin</span><span class="p">,</span> <span class="n">ModelBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -372,12 +402,22 @@
             <span class="s2">&quot;fields&quot;</span><span class="p">,</span>
             <span class="s2">&quot;folderId&quot;</span><span class="p">,</span>
             <span class="s2">&quot;name&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;schemaId&quot;</span>
+            <span class="s2">&quot;schemaId&quot;</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">customFields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="n">folderId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schemaId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">aliases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">bases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">customFields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">folderId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">schemaId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">aliases</span> <span class="o">=</span> <span class="n">aliases</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">bases</span> <span class="o">=</span> <span class="n">bases</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">customFields</span> <span class="o">=</span> <span class="n">customFields</span>
@@ -396,7 +436,9 @@
 
 <div class="viewcode-block" id="Folder.all_entities"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.models.html#benchlingapi.models.models.Folder.all_entities">[docs]</a>    <span class="k">def</span> <span class="nf">all_entities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Generator that retrieves all entities in the folder.&quot;&quot;&quot;</span>
-        <span class="n">entity_models</span> <span class="o">=</span> <span class="n">ModelRegistry</span><span class="o">.</span><span class="n">filter_models_by_base_classes</span><span class="p">(</span><span class="n">InventoryEntityMixin</span><span class="p">)</span>
+        <span class="n">entity_models</span> <span class="o">=</span> <span class="n">ModelRegistry</span><span class="o">.</span><span class="n">filter_models_by_base_classes</span><span class="p">(</span>
+            <span class="n">InventoryEntityMixin</span>
+        <span class="p">)</span>
         <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">entity_models</span><span class="p">:</span>
 
             <span class="n">interface</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">interface</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
@@ -414,6 +456,7 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A model representing an EntitySchema.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">pass</span></div>
 
 
@@ -445,17 +488,17 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">entity_schemas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;List schemas&quot;&quot;&quot;</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;entity-schemas&#39;</span><span class="p">])[</span><span class="s1">&#39;entitySchemas&#39;</span><span class="p">]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">&quot;entity-schemas&quot;</span><span class="p">])[</span><span class="s2">&quot;entitySchemas&quot;</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">EntitySchema</span><span class="o">.</span><span class="n">load_many</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Registry.get_schema"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.models.html#benchlingapi.models.models.Registry.get_schema">[docs]</a>    <span class="k">def</span> <span class="nf">get_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get a registry schema by name or id&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">schema</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">entity_schemas</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">id</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">schema</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">id</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">schema</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">id</span><span class="p">:</span>
                     <span class="k">return</span> <span class="n">schema</span>
             <span class="k">elif</span> <span class="n">name</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">schema</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">schema</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
                     <span class="k">return</span> <span class="n">schema</span></div>
 
 <div class="viewcode-block" id="Registry.find_from_schema_id"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.models.html#benchlingapi.models.models.Registry.find_from_schema_id">[docs]</a>    <span class="nd">@classmethod</span>
@@ -463,24 +506,23 @@
         <span class="sd">&quot;&quot;&quot;Find registry from a schema id&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">list</span><span class="p">():</span>
             <span class="k">for</span> <span class="n">schema</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">entity_schemas</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">schema</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">schema_id</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">schema</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">schema_id</span><span class="p">:</span>
                     <span class="k">return</span> <span class="n">r</span></div>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">registry_id</span><span class="p">,</span> <span class="n">entity_ids</span><span class="p">,</span> <span class="n">naming_strategy</span><span class="o">=</span><span class="n">RegistryMixin</span><span class="o">.</span><span class="n">NAMING_STRATEGY</span><span class="o">.</span><span class="n">_DEFAULT</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">registry_id</span><span class="p">,</span>
+        <span class="n">entity_ids</span><span class="p">,</span>
+        <span class="n">naming_strategy</span><span class="o">=</span><span class="n">RegistryMixin</span><span class="o">.</span><span class="n">NAMING_STRATEGY</span><span class="o">.</span><span class="n">_DEFAULT</span><span class="p">,</span>
+    <span class="p">):</span>
 
-        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;entityIds&quot;</span><span class="p">:</span> <span class="n">entity_ids</span><span class="p">,</span>
-            <span class="s2">&quot;namingStrategy&quot;</span><span class="p">:</span> <span class="n">naming_strategy</span><span class="p">,</span>
-        <span class="p">}</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;entityIds&quot;</span><span class="p">:</span> <span class="n">entity_ids</span><span class="p">,</span> <span class="s2">&quot;namingStrategy&quot;</span><span class="p">:</span> <span class="n">naming_strategy</span><span class="p">}</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">path_params</span><span class="o">=</span><span class="p">[</span><span class="n">registry_id</span><span class="p">],</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;register-entities&quot;</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">unregister</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">registry_id</span><span class="p">,</span> <span class="n">entity_ids</span><span class="p">,</span> <span class="n">folder_id</span><span class="p">):</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;entityIds&#39;</span><span class="p">:</span> <span class="n">entity_ids</span><span class="p">,</span>
-            <span class="s1">&#39;folderId&#39;</span><span class="p">:</span> <span class="n">folder_id</span>
-        <span class="p">}</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;entityIds&quot;</span><span class="p">:</span> <span class="n">entity_ids</span><span class="p">,</span> <span class="s2">&quot;folderId&quot;</span><span class="p">:</span> <span class="n">folder_id</span><span class="p">}</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">path_params</span><span class="o">=</span><span class="p">[</span><span class="n">registry_id</span><span class="p">],</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;unregister-entities&quot;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Registry.register_entities"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.models.html#benchlingapi.models.models.Registry.register_entities">[docs]</a>    <span class="k">def</span> <span class="nf">register_entities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity_ids</span><span class="p">,</span> <span class="n">naming_strategy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -493,15 +535,18 @@
 
 <div class="viewcode-block" id="Registry.get_entities"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.models.html#benchlingapi.models.models.Registry.get_entities">[docs]</a>    <span class="k">def</span> <span class="nf">get_entities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity_registry_ids</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get entities by their ids&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;registered-entities&#39;</span><span class="p">],</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;bulk-get&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-            <span class="s1">&#39;entityRegistryIds&#39;</span><span class="p">:</span> <span class="n">entity_registry_ids</span>
-        <span class="p">})[</span><span class="s1">&#39;entities&#39;</span><span class="p">]</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span>
+            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">&quot;registered-entities&quot;</span><span class="p">],</span>
+            <span class="n">action</span><span class="o">=</span><span class="s2">&quot;bulk-get&quot;</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;entityRegistryIds&quot;</span><span class="p">:</span> <span class="n">entity_registry_ids</span><span class="p">},</span>
+        <span class="p">)[</span><span class="s2">&quot;entities&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Registry.find_in_registry"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.models.html#benchlingapi.models.models.Registry.find_in_registry">[docs]</a>    <span class="k">def</span> <span class="nf">find_in_registry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity_registry_id</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Find entity by its id&quot;&quot;&quot;</span>
         <span class="n">models</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_entities</span><span class="p">([</span><span class="n">entity_registry_id</span><span class="p">])</span>
         <span class="k">if</span> <span class="n">models</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">models</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div></div>
+
 
 <span class="c1"># class Annotation(ModelBase):</span>
 <span class="c1">#</span>
@@ -526,7 +571,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.1a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
       </ul>
     </div>

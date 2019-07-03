@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>benchlingapi.session &#8212; benchlingapi 2.0.0a documentation</title>
+    <title>benchlingapi.session &#8212; benchlingapi 2.0.1a documentation</title>
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">benchlingapi 2.0.1a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
     </div>
@@ -55,7 +55,7 @@
     </div>
 </div>
 
-<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.0a</a></p>
+<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.1a</a></p>
 <div>
 
 </div>
@@ -71,6 +71,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer/api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer/changelog.html">Change log</a></li>
 </ul>
 
     
@@ -112,7 +113,11 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">benchlingapi.exceptions</span> <span class="k">import</span> <span class="n">BenchlingAPIException</span><span class="p">,</span> <span class="n">ModelNotFoundError</span><span class="p">,</span> <span class="n">exception_dispatch</span>
+<span class="kn">from</span> <span class="nn">benchlingapi.exceptions</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">BenchlingAPIException</span><span class="p">,</span>
+    <span class="n">ModelNotFoundError</span><span class="p">,</span>
+    <span class="n">exception_dispatch</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">benchlingapi.models</span> <span class="k">import</span> <span class="n">ModelRegistry</span>
 <span class="kn">from</span> <span class="nn">benchlingapi.models.models</span> <span class="k">import</span> <span class="n">__all__</span> <span class="k">as</span> <span class="n">allmodels</span>
 <span class="kn">from</span> <span class="nn">benchlingapi.utils</span> <span class="k">import</span> <span class="n">url_build</span>
@@ -123,6 +128,7 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Wraps a function to raise error with unexpected request status codes</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status_codes</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">status_codes</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="n">status_codes</span> <span class="o">=</span> <span class="p">[</span><span class="n">status_codes</span><span class="p">]</span>
@@ -139,7 +145,8 @@
                     <span class="mi">404</span><span class="p">:</span> <span class="s2">&quot;NOT FOUND&quot;</span><span class="p">,</span>
                     <span class="mi">500</span><span class="p">:</span> <span class="s2">&quot;INTERNAL SERVER ERROR&quot;</span><span class="p">,</span>
                     <span class="mi">503</span><span class="p">:</span> <span class="s2">&quot;SERVICE UNAVAILABLE&quot;</span><span class="p">,</span>
-                    <span class="mi">504</span><span class="p">:</span> <span class="s2">&quot;SERVER TIMEOUT&quot;</span><span class="p">}</span>
+                    <span class="mi">504</span><span class="p">:</span> <span class="s2">&quot;SERVER TIMEOUT&quot;</span><span class="p">,</span>
+                <span class="p">}</span>
                 <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
                 <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">in</span> <span class="n">http_codes</span><span class="p">:</span>
                     <span class="n">msg</span> <span class="o">=</span> <span class="n">http_codes</span><span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">]</span>
@@ -147,8 +154,9 @@
                     <span class="n">msg</span> <span class="o">+=</span> <span class="n">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">url: </span><span class="si">{r.request.path_url}</span><span class="s2">&quot;</span>
                     <span class="n">msg</span> <span class="o">+=</span> <span class="n">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">response: </span><span class="si">{r.text}</span><span class="s2">&quot;</span>
 
-                <span class="n">e</span> <span class="o">=</span> <span class="n">BenchlingAPIException</span><span class="p">(</span><span class="s2">&quot;HTTP Response Failed </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                    <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">msg</span><span class="p">))</span>
+                <span class="n">e</span> <span class="o">=</span> <span class="n">BenchlingAPIException</span><span class="p">(</span>
+                    <span class="s2">&quot;HTTP Response Failed </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+                <span class="p">)</span>
                 <span class="n">e</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="n">r</span>
                 <span class="n">exception_dispatch</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -162,12 +170,12 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">TIMEOUT</span> <span class="o">=</span> <span class="mi">30</span>
-    <span class="n">HOME</span> <span class="o">=</span> <span class="s1">&#39;https://benchling.com/api/v2&#39;</span>
+    <span class="n">HOME</span> <span class="o">=</span> <span class="s2">&quot;https://benchling.com/api/v2&quot;</span>
     <span class="n">NEXT</span> <span class="o">=</span> <span class="s2">&quot;nextToken&quot;</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">):</span>
         <span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
-        <span class="n">session</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__session</span> <span class="o">=</span> <span class="n">session</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">post</span> <span class="o">=</span> <span class="n">RequestDecorator</span><span class="p">([</span><span class="mi">200</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">202</span><span class="p">])(</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">get</span> <span class="o">=</span> <span class="n">RequestDecorator</span><span class="p">(</span><span class="mi">200</span><span class="p">)(</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;get&quot;</span><span class="p">))</span>
@@ -179,7 +187,9 @@
             <span class="n">timeout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TIMEOUT</span>
         <span class="k">if</span> <span class="n">action</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">path</span> <span class="o">+=</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">action</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url_build</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">HOME</span><span class="p">,</span> <span class="n">path</span><span class="p">),</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">method</span><span class="p">,</span> <span class="n">url_build</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">HOME</span><span class="p">,</span> <span class="n">path</span><span class="p">),</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">get_pages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">get_response</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">)</span>
@@ -228,7 +238,7 @@
 
     <span class="k">def</span> <span class="nf">help</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">help_url</span> <span class="o">=</span> <span class="s2">&quot;https://docs.benchling.com/reference&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Visit </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">help_url</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Visit &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">help_url</span><span class="p">))</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">models</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -247,7 +257,7 @@
 <div class="viewcode-block" id="Session.interface"><a class="viewcode-back" href="../../developer/_autosummary/benchlingapi.session.html#benchlingapi.session.Session.interface">[docs]</a>    <span class="k">def</span> <span class="nf">interface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a model interface by name&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interfaces</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">ModelNotFoundError</span><span class="p">(</span><span class="s2">&quot;No model by name of </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="n">ModelNotFoundError</span><span class="p">(</span><span class="s1">&#39;No model by name of &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">interfaces</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span></div></div>
 </pre></div>
 
@@ -265,7 +275,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">benchlingapi 2.0.1a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
       </ul>
     </div>

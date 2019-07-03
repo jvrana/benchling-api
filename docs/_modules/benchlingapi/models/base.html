@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>benchlingapi.models.base &#8212; benchlingapi 2.0.0a documentation</title>
+    <title>benchlingapi.models.base &#8212; benchlingapi 2.0.1a documentation</title>
     <link rel="stylesheet" href="../../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.1a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
     </div>
@@ -55,7 +55,7 @@
     </div>
 </div>
 
-<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.0a</a></p>
+<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.1a</a></p>
 <div>
 
 </div>
@@ -71,6 +71,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">Change log</a></li>
 </ul>
 
     
@@ -125,6 +126,7 @@
 
 <div class="viewcode-block" id="ModelRegistry"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.base.html#benchlingapi.models.base.ModelRegistry">[docs]</a><span class="k">class</span> <span class="nc">ModelRegistry</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Stores a list of models that can be accessed by name.&quot;&quot;&quot;</span>
+
     <span class="n">models</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">nmspc</span><span class="p">):</span>
@@ -139,7 +141,8 @@
         <span class="sd">&quot;&quot;&quot;Gets model by model_name&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ModelRegistry</span><span class="o">.</span><span class="n">models</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">ModelNotFoundError</span><span class="p">(</span>
-                <span class="s2">&quot;Model </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> not found in ModelRegistry.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">))</span>
+                <span class="s1">&#39;Model &quot;</span><span class="si">{}</span><span class="s1">&quot; not found in ModelRegistry.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+            <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">ModelRegistry</span><span class="o">.</span><span class="n">models</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span></div>
 
@@ -166,7 +169,9 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bases</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="n">model_sets</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">for</span> <span class="n">only_model</span> <span class="ow">in</span> <span class="n">bases</span><span class="p">:</span>
-                <span class="n">model_sets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ModelRegistry</span><span class="o">.</span><span class="n">models_by_base_classes</span><span class="p">()[</span><span class="n">only_model</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]))</span>
+                <span class="n">model_sets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="nb">set</span><span class="p">(</span><span class="n">ModelRegistry</span><span class="o">.</span><span class="n">models_by_base_classes</span><span class="p">()[</span><span class="n">only_model</span><span class="o">.</span><span class="vm">__name__</span><span class="p">])</span>
+                <span class="p">)</span>
             <span class="n">models</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">model_sets</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">models</span> <span class="o">=</span> <span class="n">ModelRegistry</span><span class="o">.</span><span class="n">models_by_base_classes</span><span class="p">()[</span><span class="n">bases</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span>
@@ -178,8 +183,7 @@
 <span class="sd">        Its likely that user may have wanted to use a model interface instead of</span>
 <span class="sd">        the Base class.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">{0}</span><span class="s2">&#39; has no attribute &#39;</span><span class="si">{1}</span><span class="s2">&#39;&quot;</span>
-                             <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">item</span><span class="p">))</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">{0}</span><span class="s2">&#39; has no attribute &#39;</span><span class="si">{1}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">item</span><span class="p">))</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">model_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
@@ -190,6 +194,7 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The model base for all BenchlingAPI model instances.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="c1"># http = None  # initialized with Session calls a model interface</span>
     <span class="n">session</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">alias</span> <span class="o">=</span> <span class="kc">None</span>
@@ -219,7 +224,7 @@
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">deserializer</span><span class="p">(</span><span class="n">schema_inst</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">schema_inst</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="n">__version__</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="s1">&#39;3.0.0&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="n">__version__</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="s2">&quot;3.0.0&quot;</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">errors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">errors</span><span class="p">))</span>
             <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">data</span>
@@ -229,7 +234,7 @@
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">serializer</span><span class="p">(</span><span class="n">schema_inst</span><span class="p">,</span> <span class="n">inst</span><span class="p">):</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">schema_inst</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="n">__version__</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="s1">&#39;3.0.0&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="n">__version__</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="s2">&quot;3.0.0&quot;</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">errors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">errors</span><span class="p">))</span>
             <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">data</span>
@@ -294,32 +299,46 @@
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_get</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">additional_paths</span><span class="o">=</span><span class="n">path_params</span><span class="p">),</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">additional_paths</span><span class="o">=</span><span class="n">path_params</span><span class="p">),</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">action</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span>
         <span class="c1"># return cls.load(response)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_get_pages</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="n">pages</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">get_pages</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">additional_paths</span><span class="o">=</span><span class="n">path_params</span><span class="p">),</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">)</span>
+        <span class="n">pages</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">get_pages</span><span class="p">(</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">additional_paths</span><span class="o">=</span><span class="n">path_params</span><span class="p">),</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">action</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="n">pages</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_post</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">path_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">additional_paths</span><span class="o">=</span><span class="n">path_params</span><span class="p">),</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
-                                         <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">additional_paths</span><span class="o">=</span><span class="n">path_params</span><span class="p">),</span>
+            <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
+            <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_patch</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">path_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">additional_paths</span><span class="o">=</span><span class="n">path_params</span><span class="p">),</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
-                                          <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">additional_paths</span><span class="o">=</span><span class="n">path_params</span><span class="p">),</span>
+            <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
+            <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span>
 
     <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dump</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">f</span><span class="s2">&quot;&lt;</span><span class="si">{self.__class__.__name__}</span><span class="s2"> (</span><span class="si">{self.__class__.model_name}</span><span class="s2">) at {id(self)}&gt;&quot;</span></div>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">f</span><span class="s2">&quot;&lt;</span><span class="si">{self.__class__.__name__}</span><span class="s2"> (</span><span class="si">{self.__class__.model_name}</span><span class="s2">) at {id(self)}&gt;&quot;</span>
+        <span class="p">)</span></div>
 </pre></div>
 
           </div>
@@ -336,7 +355,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.1a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
       </ul>
     </div>

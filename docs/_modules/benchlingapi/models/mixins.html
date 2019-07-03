@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>benchlingapi.models.mixins &#8212; benchlingapi 2.0.0a documentation</title>
+    <title>benchlingapi.models.mixins &#8212; benchlingapi 2.0.1a documentation</title>
     <link rel="stylesheet" href="../../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.1a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
     </div>
@@ -55,7 +55,7 @@
     </div>
 </div>
 
-<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.0a</a></p>
+<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.1a</a></p>
 <div>
 
 </div>
@@ -71,6 +71,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">Change log</a></li>
 </ul>
 
     
@@ -114,6 +115,7 @@
 <span class="kn">from</span> <span class="nn">benchlingapi.models.base</span> <span class="k">import</span> <span class="n">ModelRegistry</span>
 <span class="kn">from</span> <span class="nn">benchlingapi.exceptions</span> <span class="k">import</span> <span class="n">BenchlingAPIException</span><span class="p">,</span> <span class="n">BenchlingException</span>
 <span class="kn">import</span> <span class="nn">webbrowser</span>
+
 
 <div class="viewcode-block" id="GetMixin"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.GetMixin">[docs]</a><span class="k">class</span> <span class="nc">GetMixin</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -184,7 +186,9 @@
 <span class="sd">        :return: list of models</span>
 <span class="sd">        :rtype: list</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">max_page_size</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">MAX_PAGE_SIZE</span><span class="p">,</span> <span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pageSize&quot;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">MAX_PAGE_SIZE</span><span class="p">))</span>
+        <span class="n">max_page_size</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">MAX_PAGE_SIZE</span><span class="p">,</span> <span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pageSize&quot;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">MAX_PAGE_SIZE</span><span class="p">)</span>
+        <span class="p">)</span>
         <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="n">max_page_size</span><span class="p">:</span>
             <span class="n">max_page_size</span> <span class="o">=</span> <span class="n">num</span>
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">pageSize</span><span class="o">=</span><span class="n">max_page_size</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="n">num</span><span class="p">))</span></div>
@@ -223,7 +227,9 @@
 <div class="viewcode-block" id="ListMixin.find_by_name"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.ListMixin.find_by_name">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">find_by_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">page_limit</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Find a model by name&quot;&quot;&quot;</span>
-        <span class="n">models</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">page_limit</span><span class="o">=</span><span class="n">page_limit</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">models</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">page_limit</span><span class="o">=</span><span class="n">page_limit</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span>
+        <span class="p">)</span>
         <span class="k">if</span> <span class="n">models</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">models</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
 
@@ -311,7 +317,7 @@
 
     <span class="k">class</span> <span class="nc">ARCHIVE_REASONS</span><span class="p">:</span>
         <span class="n">ERROR</span> <span class="o">=</span> <span class="s2">&quot;Made in error&quot;</span>
-        <span class="n">RETIRED</span> <span class="o">=</span> <span class="s1">&#39;Retired&#39;</span>
+        <span class="n">RETIRED</span> <span class="o">=</span> <span class="s2">&quot;Retired&quot;</span>
         <span class="n">EXPENDED</span> <span class="o">=</span> <span class="s2">&quot;Expended&quot;</span>
         <span class="n">SHIPPED</span> <span class="o">=</span> <span class="s2">&quot;Shipped&quot;</span>
         <span class="n">CONTAMINATED</span> <span class="o">=</span> <span class="s2">&quot;Contaminated&quot;</span>
@@ -320,8 +326,16 @@
         <span class="n">OTHER</span> <span class="o">=</span> <span class="s2">&quot;Other&quot;</span>
         <span class="n">NOT_ARCHIVED</span> <span class="o">=</span> <span class="s2">&quot;NOT_ARCHIVED&quot;</span>
         <span class="n">_DEFAULT</span> <span class="o">=</span> <span class="n">OTHER</span>
-        <span class="n">_REASONS</span> <span class="o">=</span> <span class="p">[</span><span class="n">ERROR</span><span class="p">,</span> <span class="n">RETIRED</span><span class="p">,</span> <span class="n">EXPENDED</span><span class="p">,</span> <span class="n">SHIPPED</span><span class="p">,</span> <span class="n">CONTAMINATED</span><span class="p">,</span> <span class="n">EXPIRED</span><span class="p">,</span> <span class="n">MISSING</span><span class="p">,</span> <span class="n">OTHER</span><span class="p">]</span>
-
+        <span class="n">_REASONS</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">ERROR</span><span class="p">,</span>
+            <span class="n">RETIRED</span><span class="p">,</span>
+            <span class="n">EXPENDED</span><span class="p">,</span>
+            <span class="n">SHIPPED</span><span class="p">,</span>
+            <span class="n">CONTAMINATED</span><span class="p">,</span>
+            <span class="n">EXPIRED</span><span class="p">,</span>
+            <span class="n">MISSING</span><span class="p">,</span>
+            <span class="n">OTHER</span><span class="p">,</span>
+        <span class="p">]</span>
 
 <div class="viewcode-block" id="ArchiveMixin.archive_many"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.ArchiveMixin.archive_many">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">archive_many</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">model_ids</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="n">ARCHIVE_REASONS</span><span class="o">.</span><span class="n">_DEFAULT</span><span class="p">):</span>
@@ -336,9 +350,11 @@
 <span class="sd">        :rtype: list</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">reason</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">ARCHIVE_REASONS</span><span class="o">.</span><span class="n">_REASONS</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Reason must be one of </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">ARCHIVE_REASONS</span><span class="o">.</span><span class="n">_REASONS</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                <span class="s2">&quot;Reason must be one of </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">ARCHIVE_REASONS</span><span class="o">.</span><span class="n">_REASONS</span><span class="p">)</span>
+            <span class="p">)</span>
         <span class="n">key</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">camelize</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s2">&quot;archive&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">model_ids</span><span class="p">,</span> <span class="s1">&#39;reason&#39;</span><span class="p">:</span> <span class="n">reason</span><span class="p">})</span></div>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s2">&quot;archive&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">model_ids</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span><span class="p">:</span> <span class="n">reason</span><span class="p">})</span></div>
 
 <div class="viewcode-block" id="ArchiveMixin.unarchive_many"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.ArchiveMixin.unarchive_many">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">unarchive_many</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">model_ids</span><span class="p">):</span>
@@ -380,7 +396,7 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">is_archived</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Check whether model instance is archived.&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;archiveRecord&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">archiveRecord</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;archiveRecord&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">archiveRecord</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="kc">False</span>
 
@@ -388,7 +404,7 @@
     <span class="k">def</span> <span class="nf">archive_reason</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the archive reason. Return None if not archived.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_archived</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">archiveRecord</span><span class="p">[</span><span class="s1">&#39;reason&#39;</span><span class="p">]</span></div>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">archiveRecord</span><span class="p">[</span><span class="s2">&quot;reason&quot;</span><span class="p">]</span></div>
 
 
 <div class="viewcode-block" id="EntityMixin"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.EntityMixin">[docs]</a><span class="k">class</span> <span class="nc">EntityMixin</span><span class="p">(</span><span class="n">ArchiveMixin</span><span class="p">,</span> <span class="n">GetMixin</span><span class="p">,</span> <span class="n">ListMixin</span><span class="p">,</span> <span class="n">CreateMixin</span><span class="p">,</span> <span class="n">UpdateMixin</span><span class="p">):</span>
@@ -406,7 +422,7 @@
 <div class="viewcode-block" id="EntityMixin.batches"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.EntityMixin.batches">[docs]</a>    <span class="k">def</span> <span class="nf">batches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get an entities batches&quot;&quot;&quot;</span>
         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_url_build</span><span class="p">(</span><span class="s2">&quot;entities&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">&quot;batches&quot;</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">ModelRegistry</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s2">&quot;Batch&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load_many</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;batches&#39;</span><span class="p">])</span></div>
+        <span class="k">return</span> <span class="n">ModelRegistry</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s2">&quot;Batch&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load_many</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;batches&quot;</span><span class="p">])</span></div>
 
 <div class="viewcode-block" id="EntityMixin.list_archived"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.EntityMixin.list_archived">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">list_archived</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="n">ArchiveMixin</span><span class="o">.</span><span class="n">ARCHIVE_REASONS</span><span class="o">.</span><span class="n">OTHER</span><span class="p">):</span>
@@ -424,7 +440,7 @@
             <span class="n">webbrowser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="InventoryMixin"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.InventoryMixin">[docs]</a><span class="k">class</span> <span class="nc">InventoryMixin</span><span class="p">():</span>
+<div class="viewcode-block" id="InventoryMixin"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.InventoryMixin">[docs]</a><span class="k">class</span> <span class="nc">InventoryMixin</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Designates model as having a folderId</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -442,7 +458,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div></div>
 
 
-<div class="viewcode-block" id="RegistryMixin"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.RegistryMixin">[docs]</a><span class="k">class</span> <span class="nc">RegistryMixin</span><span class="p">():</span>
+<div class="viewcode-block" id="RegistryMixin"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.RegistryMixin">[docs]</a><span class="k">class</span> <span class="nc">RegistryMixin</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Allows model to be registered and unregistered.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -465,21 +481,23 @@
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_valid_schema</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">schema</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">schema</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">cls</span><span class="o">.</span><span class="n">ENTITY_TYPE</span>
+        <span class="k">return</span> <span class="n">schema</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">cls</span><span class="o">.</span><span class="n">ENTITY_TYPE</span>
 
 <div class="viewcode-block" id="RegistryMixin.valid_schemas"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.RegistryMixin.valid_schemas">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">valid_schemas</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return valid schemas for this model class&quot;&quot;&quot;</span>
         <span class="n">valid</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">Registry</span><span class="o">.</span><span class="n">list</span><span class="p">():</span>
-            <span class="n">valid</span> <span class="o">+=</span> <span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">schema</span><span class="p">)</span> <span class="k">for</span> <span class="n">schema</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">entity_schemas</span> <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_valid_schema</span><span class="p">(</span><span class="n">schema</span><span class="p">)]</span>
+            <span class="n">valid</span> <span class="o">+=</span> <span class="p">[</span>
+                <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">schema</span><span class="p">)</span> <span class="k">for</span> <span class="n">schema</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">entity_schemas</span> <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_valid_schema</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
+            <span class="p">]</span>
         <span class="k">return</span> <span class="n">valid</span></div>
 
 <div class="viewcode-block" id="RegistryMixin.print_valid_schemas"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.RegistryMixin.print_valid_schemas">[docs]</a>    <span class="k">def</span> <span class="nf">print_valid_schemas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Print available valid schemas for this model instance&quot;&quot;&quot;</span>
         <span class="n">schemas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_schemas</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">schemas</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Registry </span><span class="si">{}</span><span class="s2"> id=</span><span class="si">{}</span><span class="s2"> -- </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span></div>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Registry </span><span class="si">{}</span><span class="s2"> id=</span><span class="si">{}</span><span class="s2"> -- </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]))</span></div>
 
 <div class="viewcode-block" id="RegistryMixin.set_schema"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.RegistryMixin.set_schema">[docs]</a>    <span class="k">def</span> <span class="nf">set_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema_name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set the schema for this model instance&quot;&quot;&quot;</span>
@@ -488,16 +506,17 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_schemas</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">BenchlingAPIException</span><span class="p">(</span><span class="s2">&quot;No valid schemas found.&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">valid_schemas</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">schema_name</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">schema_name</span><span class="p">:</span>
                 <span class="n">schema</span> <span class="o">=</span> <span class="n">s</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">schema</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">BenchlingAPIException</span><span class="p">(</span><span class="s2">&quot;No schema </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> found. Select from </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                <span class="n">schema_name</span><span class="p">,</span>
-                <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_schemas</span><span class="p">()]</span>
-            <span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">new_registry_id</span> <span class="o">=</span> <span class="n">schema</span><span class="p">[</span><span class="s1">&#39;registryId&#39;</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">schemaId</span> <span class="o">=</span> <span class="n">schema</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+            <span class="k">raise</span> <span class="n">BenchlingAPIException</span><span class="p">(</span>
+                <span class="s1">&#39;No schema &quot;</span><span class="si">{}</span><span class="s1">&quot; found. Select from </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">schema_name</span><span class="p">,</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_schemas</span><span class="p">()]</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_registry_id</span> <span class="o">=</span> <span class="n">schema</span><span class="p">[</span><span class="s2">&quot;registryId&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">schemaId</span> <span class="o">=</span> <span class="n">schema</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="RegistryMixin.register"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.RegistryMixin.register">[docs]</a>    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naming_strategy</span><span class="o">=</span><span class="n">NAMING_STRATEGY</span><span class="o">.</span><span class="n">_DEFAULT</span><span class="p">):</span>
@@ -513,11 +532,16 @@
 <span class="sd">        :return: model instance</span>
 <span class="sd">        :rtype: Model</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;new_registry_id&#39;</span><span class="p">):</span>
-                <span class="k">raise</span> <span class="n">BenchlingAPIException</span><span class="p">(</span><span class="s2">&quot;No schema set. Please use &#39;</span><span class="si">{}</span><span class="s2">&#39; to set a schema. You may use &#39;</span><span class="si">{}</span><span class="s2">&#39; &quot;</span>
-                                            <span class="s2">&quot;to look at available schemas.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">set_schema</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
-                                                                                   <span class="bp">self</span><span class="o">.</span><span class="n">print_valid_schemas</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">Registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">new_registry_id</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">],</span> <span class="n">naming_strategy</span><span class="o">=</span><span class="n">naming_strategy</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;new_registry_id&quot;</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">BenchlingAPIException</span><span class="p">(</span>
+                <span class="s2">&quot;No schema set. Please use &#39;</span><span class="si">{}</span><span class="s2">&#39; to set a schema. You may use &#39;</span><span class="si">{}</span><span class="s2">&#39; &quot;</span>
+                <span class="s2">&quot;to look at available schemas.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_schema</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_valid_schemas</span><span class="o">.</span><span class="vm">__name__</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">Registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_registry_id</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">],</span> <span class="n">naming_strategy</span><span class="o">=</span><span class="n">naming_strategy</span>
+        <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
@@ -576,8 +600,8 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">is_registered</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Check if instance is registered&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;registryId&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">registryId</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;new_registry_id&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;registryId&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">registryId</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;new_registry_id&quot;</span><span class="p">):</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_registry_id</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">registryId</span><span class="p">:</span>
                     <span class="k">return</span> <span class="kc">False</span>
             <span class="k">return</span> <span class="kc">True</span>
@@ -598,7 +622,9 @@
 <span class="sd">        :rtype: list</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">registry_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">registry_id</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">Registry</span><span class="o">.</span><span class="n">find_registry</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">registry_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">registry_name</span><span class="p">)</span><span class="o">.</span><span class="n">id</span>
+            <span class="n">registry_id</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">Registry</span><span class="o">.</span><span class="n">find_registry</span><span class="p">(</span>
+                <span class="nb">id</span><span class="o">=</span><span class="n">registry_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">registry_name</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">id</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">registryId</span><span class="o">=</span><span class="n">registry_id</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RegistryMixin.registry_dict"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.RegistryMixin.registry_dict">[docs]</a>    <span class="nd">@classmethod</span>
@@ -615,11 +641,15 @@
 <span class="sd">        :return: dict of models in registry</span>
 <span class="sd">        :rtype: dict</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">entities</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">list_in_registry</span><span class="p">(</span><span class="n">registry_id</span><span class="o">=</span><span class="n">registry_id</span><span class="p">,</span> <span class="n">registry_name</span><span class="o">=</span><span class="n">registry_name</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">list_in_registry</span><span class="p">(</span>
+            <span class="n">registry_id</span><span class="o">=</span><span class="n">registry_id</span><span class="p">,</span> <span class="n">registry_name</span><span class="o">=</span><span class="n">registry_name</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="p">{</span><span class="n">e</span><span class="o">.</span><span class="n">entityRegistryId</span><span class="p">:</span> <span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entities</span><span class="p">}</span></div>
 
 <div class="viewcode-block" id="RegistryMixin.find_by_name_in_registry"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.RegistryMixin.find_by_name_in_registry">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">find_by_name_in_registry</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">registry_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">registry_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">find_by_name_in_registry</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">registry_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">registry_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span>
+    <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find entity by name in a registry</span>
 
@@ -634,7 +664,9 @@
 <span class="sd">        :return: first model found</span>
 <span class="sd">        :rtype: Model</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">models</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">list_in_registry</span><span class="p">(</span><span class="n">registry_id</span><span class="o">=</span><span class="n">registry_id</span><span class="p">,</span> <span class="n">registry_name</span><span class="o">=</span><span class="n">registry_name</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">models</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">list_in_registry</span><span class="p">(</span>
+            <span class="n">registry_id</span><span class="o">=</span><span class="n">registry_id</span><span class="p">,</span> <span class="n">registry_name</span><span class="o">=</span><span class="n">registry_name</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span>
+        <span class="p">)</span>
         <span class="k">if</span> <span class="n">models</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">models</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
 
@@ -652,7 +684,9 @@
 <span class="sd">        :return: list of models in registry</span>
 <span class="sd">        :rtype: list</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">registry</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">Registry</span><span class="o">.</span><span class="n">find_registry</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">registry_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">registry_name</span><span class="p">)</span>
+        <span class="n">registry</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">Registry</span><span class="o">.</span><span class="n">find_registry</span><span class="p">(</span>
+            <span class="nb">id</span><span class="o">=</span><span class="n">registry_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">registry_name</span>
+        <span class="p">)</span>
         <span class="n">entity_data</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">get_entities</span><span class="p">(</span><span class="n">entity_registry_ids</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">load_many</span><span class="p">(</span><span class="n">entity_data</span><span class="p">)</span></div>
 
@@ -670,15 +704,19 @@
 <span class="sd">        :return: instance</span>
 <span class="sd">        :rtype: Model</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">entities</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_in_registry</span><span class="p">([</span><span class="n">entity_registry_id</span><span class="p">],</span> <span class="n">registry_id</span><span class="o">=</span><span class="n">registry_id</span><span class="p">,</span> <span class="n">registry_name</span><span class="o">=</span><span class="n">registry_name</span><span class="p">)</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_in_registry</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">entity_registry_id</span><span class="p">],</span> <span class="n">registry_id</span><span class="o">=</span><span class="n">registry_id</span><span class="p">,</span> <span class="n">registry_name</span><span class="o">=</span><span class="n">registry_name</span>
+        <span class="p">)</span>
         <span class="k">if</span> <span class="n">entities</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">entities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">return</span> <span class="kc">None</span></div></div>
+
 
 <div class="viewcode-block" id="InventoryEntityMixin"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.mixins.html#benchlingapi.models.mixins.InventoryEntityMixin">[docs]</a><span class="k">class</span> <span class="nc">InventoryEntityMixin</span><span class="p">(</span><span class="n">InventoryMixin</span><span class="p">,</span> <span class="n">RegistryMixin</span><span class="p">,</span> <span class="n">EntityMixin</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Mixin for :class:`DNASequence`, :class:`AASequence`, and :class:`CustomEntity`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">pass</span></div>
 </pre></div>
 
@@ -696,7 +734,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.1a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
       </ul>
     </div>

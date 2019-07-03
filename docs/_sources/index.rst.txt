@@ -34,5 +34,4 @@ Indices and tables
    overview
    quickstart
    developer/api_reference
-
-
+   developer/changelog

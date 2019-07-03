@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>benchlingapi.models.schema &#8212; benchlingapi 2.0.0a documentation</title>
+    <title>benchlingapi.models.schema &#8212; benchlingapi 2.0.1a documentation</title>
     <link rel="stylesheet" href="../../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.1a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
     </div>
@@ -55,7 +55,7 @@
     </div>
 </div>
 
-<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.0a</a></p>
+<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.1a</a></p>
 <div>
 
 </div>
@@ -71,6 +71,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">Change log</a></li>
 </ul>
 
     
@@ -160,7 +161,7 @@
     <span class="n">customFields</span> <span class="o">=</span> <span class="n">mfields</span><span class="o">.</span><span class="n">Dict</span><span class="p">()</span>
     <span class="n">fields</span> <span class="o">=</span> <span class="n">mfields</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">schema</span> <span class="o">=</span> <span class="n">mfields</span><span class="o">.</span><span class="n">Nested</span><span class="p">(</span><span class="s2">&quot;EntitySchemaSchema&quot;</span><span class="p">,</span> <span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">schemaId</span> <span class="o">=</span> <span class="n">mfields</span><span class="o">.</span><span class="n">Method</span><span class="p">(</span><span class="s1">&#39;get_schema_id&#39;</span><span class="p">)</span>
+    <span class="n">schemaId</span> <span class="o">=</span> <span class="n">mfields</span><span class="o">.</span><span class="n">Method</span><span class="p">(</span><span class="s2">&quot;get_schema_id&quot;</span><span class="p">)</span>
     <span class="n">aliases</span> <span class="o">=</span> <span class="n">mfields</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">mfields</span><span class="o">.</span><span class="n">String</span><span class="p">())</span>
     <span class="n">folderId</span> <span class="o">=</span> <span class="n">mfields</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="c1"># schema = mfields.Dict(allow_none=True)</span>
@@ -176,10 +177,10 @@
         <span class="n">additional</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">get_schema_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;schemaId&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">schemaId</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;schemaId&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">schemaId</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">schemaId</span>
-        <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;schema&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">schema</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">schema</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span></div>
+        <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;schema&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">schema</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">schema</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span></div>
 
 
 <div class="viewcode-block" id="CustomEntitySchema"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.schema.html#benchlingapi.models.schema.CustomEntitySchema">[docs]</a><span class="k">class</span> <span class="nc">CustomEntitySchema</span><span class="p">(</span><span class="n">ModelSchemaMixin</span><span class="p">,</span> <span class="n">EntitySchema</span><span class="p">):</span>
@@ -216,7 +217,6 @@
 
 
 <div class="viewcode-block" id="BatchSchema"><a class="viewcode-back" href="../../../developer/_autosummary/_autosummary/benchlingapi.models.schema.html#benchlingapi.models.schema.BatchSchema">[docs]</a><span class="k">class</span> <span class="nc">BatchSchema</span><span class="p">(</span><span class="n">EntitySchema</span><span class="p">):</span>
-
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">unknown</span> <span class="o">=</span> <span class="n">INCLUDE</span></div>
 
@@ -334,7 +334,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.0a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">benchlingapi 2.0.1a documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
       </ul>
     </div>
