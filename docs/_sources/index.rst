@@ -3,9 +3,8 @@
 
 Python BenchlingAPI
 ===================
-Github: |homepage|
 
-The unofficial python Benchling API.
+The unofficial python Benchling API. |homepage|
 
 .. code-block::
 
@@ -30,7 +29,6 @@ API Reference
    models
    exceptions
    utils
-   developer/changelog
 
 
 User Documentation
@@ -52,3 +50,4 @@ The developer documentation conatins information on how to contribute..
    :maxdepth: 1
 
    guidelines
+   developer/changelog
