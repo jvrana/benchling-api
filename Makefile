@@ -43,9 +43,6 @@ docs: | pullversion
 	find docs -type f -exec chmod 444 {} \;
 	@echo "\033[95m\n\nBuild successful! View the docs homepage at docs/html/index.html.\n\033[0m"
 
-	@echo "Running doc tests"
-	cd docsrc && poetry run make doctest
-
 	touch docs/.nojekyll
 	open ./docs/index.html
 
