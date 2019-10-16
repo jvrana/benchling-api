@@ -35,7 +35,7 @@ session.Batch
 session.CustomEntity
 ```
 
-Finding models
+Finding models:
 
 ```python
 # get one model
