@@ -1,5 +1,7 @@
 # BenchlingAPI
 
+[![PyPI version](https://badge.fury.io/py/benchlingapi.svg)](https://badge.fury.io/py/benchlingapi)
+
 The (unofficial) python API wrapper for Benchling.
 
 ## Installation
