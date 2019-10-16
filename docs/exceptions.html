@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Exceptions (benchlingapi.exceptions) &#8212; benchlingapi 2.0.2a documentation</title>
+    <title>Exceptions (benchlingapi.exceptions) &#8212; benchlingapi 2.0.0 documentation</title>
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.0.2a</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.0.0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -91,6 +91,11 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Exceptions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.exceptions</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.utils</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer/changelog.html">Change log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/changelog.html#a">2.0.0a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/changelog.html#id1">1.0.0</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
@@ -163,19 +168,19 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.exceptions.BenchlingAPIException" title="benchlingapi.exceptions.BenchlingAPIException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchlingAPIException</span></code></a></p></td>
-<td><p>Generic Exception for BenchlingAPI</p></td>
+<td><p>Generic Exception for BenchlingAPI.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#benchlingapi.exceptions.BenchlingLoginError" title="benchlingapi.exceptions.BenchlingLoginError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchlingLoginError</span></code></a></p></td>
-<td><p>Errors for incorrect login credentials</p></td>
+<td><p>Errors for incorrect login credentials.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.exceptions.BenchlingServerException" title="benchlingapi.exceptions.BenchlingServerException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchlingServerException</span></code></a></p></td>
-<td><p>Exceptions received from the Benchling site</p></td>
+<td><p>Exceptions received from the Benchling site.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#benchlingapi.exceptions.InvalidRegistryId" title="benchlingapi.exceptions.InvalidRegistryId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InvalidRegistryId</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.exceptions.ModelNotFoundError" title="benchlingapi.exceptions.ModelNotFoundError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModelNotFoundError</span></code></a></p></td>
-<td><p>Model not found</p></td>
+<td><p>Model not found.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#benchlingapi.exceptions.RegistryException" title="benchlingapi.exceptions.RegistryException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegistryException</span></code></a></p></td>
 <td><p></p></td>
@@ -184,7 +189,7 @@
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#benchlingapi.exceptions.SchemaNotFoundError" title="benchlingapi.exceptions.SchemaNotFoundError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SchemaNotFoundError</span></code></a></p></td>
-<td><p>Model not found</p></td>
+<td><p>Model not found.</p></td>
 </tr>
 </tbody>
 </table>
@@ -196,7 +201,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.exceptions.exception_dispatch" title="benchlingapi.exceptions.exception_dispatch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exception_dispatch</span></code></a>(exception_with_response)</p></td>
-<td><p>Dispatches Benchling exceptions (from the site) to Pythonic exceptions</p></td>
+<td><p>Dispatches Benchling exceptions (from the site) to Pythonic exceptions.</p></td>
 </tr>
 </tbody>
 </table>
@@ -204,7 +209,7 @@
 <dt id="benchlingapi.exceptions.BenchlingAPIException">
 <em class="property">exception </em><code class="sig-prename descclassname">benchlingapi.exceptions.</code><code class="sig-name descname">BenchlingAPIException</code><a class="reference internal" href="_modules/benchlingapi/exceptions.html#BenchlingAPIException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.exceptions.BenchlingAPIException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Generic Exception for BenchlingAPI</p>
+<p>Generic Exception for BenchlingAPI.</p>
 <dl class="method">
 <dt id="benchlingapi.exceptions.BenchlingAPIException.with_traceback">
 <code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.exceptions.BenchlingAPIException.with_traceback" title="Permalink to this definition">¶</a></dt>
@@ -218,7 +223,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt id="benchlingapi.exceptions.BenchlingLoginError">
 <em class="property">exception </em><code class="sig-prename descclassname">benchlingapi.exceptions.</code><code class="sig-name descname">BenchlingLoginError</code><a class="reference internal" href="_modules/benchlingapi/exceptions.html#BenchlingLoginError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.exceptions.BenchlingLoginError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#benchlingapi.exceptions.BenchlingAPIException" title="benchlingapi.exceptions.BenchlingAPIException"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.exceptions.BenchlingAPIException</span></code></a></p>
-<p>Errors for incorrect login credentials</p>
+<p>Errors for incorrect login credentials.</p>
 <dl class="method">
 <dt id="benchlingapi.exceptions.BenchlingLoginError.with_traceback">
 <code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.exceptions.BenchlingLoginError.with_traceback" title="Permalink to this definition">¶</a></dt>
@@ -232,7 +237,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt id="benchlingapi.exceptions.BenchlingServerException">
 <em class="property">exception </em><code class="sig-prename descclassname">benchlingapi.exceptions.</code><code class="sig-name descname">BenchlingServerException</code><a class="reference internal" href="_modules/benchlingapi/exceptions.html#BenchlingServerException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.exceptions.BenchlingServerException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#benchlingapi.exceptions.BenchlingAPIException" title="benchlingapi.exceptions.BenchlingAPIException"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.exceptions.BenchlingAPIException</span></code></a></p>
-<p>Exceptions received from the Benchling site</p>
+<p>Exceptions received from the Benchling site.</p>
 <dl class="method">
 <dt id="benchlingapi.exceptions.BenchlingServerException.with_traceback">
 <code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.exceptions.BenchlingServerException.with_traceback" title="Permalink to this definition">¶</a></dt>
@@ -259,7 +264,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt id="benchlingapi.exceptions.ModelNotFoundError">
 <em class="property">exception </em><code class="sig-prename descclassname">benchlingapi.exceptions.</code><code class="sig-name descname">ModelNotFoundError</code><a class="reference internal" href="_modules/benchlingapi/exceptions.html#ModelNotFoundError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.exceptions.ModelNotFoundError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#benchlingapi.exceptions.BenchlingAPIException" title="benchlingapi.exceptions.BenchlingAPIException"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.exceptions.BenchlingAPIException</span></code></a></p>
-<p>Model not found</p>
+<p>Model not found.</p>
 <dl class="method">
 <dt id="benchlingapi.exceptions.ModelNotFoundError.with_traceback">
 <code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.exceptions.ModelNotFoundError.with_traceback" title="Permalink to this definition">¶</a></dt>
@@ -299,7 +304,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt id="benchlingapi.exceptions.SchemaNotFoundError">
 <em class="property">exception </em><code class="sig-prename descclassname">benchlingapi.exceptions.</code><code class="sig-name descname">SchemaNotFoundError</code><a class="reference internal" href="_modules/benchlingapi/exceptions.html#SchemaNotFoundError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.exceptions.SchemaNotFoundError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#benchlingapi.exceptions.BenchlingAPIException" title="benchlingapi.exceptions.BenchlingAPIException"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchlingapi.exceptions.BenchlingAPIException</span></code></a></p>
-<p>Model not found</p>
+<p>Model not found.</p>
 <dl class="method">
 <dt id="benchlingapi.exceptions.SchemaNotFoundError.with_traceback">
 <code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.exceptions.SchemaNotFoundError.with_traceback" title="Permalink to this definition">¶</a></dt>
@@ -312,7 +317,8 @@ set self.__traceback__ to tb and return self.</p>
 <dl class="function">
 <dt id="benchlingapi.exceptions.exception_dispatch">
 <code class="sig-prename descclassname">benchlingapi.exceptions.</code><code class="sig-name descname">exception_dispatch</code><span class="sig-paren">(</span><em class="sig-param">exception_with_response</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchlingapi/exceptions.html#exception_dispatch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.exceptions.exception_dispatch" title="Permalink to this definition">¶</a></dt>
-<dd><p>Dispatches Benchling exceptions (from the site) to Pythonic exceptions</p>
+<dd><p>Dispatches Benchling exceptions (from the site) to Pythonic
+exceptions.</p>
 </dd></dl>
 
 </div>

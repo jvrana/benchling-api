@@ -21,8 +21,8 @@ you must request one from Benchling.
     session = Session("sdf44tj-sdflj8na-rf23rfasdf")
 
 You can access models from the session.
-Have a look at the API reference documentation
-
+Have a look at the :ref:`API model docs <api_models>`
+for methods available for each model.
 
 .. code-block::
 

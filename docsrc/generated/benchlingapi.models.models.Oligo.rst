@@ -15,10 +15,8 @@ benchlingapi.models.models.Oligo
    
       ~Oligo.__init__
       ~Oligo.bulk_create
-      ~Oligo.camelize
       ~Oligo.copy
       ~Oligo.create_model
-      ~Oligo.deserializer
       ~Oligo.dump
       ~Oligo.find
       ~Oligo.find_by_name_in_registry
@@ -29,7 +27,6 @@ benchlingapi.models.models.Oligo
       ~Oligo.load
       ~Oligo.load_many
       ~Oligo.move
-      ~Oligo.path
       ~Oligo.print_valid_schemas
       ~Oligo.register
       ~Oligo.register_and_save_name_as_alias
@@ -38,10 +35,7 @@ benchlingapi.models.models.Oligo
       ~Oligo.reload
       ~Oligo.save
       ~Oligo.save_json
-      ~Oligo.serialization_schema
-      ~Oligo.serializer
       ~Oligo.set_schema
-      ~Oligo.tableize
       ~Oligo.unregister
       ~Oligo.valid_schemas
    

@@ -4,7 +4,22 @@ Session (:mod:`benchlingapi.session`)
 
 .. currentmodule:: benchlingapi.session
 
-Main entrypoint for the benchling api.
+Main entrypoint for the benchling api. To open a session,
+use your *Benchling-provided API key*. From there, you
+can access the session-enabled models:
+
+.. code-block:: python
+
+    from benchlingapi import Session
+
+    session = Session("asdfe8iunaoerhgoaher")
+    session.DNASequence
+    session.AASequence
+    session.Oligo
+    session.Registry
+
+For more information on the models and their methods, see the
+:ref:`API model docs <api_models>`
 """
 from functools import partial
 from functools import wraps

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>benchlingapi.models.schema &#8212; benchlingapi 2.0.2a documentation</title>
+    <title>benchlingapi.models.schema &#8212; benchlingapi 2.0.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
@@ -37,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.0.2a</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.0.0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -89,6 +89,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../exceptions.html">Exceptions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.exceptions</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../utils.html">Utilities (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.utils</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">Change log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#a">2.0.0a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id1">1.0.0</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a><ul>
@@ -139,22 +144,23 @@
     <div class="body col-md-12 content" role="main">
       
   <h1>Source code for benchlingapi.models.schema</h1><div class="highlight"><pre>
-<span></span>&quot;&quot;&quot;
-Model serialization/deserialization classes
-&quot;&quot;&quot;
-
+<span></span>&quot;&quot;&quot;Model serialization/deserialization classes.&quot;&quot;&quot;
 import re
 
-from marshmallow import Schema, post_load, post_dump, validate, INCLUDE
 from marshmallow import fields as mfields
+from marshmallow import INCLUDE
+from marshmallow import post_dump
+from marshmallow import post_load
+from marshmallow import Schema
+from marshmallow import validate
 
 
-class ModelSchemaMixin(object):
-    &quot;&quot;&quot;Loads model from the Schema name&quot;&quot;&quot;
+class ModelSchemaMixin:
+    &quot;&quot;&quot;Loads model from the Schema name.&quot;&quot;&quot;
 
     @classmethod
     def get_model_name(cls):
-        return re.match(&quot;(\w+)Schema&quot;, cls.__name__).group(1)
+        return re.match(r&quot;(\w+)Schema&quot;, cls.__name__).group(1)
 
     # @classmethod
     # def get_model(cls):

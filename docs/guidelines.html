@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Contributing &#8212; benchlingapi 2.0.2a documentation</title>
+    <title>Contributing &#8212; benchlingapi 2.0.0 documentation</title>
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -38,7 +38,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.0.2a</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.0.0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -90,6 +90,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.exceptions</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.utils</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer/changelog.html">Change log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/changelog.html#a">2.0.0a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/changelog.html#id1">1.0.0</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
@@ -165,10 +170,9 @@ names. Implement methods using the
 </div>
 <div class="section" id="running-tests">
 <h2>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this headline">¶</a></h2>
-<p>To run pytests, some api credentials are needed. To run
-tests, add a file <cite>tests/secrets/config.json</cite> containing, your
-cretentials, an example sharelink, an example project,
-an example trash_folder, and an example inventory_folder.</p>
+<p>Testing is done using <cite>pytest</cite>. Tests will create live requests to a Benchling account.
+Since testing is done live, a Benchling account will need to be setup along with testing
+data.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;credentials&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;api_key&quot;</span><span class="p">:</span> <span class="s2">&quot;asdasdfadsfaghrhrha&quot;</span>
@@ -188,6 +192,12 @@ an example trash_folder, and an example inventory_folder.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>On the Benchling side of things, in the account liked to the <cite>credentials[“api_key”]</cite>, you must
+have a project corresponding to the <cite>project[“name”]</cite> value above. Within this project, you should
+have two folder corresponding to the <cite>trash_folder</cite> and <cite>inventory_folder</cite> values above. Additionally,
+you should have at least one example of an AminoAcid, DNASequence, CustomEntity, and Oligo stored within
+your <cite>inventory_folder</cite>. Tests will copy the examples from the <cite>inventory_folder</cite> for downstream tests.
+After the tests, conclude, inventory in the <cite>trash_folder</cite> will get archived.</p>
 </div>
 </div>
 

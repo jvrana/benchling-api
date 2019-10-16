@@ -584,4 +584,136 @@ interactions:
     status:
       code: 201
       message: CREATED
+- request:
+    body: '{"folderId": "lib_rdWSmOmk", "bases": "AGTAGCATG", "name": "MyOligo"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '69'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOMk5pWW1GaE1tVXRaR1V4TUMwME9EWTRMV0l4TVdZdE1qVm1ZV1l6WkRBM01qYzMifX0.EIggJQ.b-B2Inf1eGGnO9C4r988oFx3DGw
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/oligos
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"archiveRecord\": null,\n  \"authors\": [\n
+        \   {\n      \"handle\": \"uwbiofab\",\n      \"id\": \"ent_opWGVHRa\",\n
+        \     \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\": \"AGTAGCATG\",\n
+        \ \"createdAt\": \"2019-10-16T03:29:41.500329+00:00\",\n  \"creator\": {\n
+        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
+        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"entityRegistryId\": null,\n
+        \ \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n  \"id\": \"seq_RG0XpeRG\",\n
+        \ \"length\": 9,\n  \"modifiedAt\": \"2019-10-16T03:29:41.586124+00:00\",\n
+        \ \"name\": \"MyOligo\",\n  \"registryId\": null,\n  \"schema\": null,\n  \"webURL\":
+        \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_RG0XpeRG-myoligo/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '674'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 03:29:41 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/oligos/seq_RG0XpeRG
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOMk5pWW1GaE1tVXRaR1V4TUMwME9EWTRMV0l4TVdZdE1qVm1ZV1l6WkRBM01qYzMifX0.EIggJQ.b-B2Inf1eGGnO9C4r988oFx3DGw;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
+- request:
+    body: '{"folderId": "lib_rdWSmOmk", "name": "MyOligo", "bases": "AGTAGCATG"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '69'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZekZqT1RGbVpXWXRaV00xTlMwMFlqSXpMV0k1TWpNdFptTTRPR0k0TWprMll6UTAifX0.EIgjBg.ji28sJUEOQttqox7N9BXkjhoLuI
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/oligos
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"archiveRecord\": null,\n  \"authors\": [\n
+        \   {\n      \"handle\": \"uwbiofab\",\n      \"id\": \"ent_opWGVHRa\",\n
+        \     \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\": \"AGTAGCATG\",\n
+        \ \"createdAt\": \"2019-10-16T03:41:58.685847+00:00\",\n  \"creator\": {\n
+        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
+        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"entityRegistryId\": null,\n
+        \ \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n  \"id\": \"seq_yOcYLkFv\",\n
+        \ \"length\": 9,\n  \"modifiedAt\": \"2019-10-16T03:41:58.777128+00:00\",\n
+        \ \"name\": \"MyOligo\",\n  \"registryId\": null,\n  \"schema\": null,\n  \"webURL\":
+        \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_yOcYLkFv-myoligo/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '674'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 03:41:58 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/oligos/seq_yOcYLkFv
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZekZqT1RGbVpXWXRaV00xTlMwMFlqSXpMV0k1TWpNdFptTTRPR0k0TWprMll6UTAifX0.EIgjBg.ji28sJUEOQttqox7N9BXkjhoLuI;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
 version: 1

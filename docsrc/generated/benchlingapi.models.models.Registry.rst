@@ -15,15 +15,14 @@ benchlingapi.models.models.Registry
    
       ~Registry.__init__
       ~Registry.all
-      ~Registry.camelize
       ~Registry.copy
-      ~Registry.deserializer
       ~Registry.dump
       ~Registry.find
       ~Registry.find_by_name
       ~Registry.find_from_schema_id
       ~Registry.find_in_registry
       ~Registry.find_registry
+      ~Registry.first
       ~Registry.get
       ~Registry.get_entities
       ~Registry.get_schema
@@ -33,14 +32,10 @@ benchlingapi.models.models.Registry
       ~Registry.load
       ~Registry.load_many
       ~Registry.one
-      ~Registry.path
       ~Registry.register
       ~Registry.register_entities
       ~Registry.reload
       ~Registry.search
-      ~Registry.serialization_schema
-      ~Registry.serializer
-      ~Registry.tableize
       ~Registry.unregister
       ~Registry.unregister_entities
    

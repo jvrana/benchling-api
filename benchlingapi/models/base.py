@@ -152,7 +152,8 @@ class ModelBaseABC:
         # TODO: change for marshmallow > v3
         insts = cls._deserializer(schema_inst, data)
         for inst_data, inst in zip(data, insts):
-            inst.raw = inst_data
+            if issubclass(type(inst), ModelBase):
+                inst.raw = inst_data
         return insts
 
     @classmethod

@@ -2,9 +2,13 @@
 
 The (unofficial) python API wrapper for Benchling.
 
-## Getting Started
+## Installation
 
-`pip install benchlingapi`
+```
+pip install benchlingapi -U
+```
+
+## Getting Started
 
 `api = Session("your_secret_benchling_api_key")`
 

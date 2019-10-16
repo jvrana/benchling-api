@@ -1,7 +1,24 @@
+:github_url: |homepage|
+
+
 Python BenchlingAPI
 ===================
+Github: |homepage|
 
 The unofficial python Benchling API.
+
+.. code-block::
+
+    pip install benchlingapi -U
+
+.. code-block:: python
+
+    from benchlingapi import Session
+
+    api_key = 'aksdj45ywe5yey5y'
+    session = Session(api_key)
+    seq = session.DNASequence.last()
+    print(seq.dump())
 
 API Reference
 -------------
@@ -13,6 +30,7 @@ API Reference
    models
    exceptions
    utils
+   developer/changelog
 
 
 User Documentation

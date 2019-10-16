@@ -14,17 +14,11 @@ benchlingapi.models.models.EntitySchema
    .. autosummary::
    
       ~EntitySchema.__init__
-      ~EntitySchema.camelize
       ~EntitySchema.copy
-      ~EntitySchema.deserializer
       ~EntitySchema.dump
       ~EntitySchema.load
       ~EntitySchema.load_many
-      ~EntitySchema.path
       ~EntitySchema.reload
-      ~EntitySchema.serialization_schema
-      ~EntitySchema.serializer
-      ~EntitySchema.tableize
    
    
 

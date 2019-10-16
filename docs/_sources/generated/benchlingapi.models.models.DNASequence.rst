@@ -20,15 +20,14 @@ benchlingapi.models.models.DNASequence
       ~DNASequence.archive_many
       ~DNASequence.batches
       ~DNASequence.bulk_create
-      ~DNASequence.camelize
       ~DNASequence.copy
       ~DNASequence.create_model
-      ~DNASequence.deserializer
       ~DNASequence.dump
       ~DNASequence.find
       ~DNASequence.find_by_name
       ~DNASequence.find_by_name_in_registry
       ~DNASequence.find_in_registry
+      ~DNASequence.first
       ~DNASequence.from_share_link
       ~DNASequence.get
       ~DNASequence.get_in_registry
@@ -42,7 +41,6 @@ benchlingapi.models.models.DNASequence
       ~DNASequence.move
       ~DNASequence.one
       ~DNASequence.open
-      ~DNASequence.path
       ~DNASequence.print_valid_schemas
       ~DNASequence.register
       ~DNASequence.register_and_save_name_as_alias
@@ -52,10 +50,7 @@ benchlingapi.models.models.DNASequence
       ~DNASequence.save
       ~DNASequence.save_json
       ~DNASequence.search
-      ~DNASequence.serialization_schema
-      ~DNASequence.serializer
       ~DNASequence.set_schema
-      ~DNASequence.tableize
       ~DNASequence.unarchive
       ~DNASequence.unarchive_many
       ~DNASequence.unregister

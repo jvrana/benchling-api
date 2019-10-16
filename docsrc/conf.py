@@ -116,10 +116,18 @@ html_context = {
     "aquarium_page": "https://www.aquarium.bio/",
     "display_github": True,  # Integrate GitHub
     "github_user": "jvrana",  # Username
-    "github_repo": "benchlingapi-dna-design",  # Repo name
+    "github_repo": "benchlingapi",  # Repo name
     "github_version": "master",  # Version
     "conf_py_path": "./",  # Path in the checkout to the docs root
 }
+
+# substitutations for the docsrc
+substitutions = {"homepage": benchlingapi.__homepage__, "repo": benchlingapi.__repo__}
+
+rst_epilog = "\n".join(
+    ".. |{k}| replace:: {v}".format(k=k, v=v) for k, v in substitutions.items()
+)
+
 
 # -- Options for HTML output ----------------------------------------------
 

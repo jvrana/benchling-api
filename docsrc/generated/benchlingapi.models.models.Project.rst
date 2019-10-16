@@ -17,12 +17,11 @@ benchlingapi.models.models.Project
       ~Project.all
       ~Project.archive
       ~Project.archive_many
-      ~Project.camelize
       ~Project.copy
-      ~Project.deserializer
       ~Project.dump
       ~Project.find
       ~Project.find_by_name
+      ~Project.first
       ~Project.get
       ~Project.last
       ~Project.list
@@ -30,12 +29,8 @@ benchlingapi.models.models.Project
       ~Project.load
       ~Project.load_many
       ~Project.one
-      ~Project.path
       ~Project.reload
       ~Project.search
-      ~Project.serialization_schema
-      ~Project.serializer
-      ~Project.tableize
       ~Project.unarchive
       ~Project.unarchive_many
    

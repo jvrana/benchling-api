@@ -20,15 +20,14 @@ benchlingapi.models.models.CustomEntity
       ~CustomEntity.archive_many
       ~CustomEntity.batches
       ~CustomEntity.bulk_create
-      ~CustomEntity.camelize
       ~CustomEntity.copy
       ~CustomEntity.create_model
-      ~CustomEntity.deserializer
       ~CustomEntity.dump
       ~CustomEntity.find
       ~CustomEntity.find_by_name
       ~CustomEntity.find_by_name_in_registry
       ~CustomEntity.find_in_registry
+      ~CustomEntity.first
       ~CustomEntity.get
       ~CustomEntity.get_in_registry
       ~CustomEntity.last
@@ -41,7 +40,6 @@ benchlingapi.models.models.CustomEntity
       ~CustomEntity.move
       ~CustomEntity.one
       ~CustomEntity.open
-      ~CustomEntity.path
       ~CustomEntity.print_valid_schemas
       ~CustomEntity.register
       ~CustomEntity.register_and_save_name_as_alias
@@ -51,10 +49,7 @@ benchlingapi.models.models.CustomEntity
       ~CustomEntity.save
       ~CustomEntity.save_json
       ~CustomEntity.search
-      ~CustomEntity.serialization_schema
-      ~CustomEntity.serializer
       ~CustomEntity.set_schema
-      ~CustomEntity.tableize
       ~CustomEntity.unarchive
       ~CustomEntity.unarchive_many
       ~CustomEntity.unregister

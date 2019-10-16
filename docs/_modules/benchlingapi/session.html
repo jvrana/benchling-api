@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>benchlingapi.session &#8212; benchlingapi 2.0.2a documentation</title>
+    <title>benchlingapi.session &#8212; benchlingapi 2.0.0 documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
@@ -37,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="../../index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.0.2a</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.0.0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -89,6 +89,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../exceptions.html">Exceptions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.exceptions</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utils.html">Utilities (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.utils</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer/changelog.html">Change log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developer/changelog.html#a">2.0.0a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../developer/changelog.html#id1">1.0.0</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a><ul>
@@ -145,26 +150,44 @@ Session (:mod:`benchlingapi.session`)
 
 .. currentmodule:: benchlingapi.session
 
-Main entrypoint for the benchling api.
+Main entrypoint for the benchling api. To open a session,
+use your *Benchling-provided API key*. From there, you
+can access the session-enabled models:
+
+.. code-block:: python
+
+    from benchlingapi import Session
+
+    session = Session(&quot;asdfe8iunaoerhgoaher&quot;)
+    session.DNASequence
+    session.AASequence
+    session.Oligo
+    session.Registry
+
+For more information on the models and their methods, see the
+:ref:`API model docs &lt;api_models&gt;`
 &quot;&quot;&quot;
+from functools import partial
+from functools import wraps
+from typing import Any
+from typing import Generator
+from typing import List
+from typing import Type
 
 import requests
-from benchlingapi.exceptions import (
-    BenchlingAPIException,
-    ModelNotFoundError,
-    exception_dispatch,
-)
-from benchlingapi.models.base import ModelRegistry, ModelBase
+
+from benchlingapi.exceptions import BenchlingAPIException
+from benchlingapi.exceptions import exception_dispatch
+from benchlingapi.exceptions import ModelNotFoundError
+from benchlingapi.models.base import ModelBase
+from benchlingapi.models.base import ModelRegistry
 from benchlingapi.models.models import __all__ as allmodels
-from benchlingapi.utils import url_build, un_underscore_keys
-from functools import partial, wraps
-from typing import List, Type, Generator, Any
+from benchlingapi.utils import un_underscore_keys
+from benchlingapi.utils import url_build
 
 
-<div class="viewcode-block" id="RequestDecorator"><a class="viewcode-back" href="../../session.html#benchlingapi.session.RequestDecorator">[docs]</a>class RequestDecorator(object):
-    &quot;&quot;&quot;
-    Wraps a function to raise error with unexpected request status codes
-    &quot;&quot;&quot;
+<div class="viewcode-block" id="RequestDecorator"><a class="viewcode-back" href="../../session.html#benchlingapi.session.RequestDecorator">[docs]</a>class RequestDecorator:
+    &quot;&quot;&quot;Wraps a function to raise error with unexpected request status codes.&quot;&quot;&quot;
 
     def __init__(self, status_codes):
         if not isinstance(status_codes, list):
@@ -201,10 +224,8 @@ from typing import List, Type, Generator, Any
         return wrapped_f</div>
 
 
-<div class="viewcode-block" id="Http"><a class="viewcode-back" href="../../session.html#benchlingapi.session.Http">[docs]</a>class Http(object):
-    &quot;&quot;&quot;
-    Creates and responds to the Benchling server.
-    &quot;&quot;&quot;
+<div class="viewcode-block" id="Http"><a class="viewcode-back" href="../../session.html#benchlingapi.session.Http">[docs]</a>class Http:
+    &quot;&quot;&quot;Creates and responds to the Benchling server.&quot;&quot;&quot;
 
     TIMEOUT = 30
     HOME = &quot;https://benchling.com/api/v2&quot;
@@ -219,13 +240,14 @@ from typing import List, Type, Generator, Any
         self.delete = RequestDecorator(200)(partial(self.request, &quot;delete&quot;))
         self.patch = RequestDecorator([200, 201])(partial(self.request, &quot;patch&quot;))
 
-    def request(self, method: str, path: str, timeout: int = None,
-                action: str = None, **kwargs) -&gt; Any:
+    def request(
+        self, method: str, path: str, timeout: int = None, action: str = None, **kwargs
+    ) -&gt; Any:
 
-        if &#39;json&#39; in kwargs:
-            kwargs[&#39;json&#39;] = un_underscore_keys(kwargs[&#39;json&#39;])
-        if &#39;params&#39; in kwargs:
-            kwargs[&#39;params&#39;] = un_underscore_keys(kwargs[&#39;params&#39;])
+        if &quot;json&quot; in kwargs:
+            kwargs[&quot;json&quot;] = un_underscore_keys(kwargs[&quot;json&quot;])
+        if &quot;params&quot; in kwargs:
+            kwargs[&quot;params&quot;] = un_underscore_keys(kwargs[&quot;params&quot;])
 
         if timeout is None:
             timeout = self.TIMEOUT
@@ -235,8 +257,9 @@ from typing import List, Type, Generator, Any
             method, url_build(self.HOME, path), timeout=timeout, **kwargs
         )
 
-    def get_pages(self, path: str, timeout: int = None, action: str = None, **kwargs) \
-            -&gt; Generator[Any, None, None]:
+    def get_pages(
+        self, path: str, timeout: int = None, action: str = None, **kwargs
+    ) -&gt; Generator[Any, None, None]:
         get_response = partial(self.get, path, timeout=timeout, action=action)
 
         response = get_response(**kwargs)
@@ -256,9 +279,10 @@ from typing import List, Type, Generator, Any
                 response = None</div>
 
 
-<div class="viewcode-block" id="Session"><a class="viewcode-back" href="../../session.html#benchlingapi.session.Session">[docs]</a>class Session(object):
-    &quot;&quot;&quot;
-    The session object. This serves as the main interface for using the BenchlingAPI.
+<div class="viewcode-block" id="Session"><a class="viewcode-back" href="../../session.html#benchlingapi.session.Session">[docs]</a>class Session:
+    &quot;&quot;&quot;The session object.
+
+    This serves as the main interface for using the BenchlingAPI.
     &quot;&quot;&quot;
 
     def __init__(self, api_key):
@@ -273,35 +297,35 @@ from typing import List, Type, Generator, Any
 
     @property
     def http(self) -&gt; Http:
-        &quot;&quot;&quot;Return the http requester object&quot;&quot;&quot;
+        &quot;&quot;&quot;Return the http requester object.&quot;&quot;&quot;
         return self.__http
 
     @property
     def url(self) -&gt; str:
-        &quot;&quot;&quot;Return home benchling url&quot;&quot;&quot;
+        &quot;&quot;&quot;Return home benchling url.&quot;&quot;&quot;
         return self.__http.HOME
 
 <div class="viewcode-block" id="Session.help"><a class="viewcode-back" href="../../session.html#benchlingapi.session.Session.help">[docs]</a>    def help(self):
-        &quot;&quot;&quot;Print api documentation url&quot;&quot;&quot;
+        &quot;&quot;&quot;Print api documentation url.&quot;&quot;&quot;
         help_url = &quot;https://docs.benchling.com/reference&quot;
         print(&#39;Visit &quot;{}&quot;&#39;.format(help_url))</div>
 
     @property
     def models(self) -&gt; List[str]:
-        &quot;&quot;&quot;List all models&quot;&quot;&quot;
+        &quot;&quot;&quot;List all models.&quot;&quot;&quot;
         return list(ModelRegistry.models.keys())
 
 <div class="viewcode-block" id="Session.set_timeout"><a class="viewcode-back" href="../../session.html#benchlingapi.session.Session.set_timeout">[docs]</a>    def set_timeout(self, timeout_in_seconds: int):
-        &quot;&quot;&quot;Set the request timeout&quot;&quot;&quot;
+        &quot;&quot;&quot;Set the request timeout.&quot;&quot;&quot;
         self.__http.timeout = timeout_in_seconds</div>
 
     @property
     def interfaces(self):
-        &quot;&quot;&quot;List all model interfaces&quot;&quot;&quot;
+        &quot;&quot;&quot;List all model interfaces.&quot;&quot;&quot;
         return self.__interfaces
 
 <div class="viewcode-block" id="Session.interface"><a class="viewcode-back" href="../../session.html#benchlingapi.session.Session.interface">[docs]</a>    def interface(self, model_name) -&gt; Type[ModelBase]:
-        &quot;&quot;&quot;Return a model interface by name&quot;&quot;&quot;
+        &quot;&quot;&quot;Return a model interface by name.&quot;&quot;&quot;
         if model_name not in self.interfaces:
             raise ModelNotFoundError(&#39;No model by name of &quot;{}&quot;&#39;.format(model_name))
         return self.interfaces[model_name]</div></div>

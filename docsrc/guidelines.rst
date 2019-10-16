@@ -19,10 +19,9 @@ names. Implement methods using the
 Running tests
 -------------
 
-To run pytests, some api credentials are needed. To run
-tests, add a file `tests/secrets/config.json` containing, your
-cretentials, an example sharelink, an example project,
-an example trash_folder, and an example inventory_folder.
+Testing is done using `pytest`. Tests will create live requests to a Benchling account.
+Since testing is done live, a Benchling account will need to be setup along with testing
+data.
 
 .. code-block:: json
 
@@ -43,3 +42,10 @@ an example trash_folder, and an example inventory_folder.
         "name": "API_Inventory"
       }
     }
+
+On the Benchling side of things, in the account liked to the `credentials["api_key"]`, you must
+have a project corresponding to the `project["name"]` value above. Within this project, you should
+have two folder corresponding to the `trash_folder` and `inventory_folder` values above. Additionally,
+you should have at least one example of an AminoAcid, DNASequence, CustomEntity, and Oligo stored within
+your `inventory_folder`. Tests will copy the examples from the `inventory_folder` for downstream tests.
+After the tests, conclude, inventory in the `trash_folder` will get archived.

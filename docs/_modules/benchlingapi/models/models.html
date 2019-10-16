@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>benchlingapi.models.models &#8212; benchlingapi 2.0.2a documentation</title>
+    <title>benchlingapi.models.models &#8212; benchlingapi 2.0.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
@@ -37,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.0.2a</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.0.0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -89,6 +89,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../exceptions.html">Exceptions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.exceptions</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../utils.html">Utilities (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.utils</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">Change log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#a">2.0.0a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id1">1.0.0</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a><ul>
@@ -141,20 +146,19 @@
   <h1>Source code for benchlingapi.models.models</h1><div class="highlight"><pre>
 <span></span>import re
 import urllib
+from typing import List
 
 from benchlingapi.exceptions import BenchlingAPIException
-from benchlingapi.models.base import ModelBase, ModelRegistry
-from benchlingapi.models.mixins import (
-    GetMixin,
-    ListMixin,
-    ArchiveMixin,
-    EntityMixin,
-    RegistryMixin,
-    CreateMixin,
-    InventoryMixin,
-    InventoryEntityMixin,
-)
-from typing import List
+from benchlingapi.models.base import ModelBase
+from benchlingapi.models.base import ModelRegistry
+from benchlingapi.models.mixins import ArchiveMixin
+from benchlingapi.models.mixins import CreateMixin
+from benchlingapi.models.mixins import EntityMixin
+from benchlingapi.models.mixins import GetMixin
+from benchlingapi.models.mixins import InventoryEntityMixin
+from benchlingapi.models.mixins import InventoryMixin
+from benchlingapi.models.mixins import ListMixin
+from benchlingapi.models.mixins import RegistryMixin
 
 __all__ = [
     &quot;DNASequence&quot;,
@@ -170,11 +174,9 @@ __all__ = [
     &quot;EntitySchema&quot;,
 ]
 
-# TODO: implement &#39;fields&#39; for CustomEntity
+
 <div class="viewcode-block" id="CustomEntity"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.CustomEntity.html#benchlingapi.models.models.CustomEntity">[docs]</a>class CustomEntity(InventoryEntityMixin, ModelBase):
-    &quot;&quot;&quot;
-    A Benchling CustomEntity model.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;A Benchling CustomEntity model.&quot;&quot;&quot;
 
     ENTITY_TYPE = &quot;custom_entity&quot;
 
@@ -195,7 +197,7 @@ __all__ = [
         name=None,
         schema_id=None,
         schema=None,
-        **kwargs
+        **kwargs,
     ):
         self.aliases = aliases
         self.custom_fields = custom_fields
@@ -208,9 +210,7 @@ __all__ = [
 
 
 <div class="viewcode-block" id="DNASequence"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.DNASequence.html#benchlingapi.models.models.DNASequence">[docs]</a>class DNASequence(InventoryEntityMixin, ModelBase):
-    &quot;&quot;&quot;
-    A model representing Benchling&#39;s DNASequence.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;A model representing Benchling&#39;s DNASequence.&quot;&quot;&quot;
 
     ENTITY_TYPE = &quot;dna_sequence&quot;
 
@@ -257,10 +257,10 @@ __all__ = [
         schema=None,
         translations=None,
         registry_id=None,
-        **kwargs
+        **kwargs,
     ):
-        &quot;&quot;&quot;
-        Initialize
+        &quot;&quot;&quot;Initialize.
+
         :param aliases:
         :param annotations:
         :param bases:
@@ -285,12 +285,13 @@ __all__ = [
         self.translations = translations
         self.schema_id = schema_id
         self.schema = schema
+        self.registry_id = registry_id
         super().__init__(**kwargs)</div>
 
 <div class="viewcode-block" id="DNASequence._opensharelink"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.DNASequence.html#benchlingapi.models.models.DNASequence._opensharelink">[docs]</a>    @staticmethod
     def _opensharelink(share_link):
-        &quot;&quot;&quot;
-        Hacky way to read the contents of a Benchling share link
+        &quot;&quot;&quot;Hacky way to read the contents of a Benchling share link.
+
         :param share_link:
         :return:
         &quot;&quot;&quot;
@@ -300,14 +301,15 @@ __all__ = [
 
 <div class="viewcode-block" id="DNASequence._parseURL"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.DNASequence.html#benchlingapi.models.models.DNASequence._parseURL">[docs]</a>    @staticmethod
     def _parseURL(url):
-        &quot;&quot;&quot;
-        A really hacky way to parse the Benchling api. This may become unstable.
+        &quot;&quot;&quot;A really hacky way to parse the Benchling api. This may become
+        unstable.
+
         :param url:
         :return:
         &quot;&quot;&quot;
         g = re.search(
-            &quot;benchling.com/(?P&lt;user&gt;\w+)/f/(?P&lt;folderid&gt;\w+)&quot;
-            + &quot;-(?P&lt;foldername&gt;\w+)/seq-(?P&lt;seqid&gt;\w+)-(?P&lt;seqname&gt;&quot;
+            r&quot;benchling.com/(?P&lt;user&gt;\w+)/f/(?P&lt;folderid&gt;\w+)&quot;
+            + r&quot;-(?P&lt;foldername&gt;\w+)/seq-(?P&lt;seqid&gt;\w+)-(?P&lt;seqname&gt;&quot;
             + &quot;[a-zA-Z0-9_-]+)&quot;,
             url,
         )
@@ -318,7 +320,10 @@ __all__ = [
 
 <div class="viewcode-block" id="DNASequence.from_share_link"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.DNASequence.html#benchlingapi.models.models.DNASequence.from_share_link">[docs]</a>    @classmethod
     def from_share_link(cls, share_link):
-        &quot;&quot;&quot;Return a DNASequence based on its weblink. Weblink may be a share link or a url&quot;&quot;&quot;
+        &quot;&quot;&quot;Return a DNASequence based on its weblink.
+
+        Weblink may be a share link or a url
+        &quot;&quot;&quot;
         try:
             text = cls._opensharelink(share_link)
             search_pattern = r&quot;seq_\w+&quot;
@@ -332,7 +337,8 @@ __all__ = [
             uniq_ids = list(set(possible_ids))
             if len(uniq_ids) &gt; 1:
                 raise BenchlingAPIException(
-                    &quot;More than one possible sequence id found in sharelink html using search &quot;
+                    &quot;More than one possible sequence id found in sharelink html using&quot;
+                    &quot; search &quot;
                     &quot;pattern {}&quot;.format(search_pattern)
                 )
             seq = uniq_ids[0]
@@ -346,31 +352,43 @@ __all__ = [
         return cls.get(seq)</div>
 
 <div class="viewcode-block" id="DNASequence.list"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.DNASequence.html#benchlingapi.models.models.DNASequence.list">[docs]</a>    @classmethod
-    def list(cls, page_size: int = None,
-             next_token: str = None,
-             sort: str = None,
-             archive_reason: str = None,
-             folder_id: str = None,
-             modified_at: str = None,
-             name: str = None,
-             project_id: str = None,
-             schema_id: str = None,
-             registry_id: str = None,
-             **kwargs
-             ):
-        &quot;&quot;&quot;
-        List :class:`DNASequence` models.
+    def list(
+        cls,
+        page_size: int = None,
+        next_token: str = None,
+        sort: str = None,
+        archive_reason: str = None,
+        folder_id: str = None,
+        modified_at: str = None,
+        name: str = None,
+        project_id: str = None,
+        schema_id: str = None,
+        registry_id: str = None,
+        **kwargs,
+    ):
+        &quot;&quot;&quot;List :class:`DNASequence` models.
 
         :param page_size: Number of results to return. Defaults to 50, maximum of 100.
         :param next_token: Token for pagination
-        :param sort: Method by which to order search results. Valid sorts are modifiedAt (modified time, most recent first) and name (entity name, alphabetical). Optionally add :asc or :desc to specify ascending or descending order. Default is modifiedAt.
-        :param archive_reason: Archive reason. Restricts DNA Sequences to those with the specified archive reason. Use “NOT_ARCHIVED” to filter for unarchived DNA Sequences.
+        :param sort: Method by which to order search results. Valid sorts are
+                    modifiedAt (modified time, most recent first) and name
+                    (entity name, alphabetical). Optionally add :asc or
+                    :desc to specify ascending or descending order.
+                    Default is modifiedAt.
+        :param archive_reason: Archive reason. Restricts DNA Sequences to those with
+                the specified archive reason. Use “NOT_ARCHIVED” to filter for
+                unarchived DNA Sequences.
         :param folder_id: ID of a folder. Restricts results to those in the folder.
-        :param modified_at: Datetime, in RFC 3339 format. Supports the &gt; and &lt; operators. Time zone defaults to UTC. Restricts results to those modified in the specified range. e.g. &gt; 2017-04-30.
-        :param name: Name of a DNA Sequence. Restricts results to those with the specified name.
+        :param modified_at: Datetime, in RFC 3339 format. Supports the &gt; and &lt;
+                    operators. Time zone defaults to UTC. Restricts results to those
+                    modified in the specified range. e.g. &gt; 2017-04-30.
+        :param name: Name of a DNA Sequence. Restricts results to those with the
+                    specified name.
         :param project_id: ID of a project. Restricts results to those in the project.
-        :param schema_id: ID of a schema. Restricts results to those of the specified schema.
-        :param registry_id: ID of a registry. Restricts results to those registered in this registry.
+        :param schema_id: ID of a schema. Restricts results to those of the specified
+                schema.
+        :param registry_id: ID of a registry. Restricts results to those registered in
+                this registry.
         :return:
         &quot;&quot;&quot;
         return super().list(
@@ -384,14 +402,13 @@ __all__ = [
             schema_id=schema_id,
             archive_reason=archive_reason,
             registry_id=registry_id,
-            **kwargs
+            **kwargs,
         )</div></div>
+
 
 # TODO: use alias for parameters
 <div class="viewcode-block" id="AASequence"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.AASequence.html#benchlingapi.models.models.AASequence">[docs]</a>class AASequence(ModelBase, InventoryEntityMixin):
-    &quot;&quot;&quot;
-    A model representing Benchling&#39;s AASequence (protein).
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;A model representing Benchling&#39;s AASequence (protein).&quot;&quot;&quot;
 
     ENTITY_TYPE = &quot;aa_sequence&quot;
     alias = &quot;Protein&quot;
@@ -430,7 +447,7 @@ __all__ = [
         name=None,
         schema_id=None,
         schema=None,
-        **kwargs
+        **kwargs,
     ):
         self.aliases = aliases
         self.amino_acids = amino_acids
@@ -443,32 +460,43 @@ __all__ = [
         super().__init__(**kwargs)</div>
 
 <div class="viewcode-block" id="AASequence.list"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.AASequence.html#benchlingapi.models.models.AASequence.list">[docs]</a>    @classmethod
-    def list(cls, page_size: int = None,
-             next_token: str = None,
-             sort: str = None,
-             amino_acids: str = None,
-             archive_reason: str = None,
-             folder_id: str = None,
-             modified_at: str = None,
-             name: str = None,
-             project_id: str = None,
-             schema_id: str = None,
-             registry_id: str = None,
-             **kwargs
-             ):
-        &quot;&quot;&quot;
-        List :class:`AASequence` models.
+    def list(
+        cls,
+        page_size: int = None,
+        next_token: str = None,
+        sort: str = None,
+        amino_acids: str = None,
+        archive_reason: str = None,
+        folder_id: str = None,
+        modified_at: str = None,
+        name: str = None,
+        project_id: str = None,
+        schema_id: str = None,
+        registry_id: str = None,
+        **kwargs,
+    ):
+        &quot;&quot;&quot;List :class:`AASequence` models.
 
         :param page_size: Number of results to return. Defaults to 50, maximum of 100.
         :param next_token: Token for pagination
-        :param sort: Method by which to order search results. Valid sorts are modifiedAt (modified time, most recent first) and name (entity name, alphabetical). Optionally add :asc or :desc to specify ascending or descending order. Default is modifiedAt.
-        :param archive_reason: Archive reason. Restricts DNA Sequences to those with the specified archive reason. Use “NOT_ARCHIVED” to filter for unarchived DNA Sequences.
+        :param sort: Method by which to order search results. Valid sorts are modifiedAt
+                (modified time, most recent first) and name (entity name, alphabetical).
+                 Optionally add :asc or :desc to specify ascending or descending order.
+                 Default is modifiedAt.
+        :param archive_reason: Archive reason. Restricts DNA Sequences to those with the
+                specified archive reason. Use “NOT_ARCHIVED” to filter for unarchived
+                DNA Sequences.
         :param folder_id: ID of a folder. Restricts results to those in the folder.
-        :param modified_at: Datetime, in RFC 3339 format. Supports the &gt; and &lt; operators. Time zone defaults to UTC. Restricts results to those modified in the specified range. e.g. &gt; 2017-04-30.
-        :param name: Name of a DNA Sequence. Restricts results to those with the specified name.
+        :param modified_at: Datetime, in RFC 3339 format. Supports the &gt; and &lt;
+                operators. Time zone defaults to UTC. Restricts results to those
+                modified in the specified range. e.g. &gt; 2017-04-30.
+        :param name: Name of a DNA Sequence. Restricts results to those with the
+                specified name.
         :param project_id: ID of a project. Restricts results to those in the project.
-        :param schema_id: ID of a schema. Restricts results to those of the specified schema.
-        :param registry_id: ID of a registry. Restricts results to those registered in this registry.
+        :param schema_id: ID of a schema. Restricts results to those of the specified
+                schema.
+        :param registry_id: ID of a registry. Restricts results to those registered in
+                this registry.
         :return:
         &quot;&quot;&quot;
         return super().list(
@@ -483,13 +511,12 @@ __all__ = [
             schema_id=schema_id,
             archive_reason=archive_reason,
             registry_id=registry_id,
-            **kwargs
+            **kwargs,
         )</div></div>
 
+
 class Batch(RegistryMixin, EntityMixin, ModelBase):
-    &quot;&quot;&quot;
-    A model representing a Batch.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;A model representing a Batch.&quot;&quot;&quot;
 
     CREATE_SCHEMA = dict(only=(&quot;entity_id&quot;, &quot;fields&quot;))
 
@@ -502,25 +529,19 @@ class Batch(RegistryMixin, EntityMixin, ModelBase):
 
 
 <div class="viewcode-block" id="Annotation"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Annotation.html#benchlingapi.models.models.Annotation">[docs]</a>class Annotation(ModelBase):
-    &quot;&quot;&quot;
-    A model representing a sequence Annotation.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;A model representing a sequence Annotation.&quot;&quot;&quot;
 
     pass</div>
 
 
 <div class="viewcode-block" id="Translation"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Translation.html#benchlingapi.models.models.Translation">[docs]</a>class Translation(ModelBase):
-    &quot;&quot;&quot;
-    A model representing a protein translation.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;A model representing a protein translation.&quot;&quot;&quot;
 
     pass</div>
 
 
 <div class="viewcode-block" id="Oligo"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Oligo.html#benchlingapi.models.models.Oligo">[docs]</a>class Oligo(GetMixin, CreateMixin, InventoryMixin, RegistryMixin, ModelBase):
-    &quot;&quot;&quot;
-    A model representing an Oligo.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;A model representing an Oligo.&quot;&quot;&quot;
 
     CREATE_SCHEMA = dict(
         only=(
@@ -544,7 +565,7 @@ class Batch(RegistryMixin, EntityMixin, ModelBase):
         name=None,
         schema_id=None,
         schema=None,
-        **kwargs
+        **kwargs,
     ):
         self.aliases = aliases
         self.bases = bases
@@ -558,9 +579,7 @@ class Batch(RegistryMixin, EntityMixin, ModelBase):
 
 
 class Folder(GetMixin, ListMixin, ArchiveMixin, ModelBase):
-    &quot;&quot;&quot;
-    A model representing a Benchling Folder.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;A model representing a Benchling Folder.&quot;&quot;&quot;
 
     def all_entities(self):
         &quot;&quot;&quot;Generator that retrieves all entities in the folder.&quot;&quot;&quot;
@@ -575,35 +594,32 @@ class Folder(GetMixin, ListMixin, ArchiveMixin, ModelBase):
 
 
 <div class="viewcode-block" id="Project"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Project.html#benchlingapi.models.models.Project">[docs]</a>class Project(ListMixin, ArchiveMixin, ModelBase):
-    &quot;&quot;&quot;
-    A model representing a Benchling Project.
-    &quot;&quot;&quot;</div>
+    &quot;&quot;&quot;A model representing a Benchling Project.&quot;&quot;&quot;</div>
 
 
 <div class="viewcode-block" id="EntitySchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.EntitySchema.html#benchlingapi.models.models.EntitySchema">[docs]</a>class EntitySchema(ModelBase):
-    &quot;&quot;&quot;
-    A model representing an EntitySchema.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;A model representing an EntitySchema.&quot;&quot;&quot;
 
     pass</div>
 
 
 <div class="viewcode-block" id="Registry"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Registry.html#benchlingapi.models.models.Registry">[docs]</a>class Registry(ListMixin, ModelBase):
-    &quot;&quot;&quot;
-    A model representing a Benchling Registry.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;A model representing a Benchling Registry.&quot;&quot;&quot;
 
 <div class="viewcode-block" id="Registry.get"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Registry.html#benchlingapi.models.models.Registry.get">[docs]</a>    @classmethod
     def get(cls, id):
-        &quot;&quot;&quot;Get registry by id&quot;&quot;&quot;
+        &quot;&quot;&quot;Get registry by id.&quot;&quot;&quot;
         for r in cls.list():
             if r.id == id:
                 return r</div>
 
 <div class="viewcode-block" id="Registry.find_registry"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Registry.html#benchlingapi.models.models.Registry.find_registry">[docs]</a>    @classmethod
-    def find_registry(cls, id: str = None, name: str = None) -&gt; &#39;Registry&#39;:
-        &quot;&quot;&quot;Finds a registry based on either id or name. If neither is provided and there
-        is only 1 registry, return the only registry.&quot;&quot;&quot;
+    def find_registry(cls, id: str = None, name: str = None) -&gt; &quot;Registry&quot;:
+        &quot;&quot;&quot;Finds a registry based on either id or name.
+
+        If neither is provided and there is only 1 registry, return the
+        only registry.
+        &quot;&quot;&quot;
         if id:
             return cls.get(id)
         elif name:
@@ -615,13 +631,12 @@ class Folder(GetMixin, ListMixin, ArchiveMixin, ModelBase):
 
     @property
     def entity_schemas(self):
-        &quot;&quot;&quot;List schemas&quot;&quot;&quot;
+        &quot;&quot;&quot;List schemas.&quot;&quot;&quot;
         data = self._get([self.id, &quot;entity-schemas&quot;])[&quot;entitySchemas&quot;]
         return EntitySchema.load_many(data)
 
 <div class="viewcode-block" id="Registry.get_schema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Registry.html#benchlingapi.models.models.Registry.get_schema">[docs]</a>    def get_schema(self, name: str = None, id: str = None):
-        &quot;&quot;&quot;
-        Get the schema of the registry.
+        &quot;&quot;&quot;Get the schema of the registry.
 
         :param name: name of the registry
         :param id: id of the registry
@@ -637,7 +652,7 @@ class Folder(GetMixin, ListMixin, ArchiveMixin, ModelBase):
 
 <div class="viewcode-block" id="Registry.find_from_schema_id"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Registry.html#benchlingapi.models.models.Registry.find_from_schema_id">[docs]</a>    @classmethod
     def find_from_schema_id(cls, schema_id):
-        &quot;&quot;&quot;Find registry from a schema id&quot;&quot;&quot;
+        &quot;&quot;&quot;Find registry from a schema id.&quot;&quot;&quot;
         for r in cls.list():
             for schema in r.entity_schemas:
                 if schema[&quot;id&quot;] == schema_id:
@@ -660,15 +675,15 @@ class Folder(GetMixin, ListMixin, ArchiveMixin, ModelBase):
         return cls._post(data, path_params=[registry_id], action=&quot;unregister-entities&quot;)
 
 <div class="viewcode-block" id="Registry.register_entities"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Registry.html#benchlingapi.models.models.Registry.register_entities">[docs]</a>    def register_entities(self, entity_ids: List[str], naming_strategy: str = None):
-        &quot;&quot;&quot;Register entities by their ids&quot;&quot;&quot;
+        &quot;&quot;&quot;Register entities by their ids.&quot;&quot;&quot;
         return self.register(self.id, entity_ids, naming_strategy=naming_strategy)</div>
 
 <div class="viewcode-block" id="Registry.unregister_entities"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Registry.html#benchlingapi.models.models.Registry.unregister_entities">[docs]</a>    def unregister_entities(self, entity_ids, folder_id):
-        &quot;&quot;&quot;Unregister entities by their ids and move them to a new folder&quot;&quot;&quot;
+        &quot;&quot;&quot;Unregister entities by their ids and move them to a new folder.&quot;&quot;&quot;
         return self.unregister(self.id, entity_ids, folder_id)</div>
 
-<div class="viewcode-block" id="Registry.get_entities"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Registry.html#benchlingapi.models.models.Registry.get_entities">[docs]</a>    def get_entities(self, entity_registry_ids: List[str]) -&gt; List[&#39;Registry&#39;]:
-        &quot;&quot;&quot;Get entities by their ids&quot;&quot;&quot;
+<div class="viewcode-block" id="Registry.get_entities"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Registry.html#benchlingapi.models.models.Registry.get_entities">[docs]</a>    def get_entities(self, entity_registry_ids: List[str]) -&gt; List[&quot;Registry&quot;]:
+        &quot;&quot;&quot;Get entities by their ids.&quot;&quot;&quot;
         return self._get(
             [self.id, &quot;registered-entities&quot;],
             action=&quot;bulk-get&quot;,
@@ -676,7 +691,7 @@ class Folder(GetMixin, ListMixin, ArchiveMixin, ModelBase):
         )[&quot;entities&quot;]</div>
 
 <div class="viewcode-block" id="Registry.find_in_registry"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Registry.html#benchlingapi.models.models.Registry.find_in_registry">[docs]</a>    def find_in_registry(self, entity_registry_id) -&gt; ModelBase:
-        &quot;&quot;&quot;Find entity by its id&quot;&quot;&quot;
+        &quot;&quot;&quot;Find entity by its id.&quot;&quot;&quot;
         models = self.get_entities([entity_registry_id])
         if models:
             return models[0]</div></div>

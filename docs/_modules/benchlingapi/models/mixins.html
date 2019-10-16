@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>benchlingapi.models.mixins &#8212; benchlingapi 2.0.2a documentation</title>
+    <title>benchlingapi.models.mixins &#8212; benchlingapi 2.0.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
@@ -37,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.0.2a</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.0.0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -89,6 +89,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../exceptions.html">Exceptions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.exceptions</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../utils.html">Utilities (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.utils</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">Change log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#a">2.0.0a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id1">1.0.0</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a><ul>
@@ -139,20 +144,24 @@
     <div class="body col-md-12 content" role="main">
       
   <h1>Source code for benchlingapi.models.mixins</h1><div class="highlight"><pre>
-<span></span>&quot;&quot;&quot;
-Exposes models to various API endpoints.
-&quot;&quot;&quot;
-
-from benchlingapi.models.base import ModelRegistry, ModelBase, ModelBaseABC
-from benchlingapi.exceptions import BenchlingAPIException, BenchlingServerException
+<span></span>&quot;&quot;&quot;Exposes models to various API endpoints.&quot;&quot;&quot;
 import webbrowser
-from typing import List, Tuple, Any, Union, Generator, Callable
+from typing import Any
+from typing import Callable
+from typing import Generator
+from typing import List
+from typing import Tuple
+from typing import Union
+
+from benchlingapi.exceptions import BenchlingAPIException
+from benchlingapi.exceptions import BenchlingServerException
+from benchlingapi.models.base import ModelBase
+from benchlingapi.models.base import ModelBaseABC
+from benchlingapi.models.base import ModelRegistry
 
 
 class GetMixin(ModelBaseABC):
-    &quot;&quot;&quot;
-    Exposes the `get` and `find` by id methods
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;Exposes the `get` and `find` by id methods.&quot;&quot;&quot;
 
     @classmethod
     def get(cls, id: str, **params) -&gt; ModelBase:
@@ -172,22 +181,22 @@ class GetMixin(ModelBaseABC):
 
 
 class ListMixin(ModelBaseABC):
-    &quot;&quot;&quot;
-    Exposes the methods that return many model instances (e.g. `all`, `list`, `one`, etc.)
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;Exposes the methods that return many model instances (e.g. `all`,
+    `list`, `one`, etc.)&quot;&quot;&quot;
 
     MAX_PAGE_SIZE = 100
 
     @classmethod
     def list(cls, **params) -&gt; List[ModelBase]:
-        &quot;&quot;&quot;List models&quot;&quot;&quot;
+        &quot;&quot;&quot;List models.&quot;&quot;&quot;
         response = cls._get(params=params)
         return cls.load_many(response[cls._camelize()])
 
     @classmethod
-    def list_pages(cls, page_limit: int = None, **params)\
-            -&gt; Generator[List[ModelBase], None, None]:
-        &quot;&quot;&quot;List models by pages&quot;&quot;&quot;
+    def list_pages(
+        cls, page_limit: int = None, **params
+    ) -&gt; Generator[List[ModelBase], None, None]:
+        &quot;&quot;&quot;List models by pages.&quot;&quot;&quot;
         generator = cls._get_pages(params=params)
         response = next(generator, None)
         page_num = 1
@@ -197,9 +206,10 @@ class ListMixin(ModelBaseABC):
             page_num += 1
 
     @classmethod
-    def all(cls, page_limit: int = None, limit: int = None, **params) \
-            -&gt; Generator[ModelBase, None, None]:
-        &quot;&quot;&quot;Return a generator comprising of all models&quot;&quot;&quot;
+    def all(
+        cls, page_limit: int = None, limit: int = None, **params
+    ) -&gt; Generator[ModelBase, None, None]:
+        &quot;&quot;&quot;Return a generator comprising of all models.&quot;&quot;&quot;
         num = 0
         for page in cls.list_pages(page_limit=page_limit, **params):
             for m in page:
@@ -210,8 +220,7 @@ class ListMixin(ModelBaseABC):
 
     @classmethod
     def last(cls, num: int = 1, **params) -&gt; List[ModelBase]:
-        &quot;&quot;&quot;
-        Returns the most recent models.
+        &quot;&quot;&quot;Returns the most recent models.
 
         :param num: number of models to return
         :type num: int
@@ -229,8 +238,7 @@ class ListMixin(ModelBaseABC):
 
     @classmethod
     def first(cls, num: int = 1, **params) -&gt; List[ModelBase]:
-        &quot;&quot;&quot;
-        Returns the most recent models.
+        &quot;&quot;&quot;Returns the most recent models.
 
         :param num: number of models to return
         :type num: int
@@ -248,16 +256,16 @@ class ListMixin(ModelBaseABC):
 
     @classmethod
     def one(cls, **params) -&gt; ModelBase:
-        &quot;&quot;&quot;Returns one model&quot;&quot;&quot;
+        &quot;&quot;&quot;Returns one model.&quot;&quot;&quot;
         models = cls.last(1, **params)
         if models:
             return models[0]
 
     @classmethod
-    def search(cls, fxn: Callable, limit: int = 1, page_limit: int = 5, **params) \
-            -&gt; List[ModelBase]:
-        &quot;&quot;&quot;
-        Search all models such that &#39;fxn&#39; is True.
+    def search(
+        cls, fxn: Callable, limit: int = 1, page_limit: int = 5, **params
+    ) -&gt; List[ModelBase]:
+        &quot;&quot;&quot;Search all models such that &#39;fxn&#39; is True.
 
         :param fxn: function to return model
         :type fxn: callbable
@@ -280,7 +288,7 @@ class ListMixin(ModelBaseABC):
 
     @classmethod
     def find_by_name(cls, name: str, page_limit=5, **params) -&gt; ModelBase:
-        &quot;&quot;&quot;Find a model by name&quot;&quot;&quot;
+        &quot;&quot;&quot;Find a model by name.&quot;&quot;&quot;
         models = cls.search(
             lambda x: x.name == name, limit=1, page_limit=page_limit, **params
         )
@@ -289,27 +297,25 @@ class ListMixin(ModelBaseABC):
 
     @classmethod
     def get(cls, id: str, **params) -&gt; ModelBase:
-        &quot;&quot;&quot;Get a model by id&quot;&quot;&quot;
+        &quot;&quot;&quot;Get a model by id.&quot;&quot;&quot;
         models = cls.search(lambda x: x.id == id, limit=1, **params)
         if models:
             return models[0]
 
     @classmethod
     def find(cls, id, **params):
-        &quot;&quot;&quot;Find a model by id&quot;&quot;&quot;
+        &quot;&quot;&quot;Find a model by id.&quot;&quot;&quot;
         return cls.get(id, **params)
 
 
 class UpdateMixin(ModelBaseABC):
-    &quot;&quot;&quot;
-    Exposes methods to update models on the Benchling server.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;Exposes methods to update models on the Benchling server.&quot;&quot;&quot;
 
     UPDATE_SCHEMA = &quot;NOT IMPLEMENTED&quot;
 
     @classmethod
     def update_model(cls, model_id: str, data: dict, **params) -&gt; ModelBase:
-        &quot;&quot;&quot;Update the model with data&quot;&quot;&quot;
+        &quot;&quot;&quot;Update the model with data.&quot;&quot;&quot;
         response = cls._patch(data, path_params=[model_id], **params)
         return cls.load(response)
 
@@ -319,31 +325,29 @@ class UpdateMixin(ModelBaseABC):
         return self
 
     def update_json(self) -&gt; dict:
-        &quot;&quot;&quot;return the update json for the model instance&quot;&quot;&quot;
+        &quot;&quot;&quot;return the update json for the model instance.&quot;&quot;&quot;
         return self.dump(**dict(self.UPDATE_SCHEMA))
 
     def update(self) -&gt; ModelBase:
-        &quot;&quot;&quot;Update the model instance&quot;&quot;&quot;
+        &quot;&quot;&quot;Update the model instance.&quot;&quot;&quot;
         data = self.update_json()
         return self._update_from_data(data)
 
 
 class CreateMixin(ModelBaseABC):
-    &quot;&quot;&quot;
-    Exposes methods that create new models on the Benchling server.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;Exposes methods that create new models on the Benchling server.&quot;&quot;&quot;
 
     CREATE_SCHEMA = &quot;Not implemented&quot;
 
     @classmethod
     def create_model(cls, data: dict, **params) -&gt; ModelBase:
-        &quot;&quot;&quot;Create model from data&quot;&quot;&quot;
+        &quot;&quot;&quot;Create model from data.&quot;&quot;&quot;
         response = cls._post(data, **params)
         return cls.load(response)
 
     @classmethod
     def bulk_create(cls, model_data: dict, **params) -&gt; List[ModelBase]:
-        &quot;&quot;&quot;Create many models from a list of data&quot;&quot;&quot;
+        &quot;&quot;&quot;Create many models from a list of data.&quot;&quot;&quot;
         response = cls._post(model_data, action=&quot;bulk-create&quot;, **params)
         return cls.load_many(response)
 
@@ -353,24 +357,23 @@ class CreateMixin(ModelBaseABC):
         return self
 
     def save_json(self) -&gt; dict:
-        &quot;&quot;&quot;Return the save json for this model instance&quot;&quot;&quot;
+        &quot;&quot;&quot;Return the save json for this model instance.&quot;&quot;&quot;
         data = self.dump(**self.CREATE_SCHEMA)
         return data
 
     # TODO: remove schema_dumper with marshmallow &gt; 3
     def save(self) -&gt; ModelBase:
-        &quot;&quot;&quot;Save this model to Benchling&quot;&quot;&quot;
+        &quot;&quot;&quot;Save this model to Benchling.&quot;&quot;&quot;
         data = self.save_json()
         return self._create_from_data(data)
 
 
 class ArchiveMixin(ModelBaseABC):
-    &quot;&quot;&quot;
-    Exposes archiving and unarchiving methods
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;Exposes archiving and unarchiving methods.&quot;&quot;&quot;
 
     class ARCHIVE_REASONS:
-        &quot;&quot;&quot;Reasons for archival&quot;&quot;&quot;
+        &quot;&quot;&quot;Reasons for archival.&quot;&quot;&quot;
+
         ERROR = &quot;Made in error&quot;
         RETIRED = &quot;Retired&quot;
         EXPENDED = &quot;Expended&quot;
@@ -394,12 +397,12 @@ class ArchiveMixin(ModelBaseABC):
 
     @classmethod
     def archive_many(cls, model_ids: List[str], reason=ARCHIVE_REASONS.DEFAULT) -&gt; Any:
-        &quot;&quot;&quot;
-        Archive many models by their ids
+        &quot;&quot;&quot;Archive many models by their ids.
 
         :param model_ids: list of ids
         :type model_ids: list
-        :param reason: reason for archival (default &quot;Other&quot;). Select from `model.ARCHIVE_REASONS`
+        :param reason: reason for archival (default &quot;Other&quot;). Select from
+                        `model.ARCHIVE_REASONS`
         :type reason: basestring
         :return: list of models archived
         :rtype: list
@@ -413,8 +416,7 @@ class ArchiveMixin(ModelBaseABC):
 
     @classmethod
     def unarchive_many(cls, model_ids: List[str]) -&gt; Any:
-        &quot;&quot;&quot;
-        Unarchive many models by their ids
+        &quot;&quot;&quot;Unarchive many models by their ids.
 
         :param model_ids: list of ids
         :type model_ids: list
@@ -425,10 +427,10 @@ class ArchiveMixin(ModelBaseABC):
         return cls._post(action=&quot;unarchive&quot;, data={key: model_ids})
 
     def archive(self, reason=ARCHIVE_REASONS.DEFAULT) -&gt; ModelBase:
-        &quot;&quot;&quot;
-        Archive model instance
+        &quot;&quot;&quot;Archive model instance.
 
-        :param reason: reason for archival (default &quot;Other&quot;). Select from `model.ARCHIVE_REASONS`
+        :param reason: reason for archival (default &quot;Other&quot;). Select from
+                        `model.ARCHIVE_REASONS`
         :type reason: basestring
         :return:
         :rtype:
@@ -438,8 +440,7 @@ class ArchiveMixin(ModelBaseABC):
         return self
 
     def unarchive(self) -&gt; ModelBase:
-        &quot;&quot;&quot;
-        Unarchive the model instance.
+        &quot;&quot;&quot;Unarchive the model instance.
 
         :return: model instance
         :rtype: self
@@ -457,35 +458,38 @@ class ArchiveMixin(ModelBaseABC):
 
     @property
     def archive_reason(self) -&gt; str:
-        &quot;&quot;&quot;Return the archive reason. Return None if not archived.&quot;&quot;&quot;
+        &quot;&quot;&quot;Return the archive reason.
+
+        Return None if not archived.
+        &quot;&quot;&quot;
         if self.is_archived:
             return self.archive_reason[&quot;reason&quot;]
 
 
 class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
-    &quot;&quot;&quot;
-    Entity methods (includes get, list, create, update)
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;Entity methods (includes get, list, create, update)&quot;&quot;&quot;
 
     @classmethod
     def find_by_name(cls, name: str, **params) -&gt; ModelBase:
-        &quot;&quot;&quot;Find entity by name&quot;&quot;&quot;
+        &quot;&quot;&quot;Find entity by name.&quot;&quot;&quot;
         models = cls.list(name=name, **params)
         if models:
             return models[0]
 
     def batches(self) -&gt; ModelBase:
-        &quot;&quot;&quot;Get an entities batches&quot;&quot;&quot;
+        &quot;&quot;&quot;Get an entities batches.&quot;&quot;&quot;
         result = self.session.http.get(self._url_build(&quot;entities&quot;, self.id, &quot;batches&quot;))
         return ModelRegistry.get_model(&quot;Batch&quot;).load_many(result[&quot;batches&quot;])
 
     @classmethod
-    def list_archived(cls, reason: str = ArchiveMixin.ARCHIVE_REASONS.OTHER) -&gt; List[ModelBase]:
-        &quot;&quot;&quot;List archived entities&quot;&quot;&quot;
+    def list_archived(
+        cls, reason: str = ArchiveMixin.ARCHIVE_REASONS.OTHER
+    ) -&gt; List[ModelBase]:
+        &quot;&quot;&quot;List archived entities.&quot;&quot;&quot;
         return cls.list(archiveReason=reason)
 
     def add_alias(self, name: str) -&gt; ModelBase:
-        &quot;&quot;&quot;Add an alias to the entity&quot;&quot;&quot;
+        &quot;&quot;&quot;Add an alias to the entity.&quot;&quot;&quot;
         if name not in self.aliases:
             self.aliases.append(name)
         return self
@@ -496,13 +500,10 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
 
 
 class InventoryMixin(ModelBaseABC):
-    &quot;&quot;&quot;
-    Designates model as having a folderId
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;Designates model as having a folderId.&quot;&quot;&quot;
 
     def move(self, folder_id: str) -&gt; ModelBase:
-        &quot;&quot;&quot;
-        Move the entity to a new benchling folder
+        &quot;&quot;&quot;Move the entity to a new benchling folder.
 
         :param folder_id: the folder id to move entity to
         :type folder_id: basestring
@@ -515,14 +516,13 @@ class InventoryMixin(ModelBaseABC):
 
 
 class RegistryMixin(ModelBaseABC):
-    &quot;&quot;&quot;
-    Mixin that allows entities to be registered or unregistered.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;Mixin that allows entities to be registered or unregistered.&quot;&quot;&quot;
 
     ENTITY_TYPE = &quot;unknown&quot;
 
     class NAMING_STRATEGY:
-        &quot;&quot;&quot;Naming strategy&quot;&quot;&quot;
+        &quot;&quot;&quot;Naming strategy.&quot;&quot;&quot;
+
         NEW_IDS = &quot;NEW_IDS&quot;
         IDS_FROM_NAMES = &quot;IDS_FROM_NAMES&quot;
         DELETE_NAMES = &quot;DELETE NAMES&quot;
@@ -532,7 +532,8 @@ class RegistryMixin(ModelBaseABC):
 
     @property
     def registry(self) -&gt; ModelBase:
-        &quot;&quot;&quot;Return the :class:`models.Registry` that this entity is contained in&quot;&quot;&quot;
+        &quot;&quot;&quot;Return the :class:`models.Registry` that this entity is contained
+        in.&quot;&quot;&quot;
         return self.session.Registry.get(self.registry_id)
 
     @classmethod
@@ -541,7 +542,7 @@ class RegistryMixin(ModelBaseABC):
 
     @classmethod
     def valid_schemas(cls):
-        &quot;&quot;&quot;Return valid schemas for this model class&quot;&quot;&quot;
+        &quot;&quot;&quot;Return valid schemas for this model class.&quot;&quot;&quot;
         valid = []
         for r in cls.session.Registry.list():
             valid += [
@@ -550,13 +551,13 @@ class RegistryMixin(ModelBaseABC):
         return valid
 
     def print_valid_schemas(self):
-        &quot;&quot;&quot;Print available valid schemas for this model instance&quot;&quot;&quot;
+        &quot;&quot;&quot;Print available valid schemas for this model instance.&quot;&quot;&quot;
         schemas = self.valid_schemas()
         for r, s in schemas:
             print(&quot;Registry {} id={} -- {}&quot;.format(r.name, r.id, s[&quot;name&quot;]))
 
     def set_schema(self, schema_name):
-        &quot;&quot;&quot;Set the schema for this model instance&quot;&quot;&quot;
+        &quot;&quot;&quot;Set the schema for this model instance.&quot;&quot;&quot;
         schema = None
         valid_schemas = self.valid_schemas()
         if not valid_schemas:
@@ -576,14 +577,17 @@ class RegistryMixin(ModelBaseABC):
         self.update()
 
     def register(self, naming_strategy=NAMING_STRATEGY.DEFAULT):
-        &quot;&quot;&quot;
-        Register this instance
+        &quot;&quot;&quot;Register this instance.
 
         :param naming_strategy: naming strategy for registry.
-            - NEW_IDS (default): Generates new registry IDs, and leaves entity name as-is
+            - NEW_IDS (default): Generates new registry IDs, and leaves entity name
+                as-is
             - IDS_FROM_NAMES: Converts names into registry IDs
-            - DELETE_NAMES: Generates new registry IDs and sets entity name to new registry ID, and does not keep old names as aliases
-            - SET_FROM_NAME_PARTS: Generates new registry IDs and generates new entity name based on the entity schema&#39;s name template, if it has one.
+            - DELETE_NAMES: Generates new registry IDs and sets entity name to
+                new registry ID, and does not keep old names as aliases
+            - SET_FROM_NAME_PARTS: Generates new registry IDs and generates
+                new entity name based on the entity schema&#39;s name template, if it has
+                one.
         :type naming_strategy:
         :return: model instance
         :rtype: Model
@@ -602,8 +606,7 @@ class RegistryMixin(ModelBaseABC):
         return self
 
     def unregister(self, folder_id=None):
-        &quot;&quot;&quot;
-        Unregister the instance
+        &quot;&quot;&quot;Unregister the instance.
 
         :param folder_id: folder to move unregistered instance to
         :type folder_id: basestring
@@ -618,8 +621,7 @@ class RegistryMixin(ModelBaseABC):
 
     # TODO: test this method
     def register_with_custom_id(self, id):
-        &quot;&quot;&quot;
-        Register the instance with a custom id
+        &quot;&quot;&quot;Register the instance with a custom id.
 
         :param id: custom registry id for the newly registered instance
         :type id: basestring
@@ -640,8 +642,7 @@ class RegistryMixin(ModelBaseABC):
 
     # TODO: test this method
     def register_and_save_name_as_alias(self):
-        &quot;&quot;&quot;
-        Register the instance, automatically generating a new id and setting
+        &quot;&quot;&quot;Register the instance, automatically generating a new id and setting
         the instance name to the new id. Save the old name as an alias.
 
         :return: instance
@@ -655,7 +656,7 @@ class RegistryMixin(ModelBaseABC):
 
     @property
     def is_registered(self):
-        &quot;&quot;&quot;Check if instance is registered&quot;&quot;&quot;
+        &quot;&quot;&quot;Check if instance is registered.&quot;&quot;&quot;
         if hasattr(self, &quot;registry_id&quot;) and self.registry_id is not None:
             if hasattr(self, &quot;new_registry_id&quot;):
                 if self.new_registry_id != self.registry_id:
@@ -665,8 +666,7 @@ class RegistryMixin(ModelBaseABC):
 
     @classmethod
     def list_in_registry(cls, registry_id=None, registry_name=None, **params):
-        &quot;&quot;&quot;
-        List all instances contained in the registry.
+        &quot;&quot;&quot;List all instances contained in the registry.
 
         :param registry_id: registery id. If none, &#39;registry_name&#39; must be provided.
         :type registry_id: basestring
@@ -685,8 +685,7 @@ class RegistryMixin(ModelBaseABC):
 
     @classmethod
     def registry_dict(cls, registry_id=None, registry_name=None, **params):
-        &quot;&quot;&quot;
-        Return a dictionary of registry ids to entities.
+        &quot;&quot;&quot;Return a dictionary of registry ids to entities.
 
         :param registry_id: registery id. If none, &#39;registry_name&#39; must be provided.
         :type registry_id: basestring
@@ -706,8 +705,7 @@ class RegistryMixin(ModelBaseABC):
     def find_by_name_in_registry(
         cls, name, registry_id=None, registry_name=None, **params
     ):
-        &quot;&quot;&quot;
-        Find entity by name in a registry
+        &quot;&quot;&quot;Find entity by name in a registry.
 
         :param name: name of entity
         :type basestring
@@ -727,10 +725,13 @@ class RegistryMixin(ModelBaseABC):
             return models[0]
 
     @classmethod
-    def get_in_registry(cls, entity_registry_ids: List[str], registry_id: str = None,
-                        registry_name: str = None) -&gt; List[ModelBase]:
-        &quot;&quot;&quot;
-        Get entities from a registry by their ids
+    def get_in_registry(
+        cls,
+        entity_registry_ids: List[str],
+        registry_id: str = None,
+        registry_name: str = None,
+    ) -&gt; List[ModelBase]:
+        &quot;&quot;&quot;Get entities from a registry by their ids.
 
         :param entity_registry_ids: list of entity registry ids
         :type entity_registry_ids: list
@@ -748,10 +749,10 @@ class RegistryMixin(ModelBaseABC):
         return cls.load_many(entity_data)
 
     @classmethod
-    def find_in_registry(cls, entity_registry_id: str, registry_id: str = None,
-                         registry_name: str = None):
-        &quot;&quot;&quot;
-        Get an entity from a registry by their ids
+    def find_in_registry(
+        cls, entity_registry_id: str, registry_id: str = None, registry_name: str = None
+    ):
+        &quot;&quot;&quot;Get an entity from a registry by their ids.
 
         :param entity_registry_id: entity registry id
         :type entity_registry_id: basestring
@@ -771,8 +772,9 @@ class RegistryMixin(ModelBaseABC):
 
 
 class InventoryEntityMixin(InventoryMixin, RegistryMixin, EntityMixin):
-    &quot;&quot;&quot;
-    Mixin for :class:`DNASequence`, :class:`AASequence`, and :class:`CustomEntity`
+    &quot;&quot;&quot;Mixin for :class:`DNASequence`, :class:`AASequence`, and.
+
+    :class:`CustomEntity`
     &quot;&quot;&quot;
 
     pass

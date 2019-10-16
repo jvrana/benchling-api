@@ -14,17 +14,11 @@ benchlingapi.models.models.Translation
    .. autosummary::
    
       ~Translation.__init__
-      ~Translation.camelize
       ~Translation.copy
-      ~Translation.deserializer
       ~Translation.dump
       ~Translation.load
       ~Translation.load_many
-      ~Translation.path
       ~Translation.reload
-      ~Translation.serialization_schema
-      ~Translation.serializer
-      ~Translation.tableize
    
    
 

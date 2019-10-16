@@ -20,15 +20,14 @@ benchlingapi.models.models.AASequence
       ~AASequence.archive_many
       ~AASequence.batches
       ~AASequence.bulk_create
-      ~AASequence.camelize
       ~AASequence.copy
       ~AASequence.create_model
-      ~AASequence.deserializer
       ~AASequence.dump
       ~AASequence.find
       ~AASequence.find_by_name
       ~AASequence.find_by_name_in_registry
       ~AASequence.find_in_registry
+      ~AASequence.first
       ~AASequence.get
       ~AASequence.get_in_registry
       ~AASequence.last
@@ -41,7 +40,6 @@ benchlingapi.models.models.AASequence
       ~AASequence.move
       ~AASequence.one
       ~AASequence.open
-      ~AASequence.path
       ~AASequence.print_valid_schemas
       ~AASequence.register
       ~AASequence.register_and_save_name_as_alias
@@ -51,10 +49,7 @@ benchlingapi.models.models.AASequence
       ~AASequence.save
       ~AASequence.save_json
       ~AASequence.search
-      ~AASequence.serialization_schema
-      ~AASequence.serializer
       ~AASequence.set_schema
-      ~AASequence.tableize
       ~AASequence.unarchive
       ~AASequence.unarchive_many
       ~AASequence.unregister

@@ -14,17 +14,11 @@ benchlingapi.models.models.Annotation
    .. autosummary::
    
       ~Annotation.__init__
-      ~Annotation.camelize
       ~Annotation.copy
-      ~Annotation.deserializer
       ~Annotation.dump
       ~Annotation.load
       ~Annotation.load_many
-      ~Annotation.path
       ~Annotation.reload
-      ~Annotation.serialization_schema
-      ~Annotation.serializer
-      ~Annotation.tableize
    
    
 

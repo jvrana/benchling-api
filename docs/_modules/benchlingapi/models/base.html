@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>benchlingapi.models.base &#8212; benchlingapi 2.0.2a documentation</title>
+    <title>benchlingapi.models.base &#8212; benchlingapi 2.0.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
@@ -37,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.0.2a</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.0.0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -89,6 +89,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../exceptions.html">Exceptions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.exceptions</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../utils.html">Utilities (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.utils</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">Change log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#a">2.0.0a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id1">1.0.0</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a><ul>
@@ -139,10 +144,7 @@
     <div class="body col-md-12 content" role="main">
       
   <h1>Source code for benchlingapi.models.base</h1><div class="highlight"><pre>
-<span></span>&quot;&quot;&quot;
-The base model class and registry for all model instances.
-&quot;&quot;&quot;
-
+<span></span>&quot;&quot;&quot;The base model class and registry for all model instances.&quot;&quot;&quot;
 import inspect
 from distutils.version import LooseVersion
 from functools import reduce
@@ -152,7 +154,9 @@ from marshmallow import __version__
 from marshmallow import class_registry
 
 from benchlingapi.exceptions import ModelNotFoundError
-from benchlingapi.utils import url_build, un_underscore_keys, underscore_keys
+from benchlingapi.utils import un_underscore_keys
+from benchlingapi.utils import underscore_keys
+from benchlingapi.utils import url_build
 
 
 class ModelRegistry(type):
@@ -161,7 +165,7 @@ class ModelRegistry(type):
     models = {}
 
     def __init__(cls, name, bases, nmspc):
-        &quot;&quot;&quot;Saves model to the registry&quot;&quot;&quot;
+        &quot;&quot;&quot;Saves model to the registry.&quot;&quot;&quot;
         super().__init__(name, bases, nmspc)
         if not name == &quot;ModelBase&quot;:
             if name not in ModelRegistry.models:
@@ -169,7 +173,7 @@ class ModelRegistry(type):
 
     @staticmethod
     def get_model(model_name):
-        &quot;&quot;&quot;Gets model by model_name&quot;&quot;&quot;
+        &quot;&quot;&quot;Gets model by model_name.&quot;&quot;&quot;
         if model_name not in ModelRegistry.models:
             raise ModelNotFoundError(
                 &#39;Model &quot;{}&quot; not found in ModelRegistry.&#39;.format(model_name)
@@ -188,9 +192,8 @@ class ModelRegistry(type):
 
     @staticmethod
     def filter_models_by_base_classes(bases):
-        &quot;&quot;&quot;
-        Filters models registered in the model registry by
-        their base classes
+        &quot;&quot;&quot;Filters models registered in the model registry by their base
+        classes.
 
         :param bases: base classes
         :type bases: type, list, or tuple
@@ -209,23 +212,21 @@ class ModelRegistry(type):
         return models
 
     def __getattr__(cls, item):
+        &quot;&quot;&quot;Special warning for attribute errors.
+
+        Its likely that user may have wanted to use a model interface
+        instead of the Base class.
         &quot;&quot;&quot;
-        Special warning for attribute errors.
-        Its likely that user may have wanted to use a model interface instead of
-        the Base class.
-        &quot;&quot;&quot;
-        raise AttributeError(&quot;&#39;{0}&#39; has no attribute &#39;{1}&#39;&quot;.format(cls.__name__, item))
+        raise AttributeError(&quot;&#39;{}&#39; has no attribute &#39;{}&#39;&quot;.format(cls.__name__, item))
 
     @property
     def model_name(cls):
-        &quot;&quot;&quot;Return this model&#39;s name&quot;&quot;&quot;
+        &quot;&quot;&quot;Return this model&#39;s name.&quot;&quot;&quot;
         return cls.__name__
 
 
-class ModelBaseABC(object):
-    &quot;&quot;&quot;
-    The model base for all BenchlingAPI model instances.
-    &quot;&quot;&quot;
+class ModelBaseABC:
+    &quot;&quot;&quot;The model base for all BenchlingAPI model instances.&quot;&quot;&quot;
 
     # http = None  # initialized with Session calls a model interface
     session = None
@@ -297,16 +298,13 @@ class ModelBaseABC(object):
         # TODO: change for marshmallow &gt; v3
         insts = cls._deserializer(schema_inst, data)
         for inst_data, inst in zip(data, insts):
-            try:
+            if issubclass(type(inst), ModelBase):
                 inst.raw = inst_data
-            except:
-                pass
         return insts
 
     @classmethod
     def _tableize(cls):
-        &quot;&quot;&quot;
-        Tableize the model name.
+        &quot;&quot;&quot;Tableize the model name.
 
         :return:
         &quot;&quot;&quot;
@@ -316,8 +314,7 @@ class ModelBaseABC(object):
 
     @classmethod
     def _camelize(cls, property=None):
-        &quot;&quot;&quot;
-        Camelize the model name.
+        &quot;&quot;&quot;Camelize the model name.
 
         :param property:
         :return:
@@ -393,7 +390,8 @@ class ModelBaseABC(object):
 
 
 class ModelBase(ModelBaseABC, metaclass=ModelRegistry):
-    &quot;&quot;&quot;Registered model base for BenchlingAPI&quot;&quot;&quot;
+    &quot;&quot;&quot;Registered model base for BenchlingAPI.&quot;&quot;&quot;
+
     pass
 </pre></div>
 
