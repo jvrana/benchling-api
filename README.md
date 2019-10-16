@@ -33,28 +33,6 @@ dna.set_schema("My DNA Schema")
 dna.register()
 ```
 
-## Features
-
-### Models
-
-stub
-
-### Searching and Finding
-
-stub
-
-### Creation
-
-stub
-
-### Archiving/Unarchiving
-
-stub
-
-### Registering/Unregistering
-
-stub
-
 ## Testing
 
 Testing is done using `pytest`. Tests will create live requests to a Benchling account.
