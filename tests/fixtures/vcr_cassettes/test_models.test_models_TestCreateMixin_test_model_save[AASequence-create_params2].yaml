@@ -1,0 +1,603 @@
+interactions:
+- request:
+    body: '{"schemaId": "ts_VncPkR5T", "aminoAcids": "AMVGKLALDLSD", "folderId": "lib_rdWSmOmk",
+      "name": "MyProtein"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '106'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJObUV3Tm1ReVlXVXRNekZsTWkwME9UWm1MV0UzT0RZdE4yUm1NV0V5WTJNMk5tRmwifX0.EIf45w.n5EMqAsQ4AQvYwyKeJtsPpQN4Co
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/aa-sequences
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"aminoAcids\": \"AMVGKLALDLSD\",\n  \"annotations\":
+        [],\n  \"archiveRecord\": null,\n  \"authors\": [\n    {\n      \"handle\":
+        \"uwbiofab\",\n      \"id\": \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n
+        \   }\n  ],\n  \"createdAt\": \"2019-10-16T00:42:15.894405+00:00\",\n  \"creator\":
+        {\n    \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
+        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"entityRegistryId\": null,\n
+        \ \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n  \"id\": \"prtn_of9unJ61\",\n
+        \ \"length\": 12,\n  \"modifiedAt\": \"2019-10-16T00:42:15.894405+00:00\",\n
+        \ \"name\": \"MyProtein\",\n  \"registryId\": null,\n  \"schema\": {\n    \"id\":
+        \"ts_VncPkR5T\",\n    \"name\": \"Protein\"\n  },\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_of9unJ61-myprotein/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_of9unJ61-myprotein/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '834'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 00:42:16 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/aa-sequences/prtn_of9unJ61
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJObUV3Tm1ReVlXVXRNekZsTWkwME9UWm1MV0UzT0RZdE4yUm1NV0V5WTJNMk5tRmwifX0.EIf46A.IsnrcqQ6bRjHXzkV42D5EY5znyk;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
+- request:
+    body: '{"folderId": "lib_rdWSmOmk", "schemaId": "ts_VncPkR5T", "name": "MyProtein",
+      "aminoAcids": "AMVGKLALDLSD"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '106'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaR1kzWm1WaVpUUXRZbVZpTUMwMFlUWmhMV0V5T0RrdE56Vm1aR1JpTUdZM1ltRXoifX0.EIf6Jw.Sn2H0n3sKrIJz5krYJ4pLeXKyPA
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/aa-sequences
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"aminoAcids\": \"AMVGKLALDLSD\",\n  \"annotations\":
+        [],\n  \"archiveRecord\": null,\n  \"authors\": [\n    {\n      \"handle\":
+        \"uwbiofab\",\n      \"id\": \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n
+        \   }\n  ],\n  \"createdAt\": \"2019-10-16T00:47:35.594564+00:00\",\n  \"creator\":
+        {\n    \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
+        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"entityRegistryId\": null,\n
+        \ \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n  \"id\": \"prtn_FAVyf4Zd\",\n
+        \ \"length\": 12,\n  \"modifiedAt\": \"2019-10-16T00:47:35.594564+00:00\",\n
+        \ \"name\": \"MyProtein\",\n  \"registryId\": null,\n  \"schema\": {\n    \"id\":
+        \"ts_VncPkR5T\",\n    \"name\": \"Protein\"\n  },\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_FAVyf4Zd-myprotein/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_FAVyf4Zd-myprotein/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '834'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 00:47:35 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/aa-sequences/prtn_FAVyf4Zd
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaR1kzWm1WaVpUUXRZbVZpTUMwMFlUWmhMV0V5T0RrdE56Vm1aR1JpTUdZM1ltRXoifX0.EIf6Jw.Sn2H0n3sKrIJz5krYJ4pLeXKyPA;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
+- request:
+    body: '{"folderId": "lib_rdWSmOmk", "schemaId": "ts_VncPkR5T", "aminoAcids": "AMVGKLALDLSD",
+      "name": "MyProtein"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '106'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFptTkRZeE5URXRNRFl5TVMwME5tVTVMVGd5WW1VdFpHSXhOamsxWXpGbE5HVXgifX0.EIf7Bg.Xk2s7L8jMyNy0E6fyRHeGPIFDPk
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/aa-sequences
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"aminoAcids\": \"AMVGKLALDLSD\",\n  \"annotations\":
+        [],\n  \"archiveRecord\": null,\n  \"authors\": [\n    {\n      \"handle\":
+        \"uwbiofab\",\n      \"id\": \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n
+        \   }\n  ],\n  \"createdAt\": \"2019-10-16T00:51:19.112420+00:00\",\n  \"creator\":
+        {\n    \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
+        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"entityRegistryId\": null,\n
+        \ \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n  \"id\": \"prtn_kmCvRyjY\",\n
+        \ \"length\": 12,\n  \"modifiedAt\": \"2019-10-16T00:51:19.112420+00:00\",\n
+        \ \"name\": \"MyProtein\",\n  \"registryId\": null,\n  \"schema\": {\n    \"id\":
+        \"ts_VncPkR5T\",\n    \"name\": \"Protein\"\n  },\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_kmCvRyjY-myprotein/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_kmCvRyjY-myprotein/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '834'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 00:51:19 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/aa-sequences/prtn_kmCvRyjY
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFptTkRZeE5URXRNRFl5TVMwME5tVTVMVGd5WW1VdFpHSXhOamsxWXpGbE5HVXgifX0.EIf7Bw.FMLQA3OEu22TNGfZ--Un94hTrAE;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
+- request:
+    body: '{"aminoAcids": "AMVGKLALDLSD", "folderId": "lib_rdWSmOmk", "schemaId":
+      "ts_VncPkR5T", "name": "MyProtein"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '106'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOek0wTkRKbU9UY3RNRFUyTXkwMFlUSTFMV0ppTUdFdE1qVTBZalEzT0RRNU16bGwifX0.EIf7qg.RSTE_hbNwjYqhsCupMhKs98AePw
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/aa-sequences
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"aminoAcids\": \"AMVGKLALDLSD\",\n  \"annotations\":
+        [],\n  \"archiveRecord\": null,\n  \"authors\": [\n    {\n      \"handle\":
+        \"uwbiofab\",\n      \"id\": \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n
+        \   }\n  ],\n  \"createdAt\": \"2019-10-16T00:54:02.671383+00:00\",\n  \"creator\":
+        {\n    \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
+        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"entityRegistryId\": null,\n
+        \ \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n  \"id\": \"prtn_T31ydLdm\",\n
+        \ \"length\": 12,\n  \"modifiedAt\": \"2019-10-16T00:54:02.671383+00:00\",\n
+        \ \"name\": \"MyProtein\",\n  \"registryId\": null,\n  \"schema\": {\n    \"id\":
+        \"ts_VncPkR5T\",\n    \"name\": \"Protein\"\n  },\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_T31ydLdm-myprotein/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_T31ydLdm-myprotein/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '834'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 00:54:03 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/aa-sequences/prtn_T31ydLdm
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOek0wTkRKbU9UY3RNRFUyTXkwMFlUSTFMV0ppTUdFdE1qVTBZalEzT0RRNU16bGwifX0.EIf7qw.-UmE9E2IMVdjKuTbWTjgLfM8AQE;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
+- request:
+    body: '{"folderId": "lib_rdWSmOmk", "name": "MyProtein", "schemaId": "ts_VncPkR5T",
+      "aminoAcids": "AMVGKLALDLSD"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '106'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOMlpoWTJZek5HWXRNalk1T1MwME9EVTRMVGd5WVRjdE4yWmpZekU0WWpSbE5UaGwifX0.EIgESA.y4K68swOGIBHchznSDoX69oHdI8
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/aa-sequences
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"aminoAcids\": \"AMVGKLALDLSD\",\n  \"annotations\":
+        [],\n  \"archiveRecord\": null,\n  \"authors\": [\n    {\n      \"handle\":
+        \"uwbiofab\",\n      \"id\": \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n
+        \   }\n  ],\n  \"createdAt\": \"2019-10-16T01:30:48.959441+00:00\",\n  \"creator\":
+        {\n    \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
+        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"entityRegistryId\": null,\n
+        \ \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n  \"id\": \"prtn_2dH5Ye4Q\",\n
+        \ \"length\": 12,\n  \"modifiedAt\": \"2019-10-16T01:30:48.959441+00:00\",\n
+        \ \"name\": \"MyProtein\",\n  \"registryId\": null,\n  \"schema\": {\n    \"id\":
+        \"ts_VncPkR5T\",\n    \"name\": \"Protein\"\n  },\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_2dH5Ye4Q-myprotein/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_2dH5Ye4Q-myprotein/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '834'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 01:30:49 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/aa-sequences/prtn_2dH5Ye4Q
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOMlpoWTJZek5HWXRNalk1T1MwME9EVTRMVGd5WVRjdE4yWmpZekU0WWpSbE5UaGwifX0.EIgESQ.s7LHiZwcE3ehZwH8E6_ZF1605QU;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
+- request:
+    body: '{"folderId": "lib_rdWSmOmk", "aminoAcids": "AMVGKLALDLSD", "schemaId":
+      "ts_VncPkR5T", "name": "MyProtein"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '106'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZamN4TUdKalpUWXRPV1V3WXkwME1UUXhMV0psWWpZdFlXUmtPV1E1WkRrd05XVTUifX0.EIgIXg.txzJYyaPSx1ZeHL_l8tghonjz30
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/aa-sequences
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"aminoAcids\": \"AMVGKLALDLSD\",\n  \"annotations\":
+        [],\n  \"archiveRecord\": null,\n  \"authors\": [\n    {\n      \"handle\":
+        \"uwbiofab\",\n      \"id\": \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n
+        \   }\n  ],\n  \"createdAt\": \"2019-10-16T01:48:14.771061+00:00\",\n  \"creator\":
+        {\n    \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
+        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"entityRegistryId\": null,\n
+        \ \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n  \"id\": \"prtn_HlCNfybU\",\n
+        \ \"length\": 12,\n  \"modifiedAt\": \"2019-10-16T01:48:14.771061+00:00\",\n
+        \ \"name\": \"MyProtein\",\n  \"registryId\": null,\n  \"schema\": {\n    \"id\":
+        \"ts_VncPkR5T\",\n    \"name\": \"Protein\"\n  },\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_HlCNfybU-myprotein/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_HlCNfybU-myprotein/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '834'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 01:48:15 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/aa-sequences/prtn_HlCNfybU
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZamN4TUdKalpUWXRPV1V3WXkwME1UUXhMV0psWWpZdFlXUmtPV1E1WkRrd05XVTUifX0.EIgIXw.MKVDDKIhbJINZmC8ZapCEAnUyNo;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
+- request:
+    body: '{"name": "MyProtein", "schemaId": "ts_VncPkR5T"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNalF3TlRRNFlUWXRZamxpWlMwMFlUSmhMV0k1WVRBdE9XVmlOemsxTURFNU4ySXgifX0.EIgQSw.etTZfNHDiUUig2zxhUATGO8Wmlk
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/aa-sequences
+  response:
+    body:
+      string: "{\n  \"error\": {\n    \"message\": \"aminoAcids is a required field\",\n
+        \   \"type\": \"invalid_request_error\",\n    \"userMessage\": \"aminoAcids
+        is a required field\"\n  }\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '158'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 02:22:03 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNalF3TlRRNFlUWXRZamxpWlMwMFlUSmhMV0k1WVRBdE9XVmlOemsxTURFNU4ySXgifX0.EIgQSw.etTZfNHDiUUig2zxhUATGO8Wmlk;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 400
+      message: BAD REQUEST
+- request:
+    body: '{"schemaId": "ts_VncPkR5T", "aminoAcids": "AMVGKLALDLSD", "folderId": "lib_rdWSmOmk",
+      "name": "MyProtein"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '106'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZelUyWXpNMVpqVXROalUzT1MwME4yWTFMVGszTkdZdE1qazFaV00yTmpKbFpEWmkifX0.EIgTSw.qyX_dU-M4tCGiBAPG48XPEbCfQQ
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/aa-sequences
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"aminoAcids\": \"AMVGKLALDLSD\",\n  \"annotations\":
+        [],\n  \"archiveRecord\": null,\n  \"authors\": [\n    {\n      \"handle\":
+        \"uwbiofab\",\n      \"id\": \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n
+        \   }\n  ],\n  \"createdAt\": \"2019-10-16T02:34:52.243539+00:00\",\n  \"creator\":
+        {\n    \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
+        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"entityRegistryId\": null,\n
+        \ \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n  \"id\": \"prtn_o4Iflncw\",\n
+        \ \"length\": 12,\n  \"modifiedAt\": \"2019-10-16T02:34:52.243539+00:00\",\n
+        \ \"name\": \"MyProtein\",\n  \"registryId\": null,\n  \"schema\": {\n    \"id\":
+        \"ts_VncPkR5T\",\n    \"name\": \"Protein\"\n  },\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_o4Iflncw-myprotein/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_o4Iflncw-myprotein/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '834'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 02:34:52 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/aa-sequences/prtn_o4Iflncw
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZelUyWXpNMVpqVXROalUzT1MwME4yWTFMVGszTkdZdE1qazFaV00yTmpKbFpEWmkifX0.EIgTTA.BgozBw-O8drWAe-pJZ6kd0G_B68;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
+- request:
+    body: '{"schemaId": "ts_VncPkR5T", "aminoAcids": "AMVGKLALDLSD", "name": "MyProtein",
+      "folderId": "lib_rdWSmOmk"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '106'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaamxpTUdVeFlUWXROVGc0TXkwMFptWXpMV0l5TXpJdFpqVmtPREl3T1RRelltVmgifX0.EIgVZQ.z2ItPyFdofidbw1ft9mHEQzi5II
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/aa-sequences
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"aminoAcids\": \"AMVGKLALDLSD\",\n  \"annotations\":
+        [],\n  \"archiveRecord\": null,\n  \"authors\": [\n    {\n      \"handle\":
+        \"uwbiofab\",\n      \"id\": \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n
+        \   }\n  ],\n  \"createdAt\": \"2019-10-16T02:43:49.385493+00:00\",\n  \"creator\":
+        {\n    \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
+        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"entityRegistryId\": null,\n
+        \ \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n  \"id\": \"prtn_T2JggZ6t\",\n
+        \ \"length\": 12,\n  \"modifiedAt\": \"2019-10-16T02:43:49.385493+00:00\",\n
+        \ \"name\": \"MyProtein\",\n  \"registryId\": null,\n  \"schema\": {\n    \"id\":
+        \"ts_VncPkR5T\",\n    \"name\": \"Protein\"\n  },\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_T2JggZ6t-myprotein/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_T2JggZ6t-myprotein/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '834'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 02:43:49 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/aa-sequences/prtn_T2JggZ6t
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaamxpTUdVeFlUWXROVGc0TXkwMFptWXpMV0l5TXpJdFpqVmtPREl3T1RRelltVmgifX0.EIgVZQ.z2ItPyFdofidbw1ft9mHEQzi5II;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
+version: 1

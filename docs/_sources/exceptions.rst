@@ -1,0 +1,1 @@
+.. automodule:: benchlingapi.exceptions
