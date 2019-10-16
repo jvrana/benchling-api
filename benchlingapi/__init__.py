@@ -1,18 +1,4 @@
-"""BenchlingAPI.
-
-.. module:: benchlingapi
-
-Submodules
-==========
-
-.. autosummary::
-    :toctree: _autosummary
-
-    session
-    exceptions
-    utils
-    models
-"""
+"""BenchlingAPI."""
 from .__version__ import __authors__
 from .__version__ import __homepage__
 from .__version__ import __repo__

@@ -1,6 +1,6 @@
 r"""
 Session (:mod:`benchlingapi.session`)
-=============================
+=====================================
 
 .. currentmodule:: benchlingapi.session
 

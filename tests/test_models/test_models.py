@@ -1,16 +1,15 @@
 import pytest
 
 from benchlingapi.models import ModelRegistry
-from benchlingapi.models.models import Project, Folder
-from benchlingapi.models.mixins import (
-    ListMixin,
-    GetMixin,
-    CreateMixin,
-    ArchiveMixin,
-    RegistryMixin,
-    EntityMixin,
-    InventoryMixin,
-)
+from benchlingapi.models.mixins import ArchiveMixin
+from benchlingapi.models.mixins import CreateMixin
+from benchlingapi.models.mixins import EntityMixin
+from benchlingapi.models.mixins import GetMixin
+from benchlingapi.models.mixins import InventoryMixin
+from benchlingapi.models.mixins import ListMixin
+from benchlingapi.models.mixins import RegistryMixin
+from benchlingapi.models.models import Folder
+from benchlingapi.models.models import Project
 
 
 def pytest_generate_tests(metafunc):
@@ -79,6 +78,9 @@ class TestListMixin(HasExample):
         found = interface.find_by_name(example_model.name)
         assert found.name == example_model.name
         assert isinstance(found, model)
+
+    def test_list_pages(self, interface, model):
+        list(interface.list_pages(page_limit=1, page_size=1))
 
 
 class TestGetMixin(HasExample):

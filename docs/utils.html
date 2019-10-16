@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Utilities (benchlingapi.utils) &#8212; benchlingapi 2.0.0 documentation</title>
+    <title>Utilities (benchlingapi.utils) &#8212; benchlingapi 2.0.1 documentation</title>
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.0.0</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.0.1</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -95,7 +95,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#session">Session</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#finding-models">Finding models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#updating-models">Updating models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#saving-new-models">Saving new models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#registering-models-to-your-registry">Registering models to your registry</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -158,6 +164,12 @@
       
   <span class="target" id="module-benchlingapi.utils"></span><div class="section" id="utilities-benchlingapi-utils">
 <h1>Utilities (<a class="reference internal" href="#module-benchlingapi.utils" title="benchlingapi.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.utils</span></code></a>)<a class="headerlink" href="#utilities-benchlingapi-utils" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="benchlingapi.utils.un_underscore">
+<code class="sig-prename descclassname">benchlingapi.utils.</code><code class="sig-name descname">un_underscore</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchlingapi/utils.html#un_underscore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.utils.un_underscore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform keys like ‘benchling_key’ to ‘benchlingKey’.</p>
+</dd></dl>
+
 <p><strong>Functions</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -165,11 +177,42 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.utils.un_underscore" title="benchlingapi.utils.un_underscore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">un_underscore</span></code></a>(k)</p></td>
+<td><p>Transform keys like ‘benchling_key’ to ‘benchlingKey’.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#benchlingapi.utils.un_underscore_keys" title="benchlingapi.utils.un_underscore_keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">un_underscore_keys</span></code></a>(data)</p></td>
+<td><p>Recursively un-transfrom keys from underscore format to benchling format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.utils.underscore" title="benchlingapi.utils.underscore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">underscore</span></code></a>(k)</p></td>
+<td><p>Transform keys like ‘benchlingKey’ to ‘benchling_key’.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#benchlingapi.utils.underscore_keys" title="benchlingapi.utils.underscore_keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">underscore_keys</span></code></a>(data)</p></td>
+<td><p>Recursively transform keys to underscore format.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.utils.url_build" title="benchlingapi.utils.url_build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">url_build</span></code></a>(*parts)</p></td>
 <td><p>Join parts of a url into a string.</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="function">
+<dt id="benchlingapi.utils.un_underscore_keys">
+<code class="sig-prename descclassname">benchlingapi.utils.</code><code class="sig-name descname">un_underscore_keys</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchlingapi/utils.html#un_underscore_keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.utils.un_underscore_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively un-transfrom keys from underscore format to benchling
+format.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="benchlingapi.utils.underscore">
+<code class="sig-prename descclassname">benchlingapi.utils.</code><code class="sig-name descname">underscore</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchlingapi/utils.html#underscore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.utils.underscore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform keys like ‘benchlingKey’ to ‘benchling_key’.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="benchlingapi.utils.underscore_keys">
+<code class="sig-prename descclassname">benchlingapi.utils.</code><code class="sig-name descname">underscore_keys</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchlingapi/utils.html#underscore_keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.utils.underscore_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively transform keys to underscore format.</p>
+</dd></dl>
+
 <dl class="function">
 <dt id="benchlingapi.utils.url_build">
 <code class="sig-prename descclassname">benchlingapi.utils.</code><code class="sig-name descname">url_build</code><span class="sig-paren">(</span><em class="sig-param">*parts</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchlingapi/utils.html#url_build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#benchlingapi.utils.url_build" title="Permalink to this definition">¶</a></dt>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>benchlingapi.models.models.Oligo &#8212; benchlingapi 2.0.0 documentation</title>
+    <title>benchlingapi.models.models.Oligo &#8212; benchlingapi 2.0.1 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.0.0</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.0.1</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -95,7 +95,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../usage.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../usage.html#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#session">Session</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#finding-models">Finding models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#updating-models">Updating models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#saving-new-models">Saving new models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#registering-models-to-your-registry">Registering models to your registry</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -453,18 +459,20 @@
 <dd><p>Find entity by name in a registry.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>name</strong> – name of entity</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – name of entity</p></li>
+<li><p><strong>registry_id</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – registery id. If none, ‘registry_name’ must be provided.</p></li>
+<li><p><strong>registry_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – registry name. If None, ‘registry_id’ must be provided</p></li>
+<li><p><strong>params</strong> – additional search parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>first model found</p>
 </dd>
 </dl>
-<p>:type basestring
-:param registry_id: registery id. If none, ‘registry_name’ must be provided.
-:type registry_id: basestring
-:param registry_name: registry name. If None, ‘registry_id’ must be provided
-:type registry_name: basestring
-:param params: additional search parameters
-:type params: dict
-:return: first model found
-:rtype: Model</p>
 </dd></dl>
 
 <dl class="method">
@@ -474,16 +482,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>entity_registry_id</strong> (<em>basestring</em>) – entity registry id</p></li>
-<li><p><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</p></li>
-<li><p><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</p></li>
+<li><p><strong>entity_registry_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – entity registry id</p></li>
+<li><p><strong>registry_id</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – registery id. If none, ‘registry_name’ must be provided.</p></li>
+<li><p><strong>registry_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – registry name. If None, ‘registry_id’ must be provided</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>instance</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Model</p>
 </dd>
 </dl>
 </dd></dl>
@@ -506,16 +511,16 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>entity_registry_ids</strong> (<em>list</em>) – list of entity registry ids</p></li>
-<li><p><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</p></li>
-<li><p><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</p></li>
+<li><p><strong>entity_registry_ids</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – list of entity registry ids</p></li>
+<li><p><strong>registry_id</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – registery id. If none, ‘registry_name’ must be provided.</p></li>
+<li><p><strong>registry_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – registry name. If None, ‘registry_id’ must be provided</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of models in registry</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code>]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of models in registry</p>
 </dd>
 </dl>
 </dd></dl>
@@ -532,17 +537,10 @@
 <dd><p>List all instances contained in the registry.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</p></li>
-<li><p><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</p></li>
-<li><p><strong>params</strong> (<em>dict</em>) – additional search parameters</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of models in registry</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list</p>
+<dd class="field-odd"><p><strong>registry_id</strong> – registery id. If none, ‘registry_name’ must be provided.
+:param registry_name: registry name. If None, ‘registry_id’ must be provided
+:param params: additional search parameters
+:return: list of models in registry</p>
 </dd>
 </dl>
 </dd></dl>
@@ -553,13 +551,11 @@
 <dd><p>Move the entity to a new benchling folder.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>folder_id</strong> (<em>basestring</em>) – the folder id to move entity to</p>
+<dd class="field-odd"><p><strong>folder_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – the folder id to move entity to
+:return: model instance</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>model instance</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Model</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -590,18 +586,13 @@
 </li>
 <li><dl class="simple">
 <dt>SET_FROM_NAME_PARTS: Generates new registry IDs and generates</dt><dd><p>new entity name based on the entity schema’s name template, if it has
-one.</p>
+one.
+:return: model instance</p>
 </dd>
 </dl>
 </li>
 </ul>
 </p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>model instance</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Model</p>
 </dd>
 </dl>
 </dd></dl>
@@ -615,9 +606,6 @@ the instance name to the new id. Save the old name as an alias.</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>instance</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Model</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -627,13 +615,8 @@ the instance name to the new id. Save the old name as an alias.</p>
 <dd><p>Register the instance with a custom id.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>id</strong> (<em>basestring</em>) – custom registry id for the newly registered instance</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>instance</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Model</p>
+<dd class="field-odd"><p><strong>id</strong> – custom registry id for the newly registered instance
+:return: instance</p>
 </dd>
 </dl>
 </dd></dl>
@@ -656,17 +639,10 @@ in.</p>
 <dd><p>Return a dictionary of registry ids to entities.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>registry_id</strong> (<em>basestring</em>) – registery id. If none, ‘registry_name’ must be provided.</p></li>
-<li><p><strong>registry_name</strong> (<em>basestring</em>) – registry name. If None, ‘registry_id’ must be provided</p></li>
-<li><p><strong>params</strong> (<em>dict</em>) – additional search parameters</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>dict of models in registry</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><strong>registry_id</strong> – registery id. If none, ‘registry_name’ must be provided.
+:param registry_name: registry name. If None, ‘registry_id’ must be provided
+:param params: additional search parameters
+:return: dict of models in registry</p>
 </dd>
 </dl>
 </dd></dl>
@@ -705,13 +681,8 @@ in.</p>
 <dd><p>Unregister the instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>folder_id</strong> (<em>basestring</em>) – folder to move unregistered instance to</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>instance</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Model</p>
+<dd class="field-odd"><p><strong>folder_id</strong> – folder to move unregistered instance to
+:return: instance</p>
 </dd>
 </dl>
 </dd></dl>

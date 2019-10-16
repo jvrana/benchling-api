@@ -42,7 +42,11 @@ class ListMixin(ModelBaseABC):
 
     @classmethod
     def list(cls, **params) -> List[ModelBase]:
-        """List models."""
+        """List models.
+
+        :param params: extra parameters
+        :return: list of models
+        """
         response = cls._get(params=params)
         return cls.load_many(response[cls._camelize()])
 
@@ -50,7 +54,12 @@ class ListMixin(ModelBaseABC):
     def list_pages(
         cls, page_limit: int = None, **params
     ) -> Generator[List[ModelBase], None, None]:
-        """List models by pages."""
+        """Return a generator pages of models.
+
+        :param page_limit: return page limit
+        :param params: extra parameters
+        :return: generator of list of models
+        """
         generator = cls._get_pages(params=params)
         response = next(generator, None)
         page_num = 1
@@ -63,7 +72,13 @@ class ListMixin(ModelBaseABC):
     def all(
         cls, page_limit: int = None, limit: int = None, **params
     ) -> Generator[ModelBase, None, None]:
-        """Return a generator comprising of all models."""
+        """Return a generator comprising of all models.
+
+        :param page_limit: return page limit
+        :param limit: number of model to return
+        :param params: extra parameters
+        :return: generator of models
+        """
         num = 0
         for page in cls.list_pages(page_limit=page_limit, **params):
             for m in page:
@@ -81,7 +96,6 @@ class ListMixin(ModelBaseABC):
         :param params: additional search parameters
         :type params: dict
         :return: list of models
-        :rtype: list
         """
         max_page_size = min(
             cls.MAX_PAGE_SIZE, params.get("pageSize", cls.MAX_PAGE_SIZE)
@@ -95,11 +109,8 @@ class ListMixin(ModelBaseABC):
         """Returns the most recent models.
 
         :param num: number of models to return
-        :type num: int
         :param params: additional search parameters
-        :type params: dict
         :return: list of models
-        :rtype: list
         """
         max_page_size = min(
             cls.MAX_PAGE_SIZE, params.get("pageSize", cls.MAX_PAGE_SIZE)
@@ -122,15 +133,10 @@ class ListMixin(ModelBaseABC):
         """Search all models such that 'fxn' is True.
 
         :param fxn: function to return model
-        :type fxn: callbable
         :param limit: number of models to return (default 1)
-        :type limit: int
         :param page_limit: number of pages to iterate (default 5)
-        :type page_limit: int
         :param params: additional search parameters
-        :type params: dict
         :return: list of models where 'fxn(model)' is True
-        :rtype: Model
         """
         found = []
         for model in cls.all(page_limit=page_limit, **params):
@@ -142,7 +148,13 @@ class ListMixin(ModelBaseABC):
 
     @classmethod
     def find_by_name(cls, name: str, page_limit=5, **params) -> ModelBase:
-        """Find a model by name."""
+        """Find a model by name.
+
+        :param name: the model name
+        :param page_limit: the return page limit
+        :param params: extra parameters
+        :return: the model
+        """
         models = cls.search(
             lambda x: x.name == name, limit=1, page_limit=page_limit, **params
         )
@@ -151,14 +163,24 @@ class ListMixin(ModelBaseABC):
 
     @classmethod
     def get(cls, id: str, **params) -> ModelBase:
-        """Get a model by id."""
+        """Get a single model by its id.
+
+        :param id: the model id
+        :param params: extra parameters
+        :return: the model
+        """
         models = cls.search(lambda x: x.id == id, limit=1, **params)
         if models:
             return models[0]
 
     @classmethod
     def find(cls, id, **params):
-        """Find a model by id."""
+        """Get a single model by its id. See :method:`get`
+
+        :param id: the model id
+        :param params: extra parameters
+        :return: the model
+        """
         return cls.get(id, **params)
 
 
@@ -254,12 +276,9 @@ class ArchiveMixin(ModelBaseABC):
         """Archive many models by their ids.
 
         :param model_ids: list of ids
-        :type model_ids: list
         :param reason: reason for archival (default "Other"). Select from
                         `model.ARCHIVE_REASONS`
-        :type reason: basestring
         :return: list of models archived
-        :rtype: list
         """
         if reason not in cls.ARCHIVE_REASONS.REASONS:
             raise Exception(
@@ -273,9 +292,7 @@ class ArchiveMixin(ModelBaseABC):
         """Unarchive many models by their ids.
 
         :param model_ids: list of ids
-        :type model_ids: list
-        :return: list of models unarchived
-        :rtype: list
+                :return: list of models unarchived
         """
         key = cls._camelize("id")
         return cls._post(action="unarchive", data={key: model_ids})
@@ -285,8 +302,7 @@ class ArchiveMixin(ModelBaseABC):
 
         :param reason: reason for archival (default "Other"). Select from
                         `model.ARCHIVE_REASONS`
-        :type reason: basestring
-        :return:
+                :return:
         :rtype:
         """
         self.archive_many([self.id], reason)
@@ -297,7 +313,6 @@ class ArchiveMixin(ModelBaseABC):
         """Unarchive the model instance.
 
         :return: model instance
-        :rtype: self
         """
         self.unarchive_many([self.id])
         self.reload()
@@ -360,9 +375,7 @@ class InventoryMixin(ModelBaseABC):
         """Move the entity to a new benchling folder.
 
         :param folder_id: the folder id to move entity to
-        :type folder_id: basestring
-        :return: model instance
-        :rtype: Model
+                :return: model instance
         """
         self.folder_id = folder_id
         self.update()
@@ -442,9 +455,7 @@ class RegistryMixin(ModelBaseABC):
             - SET_FROM_NAME_PARTS: Generates new registry IDs and generates
                 new entity name based on the entity schema's name template, if it has
                 one.
-        :type naming_strategy:
-        :return: model instance
-        :rtype: Model
+                :return: model instance
         """
         if not hasattr(self, "new_registry_id"):
             raise BenchlingAPIException(
@@ -463,9 +474,7 @@ class RegistryMixin(ModelBaseABC):
         """Unregister the instance.
 
         :param folder_id: folder to move unregistered instance to
-        :type folder_id: basestring
-        :return: instance
-        :rtype: Model
+                :return: instance
         """
         if folder_id is None:
             folder_id = self.folder_id
@@ -478,9 +487,7 @@ class RegistryMixin(ModelBaseABC):
         """Register the instance with a custom id.
 
         :param id: custom registry id for the newly registered instance
-        :type id: basestring
-        :return: instance
-        :rtype: Model
+                :return: instance
         """
         name = self.name
         self.name = id
@@ -500,7 +507,6 @@ class RegistryMixin(ModelBaseABC):
         the instance name to the new id. Save the old name as an alias.
 
         :return: instance
-        :rtype: Model
         """
         self.register(naming_strategy=self.NAMING_STRATEGY.DELETE_NAMES)
         if self.name not in self.aliases:
@@ -523,13 +529,9 @@ class RegistryMixin(ModelBaseABC):
         """List all instances contained in the registry.
 
         :param registry_id: registery id. If none, 'registry_name' must be provided.
-        :type registry_id: basestring
-        :param registry_name: registry name. If None, 'registry_id' must be provided
-        :type registry_name: basestring
-        :param params: additional search parameters
-        :type params: dict
-        :return: list of models in registry
-        :rtype: list
+                :param registry_name: registry name. If None, 'registry_id' must be provided
+                :param params: additional search parameters
+                :return: list of models in registry
         """
         if registry_id is None:
             registry_id = cls.session.Registry.find_registry(
@@ -542,13 +544,9 @@ class RegistryMixin(ModelBaseABC):
         """Return a dictionary of registry ids to entities.
 
         :param registry_id: registery id. If none, 'registry_name' must be provided.
-        :type registry_id: basestring
-        :param registry_name: registry name. If None, 'registry_id' must be provided
-        :type registry_name: basestring
-        :param params: additional search parameters
-        :type params: dict
-        :return: dict of models in registry
-        :rtype: dict
+                :param registry_name: registry name. If None, 'registry_id' must be provided
+                :param params: additional search parameters
+                :return: dict of models in registry
         """
         entities = cls.list_in_registry(
             registry_id=registry_id, registry_name=registry_name, **params
@@ -557,20 +555,15 @@ class RegistryMixin(ModelBaseABC):
 
     @classmethod
     def find_by_name_in_registry(
-        cls, name, registry_id=None, registry_name=None, **params
-    ):
+        cls, name: str, registry_id: str = None, registry_name: str = None, **params
+    ) -> ModelBase:
         """Find entity by name in a registry.
 
         :param name: name of entity
-        :type basestring
         :param registry_id: registery id. If none, 'registry_name' must be provided.
-        :type registry_id: basestring
         :param registry_name: registry name. If None, 'registry_id' must be provided
-        :type registry_name: basestring
         :param params: additional search parameters
-        :type params: dict
         :return: first model found
-        :rtype: Model
         """
         models = cls.list_in_registry(
             registry_id=registry_id, registry_name=registry_name, name=name, **params
@@ -588,13 +581,9 @@ class RegistryMixin(ModelBaseABC):
         """Get entities from a registry by their ids.
 
         :param entity_registry_ids: list of entity registry ids
-        :type entity_registry_ids: list
         :param registry_id: registery id. If none, 'registry_name' must be provided.
-        :type registry_id: basestring
         :param registry_name: registry name. If None, 'registry_id' must be provided
-        :type registry_name: basestring
         :return: list of models in registry
-        :rtype: list
         """
         registry = cls.session.Registry.find_registry(
             id=registry_id, name=registry_name
@@ -609,13 +598,9 @@ class RegistryMixin(ModelBaseABC):
         """Get an entity from a registry by their ids.
 
         :param entity_registry_id: entity registry id
-        :type entity_registry_id: basestring
         :param registry_id: registery id. If none, 'registry_name' must be provided.
-        :type registry_id: basestring
         :param registry_name: registry name. If None, 'registry_id' must be provided
-        :type registry_name: basestring
         :return: instance
-        :rtype: Model
         """
         entities = cls.get_in_registry(
             [entity_registry_id], registry_id=registry_id, registry_name=registry_name
