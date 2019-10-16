@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Usage &#8212; benchlingapi 2.0.0 documentation</title>
+    <title>Usage &#8212; benchlingapi 2.0.1 documentation</title>
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.0.0</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.0.1</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -95,7 +95,13 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#session">Session</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#finding-models">Finding models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updating-models">Updating models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-new-models">Saving new models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#registering-models-to-your-registry">Registering models to your registry</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -173,13 +179,69 @@ you must request one from Benchling.</p>
 <span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">(</span><span class="s2">&quot;sdf44tj-sdflj8na-rf23rfasdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can access models from the session.
-Have a look at the <a class="reference internal" href="models.html#api-models"><span class="std std-ref">API model docs</span></a>
-for methods available for each model.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>seq = session.DNASequence.last(1)
-seq.register()
-print(seq.dump())
+<p>From there, you can access various models:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">session</span><span class="o">.</span><span class="n">DNASequence</span>
+<span class="n">session</span><span class="o">.</span><span class="n">AASequence</span>
+<span class="n">session</span><span class="o">.</span><span class="n">Oligo</span>
+<span class="n">session</span><span class="o">.</span><span class="n">Folder</span>
+<span class="n">session</span><span class="o">.</span><span class="n">Project</span>
+<span class="n">session</span><span class="o">.</span><span class="n">Registry</span>
+<span class="n">session</span><span class="o">.</span><span class="n">Translation</span>
+<span class="n">session</span><span class="o">.</span><span class="n">EntitySchema</span>
+<span class="n">session</span><span class="o">.</span><span class="n">Batch</span>
+<span class="n">session</span><span class="o">.</span><span class="n">CustomEntity</span>
 </pre></div>
+</div>
+<p>Have a look at the <a class="reference internal" href="models.html#api-models"><span class="std std-ref">API model docs</span></a>
+for methods available for each model.</p>
+<div class="section" id="finding-models">
+<h3>Finding models<a class="headerlink" href="#finding-models" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># get one model</span>
+<span class="n">dna</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">DNASequence</span><span class="o">.</span><span class="n">one</span><span class="p">()</span>
+
+<span class="c1"># find a specific model by its id</span>
+<span class="n">dna</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">DNASequence</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;sdg_4tg23&#39;</span><span class="p">)</span>
+
+<span class="c1"># get the last 50 amino acids</span>
+<span class="n">proteins</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">AASequence</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># get a registry by name</span>
+<span class="n">registry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">Registry</span><span class="o">.</span><span class="n">find_by_name</span><span class="p">(</span><span class="s2">&quot;Klavins Lab Registry&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="updating-models">
+<h3>Updating models<a class="headerlink" href="#updating-models" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">DNASequence</span><span class="o">.</span><span class="n">one</span><span class="p">()</span>
+<span class="n">dna</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;My new name&quot;</span>
+<span class="n">dna</span><span class="o">.</span><span class="n">bases</span> <span class="o">=</span> <span class="s2">&quot;AGGTAGGGTAGGGCCAGAGA&quot;</span>
+
+<span class="c1"># update the sequence on the server</span>
+<span class="n">dna</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="saving-new-models">
+<h3>Saving new models<a class="headerlink" href="#saving-new-models" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">Folder</span><span class="o">.</span><span class="n">find_by_name</span><span class="p">(</span><span class="s2">&quot;My API Folder&quot;</span><span class="p">)</span>
+<span class="n">dna</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">DNASequence</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;my new dna&#39;</span><span class="p">,</span>
+    <span class="n">bases</span> <span class="o">=</span> <span class="s1">&#39;AGGTAGGATGGCCA&#39;</span><span class="p">,</span>
+    <span class="n">folder_id</span> <span class="o">=</span> <span class="n">folder</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">is_circular</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="p">)</span>
+
+<span class="c1"># save the dna to your Benchling account</span>
+<span class="n">dna</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="registering-models-to-your-registry">
+<h3>Registering models to your registry<a class="headerlink" href="#registering-models-to-your-registry" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">set_schema</span><span class="p">(</span><span class="s2">&quot;My DNA Schema&quot;</span><span class="p">)</span>
+<span class="n">dna</span><span class="o">.</span><span class="n">register</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

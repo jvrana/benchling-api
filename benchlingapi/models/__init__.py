@@ -1,6 +1,20 @@
 r"""
 Models (:mod:`benchlingapi.models.models`)
-=============================
+==========================================
+
+This module contains the Benchling API models. Models
+are accessed from a session instance as follows:
+
+.. code-block:: python
+
+    from benchlingapi import Session
+
+    session = Session("asdfe8iunaoerhgoaher")
+    session.DNASequence
+    session.AASequence
+    session.Oligo
+    session.Registry
+    # and so on
 
 .. currentmodule:: benchlingapi.models.models
 

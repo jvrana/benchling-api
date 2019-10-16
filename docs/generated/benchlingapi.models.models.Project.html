@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>benchlingapi.models.models.Project &#8212; benchlingapi 2.0.0 documentation</title>
+    <title>benchlingapi.models.models.Project &#8212; benchlingapi 2.0.1 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.0.0</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.0.1</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -95,7 +95,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../usage.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../usage.html#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#session">Session</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#finding-models">Finding models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#updating-models">Updating models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#saving-new-models">Saving new models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#registering-models-to-your-registry">Registering models to your registry</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -198,7 +204,7 @@
 <td><p>Archive many models by their ids.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#benchlingapi.models.models.Project.find" title="benchlingapi.models.models.Project.find"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find</span></code></a>(id, **params)</p></td>
-<td><p>Find a model by id.</p></td>
+<td><p>Get a single model by its id.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.models.models.Project.find_by_name" title="benchlingapi.models.models.Project.find_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_by_name</span></code></a>(name[, page_limit])</p></td>
 <td><p>Find a model by name.</p></td>
@@ -207,7 +213,7 @@
 <td><p>Returns the most recent models.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.models.models.Project.get" title="benchlingapi.models.models.Project.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(id, **params)</p></td>
-<td><p>Get a model by id.</p></td>
+<td><p>Get a single model by its id.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#benchlingapi.models.models.Project.last" title="benchlingapi.models.models.Project.last"><code class="xref py py-obj docutils literal notranslate"><span class="pre">last</span></code></a>([num])</p></td>
 <td><p>Returns the most recent models.</p></td>
@@ -216,7 +222,7 @@
 <td><p>List models.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#benchlingapi.models.models.Project.list_pages" title="benchlingapi.models.models.Project.list_pages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_pages</span></code></a>([page_limit])</p></td>
-<td><p>List models by pages.</p></td>
+<td><p>Return a generator pages of models.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.models.models.Project.one" title="benchlingapi.models.models.Project.one"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one</span></code></a>(**params)</p></td>
 <td><p>Returns one model.</p></td>
@@ -279,7 +285,7 @@
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.models.models.Project.find" title="benchlingapi.models.models.Project.find"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find</span></code></a>(id, **params)</p></td>
-<td><p>Find a model by id.</p></td>
+<td><p>Get a single model by its id.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#benchlingapi.models.models.Project.find_by_name" title="benchlingapi.models.models.Project.find_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_by_name</span></code></a>(name[, page_limit])</p></td>
 <td><p>Find a model by name.</p></td>
@@ -288,7 +294,7 @@
 <td><p>Returns the most recent models.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#benchlingapi.models.models.Project.get" title="benchlingapi.models.models.Project.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(id, **params)</p></td>
-<td><p>Get a model by id.</p></td>
+<td><p>Get a single model by its id.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.models.models.Project.last" title="benchlingapi.models.models.Project.last"><code class="xref py py-obj docutils literal notranslate"><span class="pre">last</span></code></a>([num])</p></td>
 <td><p>Returns the most recent models.</p></td>
@@ -297,7 +303,7 @@
 <td><p>List models.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#benchlingapi.models.models.Project.list_pages" title="benchlingapi.models.models.Project.list_pages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_pages</span></code></a>([page_limit])</p></td>
-<td><p>List models by pages.</p></td>
+<td><p>Return a generator pages of models.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code>(data, *args, **kwargs)</p></td>
 <td><p></p></td>
@@ -386,8 +392,18 @@
 <em class="property">classmethod </em><code class="sig-name descname">all</code><span class="sig-paren">(</span><em class="sig-param">page_limit=None</em>, <em class="sig-param">limit=None</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a generator comprising of all models.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>]</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page_limit</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – return page limit</p></li>
+<li><p><strong>limit</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – number of model to return</p></li>
+<li><p><strong>params</strong> – extra parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>generator of models</p>
 </dd>
 </dl>
 </dd></dl>
@@ -398,14 +414,18 @@
 <dd><p>Archive model instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from
-<cite>model.ARCHIVE_REASONS</cite></p>
+<dd class="field-odd"><p><strong>reason</strong> – <dl class="simple">
+<dt>reason for archival (default “Other”). Select from</dt><dd><p><cite>model.ARCHIVE_REASONS</cite></p>
 </dd>
-<dt class="field-even">Returns</dt>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p></p>
 </dd>
 </dl>
 </dd></dl>
@@ -417,16 +437,16 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model_ids</strong> (<em>list</em>) – list of ids</p></li>
-<li><p><strong>reason</strong> (<em>basestring</em>) – reason for archival (default “Other”). Select from
+<li><p><strong>model_ids</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – list of ids</p></li>
+<li><p><strong>reason</strong> – reason for archival (default “Other”). Select from
 <cite>model.ARCHIVE_REASONS</cite></p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of models archived</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of models archived</p>
 </dd>
 </dl>
 </dd></dl>
@@ -446,7 +466,18 @@
 <dl class="method">
 <dt id="benchlingapi.models.models.Project.find">
 <em class="property">classmethod </em><code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.find" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find a model by id.</p>
+<dd><p>Get a single model by its id. See <a href="#id1"><span class="problematic" id="id2">:method:`get`</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – the model id</p></li>
+<li><p><strong>params</strong> – extra parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the model</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -454,8 +485,18 @@
 <em class="property">classmethod </em><code class="sig-name descname">find_by_name</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">page_limit=5</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.find_by_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find a model by name.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code></p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – the model name</p></li>
+<li><p><strong>page_limit</strong> – the return page limit</p></li>
+<li><p><strong>params</strong> – extra parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the model</p>
 </dd>
 </dl>
 </dd></dl>
@@ -467,15 +508,15 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>num</strong> (<em>int</em>) – number of models to return</p></li>
-<li><p><strong>params</strong> (<em>dict</em>) – additional search parameters</p></li>
+<li><p><strong>num</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – number of models to return</p></li>
+<li><p><strong>params</strong> – additional search parameters</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of models</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code>]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of models</p>
 </dd>
 </dl>
 </dd></dl>
@@ -483,10 +524,19 @@
 <dl class="method">
 <dt id="benchlingapi.models.models.Project.get">
 <em class="property">classmethod </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.get" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a model by id.</p>
+<dd><p>Get a single model by its id.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code></p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – the model id</p></li>
+<li><p><strong>params</strong> – extra parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the model</p>
 </dd>
 </dl>
 </dd></dl>
@@ -513,11 +563,11 @@
 <li><p><strong>params</strong> (<em>dict</em>) – additional search parameters</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of models</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code>]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of models</p>
 </dd>
 </dl>
 </dd></dl>
@@ -527,8 +577,14 @@
 <em class="property">classmethod </em><code class="sig-name descname">list</code><span class="sig-paren">(</span><em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.list" title="Permalink to this definition">¶</a></dt>
 <dd><p>List models.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code>]</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>params</strong> – extra parameters</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of models</p>
 </dd>
 </dl>
 </dd></dl>
@@ -536,10 +592,19 @@
 <dl class="method">
 <dt id="benchlingapi.models.models.Project.list_pages">
 <em class="property">classmethod </em><code class="sig-name descname">list_pages</code><span class="sig-paren">(</span><em class="sig-param">page_limit=None</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.list_pages" title="Permalink to this definition">¶</a></dt>
-<dd><p>List models by pages.</p>
+<dd><p>Return a generator pages of models.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code>], <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>]</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page_limit</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – return page limit</p></li>
+<li><p><strong>params</strong> – extra parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code>], <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>generator of list of models</p>
 </dd>
 </dl>
 </dd></dl>
@@ -562,17 +627,17 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>fxn</strong> (<em>callbable</em>) – function to return model</p></li>
-<li><p><strong>limit</strong> (<em>int</em>) – number of models to return (default 1)</p></li>
-<li><p><strong>page_limit</strong> (<em>int</em>) – number of pages to iterate (default 5)</p></li>
-<li><p><strong>params</strong> (<em>dict</em>) – additional search parameters</p></li>
+<li><p><strong>fxn</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>) – function to return model</p></li>
+<li><p><strong>limit</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – number of models to return (default 1)</p></li>
+<li><p><strong>page_limit</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – number of pages to iterate (default 5)</p></li>
+<li><p><strong>params</strong> – additional search parameters</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of models where ‘fxn(model)’ is True</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code>]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Model</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of models where ‘fxn(model)’ is True</p>
 </dd>
 </dl>
 </dd></dl>
@@ -582,11 +647,11 @@
 <code class="sig-name descname">unarchive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#benchlingapi.models.models.Project.unarchive" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unarchive the model instance.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>model instance</p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelBase</span></code></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>self</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>model instance</p>
 </dd>
 </dl>
 </dd></dl>
@@ -597,13 +662,11 @@
 <dd><p>Unarchive many models by their ids.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>model_ids</strong> (<em>list</em>) – list of ids</p>
+<dd class="field-odd"><p><strong>model_ids</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – list of ids
+:return: list of models unarchived</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of models unarchived</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></p>
 </dd>
 </dl>
 </dd></dl>

@@ -959,4 +959,79 @@ interactions:
     status:
       code: 201
       message: CREATED
+- request:
+    body: '{"name": "MyEntity", "aliases": [], "schemaId": "ts_yCWDhgZ8", "folderId":
+      "lib_rdWSmOmk"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '90'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNbUZtTkRWa1ltVXRZakkzTUMwMFltVmtMV0kzTW1VdFpXVTBOVFkyWlRNNVl6Z3oifX0.EIi8gA.g4eK-n_CKsi6oTnecd2awZv95LI
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/custom-entities
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"archiveRecord\": null,\n  \"authors\": [\n
+        \   {\n      \"handle\": \"uwbiofab\",\n      \"id\": \"ent_opWGVHRa\",\n
+        \     \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"createdAt\": \"2019-10-16T14:36:49.336460+00:00\",\n
+        \ \"creator\": {\n    \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n
+        \   \"name\": \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"entityRegistryId\":
+        null,\n  \"fields\": {\n    \"Aquarium ID\": {\n      \"displayValue\": null,\n
+        \     \"isMulti\": false,\n      \"textValue\": null,\n      \"type\": \"integer\",\n
+        \     \"value\": null\n    },\n    \"Aquarium Name\": {\n      \"displayValue\":
+        null,\n      \"isMulti\": false,\n      \"textValue\": null,\n      \"type\":
+        \"text\",\n      \"value\": null\n    },\n    \"Description\": {\n      \"displayValue\":
+        null,\n      \"isMulti\": false,\n      \"textValue\": null,\n      \"type\":
+        \"long_text\",\n      \"value\": null\n    },\n    \"Sequence\": {\n      \"displayValue\":
+        null,\n      \"isMulti\": false,\n      \"textValue\": null,\n      \"type\":
+        \"dna_sequence_link\",\n      \"value\": null\n    }\n  },\n  \"folderId\":
+        \"lib_rdWSmOmk\",\n  \"id\": \"bfi_os5CRqDS\",\n  \"modifiedAt\": \"2019-10-16T14:36:49.336460+00:00\",\n
+        \ \"name\": \"MyEntity\",\n  \"registryId\": null,\n  \"schema\": {\n    \"id\":
+        \"ts_yCWDhgZ8\",\n    \"name\": \"Aquarium Sample\"\n  },\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/bfi_os5CRqDS-myentity/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/bfi_os5CRqDS-myentity/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1377'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 14:36:50 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/custom-entities/bfi_os5CRqDS
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNbUZtTkRWa1ltVXRZakkzTUMwMFltVmtMV0kzTW1VdFpXVTBOVFkyWlRNNVl6Z3oifX0.EIi8gg.TyFlwcXNvgMXN1jjrplQwsGfZPE;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
 version: 1

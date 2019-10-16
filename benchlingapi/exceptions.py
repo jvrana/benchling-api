@@ -1,6 +1,6 @@
 r"""
 Exceptions (:mod:`benchlingapi.exceptions`)
-=============================
+===========================================
 
 .. currentmodule:: benchlingapi.exceptions
 
