@@ -2,7 +2,8 @@
 
 [![PyPI version](https://badge.fury.io/py/benchlingapi.svg)](https://badge.fury.io/py/benchlingapi)
 
-The (unofficial) python API wrapper for Benchling.
+The (unofficial) python API wrapper for Benchling. For more information,
+see documentation at https://klavinslab.github.io/benchling-api/index.
 
 ## Installation
 
