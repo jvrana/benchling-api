@@ -1,4 +1,11 @@
 {
+  "2.0.1": {
+    "description": "bug fixes",
+    "date": "2019-10-16T08:02:35.118447",
+    "changes": [
+      "fixed issue where nested data keys were not properly formatted to and from the benchling server"
+    ]
+  },
   "2.0.0": {
     "description": "second major release",
     "date": "2019-10-15T21:08:34.511953",
