@@ -1,23 +1,32 @@
+r"""
+Session (:mod:`benchlingapi.session`)
+=============================
+
+.. currentmodule:: benchlingapi.session
+
+Main entrypoint for the benchling api.
 """
-BenchlingAPI session object
-"""
+from functools import partial
+from functools import wraps
+from typing import Any
+from typing import Generator
+from typing import List
+from typing import Type
 
 import requests
-from benchlingapi.exceptions import (
-    BenchlingAPIException,
-    ModelNotFoundError,
-    exception_dispatch,
-)
-from benchlingapi.models import ModelRegistry
+
+from benchlingapi.exceptions import BenchlingAPIException
+from benchlingapi.exceptions import exception_dispatch
+from benchlingapi.exceptions import ModelNotFoundError
+from benchlingapi.models.base import ModelBase
+from benchlingapi.models.base import ModelRegistry
 from benchlingapi.models.models import __all__ as allmodels
+from benchlingapi.utils import un_underscore_keys
 from benchlingapi.utils import url_build
-from functools import partial, wraps
 
 
-class RequestDecorator(object):
-    """
-    Wraps a function to raise error with unexpected request status codes
-    """
+class RequestDecorator:
+    """Wraps a function to raise error with unexpected request status codes."""
 
     def __init__(self, status_codes):
         if not isinstance(status_codes, list):
@@ -54,10 +63,8 @@ class RequestDecorator(object):
         return wrapped_f
 
 
-class Http(object):
-    """
-    Creates and responds to the Benchling server.
-    """
+class Http:
+    """Creates and responds to the Benchling server."""
 
     TIMEOUT = 30
     HOME = "https://benchling.com/api/v2"
@@ -72,7 +79,15 @@ class Http(object):
         self.delete = RequestDecorator(200)(partial(self.request, "delete"))
         self.patch = RequestDecorator([200, 201])(partial(self.request, "patch"))
 
-    def request(self, method, path, timeout=None, action=None, **kwargs):
+    def request(
+        self, method: str, path: str, timeout: int = None, action: str = None, **kwargs
+    ) -> Any:
+
+        if "json" in kwargs:
+            kwargs["json"] = un_underscore_keys(kwargs["json"])
+        if "params" in kwargs:
+            kwargs["params"] = un_underscore_keys(kwargs["params"])
+
         if timeout is None:
             timeout = self.TIMEOUT
         if action is not None:
@@ -81,7 +96,9 @@ class Http(object):
             method, url_build(self.HOME, path), timeout=timeout, **kwargs
         )
 
-    def get_pages(self, path, timeout=None, action=None, **kwargs):
+    def get_pages(
+        self, path: str, timeout: int = None, action: str = None, **kwargs
+    ) -> Generator[Any, None, None]:
         get_response = partial(self.get, path, timeout=timeout, action=action)
 
         response = get_response(**kwargs)
@@ -101,9 +118,10 @@ class Http(object):
                 response = None
 
 
-class Session(object):
-    """
-    The session object. This serves as the main interface for using the BenchlingAPI.
+class Session:
+    """The session object.
+
+    This serves as the main interface for using the BenchlingAPI.
     """
 
     def __init__(self, api_key):
@@ -111,41 +129,42 @@ class Session(object):
         self.__interfaces = {}
         for model_name in allmodels:
             model_cls = ModelRegistry.get_model(model_name)
-            nmspc = {"session": self}
-            mymodel = type(model_name, (model_cls,), nmspc)
+            namespace = {"session": self}
+            mymodel = type(model_name, (model_cls,), namespace)
             setattr(self, model_name, mymodel)
             self.__interfaces[model_name] = mymodel
 
     @property
-    def http(self):
-        """Return the http requester object"""
+    def http(self) -> Http:
+        """Return the http requester object."""
         return self.__http
 
     @property
-    def url(self):
-        """Return home benchling url"""
+    def url(self) -> str:
+        """Return home benchling url."""
         return self.__http.HOME
 
     def help(self):
+        """Print api documentation url."""
         help_url = "https://docs.benchling.com/reference"
         print('Visit "{}"'.format(help_url))
 
     @property
-    def models(self):
-        """List all models"""
+    def models(self) -> List[str]:
+        """List all models."""
         return list(ModelRegistry.models.keys())
 
-    def set_timeout(self, timeout_in_seconds):
-        """Set the request timeout"""
+    def set_timeout(self, timeout_in_seconds: int):
+        """Set the request timeout."""
         self.__http.timeout = timeout_in_seconds
 
     @property
     def interfaces(self):
-        """List all model interfaces"""
+        """List all model interfaces."""
         return self.__interfaces
 
-    def interface(self, model_name):
-        """Return a model interface by name"""
+    def interface(self, model_name) -> Type[ModelBase]:
+        """Return a model interface by name."""
         if model_name not in self.interfaces:
             raise ModelNotFoundError('No model by name of "{}"'.format(model_name))
         return self.interfaces[model_name]

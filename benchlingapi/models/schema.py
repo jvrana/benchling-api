@@ -1,19 +1,20 @@
-"""
-Model serialization/deserialization classes
-"""
-
+"""Model serialization/deserialization classes."""
 import re
 
-from marshmallow import Schema, post_load, post_dump, validate, INCLUDE
 from marshmallow import fields as mfields
+from marshmallow import INCLUDE
+from marshmallow import post_dump
+from marshmallow import post_load
+from marshmallow import Schema
+from marshmallow import validate
 
 
-class ModelSchemaMixin(object):
-    """Loads model from the Schema name"""
+class ModelSchemaMixin:
+    """Loads model from the Schema name."""
 
     @classmethod
     def get_model_name(cls):
-        return re.match("(\w+)Schema", cls.__name__).group(1)
+        return re.match(r"(\w+)Schema", cls.__name__).group(1)
 
     # @classmethod
     # def get_model(cls):
@@ -40,35 +41,35 @@ class ModelSchemaMixin(object):
 
 
 class EntitySchema(Schema):
-    entityRegistryId = mfields.String(default=None, allow_none=True)
-    registryId = mfields.String(default=None, allow_none=True)
-    archiveRecord = mfields.Dict(allow_none=True)
+    entity_registry_id = mfields.String(default=None, allow_none=True)
+    registry_id = mfields.String(default=None, allow_none=True)
+    archive_reason = mfields.Dict(allow_none=True)
     id = mfields.String()
     name = mfields.String(required=True, allow_none=False)
-    createdAt = mfields.String(load_only=True)
-    modifiedAt = mfields.String(load_only=True)
+    created_at = mfields.String(load_only=True)
+    modified_at = mfields.String(load_only=True)
     creator = mfields.Dict()
-    customFields = mfields.Dict()
+    custom_fields = mfields.Dict()
     fields = mfields.Dict(allow_none=False)
     schema = mfields.Nested("EntitySchemaSchema", allow_none=True)
-    schemaId = mfields.Method("get_schema_id")
+    schema_id = mfields.Method("get_schema_id")
     aliases = mfields.List(mfields.String())
-    folderId = mfields.String(required=True, allow_none=True)
+    folder_id = mfields.String(required=True, allow_none=True)
     # schema = mfields.Dict(allow_none=True)
     # schema
     # entity
-    # archiveRecord
+    # archive_record
     # mfields
     # custommfields
-    webURL = mfields.URL()
+    web_url = mfields.URL()
 
     class Meta:
         unknown = INCLUDE
         additional = ("id",)
 
     def get_schema_id(self, obj):
-        if hasattr(obj, "schemaId") and obj.schemaId:
-            return obj.schemaId
+        if hasattr(obj, "schema_id") and obj.schema_id:
+            return obj.schema_id
         elif hasattr(obj, "schema") and obj.schema:
             return obj.schema["id"]
 
@@ -82,7 +83,7 @@ class DNASequenceSchema(ModelSchemaMixin, EntitySchema):
     annotations = mfields.Nested("AnnotationSchema", many=True)
     length = mfields.Integer()
     bases = mfields.String(required=True)
-    isCircular = mfields.Boolean(required=True)
+    is_circular = mfields.Boolean(required=True)
     translations = mfields.Nested("TranslationSchema", many=True)
 
     class Meta:
@@ -91,7 +92,7 @@ class DNASequenceSchema(ModelSchemaMixin, EntitySchema):
 
 class AASequenceSchema(ModelSchemaMixin, EntitySchema):
     annotations = mfields.Nested("AnnotationSchema", many=True)
-    aminoAcids = mfields.String(required=True)
+    amino_acids = mfields.String(required=True)
     length = mfields.Integer()
 
     class Meta:
@@ -127,7 +128,7 @@ class TranslationSchema(Schema):
     start = mfields.Integer()
     end = mfields.Integer()
     strand = mfields.Integer(validate=validate.OneOf([0, 1, -1]))
-    aminoAcids = mfields.String()
+    amino_acids = mfields.String()
     regions = mfields.List(mfields.Dict())
 
     class Meta:
@@ -144,22 +145,22 @@ class TranslationSchema(Schema):
 
 class FieldSchema(Schema):
     type = mfields.String(load_only=True)
-    isMulti = mfields.Boolean(load_only=True)
+    is_multi = mfields.Boolean(load_only=True)
     value = mfields.Raw()
-    textValue = mfields.String(load_only=True, allow_none=True)
+    text_value = mfields.String(load_only=True, allow_none=True)
 
     class Meta:
         unknown = INCLUDE
 
 
 class EntitySchemaSchema(Schema):
-    archiveRecord = mfields.Dict(allow_none=True)
+    archive_record = mfields.Dict(allow_none=True)
     id = mfields.String()
     name = mfields.String(required=True)
     type = mfields.String()
-    fieldDefinitions = mfields.List(mfields.Dict)
+    field_definitions = mfields.List(mfields.Dict)
     prefix = mfields.String()
-    registryId = mfields.String(default=None, allow_none=True)
+    registry_id = mfields.String(default=None, allow_none=True)
     constrain = mfields.Dict()
 
     class Meta:
@@ -183,19 +184,19 @@ class UserSummarySchema(Schema):
 class FolderSchema(ModelSchemaMixin, Schema):
     id = mfields.String()
     name = mfields.String(required=True)
-    parentFolderId = mfields.String(allow_none=True)
-    projectId = mfields.String(required=True)
-    archiveRecord = mfields.Dict(allow_none=True)
+    parent_folder_id = mfields.String(allow_none=True)
+    project_id = mfields.String(required=True)
+    archive_record = mfields.Dict(allow_none=True)
 
     class Meta:
         unknown = INCLUDE
 
 
 class ProjectSchema(ModelSchemaMixin, Schema):
-    id = mfields.String()
-    name = mfields.String()
-    owner = mfields.Nested(UserSummarySchema)
-    archiveRecord = mfields.Dict(allow_none=True)
+    id = mfields.String()  #: the id of the project
+    name = mfields.String()  #: the name of the project
+    owner = mfields.Nested(UserSummarySchema)  #: the owner of the project
+    archive_record = mfields.Dict(allow_none=True)
 
     class Meta:
         unknown = INCLUDE

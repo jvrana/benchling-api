@@ -15,7 +15,7 @@ from benchlingapi.session import Session
 
 
 def hash_response(r):
-    """Hashes a request into a unique name"""
+    """Hashes a request into a unique name."""
     return "{}:{}:{}".format(r.method, r.uri, r.body)
 
 
@@ -73,7 +73,7 @@ def project(session):
 def inv_folder(session, project):
     folder_config = config()["inventory_folder"]
 
-    folder = session.Folder.find_by_name(folder_config["name"], projectId=project.id)
+    folder = session.Folder.find_by_name(folder_config["name"], project_id=project.id)
     if folder is None:
         pytest.skip(
             "Could not find folder for {}. Please create folder to continue testing.".format(
@@ -82,7 +82,7 @@ def inv_folder(session, project):
         )
 
     assert folder.name == "API_Inventory"
-    assert session.Project.find(folder.projectId).name == project.name
+    assert session.Project.find(folder.project_id).name == project.name
 
     return folder
 
@@ -97,7 +97,7 @@ def clean_up_folder(folder):
 
         interface = folder.session.interface(model.__name__)
         print('Archiving "{}" models...'.format(model.__name__))
-        for m in interface.all(folderId=folder.id):
+        for m in interface.all(folder_id=folder.id):
             print("Archiving {}".format(m))
             m.archive(m.ARCHIVE_REASONS.OTHER)
 
@@ -106,17 +106,19 @@ def populate_folder(folder, inventory_folder):
     for m in inventory_folder.all_entities():
         print("Copying {} from {} to {}".format(m, folder.name, inventory_folder.name))
         m_copy = m.copy()
-        m_copy.folderId = folder.id
+        m_copy.folder_id = folder.id
         m_copy.save()
 
 
 @pytest.fixture(scope="session", autouse=False)
 def trash_folder(session, project, inv_folder):
-    """The session-wide testing folder. All entities in the folder get archived
-     at the end of every session."""
+    """The session-wide testing folder.
+
+    All entities in the folder get archived at the end of every session.
+    """
     folder_config = config()["trash_folder"]
 
-    folder = session.Folder.find_by_name(folder_config["name"], projectId=project.id)
+    folder = session.Folder.find_by_name(folder_config["name"], project_id=project.id)
     if folder is None:
         pytest.skip(
             "Could not find folder for {}. Please create folder to continue testing.".format(
@@ -125,7 +127,7 @@ def trash_folder(session, project, inv_folder):
         )
 
     assert folder.name == "API_Trash"
-    assert session.Project.find(folder.projectId).name == project.name
+    assert session.Project.find(folder.project_id).name == project.name
 
     # populating trash folder
     # populate_folder(folder, inv_folder)
@@ -137,9 +139,10 @@ def trash_folder(session, project, inv_folder):
 
 @pytest.fixture(scope="function")
 def example_from_inventory(model, inv_folder, trash_folder):
-    """Returns a copied example from the inventory folder given a Model class"""
+    """Returns a copied example from the inventory folder given a Model
+    class."""
     interface = inv_folder.session.interface(model.__name__)
-    example = interface.one(folderId=inv_folder.id)
+    example = interface.one(folder_id=inv_folder.id)
     if example is None:
         pytest.skip(
             'Could not find an example entity for "{}" in "{}"'.format(
@@ -147,7 +150,7 @@ def example_from_inventory(model, inv_folder, trash_folder):
             )
         )
     example_copy = example.copy()
-    example_copy.folderId = trash_folder.id
+    example_copy.folder_id = trash_folder.id
     data = example_copy.dump(**example_copy.CREATE_SCHEMA)
     example_copy.save()
     return example_copy

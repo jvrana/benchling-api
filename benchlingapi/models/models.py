@@ -1,22 +1,18 @@
-"""
-All BenchlingAPI models
-"""
-
 import re
 import urllib
+from typing import List
 
 from benchlingapi.exceptions import BenchlingAPIException
-from benchlingapi.models.base import ModelBase, ModelRegistry
-from benchlingapi.models.mixins import (
-    GetMixin,
-    ListMixin,
-    ArchiveMixin,
-    EntityMixin,
-    RegistryMixin,
-    CreateMixin,
-    InventoryMixin,
-    InventoryEntityMixin,
-)
+from benchlingapi.models.base import ModelBase
+from benchlingapi.models.base import ModelRegistry
+from benchlingapi.models.mixins import ArchiveMixin
+from benchlingapi.models.mixins import CreateMixin
+from benchlingapi.models.mixins import EntityMixin
+from benchlingapi.models.mixins import GetMixin
+from benchlingapi.models.mixins import InventoryEntityMixin
+from benchlingapi.models.mixins import InventoryMixin
+from benchlingapi.models.mixins import ListMixin
+from benchlingapi.models.mixins import RegistryMixin
 
 __all__ = [
     "DNASequence",
@@ -32,47 +28,43 @@ __all__ = [
     "EntitySchema",
 ]
 
-# TODO: implement 'fields' for CustomEntity
+
 class CustomEntity(InventoryEntityMixin, ModelBase):
-    """
-    A Benchling CustomEntity model.
-    """
+    """A Benchling CustomEntity model."""
 
     ENTITY_TYPE = "custom_entity"
 
     CREATE_SCHEMA = dict(
-        only=("aliases", "customFields", "folderId", "name", "schemaId")
+        only=("aliases", "custom_fields", "folder_id", "name", "schema_id")
     )
 
     UPDATE_SCHEMA = dict(
-        only=("aliases", "customFields", "folderId", "name", "schemaId")
+        only=("aliases", "custom_fields", "folder_id", "name", "schema_id")
     )
 
     def __init__(
         self,
         aliases=None,
-        customFields=None,
+        custom_fields=None,
         fields=None,
-        folderId=None,
+        folder_id=None,
         name=None,
-        schemaId=None,
+        schema_id=None,
         schema=None,
-        **kwargs
+        **kwargs,
     ):
         self.aliases = aliases
-        self.customFields = customFields
+        self.custom_fields = custom_fields
         self.fields = fields
-        self.folderId = folderId
+        self.folder_id = folder_id
         self.name = name
         self.schema = schema
-        self.schemaId = schemaId
+        self.schema_id = schema_id
         super().__init__(**kwargs)
 
 
 class DNASequence(InventoryEntityMixin, ModelBase):
-    """
-    A model representing Benchling's DNASequence.
-    """
+    """A model representing Benchling's DNASequence."""
 
     ENTITY_TYPE = "dna_sequence"
 
@@ -81,13 +73,13 @@ class DNASequence(InventoryEntityMixin, ModelBase):
             "aliases",
             "annotations",
             "bases",
-            "customFields",
+            "custom_fields",
             "fields",
-            "folderId",
-            "isCircular",
+            "folder_id",
+            "is_circular",
             "name",
-            "schemaId",
-            "translations",
+            "schema_id",
+            # "translations",
         )
     )
 
@@ -96,12 +88,12 @@ class DNASequence(InventoryEntityMixin, ModelBase):
             "aliases",
             "annotations",
             "bases",
-            "customFields",
+            "custom_fields",
             "fields",
-            "folderId",
-            "isCircular",
+            "folder_id",
+            "is_circular",
             "name",
-            "schemaId",
+            "schema_id",
         )
     )
 
@@ -110,33 +102,50 @@ class DNASequence(InventoryEntityMixin, ModelBase):
         aliases=None,
         annotations=None,
         bases=None,
-        customFields=None,
+        custom_fields=None,
         fields=None,
-        folderId=None,
-        isCircular=None,
+        folder_id=None,
+        is_circular=None,
         name=None,
-        schemaId=None,
+        schema_id=None,
         schema=None,
         translations=None,
-        **kwargs
+        registry_id=None,
+        **kwargs,
     ):
+        """Initialize.
+
+        :param aliases:
+        :param annotations:
+        :param bases:
+        :param custom_fields:
+        :param fields:
+        :param folder_id:
+        :param is_circular:
+        :param name:
+        :param schema_id:
+        :param schema:
+        :param translations:
+        :param kwargs:
+        """
         self.aliases = aliases
         self.annotations = annotations
         self.bases = bases
-        self.customFields = customFields
+        self.custom_fields = custom_fields
         self.fields = fields
-        self.folderId = folderId
-        self.isCircular = isCircular
+        self.folder_id = folder_id
+        self.is_circular = is_circular
         self.name = name
         self.translations = translations
-        self.schemaId = schemaId
+        self.schema_id = schema_id
         self.schema = schema
+        self.registry_id = registry_id
         super().__init__(**kwargs)
 
     @staticmethod
     def _opensharelink(share_link):
-        """
-        Hacky way to read the contents of a Benchling share link
+        """Hacky way to read the contents of a Benchling share link.
+
         :param share_link:
         :return:
         """
@@ -146,14 +155,15 @@ class DNASequence(InventoryEntityMixin, ModelBase):
 
     @staticmethod
     def _parseURL(url):
-        """
-        A really hacky way to parse the Benchling api. This may become unstable.
+        """A really hacky way to parse the Benchling api. This may become
+        unstable.
+
         :param url:
         :return:
         """
         g = re.search(
-            "benchling.com/(?P<user>\w+)/f/(?P<folderid>\w+)"
-            + "-(?P<foldername>\w+)/seq-(?P<seqid>\w+)-(?P<seqname>"
+            r"benchling.com/(?P<user>\w+)/f/(?P<folderid>\w+)"
+            + r"-(?P<foldername>\w+)/seq-(?P<seqid>\w+)-(?P<seqname>"
             + "[a-zA-Z0-9_-]+)",
             url,
         )
@@ -164,10 +174,13 @@ class DNASequence(InventoryEntityMixin, ModelBase):
 
     @classmethod
     def from_share_link(cls, share_link):
-        """Return a DNASequence based on its weblink. Weblink may be a share link or a url"""
+        """Return a DNASequence based on its weblink.
+
+        Weblink may be a share link or a url
+        """
         try:
             text = cls._opensharelink(share_link)
-            search_pattern = "seq_\w+"
+            search_pattern = r"seq_\w+"
             possible_ids = re.findall(search_pattern, text)
             if len(possible_ids) == 0:
                 raise BenchlingAPIException(
@@ -178,7 +191,8 @@ class DNASequence(InventoryEntityMixin, ModelBase):
             uniq_ids = list(set(possible_ids))
             if len(uniq_ids) > 1:
                 raise BenchlingAPIException(
-                    "More than one possible sequence id found in sharelink html using search "
+                    "More than one possible sequence id found in sharelink html using"
+                    " search "
                     "pattern {}".format(search_pattern)
                 )
             seq = uniq_ids[0]
@@ -191,12 +205,64 @@ class DNASequence(InventoryEntityMixin, ModelBase):
             )
         return cls.get(seq)
 
+    @classmethod
+    def list(
+        cls,
+        page_size: int = None,
+        next_token: str = None,
+        sort: str = None,
+        archive_reason: str = None,
+        folder_id: str = None,
+        modified_at: str = None,
+        name: str = None,
+        project_id: str = None,
+        schema_id: str = None,
+        registry_id: str = None,
+        **kwargs,
+    ):
+        """List :class:`DNASequence` models.
+
+        :param page_size: Number of results to return. Defaults to 50, maximum of 100.
+        :param next_token: Token for pagination
+        :param sort: Method by which to order search results. Valid sorts are
+                    modifiedAt (modified time, most recent first) and name
+                    (entity name, alphabetical). Optionally add :asc or
+                    :desc to specify ascending or descending order.
+                    Default is modifiedAt.
+        :param archive_reason: Archive reason. Restricts DNA Sequences to those with
+                the specified archive reason. Use “NOT_ARCHIVED” to filter for
+                unarchived DNA Sequences.
+        :param folder_id: ID of a folder. Restricts results to those in the folder.
+        :param modified_at: Datetime, in RFC 3339 format. Supports the > and <
+                    operators. Time zone defaults to UTC. Restricts results to those
+                    modified in the specified range. e.g. > 2017-04-30.
+        :param name: Name of a DNA Sequence. Restricts results to those with the
+                    specified name.
+        :param project_id: ID of a project. Restricts results to those in the project.
+        :param schema_id: ID of a schema. Restricts results to those of the specified
+                schema.
+        :param registry_id: ID of a registry. Restricts results to those registered in
+                this registry.
+        :return:
+        """
+        return super().list(
+            page_size=page_size,
+            next_token=next_token,
+            sort=sort,
+            modified_at=modified_at,
+            name=name,
+            folder_id=folder_id,
+            project_id=project_id,
+            schema_id=schema_id,
+            archive_reason=archive_reason,
+            registry_id=registry_id,
+            **kwargs,
+        )
+
 
 # TODO: use alias for parameters
-class AASequence(InventoryEntityMixin, ModelBase):
-    """
-    A model representing Benchling's AASequence (protein).
-    """
+class AASequence(ModelBase, InventoryEntityMixin):
+    """A model representing Benchling's AASequence (protein)."""
 
     ENTITY_TYPE = "aa_sequence"
     alias = "Protein"
@@ -204,95 +270,142 @@ class AASequence(InventoryEntityMixin, ModelBase):
     CREATE_SCHEMA = dict(
         only=(
             "aliases",
-            "aminoAcids",
-            "customFields",
+            "amino_acids",
+            "custom_fields",
             "fields",
-            "folderId",
+            "folder_id",
             "name",
-            "schemaId",
+            "schema_id",
         )
     )
 
     UPDATE_SCHEMA = dict(
         only=(
             "aliases",
-            # "aminoAcids",
-            "customFields",
+            # "amino_aids",
+            "custom_fields",
             "fields",
-            "folderId",
+            "folder_id",
             "name",
-            "schemaId",
+            "schema_id",
         )
     )
 
     def __init__(
         self,
         aliases=None,
-        aminoAcids=None,
-        customFields=None,
+        amino_acids=None,
+        custom_fields=None,
         fields=None,
-        folderId=None,
+        folder_id=None,
         name=None,
-        schemaId=None,
+        schema_id=None,
         schema=None,
-        **kwargs
+        **kwargs,
     ):
         self.aliases = aliases
-        self.aminoAcids = aminoAcids
-        self.customFields = customFields
+        self.amino_acids = amino_acids
+        self.custom_fields = custom_fields
         self.fields = fields
-        self.folderId = folderId
+        self.folder_id = folder_id
         self.name = name
         self.schema = schema
-        self.schemaId = schemaId
+        self.schema_id = schema_id
         super().__init__(**kwargs)
+
+    @classmethod
+    def list(
+        cls,
+        page_size: int = None,
+        next_token: str = None,
+        sort: str = None,
+        amino_acids: str = None,
+        archive_reason: str = None,
+        folder_id: str = None,
+        modified_at: str = None,
+        name: str = None,
+        project_id: str = None,
+        schema_id: str = None,
+        registry_id: str = None,
+        **kwargs,
+    ):
+        """List :class:`AASequence` models.
+
+        :param page_size: Number of results to return. Defaults to 50, maximum of 100.
+        :param next_token: Token for pagination
+        :param sort: Method by which to order search results. Valid sorts are modifiedAt
+                (modified time, most recent first) and name (entity name, alphabetical).
+                 Optionally add :asc or :desc to specify ascending or descending order.
+                 Default is modifiedAt.
+        :param archive_reason: Archive reason. Restricts DNA Sequences to those with the
+                specified archive reason. Use “NOT_ARCHIVED” to filter for unarchived
+                DNA Sequences.
+        :param folder_id: ID of a folder. Restricts results to those in the folder.
+        :param modified_at: Datetime, in RFC 3339 format. Supports the > and <
+                operators. Time zone defaults to UTC. Restricts results to those
+                modified in the specified range. e.g. > 2017-04-30.
+        :param name: Name of a DNA Sequence. Restricts results to those with the
+                specified name.
+        :param project_id: ID of a project. Restricts results to those in the project.
+        :param schema_id: ID of a schema. Restricts results to those of the specified
+                schema.
+        :param registry_id: ID of a registry. Restricts results to those registered in
+                this registry.
+        :return:
+        """
+        return super().list(
+            page_size=page_size,
+            next_token=next_token,
+            sort=sort,
+            amino_acids=amino_acids,
+            modified_at=modified_at,
+            name=name,
+            folder_id=folder_id,
+            project_id=project_id,
+            schema_id=schema_id,
+            archive_reason=archive_reason,
+            registry_id=registry_id,
+            **kwargs,
+        )
 
 
 class Batch(RegistryMixin, EntityMixin, ModelBase):
-    """
-    A model representing a Batch.
-    """
+    """A model representing a Batch."""
 
-    CREATE_SCHEMA = dict(only=("entityId", "fields"))
+    CREATE_SCHEMA = dict(only=("entity_id", "fields"))
 
     UPDATE_SCHEMA = dict(only=("fields"))
 
-    def __init__(self, entityId=None, fields=None, **kwargs):
-        self.entityId = entityId
+    def __init__(self, entity_id=None, fields=None, **kwargs):
+        self.entity_id = entity_id
         self.fields = fields
         super().__init__(**kwargs)
 
 
 class Annotation(ModelBase):
-    """
-    A model representing a sequence Annotation.
-    """
+    """A model representing a sequence Annotation."""
 
     pass
 
 
 class Translation(ModelBase):
-    """
-    A model representing a protein translation.
-    """
+    """A model representing a protein translation."""
 
     pass
 
 
 class Oligo(GetMixin, CreateMixin, InventoryMixin, RegistryMixin, ModelBase):
-    """
-    A model representing an Oligo.
-    """
+    """A model representing an Oligo."""
 
     CREATE_SCHEMA = dict(
         only=(
             "aliases",
             "bases",
-            "customFields",
+            "custom_fields",
             "fields",
-            "folderId",
+            "folder_id",
             "name",
-            "schemaId",
+            "schema_id",
         )
     )
 
@@ -300,29 +413,27 @@ class Oligo(GetMixin, CreateMixin, InventoryMixin, RegistryMixin, ModelBase):
         self,
         aliases=None,
         bases=None,
-        customFields=None,
+        custom_fields=None,
         fields=None,
-        folderId=None,
+        folder_id=None,
         name=None,
-        schemaId=None,
+        schema_id=None,
         schema=None,
-        **kwargs
+        **kwargs,
     ):
         self.aliases = aliases
         self.bases = bases
-        self.customFields = customFields
+        self.custom_fields = custom_fields
         self.fields = fields
-        self.folderId = folderId
+        self.folder_id = folder_id
         self.name = name
-        self.schemaId = schemaId
+        self.schema_id = schema_id
         self.schema = schema
         super().__init__(**kwargs)
 
 
 class Folder(GetMixin, ListMixin, ArchiveMixin, ModelBase):
-    """
-    A model representing a Benchling Folder.
-    """
+    """A model representing a Benchling Folder."""
 
     def all_entities(self):
         """Generator that retrieves all entities in the folder."""
@@ -332,40 +443,37 @@ class Folder(GetMixin, ListMixin, ArchiveMixin, ModelBase):
         for model in entity_models:
 
             interface = self.session.interface(model.__name__)
-            for m in interface.all(folderId=self.id):
+            for m in interface.all(folder_id=self.id):
                 yield m
 
 
 class Project(ListMixin, ArchiveMixin, ModelBase):
-    """
-    A model representing a Benchling Project.
-    """
+    """A model representing a Benchling Project."""
 
 
 class EntitySchema(ModelBase):
-    """
-    A model representing an EntitySchema.
-    """
+    """A model representing an EntitySchema."""
 
     pass
 
 
 class Registry(ListMixin, ModelBase):
-    """
-    A model representing a Registry.
-    """
+    """A model representing a Benchling Registry."""
 
     @classmethod
     def get(cls, id):
-        """Get registry by id"""
+        """Get registry by id."""
         for r in cls.list():
             if r.id == id:
                 return r
 
     @classmethod
-    def find_registry(cls, id=None, name=None):
-        """Finds a registry based on either id or name. If neither is provided and there
-        is only 1 registry, return the only registry."""
+    def find_registry(cls, id: str = None, name: str = None) -> "Registry":
+        """Finds a registry based on either id or name.
+
+        If neither is provided and there is only 1 registry, return the
+        only registry.
+        """
         if id:
             return cls.get(id)
         elif name:
@@ -377,12 +485,17 @@ class Registry(ListMixin, ModelBase):
 
     @property
     def entity_schemas(self):
-        """List schemas"""
+        """List schemas."""
         data = self._get([self.id, "entity-schemas"])["entitySchemas"]
         return EntitySchema.load_many(data)
 
-    def get_schema(self, name=None, id=None):
-        """Get a registry schema by name or id"""
+    def get_schema(self, name: str = None, id: str = None):
+        """Get the schema of the registry.
+
+        :param name: name of the registry
+        :param id: id of the registry
+        :return:
+        """
         for schema in self.entity_schemas:
             if id:
                 if schema["id"] == id:
@@ -393,7 +506,7 @@ class Registry(ListMixin, ModelBase):
 
     @classmethod
     def find_from_schema_id(cls, schema_id):
-        """Find registry from a schema id"""
+        """Find registry from a schema id."""
         for r in cls.list():
             for schema in r.entity_schemas:
                 if schema["id"] == schema_id:
@@ -402,37 +515,37 @@ class Registry(ListMixin, ModelBase):
     @classmethod
     def register(
         cls,
-        registry_id,
-        entity_ids,
-        naming_strategy=RegistryMixin.NAMING_STRATEGY._DEFAULT,
+        registry_id: str,
+        entity_ids: List[str],
+        naming_strategy: str = RegistryMixin.NAMING_STRATEGY.DEFAULT,
     ):
 
-        data = {"entityIds": entity_ids, "namingStrategy": naming_strategy}
+        data = {"entity_ids": entity_ids, "naming_strategy": naming_strategy}
         return cls._post(data, path_params=[registry_id], action="register-entities")
 
     @classmethod
     def unregister(cls, registry_id, entity_ids, folder_id):
-        data = {"entityIds": entity_ids, "folderId": folder_id}
+        data = {"entity_ids": entity_ids, "folder_id": folder_id}
         return cls._post(data, path_params=[registry_id], action="unregister-entities")
 
-    def register_entities(self, entity_ids, naming_strategy=None):
-        """Register entities by their ids"""
+    def register_entities(self, entity_ids: List[str], naming_strategy: str = None):
+        """Register entities by their ids."""
         return self.register(self.id, entity_ids, naming_strategy=naming_strategy)
 
     def unregister_entities(self, entity_ids, folder_id):
-        """Unregister entities by their ids and move them to a new folder"""
+        """Unregister entities by their ids and move them to a new folder."""
         return self.unregister(self.id, entity_ids, folder_id)
 
-    def get_entities(self, entity_registry_ids):
-        """Get entities by their ids"""
+    def get_entities(self, entity_registry_ids: List[str]) -> List["Registry"]:
+        """Get entities by their ids."""
         return self._get(
             [self.id, "registered-entities"],
             action="bulk-get",
-            params={"entityRegistryIds": entity_registry_ids},
+            params={"entity_registry_ids": entity_registry_ids},
         )["entities"]
 
-    def find_in_registry(self, entity_registry_id):
-        """Find entity by its id"""
+    def find_in_registry(self, entity_registry_id) -> ModelBase:
+        """Find entity by its id."""
         models = self.get_entities([entity_registry_id])
         if models:
             return models[0]

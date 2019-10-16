@@ -12,11 +12,9 @@
 #
 # All configuration values have a default; values that are commented out
 # serve to show the default.
-
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-
 import os
 import sys
 
@@ -34,7 +32,9 @@ autodoc_default_flags = [
     "private-members",
     "show-inheritance",
 ]
-autosummary_generate = True  # Make _autosummary files and include them
+import glob
+
+autosummary_generate = glob.glob("*.rst")  # Make _autosummary files and include them
 napoleon_numpy_docstring = False  # Force consistency, leave only Google
 napoleon_use_rtype = False  # More legible
 
@@ -46,13 +46,21 @@ napoleon_use_rtype = False  # More legible
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+
 extensions = [
     "sphinx.ext.autodoc",
-    "sphinx.ext.autosummary",
+    "sphinx.ext.intersphinx",
+    "sphinx_autodoc_typehints",
+    "autodocsumm",
+    "sphinx.ext.mathjax",
     "sphinx.ext.doctest",
     "sphinx.ext.coverage",
     "sphinx.ext.viewcode",
+    "sphinx.ext.inheritance_diagram",
+    "recommonmark",
 ]
+
+autodoc_default_options = {"autosummary": True}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -60,7 +68,7 @@ templates_path = ["_templates"]
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-source_suffix = [".rst", ".md"]
+source_suffix = {".rst": "restructuredtext", ".txt": "markdown", ".md": "markdown"}
 # source_suffix = '.rst'
 
 # The master toctree document.
@@ -68,8 +76,8 @@ master_doc = "index"
 
 # General information about the project.
 project = benchlingapi.__title__
-copyright = "2017, University of Washington"
-author = benchlingapi.__author__[0]
+copyright = "2017-2019, University of Washington"
+author = ", ".join(benchlingapi.__authors__)
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -77,6 +85,7 @@ author = benchlingapi.__author__[0]
 #
 # The short X.Y version.
 version = benchlingapi.__version__
+gitpage = benchlingapi.__homepage__
 # The full version, including alpha/beta/rc tags.
 release = benchlingapi.__version__
 
@@ -90,19 +99,26 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ["docs", "Thumbs.db", ".DS_Store"]
+exclude_patterns = ["docs", "Thumbs.db", ".DS_Store", "_build", "**.ipynb_checkpoints"]
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = "sphinx"
+pygments_style = "tango"
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
+html_static_path = ["_static"]
 
 html_context = {
     "version": version,
-    "github": benchlingapi.__repo__,
-    "pypi": benchlingapi.__homepage__,
+    "github": benchlingapi.__homepage__,
+    "repo": benchlingapi.__repo__,
+    "aquarium_page": "https://www.aquarium.bio/",
+    "display_github": True,  # Integrate GitHub
+    "github_user": "jvrana",  # Username
+    "github_repo": "benchlingapi-dna-design",  # Repo name
+    "github_version": "master",  # Version
+    "conf_py_path": "./",  # Path in the checkout to the docs root
 }
 
 # -- Options for HTML output ----------------------------------------------
@@ -110,37 +126,53 @@ html_context = {
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-import guzzle_sphinx_theme
+import sphinx_bootstrap_theme
 
-html_theme_path = guzzle_sphinx_theme.html_theme_path()
-html_theme = "guzzle_sphinx_theme"
-
-# Register the theme as an extension to generate a sitemap.xml
-extensions.append("guzzle_sphinx_theme")
+html_theme = "bootstrap"
+html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 # Guzzle theme options (see theme.conf for more information)
 html_theme_options = {
     # Set the name of the project to appear in the sidebar
-    "project_nav_name": "Python BenchlingAPI"
+    "navbar_title": "BenchlingAPI",
+    "navbar_site_name": "BenchlingAPI",
+    # Render the next and previous page links in navbar. (Default: true)
+    "navbar_sidebarrel": True,
+    # Render the current pages TOC in the navbar. (Default: true)
+    "navbar_pagenav": False,
+    # Tab name for the current pages TOC. (Default: "Page")
+    "navbar_pagenav_name": "Page",
+    "globaltoc_depth": 3,
+    # Location of link to source.
+    # Options are "nav" (default), "footer" or anything else to exclude.
+    "source_link_position": "nav",
+    # Bootswatch (http://bootswatch.com/) theme.
+    #
+    # Options are nothing (default) or the name of a valid theme
+    # such as "cosmo" or "sandstone".
+    #
+    # The set of valid themes depend on the version of Bootstrap
+    # that's used (the next config option).
+    #
+    # Currently, the supported themes are:
+    # - Bootstrap 2: https://bootswatch.com/2
+    # - Bootstrap 3: https://bootswatch.com/3
+    "bootswatch_theme": "cosmo",
+    # Choose Bootstrap version.
+    # Values: "3" (default) or "2" (in quotes)
+    "bootstrap_version": "3",
 }
-
-# html_theme = 'sphinx_rtd_theme'
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["_static"]
 
-# html side bars
+html_sidebars = {"developer/api_reference": ["localtoc.html"]}
 # html_sidebars = {
-#     'index':    ['sidebar.html', 'globaltoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html'],
-#     '**':       ['sidebar.html', 'localtoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html']
+#     'index':    ['sidebar.html'],
+#     '**':       ['sidebar.html']
 # }
-html_sidebars = {
-    "index": ["sidebar.html", "globaltoc.html", "searchbox.html"],
-    "**": ["sidebar.html", "globaltoc.html", "searchbox.html"],
-}
 
 # -- Options for HTMLHelp output ------------------------------------------
 
@@ -169,13 +201,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (
-        master_doc,
-        "BenchlingAPI.tex",
-        "Python BenchlingAPI Documentation",
-        "Justin Vrana",
-        "manual",
-    )
+    (master_doc, "BenchlingAPI.tex", "BenchlingAPI Documentation", author, "manual")
 ]
 
 
@@ -183,9 +209,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, "benchlingapi", "Python BenchlingAPI Documentation", [author], 1)
-]
+man_pages = [(master_doc, "benchlingapi", "BenchlingAPI Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output -------------------------------------------
@@ -197,10 +221,64 @@ texinfo_documents = [
     (
         master_doc,
         "BenchlingAPI",
-        "Python BenchlingAPI Documentation",
+        "BenchlingAPI Documentation",
         author,
         "BenchlingAPI",
-        "Python BenchlingAPI Documentation.",
+        "One line description of project.",
         "Miscellaneous",
     )
 ]
+
+
+def setup(app):
+    app.add_stylesheet("css/style.css")
+
+
+# Default language for syntax highlighting in reST and Markdown cells
+highlight_language = "none"
+
+# Don't add .txt suffix to source files (available for Sphinx >= 1.5):
+html_sourcelink_suffix = ""
+
+# Work-around until https://github.com/sphinx-doc/sphinx/issues/4229 is solved:
+html_scaled_image_link = False
+
+# List of arguments to be passed to the kernel that executes the notebooks:
+nbsphinx_execute_arguments = [
+    "--InlineBackend.figure_formats={'svg', 'pdf'}",
+    "--InlineBackend.rc={'figure.dpi': 96}",
+]
+
+# This is processed by Jinja2 and inserted before each notebook
+nbsphinx_prolog = r"""
+{% set docname = env.doc2path(env.docname, base='doc') %}
+.. only:: html
+    .. role:: raw-html(raw)
+        :format: html
+    .. nbinfo::
+        This page was generated from `{{ docname }}`__.
+        Interactive online version:
+        :raw-html:`<a href="https://mybinder.org/v2/gh/spatialaudio/nbsphinx/{{ env.config.release }}?filepath={{ docname }}"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>`
+    __ https://github.com/spatialaudio/nbsphinx/blob/
+        {{ env.config.release }}/{{ docname }}
+.. raw:: latex
+    \nbsphinxstartnotebook{\scriptsize\noindent\strut
+    \textcolor{gray}{The following section was generated from
+    \sphinxcode{\sphinxupquote{\strut {{ docname | escape_latex }}}} \dotfill}}
+"""
+
+# This is processed by Jinja2 and inserted after each notebook
+nbsphinx_epilog = r"""
+.. raw:: latex
+    \nbsphinxstopnotebook{\scriptsize\noindent\strut
+    \textcolor{gray}{\dotfill\ \sphinxcode{\sphinxupquote{\strut
+    {{ env.doc2path(env.docname, base='doc') | escape_latex }}}} ends here.}}
+"""
+
+mathjax_path = (
+    "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+)
+
+mathjax_config = {
+    "TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": True}}
+}

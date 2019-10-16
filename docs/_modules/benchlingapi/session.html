@@ -1,21 +1,13 @@
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-  
-  <!-- Licensed under the Apache 2.0 License -->
-  <link rel="stylesheet" type="text/css" href="../../_static/fonts/open-sans/stylesheet.css" />
-  <!-- Licensed under the SIL Open Font License -->
-  <link rel="stylesheet" type="text/css" href="../../_static/fonts/source-serif-pro/source-serif-pro.css" />
-  <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap-theme.min.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
     <title>benchlingapi.session &#8212; benchlingapi 2.0.2a documentation</title>
-    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
@@ -23,270 +15,313 @@
     <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-  
-   
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">benchlingapi 2.0.2a documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
-      </ul>
-    </div>
-    <div class="container-wrapper">
 
-      <div id="mobile-toggle">
-        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          BenchlingAPI</a>
+        <span class="navbar-text navbar-version pull-left"><b>2.0.2a</b></span>
       </div>
-  <div id="left-column">
-    <div class="sphinxsidebar"><a href="https://www.github.com/klavinslab/benchlngapi" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
-<div>
-    <div>
-        <h1 align="center"><a href="../../index.html">Python BenchlingAPI</a>
-        </h1>
-    </div>
-</div>
-
-<p align="center" class="sidebar-subtitle">version: <a href="https://pypi.org/project/benchlingapi/">2.0.2a</a></p>
-<div>
-
-</div>
-<div class="sidebar-block">
-  <div class="sidebar-wrapper">
-    <h2>Table Of Contents</h2>
-  </div>
-  <div class="sidebar-toc">
-    
-    
-      <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Python Benchling API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer/api_reference.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer/changelog.html">Change log</a></li>
-</ul>
-
-    
-  </div>
-</div>
-<div class="sidebar-block">
-  <div class="sidebar-wrapper">
-    <div id="main-search">
-      <form class="form-inline" action="../../search.html" method="GET" role="form">
-        <div class="input-group">
-          <input name="q" type="text" class="form-control" placeholder="Search...">
-        </div>
-        <input type="hidden" name="check_keywords" value="yes" />
-        <input type="hidden" name="area" value="default" />
-      </form>
-    </div>
-  </div>
-</div>
-      
-    </div>
-  </div>
-        <div id="right-column">
-          
-          <div role="navigation" aria-label="breadcrumbs navigation">
-            <ol class="breadcrumb">
-              <li><a href="../../index.html">Docs</a></li>
-              
-                <li><a href="../index.html">Module code</a></li>
-              
-              <li>benchlingapi.session</li>
-            </ol>
-          </div>
-          
-          <div class="document clearer body">
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
             
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">BenchlingAPI <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../session.html">Session (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.session</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../models.html">Models (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.models.models</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../models.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.models.DNASequence.html">benchlingapi.models.models.DNASequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.models.AASequence.html">benchlingapi.models.models.AASequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.models.Oligo.html">benchlingapi.models.models.Oligo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.models.Annotation.html">benchlingapi.models.models.Annotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.models.Translation.html">benchlingapi.models.models.Translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.models.CustomEntity.html">benchlingapi.models.models.CustomEntity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.models.EntitySchema.html">benchlingapi.models.models.EntitySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.models.Project.html">benchlingapi.models.models.Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.models.Registry.html">benchlingapi.models.models.Registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.models.Translation.html">benchlingapi.models.models.Translation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../models.html#schemas">Schemas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.DNASequenceSchema.html">benchlingapi.models.schema.DNASequenceSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.AASequenceSchema.html">benchlingapi.models.schema.AASequenceSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.BatchSchema.html">benchlingapi.models.schema.BatchSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.CustomEntitySchema.html">benchlingapi.models.schema.CustomEntitySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.DNASequenceSchema.html">benchlingapi.models.schema.DNASequenceSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.EntitySchema.html">benchlingapi.models.schema.EntitySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.EntitySchemaSchema.html">benchlingapi.models.schema.EntitySchemaSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.FieldSchema.html">benchlingapi.models.schema.FieldSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.FolderSchema.html">benchlingapi.models.schema.FolderSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.OligoSchema.html">benchlingapi.models.schema.OligoSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.ProjectSchema.html">benchlingapi.models.schema.ProjectSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.RegistrySchema.html">benchlingapi.models.schema.RegistrySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.TranslationSchema.html">benchlingapi.models.schema.TranslationSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/benchlingapi.models.schema.UserSummarySchema.html">benchlingapi.models.schema.UserSummarySchema</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../exceptions.html">Exceptions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.exceptions</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">Utilities (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.utils</span></code>)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#session">Session</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guidelines.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guidelines.html#adding-a-new-model">Adding a new model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guidelines.html#running-tests">Running tests</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
   <h1>Source code for benchlingapi.session</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">BenchlingAPI session object</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span></span>r&quot;&quot;&quot;
+Session (:mod:`benchlingapi.session`)
+=============================
 
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">benchlingapi.exceptions</span> <span class="k">import</span> <span class="p">(</span>
-    <span class="n">BenchlingAPIException</span><span class="p">,</span>
-    <span class="n">ModelNotFoundError</span><span class="p">,</span>
-    <span class="n">exception_dispatch</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">benchlingapi.models</span> <span class="k">import</span> <span class="n">ModelRegistry</span>
-<span class="kn">from</span> <span class="nn">benchlingapi.models.models</span> <span class="k">import</span> <span class="n">__all__</span> <span class="k">as</span> <span class="n">allmodels</span>
-<span class="kn">from</span> <span class="nn">benchlingapi.utils</span> <span class="k">import</span> <span class="n">url_build</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">partial</span><span class="p">,</span> <span class="n">wraps</span>
+.. currentmodule:: benchlingapi.session
 
+Main entrypoint for the benchling api.
+&quot;&quot;&quot;
 
-<div class="viewcode-block" id="RequestDecorator"><a class="viewcode-back" href="../../developer/_autosummary/benchlingapi.session.html#benchlingapi.session.RequestDecorator">[docs]</a><span class="k">class</span> <span class="nc">RequestDecorator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Wraps a function to raise error with unexpected request status codes</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status_codes</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">status_codes</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-            <span class="n">status_codes</span> <span class="o">=</span> <span class="p">[</span><span class="n">status_codes</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="n">status_codes</span>
-
-    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
-        <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-        <span class="k">def</span> <span class="nf">wrapped_f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">:</span>
-                <span class="n">http_codes</span> <span class="o">=</span> <span class="p">{</span>
-                    <span class="mi">400</span><span class="p">:</span> <span class="s2">&quot;BAD REQUEST&quot;</span><span class="p">,</span>
-                    <span class="mi">403</span><span class="p">:</span> <span class="s2">&quot;FORBIDDEN&quot;</span><span class="p">,</span>
-                    <span class="mi">404</span><span class="p">:</span> <span class="s2">&quot;NOT FOUND&quot;</span><span class="p">,</span>
-                    <span class="mi">500</span><span class="p">:</span> <span class="s2">&quot;INTERNAL SERVER ERROR&quot;</span><span class="p">,</span>
-                    <span class="mi">503</span><span class="p">:</span> <span class="s2">&quot;SERVICE UNAVAILABLE&quot;</span><span class="p">,</span>
-                    <span class="mi">504</span><span class="p">:</span> <span class="s2">&quot;SERVER TIMEOUT&quot;</span><span class="p">,</span>
-                <span class="p">}</span>
-                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-                <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">in</span> <span class="n">http_codes</span><span class="p">:</span>
-                    <span class="n">msg</span> <span class="o">=</span> <span class="n">http_codes</span><span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">]</span>
-                    <span class="n">msg</span> <span class="o">+=</span> <span class="n">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">request: </span><span class="si">{r.request}</span><span class="s2">&quot;</span>
-                    <span class="n">msg</span> <span class="o">+=</span> <span class="n">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">url: </span><span class="si">{r.request.path_url}</span><span class="s2">&quot;</span>
-                    <span class="n">msg</span> <span class="o">+=</span> <span class="n">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">response: </span><span class="si">{r.text}</span><span class="s2">&quot;</span>
-
-                <span class="n">e</span> <span class="o">=</span> <span class="n">BenchlingAPIException</span><span class="p">(</span>
-                    <span class="s2">&quot;HTTP Response Failed </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
-                <span class="p">)</span>
-                <span class="n">e</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="n">r</span>
-                <span class="n">exception_dispatch</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-        <span class="k">return</span> <span class="n">wrapped_f</span></div>
+import requests
+from benchlingapi.exceptions import (
+    BenchlingAPIException,
+    ModelNotFoundError,
+    exception_dispatch,
+)
+from benchlingapi.models.base import ModelRegistry, ModelBase
+from benchlingapi.models.models import __all__ as allmodels
+from benchlingapi.utils import url_build, un_underscore_keys
+from functools import partial, wraps
+from typing import List, Type, Generator, Any
 
 
-<div class="viewcode-block" id="Http"><a class="viewcode-back" href="../../developer/_autosummary/benchlingapi.session.html#benchlingapi.session.Http">[docs]</a><span class="k">class</span> <span class="nc">Http</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Creates and responds to the Benchling server.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="RequestDecorator"><a class="viewcode-back" href="../../session.html#benchlingapi.session.RequestDecorator">[docs]</a>class RequestDecorator(object):
+    &quot;&quot;&quot;
+    Wraps a function to raise error with unexpected request status codes
+    &quot;&quot;&quot;
 
-    <span class="n">TIMEOUT</span> <span class="o">=</span> <span class="mi">30</span>
-    <span class="n">HOME</span> <span class="o">=</span> <span class="s2">&quot;https://benchling.com/api/v2&quot;</span>
-    <span class="n">NEXT</span> <span class="o">=</span> <span class="s2">&quot;nextToken&quot;</span>
+    def __init__(self, status_codes):
+        if not isinstance(status_codes, list):
+            status_codes = [status_codes]
+        self.code = status_codes
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">):</span>
-        <span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
-        <span class="n">session</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__session</span> <span class="o">=</span> <span class="n">session</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">post</span> <span class="o">=</span> <span class="n">RequestDecorator</span><span class="p">([</span><span class="mi">200</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">202</span><span class="p">])(</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">get</span> <span class="o">=</span> <span class="n">RequestDecorator</span><span class="p">(</span><span class="mi">200</span><span class="p">)(</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;get&quot;</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">delete</span> <span class="o">=</span> <span class="n">RequestDecorator</span><span class="p">(</span><span class="mi">200</span><span class="p">)(</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;delete&quot;</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">patch</span> <span class="o">=</span> <span class="n">RequestDecorator</span><span class="p">([</span><span class="mi">200</span><span class="p">,</span> <span class="mi">201</span><span class="p">])(</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;patch&quot;</span><span class="p">))</span>
+    def __call__(self, f):
+        @wraps(f)
+        def wrapped_f(*args, **kwargs):
+            r = f(*args, **kwargs)
+            if r.status_code not in self.code:
+                http_codes = {
+                    400: &quot;BAD REQUEST&quot;,
+                    403: &quot;FORBIDDEN&quot;,
+                    404: &quot;NOT FOUND&quot;,
+                    500: &quot;INTERNAL SERVER ERROR&quot;,
+                    503: &quot;SERVICE UNAVAILABLE&quot;,
+                    504: &quot;SERVER TIMEOUT&quot;,
+                }
+                msg = &quot;&quot;
+                if r.status_code in http_codes:
+                    msg = http_codes[r.status_code]
+                    msg += f&quot;\nrequest: {r.request}&quot;
+                    msg += f&quot;\nurl: {r.request.path_url}&quot;
+                    msg += f&quot;\nresponse: {r.text}&quot;
 
-    <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">timeout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TIMEOUT</span>
-        <span class="k">if</span> <span class="n">action</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">path</span> <span class="o">+=</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">action</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">method</span><span class="p">,</span> <span class="n">url_build</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">HOME</span><span class="p">,</span> <span class="n">path</span><span class="p">),</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
-        <span class="p">)</span>
+                e = BenchlingAPIException(
+                    &quot;HTTP Response Failed {} {}&quot;.format(r.status_code, msg)
+                )
+                e.response = r
+                exception_dispatch(e)
+            return r.json()
 
-    <span class="k">def</span> <span class="nf">get_pages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">get_response</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">)</span>
-
-        <span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-        <span class="k">while</span> <span class="n">response</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="n">response</span>
-
-            <span class="nb">next</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NEXT</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-            <span class="c1"># update params with nextToken</span>
-            <span class="n">params</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NEXT</span><span class="p">,</span> <span class="p">{})</span>
-            <span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="bp">self</span><span class="o">.</span><span class="n">NEXT</span><span class="p">:</span> <span class="nb">next</span><span class="p">})</span>
-            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span>
-
-            <span class="k">if</span> <span class="nb">next</span><span class="p">:</span>
-                <span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">response</span> <span class="o">=</span> <span class="kc">None</span></div>
+        return wrapped_f</div>
 
 
-<div class="viewcode-block" id="Session"><a class="viewcode-back" href="../../developer/_autosummary/benchlingapi.session.html#benchlingapi.session.Session">[docs]</a><span class="k">class</span> <span class="nc">Session</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The session object. This serves as the main interface for using the BenchlingAPI.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Http"><a class="viewcode-back" href="../../session.html#benchlingapi.session.Http">[docs]</a>class Http(object):
+    &quot;&quot;&quot;
+    Creates and responds to the Benchling server.
+    &quot;&quot;&quot;
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__http</span> <span class="o">=</span> <span class="n">Http</span><span class="p">(</span><span class="n">api_key</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__interfaces</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">for</span> <span class="n">model_name</span> <span class="ow">in</span> <span class="n">allmodels</span><span class="p">:</span>
-            <span class="n">model_cls</span> <span class="o">=</span> <span class="n">ModelRegistry</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
-            <span class="n">nmspc</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;session&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="p">}</span>
-            <span class="n">mymodel</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="p">(</span><span class="n">model_cls</span><span class="p">,),</span> <span class="n">nmspc</span><span class="p">)</span>
-            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_name</span><span class="p">,</span> <span class="n">mymodel</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__interfaces</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">mymodel</span>
+    TIMEOUT = 30
+    HOME = &quot;https://benchling.com/api/v2&quot;
+    NEXT = &quot;nextToken&quot;
 
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">http</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the http requester object&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__http</span>
+    def __init__(self, api_key):
+        session = requests.Session()
+        session.auth = (api_key, &quot;&quot;)
+        self.__session = session
+        self.post = RequestDecorator([200, 201, 202])(partial(self.request, &quot;post&quot;))
+        self.get = RequestDecorator(200)(partial(self.request, &quot;get&quot;))
+        self.delete = RequestDecorator(200)(partial(self.request, &quot;delete&quot;))
+        self.patch = RequestDecorator([200, 201])(partial(self.request, &quot;patch&quot;))
 
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return home benchling url&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__http</span><span class="o">.</span><span class="n">HOME</span>
+    def request(self, method: str, path: str, timeout: int = None,
+                action: str = None, **kwargs) -&gt; Any:
 
-    <span class="k">def</span> <span class="nf">help</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">help_url</span> <span class="o">=</span> <span class="s2">&quot;https://docs.benchling.com/reference&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Visit &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">help_url</span><span class="p">))</span>
+        if &#39;json&#39; in kwargs:
+            kwargs[&#39;json&#39;] = un_underscore_keys(kwargs[&#39;json&#39;])
+        if &#39;params&#39; in kwargs:
+            kwargs[&#39;params&#39;] = un_underscore_keys(kwargs[&#39;params&#39;])
 
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">models</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;List all models&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">ModelRegistry</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        if timeout is None:
+            timeout = self.TIMEOUT
+        if action is not None:
+            path += &quot;:&quot; + action
+        return self.__session.request(
+            method, url_build(self.HOME, path), timeout=timeout, **kwargs
+        )
 
-<div class="viewcode-block" id="Session.set_timeout"><a class="viewcode-back" href="../../developer/_autosummary/benchlingapi.session.html#benchlingapi.session.Session.set_timeout">[docs]</a>    <span class="k">def</span> <span class="nf">set_timeout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout_in_seconds</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Set the request timeout&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__http</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout_in_seconds</span></div>
+    def get_pages(self, path: str, timeout: int = None, action: str = None, **kwargs) \
+            -&gt; Generator[Any, None, None]:
+        get_response = partial(self.get, path, timeout=timeout, action=action)
 
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">interfaces</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;List all model interfaces&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__interfaces</span>
+        response = get_response(**kwargs)
 
-<div class="viewcode-block" id="Session.interface"><a class="viewcode-back" href="../../developer/_autosummary/benchlingapi.session.html#benchlingapi.session.Session.interface">[docs]</a>    <span class="k">def</span> <span class="nf">interface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a model interface by name&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interfaces</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">ModelNotFoundError</span><span class="p">(</span><span class="s1">&#39;No model by name of &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">))</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">interfaces</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span></div></div>
+        while response is not None:
+            yield response
+
+            next = response.get(self.NEXT, None)
+            # update params with nextToken
+            params = kwargs.get(self.NEXT, {})
+            params.update({self.NEXT: next})
+            kwargs[&quot;params&quot;] = params
+
+            if next:
+                response = get_response(**kwargs)
+            else:
+                response = None</div>
+
+
+<div class="viewcode-block" id="Session"><a class="viewcode-back" href="../../session.html#benchlingapi.session.Session">[docs]</a>class Session(object):
+    &quot;&quot;&quot;
+    The session object. This serves as the main interface for using the BenchlingAPI.
+    &quot;&quot;&quot;
+
+    def __init__(self, api_key):
+        self.__http = Http(api_key)
+        self.__interfaces = {}
+        for model_name in allmodels:
+            model_cls = ModelRegistry.get_model(model_name)
+            namespace = {&quot;session&quot;: self}
+            mymodel = type(model_name, (model_cls,), namespace)
+            setattr(self, model_name, mymodel)
+            self.__interfaces[model_name] = mymodel
+
+    @property
+    def http(self) -&gt; Http:
+        &quot;&quot;&quot;Return the http requester object&quot;&quot;&quot;
+        return self.__http
+
+    @property
+    def url(self) -&gt; str:
+        &quot;&quot;&quot;Return home benchling url&quot;&quot;&quot;
+        return self.__http.HOME
+
+<div class="viewcode-block" id="Session.help"><a class="viewcode-back" href="../../session.html#benchlingapi.session.Session.help">[docs]</a>    def help(self):
+        &quot;&quot;&quot;Print api documentation url&quot;&quot;&quot;
+        help_url = &quot;https://docs.benchling.com/reference&quot;
+        print(&#39;Visit &quot;{}&quot;&#39;.format(help_url))</div>
+
+    @property
+    def models(self) -&gt; List[str]:
+        &quot;&quot;&quot;List all models&quot;&quot;&quot;
+        return list(ModelRegistry.models.keys())
+
+<div class="viewcode-block" id="Session.set_timeout"><a class="viewcode-back" href="../../session.html#benchlingapi.session.Session.set_timeout">[docs]</a>    def set_timeout(self, timeout_in_seconds: int):
+        &quot;&quot;&quot;Set the request timeout&quot;&quot;&quot;
+        self.__http.timeout = timeout_in_seconds</div>
+
+    @property
+    def interfaces(self):
+        &quot;&quot;&quot;List all model interfaces&quot;&quot;&quot;
+        return self.__interfaces
+
+<div class="viewcode-block" id="Session.interface"><a class="viewcode-back" href="../../session.html#benchlingapi.session.Session.interface">[docs]</a>    def interface(self, model_name) -&gt; Type[ModelBase]:
+        &quot;&quot;&quot;Return a model interface by name&quot;&quot;&quot;
+        if model_name not in self.interfaces:
+            raise ModelNotFoundError(&#39;No model by name of &quot;{}&quot;&#39;.format(model_name))
+        return self.interfaces[model_name]</div></div>
 </pre></div>
 
-          </div>
-            
-        </div>
-        <div class="clearfix"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">benchlingapi 2.0.2a documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
-      </ul>
-    </div>
-<script type="text/javascript">
-  $("#mobile-toggle a").click(function () {
-    $("#left-column").toggle();
-  });
-</script>
-<script type="text/javascript" src="../../_static/js/bootstrap.js"></script>
-  <div class="footer">
-    &copy; Copyright 2017, University of Washington. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+      
   </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017-2019, University of Washington.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
   </body>
 </html>

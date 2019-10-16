@@ -26,7 +26,7 @@ lint:
 
 
 pullversion:
-	poetry run upver
+	poetry run keats version up
 
 
 docs: | pullversion
