@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>benchlingapi.models.schema &#8212; benchlingapi 2.1.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          BenchlingAPI</a>
+        <span class="navbar-text navbar-version pull-left"><b>2.1.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">BenchlingAPI <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../session.html">Session (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.session</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../models.html">Models (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.models.models</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.DNASequence.html">benchlingapi.models.models.DNASequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.AASequence.html">benchlingapi.models.models.AASequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Oligo.html">benchlingapi.models.models.Oligo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Annotation.html">benchlingapi.models.models.Annotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Translation.html">benchlingapi.models.models.Translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.CustomEntity.html">benchlingapi.models.models.CustomEntity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.EntitySchema.html">benchlingapi.models.models.EntitySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Project.html">benchlingapi.models.models.Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Registry.html">benchlingapi.models.models.Registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Translation.html">benchlingapi.models.models.Translation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#schemas">Schemas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.DNASequenceSchema.html">benchlingapi.models.schema.DNASequenceSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.AASequenceSchema.html">benchlingapi.models.schema.AASequenceSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.BatchSchema.html">benchlingapi.models.schema.BatchSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.CustomEntitySchema.html">benchlingapi.models.schema.CustomEntitySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.DNASequenceSchema.html">benchlingapi.models.schema.DNASequenceSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.EntitySchema.html">benchlingapi.models.schema.EntitySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.EntitySchemaSchema.html">benchlingapi.models.schema.EntitySchemaSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.FieldSchema.html">benchlingapi.models.schema.FieldSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.FolderSchema.html">benchlingapi.models.schema.FolderSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.OligoSchema.html">benchlingapi.models.schema.OligoSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.ProjectSchema.html">benchlingapi.models.schema.ProjectSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.RegistrySchema.html">benchlingapi.models.schema.RegistrySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.TranslationSchema.html">benchlingapi.models.schema.TranslationSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.UserSummarySchema.html">benchlingapi.models.schema.UserSummarySchema</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../exceptions.html">Exceptions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.exceptions</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils.html">Utilities (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.utils</span></code>)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage.html#session">Session</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage.html#finding-models">Finding models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage.html#updating-models">Updating models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage.html#saving-new-models">Saving new models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage.html#registering-models-to-your-registry">Registering models to your registry</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../guidelines.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guidelines.html#installing-the-package">Installing the package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guidelines.html#adding-a-new-model">Adding a new model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guidelines.html#running-tests">Running tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guidelines.html#style">Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guidelines.html#release">Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guidelines.html#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">benchlingapi change log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id1">2.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id2">2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id3">2.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id4">2.0.0</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <h1>Source code for benchlingapi.models.schema</h1><div class="highlight"><pre>
+<span></span>&quot;&quot;&quot;Model serialization/deserialization classes.&quot;&quot;&quot;
+import re
+
+from marshmallow import fields as mfields
+from marshmallow import INCLUDE
+from marshmallow import post_dump
+from marshmallow import post_load
+from marshmallow import Schema
+from marshmallow import validate
+
+
+class ModelSchemaMixin:
+    &quot;&quot;&quot;Loads model from the Schema name.&quot;&quot;&quot;
+
+    @classmethod
+    def get_model_name(cls):
+        return re.match(r&quot;(\w+)Schema&quot;, cls.__name__).group(1)
+
+    # @classmethod
+    # def get_model(cls):
+    #     model = ModelRegistry.get_model(cls.get_model_name())
+    #     return model
+
+    # @pre_dump
+    # def remove_none(self, obj):
+    #     params = obj
+    #     if hasattr(obj, &#39;__dict__&#39;):
+    #         params = params.__dict__
+    #     return {k: v for k, v in params.items() if v is not None}
+
+    @post_dump
+    def remove_ignore(self, data, **kwargs):
+        return {k: v for k, v in data.items() if v is not None}
+
+    @post_load
+    def load_model(self, data, **kwrags):
+        if &quot;session&quot; not in self.context:
+            raise Exception(&quot;Schema does not have a Session instance attached!&quot;)
+        session = self.context[&quot;session&quot;]
+        return session.interface(self.get_model_name())(**data)
+
+
+<div class="viewcode-block" id="EntitySchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.EntitySchema.html#benchlingapi.models.schema.EntitySchema">[docs]</a>class EntitySchema(Schema):
+    entity_registry_id = mfields.String(default=None, allow_none=True)
+    registry_id = mfields.String(default=None, allow_none=True)
+    archive_reason = mfields.Dict(allow_none=True)
+    id = mfields.String()
+    name = mfields.String(required=True, allow_none=False)
+    created_at = mfields.String(load_only=True)
+    modified_at = mfields.String(load_only=True)
+    creator = mfields.Dict()
+    custom_fields = mfields.Dict()
+    fields = mfields.Dict(allow_none=False)
+    schema = mfields.Nested(&quot;EntitySchemaSchema&quot;, allow_none=True)
+    schema_id = mfields.Method(&quot;get_schema_id&quot;)
+    aliases = mfields.List(mfields.String())
+    folder_id = mfields.String(required=True, allow_none=True)
+    # schema = mfields.Dict(allow_none=True)
+    # schema
+    # entity
+    # archive_record
+    # mfields
+    # custommfields
+    web_url = mfields.URL()
+
+    class Meta:
+        unknown = INCLUDE
+        additional = (&quot;id&quot;,)
+
+    def get_schema_id(self, obj):
+        if hasattr(obj, &quot;schema_id&quot;) and obj.schema_id:
+            return obj.schema_id
+        elif hasattr(obj, &quot;schema&quot;) and obj.schema:
+            return obj.schema[&quot;id&quot;]</div>
+
+
+<div class="viewcode-block" id="CustomEntitySchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.CustomEntitySchema.html#benchlingapi.models.schema.CustomEntitySchema">[docs]</a>class CustomEntitySchema(ModelSchemaMixin, EntitySchema):
+    class Meta:
+        unknown = INCLUDE</div>
+
+
+<div class="viewcode-block" id="DNASequenceSchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.DNASequenceSchema.html#benchlingapi.models.schema.DNASequenceSchema">[docs]</a>class DNASequenceSchema(ModelSchemaMixin, EntitySchema):
+    annotations = mfields.Nested(&quot;AnnotationSchema&quot;, many=True)
+    length = mfields.Integer()
+    bases = mfields.String(required=True)
+    is_circular = mfields.Boolean(required=True)
+    translations = mfields.Nested(&quot;TranslationSchema&quot;, many=True)
+
+    class Meta:
+        unknown = INCLUDE</div>
+
+
+<div class="viewcode-block" id="AASequenceSchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.AASequenceSchema.html#benchlingapi.models.schema.AASequenceSchema">[docs]</a>class AASequenceSchema(ModelSchemaMixin, EntitySchema):
+    annotations = mfields.Nested(&quot;AnnotationSchema&quot;, many=True)
+    amino_acids = mfields.String(required=True)
+    length = mfields.Integer()
+
+    class Meta:
+        unknown = INCLUDE</div>
+
+
+<div class="viewcode-block" id="OligoSchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.OligoSchema.html#benchlingapi.models.schema.OligoSchema">[docs]</a>class OligoSchema(ModelSchemaMixin, EntitySchema):
+    bases = mfields.String(required=True)
+    length = mfields.Integer()
+
+    class Meta:
+        unknown = INCLUDE</div>
+
+
+<div class="viewcode-block" id="BatchSchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.BatchSchema.html#benchlingapi.models.schema.BatchSchema">[docs]</a>class BatchSchema(EntitySchema):
+    class Meta:
+        unknown = INCLUDE</div>
+
+
+class AnnotationSchema(ModelSchemaMixin, Schema):
+    color = mfields.String()
+    start = mfields.Integer()
+    end = mfields.Integer()
+    name = mfields.String()
+    strand = mfields.Integer(validate=validate.OneOf([0, 1, -1]))
+    type = mfields.String()
+
+    class Meta:
+        unknown = INCLUDE
+
+
+<div class="viewcode-block" id="TranslationSchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.TranslationSchema.html#benchlingapi.models.schema.TranslationSchema">[docs]</a>class TranslationSchema(Schema):
+    start = mfields.Integer()
+    end = mfields.Integer()
+    strand = mfields.Integer(validate=validate.OneOf([0, 1, -1]))
+    amino_acids = mfields.String()
+    regions = mfields.List(mfields.Dict())
+
+    class Meta:
+        unknown = INCLUDE</div>
+
+
+####################################
+# Common Resources
+####################################
+
+# class ArchiveRecordSchema(Schema):
+#     reason = mfields.String()
+
+
+<div class="viewcode-block" id="FieldSchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.FieldSchema.html#benchlingapi.models.schema.FieldSchema">[docs]</a>class FieldSchema(Schema):
+    type = mfields.String(load_only=True)
+    is_multi = mfields.Boolean(load_only=True)
+    value = mfields.Raw()
+    text_value = mfields.String(load_only=True, allow_none=True)
+
+    class Meta:
+        unknown = INCLUDE</div>
+
+
+<div class="viewcode-block" id="EntitySchemaSchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.EntitySchemaSchema.html#benchlingapi.models.schema.EntitySchemaSchema">[docs]</a>class EntitySchemaSchema(Schema):
+    archive_record = mfields.Dict(allow_none=True)
+    id = mfields.String()
+    name = mfields.String(required=True)
+    type = mfields.String()
+    field_definitions = mfields.List(mfields.Dict)
+    prefix = mfields.String()
+    registry_id = mfields.String(default=None, allow_none=True)
+    constrain = mfields.Dict()
+
+    class Meta:
+        unknown = INCLUDE</div>
+
+
+<div class="viewcode-block" id="UserSummarySchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.UserSummarySchema.html#benchlingapi.models.schema.UserSummarySchema">[docs]</a>class UserSummarySchema(Schema):
+    handle = mfields.String()
+    id = mfields.String()
+    name = mfields.String(allow_none=True)
+
+    class Meta:
+        unknown = INCLUDE</div>
+
+
+####################################
+# Projects and Folders
+####################################
+
+
+<div class="viewcode-block" id="FolderSchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.FolderSchema.html#benchlingapi.models.schema.FolderSchema">[docs]</a>class FolderSchema(ModelSchemaMixin, Schema):
+    id = mfields.String()
+    name = mfields.String(required=True)
+    parent_folder_id = mfields.String(allow_none=True)
+    project_id = mfields.String(required=True)
+    archive_record = mfields.Dict(allow_none=True)
+
+    class Meta:
+        unknown = INCLUDE</div>
+
+
+<div class="viewcode-block" id="ProjectSchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.ProjectSchema.html#benchlingapi.models.schema.ProjectSchema">[docs]</a>class ProjectSchema(ModelSchemaMixin, Schema):
+    id = mfields.String()  #: the id of the project
+    name = mfields.String()  #: the name of the project
+    owner = mfields.Nested(UserSummarySchema)  #: the owner of the project
+    archive_record = mfields.Dict(allow_none=True)
+
+    class Meta:
+        unknown = INCLUDE</div>
+
+
+<div class="viewcode-block" id="RegistrySchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.RegistrySchema.html#benchlingapi.models.schema.RegistrySchema">[docs]</a>class RegistrySchema(ModelSchemaMixin, Schema):
+    id = mfields.String()
+    name = mfields.String()
+    owner = mfields.Nested(UserSummarySchema)
+
+    class Meta:
+        unknown = INCLUDE</div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017-2019, University of Washington.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
