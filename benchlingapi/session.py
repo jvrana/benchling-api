@@ -121,8 +121,8 @@ class Http:
         while response is not None:
             yield response
 
-            next = response.get(self.NEXT, None)
             # update params with nextToken
+            next = response.get(self.NEXT, None)
             kwargs.get("params", {}).update({self.NEXT: next})
 
             if next:
