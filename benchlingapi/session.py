@@ -123,9 +123,7 @@ class Http:
 
             next = response.get(self.NEXT, None)
             # update params with nextToken
-            params = kwargs.get(self.NEXT, {})
-            params.update({self.NEXT: next})
-            kwargs["params"] = params
+            kwargs.get("params", {}).update({self.NEXT: next})
 
             if next:
                 response = get_response(**kwargs)
