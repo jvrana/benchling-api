@@ -238,8 +238,8 @@ class ModelBaseABC:
         return self.load(self.dump())
 
     def __repr__(self):
-        return (
-            f"<{self.__class__.__name__} ({self.__class__.model_name}) at {id(self)}>"
+        return "<{cls} ({name}) at {id}>".format(
+            cls=self.__class__.__name__, name=self.__class__.model_name, id=id(self)
         )
 
 

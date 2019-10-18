@@ -29,11 +29,11 @@ class ModelSchemaMixin:
     #     return {k: v for k, v in params.items() if v is not None}
 
     @post_dump
-    def remove_ignore(self, data):
+    def remove_ignore(self, data, **kwargs):
         return {k: v for k, v in data.items() if v is not None}
 
     @post_load
-    def load_model(self, data):
+    def load_model(self, data, **kwrags):
         if "session" not in self.context:
             raise Exception("Schema does not have a Session instance attached!")
         session = self.context["session"]
