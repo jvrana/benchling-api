@@ -64,9 +64,9 @@ class RequestDecorator:
                 msg = ""
                 if r.status_code in http_codes:
                     msg = http_codes[r.status_code]
-                    msg += f"\nrequest: {r.request}"
-                    msg += f"\nurl: {r.request.path_url}"
-                    msg += f"\nresponse: {r.text}"
+                    msg += "\nrequest: {}".format(r.request)
+                    msg += "\nurl: {}".format(r.request.path_url)
+                    msg += "\nresponse: {}".format(r.text)
 
                 e = BenchlingAPIException(
                     "HTTP Response Failed {} {}".format(r.status_code, msg)

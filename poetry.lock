@@ -9,6 +9,7 @@ version = "0.7.12"
 [[package]]
 category = "dev"
 description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
+marker = "python_version > \"3.6\""
 name = "appdirs"
 optional = false
 python-versions = "*"
@@ -55,6 +56,7 @@ sphinx = "*"
 [[package]]
 category = "dev"
 description = "A tool that automatically formats Python code to conform to the PEP 8 style guide"
+marker = "python_version > \"3.6\""
 name = "autopep8"
 optional = false
 python-versions = "*"
@@ -88,6 +90,7 @@ soupsieve = ">=1.2"
 [[package]]
 category = "dev"
 description = "The uncompromising code formatter."
+marker = "python_version > \"3.6\""
 name = "black"
 optional = false
 python-versions = ">=3.6"
@@ -113,6 +116,7 @@ beautifulsoup4 = "*"
 [[package]]
 category = "dev"
 description = "httplib2 caching for requests"
+marker = "python_version > \"3.6\""
 name = "cachecontrol"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
@@ -125,6 +129,7 @@ requests = "*"
 [[package]]
 category = "dev"
 description = "Cachy provides a simple yet effective caching library."
+marker = "python_version > \"3.6\""
 name = "cachy"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
@@ -160,6 +165,7 @@ version = "3.0.4"
 [[package]]
 category = "dev"
 description = "Cleo allows you to create beautiful and testable command-line interfaces."
+marker = "python_version > \"3.6\""
 name = "cleo"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
@@ -172,6 +178,7 @@ pylev = ">=1.3,<2.0"
 [[package]]
 category = "dev"
 description = "Composable command line interface toolkit"
+marker = "python_version > \"3.6\""
 name = "click"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
@@ -180,7 +187,7 @@ version = "7.0"
 [[package]]
 category = "dev"
 description = "Cross-platform colored terminal text."
-marker = "sys_platform == \"win32\""
+marker = "python_version > \"3.6\" and sys_platform == \"win32\" or sys_platform == \"win32\""
 name = "colorama"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
@@ -212,7 +219,16 @@ version = "0.3"
 
 [[package]]
 category = "dev"
+description = "A platform independent file lock."
+name = "filelock"
+optional = false
+python-versions = "*"
+version = "3.0.12"
+
+[[package]]
+category = "dev"
 description = "A library for automatically generating command line interfaces."
+marker = "python_version > \"3.6\""
 name = "fire"
 optional = false
 python-versions = "*"
@@ -250,6 +266,7 @@ Sphinx = ">=1.2b1"
 [[package]]
 category = "dev"
 description = "HTML parser based on the WHATWG HTML specification"
+marker = "python_version > \"3.6\""
 name = "html5lib"
 optional = false
 python-versions = "*"
@@ -295,6 +312,15 @@ version = "0.23"
 zipp = ">=0.5"
 
 [[package]]
+category = "dev"
+description = "Read resources from Python packages"
+marker = "python_version < \"3.7\""
+name = "importlib-resources"
+optional = false
+python-versions = ">=2.7,!=3.0,!=3.1,!=3.2,!=3.3"
+version = "1.0.2"
+
+[[package]]
 category = "main"
 description = "A port of Ruby on Rails inflector to Python"
 name = "inflection"
@@ -316,6 +342,7 @@ MarkupSafe = ">=0.23"
 [[package]]
 category = "dev"
 description = "An implementation of JSON Schema validation for Python"
+marker = "python_version > \"3.6\""
 name = "jsonschema"
 optional = false
 python-versions = "*"
@@ -331,6 +358,7 @@ six = ">=1.11.0"
 [[package]]
 category = "dev"
 description = "Utilities for managing version, changelogs, and project releases."
+marker = "python_version > \"3.6\""
 name = "keats"
 optional = false
 python-versions = ">=3.5,<4.0"
@@ -377,6 +405,7 @@ version = "7.2.0"
 [[package]]
 category = "dev"
 description = "MessagePack (de)serializer."
+marker = "python_version > \"3.6\""
 name = "msgpack"
 optional = false
 python-versions = "*"
@@ -414,6 +443,7 @@ six = "*"
 [[package]]
 category = "dev"
 description = "Bring colors to your terminal."
+marker = "python_version > \"3.6\""
 name = "pastel"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
@@ -421,7 +451,20 @@ version = "0.1.1"
 
 [[package]]
 category = "dev"
+description = "Object-oriented filesystem paths"
+marker = "python_version < \"3.6\""
+name = "pathlib2"
+optional = false
+python-versions = "*"
+version = "2.3.5"
+
+[package.dependencies]
+six = "*"
+
+[[package]]
+category = "dev"
 description = "Query metadatdata from sdists / bdists / installed packages."
+marker = "python_version > \"3.6\""
 name = "pkginfo"
 optional = false
 python-versions = "*"
@@ -443,6 +486,7 @@ version = ">=0.12"
 [[package]]
 category = "dev"
 description = "Python dependency management and packaging made easy."
+marker = "python_version > \"3.6\""
 name = "poetry"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
@@ -465,6 +509,7 @@ tomlkit = ">=0.5.1,<0.6.0"
 [[package]]
 category = "dev"
 description = "make setup.py (setutools) from pyproject.toml (poetry)"
+marker = "python_version > \"3.6\""
 name = "poetry-setup"
 optional = false
 python-versions = "*"
@@ -494,6 +539,10 @@ pyyaml = "*"
 six = "*"
 toml = "*"
 virtualenv = ">=15.2"
+
+[package.dependencies.importlib-resources]
+python = "<3.7"
+version = "*"
 
 [[package]]
 category = "dev"
@@ -530,6 +579,7 @@ version = "2.4.2"
 [[package]]
 category = "dev"
 description = "A pure Python Levenshtein implementation that's not freaking GPL'd."
+marker = "python_version > \"3.6\""
 name = "pylev"
 optional = false
 python-versions = "*"
@@ -546,6 +596,7 @@ version = "2.4.2"
 [[package]]
 category = "dev"
 description = "Persistent/Functional/Immutable data structures"
+marker = "python_version > \"3.6\""
 name = "pyrsistent"
 optional = false
 python-versions = "*"
@@ -575,6 +626,10 @@ wcwidth = "*"
 [package.dependencies.importlib-metadata]
 python = "<3.8"
 version = ">=0.12"
+
+[package.dependencies.pathlib2]
+python = "<3.6"
+version = ">=2.2.0"
 
 [[package]]
 category = "dev"
@@ -622,6 +677,7 @@ urllib3 = ">=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26"
 [[package]]
 category = "dev"
 description = "A utility belt for advanced users of python-requests"
+marker = "python_version > \"3.6\""
 name = "requests-toolbelt"
 optional = false
 python-versions = "*"
@@ -633,6 +689,7 @@ requests = ">=2.0.1,<3.0.0"
 [[package]]
 category = "dev"
 description = "Tool to Detect Surrounding Shell"
+marker = "python_version > \"3.6\""
 name = "shellingham"
 optional = false
 python-versions = ">=2.6,!=3.0,!=3.1,!=3.2,!=3.3"
@@ -692,6 +749,7 @@ sphinxcontrib-serializinghtml = "*"
 [[package]]
 category = "dev"
 description = "Type hints (PEP 484) support for the Sphinx autodoc extension"
+marker = "python_version > \"3.6\""
 name = "sphinx-autodoc-typehints"
 optional = false
 python-versions = ">=3.5.2"
@@ -762,6 +820,7 @@ version = "1.1.3"
 [[package]]
 category = "dev"
 description = "ANSII Color formatting for output in terminal."
+marker = "python_version > \"3.6\""
 name = "termcolor"
 optional = false
 python-versions = "*"
@@ -778,10 +837,43 @@ version = "0.10.0"
 [[package]]
 category = "dev"
 description = "Style preserving TOML library"
+marker = "python_version > \"3.6\""
 name = "tomlkit"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.5.8"
+
+[[package]]
+category = "dev"
+description = "tox is a generic virtualenv management and test command line tool"
+name = "tox"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "3.14.0"
+
+[package.dependencies]
+filelock = ">=3.0.0,<4"
+packaging = ">=14"
+pluggy = ">=0.12.0,<1"
+py = ">=1.4.17,<2"
+six = ">=1.0.0,<2"
+toml = ">=0.9.4"
+virtualenv = ">=14.0.0"
+
+[package.dependencies.importlib-metadata]
+python = "<3.8"
+version = ">=0.12,<1"
+
+[[package]]
+category = "dev"
+description = "Tox plugin that provides integration with conda"
+name = "tox-conda"
+optional = false
+python-versions = ">=3.3"
+version = "0.2.1"
+
+[package.dependencies]
+tox = ">=3.8.1"
 
 [[package]]
 category = "main"
@@ -821,8 +913,8 @@ category = "dev"
 description = "Virtual Python Environment builder"
 name = "virtualenv"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "16.7.5"
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
+version = "16.7.6"
 
 [[package]]
 category = "dev"
@@ -835,6 +927,7 @@ version = "0.1.7"
 [[package]]
 category = "dev"
 description = "Character encoding aliases for legacy web content"
+marker = "python_version > \"3.6\""
 name = "webencodings"
 optional = false
 python-versions = "*"
@@ -851,6 +944,7 @@ version = "1.11.2"
 [[package]]
 category = "dev"
 description = "A formatter for Python code."
+marker = "python_version > \"3.6\""
 name = "yapf"
 optional = false
 python-versions = "*"
@@ -862,8 +956,8 @@ description = "Yet another URL library"
 marker = "python_version >= \"3.5\""
 name = "yarl"
 optional = false
-python-versions = ">=3.5.3"
-version = "1.3.0"
+python-versions = "*"
+version = "1.2.0"
 
 [package.dependencies]
 idna = ">=2.0"
@@ -881,8 +975,8 @@ version = "0.6.0"
 more-itertools = "*"
 
 [metadata]
-content-hash = "97a5daca92fb912ab2e8ca7c7b2b66dfa3d887363bc701e6da7c3d32b3051566"
-python-versions = "^3.7"
+content-hash = "3be6a7b63ba7937f2b9e5d07ae1c0de2dfdfe002875d4a2bac4e010ad3f449ad"
+python-versions = "^3.5.2"
 
 [metadata.hashes]
 alabaster = ["446438bdcca0e05bd45ea2de1668c1d9b032e1a9154c2c259092d77031ddd359", "a661d72d58e6ea8a57f7a86e37d86716863ee5e92788398526d58b26a4e4dc02"]
@@ -907,6 +1001,7 @@ colorama = ["05eed71e2e327246ad6b38c540c4a3117230b19679b875190486ddd2d721422d", 
 commonmark = ["452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60", "da2f38c92590f83de410ba1a3cbceafbc74fee9def35f9251ba9a971d6d66fd9"]
 docutils = ["6c4f696463b79f1fb8ba0c594b63840ebd41f059e92b31957c46b74a4599b6d0", "9e4d7ecfc600058e07ba661411a2b7de2fd0fafa17d1a7f7361cd47b1175c827", "a2aeea129088da402665e92e0b25b04b073c04b2dce4ab65caaa38b7ce2e1a99"]
 entrypoints = ["589f874b313739ad35be6e0cd7efde2a4e9b6fea91edcc34e58ecbb8dbe56d19", "c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451"]
+filelock = ["18d82244ee114f543149c66a6e0c14e9c4f8a1044b5cdaadd0f82159d6a6ff59", "929b7d63ec5b7d6b71b0fa5ac14e030b3f70b75747cef1b10da9b879fef15836"]
 fire = ["6865fefc6981a713d2ce56a2a2c92c56c729269f74a6cddd6f4b94d16ae084c9"]
 flake8 = ["19241c1cbc971b9962473e4438a2ca19749a7dd002dd1a946eaba171b4114548", "8e9dfa3cecb2400b3738a42c54c3043e821682b9c840b0448c0503f781130696"]
 guzzle-sphinx-theme = ["9b8c1639c343c02c3f3db7df660ddf6f533b5454ee92a5f7b02edaa573fed3e6"]
@@ -915,6 +1010,7 @@ identify = ["4f1fe9a59df4e80fcb0213086fcf502bc1765a01ea4fe8be48da3b65afd2a017", 
 idna = ["c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407", "ea8b7f6188e6fa117537c3df7da9fc686d485087abf6ac197f9c46432f7e4a3c"]
 imagesize = ["3f349de3eb99145973fefb7dbe38554414e5c30abd0c8e4b970a7c9d09f3a1d8", "f3832918bc3c66617f92e35f5d70729187676313caa60c187eb0f28b8fe5e3b5"]
 importlib-metadata = ["aa18d7378b00b40847790e7c27e11673d7fed219354109d0e7b9e5b25dc3ad26", "d5f18a79777f3aa179c145737780282e27b508fc8fd688cb17c7a813e8bd39af"]
+importlib-resources = ["6e2783b2538bd5a14678284a3962b0660c715e5a0f10243fd5e00a4b5974f50b", "d3279fd0f6f847cced9f7acc19bd3e5df54d34f93a2e7bb5f238f81545787078"]
 inflection = ["18ea7fb7a7d152853386523def08736aa8c32636b047ade55f7578c4edeb16ca"]
 jinja2 = ["74320bb91f31270f9551d46522e33af46a80c3d619f4a4bf42b3164d30b5911f", "9fe95f19286cfefaa917656583d020be14e7859c6b0252588391e47db34527de"]
 jsonschema = ["2fa0684276b6333ff3c0b1b27081f4b2305f0a36cf702a23db50edb141893c3f", "94c0a13b4a0616458b42529091624e66700a17f847453e52279e35509a5b7631"]
@@ -928,6 +1024,7 @@ multidict = ["024b8129695a952ebd93373e45b5d341dbb87c17ce49637b34000093f243dd4f",
 nodeenv = ["ad8259494cf1c9034539f6cced78a1da4840a4b157e23640bc4a0c0546b0cb7a"]
 packaging = ["28b924174df7a2fa32c1953825ff29c61e2f5e082343165438812f00d3a7fc47", "d9551545c6d761f3def1677baf08ab2a3ca17c56879e70fecba2fc4dde4ed108"]
 pastel = ["a904e1659512cc9880a028f66de77cc813a4c32f7ceb68725cbc8afad57ef7ef", "bf3b1901b2442ea0d8ab9a390594e5b0c9584709d543a3113506fe8b28cbace3"]
+pathlib2 = ["0ec8205a157c80d7acc301c0b18fbd5d44fe655968f5d947b6ecef5290fc35db", "6cd9a47b597b37cc57de1c05e56fb1a1c9cc9fab04fe78c29acd090418529868"]
 pkginfo = ["7424f2c8511c186cd5424bbf31045b77435b37a8d604990b79d4e70d741148bb", "a6d9e40ca61ad3ebd0b72fbadd4fba16e4c0e4df0428c041e01e06eb6ee71f32"]
 pluggy = ["0db4b7601aae1d35b4a033282da476845aa19185c1e6964b25cf324b5e4ec3e6", "fa5fa1622fa6dd5c030e9cad086fa19ef6a0cf6d7a2d12318e10cb49d6d68f34"]
 poetry = ["0133cd4edc77e955de8cd91203b6728f8365e2849d7fa7da1bfbc14b6529ab43", "6e535de38df7e6ab46ff8d197f53632b071675287d1477efc7bf4a5c4c63bc3f"]
@@ -962,13 +1059,15 @@ sphinxcontrib-serializinghtml = ["c0efb33f8052c04fd7a26c0a07f1678e8512e0faec19f4
 termcolor = ["1d6d69ce66211143803fbc56652b41d73b4a400a2891d7bf7a1cdf4c02de613b"]
 toml = ["229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c", "235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e", "f1db651f9657708513243e61e6cc67d101a39bad662eaa9b5546f789338e07a3"]
 tomlkit = ["32c10cc16ded7e4101c79f269910658cc2a0be5913f1252121c3cd603051c269", "96e6369288571799a3052c1ef93b9de440e1ab751aa045f435b55e9d3bcd0690"]
+tox = ["0bc216b6a2e6afe764476b4a07edf2c1dab99ed82bb146a1130b2e828f5bff5e", "c4f6b319c20ba4913dbfe71ebfd14ff95d1853c4231493608182f66e566ecfe1"]
+tox-conda = ["ee0a1c84aa2386ef92a85fba39b1578d0e464758b33becb2d1402b371a075c40", "f83967028b83950179f3248a6d3dc8119f9b7b04b07494213a4aabb3c0dc1cf0"]
 urllib3 = ["3de946ffbed6e6746608990594d08faac602528ac7015ac28d33cee6a45b7398", "9a107b99a5393caf59c7aa3c1249c16e6879447533d0887f4336dde834c7be86"]
 urlopen = ["3849626c61deacdd1635fe1d7019800cb0e0ae56467d66c186e17c6cd7fbdf3f"]
 vcrpy = ["0e79239441fb4c731da9f05aecbd062223ef1f4ab668d2400c63c347a7071414", "b5bcdd4450d03acd623515c8b9fbf3f1f7fa3a44fd0c01c674b0f1166a1949f8"]
-virtualenv = ["680af46846662bb38c5504b78bad9ed9e4f3ba2d54f54ba42494fdf94337fe30", "f78d81b62d3147396ac33fc9d77579ddc42cc2a98dd9ea38886f616b33bc7fb2"]
+virtualenv = ["3e3597e89c73df9313f5566e8fc582bd7037938d15b05329c232ec57a11a7ad5", "5d370508bf32e522d79096e8cbea3499d47e624ac7e11e9089f9397a0b3318df"]
 wcwidth = ["3df37372226d6e63e1b1e1eda15c594bca98a22d33a23832a90998faa96bc65e", "f4ebe71925af7b40a864553f761ed559b43544f8f71746c2d756c7fe788ade7c"]
 webencodings = ["a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78", "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"]
 wrapt = ["565a021fd19419476b9362b05eeaa094178de64f8361e44468f9e9d7843901e1"]
 yapf = ["02ace10a00fa2e36c7ebd1df2ead91dbfbd7989686dc4ccbdc549e95d19f5780", "6f94b6a176a7c114cfa6bad86d40f259bbe0f10cf2fa7f2f4b3596fc5802a41b"]
-yarl = ["024ecdc12bc02b321bc66b41327f930d1c2c543fa9a561b39861da9388ba7aa9", "2f3010703295fbe1aec51023740871e64bb9664c789cba5a6bdf404e93f7568f", "3890ab952d508523ef4881457c4099056546593fa05e93da84c7250516e632eb", "3e2724eb9af5dc41648e5bb304fcf4891adc33258c6e14e2a7414ea32541e320", "5badb97dd0abf26623a9982cd448ff12cb39b8e4c94032ccdedf22ce01a64842", "73f447d11b530d860ca1e6b582f947688286ad16ca42256413083d13f260b7a0", "7ab825726f2940c16d92aaec7d204cfc34ac26c0040da727cf8ba87255a33829", "b25de84a8c20540531526dfbb0e2d2b648c13fd5dd126728c496d7c3fea33310", "c6e341f5a6562af74ba55205dbd56d248daf1b5748ec48a0200ba227bb9e33f4", "c9bb7c249c4432cd47e75af3864bc02d26c9594f49c82e2a28624417f0ae63b8", "e060906c0c585565c718d1c3841747b61c5439af2211e185f6739a9412dfbde1"]
+yarl = ["3278209d78d534d59ee44f595e54ee4d3a164fa77319ffbd418b1978edf71748", "32a52453fc20153e34d2cf99f1a2f4c3d144e320896f1f89b5ee89bb41e877be", "48f3807855b69414a41e70908e502d6dbf563e3eca22f73d1344aad9270a4ff9", "4c2d780cb0b669bf027da57a0834d4968ed55c89f1593cfd11be8108bff699e2", "843c90c7a2756c033e9bb4464f789e21bc33f561c1e6c0ef7569f452b33a761a", "8765ebd034d0dc812a311b31251dffb434c753fc7124487912a5bca7baeb5c9b", "a2dda88459cfe50f4f6a225d2f51e3fffb0c3c18f4c3a3ac38d9dc054f8c37b0", "ac574aa2c45185e038489ff8f3bebd9269dd8327e86c72d9a7f83a1d3ad9eec4", "ce5963f2451661a435721d8907a824daea52aad6e3bee9b4104e75d19269cdae", "ceae77215870ecaba555b2e74dd308de9abe6d44b0eecafae6ecef4a14e289f8", "cec06d4272c2ced65308daf63360daeea5061c030fe28f75e499afd735cee860", "ee506bc321b455b4a410724ec9c0ad4940932553523c6e7b69f0155269793734", "fbbb10276d53629c0300cfd4a2092e3bbfa9a5aa95cd49808e01c59492052077"]
 zipp = ["3718b1cbcd963c7d4c5511a8240812904164b7f381b647143a89d3b98f9bcd8e", "f06903e9f1f43b12d371004b4ac7b06ab39a44adc747266928ae6debfa7b3335"]

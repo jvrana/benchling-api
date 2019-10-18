@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "benchlingapi"
-version = "2.1"
+version = "2.1.1"
 description = "An unofficial python wrapper for the Benchling API"
 authors = ["Justin Vrana <justin.vrana@gmail.com>"]
 homepage = "https://www.github.com/klavinslab/benchling-api"
@@ -14,7 +14,7 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.5.2"
 requests = "^2.22"
 inflection = "^0.3.1"
 urlopen = "^1.0"
@@ -22,19 +22,21 @@ bs4 = "^0.0.1"
 marshmallow = "^3.2"
 
 [tool.poetry.dev-dependencies]
-black = {version = "^18.3-alpha.0",allows-prereleases = true}
+black = {version = "^18.3-alpha.0",allows-prereleases = true, python = ">3.6"}
 pytest = "^5.0"
 pre-commit = "^1.17"
 toml = "^0.10.0"
 sphinx = "^2.1"
 guzzle-sphinx-theme = "^0.7.11"
 vcrpy = "^2.0"
-keats = "^0.2.27"
-sphinx_autodoc_typehints = "^1.8"
+keats = {version = "^0.2.27", python = ">3.6"}
+sphinx_autodoc_typehints = {version = "^1.8", python = ">3.6"}
 sphinx-bootstrap-theme = "^0.7.1"
 recommonmark = "^0.6.0"
 autodocsumm = "^0.1.11"
 flake8 = "^3.7"
+tox = "^3.14"
+tox-conda = "^0.2.1"
 
 
 [tool.black]

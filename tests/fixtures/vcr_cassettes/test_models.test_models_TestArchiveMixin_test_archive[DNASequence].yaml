@@ -406,4 +406,948 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"dnaSequenceIds": ["seq_66qE4FEm"], "reason": "Other"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '55'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaR1E0WkdNM1ltVXROMkZtWlMwME16VmtMVGcyTkdJdFl6azVZVGM1TW1NNFpUVTUifX0.EIpb3g.IKlJ6zIUgZVg83snoAZyQBYGsm0
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/dna-sequences:archive
+  response:
+    body:
+      string: "{\n  \"dnaSequenceIds\": [\n    \"seq_66qE4FEm\"\n  ]\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 17 Oct 2019 20:09:02 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaR1E0WkdNM1ltVXROMkZtWlMwME16VmtMVGcyTkdJdFl6azVZVGM1TW1NNFpUVTUifX0.EIpb3g.IKlJ6zIUgZVg83snoAZyQBYGsm0;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaR1E0WkdNM1ltVXROMkZtWlMwME16VmtMVGcyTkdJdFl6azVZVGM1TW1NNFpUVTUifX0.EIpb3g.IKlJ6zIUgZVg83snoAZyQBYGsm0
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/dna-sequences/seq_66qE4FEm
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6WSy07CQBSG9z4Fma1CCxqg7KoRJNGQIMjCGDLtnDIT54IzUw0hvLtzgdgYdeOm
+        yfnO7f/PdH/WaiHMGTZg0Kj1/HIRgJTKYsuUbEJdUvYOcyiVJg7vHXRYAzZKuhjNLAWNHD3E+tpS
+        pcOAUBnrXYJiSTj4jvqjYKrCBbo45ZifjEDatdquJk93c/yVk1iEruWqdT2djfNrFDIH940Ki6ML
+        lE8W+eQmX0xCMyqdRgsktz7XS7tZu5u2u4NFLx2l2SjtdoZZv5f2z1MXp40Wpb9s/ir6d8k/C47H
+        KWtjlRgz4MQr3kdKJM4520jhpk1J4/YuZnY3hw0zVu+mfqOsOQ+56tuQSnECOtQgzoq1JqtHMROv
+        0VhUa+Bt3e+/3V6Nb8WRmxumy5pj77nC3EDAHOTGUoeyEApFmNv3xymz7LI3HDRPebrCw27mvKkI
+        t5oJ0A2H+kdvpqQgcJNYjaXh3//NWnO/Ijm9TVIlTettvGVr12lo0nTeFjvlJSVAmI26PqBYzu/9
+        LGrt1oySpABZUs7kplMq8a8FZ4dPGvcCe24DAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 17 Oct 2019 20:09:03 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaR1E0WkdNM1ltVXROMkZtWlMwME16VmtMVGcyTkdJdFl6azVZVGM1TW1NNFpUVTUifX0.EIpb3g.IKlJ6zIUgZVg83snoAZyQBYGsm0;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dnaSequenceIds": ["seq_66qE4FEm"]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaR1E0WkdNM1ltVXROMkZtWlMwME16VmtMVGcyTkdJdFl6azVZVGM1TW1NNFpUVTUifX0.EIpb3g.IKlJ6zIUgZVg83snoAZyQBYGsm0
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/dna-sequences:unarchive
+  response:
+    body:
+      string: "{\n  \"dnaSequenceIds\": [\n    \"seq_66qE4FEm\"\n  ]\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 17 Oct 2019 20:09:03 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaR1E0WkdNM1ltVXROMkZtWlMwME16VmtMVGcyTkdJdFl6azVZVGM1TW1NNFpUVTUifX0.EIpb3w.7RNDI5Rv-p-HhUpSUoMGk1YKKy4;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaR1E0WkdNM1ltVXROMkZtWlMwME16VmtMVGcyTkdJdFl6azVZVGM1TW1NNFpUVTUifX0.EIpb3w.7RNDI5Rv-p-HhUpSUoMGk1YKKy4
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/dna-sequences/seq_66qE4FEm
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6VSXU/CMBR991csfVXchgYYb9MIkmhIEOTBGNKtd6yxH9h2koXw3+1aidOAL740
+        uef03nvOaXdnQYAwo1iDRsPg5fXCAUJIgw2Vog2qvKQfMINcKmJhUTHmicqUUrmbtgyCnTstUWJB
+        GFgcVduMygJn6OLA0WYEAmFWcrMcP9/P8DcnMHddi2VwM5mO0hvkmL09vZTsSy5Kx/N0fJvOx64Z
+        5QqwAZKahutGcdKJo07cn3ejYZQMo/hykPS6Ue88snXUapHKNnjZp0Wflnxc8N7Pr7SRfESBkUbx
+        zqNE4JTRteB22oS0QrY1NfUM1lQbVU9+5Fz8GlJIRkC5O4jRbKXI8olP+Zs35tVqeF/1eu9316M7
+        /oXrW6ryiuHGc4GZBgczEGtTWihxJZeE2n1/RJkkV91Bvx3lIYXHemq9SQ9uFOWgWg7VUW86L4Hj
+        NmIUFpr9/oSVYs2K8PA2YRG2rXfwhq5spy7DtvMOr2UjKQRCjde1hWwxe2hmlcZs9DAMMxB5yahY
+        X+aS/2vB2f4TqAoEJlcDAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 17 Oct 2019 20:09:03 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaR1E0WkdNM1ltVXROMkZtWlMwME16VmtMVGcyTkdJdFl6azVZVGM1TW1NNFpUVTUifX0.EIpb3w.7RNDI5Rv-p-HhUpSUoMGk1YKKy4;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dnaSequenceIds": ["seq_5Nui1nsN"], "reason": "Other"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '55'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZemRqTlRkaE5XVXRObUkyTnkwME9HRTBMVGcyWkdZdE1UQTFaakEwTWpNeFltUmwifX0.EIqtMA.TByRVm9fx3RS5dHanp7PI2Z74rM
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/dna-sequences:archive
+  response:
+    body:
+      string: "{\n  \"dnaSequenceIds\": [\n    \"seq_5Nui1nsN\"\n  ]\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 01:56:01 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZemRqTlRkaE5XVXRObUkyTnkwME9HRTBMVGcyWkdZdE1UQTFaakEwTWpNeFltUmwifX0.EIqtMQ.n-9B-o6QqDQtmP6P5ij-cFEPxR0;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZemRqTlRkaE5XVXRObUkyTnkwME9HRTBMVGcyWkdZdE1UQTFaakEwTWpNeFltUmwifX0.EIqtMQ.n-9B-o6QqDQtmP6P5ij-cFEPxR0
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/dna-sequences/seq_5Nui1nsN
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6WSy07jMBSG9zxF5S2UJKC00F1AolOJoVKnTBcjVDnxSX00vnRsZ1BV9d3xhYoI
+        ARs2kc53bv9/nP3JYECoQGrBksngz9NZBEppRx1q1Yem4fgfFtBowzzee+ixAWq18jGZOw6GeHpI
+        9Z3j2sQBsTLV+wSnigkIHd1zjbqlNTk75jBMJqDcWm9X098/FvQtp6iMXY+rwc1sflfdkJg5+G9S
+        WL+6INV0WU1vq+U0NpPGa3TAKhdyF3lxPSzyYXG1zItJOZrk+XlRjsbl+DTPfdBr0ebN5qeiP5f8
+        seB0nKazTss7BMGC4n2iTNFK4EZJP23Gerf3MbrdAjZondnNwkbVCRFz7bshrRYMTKwhAuu1Yatf
+        ci7/JmNJrYV/6/Khw0LZh1dub9E0naDBc0uFhYgFqI3jHl3HUGqGft8Xp7wox6PLUf+Uxyv83M29
+        N53g1qAE03NoPvRmGw6S9okzVFnx/t/sjAgrsuPbZG3Wtz6kW1z7TsuzvvOh3OkgKQOGLul6hvpx
+        cR9mcee2dpJlNaiGC1Sb80bLby04ObwA8fA0z24DAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 01:56:01 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZemRqTlRkaE5XVXRObUkyTnkwME9HRTBMVGcyWkdZdE1UQTFaakEwTWpNeFltUmwifX0.EIqtMQ.n-9B-o6QqDQtmP6P5ij-cFEPxR0;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dnaSequenceIds": ["seq_5Nui1nsN"]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZemRqTlRkaE5XVXRObUkyTnkwME9HRTBMVGcyWkdZdE1UQTFaakEwTWpNeFltUmwifX0.EIqtMQ.n-9B-o6QqDQtmP6P5ij-cFEPxR0
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/dna-sequences:unarchive
+  response:
+    body:
+      string: "{\n  \"dnaSequenceIds\": [\n    \"seq_5Nui1nsN\"\n  ]\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 01:56:01 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZemRqTlRkaE5XVXRObUkyTnkwME9HRTBMVGcyWkdZdE1UQTFaakEwTWpNeFltUmwifX0.EIqtMQ.n-9B-o6QqDQtmP6P5ij-cFEPxR0;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZemRqTlRkaE5XVXRObUkyTnkwME9HRTBMVGcyWkdZdE1UQTFaakEwTWpNeFltUmwifX0.EIqtMQ.n-9B-o6QqDQtmP6P5ij-cFEPxR0
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/dna-sequences/seq_5Nui1nsN
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6VSy07DMBC88xWRr1CSgNJCbwGJUgmoVFp6QKhy4k2zwo9iO6Cq6r/j2FQEBFy4
+        WNoZ7+7M2NuDKCKUIzVgyDB6fDrygJTKUotKdkFd1vgKUyiVZg6WDeeBaGyttL/pyija+tMRNZWM
+        g8NJ81agqmhBjvYctiMISLtU68Xo4XpKPzlJhe+aL6KL8eQqvyCe2bkzSCk+5JJ8NMtHl/ls5JtJ
+        qYFaYLltuZMkPe+lSS89myXpMOsPk+Q4zfqDbHCYJK7otCjtGoLs30X/LvlnwbswvzFWiSsEzlrF
+        24AySXOOKynctDHrhOxqtJsprNBYvRl/ybn6NqRSnIH2dwjHYqnZ4l5MxHMwFtQaeFlmdw2m0tx9
+        4OYSddlw2nquKDfgYQ5yZWsHnftSKIZu3x9RnmSD/mm/G+U+hdvNxHlTAVxrFKA7DvWP3kxZg6Bd
+        xGoqDf/+CRvN2xXx/m3iKu5a79E1Ll2nqeOu857YqFZSDAxt0PUGxXx6086qrV2bYRwXIMuao1wd
+        l0r8a8HB7h1DDTKSVwMAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 01:56:01 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZemRqTlRkaE5XVXRObUkyTnkwME9HRTBMVGcyWkdZdE1UQTFaakEwTWpNeFltUmwifX0.EIqtMQ.n-9B-o6QqDQtmP6P5ij-cFEPxR0;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dnaSequenceIds": ["seq_ixP61SL4"], "reason": "Other"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '55'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOelF6WlRCaE56TXRPVFZpTWkwMFpEVmxMVGszWldZdFlUZzVaVFJsWkRVME9ETTEifX0.EIquDQ.cOgYXZRTl74SWoqQ2syfou2Wseo
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/dna-sequences:archive
+  response:
+    body:
+      string: "{\n  \"dnaSequenceIds\": [\n    \"seq_ixP61SL4\"\n  ]\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 01:59:42 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOelF6WlRCaE56TXRPVFZpTWkwMFpEVmxMVGszWldZdFlUZzVaVFJsWkRVME9ETTEifX0.EIquDg.o7b-3AqrfmUb6cfHHEWtqxTISF0;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOelF6WlRCaE56TXRPVFZpTWkwMFpEVmxMVGszWldZdFlUZzVaVFJsWkRVME9ETTEifX0.EIquDg.o7b-3AqrfmUb6cfHHEWtqxTISF0
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/dna-sequences/seq_ixP61SL4
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6WSy07CQBSG9z4Fma1iWwSU7qqJSKLBIMrCGDLtnDIT54IzU5UQ3t25SGyMunHT
+        5Hzn9v9nuj3odBDmDBswKO88Ph0FIKWy2DIl21BXlL3CDCqlicNbBx3WgI2SLkZTS0EjR3exvrFU
+        6TAgVMZ6l6BYEg6+o3krmapxiY72OeYnI5B2qdaL8cPVDH/lJBah637ROZ9ML4tzFDI7940Ky08X
+        qBjPi/FFMR+HZlQ5jRZIYX2ul2ajbpZ2s7N5muWDUd7Pjnv94WB4epimeZq2WpT+svmr6N8l/yw4
+        HqdqjFXikgEnXvE2UiJxwdlKCjdtQlq3dzGzmxmsmLF6M/EbZcN5yNXfhtSKE9ChBnFWLjVZ3Imp
+        eI7GoloDL0v2fjvM7q77n9xcMF01HHvPNeYGAuYgV5Y6NAqhUIS5fX+c8uRkMOidtU+5v8LNZuq8
+        qQjXmgnQLYf6R2+moiBwm1iNpeHf/81Gc78i2b9NUidt6128ZkvXaWjSdt4VG+UlJUCYjbreoLyf
+        XftZ1Nq1yZOkBFlRzuTquFLiXwsOdh/Y4Dt7bgMAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 01:59:42 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOelF6WlRCaE56TXRPVFZpTWkwMFpEVmxMVGszWldZdFlUZzVaVFJsWkRVME9ETTEifX0.EIquDg.o7b-3AqrfmUb6cfHHEWtqxTISF0;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dnaSequenceIds": ["seq_ixP61SL4"]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOelF6WlRCaE56TXRPVFZpTWkwMFpEVmxMVGszWldZdFlUZzVaVFJsWkRVME9ETTEifX0.EIquDg.o7b-3AqrfmUb6cfHHEWtqxTISF0
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/dna-sequences:unarchive
+  response:
+    body:
+      string: "{\n  \"dnaSequenceIds\": [\n    \"seq_ixP61SL4\"\n  ]\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 01:59:42 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOelF6WlRCaE56TXRPVFZpTWkwMFpEVmxMVGszWldZdFlUZzVaVFJsWkRVME9ETTEifX0.EIquDg.o7b-3AqrfmUb6cfHHEWtqxTISF0;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOelF6WlRCaE56TXRPVFZpTWkwMFpEVmxMVGszWldZdFlUZzVaVFJsWkRVME9ETTEifX0.EIquDg.o7b-3AqrfmUb6cfHHEWtqxTISF0
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/dna-sequences/seq_ixP61SL4
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6VSTU/jMBC98ysiX6EkKW2X5haQKJVYddWW7QGhyoknzWj9UWxn2arqf8exqQgI
+        uOzF0rznmXnv2fuTKCKUIzVgSBY9PJ55QEplqUUlu6Aua/wLcyiVZg6WDeeBaGyttL/pyija+9MR
+        NZWMg8NJ81ygqmhBzo4ctiMISLtW29Xk9+2cvnGSCt91v4quprOb/Ip45uDOIKV4lUvyyTKfXOfL
+        iW8mpQZqgeW25fpJOu6lSS+9XCZpNhxng/S8PxgNRz9OkyRLkk6L0q4hyP5a9NeSPxd8CPMbY5W4
+        QeCsVbwPKJM057iRwk2bsk7Irka7m8MGjdW76bucqw9DKsUZaH+HcCzWmq0WYib+BGNBrYGnNf77
+        NUoXd4NX3FyjLhtOW88V5QY8zEFubO2gsS+FYuj2fRPlxcVw2L/sRnlM4edu5rypAG41CtAdh/pT
+        b6asQdAuYjWVhn/8hI3m7Yr4+DZxFXet9+gW167T1HHXeU/sVCspBoY26HqG4n5+186qrd2aLI4L
+        kGXNUW7OSyX+a8HJ4QVqHT0mVwMAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 01:59:43 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOelF6WlRCaE56TXRPVFZpTWkwMFpEVmxMVGszWldZdFlUZzVaVFJsWkRVME9ETTEifX0.EIquDg.o7b-3AqrfmUb6cfHHEWtqxTISF0;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dnaSequenceIds": ["seq_uJN0j4N2"], "reason": "Other"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '55'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZall4TjJGak5USXRZemxsWmkwMFlUSmpMV0l5Wm1RdE9ETmxNek14WVdKa056STQifX0.EIq0DQ.uoScf-oUG9mZZAph8-HgtlLnvjA
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/dna-sequences:archive
+  response:
+    body:
+      string: "{\n  \"dnaSequenceIds\": [\n    \"seq_uJN0j4N2\"\n  ]\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 02:25:18 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZall4TjJGak5USXRZemxsWmkwMFlUSmpMV0l5Wm1RdE9ETmxNek14WVdKa056STQifX0.EIq0Dg.DHNww8eVcSba3D5jORN7JE4sdJs;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZall4TjJGak5USXRZemxsWmkwMFlUSmpMV0l5Wm1RdE9ETmxNek14WVdKa056STQifX0.EIq0Dg.DHNww8eVcSba3D5jORN7JE4sdJs
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/dna-sequences/seq_uJN0j4N2
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6WSy07jMBSG9zxF5S2UOGFgaHYBiU5HQKVOoQuEKic+qT3jS8d2QFXVd8cXKiIE
+        bNhEOt+5/f9xtgeDASKCEwsWlYOHx6MIlNKOOK5VH5qG8SeYQaMN9XjroccGiNXKx2jqGBjk6S7V
+        d45pEwfEylTvE4woKiB0dM811y2p0dE+x8NkBMot9Xoxvv81I285RWTsulsMLibTq+oCxczOf5PC
+        +tUFqsbzanxZzcexGTVeowNauZArcD4a5niYn89xURanZf7zuDgrzkf4EOMS416LNm82PxX9ueSP
+        BafjNJ11Wl5xEDQo3iZKFakEXynpp01o7/Y+5m4zgxW3zmwmYaPqhIi59t2QVgsKJtYgweuloYs/
+        cir/JWNJrYX/y+73Lf7747Z45faSm6YTJHhuibAQsQC1csyjUQylptzv++KUJ2d5Pjrpn3J/hZvN
+        1HvTCa4Nl2B6Ds2H3mzDQJI+cYYoK97/m50RYUW2f5uszfrWh2TNl77TsqzvfCg3OkjKgHKXdD1D
+        fTe7DrOYc2tbZlkNqmGCq9Vxo+W3FhzsXgChJkYsbgMAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 02:25:19 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZall4TjJGak5USXRZemxsWmkwMFlUSmpMV0l5Wm1RdE9ETmxNek14WVdKa056STQifX0.EIq0Dg.DHNww8eVcSba3D5jORN7JE4sdJs;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dnaSequenceIds": ["seq_uJN0j4N2"]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZall4TjJGak5USXRZemxsWmkwMFlUSmpMV0l5Wm1RdE9ETmxNek14WVdKa056STQifX0.EIq0Dg.DHNww8eVcSba3D5jORN7JE4sdJs
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/dna-sequences:unarchive
+  response:
+    body:
+      string: "{\n  \"dnaSequenceIds\": [\n    \"seq_uJN0j4N2\"\n  ]\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 02:25:19 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZall4TjJGak5USXRZemxsWmkwMFlUSmpMV0l5Wm1RdE9ETmxNek14WVdKa056STQifX0.EIq0Dw.2R-Hr2XQWlACYbWfzb3EXIFLtFI;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZall4TjJGak5USXRZemxsWmkwMFlUSmpMV0l5Wm1RdE9ETmxNek14WVdKa056STQifX0.EIq0Dw.2R-Hr2XQWlACYbWfzb3EXIFLtFI
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/dna-sequences/seq_uJN0j4N2
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6VSy07DMBC88xWRr1DihGdzC0iUIqBSaekBocqJN43Bj2I7oKrqv+PYVAQEXLhY
+        2hnv7szY650oQoQzYsCgLHp43POAlMoSy5Tsgrqs2SuMoVSaOlg2nAeisbXS/qYro2jtT0fURFIO
+        DkfNW8FURQq0t+VYOwKBtHO1nA3uL8fkk5NE+K7pLDobji7yM+SZjTuDlOJDLsoHk3xwnk8GvhmV
+        GogFmtuWS3HS7yW4l5xOcJqlR1lysp8ep6d9vItxhnGnRWnXEGT/Lvp3yT8L3oT5jbFKXDDgtFW8
+        DiiVJOdsIYWbNqSdkF3N7GoMC2asXg2/5Fx9G1IpTkH7O4izYq7p7E6MxHMwFtQaeJk3V7f46fA2
+        /cDNOdNlw0nruSLcgIc5yIWtHdT3pVCUuX1/RHlwnCT9g26U2xRuViPnTQVwqZkA3XGof/RmyhoE
+        6SJWE2n490/YaN6uiLdvE1dx13qPLNncdZo67jrviZVqJcVAmQ263qCYjq/bWbW1S5PFcQGyrDmT
+        i/1SiX8t2Nm8AxPbQHFXAwAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 02:25:19 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZall4TjJGak5USXRZemxsWmkwMFlUSmpMV0l5Wm1RdE9ETmxNek14WVdKa056STQifX0.EIq0Dw.2R-Hr2XQWlACYbWfzb3EXIFLtFI;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
 version: 1
