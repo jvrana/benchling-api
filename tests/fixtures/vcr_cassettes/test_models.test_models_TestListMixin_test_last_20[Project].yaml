@@ -1112,4 +1112,163 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaRGhtWXpRd056Y3ROemd6WXkwME5tSXlMV0U1TkRVdFpqZ3dOVFJsTnpGa1lqUmgifX0.EIu0kw.9WASRUwmpWvjPydU0TIRUI77pw8
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/projects?pageSize=20
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA9WXW2/iOBSA3+dXWDxXq3CboSvNQxoKhUJIIQR2VivkJieJIbFT2wmXUf/7Glq6
+        K8WVMitWal8cxcfn2J+Oz8U/vyBUo7CTLtsArf2OaoumIEHaE8FiTibEJOO1uZvMjK1tGdtJ72Fn
+        H9jB7jI112qND5v6+HBLRpZJlvVr8mPRXuP+LntMgzksb5LBmkWDdBoHfc/Ai3oyoIYYWMODn9oh
+        duPC6/1I5t6ALB++f69dHY+ScbYGXwp1kj/VP0I/T6OSYO7HpIAp+IwHSkzzJLk6C8lxpia4v5KB
+        7Bmdh33tTUZxCkepNV4JeMqB+rDaYiIJjVacsfSflWxLgaul5z3VVIxpkJzUU5wkzG++rX7bFahc
+        cdptXLvu8t/St30xpYyi8VGf72uvC55P3+er/wQ5n4Zmf+YdypAOZymTwJHwOQBVjBXxwiDf7vxI
+        j5fc+XfTFhy0eDHQKMJqo0uQUTvOxFPnoUw2NJFFuJ8TdTmqIU0CGKlzgZ5pmdXb7UOz0DFNeKKs
+        MBQAerFwCbTb3qi/cLKojNa0WQC/CLcuOKZYjzYZD70lnQ50aMNcqJuPvJP2JbC++fd7cYPDMlbX
+        nBEXhHQSLFKl8MnA6s25tIbQ1gSZuh0SDdI0p4BmJKIqtFWkoQjUvwJBKotJUIc555uqTv1gN3bY
+        8+NvYq9x7azbqIj0YdzpFil1TO9a406nKswH889oFIX3baur8c+emhGa5WmqSkHDqF9XBEyl8JmU
+        71QBxxVb+vSk4xvjAFQMqHA46V+Cru/x6VcnnZbp/gAsJHJZxhIW7SuimckjcMk6X/VwC2HGRrF2
+        dXCvqhehWm8X98J2nDKVba1s0+6uLJZmjKozVc0akLAMDu90JvP6NAgWltRx3XJyAkOjo4GL4PHY
+        oaGDNZ1JLxdNdTtwGLIkQLeVGxNc+JhzPZzYxJ39DYR6p8EOeTiPlClkHU1cgo+2RrHDRVHmm+YJ
+        oKaBspdq9xmdFx1iJ/IGuAx3irhVH0sQq8Zvxidka++6tzsiNu9lk3P7hfyE/ULbvElwQahI8KOe
+        soOL2IH7Gx3l/YuuKgiPF0F8sunSa7i0jGiBentUJPowBdsW13LbMjShVq+I0sePnEByA7kf43eK
+        2m5U57OwGOqQXvXR2cAlqKjsYdb2jTLVHYliN+ZMZawsl5/1OcA3c77ob/0yX/We8YO1WaTDXA8e
+        NI1INp2h19cNmsW5lKoEeOBLxgUKGUcz5AOHggiCoSL7/5Mz1fjXl+e/AUcVfnrtEQAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 20:39:47 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaRGhtWXpRd056Y3ROemd6WXkwME5tSXlMV0U1TkRVdFpqZ3dOVFJsTnpGa1lqUmgifX0.EIu0kw.9WASRUwmpWvjPydU0TIRUI77pw8;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaRGhtWXpRd056Y3ROemd6WXkwME5tSXlMV0U1TkRVdFpqZ3dOVFJsTnpGa1lqUmgifX0.EIu0kw.9WASRUwmpWvjPydU0TIRUI77pw8
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/projects
+  response:
+    body:
+      string: !!binary |
+        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
+        IMu/li/k9a+fvv0DRXEofsUrAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 20:39:48 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaRGhtWXpRd056Y3ROemd6WXkwME5tSXlMV0U1TkRVdFpqZ3dOVFJsTnpGa1lqUmgifX0.EIu0lA._l3adlHGtBk9w_w6Qpk9fxr0ro4;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
 version: 1

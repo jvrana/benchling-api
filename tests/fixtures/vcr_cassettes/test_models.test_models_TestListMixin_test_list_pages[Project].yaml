@@ -889,4 +889,125 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaRGhtWXpRd056Y3ROemd6WXkwME5tSXlMV0U1TkRVdFpqZ3dOVFJsTnpGa1lqUmgifX0.EIu0lg.Q6l081MvNhhtTOeMEiamurjjD_w
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/projects?pageSize=1
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA02OUU+DMBSF3/kVpM97YG4mzmQPCIFgZAu4CdEYUtu6lbW3szAHW/bfLYugD+cm
+        937n5NyzZdsIWFOv1I4BurdRNqk4lUFFszVfcpfHpdssn50m9oyCpI19dVwYxd50vPB37dKP+JPn
+        8nw846/ZbYnDZv8h6ZrlDyIq1SaS6ZaGLw7OxiICp4q8xxORi08apk5autN1vuN5Mp+jUffKXquS
+        kboyn7yZ3bbP12kI1mTLv1nKiNLUYDgIMeoh7y6o0qSoaR04d0mLBgZYso56cVGxrwMDwooj5jWH
+        TaGVkn9OdQSmjbXvNKctBiqucYmFUGQyuIdWBnWhwb+ZrVb5fzr0YgAFdtzldYt+DRern+/W5QcJ
+        EqYChgEAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 20:39:51 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaRGhtWXpRd056Y3ROemd6WXkwME5tSXlMV0U1TkRVdFpqZ3dOVFJsTnpGa1lqUmgifX0.EIu0lw.lA5IbscAt_13uI5DnORpT1ZwFjQ;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaRGhtWXpRd056Y3ROemd6WXkwME5tSXlMV0U1TkRVdFpqZ3dOVFJsTnpGa1lqUmgifX0.EIu0lw.lA5IbscAt_13uI5DnORpT1ZwFjQ
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/projects?pageSize=1&nextToken=W3sidmFsdWUiOiAiMjAxOS0xMC0xMFQyMDowNDowMC41NDkyODIiLCAiX19iZW5jaGxpbmdUeXBlIjogImRhdGV0aW1lIn0sICJzcmNfdGR0RjA4UXkiXQ%3D%3D
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA02OT0+DQBDF73wKsuceqNaDJj0gKqUREVr+RGMa3B1gkd1tFiqUpt+9SyOth3mZ
+        md+bvDlouo44dM1a/ABHDzqKb2tK2EtN4pB61KRuaXbeyuhcy2i9yN+7pdi7T6pWM9U/37i9SV8t
+        kybTe/oR35Wp3W2/GQkheaycUuQOCwpiR0YaTyuHG7VjLXvM3rIoWjI/JOuIC5r48zmaDK9spSgB
+        N7X65FPNun44qyKpxAX9hQCwkERhvquqyQjpsEG1xJswyEx7FfXownjKYKDvUjDRgNRrLAE45fnV
+        I1oOUpnGNLUqUk6q82FGdm2Hr+5LHvBmUy3wIphB/5+OiVYBPM9TFfTHjtqoX9rxBNVQnvV7AQAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 18 Oct 2019 20:39:52 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaRGhtWXpRd056Y3ROemd6WXkwME5tSXlMV0U1TkRVdFpqZ3dOVFJsTnpGa1lqUmgifX0.EIu0mA.iBYZvkjcuzG5YObiVQmEOi9-ebA;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
 version: 1

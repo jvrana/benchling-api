@@ -41,12 +41,14 @@ class ListMixin(ModelBaseABC):
     MAX_PAGE_SIZE = 100
 
     @classmethod
-    def list(cls, **params) -> List[ModelBase]:
+    def list(cls, limit=None, **params) -> List[ModelBase]:
         """List models.
 
         :param params: extra parameters
         :return: list of models
         """
+        if limit:
+            return cls.all(limit=limit, **params)
         response = cls._get(params=params)
         return cls.load_many(response[cls._camelize()])
 
@@ -526,7 +528,7 @@ class RegistryMixin(ModelBaseABC):
 
     @classmethod
     def list_in_registry(cls, registry_id=None, registry_name=None, **params):
-        """List all instances contained in the registry.
+        """List instances contained in the registry.
 
         :param registry_id: registery id. If none, 'registry_name' must be provided.
                 :param registry_name: registry name. If None, 'registry_id' must be provided
@@ -538,6 +540,16 @@ class RegistryMixin(ModelBaseABC):
                 id=registry_id, name=registry_name
             ).id
         return cls.list(registry_id=registry_id, **params)
+
+    @classmethod
+    def all_in_registry(
+        cls, registry_id=None, registry_name=None, limit=None, **params
+    ):
+        if registry_id is None:
+            registry_id = cls.session.Registry.find_registry(
+                id=registry_id, name=registry_name
+            ).id
+        return cls.all(registry_id=registry_id, limit=None, **params)
 
     @classmethod
     def registry_dict(cls, registry_id=None, registry_name=None, **params):
