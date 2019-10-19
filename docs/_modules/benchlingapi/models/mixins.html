@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>benchlingapi.models.mixins &#8212; benchlingapi 2.1.1 documentation</title>
+    <title>benchlingapi.models.mixins &#8212; benchlingapi 2.1.2 documentation</title>
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
@@ -37,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.1.1</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.1.2</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -114,10 +114,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">benchlingapi change log</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id1">2.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id2">2.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id3">2.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id4">2.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id1">2.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id2">2.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id3">2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id4">2.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id5">2.0.0</a></li>
 </ul>
 </li>
 </ul>
@@ -199,12 +200,14 @@ class ListMixin(ModelBaseABC):
     MAX_PAGE_SIZE = 100
 
     @classmethod
-    def list(cls, **params) -&gt; List[ModelBase]:
+    def list(cls, limit=None, **params) -&gt; List[ModelBase]:
         &quot;&quot;&quot;List models.
 
         :param params: extra parameters
         :return: list of models
         &quot;&quot;&quot;
+        if limit:
+            return cls.all(limit=limit, **params)
         response = cls._get(params=params)
         return cls.load_many(response[cls._camelize()])
 
@@ -684,7 +687,7 @@ class RegistryMixin(ModelBaseABC):
 
     @classmethod
     def list_in_registry(cls, registry_id=None, registry_name=None, **params):
-        &quot;&quot;&quot;List all instances contained in the registry.
+        &quot;&quot;&quot;List instances contained in the registry.
 
         :param registry_id: registery id. If none, &#39;registry_name&#39; must be provided.
                 :param registry_name: registry name. If None, &#39;registry_id&#39; must be provided
@@ -696,6 +699,16 @@ class RegistryMixin(ModelBaseABC):
                 id=registry_id, name=registry_name
             ).id
         return cls.list(registry_id=registry_id, **params)
+
+    @classmethod
+    def all_in_registry(
+        cls, registry_id=None, registry_name=None, limit=None, **params
+    ):
+        if registry_id is None:
+            registry_id = cls.session.Registry.find_registry(
+                id=registry_id, name=registry_name
+            ).id
+        return cls.all(registry_id=registry_id, limit=None, **params)
 
     @classmethod
     def registry_dict(cls, registry_id=None, registry_name=None, **params):

@@ -1,4 +1,12 @@
 # benchlingapi change log
+## 2.1.2
+**2019-10-18T13:44:46.826684**
+bug fixes
+
+ - fixes bug where parameters in get_pages was not being inherited
+ - adds new 'all_in_registry' function
+
+
 ## 2.1.1
 **2019-10-17T19:36:37.900149**
 Python 3.5, 3.6, 3.7 support
