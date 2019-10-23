@@ -334,7 +334,7 @@ class ArchiveMixin(ModelBaseABC):
         Return None if not archived.
         """
         if self.is_archived:
-            return self.archive_reason["reason"]
+            return self.archive_record["reason"]
 
 
 class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
