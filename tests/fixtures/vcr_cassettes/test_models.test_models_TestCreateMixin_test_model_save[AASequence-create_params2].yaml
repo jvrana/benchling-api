@@ -475,4 +475,72 @@ interactions:
     status:
       code: 201
       message: CREATED
+- request:
+    body: '{"folderId": "lib_rdWSmOmk", "schemaId": "ts_VncPkR5T", "name": "MyProtein",
+      "aminoAcids": "AMVGKLALDLSD"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '106'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNREE0WlRoak9ERXRORGxoWkMwME1qUXhMV0psWkRJdE5HWTRORFJrT0RsaU4yVXgifX0.EJIi6Q.btBE6fm18tkeMUWzfLmZItA7H2I
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/aa-sequences
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"aminoAcids\": \"AMVGKLALDLSD\",\n  \"annotations\":
+        [],\n  \"archiveRecord\": null,\n  \"authors\": [\n    {\n      \"handle\":
+        \"uwbiofab\",\n      \"id\": \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n
+        \   }\n  ],\n  \"createdAt\": \"2019-10-23T17:44:09.268742+00:00\",\n  \"creator\":
+        {\n    \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
+        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"entityRegistryId\": null,\n
+        \ \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n  \"id\": \"prtn_DcTMxL4O\",\n
+        \ \"length\": 12,\n  \"modifiedAt\": \"2019-10-23T17:44:09.268742+00:00\",\n
+        \ \"name\": \"MyProtein\",\n  \"registryId\": null,\n  \"schema\": {\n    \"id\":
+        \"ts_VncPkR5T\",\n    \"name\": \"Protein\"\n  },\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_DcTMxL4O-myprotein/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/prtn_DcTMxL4O-myprotein/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '834'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 23 Oct 2019 17:44:09 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/aa-sequences/prtn_DcTMxL4O
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNREE0WlRoak9ERXRORGxoWkMwME1qUXhMV0psWkRJdE5HWTRORFJrT0RsaU4yVXgifX0.EJIi6Q.btBE6fm18tkeMUWzfLmZItA7H2I;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
 version: 1

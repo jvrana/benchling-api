@@ -695,4 +695,91 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNREE0WlRoak9ERXRORGxoWkMwME1qUXhMV0psWkRJdE5HWTRORFJrT0RsaU4yVXgifX0.EJIivg.WyE6uNWnpxmvl-CCNj5ZSKa3cJk
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/projects
+  response:
+    body:
+      string: !!binary |
+        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
+        ef33L9//BpTSEq6/KwAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 23 Oct 2019 17:43:26 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNREE0WlRoak9ERXRORGxoWkMwME1qUXhMV0psWkRJdE5HWTRORFJrT0RsaU4yVXgifX0.EJIivg.WyE6uNWnpxmvl-CCNj5ZSKa3cJk;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
 version: 1

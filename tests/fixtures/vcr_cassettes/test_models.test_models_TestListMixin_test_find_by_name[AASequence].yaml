@@ -531,4 +531,80 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNREE0WlRoak9ERXRORGxoWkMwME1qUXhMV0psWkRJdE5HWTRORFJrT0RsaU4yVXgifX0.EJIirw.IyRr7EvC1JrT3fRPNCaAIABJp4U
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/aa-sequences?name=+JAZ1+-+domains+annotated
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA+2WbW+jRhDH39+nQPRNqoZ4wQaD363NgwkPAZZw8VVVRMzGJofBAZzkEuW7dyG5
+        2EmB1O1Fldpalm3NLjO/+e94Zx4+URQdhghfb3A6xwU9on4lJop6qD+rxSQOi6eF3w5fjKs4zeA8
+        jio7bSGELGWCFDXQkOepvmYYDlKR60+QZyJ3ZhqKrSFVk01kahacGI4c2JpvajbyXMf3fQuZqjNR
+        ILItGVmBKweG49vERpaJo/plOoYiB6Zh+a7ve4jsUEgE6Ji+rs6g5gZ6oNqyiqBiQEMJdNuEyNB8
+        aCMTGrbry7qHbB36OrTdwJk6nkECu4qjuwg5PnGjmI4OPQ8ic+qppmJ4huwFPjKgM3PNiexAAyJk
+        OyS6Zlvos6mZECo6vRUlTbMyLOMs3cq4K2W9aZ4lWV6J9pMK4URgXx6vV3EakTVReGWMKxu9zsuU
+        RDi/ErzoPtOS1w+m4QpXuyaWLr/xWZRhXpI1VnqxPh6+BzcRJtJbR09wHNfvoFusM5COp7NmOifH
+        UTwvcUTZJqIOSNWR75+bcTl2sAdvu5gc16VmLIr5xrs9a+Y9DouejBd5lrZJuo+mIi9DRWpiBB2E
+        TqCf3m/4sJnQCu/iY4ha8Hh+DzxZGHMS3yxhF+DnweByMAVyS0Ge6Cx1EadRnC7IiS9xmEcULqkw
+        aTn3/TSdDMdA6TdBk+Q7oG99Tk3MMG5RNU7jVZhQX3SLOnDCzS1Oim5o9scoLXTVqrvWheCrumn/
+        51MHWpYVOC0OKQ6wQgss2ANV5UXIK/vrK92cGtZ0Mm5mJbqy5yhcrRNMcZI4FNtU3acU2lVlhS7U
+        uZgYXzhea0elbrgWQLAD+Pxrp0nm82V8gz08z/IqYrpJku3iplxmeUejWIZplNQIJxE2w3SB6YYk
+        cFqen63JWdz3b5oTOMkT4imjIkw9eekgnuc4JLczrHKjSQVJDJAYVvI5MGLZ0WBwJAn8gBN/AWAE
+        AP36sfoUthl083fTv8v+uA29KcpspcY4qUeRh+0K8R2X3zy8iIsy/6b/4QAuG565zJII5/VeOokv
+        zmfx3Xg51Ld9Zad0zqe3s2ub47ZXCJ3gdFEuyQaOf+mR9CqLYhJrV1QWMID1WWnU50fs8Igb9kVp
+        8FbU7xpQx/ALSzFUlK3COC2o5ykDR9uteWuSxXyJV+Fb6yZPKs+9LMJJJWvvsrebLXNJNjNPyTDr
+        PCsxidt7lTPDXIX3LPPMxLww9Uh/L7dgt/ji1DOrWMuyXBejXu+CTJnLhPSCo3m2+jCAOv7zsf4/
+        yH70IDsewDGc7N8j4jMz8mfCXevF26sE+RGt4a9Oh8oULS/IFdJM+GOnw3ZGlu+auOcLsFal6+N3
+        J5kWSG5ncnn+9W9qYUJ92/Z9jh2RN+COAOABx/1nWphY9K9M73qnS+20sGQtxmv563Z0/9MtDAgM
+        GFSiguEISEdDkR32wT/fwr5ny5R5mBbJ0x3We5Xrx7Suvx24jluVc13KdIrvSj/7itOKgP70+Ds3
+        N5+tqBEAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 23 Oct 2019 17:43:12 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNREE0WlRoak9ERXRORGxoWkMwME1qUXhMV0psWkRJdE5HWTRORFJrT0RsaU4yVXgifX0.EJIisA.jq2Ux6HUYiq2fcqfAbu-ZYBvZbQ;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
 version: 1

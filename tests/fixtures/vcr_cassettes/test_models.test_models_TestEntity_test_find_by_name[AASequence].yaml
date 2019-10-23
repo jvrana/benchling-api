@@ -764,4 +764,130 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNREE0WlRoak9ERXRORGxoWkMwME1qUXhMV0psWkRJdE5HWTRORFJrT0RsaU4yVXgifX0.EJIi2w.GZA7jjmZ1QmDzicO6K-Glw10aC0
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/aa-sequences?name=+JAZ1+-+domains+annotated
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA+2XbXOqRhTH399PwXDfpNMQFxQE363yIOEhwBJuTKeTIbJREgQDmOQmk+/eheRG
+        vRVS25t2pq3jqHP24fzO2cP+j0+fKIoOQ4RvVzid4oIeUL8QE0U91Z/VYBKHxcvAr4dvxkWcZnAa
+        R5WdthBCljJCihpoyPNUXzMMB6nI9UfIM5E7MQ3F1pCqySYyNQuODEcObM03NRt5ruP7voVM1Rkp
+        ENmWjKzAlQPD8W1iI8Nko/plOoYiB6Zh+a7ve4jMUIgH6Ji+rk6g5gZ6oNqyiqBiQEMJdNuEyNB8
+        aCMTGrbry7qHbB36OrTdwBk7nkEcu4qjuwg5PtlGMR0deh5E5thTTcXwDNkLfGRAZ+KaI9mBBkTI
+        doh3zbbQF1MzIVR0ep2UNM3KsIyzdJ3GzVTWk6ZZkuVV0j7LwpCT+Lfl9ShOIzLGcWDLGldGepmX
+        KXFx8aXXu+qNgby9Mg0XuJo1OtFZ6jJOozidUQdojsM8onBJhclP2wuKMsxLsoKVpDfz8+F70CNh
+        JMnsbuhuC/RsmYF0OJ7shnZyHMXTEkeUbSJCjW/JdwMvx/b24G1OsiC04LpLXQhu1FVDji1dpg60
+        LCtwWhxSHGCFBliwB6rKi5BXdqGyPN/CKt2dGtZ4NNzNeq5b7AUKF8sEU5wk9sWGKmD3qQIVwpGw
+        swrEtqxeC170mGlJc1bZBrofA8dxbXSxKOYr7/5sN91xWHRkPMuz9Ec8Rs1lyQptZz0VE+Oc47Xm
+        s6buuAZAsA/gqD8ESnf/Yrz3OTUxw3g3oBWn8SJMKAJKHTjh6h4nRfvlxPJ7QIu8DBVpF3TbfeoE
+        +unjig8bkMOH+BiiBjx+A+/114ZI5tN5fIc9PM3yymO6SpL14KqcZ3mLUMzDNEpqhJMIm2E6w/SO
+        IHBaXpwtCcdj9253ACd5QnbKqAhTL7u0EE9zHJJbGFax0eRakxggMazkc2DAsoNe70gS+B4n/gzA
+        AAB6e1l9BusI2vnb6d9lf167XhVltlBjnNStyNN6hOwdl189PIuLMv+q/+4ArnasucqSCOf1XDqJ
+        Ly8m8cNw3tfXl8lG6VyM7ye3NsetS51OcDor52QCx79pIb3Iopj42kwqCxjA+qw06PIDtn/E9bui
+        1Ps+qd9yQB3Dc5ZiqChbhHFaUK9dBo7WU/PGIIvpHC/C762rPKl27mQRTqq0dq46m9EyV2Qy8xIM
+        s8yzEhO/na2YGeY6fGSZVybmjalDdLxcg93jy1PPrHzNy3JZDDqdS9JlzhPSmxxNs8WHAdT+X4/1
+        /0b2oxvZPyu4yhjNL8kD+ncI7rAHh3C0v57FZ2bkT4SHRsHtVIf2sT0Vy7d11tMZWKrS7fG7itsA
+        yf27JUyob9uuz7ED8gbcEQA84Lj/jISJRffa9G43VGpDwpKlGC/lm/VfyT8sYUBgQK9KKugPgHTU
+        F9l+F/zzEvYtWqbMw7RIXu6wzlasHyNdf9lx7bcq57qU6RQ/lH52g9OKgP70/BsFQvDvqBEAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 23 Oct 2019 17:43:56 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNREE0WlRoak9ERXRORGxoWkMwME1qUXhMV0psWkRJdE5HWTRORFJrT0RsaU4yVXgifX0.EJIi3A.bBIX65VhHMKlBDvVRJrvnTHcwZQ;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNREE0WlRoak9ERXRORGxoWkMwME1qUXhMV0psWkRJdE5HWTRORFJrT0RsaU4yVXgifX0.EJIi3A.bBIX65VhHMKlBDvVRJrvnTHcwZQ
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/aa-sequences?name=alsjdfoijewfosdiufoasdf
+  response:
+    body:
+      string: "{\n  \"aaSequences\": [],\n  \"nextToken\": \"\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '42'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 23 Oct 2019 17:43:57 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNREE0WlRoak9ERXRORGxoWkMwME1qUXhMV0psWkRJdE5HWTRORFJrT0RsaU4yVXgifX0.EJIi3Q.Z2n1IBgfHE7rtE4LQsivixQMokU;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
 version: 1

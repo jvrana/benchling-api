@@ -535,4 +535,80 @@ interactions:
     status:
       code: 201
       message: CREATED
+- request:
+    body: '{"isCircular": false, "schemaId": "ts_eBbzNtMs", "name": "MyNewSeq", "folderId":
+      "lib_rdWSmOmk", "bases": "AGCGTATGTGTGTA", "annotations": [{"strand": 1, "type":
+      "gene", "start": 1, "name": "bla gene", "end": 3, "color": "#FF9CCD"}, {"strand":
+      -1, "type": "gene", "start": 1, "name": "bla gene", "end": 5, "color": "#FF9CCD"}]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '327'
+      Content-Type:
+      - application/json
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNREE0WlRoak9ERXRORGxoWkMwME1qUXhMV0psWkRJdE5HWTRORFJrT0RsaU4yVXgifX0.EJIi5w.QL7wq77i-YJClqgIJgc86l8vYcU
+      User-Agent:
+      - python-requests/2.22.0
+    method: POST
+    uri: https://benchling.com/api/v2/dna-sequences
+  response:
+    body:
+      string: "{\n  \"aliases\": [],\n  \"annotations\": [\n    {\n      \"color\":
+        \"#FF9CCD\",\n      \"end\": 5,\n      \"name\": \"bla gene\",\n      \"start\":
+        1,\n      \"strand\": -1,\n      \"type\": \"gene\"\n    },\n    {\n      \"color\":
+        \"#FF9CCD\",\n      \"end\": 3,\n      \"name\": \"bla gene\",\n      \"start\":
+        1,\n      \"strand\": 1,\n      \"type\": \"gene\"\n    }\n  ],\n  \"archiveRecord\":
+        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
+        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
+        \"AGCGTATGTGTGTA\",\n  \"createdAt\": \"2019-10-23T17:44:07.458048+00:00\",\n
+        \ \"creator\": {\n    \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n
+        \   \"name\": \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\":
+        [],\n  \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
+        \ \"id\": \"seq_CLoYL4Y2\",\n  \"isCircular\": false,\n  \"length\": 14,\n
+        \ \"modifiedAt\": \"2019-10-23T17:44:07.711472+00:00\",\n  \"name\": \"MyNewSeq\",\n
+        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": {\n    \"id\":
+        \"ts_eBbzNtMs\",\n    \"name\": \"Aquarium Fragment\"\n  },\n  \"translations\":
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_CLoYL4Y2-mynewseq/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_CLoYL4Y2-mynewseq/edit\"\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1203'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 23 Oct 2019 17:44:08 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Location:
+      - https://benchling.com/api/v2/dna-sequences/seq_CLoYL4Y2
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNREE0WlRoak9ERXRORGxoWkMwME1qUXhMV0psWkRJdE5HWTRORFJrT0RsaU4yVXgifX0.EJIi6A.nZ9CgmTceKmUb2v8jq-VdsDzR3w;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 201
+      message: CREATED
 version: 1
