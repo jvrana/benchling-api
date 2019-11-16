@@ -1,9 +1,9 @@
 interactions:
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "customFields": {}, "fields": {}, "isCircular":
-      false, "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "name": "f050212d-de07-4e8a-a80c-4bd7f147209f", "annotations":
-      []}'
+    body: '{"aliases": [], "isCircular": false, "folderId": "lib_rdWSmOmk", "name":
+      "065f384d-774a-443c-9b46-d4b4b1a0cc68", "customFields": {}, "annotations": [],
+      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "fields": {}}'
     headers:
       Accept:
       - '*/*'
@@ -18,7 +18,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaKQ.CTjrR-vg6yJYfi32D2MKZFMe8aQ
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq2Q.a41zWWexRzmuyZw5trZdAaFFknU
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -29,15 +29,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:05.059467+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:16.495887+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_ot72XABD\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:05.210092+00:00\",\n  \"name\": \"f050212d-de07-4e8a-a80c-4bd7f147209f\",\n
+        \ \"id\": \"seq_xkZAz5gC\",\n  \"isCircular\": false,\n  \"length\": 134,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:16.584342+00:00\",\n  \"name\": \"065f384d-774a-443c-9b46-d4b4b1a0cc68\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ot72XABD-f050212d-de07-4e8a-a80c-4bd7f147209f/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ot72XABD-f050212d-de07-4e8a-a80c-4bd7f147209f/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_xkZAz5gC-065f384d-774a-443c-9b46-d4b4b1a0cc68/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_xkZAz5gC-065f384d-774a-443c-9b46-d4b4b1a0cc68/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -50,17 +50,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:05 GMT
+      - Sat, 16 Nov 2019 02:05:16 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_ot72XABD
+      - https://benchling.com/api/v2/dna-sequences/seq_xkZAz5gC
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLQ.L_MySfccnSStI_jxYDztenTPb38;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3A.yvj_1KOBpZnEn3twRN3LigmGvvc;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -72,10 +72,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "customFields": {}, "fields": {}, "isCircular":
-      false, "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "name": "2b216855-d0ca-49dc-8dcd-1e220a608769", "annotations":
-      []}'
+    body: '{"aliases": [], "isCircular": false, "folderId": "lib_rdWSmOmk", "name":
+      "3f384411-cb61-4102-9699-441609464ed7", "customFields": {}, "annotations": [],
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "fields": {}}'
     headers:
       Accept:
       - '*/*'
@@ -90,7 +90,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLQ.L_MySfccnSStI_jxYDztenTPb38
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3A.yvj_1KOBpZnEn3twRN3LigmGvvc
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -101,15 +101,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:05.554049+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:16.807876+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_AtIY04NC\",\n  \"isCircular\": false,\n  \"length\": 152,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:05.641164+00:00\",\n  \"name\": \"2b216855-d0ca-49dc-8dcd-1e220a608769\",\n
+        \ \"id\": \"seq_EyQfQ3jf\",\n  \"isCircular\": false,\n  \"length\": 152,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:16.948078+00:00\",\n  \"name\": \"3f384411-cb61-4102-9699-441609464ed7\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_AtIY04NC-2b216855-d0ca-49dc-8dcd-1e220a608769/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_AtIY04NC-2b216855-d0ca-49dc-8dcd-1e220a608769/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_EyQfQ3jf-3f384411-cb61-4102-9699-441609464ed7/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_EyQfQ3jf-3f384411-cb61-4102-9699-441609464ed7/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -122,17 +122,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:05 GMT
+      - Sat, 16 Nov 2019 02:05:17 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_AtIY04NC
+      - https://benchling.com/api/v2/dna-sequences/seq_EyQfQ3jf
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLQ.L_MySfccnSStI_jxYDztenTPb38;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3Q.YFdUFw7Jx0yXuMydjhAeh8iCSFY;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -144,10 +144,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "customFields": {}, "fields": {}, "isCircular":
-      false, "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
-      "aliases": [], "name": "17b0113b-5120-463b-9a67-995f06bee52d", "annotations":
-      []}'
+    body: '{"aliases": [], "isCircular": false, "folderId": "lib_rdWSmOmk", "name":
+      "7f0f0e1b-a571-411e-8e0a-e11a3689f907", "customFields": {}, "annotations": [],
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
+      "fields": {}}'
     headers:
       Accept:
       - '*/*'
@@ -162,7 +162,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLQ.L_MySfccnSStI_jxYDztenTPb38
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3Q.YFdUFw7Jx0yXuMydjhAeh8iCSFY
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -173,15 +173,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:05.863100+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:17.225262+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_AOhGgcAt\",\n  \"isCircular\": false,\n  \"length\": 176,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:05.978984+00:00\",\n  \"name\": \"17b0113b-5120-463b-9a67-995f06bee52d\",\n
+        \ \"id\": \"seq_OzuookFY\",\n  \"isCircular\": false,\n  \"length\": 176,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:17.347577+00:00\",\n  \"name\": \"7f0f0e1b-a571-411e-8e0a-e11a3689f907\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_AOhGgcAt-17b0113b-5120-463b-9a67-995f06bee52d/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_AOhGgcAt-17b0113b-5120-463b-9a67-995f06bee52d/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_OzuookFY-7f0f0e1b-a571-411e-8e0a-e11a3689f907/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_OzuookFY-7f0f0e1b-a571-411e-8e0a-e11a3689f907/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -194,17 +194,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:06 GMT
+      - Sat, 16 Nov 2019 02:05:17 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_AOhGgcAt
+      - https://benchling.com/api/v2/dna-sequences/seq_OzuookFY
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLg.sPVRYNvQb7Zwo-lqy5BGUEzs8XU;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3Q.YFdUFw7Jx0yXuMydjhAeh8iCSFY;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -216,10 +216,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "customFields": {}, "fields": {}, "isCircular":
-      false, "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "name": "d889e09b-9ce4-4bf7-a25c-e866111bf036", "annotations":
-      []}'
+    body: '{"aliases": [], "isCircular": false, "folderId": "lib_rdWSmOmk", "name":
+      "06313d5f-290c-4110-9a5f-f3d9a1f8a4a3", "customFields": {}, "annotations": [],
+      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "fields": {}}'
     headers:
       Accept:
       - '*/*'
@@ -234,7 +234,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLg.sPVRYNvQb7Zwo-lqy5BGUEzs8XU
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3Q.YFdUFw7Jx0yXuMydjhAeh8iCSFY
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -245,15 +245,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:06.209207+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:17.634823+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_IALhqSaC\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:06.309105+00:00\",\n  \"name\": \"d889e09b-9ce4-4bf7-a25c-e866111bf036\",\n
+        \ \"id\": \"seq_nlNQhpWE\",\n  \"isCircular\": false,\n  \"length\": 134,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:17.717160+00:00\",\n  \"name\": \"06313d5f-290c-4110-9a5f-f3d9a1f8a4a3\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_IALhqSaC-d889e09b-9ce4-4bf7-a25c-e866111bf036/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_IALhqSaC-d889e09b-9ce4-4bf7-a25c-e866111bf036/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_nlNQhpWE-06313d5f-290c-4110-9a5f-f3d9a1f8a4a3/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_nlNQhpWE-06313d5f-290c-4110-9a5f-f3d9a1f8a4a3/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -266,17 +266,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:06 GMT
+      - Sat, 16 Nov 2019 02:05:17 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_IALhqSaC
+      - https://benchling.com/api/v2/dna-sequences/seq_nlNQhpWE
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLg.sPVRYNvQb7Zwo-lqy5BGUEzs8XU;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3Q.YFdUFw7Jx0yXuMydjhAeh8iCSFY;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -288,10 +288,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "customFields": {}, "fields": {}, "isCircular":
-      false, "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "name": "0f1a65a8-d7d1-4b79-ac2c-75bdce24e59a", "annotations":
-      []}'
+    body: '{"aliases": [], "isCircular": false, "folderId": "lib_rdWSmOmk", "name":
+      "ecb84a0a-6d70-4060-bc3d-21c8559041d5", "customFields": {}, "annotations": [],
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "fields": {}}'
     headers:
       Accept:
       - '*/*'
@@ -306,7 +306,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLg.sPVRYNvQb7Zwo-lqy5BGUEzs8XU
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3Q.YFdUFw7Jx0yXuMydjhAeh8iCSFY
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -317,15 +317,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:06.527298+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:17.940723+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_72L0j0QU\",\n  \"isCircular\": false,\n  \"length\": 152,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:06.623161+00:00\",\n  \"name\": \"0f1a65a8-d7d1-4b79-ac2c-75bdce24e59a\",\n
+        \ \"id\": \"seq_C6fGspjy\",\n  \"isCircular\": false,\n  \"length\": 152,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:18.024238+00:00\",\n  \"name\": \"ecb84a0a-6d70-4060-bc3d-21c8559041d5\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_72L0j0QU-0f1a65a8-d7d1-4b79-ac2c-75bdce24e59a/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_72L0j0QU-0f1a65a8-d7d1-4b79-ac2c-75bdce24e59a/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_C6fGspjy-ecb84a0a-6d70-4060-bc3d-21c8559041d5/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_C6fGspjy-ecb84a0a-6d70-4060-bc3d-21c8559041d5/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -338,17 +338,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:06 GMT
+      - Sat, 16 Nov 2019 02:05:18 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_72L0j0QU
+      - https://benchling.com/api/v2/dna-sequences/seq_C6fGspjy
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLg.sPVRYNvQb7Zwo-lqy5BGUEzs8XU;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3g.QzvMqovnCbapfEwnN_fs-xSz24s;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -360,10 +360,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "customFields": {}, "fields": {}, "isCircular":
-      false, "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
-      "aliases": [], "name": "b1f464d9-0b93-49e8-9623-5f9815372ab2", "annotations":
-      []}'
+    body: '{"aliases": [], "isCircular": false, "folderId": "lib_rdWSmOmk", "name":
+      "a44b2551-8450-419b-b1ff-3edd4ecca5ef", "customFields": {}, "annotations": [],
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
+      "fields": {}}'
     headers:
       Accept:
       - '*/*'
@@ -378,7 +378,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLg.sPVRYNvQb7Zwo-lqy5BGUEzs8XU
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3g.QzvMqovnCbapfEwnN_fs-xSz24s
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -389,15 +389,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:06.840541+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:18.249257+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_UX7tRqeQ\",\n  \"isCircular\": false,\n  \"length\": 176,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:06.925854+00:00\",\n  \"name\": \"b1f464d9-0b93-49e8-9623-5f9815372ab2\",\n
+        \ \"id\": \"seq_j6hK2Hwt\",\n  \"isCircular\": false,\n  \"length\": 176,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:18.354123+00:00\",\n  \"name\": \"a44b2551-8450-419b-b1ff-3edd4ecca5ef\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_UX7tRqeQ-b1f464d9-0b93-49e8-9623-5f9815372ab2/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_UX7tRqeQ-b1f464d9-0b93-49e8-9623-5f9815372ab2/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_j6hK2Hwt-a44b2551-8450-419b-b1ff-3edd4ecca5ef/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_j6hK2Hwt-a44b2551-8450-419b-b1ff-3edd4ecca5ef/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -410,17 +410,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:07 GMT
+      - Sat, 16 Nov 2019 02:05:18 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_UX7tRqeQ
+      - https://benchling.com/api/v2/dna-sequences/seq_j6hK2Hwt
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLw.KIKRQjBHiQY73O-wYXu8nI6g10g;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3g.QzvMqovnCbapfEwnN_fs-xSz24s;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -432,10 +432,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "customFields": {}, "fields": {}, "isCircular":
-      false, "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "name": "994370d4-75d5-4b1f-93bb-76f1c3f349dc", "annotations":
-      []}'
+    body: '{"aliases": [], "isCircular": false, "folderId": "lib_rdWSmOmk", "name":
+      "e1b61f10-a182-43db-ae87-0db4c0692708", "customFields": {}, "annotations": [],
+      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "fields": {}}'
     headers:
       Accept:
       - '*/*'
@@ -450,7 +450,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLw.KIKRQjBHiQY73O-wYXu8nI6g10g
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3g.QzvMqovnCbapfEwnN_fs-xSz24s
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -461,15 +461,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:07.192283+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:18.658829+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_ehJJy4YB\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:07.290797+00:00\",\n  \"name\": \"994370d4-75d5-4b1f-93bb-76f1c3f349dc\",\n
+        \ \"id\": \"seq_DEkLgqGf\",\n  \"isCircular\": false,\n  \"length\": 134,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:18.763117+00:00\",\n  \"name\": \"e1b61f10-a182-43db-ae87-0db4c0692708\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ehJJy4YB-994370d4-75d5-4b1f-93bb-76f1c3f349dc/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ehJJy4YB-994370d4-75d5-4b1f-93bb-76f1c3f349dc/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_DEkLgqGf-e1b61f10-a182-43db-ae87-0db4c0692708/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_DEkLgqGf-e1b61f10-a182-43db-ae87-0db4c0692708/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -482,17 +482,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:07 GMT
+      - Sat, 16 Nov 2019 02:05:18 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_ehJJy4YB
+      - https://benchling.com/api/v2/dna-sequences/seq_DEkLgqGf
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLw.KIKRQjBHiQY73O-wYXu8nI6g10g;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3g.QzvMqovnCbapfEwnN_fs-xSz24s;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -504,10 +504,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "customFields": {}, "fields": {}, "isCircular":
-      false, "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "name": "e744ce53-9d84-4b89-8094-34fc702d100e", "annotations":
-      []}'
+    body: '{"aliases": [], "isCircular": false, "folderId": "lib_rdWSmOmk", "name":
+      "d4f62c0a-3c18-40b5-8586-43db88c74394", "customFields": {}, "annotations": [],
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "fields": {}}'
     headers:
       Accept:
       - '*/*'
@@ -522,7 +522,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLw.KIKRQjBHiQY73O-wYXu8nI6g10g
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3g.QzvMqovnCbapfEwnN_fs-xSz24s
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -533,15 +533,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:07.506682+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:19.073045+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_Iah9W6KS\",\n  \"isCircular\": false,\n  \"length\": 152,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:07.621180+00:00\",\n  \"name\": \"e744ce53-9d84-4b89-8094-34fc702d100e\",\n
+        \ \"id\": \"seq_YPpXg4Yk\",\n  \"isCircular\": false,\n  \"length\": 152,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:19.175998+00:00\",\n  \"name\": \"d4f62c0a-3c18-40b5-8586-43db88c74394\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_Iah9W6KS-e744ce53-9d84-4b89-8094-34fc702d100e/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_Iah9W6KS-e744ce53-9d84-4b89-8094-34fc702d100e/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_YPpXg4Yk-d4f62c0a-3c18-40b5-8586-43db88c74394/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_YPpXg4Yk-d4f62c0a-3c18-40b5-8586-43db88c74394/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -554,17 +554,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:07 GMT
+      - Sat, 16 Nov 2019 02:05:19 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_Iah9W6KS
+      - https://benchling.com/api/v2/dna-sequences/seq_YPpXg4Yk
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLw.KIKRQjBHiQY73O-wYXu8nI6g10g;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3w.xmfPSLBNUGF8b_mazUg2CYpgW_4;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -576,10 +576,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "customFields": {}, "fields": {}, "isCircular":
-      false, "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
-      "aliases": [], "name": "23fdc4e8-3a18-4e37-85b2-1714b245e302", "annotations":
-      []}'
+    body: '{"aliases": [], "isCircular": false, "folderId": "lib_rdWSmOmk", "name":
+      "a6226186-1a52-4736-adda-f3138da81a65", "customFields": {}, "annotations": [],
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
+      "fields": {}}'
     headers:
       Accept:
       - '*/*'
@@ -594,7 +594,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaLw.KIKRQjBHiQY73O-wYXu8nI6g10g
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3w.xmfPSLBNUGF8b_mazUg2CYpgW_4
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -605,15 +605,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:07.861836+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:19.427541+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_BcaaJ3Bq\",\n  \"isCircular\": false,\n  \"length\": 176,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:07.973143+00:00\",\n  \"name\": \"23fdc4e8-3a18-4e37-85b2-1714b245e302\",\n
+        \ \"id\": \"seq_Sc5mRNBv\",\n  \"isCircular\": false,\n  \"length\": 176,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:19.519978+00:00\",\n  \"name\": \"a6226186-1a52-4736-adda-f3138da81a65\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_BcaaJ3Bq-23fdc4e8-3a18-4e37-85b2-1714b245e302/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_BcaaJ3Bq-23fdc4e8-3a18-4e37-85b2-1714b245e302/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_Sc5mRNBv-a6226186-1a52-4736-adda-f3138da81a65/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_Sc5mRNBv-a6226186-1a52-4736-adda-f3138da81a65/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -626,17 +626,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:08 GMT
+      - Sat, 16 Nov 2019 02:05:19 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_BcaaJ3Bq
+      - https://benchling.com/api/v2/dna-sequences/seq_Sc5mRNBv
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaMA.MTx1I4G3qVQvLx1vFsR5oTu9I1U;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3w.xmfPSLBNUGF8b_mazUg2CYpgW_4;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -648,10 +648,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "customFields": {}, "fields": {}, "isCircular":
-      false, "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "name": "69b8fdfe-f5f8-48ef-b614-07d271b39d9e", "annotations":
-      []}'
+    body: '{"aliases": [], "isCircular": false, "folderId": "lib_rdWSmOmk", "name":
+      "c21da5ab-8837-46fe-95df-081d0683aabb", "customFields": {}, "annotations": [],
+      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "fields": {}}'
     headers:
       Accept:
       - '*/*'
@@ -666,7 +666,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaMA.MTx1I4G3qVQvLx1vFsR5oTu9I1U
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq3w.xmfPSLBNUGF8b_mazUg2CYpgW_4
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -677,15 +677,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:08.215359+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:19.735367+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_NEMMjQ1Y\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:08.316351+00:00\",\n  \"name\": \"69b8fdfe-f5f8-48ef-b614-07d271b39d9e\",\n
+        \ \"id\": \"seq_AdwAQjs0\",\n  \"isCircular\": false,\n  \"length\": 134,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:19.826175+00:00\",\n  \"name\": \"c21da5ab-8837-46fe-95df-081d0683aabb\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_NEMMjQ1Y-69b8fdfe-f5f8-48ef-b614-07d271b39d9e/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_NEMMjQ1Y-69b8fdfe-f5f8-48ef-b614-07d271b39d9e/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_AdwAQjs0-c21da5ab-8837-46fe-95df-081d0683aabb/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_AdwAQjs0-c21da5ab-8837-46fe-95df-081d0683aabb/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -698,17 +698,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:08 GMT
+      - Sat, 16 Nov 2019 02:05:20 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_NEMMjQ1Y
+      - https://benchling.com/api/v2/dna-sequences/seq_AdwAQjs0
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaMA.MTx1I4G3qVQvLx1vFsR5oTu9I1U;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq4A.CKQF_JvPo8uSpz9nMFtxfcwN8l0;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -720,8 +720,8 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "isCircular": false, "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "name": "fd1a6014-5267-4c3d-8953-3c18f3475f5d"}'
+    body: '{"isCircular": false, "folderId": "lib_rdWSmOmk", "name": "3437fbb5-71b4-47a0-815d-d3320c0c1418",
+      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac"}'
     headers:
       Accept:
       - '*/*'
@@ -736,7 +736,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaMA.MTx1I4G3qVQvLx1vFsR5oTu9I1U
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq4A.CKQF_JvPo8uSpz9nMFtxfcwN8l0
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -747,15 +747,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:08.551168+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:20.193329+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_UNYIcKfr\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:08.658533+00:00\",\n  \"name\": \"fd1a6014-5267-4c3d-8953-3c18f3475f5d\",\n
+        \ \"id\": \"seq_2ukGdazl\",\n  \"isCircular\": false,\n  \"length\": 134,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:20.443100+00:00\",\n  \"name\": \"3437fbb5-71b4-47a0-815d-d3320c0c1418\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_UNYIcKfr-fd1a6014-5267-4c3d-8953-3c18f3475f5d/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_UNYIcKfr-fd1a6014-5267-4c3d-8953-3c18f3475f5d/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_2ukGdazl-3437fbb5-71b4-47a0-815d-d3320c0c1418/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_2ukGdazl-3437fbb5-71b4-47a0-815d-d3320c0c1418/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -768,17 +768,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:08 GMT
+      - Sat, 16 Nov 2019 02:05:20 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_UNYIcKfr
+      - https://benchling.com/api/v2/dna-sequences/seq_2ukGdazl
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaMA.MTx1I4G3qVQvLx1vFsR5oTu9I1U;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq4A.CKQF_JvPo8uSpz9nMFtxfcwN8l0;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -790,8 +790,8 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "isCircular": false, "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "name": "b229de89-8159-42ec-9dc4-bf6bf34ed568"}'
+    body: '{"isCircular": false, "folderId": "lib_rdWSmOmk", "name": "7055ca99-4715-40e0-bc8c-430649183d5f",
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac"}'
     headers:
       Accept:
       - '*/*'
@@ -806,7 +806,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaMA.MTx1I4G3qVQvLx1vFsR5oTu9I1U
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq4A.CKQF_JvPo8uSpz9nMFtxfcwN8l0
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -817,15 +817,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:08.883807+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:20.917476+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_oTTs7RuX\",\n  \"isCircular\": false,\n  \"length\": 152,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:08.990133+00:00\",\n  \"name\": \"b229de89-8159-42ec-9dc4-bf6bf34ed568\",\n
+        \ \"id\": \"seq_R3IvIKNn\",\n  \"isCircular\": false,\n  \"length\": 152,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:21.017084+00:00\",\n  \"name\": \"7055ca99-4715-40e0-bc8c-430649183d5f\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_oTTs7RuX-b229de89-8159-42ec-9dc4-bf6bf34ed568/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_oTTs7RuX-b229de89-8159-42ec-9dc4-bf6bf34ed568/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_R3IvIKNn-7055ca99-4715-40e0-bc8c-430649183d5f/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_R3IvIKNn-7055ca99-4715-40e0-bc8c-430649183d5f/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -838,17 +838,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:09 GMT
+      - Sat, 16 Nov 2019 02:05:21 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_oTTs7RuX
+      - https://benchling.com/api/v2/dna-sequences/seq_R3IvIKNn
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaMQ.yR7lVVB2wB0yeFmNKUQARmnGJ0o;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq4Q.6tZaCIo_grpT3Ivt78WjCTu4fb4;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -860,8 +860,8 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"folderId": "lib_rdWSmOmk", "isCircular": false, "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
-      "name": "b9df2058-21bb-43d3-a97b-c5ea66f8fa84"}'
+    body: '{"isCircular": false, "folderId": "lib_rdWSmOmk", "name": "eeb14dc8-6b32-4e59-9f07-9212618995da",
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA"}'
     headers:
       Accept:
       - '*/*'
@@ -876,7 +876,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaMQ.yR7lVVB2wB0yeFmNKUQARmnGJ0o
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq4Q.6tZaCIo_grpT3Ivt78WjCTu4fb4
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -887,15 +887,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA\",\n
-        \ \"createdAt\": \"2019-11-16T00:54:09.221298+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:05:21.423025+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_ludYL28X\",\n  \"isCircular\": false,\n  \"length\": 176,\n
-        \ \"modifiedAt\": \"2019-11-16T00:54:09.330958+00:00\",\n  \"name\": \"b9df2058-21bb-43d3-a97b-c5ea66f8fa84\",\n
+        \ \"id\": \"seq_onjFQH7p\",\n  \"isCircular\": false,\n  \"length\": 176,\n
+        \ \"modifiedAt\": \"2019-11-16T02:05:21.524493+00:00\",\n  \"name\": \"eeb14dc8-6b32-4e59-9f07-9212618995da\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ludYL28X-b9df2058-21bb-43d3-a97b-c5ea66f8fa84/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ludYL28X-b9df2058-21bb-43d3-a97b-c5ea66f8fa84/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_onjFQH7p-eeb14dc8-6b32-4e59-9f07-9212618995da/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_onjFQH7p-eeb14dc8-6b32-4e59-9f07-9212618995da/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -908,17 +908,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:09 GMT
+      - Sat, 16 Nov 2019 02:05:21 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_ludYL28X
+      - https://benchling.com/api/v2/dna-sequences/seq_onjFQH7p
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaMQ.yR7lVVB2wB0yeFmNKUQARmnGJ0o;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq4Q.6tZaCIo_grpT3Ivt78WjCTu4fb4;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -931,11 +931,11 @@ interactions:
       message: CREATED
 - request:
     body: '{"name": "my new alignment", "algorithm": "not_an_algorithm", "templateSequenceId":
-      "seq_ot72XABD", "files": [{"sequenceId": "seq_ot72XABD"}, {"sequenceId": "seq_ot72XABD"},
-      {"sequenceId": "seq_ot72XABD"}, {"sequenceId": "seq_ot72XABD"}, {"sequenceId":
-      "seq_ot72XABD"}, {"sequenceId": "seq_ot72XABD"}, {"sequenceId": "seq_ot72XABD"},
-      {"sequenceId": "seq_ot72XABD"}, {"sequenceId": "seq_ot72XABD"}, {"sequenceId":
-      "seq_ot72XABD"}, {"sequenceId": "seq_ot72XABD"}, {"sequenceId": "seq_ot72XABD"}]}'
+      "seq_xkZAz5gC", "files": [{"sequenceId": "seq_EyQfQ3jf"}, {"sequenceId": "seq_OzuookFY"},
+      {"sequenceId": "seq_nlNQhpWE"}, {"sequenceId": "seq_C6fGspjy"}, {"sequenceId":
+      "seq_j6hK2Hwt"}, {"sequenceId": "seq_DEkLgqGf"}, {"sequenceId": "seq_YPpXg4Yk"},
+      {"sequenceId": "seq_Sc5mRNBv"}, {"sequenceId": "seq_AdwAQjs0"}, {"sequenceId":
+      "seq_2ukGdazl"}, {"sequenceId": "seq_R3IvIKNn"}, {"sequenceId": "seq_onjFQH7p"}]}'
     headers:
       Accept:
       - '*/*'
@@ -950,7 +950,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaMQ.yR7lVVB2wB0yeFmNKUQARmnGJ0o
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq4Q.6tZaCIo_grpT3Ivt78WjCTu4fb4
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -972,7 +972,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 00:54:09 GMT
+      - Sat, 16 Nov 2019 02:05:22 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -980,7 +980,7 @@ interactions:
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJPRFkxTVRGak56VXROR0U0T1MwME5UaGhMVGd4TW1JdE1qTTNabUpsTlRaaVpEQmoifX0.ELDaMQ.yR7lVVB2wB0yeFmNKUQARmnGJ0o;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJORGs1Tm1aaFlqUXRZVEUwTWkwME9UTXdMV0ZpTldFdE5XRmtOell4TVRVMFpqWmgifX0.ELDq4g.cnZjzyZWlU2Qeg-lhteCDYZ5ky0;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -992,10 +992,10 @@ interactions:
       code: 400
       message: BAD REQUEST
 - request:
-    body: '{"customFields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk", "bases":
-      "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "fields": {}, "name": "40fd7ae8-f064-4f8c-92b1-7da0dd84b371",
-      "annotations": []}'
+    body: '{"aliases": [], "fields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk",
+      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "customFields": {}, "name": "13dd48a2-1454-43eb-917c-7b69725ab0d6", "annotations":
+      []}'
     headers:
       Accept:
       - '*/*'
@@ -1010,7 +1010,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjJg.0dp1EPUT0yIdz3FKTQ0Esk4esss
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrLg.CUCVZWPIpyl-zXmDdhLvxkvhPck
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1021,15 +1021,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:25.508335+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:41.895159+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_DNimFukn\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:25.603781+00:00\",\n  \"name\": \"40fd7ae8-f064-4f8c-92b1-7da0dd84b371\",\n
+        \ \"id\": \"seq_IaXpcvkY\",\n  \"isCircular\": false,\n  \"length\": 134,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:41.996143+00:00\",\n  \"name\": \"13dd48a2-1454-43eb-917c-7b69725ab0d6\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_DNimFukn-40fd7ae8-f064-4f8c-92b1-7da0dd84b371/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_DNimFukn-40fd7ae8-f064-4f8c-92b1-7da0dd84b371/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_IaXpcvkY-13dd48a2-1454-43eb-917c-7b69725ab0d6/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_IaXpcvkY-13dd48a2-1454-43eb-917c-7b69725ab0d6/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1042,17 +1042,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:25 GMT
+      - Sat, 16 Nov 2019 02:06:42 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_DNimFukn
+      - https://benchling.com/api/v2/dna-sequences/seq_IaXpcvkY
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjKQ.ygIcrYYUyZJjTRaPy-ziYJGJMs4;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrMg.n0Eti6CP_34yz_tgWtAf-bQC418;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1064,10 +1064,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"customFields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk", "bases":
-      "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "fields": {}, "name": "cec569d7-793c-4b6b-b0aa-ef1d9f31efa4",
-      "annotations": []}'
+    body: '{"aliases": [], "fields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk",
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "customFields": {}, "name": "d36597a2-2f80-49b8-baab-477cdd0afdc2", "annotations":
+      []}'
     headers:
       Accept:
       - '*/*'
@@ -1082,7 +1082,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjKQ.ygIcrYYUyZJjTRaPy-ziYJGJMs4
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrMg.n0Eti6CP_34yz_tgWtAf-bQC418
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1093,15 +1093,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:25.898307+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:42.273319+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_TlKhp0cY\",\n  \"isCircular\": false,\n  \"length\": 152,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:26.002338+00:00\",\n  \"name\": \"cec569d7-793c-4b6b-b0aa-ef1d9f31efa4\",\n
+        \ \"id\": \"seq_JQnRCtlK\",\n  \"isCircular\": false,\n  \"length\": 152,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:42.368212+00:00\",\n  \"name\": \"d36597a2-2f80-49b8-baab-477cdd0afdc2\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_TlKhp0cY-cec569d7-793c-4b6b-b0aa-ef1d9f31efa4/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_TlKhp0cY-cec569d7-793c-4b6b-b0aa-ef1d9f31efa4/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_JQnRCtlK-d36597a2-2f80-49b8-baab-477cdd0afdc2/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_JQnRCtlK-d36597a2-2f80-49b8-baab-477cdd0afdc2/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1114,17 +1114,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:26 GMT
+      - Sat, 16 Nov 2019 02:06:42 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_TlKhp0cY
+      - https://benchling.com/api/v2/dna-sequences/seq_JQnRCtlK
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjKg.YWOf_qAgA0-_okX_coPqpn9_x9M;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrMg.n0Eti6CP_34yz_tgWtAf-bQC418;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1136,10 +1136,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"customFields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk", "bases":
-      "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
-      "aliases": [], "fields": {}, "name": "ad59f788-cc30-4e83-89d0-9b1366d5d274",
-      "annotations": []}'
+    body: '{"aliases": [], "fields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk",
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
+      "customFields": {}, "name": "627f1815-810d-4499-aa17-c3095cafe090", "annotations":
+      []}'
     headers:
       Accept:
       - '*/*'
@@ -1154,7 +1154,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjKg.YWOf_qAgA0-_okX_coPqpn9_x9M
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrMg.n0Eti6CP_34yz_tgWtAf-bQC418
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1165,15 +1165,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:26.306525+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:42.618780+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_KwUe4UUM\",\n  \"isCircular\": false,\n  \"length\": 176,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:26.443642+00:00\",\n  \"name\": \"ad59f788-cc30-4e83-89d0-9b1366d5d274\",\n
+        \ \"id\": \"seq_21Koofca\",\n  \"isCircular\": false,\n  \"length\": 176,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:42.713578+00:00\",\n  \"name\": \"627f1815-810d-4499-aa17-c3095cafe090\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_KwUe4UUM-ad59f788-cc30-4e83-89d0-9b1366d5d274/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_KwUe4UUM-ad59f788-cc30-4e83-89d0-9b1366d5d274/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_21Koofca-627f1815-810d-4499-aa17-c3095cafe090/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_21Koofca-627f1815-810d-4499-aa17-c3095cafe090/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1186,17 +1186,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:26 GMT
+      - Sat, 16 Nov 2019 02:06:42 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_KwUe4UUM
+      - https://benchling.com/api/v2/dna-sequences/seq_21Koofca
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjKg.YWOf_qAgA0-_okX_coPqpn9_x9M;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrMg.n0Eti6CP_34yz_tgWtAf-bQC418;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1208,10 +1208,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"customFields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk", "bases":
-      "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "fields": {}, "name": "46d49093-8c2f-47c5-9706-ec718770868c",
-      "annotations": []}'
+    body: '{"aliases": [], "fields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk",
+      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "customFields": {}, "name": "bb6fa377-4497-48bd-9da1-6a487141f4bc", "annotations":
+      []}'
     headers:
       Accept:
       - '*/*'
@@ -1226,7 +1226,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjKg.YWOf_qAgA0-_okX_coPqpn9_x9M
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrMg.n0Eti6CP_34yz_tgWtAf-bQC418
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1237,15 +1237,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:26.826670+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:43.006682+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_4WdmHFhn\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:26.919602+00:00\",\n  \"name\": \"46d49093-8c2f-47c5-9706-ec718770868c\",\n
+        \ \"id\": \"seq_ztX3ilfo\",\n  \"isCircular\": false,\n  \"length\": 134,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:43.107810+00:00\",\n  \"name\": \"bb6fa377-4497-48bd-9da1-6a487141f4bc\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_4WdmHFhn-46d49093-8c2f-47c5-9706-ec718770868c/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_4WdmHFhn-46d49093-8c2f-47c5-9706-ec718770868c/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ztX3ilfo-bb6fa377-4497-48bd-9da1-6a487141f4bc/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ztX3ilfo-bb6fa377-4497-48bd-9da1-6a487141f4bc/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1258,17 +1258,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:27 GMT
+      - Sat, 16 Nov 2019 02:06:43 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_4WdmHFhn
+      - https://benchling.com/api/v2/dna-sequences/seq_ztX3ilfo
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjKw.Id6vgBLGYpNHvBH_zTKsHYaUgsE;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrMw.szo0ki4uhUfZ-1fg4OF5OVj72rs;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1280,10 +1280,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"customFields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk", "bases":
-      "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "fields": {}, "name": "7160010b-224d-4ac0-a032-d8c7123d0265",
-      "annotations": []}'
+    body: '{"aliases": [], "fields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk",
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "customFields": {}, "name": "96352cc0-95b3-492c-bd42-fd08697dcd8e", "annotations":
+      []}'
     headers:
       Accept:
       - '*/*'
@@ -1298,7 +1298,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjKw.Id6vgBLGYpNHvBH_zTKsHYaUgsE
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrMw.szo0ki4uhUfZ-1fg4OF5OVj72rs
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1309,15 +1309,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:27.226683+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:43.465698+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_RTFAjIWd\",\n  \"isCircular\": false,\n  \"length\": 152,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:27.323384+00:00\",\n  \"name\": \"7160010b-224d-4ac0-a032-d8c7123d0265\",\n
+        \ \"id\": \"seq_KJdvrvv2\",\n  \"isCircular\": false,\n  \"length\": 152,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:43.552348+00:00\",\n  \"name\": \"96352cc0-95b3-492c-bd42-fd08697dcd8e\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_RTFAjIWd-7160010b-224d-4ac0-a032-d8c7123d0265/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_RTFAjIWd-7160010b-224d-4ac0-a032-d8c7123d0265/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_KJdvrvv2-96352cc0-95b3-492c-bd42-fd08697dcd8e/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_KJdvrvv2-96352cc0-95b3-492c-bd42-fd08697dcd8e/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1330,17 +1330,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:27 GMT
+      - Sat, 16 Nov 2019 02:06:43 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_RTFAjIWd
+      - https://benchling.com/api/v2/dna-sequences/seq_KJdvrvv2
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjKw.Id6vgBLGYpNHvBH_zTKsHYaUgsE;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrMw.szo0ki4uhUfZ-1fg4OF5OVj72rs;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1352,10 +1352,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"customFields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk", "bases":
-      "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
-      "aliases": [], "fields": {}, "name": "d1001eb5-8819-446d-a1c5-c2009af89712",
-      "annotations": []}'
+    body: '{"aliases": [], "fields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk",
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
+      "customFields": {}, "name": "5bb05ac6-6cab-4e7a-ba59-678ab8433631", "annotations":
+      []}'
     headers:
       Accept:
       - '*/*'
@@ -1370,7 +1370,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjKw.Id6vgBLGYpNHvBH_zTKsHYaUgsE
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrMw.szo0ki4uhUfZ-1fg4OF5OVj72rs
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1381,15 +1381,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:27.545652+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:43.854274+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_6KyzqFCV\",\n  \"isCircular\": false,\n  \"length\": 176,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:27.634085+00:00\",\n  \"name\": \"d1001eb5-8819-446d-a1c5-c2009af89712\",\n
+        \ \"id\": \"seq_ZnBJR8dy\",\n  \"isCircular\": false,\n  \"length\": 176,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:43.946733+00:00\",\n  \"name\": \"5bb05ac6-6cab-4e7a-ba59-678ab8433631\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_6KyzqFCV-d1001eb5-8819-446d-a1c5-c2009af89712/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_6KyzqFCV-d1001eb5-8819-446d-a1c5-c2009af89712/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ZnBJR8dy-5bb05ac6-6cab-4e7a-ba59-678ab8433631/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ZnBJR8dy-5bb05ac6-6cab-4e7a-ba59-678ab8433631/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1402,17 +1402,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:27 GMT
+      - Sat, 16 Nov 2019 02:06:44 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_6KyzqFCV
+      - https://benchling.com/api/v2/dna-sequences/seq_ZnBJR8dy
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjKw.Id6vgBLGYpNHvBH_zTKsHYaUgsE;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNA.w6hvyQAkfl8RWlnt6fVfPpscFb4;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1424,10 +1424,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"customFields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk", "bases":
-      "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "fields": {}, "name": "c2c01b24-8efb-4869-932a-8856618c660d",
-      "annotations": []}'
+    body: '{"aliases": [], "fields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk",
+      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "customFields": {}, "name": "971d48fd-8d62-4c75-96de-0381d7d44d69", "annotations":
+      []}'
     headers:
       Accept:
       - '*/*'
@@ -1442,7 +1442,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjKw.Id6vgBLGYpNHvBH_zTKsHYaUgsE
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNA.w6hvyQAkfl8RWlnt6fVfPpscFb4
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1453,15 +1453,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:27.854657+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:44.238684+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_lxPGrXdt\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:27.951090+00:00\",\n  \"name\": \"c2c01b24-8efb-4869-932a-8856618c660d\",\n
+        \ \"id\": \"seq_HEDU8FoT\",\n  \"isCircular\": false,\n  \"length\": 134,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:44.357640+00:00\",\n  \"name\": \"971d48fd-8d62-4c75-96de-0381d7d44d69\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_lxPGrXdt-c2c01b24-8efb-4869-932a-8856618c660d/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_lxPGrXdt-c2c01b24-8efb-4869-932a-8856618c660d/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_HEDU8FoT-971d48fd-8d62-4c75-96de-0381d7d44d69/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_HEDU8FoT-971d48fd-8d62-4c75-96de-0381d7d44d69/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1474,17 +1474,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:28 GMT
+      - Sat, 16 Nov 2019 02:06:44 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_lxPGrXdt
+      - https://benchling.com/api/v2/dna-sequences/seq_HEDU8FoT
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLA.cBzkPK7S_opcYs4BZhRU9qyUxGE;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNA.w6hvyQAkfl8RWlnt6fVfPpscFb4;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1496,10 +1496,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"customFields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk", "bases":
-      "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "fields": {}, "name": "c3003bd7-83b7-44bc-9a82-0a7994491474",
-      "annotations": []}'
+    body: '{"aliases": [], "fields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk",
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "customFields": {}, "name": "77cd8e7a-6425-44bc-8716-6bd44eb009ea", "annotations":
+      []}'
     headers:
       Accept:
       - '*/*'
@@ -1514,7 +1514,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLA.cBzkPK7S_opcYs4BZhRU9qyUxGE
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNA.w6hvyQAkfl8RWlnt6fVfPpscFb4
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1525,15 +1525,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:28.177164+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:44.604864+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_41LXJjiA\",\n  \"isCircular\": false,\n  \"length\": 152,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:28.271721+00:00\",\n  \"name\": \"c3003bd7-83b7-44bc-9a82-0a7994491474\",\n
+        \ \"id\": \"seq_M8XJC5AN\",\n  \"isCircular\": false,\n  \"length\": 152,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:44.704383+00:00\",\n  \"name\": \"77cd8e7a-6425-44bc-8716-6bd44eb009ea\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_41LXJjiA-c3003bd7-83b7-44bc-9a82-0a7994491474/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_41LXJjiA-c3003bd7-83b7-44bc-9a82-0a7994491474/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_M8XJC5AN-77cd8e7a-6425-44bc-8716-6bd44eb009ea/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_M8XJC5AN-77cd8e7a-6425-44bc-8716-6bd44eb009ea/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1546,17 +1546,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:28 GMT
+      - Sat, 16 Nov 2019 02:06:44 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_41LXJjiA
+      - https://benchling.com/api/v2/dna-sequences/seq_M8XJC5AN
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLA.cBzkPK7S_opcYs4BZhRU9qyUxGE;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNA.w6hvyQAkfl8RWlnt6fVfPpscFb4;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1568,10 +1568,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"customFields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk", "bases":
-      "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
-      "aliases": [], "fields": {}, "name": "d65a558d-ef56-417d-9af6-39539b29939c",
-      "annotations": []}'
+    body: '{"aliases": [], "fields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk",
+      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
+      "customFields": {}, "name": "654305ce-f4d1-426e-acdf-aacd942c2eca", "annotations":
+      []}'
     headers:
       Accept:
       - '*/*'
@@ -1586,7 +1586,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLA.cBzkPK7S_opcYs4BZhRU9qyUxGE
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNA.w6hvyQAkfl8RWlnt6fVfPpscFb4
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1597,15 +1597,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:28.555765+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:44.986182+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_vkBGHYPo\",\n  \"isCircular\": false,\n  \"length\": 176,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:28.643052+00:00\",\n  \"name\": \"d65a558d-ef56-417d-9af6-39539b29939c\",\n
+        \ \"id\": \"seq_bczAjLpr\",\n  \"isCircular\": false,\n  \"length\": 176,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:45.076831+00:00\",\n  \"name\": \"654305ce-f4d1-426e-acdf-aacd942c2eca\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_vkBGHYPo-d65a558d-ef56-417d-9af6-39539b29939c/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_vkBGHYPo-d65a558d-ef56-417d-9af6-39539b29939c/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_bczAjLpr-654305ce-f4d1-426e-acdf-aacd942c2eca/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_bczAjLpr-654305ce-f4d1-426e-acdf-aacd942c2eca/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1618,17 +1618,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:28 GMT
+      - Sat, 16 Nov 2019 02:06:45 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_vkBGHYPo
+      - https://benchling.com/api/v2/dna-sequences/seq_bczAjLpr
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLA.cBzkPK7S_opcYs4BZhRU9qyUxGE;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNQ.IFVrRgpXBVSFnqhASDS5wBgJdHw;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1640,10 +1640,10 @@ interactions:
       code: 201
       message: CREATED
 - request:
-    body: '{"customFields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk", "bases":
-      "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "aliases": [], "fields": {}, "name": "9856415c-8c8e-4b53-a63c-a309750afb7b",
-      "annotations": []}'
+    body: '{"aliases": [], "fields": {}, "isCircular": false, "folderId": "lib_rdWSmOmk",
+      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
+      "customFields": {}, "name": "30291049-5bef-4df2-8761-639d20aba166", "annotations":
+      []}'
     headers:
       Accept:
       - '*/*'
@@ -1658,7 +1658,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLA.cBzkPK7S_opcYs4BZhRU9qyUxGE
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNQ.IFVrRgpXBVSFnqhASDS5wBgJdHw
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1669,15 +1669,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:28.864971+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:45.397672+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_fIlfJZ9j\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:28.980012+00:00\",\n  \"name\": \"9856415c-8c8e-4b53-a63c-a309750afb7b\",\n
+        \ \"id\": \"seq_IWpM5fJu\",\n  \"isCircular\": false,\n  \"length\": 134,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:45.490436+00:00\",\n  \"name\": \"30291049-5bef-4df2-8761-639d20aba166\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_fIlfJZ9j-9856415c-8c8e-4b53-a63c-a309750afb7b/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_fIlfJZ9j-9856415c-8c8e-4b53-a63c-a309750afb7b/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_IWpM5fJu-30291049-5bef-4df2-8761-639d20aba166/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_IWpM5fJu-30291049-5bef-4df2-8761-639d20aba166/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1690,17 +1690,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:29 GMT
+      - Sat, 16 Nov 2019 02:06:45 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_fIlfJZ9j
+      - https://benchling.com/api/v2/dna-sequences/seq_IWpM5fJu
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLQ.-Bq7ereFtaA_ld0m0knR87Bkyqs;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNQ.IFVrRgpXBVSFnqhASDS5wBgJdHw;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1713,7 +1713,7 @@ interactions:
       message: CREATED
 - request:
     body: '{"isCircular": false, "folderId": "lib_rdWSmOmk", "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "name": "99819146-515e-4d3a-8e08-42156c0d027d"}'
+      "name": "ace4db58-8bad-4e3e-b6b7-e64d8f9530b0"}'
     headers:
       Accept:
       - '*/*'
@@ -1728,7 +1728,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLQ.-Bq7ereFtaA_ld0m0knR87Bkyqs
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNQ.IFVrRgpXBVSFnqhASDS5wBgJdHw
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1739,15 +1739,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:29.270169+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:45.707737+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_j1VD97Ge\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:29.378035+00:00\",\n  \"name\": \"99819146-515e-4d3a-8e08-42156c0d027d\",\n
+        \ \"id\": \"seq_ciSWbhKQ\",\n  \"isCircular\": false,\n  \"length\": 134,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:45.800722+00:00\",\n  \"name\": \"ace4db58-8bad-4e3e-b6b7-e64d8f9530b0\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_j1VD97Ge-99819146-515e-4d3a-8e08-42156c0d027d/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_j1VD97Ge-99819146-515e-4d3a-8e08-42156c0d027d/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ciSWbhKQ-ace4db58-8bad-4e3e-b6b7-e64d8f9530b0/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ciSWbhKQ-ace4db58-8bad-4e3e-b6b7-e64d8f9530b0/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1760,17 +1760,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:29 GMT
+      - Sat, 16 Nov 2019 02:06:45 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_j1VD97Ge
+      - https://benchling.com/api/v2/dna-sequences/seq_ciSWbhKQ
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLQ.-Bq7ereFtaA_ld0m0knR87Bkyqs;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNQ.IFVrRgpXBVSFnqhASDS5wBgJdHw;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1783,7 +1783,7 @@ interactions:
       message: CREATED
 - request:
     body: '{"isCircular": false, "folderId": "lib_rdWSmOmk", "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac",
-      "name": "bbba4e8e-6294-4e37-b4ca-199934017b29"}'
+      "name": "0e245ce0-7d7d-4528-a2cf-35712bc07427"}'
     headers:
       Accept:
       - '*/*'
@@ -1798,7 +1798,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLQ.-Bq7ereFtaA_ld0m0knR87Bkyqs
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNQ.IFVrRgpXBVSFnqhASDS5wBgJdHw
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1809,15 +1809,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:29.680090+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:45.995980+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_H0SuQSNh\",\n  \"isCircular\": false,\n  \"length\": 152,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:29.769990+00:00\",\n  \"name\": \"bbba4e8e-6294-4e37-b4ca-199934017b29\",\n
+        \ \"id\": \"seq_RIE37E5r\",\n  \"isCircular\": false,\n  \"length\": 152,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:46.587958+00:00\",\n  \"name\": \"0e245ce0-7d7d-4528-a2cf-35712bc07427\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_H0SuQSNh-bbba4e8e-6294-4e37-b4ca-199934017b29/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_H0SuQSNh-bbba4e8e-6294-4e37-b4ca-199934017b29/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_RIE37E5r-0e245ce0-7d7d-4528-a2cf-35712bc07427/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_RIE37E5r-0e245ce0-7d7d-4528-a2cf-35712bc07427/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1830,17 +1830,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:29 GMT
+      - Sat, 16 Nov 2019 02:06:46 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_H0SuQSNh
+      - https://benchling.com/api/v2/dna-sequences/seq_RIE37E5r
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLQ.-Bq7ereFtaA_ld0m0knR87Bkyqs;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNg.9wEtEjmPbRXHD1E0cq-ODXkaEME;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1853,7 +1853,7 @@ interactions:
       message: CREATED
 - request:
     body: '{"isCircular": false, "folderId": "lib_rdWSmOmk", "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA",
-      "name": "f02a52c9-e471-438e-ae15-22f06175815e"}'
+      "name": "3aa1fa5d-621a-401f-8dae-ec30b5132fa1"}'
     headers:
       Accept:
       - '*/*'
@@ -1868,7 +1868,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLQ.-Bq7ereFtaA_ld0m0knR87Bkyqs
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNg.9wEtEjmPbRXHD1E0cq-ODXkaEME
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1879,15 +1879,15 @@ interactions:
         null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
         \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
         \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA\",\n
-        \ \"createdAt\": \"2019-11-16T01:32:30.103274+00:00\",\n  \"creator\": {\n
+        \ \"createdAt\": \"2019-11-16T02:06:46.926431+00:00\",\n  \"creator\": {\n
         \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
         \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
         \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_VwRhOKJs\",\n  \"isCircular\": false,\n  \"length\": 176,\n
-        \ \"modifiedAt\": \"2019-11-16T01:32:30.191506+00:00\",\n  \"name\": \"f02a52c9-e471-438e-ae15-22f06175815e\",\n
+        \ \"id\": \"seq_oMVCWFUH\",\n  \"isCircular\": false,\n  \"length\": 176,\n
+        \ \"modifiedAt\": \"2019-11-16T02:06:47.036667+00:00\",\n  \"name\": \"3aa1fa5d-621a-401f-8dae-ec30b5132fa1\",\n
         \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_VwRhOKJs-f02a52c9-e471-438e-ae15-22f06175815e/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_VwRhOKJs-f02a52c9-e471-438e-ae15-22f06175815e/edit\"\n}"
+        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_oMVCWFUH-3aa1fa5d-621a-401f-8dae-ec30b5132fa1/edit\",\n
+        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_oMVCWFUH-3aa1fa5d-621a-401f-8dae-ec30b5132fa1/edit\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -1900,17 +1900,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:30 GMT
+      - Sat, 16 Nov 2019 02:06:47 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_VwRhOKJs
+      - https://benchling.com/api/v2/dna-sequences/seq_oMVCWFUH
       Pragma:
       - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLg.8lAFSz-WE8AKYPmi66VQlU836nE;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNw.ngKRQ5CgxEWk_KSlOtYfe2w0NR0;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
@@ -1923,11 +1923,11 @@ interactions:
       message: CREATED
 - request:
     body: '{"name": "my new alignment", "algorithm": "not_an_algorithm", "templateSequenceId":
-      "seq_DNimFukn", "files": [{"sequenceId": "seq_TlKhp0cY"}, {"sequenceId": "seq_KwUe4UUM"},
-      {"sequenceId": "seq_4WdmHFhn"}, {"sequenceId": "seq_RTFAjIWd"}, {"sequenceId":
-      "seq_6KyzqFCV"}, {"sequenceId": "seq_lxPGrXdt"}, {"sequenceId": "seq_41LXJjiA"},
-      {"sequenceId": "seq_vkBGHYPo"}, {"sequenceId": "seq_fIlfJZ9j"}, {"sequenceId":
-      "seq_j1VD97Ge"}, {"sequenceId": "seq_H0SuQSNh"}, {"sequenceId": "seq_VwRhOKJs"}]}'
+      "seq_IaXpcvkY", "files": [{"sequenceId": "seq_JQnRCtlK"}, {"sequenceId": "seq_21Koofca"},
+      {"sequenceId": "seq_ztX3ilfo"}, {"sequenceId": "seq_KJdvrvv2"}, {"sequenceId":
+      "seq_ZnBJR8dy"}, {"sequenceId": "seq_HEDU8FoT"}, {"sequenceId": "seq_M8XJC5AN"},
+      {"sequenceId": "seq_bczAjLpr"}, {"sequenceId": "seq_IWpM5fJu"}, {"sequenceId":
+      "seq_ciSWbhKQ"}, {"sequenceId": "seq_RIE37E5r"}, {"sequenceId": "seq_oMVCWFUH"}]}'
     headers:
       Accept:
       - '*/*'
@@ -1942,7 +1942,7 @@ interactions:
       Content-Type:
       - application/json
       Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLg.8lAFSz-WE8AKYPmi66VQlU836nE
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNw.ngKRQ5CgxEWk_KSlOtYfe2w0NR0
       User-Agent:
       - python-requests/2.22.0
     method: POST
@@ -1964,7 +1964,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 16 Nov 2019 01:32:30 GMT
+      - Sat, 16 Nov 2019 02:06:47 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -1972,989 +1972,7 @@ interactions:
       Server:
       - nginx
       Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJZalV4WlRsaFptTXRNelkxTUMwMFpURmhMV0UxWVRndFlXSm1PREZqTjJObE1tVXkifX0.ELDjLg.8lAFSz-WE8AKYPmi66VQlU836nE;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 400
-      message: BAD REQUEST
-- request:
-    body: '{"annotations": [], "customFields": {}, "aliases": [], "fields": {}, "name":
-      "91ce51c2-2821-4ac8-9042-467b8bf0ebbe", "isCircular": false, "folderId": "lib_rdWSmOmk",
-      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '312'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk6g.ZhN1wM2Ry24hanXMYJJoR1aA1hI
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:39:57.708182+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_PgDwJvOF\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T01:39:57.806635+00:00\",\n  \"name\": \"91ce51c2-2821-4ac8-9042-467b8bf0ebbe\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_PgDwJvOF-91ce51c2-2821-4ac8-9042-467b8bf0ebbe/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_PgDwJvOF-91ce51c2-2821-4ac8-9042-467b8bf0ebbe/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1069'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:39:57 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_PgDwJvOF
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk7Q.r7Xdj2VKRq1kMTGyFNNpOkm4rZ8;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"annotations": [], "customFields": {}, "aliases": [], "fields": {}, "name":
-      "dfd99d20-ae03-4641-b533-0666909bf20e", "isCircular": false, "folderId": "lib_rdWSmOmk",
-      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '330'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk7Q.r7Xdj2VKRq1kMTGyFNNpOkm4rZ8
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:39:58.042893+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_Xhi1qIk5\",\n  \"isCircular\": false,\n  \"length\": 152,\n
-        \ \"modifiedAt\": \"2019-11-16T01:39:58.141489+00:00\",\n  \"name\": \"dfd99d20-ae03-4641-b533-0666909bf20e\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_Xhi1qIk5-dfd99d20-ae03-4641-b533-0666909bf20e/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_Xhi1qIk5-dfd99d20-ae03-4641-b533-0666909bf20e/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1087'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:39:58 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_Xhi1qIk5
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk7g.Pn8CnHCwvADXCYnnBGgiIGT79xU;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"annotations": [], "customFields": {}, "aliases": [], "fields": {}, "name":
-      "35b720de-d0a9-487f-bfe9-60b8dffc1ee1", "isCircular": false, "folderId": "lib_rdWSmOmk",
-      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '354'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk7g.Pn8CnHCwvADXCYnnBGgiIGT79xU
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA\",\n
-        \ \"createdAt\": \"2019-11-16T01:39:58.367265+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_AduBsfJC\",\n  \"isCircular\": false,\n  \"length\": 176,\n
-        \ \"modifiedAt\": \"2019-11-16T01:39:58.476472+00:00\",\n  \"name\": \"35b720de-d0a9-487f-bfe9-60b8dffc1ee1\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_AduBsfJC-35b720de-d0a9-487f-bfe9-60b8dffc1ee1/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_AduBsfJC-35b720de-d0a9-487f-bfe9-60b8dffc1ee1/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1111'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:39:58 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_AduBsfJC
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk7g.Pn8CnHCwvADXCYnnBGgiIGT79xU;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"annotations": [], "customFields": {}, "aliases": [], "fields": {}, "name":
-      "757d6798-9514-4f5f-92b9-22ef0cba14e9", "isCircular": false, "folderId": "lib_rdWSmOmk",
-      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '312'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk7g.Pn8CnHCwvADXCYnnBGgiIGT79xU
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:39:58.726505+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_kNkOPV63\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T01:39:58.829964+00:00\",\n  \"name\": \"757d6798-9514-4f5f-92b9-22ef0cba14e9\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_kNkOPV63-757d6798-9514-4f5f-92b9-22ef0cba14e9/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_kNkOPV63-757d6798-9514-4f5f-92b9-22ef0cba14e9/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1069'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:39:58 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_kNkOPV63
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk7g.Pn8CnHCwvADXCYnnBGgiIGT79xU;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"annotations": [], "customFields": {}, "aliases": [], "fields": {}, "name":
-      "87b074e7-ad64-4e29-9a6a-9419b02f8c16", "isCircular": false, "folderId": "lib_rdWSmOmk",
-      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '330'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk7g.Pn8CnHCwvADXCYnnBGgiIGT79xU
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:39:59.066473+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_Nlqp9vbv\",\n  \"isCircular\": false,\n  \"length\": 152,\n
-        \ \"modifiedAt\": \"2019-11-16T01:39:59.148037+00:00\",\n  \"name\": \"87b074e7-ad64-4e29-9a6a-9419b02f8c16\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_Nlqp9vbv-87b074e7-ad64-4e29-9a6a-9419b02f8c16/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_Nlqp9vbv-87b074e7-ad64-4e29-9a6a-9419b02f8c16/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1087'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:39:59 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_Nlqp9vbv
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk7w.j0uEs2zdX1Zo3LZzCRMOxgxYN6k;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"annotations": [], "customFields": {}, "aliases": [], "fields": {}, "name":
-      "868f1770-6323-4e03-a1c5-c693dea79328", "isCircular": false, "folderId": "lib_rdWSmOmk",
-      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '354'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk7w.j0uEs2zdX1Zo3LZzCRMOxgxYN6k
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA\",\n
-        \ \"createdAt\": \"2019-11-16T01:39:59.432476+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_VWuwpSIf\",\n  \"isCircular\": false,\n  \"length\": 176,\n
-        \ \"modifiedAt\": \"2019-11-16T01:39:59.532380+00:00\",\n  \"name\": \"868f1770-6323-4e03-a1c5-c693dea79328\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_VWuwpSIf-868f1770-6323-4e03-a1c5-c693dea79328/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_VWuwpSIf-868f1770-6323-4e03-a1c5-c693dea79328/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1111'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:39:59 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_VWuwpSIf
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk7w.j0uEs2zdX1Zo3LZzCRMOxgxYN6k;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"annotations": [], "customFields": {}, "aliases": [], "fields": {}, "name":
-      "51cd6b35-4c7b-428b-9d31-e291ae30f7f6", "isCircular": false, "folderId": "lib_rdWSmOmk",
-      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '312'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk7w.j0uEs2zdX1Zo3LZzCRMOxgxYN6k
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:40:00.050115+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_JgRT4ZC9\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T01:40:00.538646+00:00\",\n  \"name\": \"51cd6b35-4c7b-428b-9d31-e291ae30f7f6\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_JgRT4ZC9-51cd6b35-4c7b-428b-9d31-e291ae30f7f6/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_JgRT4ZC9-51cd6b35-4c7b-428b-9d31-e291ae30f7f6/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1069'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:40:00 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_JgRT4ZC9
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8A.DVbfkl1JMPxEACj1E8AfYsUzEBo;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"annotations": [], "customFields": {}, "aliases": [], "fields": {}, "name":
-      "637d1f2a-bae2-4f2b-b51c-8e88a6b5c671", "isCircular": false, "folderId": "lib_rdWSmOmk",
-      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '330'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8A.DVbfkl1JMPxEACj1E8AfYsUzEBo
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:40:01.079266+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_goxUgHV1\",\n  \"isCircular\": false,\n  \"length\": 152,\n
-        \ \"modifiedAt\": \"2019-11-16T01:40:01.187833+00:00\",\n  \"name\": \"637d1f2a-bae2-4f2b-b51c-8e88a6b5c671\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_goxUgHV1-637d1f2a-bae2-4f2b-b51c-8e88a6b5c671/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_goxUgHV1-637d1f2a-bae2-4f2b-b51c-8e88a6b5c671/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1087'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:40:01 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_goxUgHV1
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8Q.mB9A1q-RRg6ylseROb2WnxNQ71o;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"annotations": [], "customFields": {}, "aliases": [], "fields": {}, "name":
-      "bd646167-7001-4c2c-9737-df2a88d26cec", "isCircular": false, "folderId": "lib_rdWSmOmk",
-      "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '354'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8Q.mB9A1q-RRg6ylseROb2WnxNQ71o
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA\",\n
-        \ \"createdAt\": \"2019-11-16T01:40:01.562527+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_ldPt9DAW\",\n  \"isCircular\": false,\n  \"length\": 176,\n
-        \ \"modifiedAt\": \"2019-11-16T01:40:01.649003+00:00\",\n  \"name\": \"bd646167-7001-4c2c-9737-df2a88d26cec\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ldPt9DAW-bd646167-7001-4c2c-9737-df2a88d26cec/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_ldPt9DAW-bd646167-7001-4c2c-9737-df2a88d26cec/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1111'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:40:01 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_ldPt9DAW
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8Q.mB9A1q-RRg6ylseROb2WnxNQ71o;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"annotations": [], "customFields": {}, "aliases": [], "fields": {}, "name":
-      "a163f30a-6a08-42a9-85ea-5833b652a58c", "isCircular": false, "folderId": "lib_rdWSmOmk",
-      "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '312'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8Q.mB9A1q-RRg6ylseROb2WnxNQ71o
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:40:01.958591+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_cwVZDgBa\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T01:40:02.058955+00:00\",\n  \"name\": \"a163f30a-6a08-42a9-85ea-5833b652a58c\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_cwVZDgBa-a163f30a-6a08-42a9-85ea-5833b652a58c/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_cwVZDgBa-a163f30a-6a08-42a9-85ea-5833b652a58c/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1069'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:40:02 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_cwVZDgBa
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8g.3GS8xJGrAJmu07K7SSkfHzDplSY;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"name": "8d6089e1-be8d-4f50-b485-10ae4d1d39d9", "isCircular": false, "folderId":
-      "lib_rdWSmOmk", "bases": "actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '244'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8g.3GS8xJGrAJmu07K7SSkfHzDplSY
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"actccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:40:02.492986+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_W6HuD1DC\",\n  \"isCircular\": false,\n  \"length\": 134,\n
-        \ \"modifiedAt\": \"2019-11-16T01:40:02.597790+00:00\",\n  \"name\": \"8d6089e1-be8d-4f50-b485-10ae4d1d39d9\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_W6HuD1DC-8d6089e1-be8d-4f50-b485-10ae4d1d39d9/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_W6HuD1DC-8d6089e1-be8d-4f50-b485-10ae4d1d39d9/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1069'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:40:02 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_W6HuD1DC
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8g.3GS8xJGrAJmu07K7SSkfHzDplSY;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"name": "85d51104-94df-4346-a646-27733bcfd7cd", "isCircular": false, "folderId":
-      "lib_rdWSmOmk", "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '262'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8g.3GS8xJGrAJmu07K7SSkfHzDplSY
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgccttatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattac\",\n
-        \ \"createdAt\": \"2019-11-16T01:40:02.928806+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_1ZHCHSqm\",\n  \"isCircular\": false,\n  \"length\": 152,\n
-        \ \"modifiedAt\": \"2019-11-16T01:40:03.148254+00:00\",\n  \"name\": \"85d51104-94df-4346-a646-27733bcfd7cd\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_1ZHCHSqm-85d51104-94df-4346-a646-27733bcfd7cd/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_1ZHCHSqm-85d51104-94df-4346-a646-27733bcfd7cd/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1087'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:40:03 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_1ZHCHSqm
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8w.LGCRcaQRz4VkLRQ6jc8IVAdtgEM;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"name": "2924cd5f-1fe7-4001-95a7-8084aaef860e", "isCircular": false, "folderId":
-      "lib_rdWSmOmk", "bases": "aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '286'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8w.LGCRcaQRz4VkLRQ6jc8IVAdtgEM
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-sequences
-  response:
-    body:
-      string: "{\n  \"aliases\": [],\n  \"annotations\": [],\n  \"archiveRecord\":
-        null,\n  \"authors\": [\n    {\n      \"handle\": \"uwbiofab\",\n      \"id\":
-        \"ent_opWGVHRa\",\n      \"name\": \"UW BIOFAB\"\n    }\n  ],\n  \"bases\":
-        \"aattggtgatggtccagtactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctgcctAAAAAAAtatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacAGGGAGGGAGGAGAGGA\",\n
-        \ \"createdAt\": \"2019-11-16T01:40:03.356119+00:00\",\n  \"creator\": {\n
-        \   \"handle\": \"uwbiofab\",\n    \"id\": \"ent_opWGVHRa\",\n    \"name\":
-        \"UW BIOFAB\"\n  },\n  \"customFields\": {},\n  \"dnaAlignmentIds\": [],\n
-        \ \"entityRegistryId\": null,\n  \"fields\": {},\n  \"folderId\": \"lib_rdWSmOmk\",\n
-        \ \"id\": \"seq_lNlcuDAH\",\n  \"isCircular\": false,\n  \"length\": 176,\n
-        \ \"modifiedAt\": \"2019-11-16T01:40:03.461199+00:00\",\n  \"name\": \"2924cd5f-1fe7-4001-95a7-8084aaef860e\",\n
-        \ \"primers\": [],\n  \"registryId\": null,\n  \"schema\": null,\n  \"translations\":
-        [],\n  \"url\": \"/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_lNlcuDAH-2924cd5f-1fe7-4001-95a7-8084aaef860e/edit\",\n
-        \ \"webURL\": \"https://benchling.com/uwbiofab/f/lib_rdWSmOmk-api_trash/seq_lNlcuDAH-2924cd5f-1fe7-4001-95a7-8084aaef860e/edit\"\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1111'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:40:03 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Location:
-      - https://benchling.com/api/v2/dna-sequences/seq_lNlcuDAH
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8w.LGCRcaQRz4VkLRQ6jc8IVAdtgEM;
-        Secure; HttpOnly; Path=/
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: CREATED
-- request:
-    body: '{"name": "my new alignment", "algorithm": "not_an_algorithm", "templateSequenceId":
-      "seq_PgDwJvOF", "files": [{"sequenceId": "seq_Xhi1qIk5"}, {"sequenceId": "seq_AduBsfJC"},
-      {"sequenceId": "seq_kNkOPV63"}, {"sequenceId": "seq_Nlqp9vbv"}, {"sequenceId":
-      "seq_VWuwpSIf"}, {"sequenceId": "seq_JgRT4ZC9"}, {"sequenceId": "seq_goxUgHV1"},
-      {"sequenceId": "seq_ldPt9DAW"}, {"sequenceId": "seq_cwVZDgBa"}, {"sequenceId":
-      "seq_W6HuD1DC"}, {"sequenceId": "seq_1ZHCHSqm"}, {"sequenceId": "seq_lNlcuDAH"}]}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '494'
-      Content-Type:
-      - application/json
-      Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8w.LGCRcaQRz4VkLRQ6jc8IVAdtgEM
-      User-Agent:
-      - python-requests/2.22.0
-    method: POST
-    uri: https://benchling.com/api/v2/dna-alignments:create-template-alignment
-  response:
-    body:
-      string: "{\n  \"error\": {\n    \"message\": \"Invalid algorithm: not_an_algorithm\",\n
-        \   \"type\": \"invalid_request_error\",\n    \"userMessage\": \"Invalid algorithm:
-        not_an_algorithm\"\n  }\n}"
-    headers:
-      Access-Control-Allow-Origin:
-      - '*'
-      Cache-Control:
-      - private, no-cache, no-store
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '168'
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 16 Nov 2019 01:40:03 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNamd3TURrME1tWXRZemRqWmkwMFpEVmtMVGhqWWpFdE5qUXdNamc1TjJFd01tRXkifX0.ELDk8w.LGCRcaQRz4VkLRQ6jc8IVAdtgEM;
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOREUxWkRJNE4yTXRZMk15TkMwME56TXdMVGc1WW1NdE5XRmxPR1JoWlRjNU1XSTQifX0.ELDrNw.ngKRQ5CgxEWk_KSlOtYfe2w0NR0;
         Secure; HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload

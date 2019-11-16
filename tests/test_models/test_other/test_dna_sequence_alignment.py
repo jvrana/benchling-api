@@ -30,7 +30,10 @@ class TestDNAAlignment:
         yield temp
 
         for seq in seq_arr:
-            seq.archive()
+            try:
+                seq.archive()
+            except:
+                pass
 
     @pytest.mark.parametrize(
         "do_delete", [False, True], ids=["keep alignment", "delete alignment"]
