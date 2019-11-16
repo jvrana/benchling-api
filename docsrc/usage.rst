@@ -99,4 +99,33 @@ Registering models to your registry
     dna.register()
 
 
+Submitting DNA Alignments
+^^^^^^^^^^^^^^^^^^^^^^^^^'
+
+.. code-block:: python
+
+    task = session.DNAAlignment.submit_alignment(
+        algorithm='mafft',
+        name='my sequence alignment',
+        filepaths=[
+            'data/13dfg34.ab1'              # filepath to ab1 files
+        ],
+        sequences=[
+            'seq_1erv452',              # a benchling sequence id
+            session.DNASequence.one(),  # ...or a DNASequence instance
+        ],
+        rawfiles=None                       # only use if you have base64 data handy
+    )
+
+    # wait until the alignment is finished
+    task.wait()
+
+    # print the alignment
+    print(task.response)
+
+    # or grab the alignment
+    alignment = task.response_class
+
+    # from there, you can delete the alignment
+    alignment.delete()
 

@@ -1,6 +1,6 @@
 # benchlingapi change log
 ## 2.1.4
-**2019-11-15T17:20:11.198935**
+**2019-11-15T18:23:57.647864**
 New features: DNAAlignment and Task as new models
 
  - Added the `DNAAlignment` class to represent alignments

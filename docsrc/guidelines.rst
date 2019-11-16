@@ -80,6 +80,17 @@ Coding format and style is enforced by **black** (https://github.com/psf/black) 
 
     poetry run pre-commit install
 
+Tests
+-----
+
+.. code-block::
+
+    poetry run pytest
+
+.. code-block::
+
+    tox
+
 Release
 -------
 

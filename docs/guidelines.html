@@ -115,6 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#adding-a-new-model">Adding a new model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-tests">Running tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#style">Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests">Tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#release">Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
 </ul>
@@ -243,6 +244,15 @@ After the tests, conclude, inventory in the <cite>trash_folder</cite> will get a
 <p>Coding format and style is enforced by <strong>black</strong> (<a class="reference external" href="https://github.com/psf/black">https://github.com/psf/black</a>) and
 <strong>flake8</strong>. To enforce git-commit hooks, install pre-commits by running:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>poetry run pre-commit install
+</pre></div>
+</div>
+</div>
+<div class="section" id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>poetry run pytest
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tox
 </pre></div>
 </div>
 </div>
