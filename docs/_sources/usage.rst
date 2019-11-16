@@ -34,6 +34,8 @@ From there, you can access various models:
     session.EntitySchema
     session.Batch
     session.CustomEntity
+    session.DNAAlignment
+    session.Task
 
 
 Have a look at the :ref:`API model docs <api_models>`

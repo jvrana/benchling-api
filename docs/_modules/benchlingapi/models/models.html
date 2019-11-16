@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>benchlingapi.models.models &#8212; benchlingapi 2.1.2 documentation</title>
+    <title>benchlingapi.models.models &#8212; benchlingapi 2.1.4 documentation</title>
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
@@ -37,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.1.2</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.1.4</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -66,6 +66,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Project.html">benchlingapi.models.models.Project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Registry.html">benchlingapi.models.models.Registry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Translation.html">benchlingapi.models.models.Translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.DNAAlignment.html">benchlingapi.models.models.DNAAlignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Task.html">benchlingapi.models.models.Task</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../models.html#schemas">Schemas</a><ul>
@@ -83,6 +85,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.RegistrySchema.html">benchlingapi.models.schema.RegistrySchema</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.TranslationSchema.html">benchlingapi.models.schema.TranslationSchema</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.UserSummarySchema.html">benchlingapi.models.schema.UserSummarySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.DNAAlignmentSchema.html">benchlingapi.models.schema.DNAAlignmentSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.TaskSchema.html">benchlingapi.models.schema.TaskSchema</a></li>
 </ul>
 </li>
 </ul>
@@ -114,11 +118,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">benchlingapi change log</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id1">2.1.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id2">2.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id3">2.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id4">2.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id5">2.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id1">2.1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id2">2.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id3">2.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id4">2.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id5">2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id6">2.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id7">2.0.0</a></li>
 </ul>
 </li>
 </ul>
@@ -157,15 +163,21 @@
     <div class="body col-md-12 content" role="main">
       
   <h1>Source code for benchlingapi.models.models</h1><div class="highlight"><pre>
-<span></span>import re
+<span></span>import base64
+import os
+import re
+import time
 import urllib
 from typing import List
+from typing import Type
+from typing import Union
 
 from benchlingapi.exceptions import BenchlingAPIException
 from benchlingapi.models.base import ModelBase
 from benchlingapi.models.base import ModelRegistry
 from benchlingapi.models.mixins import ArchiveMixin
 from benchlingapi.models.mixins import CreateMixin
+from benchlingapi.models.mixins import DeleteMixin
 from benchlingapi.models.mixins import EntityMixin
 from benchlingapi.models.mixins import GetMixin
 from benchlingapi.models.mixins import InventoryEntityMixin
@@ -185,6 +197,8 @@ __all__ = [
     &quot;Batch&quot;,
     &quot;Registry&quot;,
     &quot;EntitySchema&quot;,
+    &quot;DNAAlignment&quot;,
+    &quot;Task&quot;,
 ]
 
 
@@ -419,7 +433,266 @@ __all__ = [
         )</div></div>
 
 
-# TODO: use alias for parameters
+<div class="viewcode-block" id="Task"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Task.html#benchlingapi.models.models.Task">[docs]</a>class Task(GetMixin, ModelBase):
+    &quot;&quot;&quot;A model representing a long running task. Use `wait()` to wait for the
+    results from the server. Use `reload()` to update the task from the server.
+
+    .. versionadded:: 2.1.3
+        Added :class:`DNASequence &lt;benchlingapi.models.DNAAlignment&gt;`
+         model and corresponding
+         :class:`Task &lt;benchlingapi.models.Task&gt;` and
+         :class:`TaskSchema &lt;benchlingapi.schema.TaskSchema&gt;`.
+    &quot;&quot;&quot;
+
+<div class="viewcode-block" id="Task.__init__"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Task.html#benchlingapi.models.models.Task.__init__">[docs]</a>    def __init__(self, expected_class: Type[ModelBase] = None, **kwargs):
+        self.expected_class = expected_class
+        self.response_class = None
+        self.response = None
+        self.status = None
+        self.message = None
+        self.errors = None
+        self.id = None
+        super().__init__(**kwargs)</div>
+
+    def reload(self):
+        ec = self.expected_class
+        super().reload()
+        self.expected_class = ec
+        if hasattr(self, &quot;response&quot;) and self.response and ec:
+            self.response_class = ec.load(self.response)
+        return self
+
+<div class="viewcode-block" id="Task.find"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Task.html#benchlingapi.models.models.Task.find">[docs]</a>    @classmethod
+    def find(cls, id, **params):
+        inst = super().find(id, **params)
+        inst.id = id
+        return inst</div>
+
+    def __repr__(self):
+        return &quot;&lt;Task {}&gt;&quot;.format(self.dump())
+
+    def __str__(self):
+        return self.__repr__()
+
+<div class="viewcode-block" id="Task.wait"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.Task.html#benchlingapi.models.models.Task.wait">[docs]</a>    def wait(self, every_seconds: int = 3, timeout: int = 30):
+        &quot;&quot;&quot;Wait for the Task to finish.
+
+        .. versionadded:: 2.1.2
+            Added Task and TaskSchema models and the `wait()` method.
+
+        :param every_seconds: time interval to check server
+        :param timeout: maximum timeout in seconds
+        :return: self
+        &quot;&quot;&quot;
+        t1 = time.time()
+        while self.status == &quot;RUNNING&quot;:
+            t2 = time.time()
+            if t2 - t1 &gt; timeout:
+                raise TimeoutError(
+                    &quot;Task {} took too long ({}s)&quot;.format(self.id, timeout)
+                )
+            self.reload()
+            time.sleep(every_seconds)
+        return self</div></div>
+
+
+<div class="viewcode-block" id="DNAAlignment"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.DNAAlignment.html#benchlingapi.models.models.DNAAlignment">[docs]</a>class DNAAlignment(GetMixin, DeleteMixin, ModelBase):
+    &quot;&quot;&quot;Represent a DNASequence alignment.
+
+    .. versionadded:: 2.1.3
+        Added :class:`DNASequence &lt;benchlingapi.models.DNAAlignment&gt;`
+         model and corresponding
+         :class:`Task &lt;benchlingapi.models.Task&gt;` and
+         :class:`TaskSchema &lt;benchlingapi.schema.TaskSchema&gt;`.
+    &quot;&quot;&quot;
+
+    MAFFT = &quot;mafft&quot;
+    CLUSTALO = &quot;clustalo&quot;
+
+    @staticmethod
+    def model_to_id(seq):
+        if isinstance(seq, str):
+            return seq
+        else:
+            return seq.id
+
+    @classmethod
+    def _resolve_files(cls, sequences, filepaths, rawfiles):
+        files_list = []
+        if sequences:
+            for seq in sequences:
+                f = cls.model_to_id(seq)
+                files_list.append({&quot;sequenceId&quot;: cls.model_to_id(seq)})
+
+        if filepaths:
+            for filepath in filepaths:
+                with open(filepath, &quot;rb&quot;) as f:
+                    b64data = base64.b64encode(f.read()).decode(&quot;utf-8&quot;)
+                    files_list.append(
+                        {&quot;name&quot;: os.path.basename(filepath), &quot;data&quot;: b64data}
+                    )
+
+        if rawfiles:
+            for raw in rawfiles:
+                files_list.append(raw)
+        return files_list
+
+<div class="viewcode-block" id="DNAAlignment.submit_alignment"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.DNAAlignment.html#benchlingapi.models.models.DNAAlignment.submit_alignment">[docs]</a>    @classmethod
+    def submit_alignment(
+        cls,
+        algorithm: str,
+        name: str,
+        template: Union[str, DNASequence],
+        filepaths: List[str] = None,
+        sequences: List[Union[str, DNASequence]] = None,
+        rawfiles: List[str] = None,
+    ) -&gt; Task:
+        &quot;&quot;&quot;Submit an sequence alignment task.
+
+        Usage:
+
+        .. code-block:: python
+
+            task = session.DNAAlignment.submit_alignment(
+                algorithm=&#39;mafft&#39;,
+                name=&#39;my sequence alignment&#39;,
+                filepaths=[
+                    &#39;data/13dfg34.ab1&#39;          # filepath to ab1 files
+                ],
+                sequences=[
+                    &#39;seq_1erv452&#39;,              # a benchling sequence id
+                    session.DNASequence.one(),  # ...or a DNASequence instance
+                ],
+                rawfiles=None                   # only use if you have base64 data handy
+            )
+
+            # wait until the alignment is finished
+            task.wait()
+
+            # print the alignment
+            print(task.response)
+
+            # or grab the alignment
+            alignment = task.response_class
+
+            # from there, you can delete the alignment
+            alignment.delete()
+
+
+        :param algorithm: either &#39;mafft&#39; or &#39;clustalo&#39;
+        :param name: name of the sequence alignment
+        :param template: template of the alignment. Either a benchling sequence id (str)
+            or a :class:`DNASequence` instance containing a id.
+        :param filepaths: optional list of sequencing filepaths to align to the template.
+            For example, a list of .ab1 file paths.
+        :param sequences: optional list of :class:`DNASequence` instances or benchling
+            sequence ids to align to the template sequence.
+        :param rawfiles: optional list of raw entries to send to align to the template.
+            Use this if you have base64 bytes encoded data. Take a look at Benchling
+            V2 API for more information.
+        :return: Task
+        &quot;&quot;&quot;
+
+        post_data = {
+            &quot;name&quot;: name,
+            &quot;algorithm&quot;: algorithm,
+            &quot;templateSequenceId&quot;: cls.model_to_id(template),
+            &quot;files&quot;: cls._resolve_files(sequences, filepaths, rawfiles),
+        }
+
+        if not post_data[&quot;files&quot;]:
+            raise BenchlingAPIException(&quot;No sequences or filepaths provided.&quot;)
+
+        result = cls.session.http.post(
+            &quot;dna-alignments&quot;, action=&quot;create-template-alignment&quot;, json=post_data
+        )
+
+        inst = cls.session.Task.find(result[&quot;taskId&quot;])
+        inst.expected_class = cls
+        return inst</div>
+
+<div class="viewcode-block" id="DNAAlignment.create_consensus"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.DNAAlignment.html#benchlingapi.models.models.DNAAlignment.create_consensus">[docs]</a>    @classmethod
+    def create_consensus(
+        cls,
+        algorithm: str,
+        name: str,
+        template: Union[str, DNASequence],
+        consensus_sequence: Union[str, DNASequence],
+        filepaths: List[str] = None,
+        sequences: List[Union[str, DNASequence]] = None,
+        rawfiles: List[str] = None,
+    ):
+        &quot;&quot;&quot;Create a consensus sequence and save the sequence to the Benchling
+        Server.
+
+        .. versionadded:: 2.1.3
+            Added `create_consensus`
+
+
+        .. code-block:: python
+
+            task = session.DNAAlignment.create_consensus(
+                algorithm=&#39;mafft&#39;,
+                name=&#39;my sequence alignment&#39;,
+                filepaths=[
+                    &#39;data/13dfg34.ab1&#39;          # filepath to ab1 files
+                ],
+                sequences=[
+                    &#39;seq_1erv452&#39;,              # a benchling sequence id
+                    session.DNASequence.one(),  # ...or a DNASequence instance
+                ],
+                consensus_sequence=session.DNASequence(
+                    folder_id=&quot;lib_23gv4r2&quot;,
+                    name=&quot;my consensus&quot;,
+                )
+                rawfiles=None                   # only use if you have base64 data handy
+            )
+
+            # wait until the alignment is finished
+            task.wait()
+
+            # print the alignment
+            print(task.response)
+
+        :param algorithm: either &#39;mafft&#39; or &#39;clustalo&#39;
+        :param name: name of the sequence alignment
+        :param template: template of the alignment. Either a benchling sequence id (str)
+            or a :class:`DNASequence` instance containing a id.
+        :param consensus_sequence: either a DNASequence object (with folder_id) or
+            a sequence id to save the consensus sequence.
+        :param filepaths: optional list of sequencing filepaths to align to the template.
+            For example, a list of .ab1 file paths.
+        :param sequences: optional list of :class:`DNASequence` instances or benchling
+            sequence ids to align to the template sequence.
+        :param rawfiles: optional list of raw entries to send to align to the template.
+            Use this if you have base64 bytes encoded data. Take a look at Benchling
+            V2 API for more information.
+        :return: Task
+        &quot;&quot;&quot;
+
+        post_data = {
+            &quot;name&quot;: name,
+            &quot;algorithm&quot;: algorithm,
+            &quot;templateSequenceId&quot;: cls.model_to_id(template),
+            &quot;files&quot;: cls._resolve_files(sequences, filepaths, rawfiles),
+        }
+
+        if isinstance(consensus_sequence, str):
+            post_data[&quot;sequenceId&quot;] = consensus_sequence
+        else:
+            post_data[&quot;newSequence&quot;] = consensus_sequence.dump()
+
+        if not post_data[&quot;files&quot;]:
+            raise BenchlingAPIException(&quot;No sequences or filepaths provided.&quot;)
+
+        result = cls.session.http.post(
+            &quot;dna-alignments&quot;, action=&quot;create-consensus-alignment&quot;, json=post_data
+        )
+
+        inst = cls.session.Task.find(result[&quot;taskId&quot;])
+        return inst</div></div>
+
+
 <div class="viewcode-block" id="AASequence"><a class="viewcode-back" href="../../../generated/benchlingapi.models.models.AASequence.html#benchlingapi.models.models.AASequence">[docs]</a>class AASequence(ModelBase, InventoryEntityMixin):
     &quot;&quot;&quot;A model representing Benchling&#39;s AASequence (protein).&quot;&quot;&quot;
 

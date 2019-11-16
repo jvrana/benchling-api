@@ -1,10 +1,17 @@
 # benchlingapi change log
-## 2.1.3
+## 2.1.4
 **2019-11-15T17:20:11.198935**
 New features: DNAAlignment and Task as new models
 
  - Added the `DNAAlignment` class to represent alignments
  - Added the `Task` class to represent long running tasks. `task.wait()` waits for server task to finish. `task.response_class` returns the expected model, if there is one.
+
+
+## 2.1.3
+**2019-10-23T16:08:47.898865**
+fixes bug with DNASequence.archived_reason
+
+ - typo in archive_reason
 
 
 ## 2.1.2

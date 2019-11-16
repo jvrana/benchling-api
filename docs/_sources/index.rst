@@ -4,7 +4,7 @@
 Python BenchlingAPI
 ===================
 
-The unofficial python Benchling API. |homepage|
+The unofficial Benchling API for Python. |homepage|
 
 .. code-block::
 

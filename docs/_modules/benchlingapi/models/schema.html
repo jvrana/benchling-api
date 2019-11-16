@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>benchlingapi.models.schema &#8212; benchlingapi 2.1.2 documentation</title>
+    <title>benchlingapi.models.schema &#8212; benchlingapi 2.1.4 documentation</title>
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
@@ -37,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html">
           BenchlingAPI</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.1.2</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.1.4</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -66,6 +66,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Project.html">benchlingapi.models.models.Project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Registry.html">benchlingapi.models.models.Registry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Translation.html">benchlingapi.models.models.Translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.DNAAlignment.html">benchlingapi.models.models.DNAAlignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Task.html">benchlingapi.models.models.Task</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../models.html#schemas">Schemas</a><ul>
@@ -83,6 +85,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.RegistrySchema.html">benchlingapi.models.schema.RegistrySchema</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.TranslationSchema.html">benchlingapi.models.schema.TranslationSchema</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.UserSummarySchema.html">benchlingapi.models.schema.UserSummarySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.DNAAlignmentSchema.html">benchlingapi.models.schema.DNAAlignmentSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.TaskSchema.html">benchlingapi.models.schema.TaskSchema</a></li>
 </ul>
 </li>
 </ul>
@@ -114,11 +118,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">benchlingapi change log</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id1">2.1.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id2">2.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id3">2.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id4">2.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id5">2.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id1">2.1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id2">2.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id3">2.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id4">2.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id5">2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id6">2.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id7">2.0.0</a></li>
 </ul>
 </li>
 </ul>
@@ -294,6 +300,23 @@ class AnnotationSchema(ModelSchemaMixin, Schema):
         unknown = INCLUDE</div>
 
 
+# class DNAAlignmentEntrySchema(Schema):
+#
+#     bases = mfields.Str()
+#     dna_sequence_id: mfields.Str()
+#     trim_start = mfields.Int()
+#     trim_end = mfields.Int()
+#
+#
+<div class="viewcode-block" id="DNAAlignmentSchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.DNAAlignmentSchema.html#benchlingapi.models.schema.DNAAlignmentSchema">[docs]</a>class DNAAlignmentSchema(ModelSchemaMixin, Schema):
+
+    aligned_sequences: mfields.Dict()
+    name = mfields.Str()
+
+    class Meta:
+        unknown = INCLUDE</div>
+
+
 ####################################
 # Common Resources
 ####################################
@@ -330,6 +353,26 @@ class AnnotationSchema(ModelSchemaMixin, Schema):
     handle = mfields.String()
     id = mfields.String()
     name = mfields.String(allow_none=True)
+
+    class Meta:
+        unknown = INCLUDE</div>
+
+
+<div class="viewcode-block" id="TaskSchema"><a class="viewcode-back" href="../../../generated/benchlingapi.models.schema.TaskSchema.html#benchlingapi.models.schema.TaskSchema">[docs]</a>class TaskSchema(ModelSchemaMixin, Schema):
+    &quot;&quot;&quot;Schema for :class:`Task &lt;benchlingapi.models.Task&gt;`
+
+    .. versionadded:: 2.1.3
+        Added :class:`DNASequence &lt;benchlingapi.models.DNAAlignment&gt;`
+         model and corresponding
+         :class:`Task &lt;benchlingapi.models.Task&gt;` and
+         :class:`TaskSchema &lt;benchlingapi.schema.TaskSchema&gt;`.
+    &quot;&quot;&quot;
+
+    status = mfields.Str()
+    errors = mfields.List(mfields.Dict, allow_none=True, required=False)
+    message = mfields.Str(allow_none=True, required=False)
+    response = mfields.Dict(allow_none=True, required=False)
+    id = mfields.Str()
 
     class Meta:
         unknown = INCLUDE</div>
