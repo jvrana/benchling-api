@@ -1,4 +1,12 @@
 {
+  "2.1.3": {
+    "description": "New features: DNAAlignment and Task as new models",
+    "date": "2019-11-15T17:20:11.198935",
+    "changes": [
+      "Added the `DNAAlignment` class to represent alignments",
+      "Added the `Task` class to represent long running tasks. `task.wait()` waits for server task to finish. `task.response_class` returns the expected model, if there is one."
+    ]
+  },
   "2.1.2": {
     "description": "bug fixes",
     "date": "2019-10-18T13:44:46.826684",

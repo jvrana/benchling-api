@@ -1,12 +1,18 @@
+import base64
+import os
 import re
+import time
 import urllib
 from typing import List
+from typing import Type
+from typing import Union
 
 from benchlingapi.exceptions import BenchlingAPIException
 from benchlingapi.models.base import ModelBase
 from benchlingapi.models.base import ModelRegistry
 from benchlingapi.models.mixins import ArchiveMixin
 from benchlingapi.models.mixins import CreateMixin
+from benchlingapi.models.mixins import DeleteMixin
 from benchlingapi.models.mixins import EntityMixin
 from benchlingapi.models.mixins import GetMixin
 from benchlingapi.models.mixins import InventoryEntityMixin
@@ -26,6 +32,8 @@ __all__ = [
     "Batch",
     "Registry",
     "EntitySchema",
+    "DNAAlignment",
+    "Task",
 ]
 
 
@@ -260,7 +268,266 @@ class DNASequence(InventoryEntityMixin, ModelBase):
         )
 
 
-# TODO: use alias for parameters
+class Task(GetMixin, ModelBase):
+    """A model representing a long running task. Use `wait()` to wait for the
+    results from the server. Use `reload()` to update the task from the server.
+
+    .. versionadded:: 2.1.3
+        Added :class:`DNASequence <benchlingapi.models.DNAAlignment>`
+         model and corresponding
+         :class:`Task <benchlingapi.models.Task>` and
+         :class:`TaskSchema <benchlingapi.schema.TaskSchema>`.
+    """
+
+    def __init__(self, expected_class: Type[ModelBase] = None, **kwargs):
+        self.expected_class = expected_class
+        self.response_class = None
+        self.response = None
+        self.status = None
+        self.message = None
+        self.errors = None
+        self.id = None
+        super().__init__(**kwargs)
+
+    def reload(self):
+        ec = self.expected_class
+        super().reload()
+        self.expected_class = ec
+        if hasattr(self, "response") and self.response and ec:
+            self.response_class = ec.load(self.response)
+        return self
+
+    @classmethod
+    def find(cls, id, **params):
+        inst = super().find(id, **params)
+        inst.id = id
+        return inst
+
+    def __repr__(self):
+        return "<Task {}>".format(self.dump())
+
+    def __str__(self):
+        return self.__repr__()
+
+    def wait(self, every_seconds: int = 3, timeout: int = 30):
+        """Wait for the Task to finish.
+
+        .. versionadded:: 2.1.2
+            Added Task and TaskSchema models and the `wait()` method.
+
+        :param every_seconds: time interval to check server
+        :param timeout: maximum timeout in seconds
+        :return: self
+        """
+        t1 = time.time()
+        while self.status == "RUNNING":
+            t2 = time.time()
+            if t2 - t1 > timeout:
+                raise TimeoutError(
+                    "Task {} took too long ({}s)".format(self.id, timeout)
+                )
+            self.reload()
+            time.sleep(every_seconds)
+        return self
+
+
+class DNAAlignment(GetMixin, DeleteMixin, ModelBase):
+    """Represent a DNASequence alignment.
+
+    .. versionadded:: 2.1.3
+        Added :class:`DNASequence <benchlingapi.models.DNAAlignment>`
+         model and corresponding
+         :class:`Task <benchlingapi.models.Task>` and
+         :class:`TaskSchema <benchlingapi.schema.TaskSchema>`.
+    """
+
+    MAFFT = "mafft"
+    CLUSTALO = "clustalo"
+
+    @staticmethod
+    def model_to_id(seq):
+        if isinstance(seq, str):
+            return seq
+        else:
+            return seq.id
+
+    @classmethod
+    def _resolve_files(cls, sequences, filepaths, rawfiles):
+        files_list = []
+        if sequences:
+            for seq in sequences:
+                f = cls.model_to_id(seq)
+                files_list.append({"sequenceId": cls.model_to_id(seq)})
+
+        if filepaths:
+            for filepath in filepaths:
+                with open(filepath, "rb") as f:
+                    b64data = base64.b64encode(f.read()).decode("utf-8")
+                    files_list.append(
+                        {"name": os.path.basename(filepath), "data": b64data}
+                    )
+
+        if rawfiles:
+            for raw in rawfiles:
+                files_list.append(raw)
+        return files_list
+
+    @classmethod
+    def submit_alignment(
+        cls,
+        algorithm: str,
+        name: str,
+        template: Union[str, DNASequence],
+        filepaths: List[str] = None,
+        sequences: List[Union[str, DNASequence]] = None,
+        rawfiles: List[str] = None,
+    ) -> Task:
+        """Submit an sequence alignment task.
+
+        Usage:
+
+        .. code-block:: python
+
+            task = session.DNAAlignment.submit_alignment(
+                algorithm='mafft',
+                name='my sequence alignment',
+                filepaths=[
+                    'data/13dfg34.ab1'          # filepath to ab1 files
+                ],
+                sequences=[
+                    'seq_1erv452',              # a benchling sequence id
+                    session.DNASequence.one(),  # ...or a DNASequence instance
+                ],
+                rawfiles=None                   # only use if you have base64 data handy
+            )
+
+            # wait until the alignment is finished
+            task.wait()
+
+            # print the alignment
+            print(task.response)
+
+            # or grab the alignment
+            alignment = task.response_class
+
+            # from there, you can delete the alignment
+            alignment.delete()
+
+
+        :param algorithm: either 'mafft' or 'clustalo'
+        :param name: name of the sequence alignment
+        :param template: template of the alignment. Either a benchling sequence id (str)
+            or a :class:`DNASequence` instance containing a id.
+        :param filepaths: optional list of sequencing filepaths to align to the template.
+            For example, a list of .ab1 file paths.
+        :param sequences: optional list of :class:`DNASequence` instances or benchling
+            sequence ids to align to the template sequence.
+        :param rawfiles: optional list of raw entries to send to align to the template.
+            Use this if you have base64 bytes encoded data. Take a look at Benchling
+            V2 API for more information.
+        :return: Task
+        """
+
+        post_data = {
+            "name": name,
+            "algorithm": algorithm,
+            "templateSequenceId": cls.model_to_id(template),
+            "files": cls._resolve_files(sequences, filepaths, rawfiles),
+        }
+
+        if not post_data["files"]:
+            raise BenchlingAPIException("No sequences or filepaths provided.")
+
+        result = cls.session.http.post(
+            "dna-alignments", action="create-template-alignment", json=post_data
+        )
+
+        inst = cls.session.Task.find(result["taskId"])
+        inst.expected_class = cls
+        return inst
+
+    @classmethod
+    def create_consensus(
+        cls,
+        algorithm: str,
+        name: str,
+        template: Union[str, DNASequence],
+        consensus_sequence: Union[str, DNASequence],
+        filepaths: List[str] = None,
+        sequences: List[Union[str, DNASequence]] = None,
+        rawfiles: List[str] = None,
+    ):
+        """Create a consensus sequence and save the sequence to the Benchling
+        Server.
+
+        .. versionadded:: 2.1.3
+            Added `create_consensus`
+
+
+        .. code-block:: python
+
+            task = session.DNAAlignment.create_consensus(
+                algorithm='mafft',
+                name='my sequence alignment',
+                filepaths=[
+                    'data/13dfg34.ab1'          # filepath to ab1 files
+                ],
+                sequences=[
+                    'seq_1erv452',              # a benchling sequence id
+                    session.DNASequence.one(),  # ...or a DNASequence instance
+                ],
+                consensus_sequence=session.DNASequence(
+                    folder_id="lib_23gv4r2",
+                    name="my consensus",
+                )
+                rawfiles=None                   # only use if you have base64 data handy
+            )
+
+            # wait until the alignment is finished
+            task.wait()
+
+            # print the alignment
+            print(task.response)
+
+        :param algorithm: either 'mafft' or 'clustalo'
+        :param name: name of the sequence alignment
+        :param template: template of the alignment. Either a benchling sequence id (str)
+            or a :class:`DNASequence` instance containing a id.
+        :param consensus_sequence: either a DNASequence object (with folder_id) or
+            a sequence id to save the consensus sequence.
+        :param filepaths: optional list of sequencing filepaths to align to the template.
+            For example, a list of .ab1 file paths.
+        :param sequences: optional list of :class:`DNASequence` instances or benchling
+            sequence ids to align to the template sequence.
+        :param rawfiles: optional list of raw entries to send to align to the template.
+            Use this if you have base64 bytes encoded data. Take a look at Benchling
+            V2 API for more information.
+        :return: Task
+        """
+
+        post_data = {
+            "name": name,
+            "algorithm": algorithm,
+            "templateSequenceId": cls.model_to_id(template),
+            "files": cls._resolve_files(sequences, filepaths, rawfiles),
+        }
+
+        if isinstance(consensus_sequence, str):
+            post_data["sequenceId"] = consensus_sequence
+        else:
+            post_data["newSequence"] = consensus_sequence.dump()
+
+        if not post_data["files"]:
+            raise BenchlingAPIException("No sequences or filepaths provided.")
+
+        result = cls.session.http.post(
+            "dna-alignments", action="create-consensus-alignment", json=post_data
+        )
+
+        inst = cls.session.Task.find(result["taskId"])
+        return inst
+
+
 class AASequence(ModelBase, InventoryEntityMixin):
     """A model representing Benchling's AASequence (protein)."""
 

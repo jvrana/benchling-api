@@ -135,6 +135,23 @@ class TranslationSchema(Schema):
         unknown = INCLUDE
 
 
+# class DNAAlignmentEntrySchema(Schema):
+#
+#     bases = mfields.Str()
+#     dna_sequence_id: mfields.Str()
+#     trim_start = mfields.Int()
+#     trim_end = mfields.Int()
+#
+#
+class DNAAlignmentSchema(ModelSchemaMixin, Schema):
+
+    aligned_sequences: mfields.Dict()
+    name = mfields.Str()
+
+    class Meta:
+        unknown = INCLUDE
+
+
 ####################################
 # Common Resources
 ####################################
@@ -171,6 +188,26 @@ class UserSummarySchema(Schema):
     handle = mfields.String()
     id = mfields.String()
     name = mfields.String(allow_none=True)
+
+    class Meta:
+        unknown = INCLUDE
+
+
+class TaskSchema(ModelSchemaMixin, Schema):
+    """Schema for :class:`Task <benchlingapi.models.Task>`
+
+    .. versionadded:: 2.1.3
+        Added :class:`DNASequence <benchlingapi.models.DNAAlignment>`
+         model and corresponding
+         :class:`Task <benchlingapi.models.Task>` and
+         :class:`TaskSchema <benchlingapi.schema.TaskSchema>`.
+    """
+
+    status = mfields.Str()
+    errors = mfields.List(mfields.Dict, allow_none=True, required=False)
+    message = mfields.Str(allow_none=True, required=False)
+    response = mfields.Dict(allow_none=True, required=False)
+    id = mfields.Str()
 
     class Meta:
         unknown = INCLUDE

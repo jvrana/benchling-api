@@ -521,4 +521,199 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNbVkwWTJKa1lXWXROVEJoTmkwMFpHUmxMVGsxTURZdE56STNaR1V6WVdSaVpETTQifX0.ELDAqg.T4wLbzOCUBb43lMvEBEUzbQVOtA
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/aa-sequences?pageSize=1
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7WTUZOaMBDH3+9TMLy2SlCcns70AQ+4oqgtKtp2Ok5MosSGxIZw5+n43QvYynnX
+        860PMMz+dvf/30043GiaDuGY/MoIRyTVO9r3PKRph/JdQEZhegI/3p+DCeXCRhQXcd2NPNdzvwaO
+        048C1w0CZ+y6YT/Uq3zOhYKKCv6ykUQxfSAhQULiHPGMsQpmKhay8vTcV5kQQ44ZKSxsHiTk8CxY
+        Ulo01AlXi9GgF8156F9yDpOytpelinItKjucE45/viqvSBKoCLZVUdQAZrtmmjXTmpitTrPZsRr1
+        27ZlNcA7ADoA6JdlQuZFlfdrzq/7vur6WInmVCQeJaw8okNF8r5UPYVkTVMln/xXS1/9o2YlGCay
+        zNUZXS480PU+R+GgGvLkeSsVX4Deh6EKZLOCjPC1ivOEhnWOJQLTXOrNbbbrLatx+3qbf8d3nSDQ
+        bKcC8s2JUhSTBL6MZpIVfYzT/o2V8Xyw2pZBrlROUiTptri4K4jyU0RUooyq1LgYtUYwYzWIDYKp
+        qiw9kuU0DAqVWKlt2jGMZf6TxYzydR2J5D9Il8rFzS1vrc7JTk3ET8ILD7NmSnHipXg2pSNq08HG
+        3o3GYDfIn6H3ZTeciP1gL8BobJlDx7dyToM7m87NNv02a23g/W67TPCUzLvM34i1n4Qxvo8AnJnM
+        5yD173qPiIfZfN/tD0ELTD75e5+Bj/rN8TeIz1xyZgQAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 15 Nov 2019 23:05:15 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJNbVkwWTJKa1lXWXROVEJoTmkwMFpHUmxMVGsxTURZdE56STNaR1V6WVdSaVpETTQifX0.ELDAqw.u-fdtqZ5ek3pgaTWcL-aHvbAMWk;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaR0kxWmpBellUZ3RPRGRsWWkwME5tTTFMV0U1WVRJdFkySm1OV1UxTW1ZNVkyVTEifX0.ELDBfQ.YmR1batSw_AFlZEd4ifZTOSrQu0
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/aa-sequences?pageSize=1
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7WTUZOaMBDH3+9TMLy2SlCcns70AQ+4oqgtKtp2Ok5MosSGxIZw5+n43QvYynnX
+        860PMMz+dvf/30043GiaDuGY/MoIRyTVO9r3PKRph/JdQEZhegI/3p+DCeXCRhQXcd2NPNdzvwaO
+        048C1w0CZ+y6YT/Uq3zOhYKKCv6ykUQxfSAhQULiHPGMsQpmKhay8vTcV5kQQ44ZKSxsHiTk8CxY
+        Ulo01AlXi9GgF8156F9yDpOytpelinItKjucE45/viqvSBKoCLZVUdQAZrtmmjXTmpitTrPZsRr1
+        27ZlNcA7ADoA6JdlQuZFlfdrzq/7vur6WInmVCQeJaw8okNF8r5UPYVkTVMln/xXS1/9o2YlGCay
+        zNUZXS480PU+R+GgGvLkeSsVX4Deh6EKZLOCjPC1ivOEhnWOJQLTXOrNbbbrLatx+3qbf8d3nSDQ
+        bKcC8s2JUhSTBL6MZpIVfYzT/o2V8Xyw2pZBrlROUiTptri4K4jyU0RUooyq1LgYtUYwYzWIDYKp
+        qiw9kuU0DAqVWKlt2jGMZf6TxYzydR2J5D9Il8rFzS1vrc7JTk3ET8ILD7NmSnHipXg2pSNq08HG
+        3o3GYDfIn6H3ZTeciP1gL8BobJlDx7dyToM7m87NNv02a23g/W67TPCUzLvM34i1n4Qxvo8AnJnM
+        5yD173qPiIfZfN/tD0ELTD75e5+Bj/rN8TeIz1xyZgQAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 15 Nov 2019 23:08:46 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJaR0kxWmpBellUZ3RPRGRsWWkwME5tTTFMV0U1WVRJdFkySm1OV1UxTW1ZNVkyVTEifX0.ELDBfg.9lFNZwE5vOP9apxRhxzWHbXVYug;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Basic c2tfZTlnZ2ZsT2JqUWVTaFVMaXVBQVhxSWtEVHR0dWs6
+      Connection:
+      - keep-alive
+      Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOMkZsTURaalpHUXROV1U1TUMwMFpqSXlMVGhpTldVdE56ZGhNVEExTjJRek5HUm0ifX0.ELDCug.bsoQ5NZcNzn5uMXug0DKKfZVX0k
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://benchling.com/api/v2/aa-sequences?pageSize=1
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7WTUZOaMBDH3+9TMLy2SlCcns70AQ+4oqgtKtp2Ok5MosSGxIZw5+n43QvYynnX
+        860PMMz+dvf/30043GiaDuGY/MoIRyTVO9r3PKRph/JdQEZhegI/3p+DCeXCRhQXcd2NPNdzvwaO
+        048C1w0CZ+y6YT/Uq3zOhYKKCv6ykUQxfSAhQULiHPGMsQpmKhay8vTcV5kQQ44ZKSxsHiTk8CxY
+        Ulo01AlXi9GgF8156F9yDpOytpelinItKjucE45/viqvSBKoCLZVUdQAZrtmmjXTmpitTrPZsRr1
+        27ZlNcA7ADoA6JdlQuZFlfdrzq/7vur6WInmVCQeJaw8okNF8r5UPYVkTVMln/xXS1/9o2YlGCay
+        zNUZXS480PU+R+GgGvLkeSsVX4Deh6EKZLOCjPC1ivOEhnWOJQLTXOrNbbbrLatx+3qbf8d3nSDQ
+        bKcC8s2JUhSTBL6MZpIVfYzT/o2V8Xyw2pZBrlROUiTptri4K4jyU0RUooyq1LgYtUYwYzWIDYKp
+        qiw9kuU0DAqVWKlt2jGMZf6TxYzydR2J5D9Il8rFzS1vrc7JTk3ET8ILD7NmSnHipXg2pSNq08HG
+        3o3GYDfIn6H3ZTeciP1gL8BobJlDx7dyToM7m87NNv02a23g/W67TPCUzLvM34i1n4Qxvo8AnJnM
+        5yD173qPiIfZfN/tD0ELTD75e5+Bj/rN8TeIz1xyZgQAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - private, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 15 Nov 2019 23:14:04 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - session=eyJhbm9ueW1vdXNfaWQiOnsiIGIiOiJOMkZsTURaalpHUXROV1U1TUMwMFpqSXlMVGhpTldVdE56ZGhNVEExTjJRek5HUm0ifX0.ELDCvA.Bum7wkbfh_9LiEG_20L9xVN6pL4;
+        Secure; HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
 version: 1

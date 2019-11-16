@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>benchlingapi.models.base &#8212; benchlingapi 2.1.3 documentation</title>
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          BenchlingAPI</a>
+        <span class="navbar-text navbar-version pull-left"><b>2.1.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">BenchlingAPI <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../session.html">Session (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.session</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../models.html">Models (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.models.models</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.DNASequence.html">benchlingapi.models.models.DNASequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.AASequence.html">benchlingapi.models.models.AASequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Oligo.html">benchlingapi.models.models.Oligo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Annotation.html">benchlingapi.models.models.Annotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Translation.html">benchlingapi.models.models.Translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.CustomEntity.html">benchlingapi.models.models.CustomEntity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.EntitySchema.html">benchlingapi.models.models.EntitySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Project.html">benchlingapi.models.models.Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Registry.html">benchlingapi.models.models.Registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Translation.html">benchlingapi.models.models.Translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.DNAAlignment.html">benchlingapi.models.models.DNAAlignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.models.Task.html">benchlingapi.models.models.Task</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#schemas">Schemas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.DNASequenceSchema.html">benchlingapi.models.schema.DNASequenceSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.AASequenceSchema.html">benchlingapi.models.schema.AASequenceSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.BatchSchema.html">benchlingapi.models.schema.BatchSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.CustomEntitySchema.html">benchlingapi.models.schema.CustomEntitySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.DNASequenceSchema.html">benchlingapi.models.schema.DNASequenceSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.EntitySchema.html">benchlingapi.models.schema.EntitySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.EntitySchemaSchema.html">benchlingapi.models.schema.EntitySchemaSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.FieldSchema.html">benchlingapi.models.schema.FieldSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.FolderSchema.html">benchlingapi.models.schema.FolderSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.OligoSchema.html">benchlingapi.models.schema.OligoSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.ProjectSchema.html">benchlingapi.models.schema.ProjectSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.RegistrySchema.html">benchlingapi.models.schema.RegistrySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.TranslationSchema.html">benchlingapi.models.schema.TranslationSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.UserSummarySchema.html">benchlingapi.models.schema.UserSummarySchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.DNAAlignmentSchema.html">benchlingapi.models.schema.DNAAlignmentSchema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generated/benchlingapi.models.schema.TaskSchema.html">benchlingapi.models.schema.TaskSchema</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../exceptions.html">Exceptions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.exceptions</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils.html">Utilities (<code class="xref py py-mod docutils literal notranslate"><span class="pre">benchlingapi.utils</span></code>)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage.html#session">Session</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage.html#finding-models">Finding models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage.html#updating-models">Updating models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage.html#saving-new-models">Saving new models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage.html#registering-models-to-your-registry">Registering models to your registry</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../guidelines.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guidelines.html#adding-a-new-model">Adding a new model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guidelines.html#running-tests">Running tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/changelog.html">benchlingapi change log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id1">2.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id2">2.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id3">2.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id4">2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id5">2.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/changelog.html#id6">2.0.0</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <h1>Source code for benchlingapi.models.base</h1><div class="highlight"><pre>
+<span></span>&quot;&quot;&quot;The base model class and registry for all model instances.&quot;&quot;&quot;
+import inspect
+from distutils.version import LooseVersion
+from functools import reduce
+
+import inflection
+from marshmallow import __version__
+from marshmallow import class_registry
+
+from benchlingapi.exceptions import ModelNotFoundError
+from benchlingapi.utils import un_underscore_keys
+from benchlingapi.utils import underscore_keys
+from benchlingapi.utils import url_build
+
+
+class ModelRegistry(type):
+    &quot;&quot;&quot;Stores a list of models that can be accessed by name.&quot;&quot;&quot;
+
+    models = {}
+
+    def __init__(cls, name, bases, nmspc):
+        &quot;&quot;&quot;Saves model to the registry.&quot;&quot;&quot;
+        super().__init__(name, bases, nmspc)
+        if not name == &quot;ModelBase&quot;:
+            if name not in ModelRegistry.models:
+                ModelRegistry.models[name] = cls
+
+    @staticmethod
+    def get_model(model_name):
+        &quot;&quot;&quot;Gets model by model_name.&quot;&quot;&quot;
+        if model_name not in ModelRegistry.models:
+            raise ModelNotFoundError(
+                &#39;Model &quot;{}&quot; not found in ModelRegistry.&#39;.format(model_name)
+            )
+        else:
+            return ModelRegistry.models[model_name]
+
+    @staticmethod
+    def models_by_base_classes():
+        models_by_base_classes = {}
+        for m in ModelRegistry.models.values():
+            hierarchy = inspect.getmro(m)
+            for base_model in hierarchy:
+                models_by_base_classes.setdefault(base_model.__name__, []).append(m)
+        return models_by_base_classes
+
+    @staticmethod
+    def filter_models_by_base_classes(bases):
+        &quot;&quot;&quot;Filters models registered in the model registry by their base
+        classes.
+
+        :param bases: base classes
+        :type bases: type, list, or tuple
+        :return: type
+        :rtype: list
+        &quot;&quot;&quot;
+        if isinstance(bases, list):
+            model_sets = []
+            for only_model in bases:
+                model_sets.append(
+                    set(ModelRegistry.models_by_base_classes()[only_model.__name__])
+                )
+            models = reduce(lambda x, y: x.intersection(y), model_sets)
+        else:
+            models = ModelRegistry.models_by_base_classes()[bases.__name__]
+        return models
+
+    def __getattr__(cls, item):
+        &quot;&quot;&quot;Special warning for attribute errors.
+
+        Its likely that user may have wanted to use a model interface
+        instead of the Base class.
+        &quot;&quot;&quot;
+        raise AttributeError(&quot;&#39;{}&#39; has no attribute &#39;{}&#39;&quot;.format(cls.__name__, item))
+
+    @property
+    def model_name(cls):
+        &quot;&quot;&quot;Return this model&#39;s name.&quot;&quot;&quot;
+        return cls.__name__
+
+
+class ModelBaseABC:
+    &quot;&quot;&quot;The model base for all BenchlingAPI model instances.&quot;&quot;&quot;
+
+    # http = None  # initialized with Session calls a model interface
+    session = None
+    alias = None
+
+    def __init__(self, **data):
+        data = underscore_keys(data)
+        for k, v in data.items():
+            setattr(self, k, v)
+
+    @staticmethod
+    def _url_build(*parts):
+        return url_build(*parts)
+
+    @property
+    def model_name(self):
+        # if self.alias is not None:
+        #     return self.alias
+        return self.__class__.__name__
+
+    @classmethod
+    def _serialization_schema(cls, *args, **kwargs):
+        schema = class_registry.get_class(cls.__name__ + &quot;Schema&quot;)
+        schema_inst = schema(*args, **kwargs)
+        schema_inst.context[&quot;session&quot;] = cls.session
+        return schema_inst
+
+    # TODO: remove schema_loader for marshmallow &gt; 3
+    @staticmethod
+    def _deserializer(schema_inst, data):
+        if isinstance(data, list):
+            data = [underscore_keys(d) for d in data]
+        else:
+            data = underscore_keys(data)
+        result = schema_inst.load(data)
+        if LooseVersion(__version__) &lt; LooseVersion(&quot;3.0.0&quot;):
+            if len(result.errors) &gt; 0:
+                raise Exception(str(result.errors))
+            result = result.data
+        return result
+
+    # TODO: remove schema_dumper for marshmallow &gt; 3
+    @staticmethod
+    def _serializer(schema_inst, inst):
+        result = schema_inst.dump(inst)
+        if LooseVersion(__version__) &lt; LooseVersion(&quot;3.0.0&quot;):
+            if len(result.errors) &gt; 0:
+                raise Exception(str(result.errors))
+            result = result.data
+        if isinstance(result, list):
+            return [un_underscore_keys(d) for d in result]
+        return un_underscore_keys(result)
+
+    @classmethod
+    def load(cls, data, *args, **kwargs):
+        schema_inst = cls._serialization_schema(*args, **kwargs)
+        inst = cls._deserializer(schema_inst, data)
+        inst.raw = data
+        return inst
+
+    def dump(self, *args, **kwargs):
+        schema = self._serialization_schema(*args, **kwargs)
+        data = self._serializer(schema, self)
+        return data
+
+    @classmethod
+    def load_many(cls, data, *args, **kwargs):
+        schema_inst = cls._serialization_schema(*args, many=True, **kwargs)
+        # TODO: change for marshmallow &gt; v3
+        insts = cls._deserializer(schema_inst, data)
+        for inst_data, inst in zip(data, insts):
+            if issubclass(type(inst), ModelBase):
+                inst.raw = inst_data
+        return insts
+
+    @classmethod
+    def _tableize(cls):
+        &quot;&quot;&quot;Tableize the model name.
+
+        :return:
+        &quot;&quot;&quot;
+        name = inflection.tableize(cls.__name__)
+        name = inflection.dasherize(name)
+        return name
+
+    @classmethod
+    def _camelize(cls, property=None):
+        &quot;&quot;&quot;Camelize the model name.
+
+        :param property:
+        :return:
+        &quot;&quot;&quot;
+        name = inflection.underscore(cls.model_name)
+        if property is not None:
+            name += &quot;_&quot; + inflection.pluralize(property)
+        else:
+            name = inflection.pluralize(name)
+        name = inflection.camelize(name)
+        name = name[0].lower() + name[1:]
+        return name
+
+    @classmethod
+    def _path(cls, additional_paths=None):
+        path = [cls._tableize()]
+        if additional_paths is not None:
+            if not isinstance(additional_paths, list):
+                additional_paths = [additional_paths]
+            path += additional_paths
+        return cls._url_build(*path)
+
+    def _update_from_other(self, other):
+        vars(self).update(vars(other))
+
+    def reload(self):
+        seq = self.find(self.id)
+        self._update_from_other(seq)
+        return self
+
+    @classmethod
+    def _get(cls, path_params=None, params=None, action=None):
+        response = cls.session.http.get(
+            cls._path(additional_paths=path_params), params=params, action=action
+        )
+        return response
+        # return cls.load(response)
+
+    @classmethod
+    def _get_pages(cls, path_params=None, params=None, action=None):
+        pages = cls.session.http.get_pages(
+            cls._path(additional_paths=path_params), params=params, action=action
+        )
+        return pages
+
+    @classmethod
+    def _post(cls, data, path_params=None, params=None, action=None):
+        response = cls.session.http.post(
+            cls._path(additional_paths=path_params),
+            json=data,
+            params=params,
+            action=action,
+        )
+        return response
+
+    @classmethod
+    def _patch(cls, data, path_params=None, params=None, action=None):
+        response = cls.session.http.patch(
+            cls._path(additional_paths=path_params),
+            json=data,
+            params=params,
+            action=action,
+        )
+        return response
+
+    @classmethod
+    def _delete(cls, path_params=None, params=None, action=None):
+        response = cls.session.http.delete(
+            cls._path(additional_paths=path_params),
+            params=params,
+            action=action,
+        )
+        return response
+
+    def copy(self):
+        return self.load(self.dump())
+
+    def __repr__(self):
+        return &quot;&lt;{cls} ({name}) at {id}&gt;&quot;.format(
+            cls=self.__class__.__name__, name=self.__class__.model_name, id=id(self)
+        )
+
+
+class ModelBase(ModelBaseABC, metaclass=ModelRegistry):
+    &quot;&quot;&quot;Registered model base for BenchlingAPI.&quot;&quot;&quot;
+
+    pass
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017-2019, University of Washington.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
