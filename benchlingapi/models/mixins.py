@@ -629,3 +629,8 @@ class InventoryEntityMixin(InventoryMixin, RegistryMixin, EntityMixin):
     """
 
     pass
+
+
+class DeleteMixin(ModelBaseABC):
+    def delete(self):
+        return self._delete(path_params=[self.id])

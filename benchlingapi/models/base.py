@@ -234,6 +234,13 @@ class ModelBaseABC:
         )
         return response
 
+    @classmethod
+    def _delete(cls, path_params=None, params=None, action=None):
+        response = cls.session.http.delete(
+            cls._path(additional_paths=path_params), params=params, action=action
+        )
+        return response
+
     def copy(self):
         return self.load(self.dump())
 
