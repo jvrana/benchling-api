@@ -391,6 +391,7 @@ class DNAAlignment(GetMixin, DeleteMixin, ModelBase):
             task = session.DNAAlignment.submit_alignment(
                 algorithm='mafft',
                 name='my sequence alignment',
+                template='seq_yi2kdf2',         # the sequence id of the template
                 filepaths=[
                     'data/13dfg34.ab1'          # filepath to ab1 files
                 ],

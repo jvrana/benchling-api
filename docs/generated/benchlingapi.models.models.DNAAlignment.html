@@ -104,6 +104,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../usage.html#updating-models">Updating models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../usage.html#saving-new-models">Saving new models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../usage.html#registering-models-to-your-registry">Registering models to your registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#submitting-dna-alignments">Submitting DNA Alignments</a></li>
 </ul>
 </li>
 </ul>
@@ -397,6 +398,7 @@ V2 API for more information.</p></li>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">DNAAlignment</span><span class="o">.</span><span class="n">submit_alignment</span><span class="p">(</span>
     <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;mafft&#39;</span><span class="p">,</span>
     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;my sequence alignment&#39;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s1">&#39;seq_yi2kdf2&#39;</span><span class="p">,</span>         <span class="c1"># the sequence id of the template</span>
     <span class="n">filepaths</span><span class="o">=</span><span class="p">[</span>
         <span class="s1">&#39;data/13dfg34.ab1&#39;</span>          <span class="c1"># filepath to ab1 files</span>
     <span class="p">],</span>

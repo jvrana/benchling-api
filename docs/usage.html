@@ -104,6 +104,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#updating-models">Updating models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#saving-new-models">Saving new models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#registering-models-to-your-registry">Registering models to your registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#submitting-dna-alignments">Submitting DNA Alignments</a></li>
 </ul>
 </li>
 </ul>
@@ -259,19 +260,21 @@ for methods available for each model.</p>
 <span class="n">dna</span><span class="o">.</span><span class="n">register</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Submitting DNA Alignments
-^^^^^^^^^^^^^^^^^^^^^^^^^’</p>
+</div>
+<div class="section" id="submitting-dna-alignments">
+<h3>Submitting DNA Alignments<a class="headerlink" href="#submitting-dna-alignments" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">DNAAlignment</span><span class="o">.</span><span class="n">submit_alignment</span><span class="p">(</span>
     <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;mafft&#39;</span><span class="p">,</span>
     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;my sequence alignment&#39;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s1">&#39;seq_435g2d&#39;</span><span class="p">,</span>          <span class="c1"># sequence id of the template</span>
     <span class="n">filepaths</span><span class="o">=</span><span class="p">[</span>
-        <span class="s1">&#39;data/13dfg34.ab1&#39;</span>              <span class="c1"># filepath to ab1 files</span>
+        <span class="s1">&#39;data/13dfg34.ab1&#39;</span>          <span class="c1"># filepath to ab1 files</span>
     <span class="p">],</span>
     <span class="n">sequences</span><span class="o">=</span><span class="p">[</span>
-        <span class="s1">&#39;seq_1erv452&#39;</span><span class="p">,</span>              <span class="c1"># a benchling sequence id</span>
-        <span class="n">session</span><span class="o">.</span><span class="n">DNASequence</span><span class="o">.</span><span class="n">one</span><span class="p">(),</span>  <span class="c1"># ...or a DNASequence instance</span>
+        <span class="s1">&#39;seq_1erv452&#39;</span><span class="p">,</span>              <span class="c1"># ...or add benchling sequence ids to align</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">DNASequence</span><span class="o">.</span><span class="n">one</span><span class="p">(),</span>  <span class="c1"># ...or a DNASequence instances to align</span>
     <span class="p">],</span>
-    <span class="n">rawfiles</span><span class="o">=</span><span class="bp">None</span>                       <span class="c1"># only use if you have base64 data handy</span>
+    <span class="n">rawfiles</span><span class="o">=</span><span class="bp">None</span>                   <span class="c1"># only use if you have base64 data handy</span>
 <span class="p">)</span>
 
 <span class="c1"># wait until the alignment is finished</span>

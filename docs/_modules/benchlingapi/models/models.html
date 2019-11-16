@@ -102,6 +102,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../usage.html#updating-models">Updating models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../usage.html#saving-new-models">Saving new models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../usage.html#registering-models-to-your-registry">Registering models to your registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../usage.html#submitting-dna-alignments">Submitting DNA Alignments</a></li>
 </ul>
 </li>
 </ul>
@@ -557,6 +558,7 @@ __all__ = [
             task = session.DNAAlignment.submit_alignment(
                 algorithm=&#39;mafft&#39;,
                 name=&#39;my sequence alignment&#39;,
+                template=&#39;seq_yi2kdf2&#39;,         # the sequence id of the template
                 filepaths=[
                     &#39;data/13dfg34.ab1&#39;          # filepath to ab1 files
                 ],

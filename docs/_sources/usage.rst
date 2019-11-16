@@ -100,21 +100,22 @@ Registering models to your registry
 
 
 Submitting DNA Alignments
-^^^^^^^^^^^^^^^^^^^^^^^^^'
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
     task = session.DNAAlignment.submit_alignment(
         algorithm='mafft',
         name='my sequence alignment',
+        template='seq_435g2d',          # sequence id of the template
         filepaths=[
-            'data/13dfg34.ab1'              # filepath to ab1 files
+            'data/13dfg34.ab1'          # filepath to ab1 files
         ],
         sequences=[
-            'seq_1erv452',              # a benchling sequence id
-            session.DNASequence.one(),  # ...or a DNASequence instance
+            'seq_1erv452',              # ...or add benchling sequence ids to align
+            session.DNASequence.one(),  # ...or a DNASequence instances to align
         ],
-        rawfiles=None                       # only use if you have base64 data handy
+        rawfiles=None                   # only use if you have base64 data handy
     )
 
     # wait until the alignment is finished
