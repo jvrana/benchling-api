@@ -389,6 +389,8 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
         an exception is raised. If one model is found, that model is updated
         with the data from this model.
 
+        .. versionadded: 2.1.4
+
         :param on: list of fields to search the server.
         :return: the model
         """
