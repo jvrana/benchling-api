@@ -208,6 +208,8 @@ class UpdateMixin(ModelBaseABC):
 
     def update(self) -> ModelBase:
         """Update the model instance."""
+        if not self.id:
+            raise BenchlingAPIException("Cannot update. Model has not yet been saved.")
         data = self.update_json()
         return self._update_from_data(data)
 
@@ -340,6 +342,8 @@ class ArchiveMixin(ModelBaseABC):
 class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
     """Entity methods (includes get, list, create, update)"""
 
+    DEFAULT_MERGE_FIELDS = set()
+
     @classmethod
     def find_by_name(cls, name: str, **params) -> ModelBase:
         """Find entity by name."""
@@ -374,6 +378,47 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
         if 'fields' in data:
             data['fields'] = {k: {'value': v['value']} for k, v in data['fields'].items()}
         return data
+
+    def merge(self, on: dict = None) -> ModelBase:
+        """
+        Provided with a list of fields to search, merge the model
+        with an existing model on the server (if it exists), else creates a new model.
+
+        If no models found using
+        the fields, a new model is created. If more than one model found,
+        an exception is raised. If one model is found, that model is updated
+        with the data from this model.
+
+        :param on: list of fields to search the server.
+        :return: the model
+        """
+        if hasattr(self, 'DEFAULT_MERGE_FIELDS') and on is None:
+            on = self.DEFAULT_MERGE_FIELDS
+        if not on:
+            raise BenchlingAPIException("Cannot merge. Must specify fields"
+                                        " to merge with")
+
+        params = {}
+        for key in on:
+            if hasattr(self, key):
+                params[key] = getattr(self, key)
+            else:
+                raise BenchlingAPIException(
+                    "Cannot merge. Model is missing {} attribute".format(key))
+        models = self.list(**params)
+
+        if len(models) == 1:
+            self.id = models[0].id
+            self.update()
+            return self
+        elif len(models) == 0:
+            self.save()
+            return self
+        else:
+            raise BenchlingAPIException("Cannot merge. More than one"
+                                        " {} found with merge fields {}".format(
+                self.__class__.__name__, on
+            ))
 
 
 class InventoryMixin(ModelBaseABC):
