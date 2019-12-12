@@ -1,5 +1,8 @@
 :github_url: |homepage|
 
+.. testsetup:: *
+
+
 
 Python BenchlingAPI
 ===================
