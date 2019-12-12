@@ -1,18 +1,10 @@
 {
   "2.1.4": {
     "description": "feature and bug fixes",
-    "date": "2019-12-12T14:09:46.012622",
+    "date": "2019-12-12T14:16:27.446507",
     "changes": [
       "added 'merge' method to entities",
       "fixed bug that arose iwhen trying to save an entity containing fields"
-    ]
-  },
-  "2.1.3": {
-    "description": "New features: DNAAlignment and Task as new models",
-    "date": "2019-11-15T18:36:26.476275",
-    "changes": [
-      "Added the `DNAAlignment` class to represent alignments",
-      "Added the `Task` class to represent long running tasks. `task.wait()` waits for server task to finish. `task.response_class` returns the expected model, if there is one."
     ]
   },
   "2.1.3": {
