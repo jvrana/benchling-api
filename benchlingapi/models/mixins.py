@@ -369,6 +369,12 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
         if hasattr(self, key):
             webbrowser.open(getattr(self, key))
 
+    def update_json(self):
+        data = super().update_json()
+        if 'fields' in data:
+            data['fields'] = {k: {'value': v['value']} for k, v in data['fields'].items()}
+        return data
+
 
 class InventoryMixin(ModelBaseABC):
     """Designates model as having a folderId."""
