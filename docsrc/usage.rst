@@ -102,7 +102,7 @@ Registering models to your registry
 Submitting DNA Alignments
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: python
+.. testcode::
 
     task = session.DNAAlignment.submit_alignment(
         algorithm='mafft',

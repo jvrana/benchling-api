@@ -1,5 +1,13 @@
 {
   "2.1.4": {
+    "description": "feature and bug fixes",
+    "date": "2019-12-12T14:09:46.012622",
+    "changes": [
+      "added 'merge' method to entities",
+      "fixed bug that arose iwhen trying to save an entity containing fields"
+    ]
+  },
+  "2.1.3": {
     "description": "New features: DNAAlignment and Task as new models",
     "date": "2019-11-15T18:36:26.476275",
     "changes": [

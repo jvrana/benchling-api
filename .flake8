@@ -1,5 +1,5 @@
 [flake8]
 ignore = F401,E203,W503
 max-line-length = 100
-exclude = tests/*,docsrc/*
+exclude = .svn,CVS,.bzr,.hg,.git,__pycache__,.tox,tests,docsrc
 max-complexity = 25
