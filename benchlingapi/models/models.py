@@ -59,7 +59,7 @@ class CustomEntity(InventoryEntityMixin, ModelBase):
         name=None,
         schema_id=None,
         schema=None,
-        **kwargs,
+        **kwargs
     ):
         self.aliases = aliases
         self.custom_fields = custom_fields
@@ -122,7 +122,7 @@ class DNASequence(InventoryEntityMixin, ModelBase):
         schema=None,
         translations=None,
         registry_id=None,
-        **kwargs,
+        **kwargs
     ):
         """Initialize.
 
@@ -229,7 +229,7 @@ class DNASequence(InventoryEntityMixin, ModelBase):
         project_id: str = None,
         schema_id: str = None,
         registry_id: str = None,
-        **kwargs,
+        **kwargs
     ):
         """List :class:`DNASequence` models.
 
@@ -267,7 +267,7 @@ class DNASequence(InventoryEntityMixin, ModelBase):
             schema_id=schema_id,
             archive_reason=archive_reason,
             registry_id=registry_id,
-            **kwargs,
+            **kwargs
         )
 
 
@@ -394,6 +394,7 @@ class DNAAlignment(GetMixin, DeleteMixin, ModelBase):
             task = session.DNAAlignment.submit_alignment(
                 algorithm='mafft',
                 name='my sequence alignment',
+                template='seq_yi2kdf2',         # the sequence id of the template
                 filepaths=[
                     'data/13dfg34.ab1'          # filepath to ab1 files
                 ],
@@ -571,7 +572,7 @@ class AASequence(ModelBase, InventoryEntityMixin):
         name=None,
         schema_id=None,
         schema=None,
-        **kwargs,
+        **kwargs
     ):
         self.aliases = aliases
         self.amino_acids = amino_acids
@@ -597,7 +598,7 @@ class AASequence(ModelBase, InventoryEntityMixin):
         project_id: str = None,
         schema_id: str = None,
         registry_id: str = None,
-        **kwargs,
+        **kwargs
     ):
         """List :class:`AASequence` models.
 
@@ -635,7 +636,7 @@ class AASequence(ModelBase, InventoryEntityMixin):
             schema_id=schema_id,
             archive_reason=archive_reason,
             registry_id=registry_id,
-            **kwargs,
+            **kwargs
         )
 
 
@@ -689,7 +690,7 @@ class Oligo(GetMixin, CreateMixin, InventoryMixin, RegistryMixin, ModelBase):
         name=None,
         schema_id=None,
         schema=None,
-        **kwargs,
+        **kwargs
     ):
         self.aliases = aliases
         self.bases = bases

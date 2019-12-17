@@ -168,7 +168,7 @@ class TranslationSchema(Schema):
 #
 class DNAAlignmentSchema(ModelSchemaMixin, Schema):
 
-    aligned_sequences: mfields.Dict()
+    aligned_sequences = mfields.List(mfields.Dict())
     name = mfields.Str()
 
     class Meta:

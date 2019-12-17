@@ -99,7 +99,10 @@ def clean_up_folder(folder):
         print('Archiving "{}" models...'.format(model.__name__))
         for m in interface.all(folder_id=folder.id):
             print("Archiving {}".format(m))
-            m.archive(m.ARCHIVE_REASONS.OTHER)
+            try:
+                m.archive(m.ARCHIVE_REASONS.OTHER)
+            except Exception as e:
+                print(e)
 
 
 def populate_folder(folder, inventory_folder):

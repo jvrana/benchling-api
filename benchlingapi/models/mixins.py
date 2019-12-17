@@ -336,7 +336,7 @@ class ArchiveMixin(ModelBaseABC):
         Return None if not archived.
         """
         if self.is_archived:
-            return self.archive_reason["reason"]
+            return self.archive_record["reason"]
 
 
 class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
@@ -375,8 +375,10 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
 
     def update_json(self):
         data = super().update_json()
-        if 'fields' in data:
-            data['fields'] = {k: {'value': v['value']} for k, v in data['fields'].items()}
+        if "fields" in data:
+            data["fields"] = {
+                k: {"value": v["value"]} for k, v in data["fields"].items()
+            }
         return data
 
     def merge(self, on: dict = None) -> ModelBase:
@@ -394,11 +396,12 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
         :param on: list of fields to search the server.
         :return: the model
         """
-        if hasattr(self, 'DEFAULT_MERGE_FIELDS') and on is None:
+        if hasattr(self, "DEFAULT_MERGE_FIELDS") and on is None:
             on = self.DEFAULT_MERGE_FIELDS
         if not on:
-            raise BenchlingAPIException("Cannot merge. Must specify fields"
-                                        " to merge with")
+            raise BenchlingAPIException(
+                "Cannot merge. Must specify fields" " to merge with"
+            )
 
         params = {}
         for key in on:
@@ -406,7 +409,8 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
                 params[key] = getattr(self, key)
             else:
                 raise BenchlingAPIException(
-                    "Cannot merge. Model is missing {} attribute".format(key))
+                    "Cannot merge. Model is missing {} attribute".format(key)
+                )
         models = self.list(**params)
 
         if len(models) == 1:
@@ -417,10 +421,10 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
             self.save()
             return self
         else:
-            raise BenchlingAPIException("Cannot merge. More than one"
-                                        " {} found with merge fields {}".format(
-                self.__class__.__name__, on
-            ))
+            raise BenchlingAPIException(
+                "Cannot merge. More than one"
+                " {} found with merge fields {}".format(self.__class__.__name__, on)
+            )
 
 
 class InventoryMixin(ModelBaseABC):

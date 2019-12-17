@@ -9,7 +9,7 @@ BenchlingAPI exceptions
 
 
 class BenchlingAPIException(Exception):
-    """Generic Exception for BenchlingAPI."""
+    """Generic Exception for BenchlingAPI caused from the Python API itself."""
 
 
 class BenchlingLoginError(BenchlingAPIException):
@@ -21,7 +21,7 @@ class ModelNotFoundError(BenchlingAPIException):
 
 
 class SchemaNotFoundError(BenchlingAPIException):
-    """Model not found."""
+    """Schema not found."""
 
 
 ################################
@@ -31,16 +31,15 @@ class BenchlingServerException(BenchlingAPIException):
     """Exceptions received from the Benchling site."""
 
 
-class RegistryException(BenchlingServerException):
-    pass
+class InvalidRegistryId(BenchlingServerException):
+    """Invalid registry id.
+
+    Id or name exists in the registry.
+    """
 
 
-class InvalidRegistryId(RegistryException):
-    pass
-
-
-class RegistryValidationError(RegistryException):
-    pass
+class RegistryValidationError(BenchlingServerException):
+    """Entities do not match the expected registry schema."""
 
 
 def exception_dispatch(exception_with_response):

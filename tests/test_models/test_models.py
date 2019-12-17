@@ -160,7 +160,7 @@ class TestCreateMixin(HasInterface):
             name="MyProtein",
         ),
         "CustomEntity": dict(name="MyEntity", aliases=[], schemaId=None),
-        "Batch": dict(entityId='seq_342322', fields={}),
+        "Batch": dict(entityId="seq_342322", fields={}),
         "Oligo": dict(name="MyOligo", bases="AGTAGCATG"),
     }
 
