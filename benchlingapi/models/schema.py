@@ -131,6 +131,9 @@ class OligoSchema(ModelSchemaMixin, EntitySchema):
 
 
 class BatchSchema(EntitySchema):
+
+    entity_id = mfields.String()
+
     class Meta:
         unknown = INCLUDE
 
