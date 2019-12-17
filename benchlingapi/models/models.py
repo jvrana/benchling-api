@@ -87,7 +87,8 @@ class DNASequence(InventoryEntityMixin, ModelBase):
             "is_circular",
             "name",
             "schema_id",
-            # "translations",
+            "translations",
+            "primers"
         )
     )
 
@@ -102,6 +103,8 @@ class DNASequence(InventoryEntityMixin, ModelBase):
             "is_circular",
             "name",
             "schema_id",
+            "translations",
+            "primers"
         )
     )
 
