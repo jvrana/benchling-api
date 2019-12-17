@@ -79,12 +79,35 @@ class CustomEntitySchema(ModelSchemaMixin, EntitySchema):
         unknown = INCLUDE
 
 
+class OligoSchema(ModelSchemaMixin, EntitySchema):
+    length = mfields.Integer()
+    bases = mfields.String(required=True)
+
+    class Meta:
+        unknown = INCLUDE
+
+
+class OligoBinding(Schema):
+    bases = mfields.String()
+    bind_position = mfields.Integer()
+    color = mfields.String()
+    start = mfields.Integer()
+    end = mfields.Integer()
+    name = mfields.String()
+    overhang_length = mfields.Integer()
+    strand = mfields.Integer()
+
+    class Meta:
+        unknown = INCLUDE
+
+
 class DNASequenceSchema(ModelSchemaMixin, EntitySchema):
     annotations = mfields.Nested("AnnotationSchema", many=True)
     length = mfields.Integer()
     bases = mfields.String(required=True)
     is_circular = mfields.Boolean(required=True)
     translations = mfields.Nested("TranslationSchema", many=True)
+    primers = mfields.Nested("OligoBinding", many=True)
 
     class Meta:
         unknown = INCLUDE
@@ -108,6 +131,9 @@ class OligoSchema(ModelSchemaMixin, EntitySchema):
 
 
 class BatchSchema(EntitySchema):
+
+    entity_id = mfields.String()
+
     class Meta:
         unknown = INCLUDE
 
