@@ -88,7 +88,6 @@ class DNASequence(InventoryEntityMixin, ModelBase):
             "name",
             "schema_id",
             "translations",
-            "primers"
         )
     )
 
