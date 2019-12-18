@@ -187,16 +187,11 @@ class DNASequence(InventoryEntityMixin, ModelBase):
         return d
 
     @classmethod
-    def from_share_link(cls, share_link):
-        """Return a DNASequence based on its weblink.
-
-        Weblink may be a share link or a url
-        """
-
+    def get_seq_id_from_link(cls, share_link: str):
         parsed = cls._parseURL(share_link)
         seq_id = parsed.get("seq_id", None)
         if seq_id:
-            return cls.get(seq_id)
+            return seq_id
         else:
             try:
                 text = cls._opensharelink(share_link)
@@ -215,12 +210,20 @@ class DNASequence(InventoryEntityMixin, ModelBase):
                         " search "
                         "pattern {}".format(search_pattern)
                     )
-                seq = uniq_ids[0]
-                return seq
+                seq_id = uniq_ids[0]
+                return seq_id
             except (BenchlingAPIException, urllib.error.HTTPError):
                 raise BenchlingAPIException(
                     "Could not find seqid in sharelink body or url."
                 )
+
+    @classmethod
+    def from_share_link(cls, share_link):
+        """Return a DNASequence based on its weblink.
+
+        Weblink may be a share link or a url
+        """
+        return cls.get(cls.get_seq_id_from_link(share_link))
 
     @classmethod
     def list(
