@@ -194,7 +194,7 @@ class DNASequence(InventoryEntityMixin, ModelBase):
         """
 
         parsed = cls._parseURL(share_link)
-        seq_id = parsed["seq_id"]
+        seq_id = parsed.get('seq_id', None)
         if seq_id:
             return cls.get(seq_id)
         else:
