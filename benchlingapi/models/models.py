@@ -180,10 +180,10 @@ class DNASequence(InventoryEntityMixin, ModelBase):
 
         if m1:
             d.update(m1.groupdict())
-            d['seq_id'] = 'seq_' + d['seq_id']
+            d["seq_id"] = "seq_" + d["seq_id"]
         if m2:
             d.update(m2.groupdict())
-            d['folder_id'] = 'lib_' + d['folder_id']
+            d["folder_id"] = "lib_" + d["folder_id"]
         return d
 
     @classmethod
