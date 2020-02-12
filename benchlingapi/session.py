@@ -137,8 +137,10 @@ class Session:
     This serves as the main interface for using the BenchlingAPI.
     """
 
-    def __init__(self, api_key):
+    def __init__(self, api_key, home=""):
         self.__http = Http(api_key)
+        if home:
+            self.__http.HOME = f"https://{home}.benchling.com/api/v2"
         self.__interfaces = {}
         for model_name in allmodels:
             model_cls = ModelRegistry.get_model(model_name)
