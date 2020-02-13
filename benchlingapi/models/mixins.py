@@ -584,7 +584,7 @@ class RegistryMixin(ModelBaseABC):
         return False
 
     @classmethod
-    def list_in_registry(cls, registry_id=None, registry_name=None, **params):
+    def list_in_registry(cls, registry_id: str = None, registry_name: str = None, **params):
         """List instances contained in the registry.
 
         :param registry_id: registery id. If none, 'registry_name' must be provided.
@@ -600,13 +600,13 @@ class RegistryMixin(ModelBaseABC):
 
     @classmethod
     def all_in_registry(
-        cls, registry_id=None, registry_name=None, limit=None, **params
+        cls, registry_id: str = None, registry_name: str = None, limit: int = None, **params
     ):
         if registry_id is None:
             registry_id = cls.session.Registry.find_registry(
                 id=registry_id, name=registry_name
             ).id
-        return cls.all(registry_id=registry_id, limit=None, **params)
+        return cls.all(registry_id=registry_id, limit=limit, **params)
 
     @classmethod
     def registry_dict(cls, registry_id=None, registry_name=None, **params):
