@@ -103,7 +103,7 @@ class DNASequence(InventoryEntityMixin, ModelBase):
             "name",
             "schema_id",
             "translations",
-            "primers"
+            "primers",
         )
     )
 
@@ -171,16 +171,51 @@ class DNASequence(InventoryEntityMixin, ModelBase):
         :param url:
         :return:
         """
-        g = re.search(
-            r"benchling.com/(?P<user>\w+)/f/(?P<folderid>\w+)"
-            + r"-(?P<foldername>\w+)/seq-(?P<seqid>\w+)-(?P<seqname>"
-            + "[a-zA-Z0-9_-]+)",
-            url,
-        )
-        labels = ["user", "folder_id", "folder_name", "seq_id", "seq_name"]
-        d = dict(list(zip(labels, g.groups())))
-        d["seq_id"] = "seq_{}".format(d["seq_id"])
+
+        seq_pattern = r"seq[-_](?P<seq_id>\w+)-(?P<seq_name>[a-zA-Z0-9-_]+)"
+        lib_pattern = r"lib[-_](?P<folder_id>\w+)-(?P<folder_name>[a-zA-Z0-9-_]+)"
+        d = {}
+        m1 = re.search(seq_pattern, url)
+        m2 = re.search(lib_pattern, url)
+
+        if m1:
+            d.update(m1.groupdict())
+            d["seq_id"] = "seq_" + d["seq_id"]
+        if m2:
+            d.update(m2.groupdict())
+            d["folder_id"] = "lib_" + d["folder_id"]
         return d
+
+    @classmethod
+    def get_seq_id_from_link(cls, share_link: str):
+        parsed = cls._parseURL(share_link)
+        seq_id = parsed.get("seq_id", None)
+        if seq_id:
+            return seq_id
+        else:
+            try:
+                text = cls._opensharelink(share_link)
+                search_pattern = r"seq_\w+"
+                possible_ids = re.findall(search_pattern, text)
+                if len(possible_ids) == 0:
+                    raise BenchlingAPIException(
+                        "No sequence ids found in sharelink html using search pattern {}".format(
+                            search_pattern
+                        )
+                    )
+                uniq_ids = list(set(possible_ids))
+                if len(uniq_ids) > 1:
+                    raise BenchlingAPIException(
+                        "More than one possible sequence id found in sharelink html using"
+                        " search "
+                        "pattern {}".format(search_pattern)
+                    )
+                seq_id = uniq_ids[0]
+                return seq_id
+            except (BenchlingAPIException, urllib.error.HTTPError):
+                raise BenchlingAPIException(
+                    "Could not find seqid in sharelink body or url."
+                )
 
     @classmethod
     def from_share_link(cls, share_link):
@@ -188,32 +223,7 @@ class DNASequence(InventoryEntityMixin, ModelBase):
 
         Weblink may be a share link or a url
         """
-        try:
-            text = cls._opensharelink(share_link)
-            search_pattern = r"seq_\w+"
-            possible_ids = re.findall(search_pattern, text)
-            if len(possible_ids) == 0:
-                raise BenchlingAPIException(
-                    "No sequence ids found in sharelink html using search pattern {}".format(
-                        search_pattern
-                    )
-                )
-            uniq_ids = list(set(possible_ids))
-            if len(uniq_ids) > 1:
-                raise BenchlingAPIException(
-                    "More than one possible sequence id found in sharelink html using"
-                    " search "
-                    "pattern {}".format(search_pattern)
-                )
-            seq = uniq_ids[0]
-        except (BenchlingAPIException, urllib.error.HTTPError):
-            d = cls._parseURL(share_link)
-            seq = d["seq_id"]
-        if seq is None:
-            raise BenchlingAPIException(
-                "Could not find seqid in sharelink body or url."
-            )
-        return cls.get(seq)
+        return cls.get(cls.get_seq_id_from_link(share_link))
 
     @classmethod
     def list(

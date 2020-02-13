@@ -1,7 +1,34 @@
 {
+  "2.1.11": {
+    "description": "hotfix sharelink bug",
+    "date": "2019-12-18T13:34:41.244797",
+    "changes": []
+  },
+  "2.1.10": {
+    "description": "fix previous release",
+    "date": "2019-12-17T17:26:29.569759",
+    "changes": []
+  },
+  "2.1.9": {
+    "description": "fixes sharelink bugs",
+    "date": "2019-12-17T17:16:09.386482",
+    "changes": []
+  },
+  "2.1.8": {
+    "description": "re-release of 2.1.7 (fixes broken branch)",
+    "date": "2019-12-17T17:10:53.952392",
+    "changes": []
+  },
+  "2.1.7": {
+    "description": "bug fixes",
+    "date": "2019-12-17T17:07:16.144945",
+    "changes": [
+      "fixes loading DNASequences from share_links"
+    ]
+  },
   "2.1.6": {
     "description": "bug fixes",
-    "date": "2019-12-16T17:03:37.901932",
+    "date": "2019-12-16T17:06:05.925041",
     "changes": [
       "updates DNASequence to work with latest Benchling API update"
     ]

@@ -237,3 +237,13 @@ class TestRegistryMixin(HasInterface):
         assert copy_sample.is_registered
         copy_sample.unregister(trash_folder.id)
         assert not copy_sample.is_registered
+
+
+#
+# def test_dna_share_link(session):
+#     return
+#     # dnas = session.DNASequence.last(10)
+#     # for dna in dnas:
+#     #     assert dna
+#     #     loaded = session.DNASequence.from_share_link(dna.web_url)
+#     #     assert loaded.id == dna.id
