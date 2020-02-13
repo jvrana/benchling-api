@@ -1,10 +1,66 @@
 # benchlingapi change log
-## 2.1.4
-**2019-11-15T18:36:26.476275**
-New features: DNAAlignment and Task as new models
+## 2.1.12
+**2020-02-12T16:15:11.847504**
+changes to Session initialization
 
- - Added the `DNAAlignment` class to represent alignments
- - Added the `Task` class to represent long running tasks. `task.wait()` waits for server task to finish. `task.response_class` returns the expected model, if there is one.
+ - Users can now specify the home url for the Benchling Session instance. Use Session(api_key, org='myorg') to specify the home url 'myorg.benchling.com/api/v2'. User Session(api_key, home='myorg.benchling.com/api/v2') to specify the home url directly.
+
+
+## 2.1.11
+**2019-12-18T13:34:41.244797**
+hotfix sharelink bug
+
+
+
+
+## 2.1.10
+**2019-12-17T17:26:29.569759**
+fix previous release
+
+
+
+
+## 2.1.9
+**2019-12-17T17:16:09.386482**
+fixes sharelink bugs
+
+
+
+
+## 2.1.8
+**2019-12-17T17:10:53.952392**
+re-release of 2.1.7 (fixes broken branch)
+
+
+
+
+## 2.1.7
+**2019-12-17T17:07:16.144945**
+bug fixes
+
+ - fixes loading DNASequences from share_links
+
+
+## 2.1.6
+**2019-12-16T17:06:05.925041**
+bug fixes
+
+ - updates DNASequence to work with latest Benchling API update
+
+
+## 2.1.5
+**2019-12-12T14:18:00.136712**
+
+
+ - added 'merge' method to entities
+ - fixed bug that arose iwhen trying to save an entity containing fields
+
+
+## 2.1.4
+**2019-12-12T14:16:27.446507**
+feature and bug fixes
+
+
 
 
 ## 2.1.3
