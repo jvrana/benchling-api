@@ -1,7 +1,7 @@
 {
   "2.1.12": {
     "description": "changes to Session initialization",
-    "date": "2020-02-12T16:15:11.847504",
+    "date": "2020-02-12T16:27:14.551407",
     "changes": [
       "Users can now specify the home url for the Benchling Session instance. Use Session(api_key, org='myorg') to specify the home url 'myorg.benchling.com/api/v2'. User Session(api_key, home='myorg.benchling.com/api/v2') to specify the home url directly."
     ]
