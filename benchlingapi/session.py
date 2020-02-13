@@ -12,11 +12,28 @@ can access the session-enabled models:
 
     from benchlingapi import Session
 
-    session = Session("asdfe8iunaoerhgoaher")
+    api_key = "asdfe8iunaoerhgoaher"
+    session = Session(api_key)
     session.DNASequence
     session.AASequence
     session.Oligo
     session.Registry
+
+If your homespace URL for benchling is different from `https://benchling.com/api/v2`, you may
+specify your organization homespace using the `org` parameter, as in
+`https://{org}.benchling.com/api/v2/`
+
+.. code-block:: python
+
+    org = "myorganization"
+    session = Session(api_key, org=org)
+
+You may also specify the homespace directly:
+
+.. code-block:: python
+
+    home = "https://myorganization.benchling.com/api/v2"
+    session = Session(api_key, home=home)
 
 For more information on the models and their methods, see the
 :ref:`API model docs <api_models>`
@@ -88,6 +105,13 @@ class Http:
     NEXT = "nextToken"  #: nextToken key for pagination
 
     def __init__(self, api_key, home=None):
+        """
+
+        .. versionchanged:: 2.1.12
+            Ad
+        :param api_key:
+        :param home:
+        """
         if home is None:
             home = self.DEFAULT_HOME
         session = requests.Session()
@@ -146,11 +170,15 @@ class Session:
         """
         Initialize a new Benchling API Session.
 
+        .. versionchanged:: 2.1.12
+            Added the `org` and `home` arguments to give users more control
+            over homespace.
+
         :param api_key: Benchling provided api_key
         :param org: optional org name. If provided, sets home URL
-            to https://{home}.benchling.com/api/v2
+            to `https://{home}.benchling.com/api/v2`
         :param home: optional home name. If not provided, sets home
-            to https://benchling.com/api/v2. See `org` argument.
+            to `https://benchling.com/api/v2`. See `org` argument.
         """
         if org:
             home = "https://{org}.benchling.com/api/v2".format(org=org)
