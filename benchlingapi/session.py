@@ -12,11 +12,28 @@ can access the session-enabled models:
 
     from benchlingapi import Session
 
-    session = Session("asdfe8iunaoerhgoaher")
+    api_key = "asdfe8iunaoerhgoaher"
+    session = Session(api_key)
     session.DNASequence
     session.AASequence
     session.Oligo
     session.Registry
+
+If your homespace URL for benchling is different from `https://benchling.com/api/v2`, you may
+specify your organization homespace using the `org` parameter, as in
+`https://{org}.benchling.com/api/v2/`
+
+.. code-block:: python
+
+    org = "myorganization"
+    session = Session(api_key, org=org)
+
+You may also specify the homespace directly:
+
+.. code-block:: python
+
+    home = "https://myorganization.benchling.com/api/v2"
+    session = Session(api_key, home=home)
 
 For more information on the models and their methods, see the
 :ref:`API model docs <api_models>`
@@ -81,13 +98,25 @@ class RequestDecorator:
 class Http:
     """Creates and responds to the Benchling server."""
 
-    TIMEOUT = 30
-    HOME = "https://benchling.com/api/v2"
-    NEXT = "nextToken"
+    TIMEOUT = 30  #: default request timeout for the session
+    DEFAULT_HOME = (
+        "https://benchling.com/api/v2"
+    ) #: default home url to use if not provided.
+    NEXT = "nextToken"  #: nextToken key for pagination
 
-    def __init__(self, api_key):
+    def __init__(self, api_key, home=None):
+        """
+
+        .. versionchanged:: 2.1.12
+            Ad
+        :param api_key:
+        :param home:
+        """
+        if home is None:
+            home = self.DEFAULT_HOME
         session = requests.Session()
         session.auth = (api_key, "")
+        self._home = home
         self.__session = session
         self.post = RequestDecorator([200, 201, 202])(partial(self.request, "post"))
         self.get = RequestDecorator(200)(partial(self.request, "get"))
@@ -108,7 +137,7 @@ class Http:
         if action is not None:
             path += ":" + action
         return self.__session.request(
-            method, url_build(self.HOME, path), timeout=timeout, **kwargs
+            method, url_build(self._home, path), timeout=timeout, **kwargs
         )
 
     def get_pages(
@@ -137,8 +166,23 @@ class Session:
     This serves as the main interface for using the BenchlingAPI.
     """
 
-    def __init__(self, api_key):
-        self.__http = Http(api_key)
+    def __init__(self, api_key: str, org: str = None, home: str = None):
+        """
+        Initialize a new Benchling API Session.
+
+        .. versionchanged:: 2.1.12
+            Added the `org` and `home` arguments to give users more control
+            over homespace.
+
+        :param api_key: Benchling provided api_key
+        :param org: optional org name. If provided, sets home URL
+            to `https://{home}.benchling.com/api/v2`
+        :param home: optional home name. If not provided, sets home
+            to `https://benchling.com/api/v2`. See `org` argument.
+        """
+        if org:
+            home = "https://{org}.benchling.com/api/v2".format(org=org)
+        self.__http = Http(api_key, home=home)
         self.__interfaces = {}
         for model_name in allmodels:
             model_cls = ModelRegistry.get_model(model_name)
@@ -155,7 +199,7 @@ class Session:
     @property
     def url(self) -> str:
         """Return home benchling url."""
-        return self.__http.HOME
+        return self.__http._home
 
     def help(self):
         """Print api documentation url."""
