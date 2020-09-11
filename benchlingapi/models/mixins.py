@@ -4,8 +4,6 @@ from typing import Any
 from typing import Callable
 from typing import Generator
 from typing import List
-from typing import Tuple
-from typing import Union
 
 from benchlingapi.exceptions import BenchlingAPIException
 from benchlingapi.exceptions import BenchlingServerException
@@ -382,9 +380,8 @@ class EntityMixin(ArchiveMixin, GetMixin, ListMixin, CreateMixin, UpdateMixin):
         return data
 
     def merge(self, on: dict = None) -> ModelBase:
-        """
-        Provided with a list of fields to search, merge the model
-        with an existing model on the server (if it exists), else creates a new model.
+        """Provided with a list of fields to search, merge the model with an
+        existing model on the server (if it exists), else creates a new model.
 
         If no models found using
         the fields, a new model is created. If more than one model found,
@@ -606,7 +603,7 @@ class RegistryMixin(ModelBaseABC):
         registry_id: str = None,
         registry_name: str = None,
         limit: int = None,
-        **params
+        **params,
     ):
         if registry_id is None:
             registry_id = cls.session.Registry.find_registry(

@@ -100,15 +100,13 @@ class Http:
 
     TIMEOUT = 30  #: default request timeout for the session
     DEFAULT_HOME = (
-        "https://benchling.com/api/v2"
-    )  #: default home url to use if not provided.
+        "https://benchling.com/api/v2"  #: default home url to use if not provided.
+    )
     NEXT = "nextToken"  #: nextToken key for pagination
 
     def __init__(self, api_key, home=None):
-        """
+        """.. versionchanged:: 2.1.12 Ad.
 
-        .. versionchanged:: 2.1.12
-            Ad
         :param api_key:
         :param home:
         """
@@ -167,8 +165,7 @@ class Session:
     """
 
     def __init__(self, api_key: str, org: str = None, home: str = None):
-        """
-        Initialize a new Benchling API Session.
+        """Initialize a new Benchling API Session.
 
         .. versionchanged:: 2.1.12
             Added the `org` and `home` arguments to give users more control

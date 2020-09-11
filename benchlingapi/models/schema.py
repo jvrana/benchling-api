@@ -122,14 +122,6 @@ class AASequenceSchema(ModelSchemaMixin, EntitySchema):
         unknown = INCLUDE
 
 
-class OligoSchema(ModelSchemaMixin, EntitySchema):
-    bases = mfields.String(required=True)
-    length = mfields.Integer()
-
-    class Meta:
-        unknown = INCLUDE
-
-
 class BatchSchema(EntitySchema):
 
     entity_id = mfields.String()

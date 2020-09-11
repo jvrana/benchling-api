@@ -1,6 +1,7 @@
 import pytest
-from benchlingapi.models import models
+
 from benchlingapi.exceptions import ModelNotFoundError
+from benchlingapi.models import models
 
 
 def test_all_models(session):

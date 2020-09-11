@@ -1,6 +1,9 @@
 # BenchlingAPI
 
 [![PyPI version](https://badge.fury.io/py/benchlingapi.svg)](https://badge.fury.io/py/benchlingapi)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/klavinslab/benchling-api.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/klavinslab/benchling-api/alerts/)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/klavinslab/benchling-api.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/klavinslab/benchling-api/context:python)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 The (unofficial) python API wrapper for Benchling. For more information,
 see documentation at https://klavinslab.github.io/benchling-api/index.

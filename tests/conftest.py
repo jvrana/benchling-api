@@ -45,7 +45,7 @@ fixtures_path = os.path.join(here, "fixtures/vcr_cassettes")
 def pytest_pyfunc_call(pyfuncitem):
     cassette_name = hash_test_function(pyfuncitem)
     with myvcr.use_cassette(os.path.join(fixtures_path, cassette_name) + ".yaml"):
-        outcome = yield
+        yield
 
 
 def config():
@@ -154,6 +154,6 @@ def example_from_inventory(model, inv_folder, trash_folder):
         )
     example_copy = example.copy()
     example_copy.folder_id = trash_folder.id
-    data = example_copy.dump(**example_copy.CREATE_SCHEMA)
+    example_copy.dump(**example_copy.CREATE_SCHEMA)
     example_copy.save()
     return example_copy

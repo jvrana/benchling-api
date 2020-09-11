@@ -1,5 +1,5 @@
-from benchlingapi.models.base import ModelRegistry
 from benchlingapi.models import models
+from benchlingapi.models.base import ModelRegistry
 
 
 def test__all__models_in_registry():

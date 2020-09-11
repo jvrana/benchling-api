@@ -32,8 +32,8 @@ class TestDNAAlignment:
         for seq in seq_arr:
             try:
                 seq.archive()
-            except:
-                pass
+            except Exception as e:
+                print(e)
 
     @pytest.mark.parametrize(
         "do_delete", [False, True], ids=["keep alignment", "delete alignment"]
